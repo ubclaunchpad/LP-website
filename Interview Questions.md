@@ -25,8 +25,8 @@
 ### Intermediate
 * Given an ordered array of integers, which may contain any integer in the range [0,99], write a method that prints out the integers not included in the array. For example, given the array [5, 95], the method should output the following three strings "0-4", "6-94", "96-99".
 * Things to watch for: 
-** Output for [3,5] should be "4", not "4-4"
-** Does the method throw an out of bounds exception when it reaches the end of the array (are the indices correct?)
+* Output for [3,5] should be "4", not "4-4"
+* Does the method throw an out of bounds exception when it reaches the end of the array (are the indices correct?)
 
 ### Advanced
 
