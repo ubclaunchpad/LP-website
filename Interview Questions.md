@@ -28,5 +28,5 @@
 ** Output for [3,5] should be "4", not "4-4"
 ** Does the method throw an out of bounds exception when it reaches the end of the array (are the indices correct?)
 
-### Try tree question
+### Advanced
 
