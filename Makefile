@@ -1,4 +1,8 @@
-all: lint
+all: install lint
+
+.PHONY: install
+install:
+	gem install mdl
 
 .PHONY: lint
 lint:

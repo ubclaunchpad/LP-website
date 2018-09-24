@@ -1,6 +1,0 @@
-language: ruby
-notifications:
-  email: false
-
-install: gem install mdl
-script: mdl .
