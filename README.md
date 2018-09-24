@@ -6,6 +6,11 @@ to refer to. If you feel any of this documentation is unclear, out of date, or
 incorrect, please [open an issue](https://github.com/ubclaunchpad/docs/issues/new)
 or [pull request](https://github.com/ubclaunchpad/docs/compare)!
 
+These documents can be read as a [GitBook site](https://ubc-launch-pad.gitbook.io/docs/)
+for a more pleasant experience. If you can't access the GitBook, click
+[this link](https://www.gitbook.com/invite/ubc-launch-pad?invite=-LNC-IMZS_xfvUsGWosp)
+to be added as a reader!
+
 ## Contents
 
 ### 🎉 Getting Started
