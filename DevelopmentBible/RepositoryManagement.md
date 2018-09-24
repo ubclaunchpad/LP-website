@@ -18,10 +18,6 @@ These are highly recommended--they make your README look much more professional.
 
 For a fantastic example of a README page, check out Launch Pad's [Inertia](https://github.com/ubclaunchpad/inertia) project.
 
-## LICENSE
-Your repository should contain a license that makes it clear to users what they can and cannot do with your software.
-Launch Pad recommends the permissive [MIT license](https://en.wikipedia.org/wiki/MIT_License).
-
 ## Enforcing Standards
 You should enforce a clearly defined set of standards for your code;
 in particular, this should both be listed in your documentation and enforced during the build process.
