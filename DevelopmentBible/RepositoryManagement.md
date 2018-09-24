@@ -38,7 +38,14 @@ in particular, it is highly recommended to include config files produced by comm
 It is highly recommended that you provide Docker and docker-compose files as a means of ensuring simple setup and standardized development/build environments.
 
 ## Builds and Tests
-You must have a continuous integration system in place that ensures that any new code is tested and meets your coding standards.
-Failing to enforce standards through the build process will place that burden squarely on you and your fellow contributors during the code review process.
-Enforcing a test code coverage threshold that your tool should be at or above at all times can be an effective way to ensure that your code is well tested, but it will by no means guarantee it.
+You should have a continuous integration system in place to ensure that new code is tested and meets team standards.
+Launch Pad recommends [Travis CI](https://travis-ci.org), which is free for open-source repositories;
+our GitHub organization is already connected to Travis and a number of project use it currently.
+
+Your CI process should run automated tests, linters, code style enforcers, and anything else that can be automated and help maintain high code quality.
+Test code coverage is very valuable to collect during your CI builds,
+and it's particularly recommended to enforce a minimum threshold for code coverage (though this does not guarantee that you have good tests!).
+Sites that provide code coverage dashboards are a convenient way to summarize this data;
+we currently recommend [Codecov](https://codecov.io/), or alternatively [Coveralls](https://coveralls.io).
+
 Ideally documentation about the inner workings of the tool should lie as close to the code it describes as possible.
