@@ -43,5 +43,5 @@ You are expected to complete your tickets and create a pull request _before_ the
 
 ### Absence & Neglected Tickets
 If you can't make a meeting or complete a ticket because you're sick, swamped at school, traveling, etc,
-let your Tech Lead and team know as far in advance as possible---everyone understands that life gets in the way sometimes.
+let your Tech Lead and team know as far in advance as possible--everyone understands that life gets in the way sometimes.
 If you continually miss meetings, neglect tickets, or don't communicate with your team, we will ask you to leave Launch Pad. 
