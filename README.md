@@ -17,7 +17,7 @@ to be added as a reader!
 
 [Getting Started](GettingStarted/) contains everything new developers need to
 get productive at Launch Pad, including introductions to team structure, a list
-of the tools we currently use, and administrative details about the Launch Pad.
+of the tools we currently use, and administrative details about Launch Pad.
 
 ### 📖 Development Bible
 

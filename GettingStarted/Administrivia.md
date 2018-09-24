@@ -80,4 +80,4 @@ school, traveling, etc, let your Tech Lead and team know as far in advance as
 possible - everyone understands that life gets in the way sometimes.
 
 If you continually miss meetings, neglect tickets, or don't communicate with
-your team, we will ask you to reconsider your participation Launch Pad.
+your team, we will ask you to reconsider your participation in Launch Pad.
