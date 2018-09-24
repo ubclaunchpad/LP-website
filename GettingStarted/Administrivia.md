@@ -70,7 +70,8 @@ The total expected time to complete your tickets for a week should be about 8
 hours (4 hours in the meeting and 4 hours during the week).
 You are expected to complete your tickets to the best of your ability and create
 a pull request _before_ the next meeting (whether you actually completed your
-ticket or not).
+ticket or not - if incomplete, make sure to add a "label" to the pull request
+to mark it as "WIP" or "in progress").
 
 ## Absence & Neglected Tickets
 
