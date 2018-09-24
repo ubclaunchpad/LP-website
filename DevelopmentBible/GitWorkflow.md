@@ -34,10 +34,9 @@ if you would like some help doing so, ask your Tech Lead.
 
 ## Pull Request
 When the issue being worked on is ready to be merged into `master` and all relevant commits on that branch have been pushed to GitHub, create a pull request on GitHub.
-Request a review from anyone who is familiar with the section of the codebase being worked on;
-it is often a good idea to request a review from your Tech Lead as well.
-**At least** one other team member must review every pull request before it is merged
-(your team should be enforcing this with GitHub's repository controls).
-If a reviewer requests changes, update the PR accordingly and request another review.
-Once the reviewer accepts the changes, merge the PR.
-Once it is merged, delete the branch.
+
+* Request a review from anyone who is familiar with the section of the codebase being worked on; it is often a good idea to request a review from your Tech Lead as well.
+* **At least** one other team member must review every pull request before it is merged (your team should be enforcing this with GitHub's repository controls).
+* If a reviewer requests changes, update the PR accordingly and request another review.
+* Once the reviewer accepts the changes, merge the PR.
+* Once it is merged, delete the branch.
