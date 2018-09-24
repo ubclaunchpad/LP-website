@@ -35,7 +35,7 @@ parsing data from GitHub's API.
 
 ## Scrum Meeting
 
-Every week, each team should have a Scrum meeting from 12PM-1PM. At these
+Every week, each team should have a Scrum meeting from 11AM-12PM. At these
 meetings, teams should:
 
 * Conduct a standup, where each member discusses what they accomplished during
