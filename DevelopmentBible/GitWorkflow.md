@@ -54,6 +54,9 @@ update your branch, run the following command:
 git pull origin master
 ```
 
+Alternatively, you can rebase ("replay" your commits on top of the latest
+`master` commit) instead by running `git pull --rebase origin master` instead.
+
 ## Developing and Committing Code
 
 All new code should be committed to the new issue branch. To make commits, first
