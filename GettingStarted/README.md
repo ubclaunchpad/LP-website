@@ -1,4 +1,4 @@
-# Getting Started
+# 🎉 Getting Started
 
 Hello and welcome to UBC Launch Pad!
 The documents in this directory explain what Launch Pad is, the tools we use, and what we expect from our members.
