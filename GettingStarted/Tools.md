@@ -5,6 +5,7 @@ We use a variety of tools at Launch Pad for development and communication.
 ### Slack
 We use Slack for team-wide communication, announcements, and project-specific coordination.
 Since we are on the free tier of Slack, where messages eventually expire, anything important or permanent should be in a GitHub issue, version-controlled document, or wiki page.
+Our Slack can be found [here](https://ubclaunchpad.slack.com); sign up now if you haven't!
 You should install Slack on your laptop and phone, turn on @mention notifications, and respond to messages promptly.
 
 ### GitHub
