@@ -50,3 +50,5 @@ meetings, teams should:
   interest, experience, and/or bandwidth, and add them to the milestone.
   Since every issue has an estimate, teams will discover their "weekly
   bandwidth", measured in estimate points (or story points), after a few sprints.
+* If tasks require design work, make sure to note them alongside the task and
+  communicate the requirements to your team's designer(s).
