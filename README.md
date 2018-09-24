@@ -2,7 +2,7 @@
 
 All Launch Pad-wide documentation lives in this repo. The goal of this
 repository is to gather advice, resources, best practices, and more for everyone
-to refer to. If you feel any of this documentation is unclear, out of date, or 
+to refer to. If you feel any of this documentation is unclear, out of date, or
 incorrect, please [open an issue](https://github.com/ubclaunchpad/docs/issues/new)
 or [pull request](https://github.com/ubclaunchpad/docs/compare)!
 
