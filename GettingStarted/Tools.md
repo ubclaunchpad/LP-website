@@ -10,7 +10,8 @@ You should install Slack on your laptop and phone, turn on @mention notification
 ### GitHub
 We use GitHub to host, document, and manage the code in all our projects.
 Launch Pad-wide documentation is hosted in this repository--if you're not sure about something, this is the first place to check.
-Each project has a GitHub repository associated with it and documentation for the project lives in that repository's wiki page. 
+Each project has an associated GitHub repository,
+and documentation for the project lives in that repository, either as version-controlled files (preferably in Markdown format like these) or in the wiki.
 
 ### ZenHub
 [ZenHub](https://www.zenhub.com/) is an addition to GitHub that adds more advanced project management tools.
