@@ -18,9 +18,8 @@ API, or involve risk in some other way. In general, at the beginning of a
 project, there may be some unknown factors that a project's success depends on.
 
 These risks should be identified as soon as possible and documented. Once risks
-are documented, they should be resolved as soon possible. For example, if a risk
-is:
+are documented, they should be resolved as soon possible. For example:
 
-* a feature that is challenging to implement, get a prototype working.
-* a dependency on a third-party data source, contact or research the third party
-  and verify the data is available, adequately formatted, etc.
+* if a feature that is challenging to implement, get a prototype working.
+* if you have a dependency on a third-party data source, contact or research the
+  third party and verify the data is available, adequately formatted, etc.
