@@ -9,12 +9,12 @@ project's set of requirements should fully describe the necessary steps to
 building the project.
 
 Every project should have a complete scope, with each requirement described in
-a README or Wiki and as Epics on ZenHub, before development begins. 
+a README or Wiki and as Epics on ZenHub, before development begins.
 
 ## Managing Risk
 
 Some requirements may be technically difficult to build, rely on a third-party
-API, or involve risk in some other way. In general, at the beginning of a 
+API, or involve risk in some other way. In general, at the beginning of a
 project, there may be some unknown factors that a project's success depends on.
 
 These risks should be identified as soon as possible and documented. Once risks

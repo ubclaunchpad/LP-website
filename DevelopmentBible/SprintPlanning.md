@@ -14,7 +14,7 @@ This document explains Launch Pad's sprint planning guidelines.
 Before development on a project begins, the backlog should contain Epics that
 describe the project's requirements. As needed, these Epics should be broken
 down into smaller issues that build toward completing the Epic. Issues should
-be as small as possible but still contain enough information for 
+be as small as possible but still contain enough information for
 **anyone on the team** to understand. Issues in the backlog should be ordered
 by priority.
 
@@ -40,7 +40,7 @@ meetings, teams should:
 
 * Conduct a standup, where each member discusses what they accomplished during
   the previous week and if anything is preventing them from completing their
-  currently assigned tasks ("blockers"). If there are blockers, add the 
+  currently assigned tasks ("blockers"). If there are blockers, add the
   dependency relationship in ZenHub.
 * Update the ZenHub board as needed based on completed tasks. If the backlog is
   small or empty, create new issues for unimplemented components from the
