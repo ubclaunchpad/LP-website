@@ -8,10 +8,16 @@ workflow yourself.
 ## Updating Your Copy of the Codebase
 
 Most projects will have a primary branch, which will usually be called `master`.
-Before beginning new development, make sure you have the most recent commits
-from your GitHub repo on your local `master` branch by running `git pull`.
+Before beginning new development, make sure you have checked out your project's
+`master` branch and have the most recent commits from your GitHub repo on your
+local `master` branch by:
 
-## Branch
+```
+git checkout master
+git pull
+```
+
+## Branches
 
 When you begin working on a feature or bug fix associated with a GitHub issue,
 create a new branch from `master`; the most convenient way to do this is:
@@ -39,6 +45,14 @@ affected, like so:
 
 For example, if you're adding a like button to the user profile page, you would
 name your branch `profile/#23-like-button`.
+
+If you have been working on your branch for a while, there may have been updates
+to your project's `master` branch that you want to include in your branch. To
+update your branch, run the following command:
+
+```
+git pull origin master
+```
 
 ## Developing and Committing Code
 
