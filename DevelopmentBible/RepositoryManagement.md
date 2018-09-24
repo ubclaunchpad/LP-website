@@ -13,6 +13,11 @@ especially if this involves any extra dependencies or tools.
 
 Optionally, you may want to include sections below this that explain the high-level operation of the tool, list any major dependencies, and/or credit your hard-working developers and designers.
 
+Many continuous integration, code coverage, and documentation sites provide ''badges'' of project status that you can place at the top of your README.
+These are highly recommended--they make your README look much more professional.
+
+For a fantastic example of a README page, check out Launch Pad's [Inertia](https://github.com/ubclaunchpad/inertia) project.
+
 ## LICENSE
 Your repository should contain a license that makes it clear to users what they can and cannot do with your software.
 Launch Pad recommends the permissive [MIT license](https://en.wikipedia.org/wiki/MIT_License).
