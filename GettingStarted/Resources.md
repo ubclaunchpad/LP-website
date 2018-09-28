@@ -47,7 +47,7 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
 * [devhints.io](https://devhints.io) provides cheat sheets for a huge number of
   web development and sysadmin/ops-related tools and programs.
-* [cheat.sh](https://github.com/chubin/cheat.sh) is a service along the lines 
+* [cheat.sh](https://github.com/chubin/cheat.sh) is a service along the lines
   of the above, but it can also be run from the command line.
 * If you want to learn vim, or just use a vim mode in the editor or IDE of your
   choice, you can't go wrong with this [vim cheat sheet](https://vim.rtorr.com).
