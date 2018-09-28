@@ -8,6 +8,9 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
 ## Python
 
+* Check out some of the
+  [projects at Launch Pad](https://github.com/ubclaunchpad?language=python)
+  that use Python!
 * [The Hitchhiker’s Guide to Python](https://docs.python-guide.org) is an
   opinionated guide to best-practices Python development, from the creator of
   [Requests](http://docs.python-requests.org/en/latest/), one of the most
