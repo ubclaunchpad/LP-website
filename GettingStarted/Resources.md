@@ -8,6 +8,10 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
 ## Command Line
 
+* Matt Might has a pair of Unix tutorials, one for
+  [total beginners](http://matt.might.net/articles/basic-unix/) and one for
+  [advanced beginners](http://matt.might.net/articles/settling-into-unix/),
+  which are like the missing user's guide for the command line.
 * Remy Sharp has a
   [list of command line tools](https://remysharp.com/2018/08/23/cli-improved)
   better than their built-in counterparts.
