@@ -1,5 +1,11 @@
 # Resources
 
+This page provides a bevy of good self-learning resources for the platforms
+and langauges we use at Launch Pad. If you want further pointers, get in
+touch with your tech lead - they can direct you to more resources or to
+another Launch Pad member that knows more. And if you want to add even more
+resources, feel free to [make a pull request](../CONTRIBUTING.md).
+
 ## Python
 
 * [The Hitchhiker’s Guide to Python](https://docs.python-guide.org) is an
