@@ -40,3 +40,8 @@ A list of the tools we expect members to use can be found in [Tools](Tools.md).
 
 All other administrative details about Launch Pad, like how meetings and tickets
 run, are in [Administrivia](Administrivia.md).
+
+## Resources
+
+A list of helpful resources for the platforms and languages we use can be found
+in [Resources](Resources.md).
