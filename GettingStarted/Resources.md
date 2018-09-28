@@ -6,16 +6,6 @@ touch with your tech lead - they can direct you to more resources or to
 another Launch Pad member that knows more. And if you want to add even more
 resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
-## Python
-
-* Check out some of the
-  [projects at Launch Pad](https://github.com/ubclaunchpad?language=python)
-  that use Python!
-* [The Hitchhiker’s Guide to Python](https://docs.python-guide.org) is an
-  opinionated guide to best-practices Python development, from the creator of
-  [Requests](http://docs.python-requests.org/en/latest/), one of the most
-  popular Python libraries.
-
 ## Command Line
 
 * Remy Sharp has a
@@ -30,6 +20,24 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
 * git also has
   [autocomplete](https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks)
   scripts available - these will save you literally hours of your life.
+
+## Python
+
+* Check out some of the
+  [projects at Launch Pad](https://github.com/ubclaunchpad?language=python)
+  that use Python!
+* [The Hitchhiker’s Guide to Python](https://docs.python-guide.org) is an
+  opinionated guide to best-practices Python development, from the creator of
+  [Requests](http://docs.python-requests.org/en/latest/), one of the most
+  popular Python libraries.
+
+## Shell Scripting
+
+* [ShellCheck](https://www.shellcheck.net) is a bash shell script linter
+  that can be used online or via your command line.
+* Matt Might has a
+  [bash scripting tutorial](http://matt.might.net/articles/bash-by-example/)
+  that's comprehensive without being overwhelming.
 
 ## Cheatsheets
 
