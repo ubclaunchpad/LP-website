@@ -6,6 +6,12 @@ touch with your tech lead - they can direct you to more resources or to
 another Launch Pad member that knows more. And if you want to add even more
 resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
+## Repo Management
+
+* [Shields.io](https://shields.io/#/) provides a frankly massive number of
+  badges that you can put in your repo's README to show off your Travis builds,
+  website, license, issue tracking, and lots of other stuff!
+
 ## Command Line
 
 * Matt Might has a pair of Unix tutorials, one for
