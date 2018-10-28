@@ -1,0 +1,5 @@
+language: generic 
+install:
+    - gem install mdl
+script:
+    - mdl .
