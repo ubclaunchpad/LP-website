@@ -64,6 +64,7 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
   choice, you can't go wrong with this [vim cheat sheet](https://vim.rtorr.com).
 
 ## General Learning
+
 * The consulting firm Thoughtbot recently made their
   [Upcase learning platform](https://thoughtbot.com/upcase) free for everyone.
   It has a lot of short video lectures on a variety of topics, espcially
