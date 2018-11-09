@@ -11,6 +11,11 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
 * [Shields.io](https://shields.io/#/) provides a frankly massive number of
   badges that you can put in your repo's README to show off your Travis builds,
   website, license, issue tracking, and lots of other stuff!
+* [Pull Reminders](https://pullreminders.com) is a service that notifies you
+  over Slack of pull-request-related activity on your repos, and also has
+  lots of useful dashboards showing stats on review turnaround time, number
+  of reviews, and so on. Pull Reminders is already set up with Launch Pad's
+  repos, and we highly recommend enabling reminders!
 
 ## Command Line
 
@@ -57,3 +62,10 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
   of the above, but it can also be run from the command line.
 * If you want to learn vim, or just use a vim mode in the editor or IDE of your
   choice, you can't go wrong with this [vim cheat sheet](https://vim.rtorr.com).
+
+## General Learning
+
+* The consulting firm Thoughtbot recently made their
+  [Upcase learning platform](https://thoughtbot.com/upcase) free for everyone.
+  It has a lot of short video lectures on a variety of topics, espcially
+  Ruby and Vim, which can be quite useful for new developers.
