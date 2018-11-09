@@ -15,3 +15,10 @@ approved by Launch Pad tech leads!
   is a (sadly unfinished) book-length tutorial on buildling your own interpreter,
   from the ground up (including every single line of code!). The
   [Durian](https://github.com/ubclaunchpad/durian) made a lot of use of it!
+
+## Machine Learning
+
+* [Neural Networks and Machine Learning](http://neuralnetworksanddeeplearning.com)
+  is an overview of (deep) neural networks, one of the most popular techniques
+  for machine learning. It's written by Michael Nielsen, also known for one
+  of the standard quantum computing textbooks.
