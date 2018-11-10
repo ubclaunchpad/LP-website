@@ -18,3 +18,9 @@ of the tools we currently use, and administrative details about Launch Pad.
 
 Our [Development Bible](DevelopmentBible/) compiles hard-won advice about the
 best way to run (and participate in) a Launch Pad team and build great software.
+
+### 🧗 Exploration
+
+The [Exploration](Exploration/) section has Tech Lead-approved resources for
+those that want to explore more complicated topics like operating systems,
+programming languages, and machine learning.
