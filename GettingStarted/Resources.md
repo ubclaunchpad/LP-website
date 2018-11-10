@@ -46,6 +46,12 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
   [Requests](http://docs.python-requests.org/en/latest/), one of the most
   popular Python libraries.
 
+## Front End Development
+
+* Grab, an Uber competitor in Southeast Asia, has a great big
+  [guide to front end development](https://github.com/grab/front-end-guide/blob/master/README.md),
+  which covers everything from React to hosting and deployment.
+
 ## Shell Scripting
 
 * [ShellCheck](https://www.shellcheck.net) is a bash shell script linter
