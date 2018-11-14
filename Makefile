@@ -7,3 +7,7 @@ install:
 .PHONY: lint
 lint:
 	mdl .
+
+.PHONY: hook
+hook:
+	cp .hooks/pre-commit .git/hooks
