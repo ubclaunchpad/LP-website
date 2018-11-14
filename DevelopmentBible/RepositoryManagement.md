@@ -26,6 +26,17 @@ These are highly recommended - they make your README look much more professional
 For a fantastic example of a README page, check out Launch Pad's
 [Inertia](https://github.com/ubclaunchpad/inertia/blob/master/README.md) project.
 
+## Staying Up to Date
+
+Make sure your entire team is "Watching" your project repository - you can do
+this from the top right of the GitHub project page. This allows you to receive
+notifications in the web interface.
+
+If you do not like the GitHub notification emails, you can disable the emails
+and instead configure [Pull Reminders](https://pullreminders.com/) for yourself
+or for your team's channel. This can be done via the web interface or the Slack
+bot in the Launch Pad workspace - just shoot `@Pull Reminders` a message.
+
 ## Enforcing Standards
 
 You should enforce a clearly defined set of standards for your code;
