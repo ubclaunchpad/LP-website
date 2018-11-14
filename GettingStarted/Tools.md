@@ -12,6 +12,9 @@ for development and communication.
   lightweight code editor with a large ecosystem of extensions that provides
   integrations with almost every language under the sun. It's a great place to
   start if you are unsure!
+* [GitKraken](https://www.gitkraken.com/git-client) is a slick interface on top
+  of git that helps you visualize your commit graph and execute git commands
+  through an intuitive desktop application.
 
 ### Browser Plugins
 
