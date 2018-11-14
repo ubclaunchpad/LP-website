@@ -1,6 +1,6 @@
 # 🔍 Requirements & Scope
 
-## Minimum Viable Scope (MVP)
+## Minimum Viable Product (MVP)
 
 A project's scope should be **as minimal as possible** while maintaining core
 functionality. The scope should be defined in terms of must-have features

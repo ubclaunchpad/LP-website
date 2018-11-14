@@ -1,8 +1,27 @@
 # Tools & Technologies
 
-We use a variety of tools at Launch Pad for development and communication.
+This page covers some general recommended tools to help you get started with
+building awesome things, as well as some of the tech we use within Launch Pad
+for development and communication.
 
-## Slack
+## General Tools
+
+### Writing Code
+
+* [Visual Studio Code](https://code.visualstudio.com/) is an open-source,
+  lightweight code editor with a large ecosystem of extensions that provides
+  integrations with almost every language under the sun. It's a great place to
+  start if you are unsure!
+
+### Browser Plugins
+
+* The [Sourcegraph browser extension](https://docs.sourcegraph.com/integration/browser_extension)
+  offers IDE-like features such as documentation when you hover over code on
+  GitHub - super useful for reading code and making code reviews.
+
+## Tech @ Launch Pad
+
+### Slack
 
 We use Slack for team-wide communication, announcements, and project-specific
 coordination. Since we are on the free tier of Slack, messages eventually
@@ -16,7 +35,7 @@ You should also install Slack on your laptop and phone, turn on @mention
 notifications, and respond to messages promptly. Slack has apps available for
 all major platforms.
 
-## GitHub
+### GitHub
 
 We use GitHub to host, document, and manage the code in all our projects.
 
@@ -26,7 +45,7 @@ associated GitHub repository, and documentation for the project lives in that
 repository, either as version-controlled files (preferably in Markdown format
 like these) or in the wiki.
 
-## ZenHub
+### ZenHub & GitHub Projects
 
 [ZenHub](https://www.zenhub.com/) is an addition to GitHub that adds more
 advanced project management tools. We use ZenHub for tracking issues within
@@ -35,7 +54,11 @@ projects, assigning issues to members, and viewing project progress.
 You should install the ZenHub Chrome or Firefox extension and get acquainted with
 its features if you aren't already.
 
-## Rocket
+Alternatively, some teams at Launch Pad might use the built-in
+[GitHub project boards](https://help.github.com/articles/about-project-boards/)
+for team management - check with your tech lead to see what's in use!
+
+### Rocket
 
 [Rocket](https://github.com/ubclaunchpad/rocket) is our very own Slack bot, used
 for managing our roster across Slack, GitHub, and our website.
@@ -48,3 +71,15 @@ The name and position you provide, along with your Slack profile picture, will
 automatically show up on our website (once you've been added to a team).
 Providing your GitHub username allows Rocket to add you to the correct GitHub
 teams and repositories.
+
+### Pull Reminders
+
+[Pull Reminders](https://pullreminders.com/) is an awesome way to stay up to date
+on your team's project through notifications and pull request review reminders
+delivered straight to your Slack account. The website also features some slick
+graphs and leaderboards to help visualize your hard work and compare against
+your peers.
+
+You can configure Pull Reminders for your account through the website of the
+Slack bot - just shoot `@Pull Reminders` a message in the Launch Pad Slack
+workspace!

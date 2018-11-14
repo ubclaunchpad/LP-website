@@ -20,7 +20,18 @@ Make sure to fill out all parts of the pull request template.
 Also, check this repository's [issues](https://github.com/ubclaunchpad/docs/issues).
 If you think your PR affects an issue, you should reference it in your PR using
 `#` followed by the issue's number. For instance, if you think your PR closes
-issue #7, you should include the phrase "Closes #7" somewhere in your PR's description
-(this will automatically close the issue once your PR is merged),
-and if you think it affects but doesn't close it, you should include a phrase like
-"Affects #7".
+issue #7, you should include the phrase "Closes #7" somewhere in your PR's
+description (this will automatically close the issue once your PR is merged),
+and if you think it affects but doesn't close it, you should include a phrase
+like "Affects #7".
+
+## Scripts
+
+This repo offers a Makefile with some useful scripts that can be run using the
+`make` command.
+
+```
+make install  # installs our standard Markdown linter
+make lint     # runs the linter to check for style errors
+make hook     # installs the git commit hook that runs the linter before you commit
+```

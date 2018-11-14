@@ -1,5 +1,20 @@
 # 📦 Repository Management
 
+All project work (code or not), documentation, etc. should be done or tracked in
+a repository within the UBC Launch Pad GitHub organization. This page outlines
+general advice for how to maintain repositories.
+
+## Staying Up to Date
+
+Make sure your entire team is "Watching" your project repository - you can do
+this from the top right of the GitHub project page. This allows you to receive
+notifications in the web interface.
+
+If you do not like the GitHub notification emails, you can disable the emails
+and instead configure [Pull Reminders](https://pullreminders.com/) for yourself
+or for your team's channel. This can be done via the web interface or the Slack
+bot in the Launch Pad workspace - just shoot `@Pull Reminders` a message.
+
 ## README
 
 The primary source of truth for any repository should be the README.
