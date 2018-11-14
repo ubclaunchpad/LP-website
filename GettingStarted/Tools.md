@@ -45,7 +45,7 @@ associated GitHub repository, and documentation for the project lives in that
 repository, either as version-controlled files (preferably in Markdown format
 like these) or in the wiki.
 
-### ZenHub
+### ZenHub & GitHub Projects
 
 [ZenHub](https://www.zenhub.com/) is an addition to GitHub that adds more
 advanced project management tools. We use ZenHub for tracking issues within
@@ -53,6 +53,10 @@ projects, assigning issues to members, and viewing project progress.
 
 You should install the ZenHub Chrome or Firefox extension and get acquainted with
 its features if you aren't already.
+
+Alternatively, some teams at Launch Pad might use the built-in
+[GitHub project boards](https://help.github.com/articles/about-project-boards/)
+for team management - check with your tech lead to see what's in use!
 
 ### Rocket
 
