@@ -71,3 +71,15 @@ The name and position you provide, along with your Slack profile picture, will
 automatically show up on our website (once you've been added to a team).
 Providing your GitHub username allows Rocket to add you to the correct GitHub
 teams and repositories.
+
+### Pull Reminders
+
+[Pull Reminders](https://pullreminders.com/) is an awesome way to stay up to date
+on your team's project through notifications and pull request review reminders
+delivered straight to your Slack account. The website also features some slick
+graphs and leaderboards to help visualize your hard work and compare against
+your peers.
+
+You can configure Pull Reminders for your account through the website of the
+Slack bot - just shoot `@Pull Reminders` a message in the Launch Pad Slack
+workspace!
