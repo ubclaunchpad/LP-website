@@ -76,5 +76,5 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
   It has a lot of short video lectures on a variety of topics, espcially
   Ruby and Vim, which can be quite useful for new developers.
 * [every-programmer-should-know](https://github.com/mtdvio/every-programmer-should-know)
-  provides a collection of technical things every software developers should
+  provides a collection of technical things every software developer should
   know.
