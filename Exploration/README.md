@@ -3,6 +3,14 @@
 Ready to flex your mental muscles? Check out these learning resources,
 approved by Launch Pad tech leads!
 
+## Distributed Systems
+
+* The [Systems Design Primer](https://github.com/donnemartin/system-design-primer)
+  is a great big repo full of goodness that covers everything from
+  "what is a load balancer?" to "what kind of database should I use?" It
+  links to lots of real-world examples (mostly on company blogs) and also provides
+  a set of Anki flashcards (in case you're studying for an exam 😅).
+
 ## Operating Systems
 
 * [Operating Systems: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP/)
