@@ -5,6 +5,12 @@ to build software collaboratively. This document describes a recommended GitHub
 workflow for Launch Pad teams, as well as a basic intro on how to execute that
 workflow yourself.
 
+* [🛶 Git Workflow](#%F0%9F%9B%B6-git-workflow)
+  * [Updating Your Copy of the Codebase](#updating-your-copy-of-the-codebase)
+  * [Branches](#branches)
+  * [Developing and Committing Code](#developing-and-committing-code)
+  * [Pull Request](#pull-request)
+
 ## Updating Your Copy of the Codebase
 
 Most projects will have a primary branch, which will usually be called `master`.

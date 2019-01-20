@@ -9,6 +9,11 @@ An important part of the Scrum development methodology is sprint planning, where
 the team decides what issues they will work on for the next week or two.
 This document explains Launch Pad's sprint planning guidelines.
 
+* [🏃 Sprint Planning](#%F0%9F%8F%83-sprint-planning)
+  * [Backlog](#backlog)
+  * [Estimation](#estimation)
+  * [Scrum Meeting](#scrum-meeting)
+
 ## Backlog
 
 Before development on a project begins, the backlog should contain Epics that

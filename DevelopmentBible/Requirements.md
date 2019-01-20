@@ -1,5 +1,9 @@
 # 🔍 Requirements & Scope
 
+* [🔍 Requirements & Scope](#%F0%9F%94%8D-requirements--scope)
+  * [Minimum Viable Product (MVP)](#minimum-viable-product-mvp)
+  * [Managing Risk](#managing-risk)
+
 ## Minimum Viable Product (MVP)
 
 A project's scope should be **as minimal as possible** while maintaining core
