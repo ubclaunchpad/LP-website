@@ -1,17 +1,16 @@
-# 🎉 Getting Started
+# :tada: Getting Started
 
 Hello, and welcome to UBC Launch Pad!
 
 The documents in this directory explain what Launch Pad is, the tools we use,
 and what we expect from our members.
 
-* [🎉 Getting Started](#%F0%9F%8E%89-getting-started)
-  * [Vision Statement](#vision-statement)
-  * [What is UBC Launch Pad](#what-is-ubc-launch-pad)
-  * [Code of Conduct](#code-of-conduct)
-  * [Tools](#tools)
-  * [Administrivia](#administrivia)
-  * [Resources](#resources)
+* [Vision Statement](#vision-statement)
+* [What is UBC Launch Pad](#what-is-ubc-launch-pad)
+* [Code of Conduct](#code-of-conduct)
+* [Tools](#tools)
+* [Administrivia](#administrivia)
+* [Resources](#resources)
 
 ## Vision Statement
 

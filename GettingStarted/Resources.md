@@ -6,14 +6,13 @@ touch with your tech lead - they can direct you to more resources or to
 another Launch Pad member that knows more. And if you want to add even more
 resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
-* [Resources](#resources)
-  * [Programming Languages](#programming-languages)
-  * [Repo Management](#repo-management)
-  * [Command Line](#command-line)
-  * [Front End Development](#front-end-development)
-  * [Cheatsheets](#cheatsheets)
-  * [General Learning](#general-learning)
-  * [Windows](#windows)
+* [Programming Languages](#programming-languages)
+* [Repo Management](#repo-management)
+* [Command Line](#command-line)
+* [Front End Development](#front-end-development)
+* [Cheatsheets](#cheatsheets)
+* [General Learning](#general-learning)
+* [Windows](#windows)
 
 ## Programming Languages
 

@@ -3,12 +3,11 @@
 Ready to flex your mental muscles? Check out these learning resources,
 approved by Launch Pad tech leads!
 
-* [🧗 Exploration](#%F0%9F%A7%97-exploration)
-  * [Distributed Systems](#distributed-systems)
-  * [Operating Systems](#operating-systems)
-  * [Programming Languages](#programming-languages)
-  * [Machine Learning](#machine-learning)
-  * [Coding Challenge Practice](#coding-challenge-practice)
+* [Distributed Systems](#distributed-systems)
+* [Operating Systems](#operating-systems)
+* [Programming Languages](#programming-languages)
+* [Machine Learning](#machine-learning)
+* [Coding Challenge Practice](#coding-challenge-practice)
 
 ## Distributed Systems
 
