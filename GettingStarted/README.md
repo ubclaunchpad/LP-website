@@ -5,6 +5,14 @@ Hello, and welcome to UBC Launch Pad!
 The documents in this directory explain what Launch Pad is, the tools we use,
 and what we expect from our members.
 
+* [🎉 Getting Started](#%F0%9F%8E%89-getting-started)
+  * [Vision Statement](#vision-statement)
+  * [What is UBC Launch Pad](#what-is-ubc-launch-pad)
+  * [Code of Conduct](#code-of-conduct)
+  * [Tools](#tools)
+  * [Administrivia](#administrivia)
+  * [Resources](#resources)
+
 ## Vision Statement
 
 To be the leading university technology organization to ready our members for
@@ -43,5 +51,7 @@ run, are in [Administrivia](Administrivia.md).
 
 ## Resources
 
-A list of helpful resources for the platforms and languages we use can be found
+A list of helpful resources for the platforms and tools we use can be found
 in [Resources](Resources.md).
+
+For language-specific resources, go to [Lanaguages](/Languages.md)!
