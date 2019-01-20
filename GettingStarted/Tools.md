@@ -10,6 +10,7 @@ for development and communication.
     * [Browser Plugins](#browser-plugins)
   * [Tech @ Launch Pad](#tech--launch-pad)
     * [Slack](#slack)
+      * [Cool Channels](#cool-channels)
     * [GitHub](#github)
     * [ZenHub & GitHub Projects](#zenhub--github-projects)
     * [Rocket](#rocket)
@@ -48,6 +49,18 @@ you haven't!
 You should also install Slack on your laptop and phone, turn on @mention
 notifications, and respond to messages promptly. Slack has apps available for
 all major platforms.
+
+#### Cool Channels
+
+* `#programming-languages`: General discussion of programming languages and
+  related topics
+* `#graphics`: General discussion of computer graphics and animation
+* `#memes`: Name is self explanatory
+* `#rock-it-beats`: Music to code to!
+* `#interview-prep`: General interview prep discussion`
+* `#hackathon`: Find hackathon teams
+* `#tech-talks`: Talk about and sign up to do tech talks!
+* `#alumni`: Reach out to past LaunchPals
 
 ### GitHub
 
