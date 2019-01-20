@@ -14,6 +14,7 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
   * [Shell Scripting](#shell-scripting)
   * [Cheatsheets](#cheatsheets)
   * [General Learning](#general-learning)
+  * [Windows](#windows)
 
 ## Repo Management
 
@@ -87,3 +88,7 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
 * [every-programmer-should-know](https://github.com/mtdvio/every-programmer-should-know)
   provides a collection of technical things every software developer should
   know.
+
+## Windows
+
+* Having trouble with Windows? Try [dual booting Linux](x/Windows.md)!
