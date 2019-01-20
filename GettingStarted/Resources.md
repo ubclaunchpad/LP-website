@@ -6,6 +6,15 @@ touch with your tech lead - they can direct you to more resources or to
 another Launch Pad member that knows more. And if you want to add even more
 resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
+* [Resources](#resources)
+  * [Repo Management](#repo-management)
+  * [Command Line](#command-line)
+  * [Python](#python)
+  * [Front End Development](#front-end-development)
+  * [Shell Scripting](#shell-scripting)
+  * [Cheatsheets](#cheatsheets)
+  * [General Learning](#general-learning)
+
 ## Repo Management
 
 * [Shields.io](https://shields.io/#/) provides a frankly massive number of
