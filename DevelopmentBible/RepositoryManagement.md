@@ -1,5 +1,10 @@
 # 📦 Repository Management
 
+* [Staying Up to Date](#staying-up-to-date)
+* [README](#readme)
+* [Enforcing Standards](#enforcing-standards)
+* [Continuous Integration](#continuous-integration)
+
 All project work (code or not), documentation, etc. should be done or tracked in
 a repository within the UBC Launch Pad GitHub organization. This page outlines
 general advice for how to maintain repositories.

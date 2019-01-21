@@ -1,10 +1,23 @@
 # Resources
 
 This page provides a bevy of good self-learning resources for the platforms
-and langauges we use at Launch Pad. If you want further pointers, get in
+and tools we use at Launch Pad. If you want further pointers, get in
 touch with your tech lead - they can direct you to more resources or to
 another Launch Pad member that knows more. And if you want to add even more
 resources, feel free to [make a pull request](../CONTRIBUTING.md).
+
+* [Programming Languages](#programming-languages)
+* [Repo Management](#repo-management)
+* [Command Line](#command-line)
+* [Front End Development](#front-end-development)
+* [Cheatsheets](#cheatsheets)
+* [General Learning](#general-learning)
+* [Windows](#windows)
+
+## Programming Languages
+
+Looking for resources to a specific programming language? Drop by the
+[Languages](Languages.md) page!
 
 ## Repo Management
 
@@ -36,29 +49,11 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
   [autocomplete](https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks)
   scripts available - these will save you literally hours of your life.
 
-## Python
-
-* Check out some of the
-  [projects at Launch Pad](https://github.com/ubclaunchpad?language=python)
-  that use Python!
-* [The Hitchhiker’s Guide to Python](https://docs.python-guide.org) is an
-  opinionated guide to best-practices Python development, from the creator of
-  [Requests](http://docs.python-requests.org/en/latest/), one of the most
-  popular Python libraries.
-
 ## Front End Development
 
 * Grab, an Uber competitor in Southeast Asia, has a great big
   [guide to front end development](https://github.com/grab/front-end-guide/blob/master/README.md),
   which covers everything from React to hosting and deployment.
-
-## Shell Scripting
-
-* [ShellCheck](https://www.shellcheck.net) is a bash shell script linter
-  that can be used online or via your command line.
-* Matt Might has a
-  [bash scripting tutorial](http://matt.might.net/articles/bash-by-example/)
-  that's comprehensive without being overwhelming.
 
 ## Cheatsheets
 
@@ -71,6 +66,10 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
 ## General Learning
 
+* Launch Pad has its very own
+  [Medium](https://medium.com/ubc-launch-pad-software-engineering-blog)
+  publication! Talk to one of the co-presidents if you're interested in being
+  published and becoming famous.
 * The consulting firm Thoughtbot recently made their
   [Upcase learning platform](https://thoughtbot.com/upcase) free for everyone.
   It has a lot of short video lectures on a variety of topics, espcially
@@ -78,3 +77,7 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
 * [every-programmer-should-know](https://github.com/mtdvio/every-programmer-should-know)
   provides a collection of technical things every software developer should
   know.
+
+## Windows
+
+* Having trouble with Windows? Try [dual booting Linux](x/Windows.md)!
