@@ -54,7 +54,7 @@ all major platforms.
 * `#programming-languages`: General discussion of programming languages and
   related topics
 * `#graphics`: General discussion of computer graphics and animation
-* `#memes`: Name is self explanatory
+* `#memes`: What's life without some dank memes to spice it up?
 * `#rock-it-beats`: Music to code to!
 * `#interview-prep`: General interview prep discussion`
 * `#hackathon`: Find hackathon teams
