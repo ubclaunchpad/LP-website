@@ -1,19 +1,16 @@
 # How To Dual Boot Linux on Your Windows laptop
 
 <b>Overview</b>
-
 This document overviews the dual boot installation of Linux on your Windows laptop.  Having a dual boot system means that you can have both your Linux and Windows OS on your SSD or HDD such that when you start up your laptop, you can choose which operating system to run.  We will go over installing Xubuntu which is a lightweight Linux distribution (or distro for short),
 however there are many other distros and desktop environments you can install to tailor to your needs. Here are just a list of distros and desktop environments you can check out if you're interested:
 
 <b>Distros</b>
-
 - Debian
 - Fedora
 - OpenSUSE
 - Arch Linux
 
 <b>Desktop Environments</b>
-
 - Gnome 3
 - KDE
 - XFCE
@@ -21,7 +18,6 @@ however there are many other distros and desktop environments you can install to
 - Unity
 
 <b>Installation</b>
-
 Before going into the installation, remember that we're installing an OS that requires a significant amount of memory on your SSD/HDD.  You can choose to allocate a certain amount of memory on your drive during installation (I recommend 40GB if you're using it solely for LaunchPad work.  However if you'd like to use it as your main OS and you're planning on using several docker containers, a higher amount is advised).  If your laptop does not have that amount of space available, try uninstalling unnecessary programs on your Windows OS, move your personal pictures over to an external hard drive or USB stick, or anything else that can free up space.
 
 Also if you're afraid of wiping your Windows OS by accident, it'd be a good idea to back it up before installation using a program like CloneZilla from [here](https://clonezilla.org/).  However that has not happened to me and performing a dual boot installation is relatively safe unless you deviate from following the steps provided in the guides linked in this document.
@@ -32,7 +28,7 @@ Once you download the Xubuntu iso file using BitTorrent, you'll need a USB stick
 
 Then, you'll need to configure your computer such that it boots/starts up on your USB stick instead of your SSD.  This can be done by entering your computers BIOS system.  The BIOS is the program that your computer's microprocessor uses to get the computer system started after you turn it on. It also manages data flow between the computer's operating system and attached devices such as the hard disk, video adapter, keyboard, mouse and printer.  To enter your BIOS, you'll have to restart your computer and press either F9 or F2 or F10... it's dependent on your computer so you might need to google how to enter into your BIOS for your specific laptop. Once you end up in your computer's BIOS, use your arrow keys to navigate towards the boot menu section and then configure it such that you will boot from your usb stick (check out step 2 from [here](https://www.forbes.com/sites/jasonevangelho/2018/08/29/beginners-guide-how-to-install-ubuntu-linux/).  Once you've chosen for your computer to boot from usb, restart and you'll end up running from your USB with a GUI that will guide you through installing ubuntu on your SSD.  Follow the steps in forbes.com guide after that and your done installing Xubuntu!
 
-If you run into any problems, please pm me on Slack (ginsstaahh) or email me (matthewgin10@gmail.com) ;).
+If you run into any problems, get stuck anywhere, or see any ways to improve this document, please pm me on Slack (ginsstaahh) or email me (matthewgin10@gmail.com) ;).
 
 *This guide was originally written by [Matthew](https://github.com/ginsstaahh) and was been adapted from his guide
 [here](https://docs.google.com/document/d/1QtvBIruTP2Puw5sPeV5qvlwdJ848kXeTc2Iq3ZcqfXA/).*
