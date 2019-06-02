@@ -65,7 +65,7 @@ of each category of channel by searching for a prefix!
 
 ### Off-Topic (`#ot-`) Channels
 
-* [`#ot-secondhand`](https://ubclaunchpad.slack.com/messages/CJVFFGYUT/): UBC
+* [`#ot-buy-and-sell`](https://ubclaunchpad.slack.com/messages/CJVFFGYUT/): UBC
   Launch Pad buy and sell!
 * [`#ot-memes`](https://ubclaunchpad.slack.com/messages/CFBN3BX8Q/): What's life
   without some dank memes to spice it up?
