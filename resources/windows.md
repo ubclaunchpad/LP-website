@@ -1,34 +1,99 @@
-# How To Dual Boot Linux on Your Windows laptop
+# Windows
 
-<b>Overview</b>
-This document overviews the dual boot installation of Linux on your Windows laptop.  Having a dual boot system means that you can have both your Linux and Windows OS on your SSD or HDD such that when you start up your laptop, you can choose which operating system to run.  We will go over installing Xubuntu which is a lightweight Linux distribution (or distro for short),
-however there are many other distros and desktop environments you can install to tailor to your needs. Here are just a list of distros and desktop environments you can check out if you're interested:
+This page documents helpful resources for working with
+[Windows](https://www.microsoft.com/en-us/windows), Microsoft's operating system.
 
-<b>Distros</b>
-- Debian
-- Fedora
-- OpenSUSE
-- Arch Linux
+* [Windows Linux Subsystem](#windows-linux-subsystem)
+* [How To Dual Boot Linux on Your Windows Device](#how-to-dual-boot-linux-on-your-windows-device)
+  * [Overview](#overview)
+    * [Distros](#distros)
+    * [Desktop Environments](#desktop-environments)
+  * [Installation](#installation)
 
-<b>Desktop Environments</b>
-- Gnome 3
-- KDE
-- XFCE
-- LXDE
-- Unity
+## Windows Linux Subsystem
 
-<b>Installation</b>
-Before going into the installation, remember that we're installing an OS that requires a significant amount of memory on your SSD/HDD.  You can choose to allocate a certain amount of memory on your drive during installation (I recommend 40GB if you're using it solely for LaunchPad work.  However if you'd like to use it as your main OS and you're planning on using several docker containers, a higher amount is advised).  If your laptop does not have that amount of space available, try uninstalling unnecessary programs on your Windows OS, move your personal pictures over to an external hard drive or USB stick, or anything else that can free up space.
+*This section needs help! See [#38](https://github.com/ubclaunchpad/docs/issues/38).*
 
-Also if you're afraid of wiping your Windows OS by accident, it'd be a good idea to back it up before installation using a program like CloneZilla from [here](https://clonezilla.org/).  However that has not happened to me and performing a dual boot installation is relatively safe unless you deviate from following the steps provided in the guides linked in this document.
+Windows now has a "Linux Subsystem" that might come in useful for Windows users.
+Installation instructions can be found [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
-You'll need to download the Xubuntu 18.04 from [here](https://xubuntu.org/download).  Preferrably you should download the torrent from the Xubuntu website and use a torrent program like BitTorrent from [here](https://www.bittorrent.com/downloads/win).  BitTorrent is a program that allows you to download large files from the internet given a torrent file, which in our case would be the one obtained from the xubuntu website.  Here's a guide on [how to use BitTorrent](https://www.dailydot.com/debug/how-to-use-bittorrent/).  Don't install the anti-virus because you wont need it if you're torrenting from a safe website like xubuntu.  You also should stop seeding after a day once you're done the download (seeding helps other people using BitTorrent to download the same files by giving them some of your internet connection/bandwidth).
+## How To Dual Boot Linux on Your Windows Device
 
-Once you download the Xubuntu iso file using BitTorrent, you'll need a USB stick and Rufus (get it from [here] https://rufus.ie/en_IE.html) to burn the iso file onto the USB stick in order to make it a bootable Ubuntu USB stick. The usb stick will allow you to try out Xubuntu, as well as install it onto your SSD/HDD. [Instructions](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows#0).
+> This guide was originally written by [Matthew](https://github.com/ginsstaahh)
+> (`@ginsstaahh`, `matthewgin10@gmail.com`).
 
-Then, you'll need to configure your computer such that it boots/starts up on your USB stick instead of your SSD.  This can be done by entering your computers BIOS system.  The BIOS is the program that your computer's microprocessor uses to get the computer system started after you turn it on. It also manages data flow between the computer's operating system and attached devices such as the hard disk, video adapter, keyboard, mouse and printer.  To enter your BIOS, you'll have to restart your computer and press either F9 or F2 or F10... it's dependent on your computer so you might need to google how to enter into your BIOS for your specific laptop. Once you end up in your computer's BIOS, use your arrow keys to navigate towards the boot menu section and then configure it such that you will boot from your usb stick (check out step 2 from [here](https://www.forbes.com/sites/jasonevangelho/2018/08/29/beginners-guide-how-to-install-ubuntu-linux/).  Once you've chosen for your computer to boot from usb, restart and you'll end up running from your USB with a GUI that will guide you through installing ubuntu on your SSD.  Follow the steps in forbes.com guide after that and your done installing Xubuntu!
+### Overview
 
-If you run into any problems, get stuck anywhere, or see any ways to improve this document, please pm me on Slack (ginsstaahh) or email me (matthewgin10@gmail.com) ;).
+This document overviews the dual boot installation of Linux on your Windows device.
+Having a dual boot system means that you can have both your Linux and Windows OS
+on your SSD or HDD such that when you start up your laptop, you can choose which
+operating system to run.  We will go over installing Xubuntu which is a lightweight
+Linux distribution (or distro for short), however there are many other distros
+and desktop environments you can install to tailor to your needs. Here are just
+a list of distros and desktop environments you can check out if you're interested:
 
-*This guide was originally written by [Matthew](https://github.com/ginsstaahh) and was been adapted from his guide
-[here](https://docs.google.com/document/d/1QtvBIruTP2Puw5sPeV5qvlwdJ848kXeTc2Iq3ZcqfXA/).*
+#### Distros
+
+* Debian
+* Fedora
+* OpenSUSE
+* Arch Linux
+
+#### Desktop Environments
+
+* Gnome 3
+* KDE
+* XFCE
+* LXDE
+* Unity
+
+### Installation
+
+Before going into the installation, remember that we're installing an OS that
+requires a significant amount of memory on your SSD/HDD.  You can choose to
+allocate a certain amount of memory on your drive during installation (I recommend
+40GB if you're using it solely for LaunchPad work.  However if you'd like to use
+it as your main OS and you're planning on using several docker containers, a
+higher amount is advised).  If your laptop does not have that amount of space
+available, try uninstalling unnecessary programs on your Windows OS, move your
+personal pictures over to an external hard drive or USB stick, or anything else
+that can free up space.
+
+Also if you're afraid of wiping your Windows OS by accident, it'd be a good idea
+to back it up before installation using a program like CloneZilla from
+[here](https://clonezilla.org/).  However that has not happened to me and
+performing a dual boot installation is relatively safe unless you deviate from
+following the steps provided in the guides linked in this document.
+
+You'll need to download the Xubuntu 18.04 from [here](https://xubuntu.org/download).
+Preferrably you should download the torrent from the Xubuntu website and use a
+torrent program like BitTorrent from [here](https://www.bittorrent.com/downloads/win).
+BitTorrent is a program that allows you to download large files from the internet
+given a torrent file, which in our case would be the one obtained from the xubuntu
+website. Here's a guide on [how to use BitTorrent](https://www.dailydot.com/debug/how-to-use-bittorrent/).
+Don't install the anti-virus because you wont need it if you're torrenting from
+a safe website like xubuntu.  You also should stop seeding after a day once you're
+done the download (seeding helps other people using BitTorrent to download the
+same files by giving them some of your internet connection/bandwidth).
+
+Once you download the Xubuntu iso file using BitTorrent, you'll need a USB stick
+and Rufus (get it from [here](https://rufus.ie/en_IE.html)) to burn the iso file
+onto the USB stick in order to make it a bootable Ubuntu USB stick. The USB stick
+will allow you to try out Xubuntu, as well as install it onto your SSD/HDD. [Instructions](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows#0).
+
+Then, you'll need to configure your computer such that it boots/starts up on your
+USB stick instead of your SSD. This can be done by entering your computers BIOS
+system. The BIOS is the program that your computer's microprocessor uses to get
+the computer system started after you turn it on. It also manages data flow
+between the computer's operating system and attached devices such as the hard
+disk, video adapter, keyboard, mouse and printer.  To enter your BIOS, you'll
+have to restart your computer and press either F9 or F2 or F10... it's dependent
+on your computer so you might need to google how to enter into your BIOS for your
+specific laptop. Once you end up in your computer's BIOS, use your arrow keys to
+navigate towards the boot menu section and then configure it such that you will
+boot from your usb stick (check out step 2 from
+[here](https://www.forbes.com/sites/jasonevangelho/2018/08/29/beginners-guide-how-to-install-ubuntu-linux/).
+Once you've chosen for your computer to boot from usb, restart and you'll end up
+running from your USB with a GUI that will guide you through installing ubuntu
+on your SSD. Follow the steps in forbes.com guide after that and your done
+installing Xubuntu!
