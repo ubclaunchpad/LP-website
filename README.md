@@ -25,7 +25,19 @@ you get started and keep learning.
 The [Project Management](project-management/) pages compile hard-won advice about
 the best way to run (and participate in) a Launch Pad team and build great software.
 
-## Other Repos
+## More Stuff
+
+### Nifty Websites
+
+* [Slides](https://slides.ubclaunchpad.com/) contains slideshow decs for most
+  UBC Launch Pad presentations and workshops, both internal and external.
+* We have a [Medium publication](https://medium.com/ubc-launch-pad-software-engineering-blog)
+  where we write about Launch Pad, its projects, and other cool stuff!
+* Check out our [Facebook page](https://www.facebook.com/ubclaunchpad/) and
+  [Instagram](https://www.instagram.com/ubclaunchpad/) for updates!
+* See our projects on our [GitHub organization](https://github.com/ubclaunchpad)!
+
+### Useful Repositories
 
 There are a number of other important repositories that provide places
 for documentation and discussion. Note that these are all private to
