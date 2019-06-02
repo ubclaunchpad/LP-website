@@ -1,4 +1,4 @@
-# 🔍 Requirements & Scope
+# 🔍 Project Scope
 
 This document outlines advice on how to manage projects requirements and scope.
 

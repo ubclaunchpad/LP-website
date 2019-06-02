@@ -1,5 +1,7 @@
 # Docs
 
+Welcome to the UBC Launch Pad knowledge base!
+
 All Launch Pad-wide documentation lives in this repo. The goal of this
 repository is to gather advice, resources, best practices, and more for everyone
 to refer to. If you feel any of this documentation is unclear, out of date, or
@@ -8,22 +10,20 @@ or [pull request](https://github.com/ubclaunchpad/docs/compare)!
 
 ## Contents
 
-### 🎉 Getting Started
+### 🎉 Manifesto
 
-[Getting Started](GettingStarted/) contains everything new developers need to
-get productive at Launch Pad, including introductions to team structure, a list
-of the tools we currently use, and administrative details about Launch Pad.
+The [Manifesto](manifesto/) outlines what Launch Pad's mission, vision, and how
+we are run.
 
-### 📖 Development Bible
+### 🧗 Resources
 
-Our [Development Bible](DevelopmentBible/) compiles hard-won advice about the
-best way to run (and participate in) a Launch Pad team and build great software.
+[Resources](resources/) provides helpful guides, tools, and resources to help
+you get started and keep learning.
 
-### 🧗 Exploration
+### Project Management
 
-The [Exploration](Exploration/) section has Tech Lead-approved resources for
-those that want to explore more complicated topics like operating systems,
-programming languages, and machine learning.
+The [Project Management](project-management/) pages compile hard-won advice about
+the best way to run (and participate in) a Launch Pad team and build great software.
 
 ## Other Repos
 
@@ -42,3 +42,17 @@ the org, talk to your Tech Lead or one of the Presidents.
 * [Tech Leads](https://github.com/ubclaunchpad/tech-leads): A repo for Tech
   Lead-specific content, such as meeting notes. Note that this repo is only
   visible to Tech Leads.
+
+## Get in Touch
+
+Please feel free to reach out if you have any questions about Launch Pad or the
+documentation here:
+
+* Shoot us an email at [team@ubclaunchpad.com](team@ubclaunchpad.com)
+* Get in touch via our [Facebook](https://www.facebook.com/ubclaunchpad/) or
+  [Instagram](https://www.instagram.com/ubclaunchpad/) pages
+* [Issues](https://github.com/ubclaunchpad/docs/issues/new) or
+  [pull requests](https://github.com/ubclaunchpad/docs/compare) are always welcome
+
+If you are a member of Launch Pad, feel free to drop questions for Launch Pad
+leadership at [#ask-leadership](https://ubclaunchpad.slack.com/messages/CK935RD3Q/).
