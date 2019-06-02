@@ -6,18 +6,37 @@ touch with your tech lead - they can direct you to more resources or to
 another Launch Pad member that knows more. And if you want to add even more
 resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
+* [Git Workflow](#git-workflow)
 * [Programming Languages](#programming-languages)
+* [Tools](#tools)
+* [Deployment](#deployment)
 * [Repo Management](#repo-management)
 * [Command Line](#command-line)
 * [Front End Development](#front-end-development)
 * [Cheatsheets](#cheatsheets)
 * [General Learning](#general-learning)
+* [Exploration](#exploration)
 * [Windows](#windows)
+
+## Git Workflow
+
+A recommended git/GitHub collaborative development workflow is introduced in
+[Git Workflow](git-workflow.md).
 
 ## Programming Languages
 
 Looking for resources to a specific programming language? Drop by the
-[Languages](Languages.md) page!
+[Languages](./languages.md) page!
+
+## Tools
+
+Boost your productivity and learn about the tools we use at Launch Pad over in
+the [Tools](tools/) pages!
+
+## Deployment
+
+Want to make your project available to the world? Head on over to our
+[Deployment](./deployment.md) section!
 
 ## Repo Management
 
@@ -77,6 +96,12 @@ Looking for resources to a specific programming language? Drop by the
 * [every-programmer-should-know](https://github.com/mtdvio/every-programmer-should-know)
   provides a collection of technical things every software developer should
   know.
+
+## Exploration
+
+The [Exploration](./exploration.md) section has Tech Lead-approved resources for
+those that want to explore more complicated topics like operating systems,
+programming languages, and machine learning.
 
 ## Windows
 
