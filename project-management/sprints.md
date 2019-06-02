@@ -1,4 +1,4 @@
-# 🏃 Sprint Planning
+# 🏃 Sprints
 
 Launch Pad uses agile software development, as is common in industry. In
 particular, Launch Pad uses a mixture of the Scrum and Kanban methodologies.
