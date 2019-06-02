@@ -12,8 +12,8 @@ or [pull request](https://github.com/ubclaunchpad/docs/compare)!
 
 ### 🎉 Manifesto
 
-The [Manifesto](manifesto/) outlines what Launch Pad's mission, vision, and how
-we are run.
+The [Manifesto](manifesto/) outlines Launch Pad's mission, vision, and how we are
+run.
 
 ### 🧗 Resources
 
