@@ -54,6 +54,8 @@ the org, talk to your Tech Lead or one of the Presidents.
 * [Tech Leads](https://github.com/ubclaunchpad/tech-leads): A repo for Tech
   Lead-specific content, such as meeting notes. Note that this repo is only
   visible to Tech Leads.
+* [Alumni Directory](https://github.com/ubclaunchpad/alumni-directory): An
+  internal directory with past Launch Pad members and what they are doing now.
 
 ## Get in Touch
 
