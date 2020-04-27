@@ -20,7 +20,7 @@ run.
 [Resources](resources/) provides helpful guides, tools, and resources to help
 you get started and keep learning.
 
-### Project Management
+### 👨‍💼 Project Management
 
 The [Project Management](project-management/) pages compile hard-won advice about
 the best way to run (and participate in) a Launch Pad team and build great software.
@@ -56,6 +56,11 @@ the org, talk to your Tech Lead or one of the Presidents.
   visible to Tech Leads.
 * [Alumni Directory](https://github.com/ubclaunchpad/alumni-directory): An
   internal directory with past Launch Pad members and what they are doing now.
+* [`ubclaunchpad.com`](https://github.com/ubclaunchpad/ubclaunchpad.com): This
+  repository houses the source code for [ubclaunchpad.com](https://ubclaunchpad.com),
+  as well as documentation on how to use it (for example, to add `ubclaunchpad.com/...`
+  redirect links), how to update its content (for example, to change the website's
+  featured teams or update recruitment status), and how to make your own contributions!
 
 ## Get in Touch
 
