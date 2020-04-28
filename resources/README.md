@@ -66,7 +66,7 @@ Want to make your project available to the world? Head on over to our
 
 ### Vue
 
-* The official UBC Launch Pad website is written in Vue + TypeScript the repository
+* The official UBC Launch Pad website is written in Vue and TypeScript, and the repository
   includes [introductory documentation on working with Vue and TypeScript](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/CONTRIBUTING.md#development)
 
 ## Cheatsheets
