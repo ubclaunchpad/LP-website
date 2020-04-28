@@ -29,6 +29,14 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
   * [Concurrency](https://golang.org/doc/effective_go.html?#concurrency)
   * [Examples](https://gobyexample.com/) - lots of great short snippets here!
 
+## JavaScript
+
+* Check out some of the [projects at Launch Pad](https://github.com/ubclaunchpad?language=javascript) that use JavaScript!
+
+## TypeScript
+
+* Check out some of the [projects at Launch Pad](https://github.com/search?q=topic%3Atypescript+org%3Aubclaunchpad&type=Repositories) that use TypeScript!
+
 ## Shell Scripting
 
 * [ShellCheck](https://www.shellcheck.net) is a bash shell script linter
@@ -36,3 +44,4 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
 * Matt Might has a
   [bash scripting tutorial](http://matt.might.net/articles/bash-by-example/)
   that's comprehensive without being overwhelming.
+* Check out some [shell scripts used by projects at Launch Pad](https://sourcegraph.com/search?q=repo:ubclaunchpad/*+lang:shell&patternType=literal)
