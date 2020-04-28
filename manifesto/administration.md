@@ -4,14 +4,6 @@ This document pertains to the administrative side of managing Launch Pad teams,
 such as team structure, meeting schedules, the roles of different teams, and
 participation requirements.
 
-* [Team Structure](#team-structure)
-  * [Development Teams](#development-teams)
-  * [Design Team](#design-team)
-  * [Strategy Team](#strategy-team)
-* [Meetings](#meetings)
-* [Tickets](#tickets)
-* [Absence & Neglected Tickets](#absence--neglected-tickets)
-
 ## Team Structure
 
 ### Development Teams

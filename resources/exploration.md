@@ -3,12 +3,6 @@
 Ready to flex your mental muscles? Check out these learning resources,
 approved by Launch Pad tech leads!
 
-* [Distributed Systems](#distributed-systems)
-* [Operating Systems](#operating-systems)
-* [Programming Languages](#programming-languages)
-* [Machine Learning](#machine-learning)
-* [Coding Challenge Practice](#coding-challenge-practice)
-
 ## Distributed Systems
 
 * The [Systems Design Primer](https://github.com/donnemartin/system-design-primer)

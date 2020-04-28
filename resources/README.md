@@ -6,18 +6,6 @@ touch with your tech lead - they can direct you to more resources or to
 another Launch Pad member that knows more. And if you want to add even more
 resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
-* [Git Workflow](#git-workflow)
-* [Programming Languages](#programming-languages)
-* [Tools](#tools)
-* [Deployment](#deployment)
-* [Repo Management](#repo-management)
-* [Command Line](#command-line)
-* [Front End Development](#front-end-development)
-* [Cheatsheets](#cheatsheets)
-* [General Learning](#general-learning)
-* [Exploration](#exploration)
-* [Windows](#windows)
-
 ## Git Workflow
 
 A recommended git/GitHub collaborative development workflow is introduced in

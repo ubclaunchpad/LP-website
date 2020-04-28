@@ -4,14 +4,6 @@ This page covers some general recommended tools to help you get started with
 building awesome things, as well as some of the tech we use within Launch Pad
 for development and communication.
 
-* [General Tools](#general-tools)
-  * [Writing Code](#writing-code)
-  * [Browser Plugins](#browser-plugins)
-* [Tech @ Launch Pad](#tech--launch-pad)
-  * [Slack](#slack)
-  * [GitHub](#github)
-  * [Deploying Services](#deploying-services)
-
 ## General Tools
 
 ### Writing Code

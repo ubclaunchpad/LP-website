@@ -13,5 +13,5 @@ module.exports = {
     docsRepo: 'ubclaunchpad/docs',
     editLinks: true,
     editLinkText: 'Help us improve this page!'
-  }
+  },
 }
