@@ -40,3 +40,8 @@ npm run lint     # runs the linter to check for style errors
 npm run hooks    # installs the git commit hook that runs the linter before you commit
 npm run serve    # runs the website locally
 ```
+
+## VuePress
+
+This website is based on [VuePress](https://vuepress.vuejs.org/guide/) - refer to the
+VuePress documentation for more details.

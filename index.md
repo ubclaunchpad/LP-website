@@ -15,7 +15,7 @@ features:
 footer: UBC Launch Pad is a student-run software engineering club based in the University of British Columbia.
 ---
 
----
+--- <!-- ignore markdownlint warning on this divider - it's here for aesthetic reasons -->
 
 <br />
 
