@@ -58,9 +58,16 @@ Want to make your project available to the world? Head on over to our
 
 ## Front End Development
 
+### General
+
 * Grab, an Uber competitor in Southeast Asia, has a great big
   [guide to front end development](https://github.com/grab/front-end-guide/blob/master/README.md),
   which covers everything from React to hosting and deployment.
+
+### Vue
+
+* The official UBC Launch Pad website is written in Vue + TypeScript the repository
+  includes [introductory documentation on working with Vue and TypeScript](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/CONTRIBUTING.md#development)
 
 ## Cheatsheets
 
