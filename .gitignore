@@ -1,3 +1,7 @@
+# Vuepress stuff
+package-lock.json
+node_modules
+dist
 
 # Created by https://www.gitignore.io/api/osx,sublimetext,windows
 

@@ -30,8 +30,9 @@ like "Affects #7".
 This repo offers a Makefile with some useful scripts that can be run using the
 `make` command.
 
-```
-make install  # installs our standard Markdown linter
+```sh
+make install  # installs our standard Markdown linter and site builder
 make lint     # runs the linter to check for style errors
 make hook     # installs the git commit hook that runs the linter before you commit
+make serve    # runs the website locally
 ```
