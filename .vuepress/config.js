@@ -14,4 +14,5 @@ module.exports = {
     editLinks: true,
     editLinkText: 'Help us improve this page!'
   },
+  plugins: ['fulltext-search'],
 }
