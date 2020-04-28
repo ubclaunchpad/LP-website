@@ -8,13 +8,12 @@ labels as appropriate.
 If you want to make a change yourself, you'll need to make a pull request.
 To do that:
 
-* Create a new branch locally.
-* Make changes and commit them (make sure you have
+1. Create a new branch locally.
+2. Make changes and commit them (make sure you have
   [good commit messages](https://chris.beams.io/posts/git-commit/#seven-rules)!).
-* Run `make lint` (or just `make`, if you don't have mdl installed yet)
-  to ensure your code follows our Markdown style rules.
-* Push your local branch to the remote repository.
-* Make a pull request on GitHub's web interface.
+3. Run `npm install` and `npm run lint` to ensure your code follows our Markdown style rules.
+4. Push your local branch to the remote repository.
+5. Make a pull request on GitHub's web interface.
 
 Make sure to fill out all parts of the pull request template.
 Also, check this repository's [issues](https://github.com/ubclaunchpad/docs/issues).
@@ -27,12 +26,11 @@ like "Affects #7".
 
 ## Scripts
 
-This repo offers a Makefile with some useful scripts that can be run using the
-`make` command.
+This repo offers some `package.json` scripts to help you out:
 
 ```sh
-make install  # installs our standard Markdown linter and site builder
-make lint     # runs the linter to check for style errors
-make hook     # installs the git commit hook that runs the linter before you commit
-make serve    # runs the website locally
+npm install      # installs our standard Markdown linter and site builder
+npm run lint     # runs the linter to check for style errors
+npm run hooks    # installs the git commit hook that runs the linter before you commit
+npm run serve    # runs the website locally
 ```
