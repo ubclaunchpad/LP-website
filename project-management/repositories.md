@@ -15,7 +15,7 @@ and instead configure [Pull Reminders](https://pullreminders.com/) for yourself
 or for your team's channel. This can be done via the web interface or the Slack
 bot in the Launch Pad workspace - just shoot `@Pull Reminders` a message.
 
-## README
+## Repository README
 
 The primary source of truth for any repository should be the README.
 
@@ -68,24 +68,30 @@ means of ensuring simple setup and standardized development/build environments.
 ## Continuous Integration
 
 You should have a continuous integration system in place to ensure that new code
-is tested and meets team standards. Launch Pad recommends
-[Travis CI](https://travis-ci.org), which is free for open-source repositories;
-our GitHub organization is already connected to Travis and a number of project
-use it currently.
+is tested and meets team standards.
 
-Your CI process should run automated tests, linters, code style enforcers, and
-anything else that can be automated and help maintain high code quality. Tests
-in particular help make sure that even when refactors or major changes are made,
-you can trust that most of your code base still behaves as expected, which means
-you spend less time chasing down obscure bugs, and allows you more freedom when
-improving your project's codebase.
+Your continuous integration (CI) process should run automated tests, linters,
+code style enforcers, and anything else that can be automated and help maintain
+high code quality. Tests in particular help make sure that even when refactors or
+major changes are made, you can trust that most of your code base still behaves
+as expected, which means you spend less time chasing down obscure bugs, and allows
+you more freedom when improving your project's codebase.
+
+### CI Platform
+
+Launch Pad currently recommends [GitHub Actions](https://github.com/features/actions).
+To get started, refer to:
+
+* [official Actions Workflows documentation](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions)
+* [Actions Workflows in use at Launch Pad](https://sourcegraph.com/search?q=repo:ubclaunchpad/*+file:.github/workflows&patternType=literal)
+
+### Code Coverage
 
 Code coverage of tests in particular is very valuable to collect during your CI
 builds. It's particularly recommended to enforce a minimum threshold for code
 coverage (though this does not guarantee that you have good tests!). Sites that
 provide code coverage dashboards are a convenient way to summarize this data; we
-currently recommend [Codecov](https://codecov.io/), or alternatively
-[Coveralls](https://coveralls.io).
+currently recommend [Codecov](https://codecov.io/).
 
 Ideally documentation about the inner workings of the tool should lie as close
 to the code it describes as possible.
