@@ -1,0 +1,16 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "📚 The official UBC Launch Pad knowledge base",
+  "scripts": {
+    "serve": "vuepress dev",
+    "build": "vuepress build",
+    "hooks": "cp .hooks/pre-commit .git/hooks",
+    "lint": "markdownlint . --ignore node_modules --ignore index.md"
+  },
+  "dependencies": {
+    "markdownlint": "^0.20.2",
+    "markdownlint-cli": "^0.22.0",
+    "vuepress": "^1.4.1"
+  }
+}

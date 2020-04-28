@@ -2,9 +2,6 @@
 
 This document outlines advice on how to manage projects requirements and scope.
 
-* [Minimum Viable Product (MVP)](#minimum-viable-product-mvp)
-* [Managing Risk](#managing-risk)
-
 ## Minimum Viable Product (MVP)
 
 A project's scope should be **as minimal as possible** while maintaining core

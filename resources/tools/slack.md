@@ -1,14 +1,5 @@
 # Slack
 
-* [Slack Best Practices](#slack-best-practices)
-* [Finding Channels](#finding-channels)
-  * [Community of Practice (`#cop-`) Channels](#community-of-practice-cop--channels)
-  * [Off-Topic (`#ot-`) Channels](#off-topic-ot--channels)
-  * [Ask Leadership and Teams (`#ask-`) Channels](#ask-leadership-and-teams-ask--channels)
-* [Bots & Apps](#bots--apps)
-  * [Rocket](#rocket)
-  * [Pull Reminders](#pull-reminders)
-
 We use Slack for team-wide communication, announcements, and project-specific
 coordination. The workspace can be found [here](https://ubclaunchpad.slack.com).
 You should receive an invite in your email to join the workspace - if you haven't,

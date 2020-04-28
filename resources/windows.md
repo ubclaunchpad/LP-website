@@ -3,13 +3,6 @@
 This page documents helpful resources for working with
 [Windows](https://www.microsoft.com/en-us/windows), Microsoft's operating system.
 
-* [Windows Linux Subsystem](#windows-linux-subsystem)
-* [How To Dual Boot Linux on Your Windows Device](#how-to-dual-boot-linux-on-your-windows-device)
-  * [Overview](#overview)
-    * [Distros](#distros)
-    * [Desktop Environments](#desktop-environments)
-  * [Installation](#installation)
-
 ## Windows Linux Subsystem
 
 *This section needs help! See [#38](https://github.com/ubclaunchpad/docs/issues/38).*

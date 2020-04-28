@@ -3,7 +3,9 @@
 This page outlines tips, resources, and tools for getting your team's project
 deployed and running!
 
-*This section is a work in progress.*
+::: warning
+This section is a work in progress.
+:::
 
 ## Inertia
 

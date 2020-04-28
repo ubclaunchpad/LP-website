@@ -5,10 +5,6 @@ in touch with your tech lead - they can direct you to more resources or to
 another Launch Pad member that knows more. And if you want to add even more
 resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
-* [Python](#python)
-* [Golang](#golang)
-* [Shell Scripting](#shell-scripting)
-
 ## Python
 
 * Check out some of the
