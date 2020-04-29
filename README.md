@@ -1,6 +1,37 @@
-# ubclaunchpad/docs
+<p align="center">
+  <a href="https://docs.ubclaunchpad.com">
+    <img src="./assets/homepage.png" width="50%" alt="homepage"/>
+  </a>
+</p>
 
-This repository contains the contents of the website hosted at [docs.ubclaunchpad.com](https://docs.ubclaunchpad.com), UBC Launch Pad's official knowledge base.
+<h3 align="center">
+  <a href="https://docs.ubclaunchpad.com">docs.ubclaunchpad.com</a>
+</h3>
+
+<p align="center">
+  The repository contains the contents of UBC Launch Pad's official knowledge base.
+</p>
+
+<br>
+
+<p align="center">
+  <a href="https://github.com/ubclaunchpad/docs/actions?workflow=Checks">
+    <img src="https://github.com/ubclaunchpad/docs/workflows/Checks/badge.svg"
+      alt="Checks Status" />
+  </a>
+  <a href="https://github.com/ubclaunchpad/docs/actions?workflow=Deploys">
+    <img src="https://github.com/ubclaunchpad/docs/workflows/Deploy/badge.svg"
+      alt="Deploy Status" />
+  </a>
+  <a href="https://docs.ubclaunchpad.com">
+    <img src="https://img.shields.io/website/https/docs.ubclaunchpad.com.svg"
+      alt="Website Status"/>
+  </a>
+</p>
+
+<!-- markdownlint-disable -->
+
+## ⚒️ Contributing
 
 To get started:
 
@@ -11,4 +42,4 @@ npm install    # install dependencies
 npm run serve  # run website locally
 ```
 
-Head on over to [CONTRIBUTING](./CONTRIBUTING.md) for more details!
+Head on over to [Contribution Guide](./CONTRIBUTING.md) for more details!
