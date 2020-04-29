@@ -12,8 +12,6 @@
   UBC Launch Pad's official knowledge base.
 </p>
 
-<br>
-
 <p align="center">
   <a href="https://github.com/ubclaunchpad/docs/actions?workflow=Checks">
     <img src="https://github.com/ubclaunchpad/docs/workflows/Checks/badge.svg"
@@ -28,6 +26,8 @@
       alt="Website Status"/>
   </a>
 </p>
+
+<br />
 
 <!-- markdownlint-disable -->
 
