@@ -9,7 +9,7 @@
 </h3>
 
 <p align="center">
-  The repository contains the contents of UBC Launch Pad's official knowledge base.
+  UBC Launch Pad's official knowledge base.
 </p>
 
 <br>
@@ -38,6 +38,11 @@ To get started:
 ```sh
 git clone https://github.com/ubclaunchpad/docs.git
 cd docs
+```
+
+Then make the changes you want to make to the site's content, commit it, and make a pull request! Optionally:
+
+```sh
 npm install    # install dependencies
 npm run serve  # run website locally
 ```
