@@ -17,7 +17,7 @@ module.exports = {
   plugins: [
     'fulltext-search',
     ['@vuepress/google-analytics', {
-      'ga': 'UA-63529563-2', // team@ubclaunchpad.com, property ubclanchpad/docs
+      'ga': 'UA-63529563-2', // team@ubclaunchpad.com, property docs.ubclaunchpad.com
     }],
   ],
 }
