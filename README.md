@@ -47,4 +47,4 @@ npm install    # install dependencies
 npm run serve  # run website locally
 ```
 
-Head on over to [Contribution Guide](./CONTRIBUTING.md) for more details!
+Head on over to the [Contribution Guide](./CONTRIBUTING.md) for more details!
