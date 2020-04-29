@@ -1,9 +1,3 @@
-# Auto-detect text files.
-* text=auto
-
-# Force Unix EOLs, to prevent Windows from breaking them.
-*.* text eol=lf
-
 # Make markdown show up as repo language
 *.md linguist-vendored=false
 *.md linguist-generated=false
