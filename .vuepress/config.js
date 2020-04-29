@@ -14,5 +14,10 @@ module.exports = {
     editLinks: true,
     editLinkText: 'Help us improve this page!'
   },
-  plugins: ['fulltext-search'],
+  plugins: [
+    'fulltext-search',
+    ['@vuepress/google-analytics', {
+      'ga': 'UA-63529563-2', // team@ubclaunchpad.com, property ubclanchpad/docs
+    }],
+  ],
 }
