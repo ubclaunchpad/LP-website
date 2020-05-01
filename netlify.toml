@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = ".vuepress/dist"
+
+[build.processing.html]
+  pretty_urls = true
