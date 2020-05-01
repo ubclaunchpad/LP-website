@@ -100,4 +100,4 @@ programming languages, and machine learning.
 
 ## Windows
 
-* Having trouble with Windows? Try [dual booting Linux](x/Windows.md)!
+* Having trouble with Windows? Try [dual booting Linux](./Windows.md)!
