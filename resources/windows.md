@@ -13,17 +13,17 @@ WSL provides Windows users the ability to run Linux tools without needing to dua
     dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
     ```
     Restart your computer to finish installation.
-2. Open PowerShell (as administrator) and run the following command to set WSL 2 as default version: 
+2. Open PowerShell (as administrator) and run the following command to set WSL 2 as default version:
     ```
     wsl --set-default-version 2
     ```
-2. Open the Microsoft Store and install Ubuntu.
-3. After Ubuntu installation is complete, launch the app and setup your Linux username and password.
-4. To set Ubuntu to use WSL 2, run:
+3. Open the Microsoft Store and install Ubuntu.
+4. After Ubuntu installation is complete, launch the app and setup your Linux username and password.
+5. To set Ubuntu to use WSL 2, run:
     ```
     wsl --set-version Ubuntu 2
     ```
-5. Update Ubuntu packages by running: 
+6. Update Ubuntu packages by running:
     ```
     sudo apt update && sudo apt upgrade
     ```
