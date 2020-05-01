@@ -12,7 +12,6 @@ features:
   details: Check out documentation regarding UBC Launch Pad's mission, vision, and how we operate.
 - title: Made by students, for students
   details: This website compiles hard-won advice from generations of students in UBC Launch Pad.
-footer: UBC Launch Pad is a student-run software engineering club based in the University of British Columbia.
 ---
 
 <!-- markdownlint-disable -->
@@ -24,5 +23,20 @@ footer: UBC Launch Pad is a student-run software engineering club based in the U
 ### Contributing to this website
 
 Spot something off? Want to add some content? Take a look at [our contribution guide](./CONTRIBUTING.md)!
+
+<br />
+
+<hr />
+
+<br />
+
+<p align="center">
+  <a href="https://ubclaunchpad.com" target="_blank" rel="noopener noreferrer">UBC Launch Pad</a>
+  is a student-run software engineering club based in the University of British Columbia.
+</p>
+
+<p align="center">    
+  This site is powered by <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">Netlify</a>.
+</p>
 
 <br />
