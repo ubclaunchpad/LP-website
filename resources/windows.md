@@ -5,10 +5,30 @@ This page documents helpful resources for working with
 
 ## Windows Linux Subsystem
 
-*This section needs help! See [#38](https://github.com/ubclaunchpad/docs/issues/38).*
+WSL provides Windows users the ability to run Linux tools without needing to dual boot or run their own virtual machines. With WSL, you can run all your developer tools from a Bash terminal without needing to install Windows versions of developer tools. Microsoft provides two versions of WSL. This guide will focus on WSL 2, which has better performance for common developer tasks. Detailed instructions and common troubleshooting steps can be found [here](https://docs.microsoft.com/en-us/windows/wsl/wsl2-install). The following steps will help you quickly setup WSL:
 
-Windows now has a "Linux Subsystem" that might come in useful for Windows users.
-Installation instructions can be found [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+1. Open PowerShell and run the following commands to enable WSL and Virtual Machine Platform:
+    ```
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+    ```
+    Restart your computer to finish installation.
+2. Open PowerShell (as administrator) and run the following command to set WSL 2 as default version: 
+    ```
+    wsl --set-default-version 2
+    ```
+2. Open the Microsoft Store and install Ubuntu.
+3. After Ubuntu installation is complete, launch the app and setup your Linux username and password.
+4. To set Ubuntu to use WSL 2, run:
+    ```
+    wsl --set-version Ubuntu 2
+    ```
+5. Update Ubuntu packages by running: 
+    ```
+    sudo apt update && sudo apt upgrade
+    ```
+
+If you're using VS Code, checkout this [guide](https://code.visualstudio.com/blogs/2019/09/03/wsl2) on how to work with WSL with your editor.
 
 ## How To Dual Boot Linux on Your Windows Device
 
