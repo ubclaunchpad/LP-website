@@ -45,3 +45,11 @@ npm run serve    # runs the website locally
 
 This website is based on [VuePress](https://vuepress.vuejs.org/guide/) - refer to the
 VuePress documentation for more details.
+
+## Deployment
+
+Deployments are handled automatically by the [Netlify](https://www.netlify.com/) - the website is managed under the "Launch Pad OSS Sponsored" team. Build and deploy options can be declared in [`netlify.toml`](./netlify.toml).
+
+This means that when your changes are merged to `master`, your contribution will automatically be deployed!
+
+Also note that individual pull requests also get their own preview deployment - Netlify will comment on your pull request with a link to the preview. This is useful for reviewing changes!
