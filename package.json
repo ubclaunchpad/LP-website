@@ -13,6 +13,7 @@
     "markdownlint": "^0.20.2",
     "markdownlint-cli": "^0.22.0",
     "vuepress": "^1.4.1",
-    "vuepress-plugin-fulltext-search": "^2.0.2"
+    "vuepress-plugin-fulltext-search": "^2.0.2",
+    "vuepress-theme-yuu": "^2.2.1"
   }
 }
