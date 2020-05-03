@@ -9,9 +9,9 @@ An important part of the Scrum development methodology is sprint planning, where
 the team decides what issues they will work on for the next week or two.
 This document explains Launch Pad's sprint planning guidelines.
 
-:: warning
+::: warning
 This page is a bit outdated!
-::
+:::
 
 ## Backlog
 

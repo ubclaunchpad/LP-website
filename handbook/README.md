@@ -64,7 +64,7 @@ be found in [Sprints](./project-management/sprints.md).
 Tips for planning out your project's overall scope are available in
 [Requirements & Scope](./project-management/requirements.md).
 
-## 📦 Administration
+## 🏡 Administration
 
 The [Administration page](administration.md) describes the structure of UBC Launch Pad.
 
