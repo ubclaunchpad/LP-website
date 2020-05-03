@@ -10,7 +10,14 @@ module.exports = {
     // navbar properties
     logo: 'https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/src/assets/rocket.png',
     nav: [
-      { text: 'GitHub', link: 'https://github.com/ubclaunchpad', target:'_blank' },
+      {
+        text: 'Quick Links',
+        items: [
+          { text: 'Club Handbook', link: '/handbook/' },
+          { text: 'Resources', link: '/resources/' },
+          { text: 'GitHub', link: 'https://github.com/ubclaunchpad', target:'_blank' },
+        ],
+      },
       { text: 'UBC Launch Pad', link: 'https://ubclaunchpad.com', target:'_blank' },
     ],
     searchPlaceholder: 'Search...',
@@ -18,6 +25,7 @@ module.exports = {
     // automatically generate a sidebar for each page
     sidebar: 'auto',
     smoothScroll: true,
+    displayAllHeaders: true,
 
     // contribution CTA for each page
     docsRepo: 'ubclaunchpad/docs',

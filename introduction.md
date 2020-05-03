@@ -8,24 +8,18 @@ or [pull request](https://github.com/ubclaunchpad/docs/compare)!
 
 ## Contents
 
-### 🎉 Manifesto
+### 🎉 Club Handbook
 
-The [Manifesto](manifesto/) outlines Launch Pad's mission, vision, and how we are
-run.
+The [Club Handbook](handbook/) contains everything you need to know about being
+in Launch Pad: it contains documents outlining Launch Pad's mission, vision,
+how we are run, and resources about managing projects.
 
 ### 🧗 Resources
 
-[Resources](resources/) provides helpful guides, tools, and resources to help
-you get started and keep learning.
+Our [Resources](resources/) pages provides helpful guides, tools, and resources to help
+you get started and keep learning - accessible for anyone, not just people in Launch Pad!
 
-### 👨‍💼 Project Management
-
-The [Project Management](project-management/) pages compile hard-won advice about
-the best way to run (and participate in) a Launch Pad team and build great software.
-
-## More Stuff
-
-### Nifty Websites
+## Other Launch Pad Resources
 
 * [Slides](https://slides.ubclaunchpad.com/) contains slideshow decs for most
   UBC Launch Pad presentations and workshops, both internal and external.
@@ -34,31 +28,6 @@ the best way to run (and participate in) a Launch Pad team and build great softw
 * Check out our [Facebook page](https://www.facebook.com/ubclaunchpad/) and
   [Instagram](https://www.instagram.com/ubclaunchpad/) for updates!
 * See our projects on our [GitHub organization](https://github.com/ubclaunchpad)!
-
-### Useful Repositories
-
-There are a number of other important repositories that provide places
-for documentation and discussion. Note that these are all private to
-the `ubclaunchpad` GitHub organization; if you have not been added to
-the org, talk to your Tech Lead or one of the Presidents.
-
-* [Ideas](https://github.com/ubclaunchpad/ideas): The goal of this repository is
-  to be a place where anyone in Launch Pad can submit ideas for anything - how
-  to improve Launch Pad, potential projects, event ideas... anything you want!
-* [Strategy](https://github.com/ubclaunchpad/strategy): The main repo for the
-  strategy team, containing sponsorship-related discussion.
-* [Design](https://github.com/ubclaunchpad/design): The main repo for the design
-  team, containing Launch Pad graphical assets and design-related discussion.
-* [Tech Leads](https://github.com/ubclaunchpad/tech-leads): A repo for Tech
-  Lead-specific content, such as meeting notes. Note that this repo is only
-  visible to Tech Leads.
-* [Alumni Directory](https://github.com/ubclaunchpad/alumni-directory): An
-  internal directory with past Launch Pad members and what they are doing now.
-* [`ubclaunchpad.com`](https://github.com/ubclaunchpad/ubclaunchpad.com): This
-  repository houses the source code for [ubclaunchpad.com](https://ubclaunchpad.com),
-  as well as documentation on how to use it (for example, to add `ubclaunchpad.com/...`
-  redirect links), how to update its content (for example, to change the website's
-  featured teams or update recruitment status), and how to make your own contributions!
 
 ## Get in Touch
 
@@ -72,4 +41,4 @@ documentation here:
   [pull requests](https://github.com/ubclaunchpad/docs/compare) are always welcome
 
 If you are a member of Launch Pad, feel free to drop questions for Launch Pad
-leadership at [#ask-leadership](https://ubclaunchpad.slack.com/messages/CK935RD3Q/).
+leadership at [#ask-leads](https://ubclaunchpad.slack.com/messages/CK935RD3Q/).

@@ -1,32 +1,30 @@
 # Resources
 
-This page provides a bevy of good self-learning resources for the platforms
-and tools we use at Launch Pad. If you want further pointers, get in
-touch with your tech lead - they can direct you to more resources or to
-another Launch Pad member that knows more. And if you want to add even more
-resources, feel free to [make a pull request](../CONTRIBUTING.md).
+This page provides a bevy of good self-learning resources for every topic, accessible for anyone (not just Launch Pad members)! Looking for Launch Pad-specific documentation? Head on over to [the Handbook](../handbook/)!
 
-## Git Workflow
+If you want further pointers, get in touch with your tech lead - they can direct you to more resources or to another Launch Pad member that knows more. And if you want to add even more resources, feel free to [make a pull request](../CONTRIBUTING.md).
+
+## 🛶 Git Workflow
 
 A recommended git/GitHub collaborative development workflow is introduced in
 [Git Workflow](git-workflow.md).
 
-## Programming Languages
+## 💬 Programming Languages
 
 Looking for resources to a specific programming language? Drop by the
-[Languages](./languages.md) page!
+[Programming Languages](./languages.md) page!
 
-## Tools
+## ⚒️ Tools
 
 Boost your productivity and learn about the tools we use at Launch Pad over in
-the [Tools](tools/) pages!
+the [Tools](tools.md) page!
 
-## Deployment
+## 🐹 Deployment
 
 Want to make your project available to the world? Head on over to our
 [Deployment](./deployment.md) section!
 
-## Repo Management
+## 👨‍💼 Repo Management
 
 * [Shields.io](https://shields.io/#/) provides a frankly massive number of
   badges that you can put in your repo's README to show off your Travis builds,
@@ -37,7 +35,7 @@ Want to make your project available to the world? Head on over to our
   of reviews, and so on. Pull Reminders is already set up with Launch Pad's
   repos, and we highly recommend enabling reminders!
 
-## Command Line
+## 💻 Command Line
 
 * Matt Might has a pair of Unix tutorials, one for
   [total beginners](http://matt.might.net/articles/basic-unix/) and one for
@@ -56,9 +54,7 @@ Want to make your project available to the world? Head on over to our
   [autocomplete](https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks)
   scripts available - these will save you literally hours of your life.
 
-## Front End Development
-
-### General
+## 🎨 Front End Development
 
 * Grab, an Uber competitor in Southeast Asia, has a great big
   [guide to front end development](https://github.com/grab/front-end-guide/blob/master/README.md),
@@ -69,7 +65,7 @@ Want to make your project available to the world? Head on over to our
 * The official UBC Launch Pad website is written in Vue and TypeScript, and the repository
   includes [introductory documentation on working with Vue and TypeScript](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/CONTRIBUTING.md#development)
 
-## Cheatsheets
+## 📝 Cheatsheets
 
 * [devhints.io](https://devhints.io) provides cheat sheets for a huge number of
   web development and sysadmin/ops-related tools and programs.
@@ -78,7 +74,26 @@ Want to make your project available to the world? Head on over to our
 * If you want to learn vim, or just use a vim mode in the editor or IDE of your
   choice, you can't go wrong with this [vim cheat sheet](https://vim.rtorr.com).
 
-## General Learning
+## 🧪 Coding Challenges
+
+* [LeetCode](https://leetcode.com) is probably the most popular website for coding
+  challenges and comes highly recommended for interview preparation - big companies
+  often take interview questions directly from LeetCode!
+* [HackerRank](https://www.hackerrank.com) is a similar coding challenge site,
+  which many companies use directly for interview screening.
+* [Project Euler](https://projecteuler.net/) is a very different style of coding
+  challenge site - it has a much sparser presentation than rivals like LeetCode
+  and HackerRank, and generally focuses on (sometimes rather esoteric) mathematical
+  conundrums. But for the mathmatically-inclined programmer, it can be a rich
+  resource for delightful insights. Also, our very own ML Tech Lead Kevin built
+  a [command line tool](https://github.com/iKevinY/EulerPy) to make it easier
+  to work on Project Euler problems in Python!
+
+## 🗂️ Windows
+
+Having trouble with Windows? Check out [our Windows guidance](./Windows.md)!
+
+## 💭 General Learning
 
 * Launch Pad has its very own
   [Medium](https://medium.com/ubc-launch-pad-software-engineering-blog)
@@ -92,12 +107,8 @@ Want to make your project available to the world? Head on over to our
   provides a collection of technical things every software developer should
   know.
 
-## Exploration
+## 🧗 Exploration
 
 The [Exploration](./exploration.md) section has Tech Lead-approved resources for
 those that want to explore more complicated topics like operating systems,
 programming languages, and machine learning.
-
-## Windows
-
-* Having trouble with Windows? Try [dual booting Linux](./Windows.md)!
