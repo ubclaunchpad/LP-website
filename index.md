@@ -44,7 +44,7 @@ Spot something off? Want to add some content? Take a look at [our contribution g
 <p align="center">
   <small>
     This site is powered by <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">Netlify</a>
-    and generated using <a href="https://vuepress.vuejs.org/" target="_blank" rel="noopener noreferrer">vuepress</a>.
+    and generated using <a href="https://vuepress.vuejs.org/" target="_blank" rel="noopener noreferrer">VuePress</a>.
   </small>
 </p>
 
