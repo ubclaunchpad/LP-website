@@ -34,6 +34,7 @@ Want to make your project available to the world? Head on over to our
   lots of useful dashboards showing stats on review turnaround time, number
   of reviews, and so on. Pull Reminders is already set up with Launch Pad's
   repos, and we highly recommend enabling reminders!
+* Our Handbook also has a section about managing repositories: [Repository Management](http://localhost:8081/handbook/project-management/repositories).
 
 ## 💻 Command Line
 
@@ -106,6 +107,8 @@ Having trouble with Windows? Check out [our Windows guidance](./Windows.md)!
 * [every-programmer-should-know](https://github.com/mtdvio/every-programmer-should-know)
   provides a collection of technical things every software developer should
   know.
+* [Slides](https://slides.ubclaunchpad.com/) contains slideshow decs for most
+  UBC Launch Pad presentations and workshops, both internal and external.
 
 ## 🧗 Exploration
 

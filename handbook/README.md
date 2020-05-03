@@ -1,7 +1,6 @@
 # Club Handbook
 
-Welcome to the UBC Launch Pad handbook! Launch Pad-wide documentation is hosted in this repository - if you're not sure
-about something, this is the first place to check.
+Welcome to the [UBC Launch Pad](https://ubclaunchpad.com/) handbook! Launch Pad-wide documentation is hosted in these sections - if you're not sure about something, this is the first place to check.
 
 ## 🔖 Manifesto
 
@@ -68,7 +67,7 @@ Tips for planning out your project's overall scope are available in
 
 The [Administration page](administration.md) describes the structure of UBC Launch Pad.
 
-## 🚀 Onboarding
+## 🚀 Onboarding <Badge type="tip" text="new"/>
 
 The [Onboarding page](onboarding.md) helps you hit the ground running once you've joined us!
 
@@ -82,13 +81,6 @@ the org, talk to your Tech Lead or one of the Presidents.
 * [Ideas](https://github.com/ubclaunchpad/ideas): The goal of this repository is
   to be a place where anyone in Launch Pad can submit ideas for anything - how
   to improve Launch Pad, potential projects, event ideas... anything you want!
-* [Strategy](https://github.com/ubclaunchpad/strategy): The main repo for the
-  strategy team, containing sponsorship-related discussion.
-* [Design](https://github.com/ubclaunchpad/design): The main repo for the design
-  team, containing Launch Pad graphical assets and design-related discussion.
-* [Tech Leads](https://github.com/ubclaunchpad/tech-leads): A repo for Tech
-  Lead-specific content, such as meeting notes. Note that this repo is only
-  visible to Tech Leads.
 * [Alumni Directory](https://github.com/ubclaunchpad/alumni-directory): An
   internal directory with past Launch Pad members and what they are doing now.
 * [`ubclaunchpad.com`](https://github.com/ubclaunchpad/ubclaunchpad.com): This
@@ -96,3 +88,14 @@ the org, talk to your Tech Lead or one of the Presidents.
   as well as documentation on how to use it (for example, to add `ubclaunchpad.com/...`
   redirect links), how to update its content (for example, to change the website's
   featured teams or update recruitment status), and how to make your own contributions!
+
+Some useful team-specific repositories to take a look at:
+
+* [Strategy](https://github.com/ubclaunchpad/strategy): The main repo for the
+  strategy team, containing sponsorship-related discussion.
+* [Design](https://github.com/ubclaunchpad/design): The main repo for the design
+  team, containing Launch Pad graphical assets and design-related discussion.
+* [Tech Leads](https://github.com/ubclaunchpad/tech-leads): A repo for Tech
+  Lead-specific content, such as meeting notes. Note that this repo is only
+  visible to Tech Leads.
+* [Exec](https://github.com/ubclaunchpad/exec): Repo containing details about managing Launch Pad, such as our accounts.

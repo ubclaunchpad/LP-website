@@ -18,12 +18,13 @@ module.exports = {
           { text: 'GitHub', link: 'https://github.com/ubclaunchpad', target:'_blank' },
         ],
       },
-      { text: 'UBC Launch Pad', link: 'https://ubclaunchpad.com', target:'_blank' },
+      { text: 'About', link: 'https://ubclaunchpad.com', target:'_blank' },
     ],
     searchPlaceholder: 'Search...',
 
     // automatically generate a sidebar for each page
     sidebar: 'auto',
+    sidebarDepth: 2,
     smoothScroll: true,
 
     // contribution CTA for each page
@@ -45,6 +46,9 @@ module.exports = {
 
     // remove trailing .html for example - https://vuepress.github.io/en/plugins/clean-urls
     'vuepress-plugin-clean-urls',
+
+    // link to scroll back to top - https://vuepress.vuejs.org/plugin/official/plugin-back-to-top.html
+    '@vuepress/back-to-top',
 
     // analytics are under team@ubclaunchpad.com, property docs.ubclaunchpad.com
     ['@vuepress/google-analytics', {

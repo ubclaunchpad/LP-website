@@ -1,9 +1,9 @@
-# Windows
+# 🗂️ Windows
 
 This page documents helpful resources for working with
 [Windows](https://www.microsoft.com/en-us/windows), Microsoft's operating system.
 
-## Windows Linux Subsystem
+## Windows Linux Subsystem <Badge type="tip" text="new"/>
 
 WSL provides Windows users the ability to run Linux tools without needing to dual boot or run their own virtual machines. With WSL, you can run all your developer tools from a Bash terminal without needing to install Windows versions of developer tools. Microsoft provides two versions of WSL. This guide will focus on WSL 2, which has better performance for common developer tasks. Detailed instructions and common troubleshooting steps can be found [here](https://docs.microsoft.com/en-us/windows/wsl/wsl2-install). The following steps will help you quickly setup WSL:
 
@@ -30,7 +30,7 @@ WSL provides Windows users the ability to run Linux tools without needing to dua
 
 If you're using VS Code, checkout this [guide](https://code.visualstudio.com/blogs/2019/09/03/wsl2) on how to work with WSL with your editor.
 
-## How To Dual Boot Linux on Your Windows Device
+## Dual Boot Linux
 
 > This guide was originally written by [Matthew](https://github.com/ginsstaahh)
 > (`@ginsstaahh`, `matthewgin10@gmail.com`).

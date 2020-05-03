@@ -54,7 +54,11 @@ This means that when your changes are merged to `master`, your contribution will
 
 Also note that individual pull requests also get their own preview deployment - Netlify will comment on your pull request with a link to the preview. This is useful for reviewing changes!
 
-## Structuring Content
+## Structuring Content <Badge type="tip" text="new"/>
 
 * Any folders deeper than the top-level documents (such as `handbook/`, `resources/`) should not have a dedicated README in its folder - instead, a "table of contents" of the directory should be placed in one of the top-level documents' READMEs.
   * For example, the contents of `resources/project-management` are listed in `resources/README.md` and *not* `resources/project-management/README.md`.
+* Feel free to add a badge to new or updated content:
+  ```
+  <Badge type="tip" text="new"/>
+  ```

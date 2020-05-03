@@ -4,23 +4,13 @@ The goal of `docs.ubclaunchpad.com` is to gather advice, resources, best practic
 
 ## Contents
 
-### 📖 Club Handbook
+### 📖 Club Handbook <Badge type="tip" text="new"/>
 
 The [Club Handbook](handbook/) contains everything you need to know about being in Launch Pad: documents outlining Launch Pad's mission, our vision, how we are run, resources about managing projects, and more!
 
 ### 🧗 Resources
 
 Our [Resources](resources/) pages provides helpful guides, tools, and resources to help you get started and keep learning - accessible for anyone, not just people in Launch Pad!
-
-## Other Launch Pad Resources
-
-* [Slides](https://slides.ubclaunchpad.com/) contains slideshow decs for most
-  UBC Launch Pad presentations and workshops, both internal and external.
-* We have a [Medium publication](https://medium.com/ubc-launch-pad-software-engineering-blog)
-  where we write about Launch Pad, its projects, and other cool stuff!
-* Check out our [Facebook page](https://www.facebook.com/ubclaunchpad/) and
-  [Instagram](https://www.instagram.com/ubclaunchpad/) for updates!
-* See our projects on our [GitHub organization](https://github.com/ubclaunchpad)!
 
 ## Get in Touch
 
