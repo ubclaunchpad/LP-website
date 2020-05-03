@@ -25,7 +25,6 @@ module.exports = {
     // automatically generate a sidebar for each page
     sidebar: 'auto',
     smoothScroll: true,
-    displayAllHeaders: true,
 
     // contribution CTA for each page
     docsRepo: 'ubclaunchpad/docs',
@@ -43,6 +42,9 @@ module.exports = {
   plugins: [
     // fulltext search for site content - https://github.com/leo-buneev/vuepress-plugin-fulltext-search
     'fulltext-search',
+
+    // remove trailing .html for example - https://vuepress.github.io/en/plugins/clean-urls
+    'vuepress-plugin-clean-urls',
 
     // analytics are under team@ubclaunchpad.com, property docs.ubclaunchpad.com
     ['@vuepress/google-analytics', {
