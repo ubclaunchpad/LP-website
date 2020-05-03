@@ -34,7 +34,7 @@ Want to make your project available to the world? Head on over to our
   lots of useful dashboards showing stats on review turnaround time, number
   of reviews, and so on. Pull Reminders is already set up with Launch Pad's
   repos, and we highly recommend enabling reminders!
-* Our Handbook also has a section about managing repositories: [Repository Management](http://localhost:8081/handbook/project-management/repositories).
+* Our Handbook also has a section about managing repositories: [Repository Management](../handbook/project-management/repositories).
 
 ## 💻 Command Line
 
