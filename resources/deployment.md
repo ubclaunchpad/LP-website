@@ -1,4 +1,4 @@
-# Deployment
+# 🐹 Deployment
 
 This page outlines tips, resources, and tools for getting your team's project
 deployed and running!

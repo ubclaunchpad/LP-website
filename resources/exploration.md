@@ -30,18 +30,3 @@ approved by Launch Pad tech leads!
   is an overview of (deep) neural networks, one of the most popular techniques
   for machine learning. It's written by Michael Nielsen, also known for one
   of the standard quantum computing textbooks.
-
-## Coding Challenge Practice
-
-* [LeetCode](https://leetcode.com) is probably the most popular website for coding
-  challenges and comes highly recommended for interview preparation - big companies
-  often take interview questions directly from LeetCode!
-* [HackerRank](https://www.hackerrank.com) is a similar coding challenge site,
-  which many companies use directly for interview screening.
-* [Project Euler](https://projecteuler.net/) is a very different style of coding
-  challenge site - it has a much sparser presentation than rivals like LeetCode
-  and HackerRank, and generally focuses on (sometimes rather esoteric) mathematical
-  conundrums. But for the mathmatically-inclined programmer, it can be a rich
-  resource for delightful insights. Also, our very own ML Tech Lead Kevin built
-  a [command line tool](https://github.com/iKevinY/EulerPy) to make it easier
-  to work on Project Euler problems in Python!

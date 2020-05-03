@@ -9,10 +9,12 @@
     "lint": "markdownlint . --ignore node_modules --ignore index.md"
   },
   "dependencies": {
+    "@vuepress/plugin-back-to-top": "^1.4.1",
     "@vuepress/plugin-google-analytics": "^1.4.1",
     "markdownlint": "^0.20.2",
     "markdownlint-cli": "^0.22.0",
     "vuepress": "^1.4.1",
+    "vuepress-plugin-clean-urls": "^1.1.1",
     "vuepress-plugin-fulltext-search": "^2.0.2",
     "vuepress-theme-yuu": "^2.2.1"
   }

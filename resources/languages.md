@@ -1,4 +1,4 @@
-# Langauges
+# 💬 Programming Langauges
 
 Resources for various programming languages! If you want further pointers, get
 in touch with your tech lead - they can direct you to more resources or to

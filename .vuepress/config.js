@@ -10,13 +10,21 @@ module.exports = {
     // navbar properties
     logo: 'https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/src/assets/rocket.png',
     nav: [
-      { text: 'GitHub', link: 'https://github.com/ubclaunchpad', target:'_blank' },
-      { text: 'UBC Launch Pad', link: 'https://ubclaunchpad.com', target:'_blank' },
+      {
+        text: 'Quick Links',
+        items: [
+          { text: 'Club Handbook', link: '/handbook/' },
+          { text: 'Resources', link: '/resources/' },
+          { text: 'GitHub', link: 'https://github.com/ubclaunchpad', target:'_blank' },
+        ],
+      },
+      { text: 'About', link: 'https://ubclaunchpad.com', target:'_blank' },
     ],
     searchPlaceholder: 'Search...',
 
     // automatically generate a sidebar for each page
     sidebar: 'auto',
+    sidebarDepth: 2,
     smoothScroll: true,
 
     // contribution CTA for each page
@@ -35,6 +43,12 @@ module.exports = {
   plugins: [
     // fulltext search for site content - https://github.com/leo-buneev/vuepress-plugin-fulltext-search
     'fulltext-search',
+
+    // remove trailing .html for example - https://vuepress.github.io/en/plugins/clean-urls
+    'vuepress-plugin-clean-urls',
+
+    // link to scroll back to top - https://vuepress.vuejs.org/plugin/official/plugin-back-to-top.html
+    '@vuepress/back-to-top',
 
     // analytics are under team@ubclaunchpad.com, property docs.ubclaunchpad.com
     ['@vuepress/google-analytics', {

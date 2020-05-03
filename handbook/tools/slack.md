@@ -82,6 +82,11 @@ of each category of channel by searching for a prefix!
 
 ### Rocket
 
+:: warning
+Rocket has since been deprecated by [Rocket 2](https://github.com/ubclaunchpad/rocket2) -
+this documentation needs updating!
+::
+
 [Rocket](https://github.com/ubclaunchpad/rocket) is our very own Slack bot, used
 for managing our roster across Slack, GitHub, and our website.
 

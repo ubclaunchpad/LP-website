@@ -4,6 +4,10 @@ This document pertains to the administrative side of managing Launch Pad teams,
 such as team structure, meeting schedules, the roles of different teams, and
 participation requirements.
 
+::: warning
+This page is a bit outdated!
+:::
+
 ## Team Structure
 
 ### Development Teams
