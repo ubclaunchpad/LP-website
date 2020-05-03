@@ -6,10 +6,10 @@ tagline: 📚 The official UBC Launch Pad knowledge base
 actionText: Get Started →
 actionLink: '/introduction'
 features:
+- title: Club Documentation
+  details: Check out documentation regarding UBC Launch Pad's mission, vision, and how we operate in our club handbook.
 - title: Resources
   details: Find helpful guides, tools, and resources to help you get started and keep learning - accessible by anyone of any skill level.
-- title: Club Documentation
-  details: Check out documentation regarding UBC Launch Pad's mission, vision, and how we operate.
 - title: Made by students, for students
   details: This website compiles hard-won advice from generations of students in UBC Launch Pad.
 ---

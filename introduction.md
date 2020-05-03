@@ -1,23 +1,16 @@
-# Introduction
+# 👋 Introduction
 
-All Launch Pad-wide documentation lives in this website. The goal of this
-repository is to gather advice, resources, best practices, and more for everyone
-to refer to. If you feel any of this documentation is unclear, out of date, or
-incorrect, please [open an issue](https://github.com/ubclaunchpad/docs/issues/new)
-or [pull request](https://github.com/ubclaunchpad/docs/compare)!
+The goal of `docs.ubclaunchpad.com` is to gather advice, resources, best practices, and more for everyone to refer to! If you feel any of this documentation is unclear, out of date, or incorrect, please [open an issue](https://github.com/ubclaunchpad/docs/issues/new) or [pull request](https://github.com/ubclaunchpad/docs/compare)!
 
 ## Contents
 
-### 🎉 Club Handbook
+### 📖 Club Handbook
 
-The [Club Handbook](handbook/) contains everything you need to know about being
-in Launch Pad: it contains documents outlining Launch Pad's mission, vision,
-how we are run, and resources about managing projects.
+The [Club Handbook](handbook/) contains everything you need to know about being in Launch Pad: documents outlining Launch Pad's mission, our vision, how we are run, resources about managing projects, and more!
 
 ### 🧗 Resources
 
-Our [Resources](resources/) pages provides helpful guides, tools, and resources to help
-you get started and keep learning - accessible for anyone, not just people in Launch Pad!
+Our [Resources](resources/) pages provides helpful guides, tools, and resources to help you get started and keep learning - accessible for anyone, not just people in Launch Pad!
 
 ## Other Launch Pad Resources
 
