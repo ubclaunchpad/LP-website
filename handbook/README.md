@@ -8,10 +8,6 @@ Our [Manifesto](manifesto.md) outlines our vision and code of conduct.
 
 ## ⚙️ Tools
 
-### General Tools
-
-See the [Tools page in Resources](../../resources/tools.md) for general tools to help you build awesome stuff!
-
 ### Slack
 
 See the [Slack page](./tools/slack.md) to learn more about our Slack workspace!
@@ -27,6 +23,10 @@ like these) or in the wiki. Projects are typically managed with
 as well.
 
 Check out [Repository Management](./repositories.md) for guidelines on how to manage your GitHub repository and enforce coding standards.
+
+### General Tools
+
+See the [Tools page in Resources](../../resources/tools.md) for general tools to help you build awesome stuff!
 
 ### Deployment
 
@@ -49,19 +49,19 @@ should be updated or changed!
 ### Repository Management
 
 Guidelines for how to manage your GitHub repository and enforce coding standards
-is in [Repository Management](./project-management/repositories.md). Remember: your
+is in [Repository Management](project-management/repositories.md). Remember: your
 repository is your main outlet to the outside world - and this outside world
 includes potential employers! Make it informative, organized, and pretty!
 
 ### Sprint Planning
 
 Guidelines for how to plan out a week's work using a Scrum-like methodology can
-be found in [Sprints](./project-management/sprints.md).
+be found in [Sprints](project-management/sprints.md).
 
 ### Requirements & Scope
 
 Tips for planning out your project's overall scope are available in
-[Requirements & Scope](./project-management/requirements.md).
+[Requirements & Scope](project-management/scope.md).
 
 ## 🏡 Administration
 

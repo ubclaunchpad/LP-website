@@ -10,14 +10,8 @@ module.exports = {
     // navbar properties
     logo: 'https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/src/assets/rocket.png',
     nav: [
-      {
-        text: 'Quick Links',
-        items: [
-          { text: 'Club Handbook', link: '/handbook/' },
-          { text: 'Resources', link: '/resources/' },
-          { text: 'GitHub', link: 'https://github.com/ubclaunchpad', target:'_blank' },
-        ],
-      },
+      { text: 'Handbook', link: '/handbook/' },
+      { text: 'Resources', link: '/resources/' },
       { text: 'About', link: 'https://ubclaunchpad.com', target:'_blank' },
     ],
     searchPlaceholder: 'Search...',
