@@ -1,18 +1,17 @@
 module.exports = {
+  // header properties
   title: 'UBC Launch Pad Documentation',
   description: '📚 The official UBC Launch Pad knowledge base',
+  head: [
+    ['meta', { property: 'og:image', content: 'https://ubclaunchpad.com/share.jpg' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+  ],
 
   // https://vuepress-theme-yuu.netlify.app/ for dark theme
   // TODO: we should switch if this ever gets merged: https://github.com/vuejs/vuepress/pull/2301
   theme: 'yuu',
 
   themeConfig: {
-    // header properties
-    head: [
-      ['meta', { property: 'og:image', content: 'https://ubclaunchpad.com/share.jpg' }],
-      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ],
-
     // navbar properties
     logo: 'https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/src/assets/rocket.png',
     nav: [
