@@ -7,6 +7,12 @@ module.exports = {
   theme: 'yuu',
 
   themeConfig: {
+    // header properties
+    head: [
+      ['meta', { property: 'og:image', content: 'https://ubclaunchpad.com/share.jpg' }],
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ],
+
     // navbar properties
     logo: 'https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/src/assets/rocket.png',
     nav: [
