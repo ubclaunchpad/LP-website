@@ -56,7 +56,7 @@ module.exports = {
 
     // analytics are under team@ubclaunchpad.com, property docs.ubclaunchpad.com
     // dashboard: https://app.usefathom.com/share/oemmhhle/docs.ubclaunchpad.com
-    ['@ubclaunchpad/vuepress-fathom', {
+    ['@ubclaunchpad/fathom', {
       'siteID': 'OEMMHHLE',
     }],
   ],
