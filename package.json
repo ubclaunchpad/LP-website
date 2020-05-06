@@ -9,6 +9,7 @@
     "lint": "markdownlint . --ignore node_modules --ignore index.md"
   },
   "dependencies": {
+    "@ubclaunchpad/vuepress-fathom": "^1.0.0",
     "@vuepress/plugin-back-to-top": "^1.4.1",
     "@vuepress/plugin-google-analytics": "^1.4.1",
     "markdownlint": "^0.20.2",
