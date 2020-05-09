@@ -8,3 +8,25 @@
   skip_processing = false
 [build.processing.html]
   pretty_urls = true
+
+# let all *.md files be served without extensions, ie `/page.html` -> `/page`
+# works in conjunction with `vuepress-plugin-clean-urls`
+
+# sections - all pages in /handbook or /resources should be `page.md` files (no index/READMEs)
+[[headers]]
+  for = "/handbook/*"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+[[headers]]
+  for = "/resources/*"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+# top-level pages
+[[headers]]
+  for = "/CONTRIBUTING"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+[[headers]]
+  for = "/introduction"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"

@@ -1,5 +1,6 @@
 ---
 home: true
+permalink: /
 heroImage: https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/src/assets/about.png
 heroText: ubclaunchpad/docs
 tagline: 📚 The official UBC Launch Pad knowledge base
