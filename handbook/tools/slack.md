@@ -81,7 +81,7 @@ of each category of channel by searching for a prefix!
 
 ## Bots & Apps
 
-### Rocket
+### Rocket <Badge type="tip" text="updated"/>
 
 [Rocket 2](https://github.com/ubclaunchpad/rocket2) is our very own Slack bot,
 used for managing our roster across Slack and GitHub. Members use it mainly to
