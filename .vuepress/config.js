@@ -44,7 +44,9 @@ module.exports = {
     'fulltext-search',
 
     // remove trailing .html for example - https://vuepress.github.io/en/plugins/clean-urls
-    'vuepress-plugin-clean-urls',
+    ['vuepress-plugin-clean-urls', {
+      normalSuffix: '',
+    }],
 
     // link to scroll back to top - https://vuepress.vuejs.org/plugin/official/plugin-back-to-top.html
     '@vuepress/back-to-top',
