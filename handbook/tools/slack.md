@@ -71,8 +71,9 @@ of each category of channel by searching for a prefix!
   space for all questions!
 * [`#ask-leads`](https://ubclaunchpad.slack.com/messages/CK935RD3Q/): Questions
   for Launch Pad leadership
-* [`#ask-design`](https://ubclaunchpad.slack.com/messages/C747550BD): Questions
+* [`#ask-design`](https://ubclaunchpad.slack.com/messages/CK0H2GNQH): Questions
   for Launch Pad's design teams
+* [`#ask-rocket`](https://ubclaunchpad.slack.com/messages/CK93HTYQN): If rocket isn't working, use it to express your frustrations
 * [`#ask-strategy`](https://ubclaunchpad.slack.com/messages/CJVF0FQHG): Questions
   for Launch Pad's strategy team
 * [`#ask-swag`](https://ubclaunchpad.slack.com/messages/C7Z1K8XNE): Swag requests
@@ -80,27 +81,20 @@ of each category of channel by searching for a prefix!
 
 ## Bots & Apps
 
-### Rocket
+### Rocket <Badge type="tip" text="updated"/>
 
-::: warning
-Rocket has since been deprecated by [Rocket 2](https://github.com/ubclaunchpad/rocket2) -
-this documentation needs updating!
-:::
+[Rocket 2](https://github.com/ubclaunchpad/rocket2) is our very own Slack bot,
+used for managing our roster across Slack and GitHub. Members use it mainly to
+automatically add themselves to the GitHub organization.
 
-[Rocket](https://github.com/ubclaunchpad/rocket) is our very own Slack bot, used
-for managing our roster across Slack, GitHub, and our website.
+You can get started by editing your profile to include your GitHub username
+with `/rocket user add` and `/rocket user edit --github <username>`. The first
+command will add your Slack account into the system and the second will link
+your account to GitHub and send an invitation for the UBC Launch Pad
+organization.
 
-You can get started by typing `@rocket help` into a private Slack chat with
-@rocket. Please don't do this in a public channel like #general, as everyone
-will be able to see your interactions with Rocket.
-
-The name and position you provide, along with your Slack profile picture, will
-automatically show up on our website (once you've been added to a team).
-Providing your GitHub username allows Rocket to add you to the correct GitHub
-teams and repositories.
-
-Note that we're currently working on revamping this tool - check out
-[Rocket 2](https://github.com/ubclaunchpad/rocket2) to learn more!
+For more commands, type `/rocket help`. If you are interested in how it works,
+check out the [documentation page](https://rocket2.readthedocs.io/en/latest/).
 
 ### Pull Reminders
 
