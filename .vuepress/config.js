@@ -43,11 +43,6 @@ module.exports = {
     // fulltext search for site content - https://github.com/leo-buneev/vuepress-plugin-fulltext-search
     'fulltext-search',
 
-    // remove trailing .html for example - https://vuepress.github.io/en/plugins/clean-urls
-    ['vuepress-plugin-clean-urls', {
-      normalSuffix: '',
-    }],
-
     // link to scroll back to top - https://vuepress.vuejs.org/plugin/official/plugin-back-to-top.html
     '@vuepress/back-to-top',
 
