@@ -6,29 +6,35 @@ If you just have an idea for a change but don't want to implement it yourself,
 add an [issue](https://github.com/ubclaunchpad/docs/issues) to this repository
 (but make sure to check for duplicates first). Be descriptive!
 
-If you want to make a change yourself, you'll need to make a pull request.
-To do that:
+## Making a Change
+
+The content in this website is written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), a plain-text markup format. We use [VuePress](#vuepress) to convert our these into our website. Making a change to `docs.ubclaunchpad.com` simply involves editing these files.
+
+### The Easy Way
+
+The easiest way to make a quick change is to simply hit the "Help us improve this page" link that's available on the bottom of every page:
+
+![help us](./assets/help-us-improve.png)
+
+This will open up an editor in the GitHub interface, where you can make small changes and submit them as a pull request entirely from your browser.
+
+### The Complete Way
+
+While the [Easy Way](#the-easy-way) is good for small changes, writing larger chunks of content is best done from the comfort of your computer. To do this, make sure you have [Node.js](https://nodejs.org/en/) installed, then:
 
 1. Download the repository and create a new branch locally:
    ```
    git clone https://github.com/ubclaunchpad/docs.git
    git checkout -b my-new-branch
    ```
-2. Make changes and commit them (make sure you have
-  [good commit messages](https://chris.beams.io/posts/git-commit/#seven-rules)!).
-3. Run `npm install` and `npm run lint` to ensure your code follows our Markdown style rules.
+2. Make changes and commit them (make sure you have [good commit messages](https://chris.beams.io/posts/git-commit/#seven-rules)!)
+3. Run `npm install` and `npm run lint` to ensure your code follows our style rules.
    * (optional) run `npm run serve` to test out the updated website locally!
-4. Push your local branch to the remote repository.
-5. Make a pull request on GitHub's web interface.
+4. Push your local branch to the remote repository using `git push origin HEAD`
+5. Make a pull request on GitHub's web interface (and make sure to fill out the provided template!)
+6. [Netlify](https://www.netlify.com/) will then deploy a preview of your change - see [Deployment](#deployment)
 
-Make sure to fill out all parts of the pull request template.
-Also, check this repository's [issues](https://github.com/ubclaunchpad/docs/issues).
-If you think your PR affects an issue, you should reference it in your PR using
-`#` followed by the issue's number. For instance, if you think your PR closes
-issue #7, you should include the phrase "Closes #7" somewhere in your PR's
-description (this will automatically close the issue once your PR is merged),
-and if you think it affects but doesn't close it, you should include a phrase
-like "Affects #7".
+More details on using `git` is available in our [Git Workflow guide](./resources/git-workflow.md).
 
 ## Scripts
 
@@ -57,7 +63,7 @@ npm run serve    # runs the website locally
 ## VuePress
 
 This website is based on [VuePress](https://vuepress.vuejs.org/guide/) - refer to the
-VuePress documentation for more details.
+VuePress documentation for more details. VuePress takes the [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) content in this repository (all those `.md` files) and turns them into the pretty website on `docs.ubclaunchpad.com`.
 
 Most VuePress configuration lives in [`.vuepress/config.js`](./.vuepress/config.js).
 
