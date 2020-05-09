@@ -73,7 +73,7 @@ of each category of channel by searching for a prefix!
   for Launch Pad leadership
 * [`#ask-design`](https://ubclaunchpad.slack.com/messages/C747550BD): Questions
   for Launch Pad's design teams
-* `#ask-rocket`: If rocket isn't working, use it to express your frustrations
+* [`#ask-rocket`](https://ubclaunchpad.slack.com/messages/CK93HTYQN): If rocket isn't working, use it to express your frustrations
 * [`#ask-strategy`](https://ubclaunchpad.slack.com/messages/CJVF0FQHG): Questions
   for Launch Pad's strategy team
 * [`#ask-swag`](https://ubclaunchpad.slack.com/messages/C7Z1K8XNE): Swag requests
