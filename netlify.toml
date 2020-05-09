@@ -8,3 +8,12 @@
   skip_processing = false
 [build.processing.html]
   pretty_urls = true
+
+[[headers]]
+  for = "/handbook/*"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+[[headers]]
+  for = "/resources/*"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
