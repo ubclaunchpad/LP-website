@@ -6,11 +6,11 @@ The goal of `docs.ubclaunchpad.com` is to gather advice, resources, best practic
 
 ### 📖 Club Handbook <Badge type="tip" text="new"/>
 
-The [Club Handbook](handbook/) contains everything you need to know about being in Launch Pad: documents outlining Launch Pad's mission, our vision, how we are run, resources about managing projects, and more!
+The [Club Handbook](./handbook/README.md) contains everything you need to know about being in Launch Pad: documents outlining Launch Pad's mission, our vision, how we are run, resources about managing projects, and more!
 
 ### 🧗 Resources
 
-Our [Resources](resources/) pages provides helpful guides, tools, and resources to help you get started and keep learning - accessible for anyone, not just people in Launch Pad!
+Our [Resources](./resources/README.md) pages provides helpful guides, tools, and resources to help you get started and keep learning - accessible for anyone, not just people in Launch Pad!
 
 ## Get in Touch
 

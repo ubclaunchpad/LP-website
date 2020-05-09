@@ -22,7 +22,7 @@ like these) or in the wiki. Projects are typically managed with
 [GitHub project boards](https://help.github.com/articles/about-project-boards/)
 as well.
 
-Check out [Repository Management](./repositories.md) for guidelines on how to manage your GitHub repository and enforce coding standards.
+Check out [Repository Management](./project-management/repositories.md) for guidelines on how to manage your GitHub repository and enforce coding standards.
 
 ### General Tools
 
