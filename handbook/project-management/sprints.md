@@ -65,10 +65,10 @@ Some examples of good tasks recorded as GitHub Issues:
   * ✅ Description includes a clear purpose ("the current implementation is unsustainable") and a clear definition of completion ("a new command to do x")
   * ✅ Discussion questions the specifics of the feature, how it will work, and links to relevant issues
 * [`ubclaunchpad/inertia#133`](https://github.com/ubclaunchpad/inertia/issues/133)
-  * ✅ Description includes clear goals of the task, as well as a sketch of what an implementation might look like
+  * ✅ Description includes clear goals of the task, as well as a (literal) sketch of what an implementation might look like
   * ✅ Discussion links relevant documentation to dependencies
 * [`ubclaunchpad/inertia#626`](https://github.com/ubclaunchpad/inertia/issues/626)
   * ✅ Description includes a full error log and reproduction steps - this is useful for anyone trying to fix the problem!
   * ✅ Discussion involves more logs, abundant links to relevant issues, and a full record of the exact steps taken to resolve the problem
 
-For those familiar with Kanban Boards, you can use [GitHub Projects](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards).
+You can also attach [labels](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests) and [milestones](https://help.github.com/en/github/managing-your-work-on-github/viewing-your-milestones-progress) to each issue, and for those familiar with Kanban Boards, you can use [GitHub Projects](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) to help manage your issues. Feel free to pick a workflow that feels the most natural for your team!
