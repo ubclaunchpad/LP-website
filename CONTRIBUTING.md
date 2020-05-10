@@ -8,7 +8,7 @@ add an [issue](https://github.com/ubclaunchpad/docs/issues) to this repository
 
 ## Making a Change
 
-The content in this website is written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), a plain-text markup format. We use [VuePress](#vuepress) to convert our these into our website. Making a change to `docs.ubclaunchpad.com` simply involves editing these files.
+The content in this website is written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), a plain-text markup format. We use [VuePress](#vuepress) to convert Markdown files into this website - making a change to `docs.ubclaunchpad.com` simply involves editing these files.
 
 ### The Easy Way
 
