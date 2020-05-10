@@ -24,4 +24,4 @@ documentation here:
   [pull requests](https://github.com/ubclaunchpad/docs/compare) are always welcome
 
 If you are a member of Launch Pad, feel free to drop questions for Launch Pad
-leadership at [#ask-leads](https://ubclaunchpad.slack.com/messages/CK935RD3Q/).
+leadership at [`#ask-leads`](https://ubclaunchpad.slack.com/messages/CK935RD3Q/).
