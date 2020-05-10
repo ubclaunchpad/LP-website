@@ -33,8 +33,8 @@ Sprint meetings should be conducted at the very start or end of each sprint. Mos
 3. 👋 **Standup:** Each member gives updates on their progress and reflects on their work during the previous sprint (~2-3 minutes/person)
     * Each member should bring up their accomplishments or difficulties they've had during the sprint with their assigned task
     * The lead can make quick suggestions on future work baased each member's update
-4. 🚀 **Action Items:** Finalize next action items and work for everyone (~5-10 minutes)
-    * [Define and create tasks](#tasks) as GitHub issues, and make sure each member has a task assigned (new or old)
+4. 🚀 **Action Items:** Finalize tasks that need to be done and assign work for everyone (~5-10 minutes)
+    * [Define and create tasks](#tasks) as GitHub issues, and make sure each member has a task assigned (new or old) through a GitHub issue
 5. ❓ **Follow-up**: Leave some time after each meeting to help each other out with any issues, discuss the project, or just socialize!
 
 ## Tasks
