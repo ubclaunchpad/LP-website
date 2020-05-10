@@ -15,7 +15,7 @@ We use a variety of technology and tools at Launch Pad - these sections help you
 * [**Deployment**](./tools/deployment.md): Launch Pad's specific advice regarding deployment and getting your project out to the world.
 * [**Other Tools**](../resources/tools.md): Our Resources section has a page on general tools you can leverage to help you build awesome stuff!
 
-## 👨‍💼 Project Management <Badge type="tip" text="updated"/>
+## 👨‍💼 Project Management
 
 These documents compile hard-won advice about the best way to run (and participate in) a Launch Pad team and build great software. This isn't just geared towards team leads - it should be useful for everyone!
 
