@@ -30,7 +30,7 @@ Sprint meetings should be conducted at the very start or end of each sprint. Mos
    * The goal is to have everyone briefly think about what they've achieved and problems they've faced so that meetings can run more smoothly!
    * A good way to do this is to have a document posted to your team's Slack channel so everyone can add to it at their leisure before you meeting
 2. ✈️ **Overview:** At the start of the meeting, the lead gives general updates or comments overall progress (~1-2 minutes)
-3. 👋 **Standup:** Eeach member gives updates on their progress (~2-3 minutes/person)
+3. 👋 **Standup:** Each member gives updates on their progress and reflects on their work during the previous sprint (~2-3 minutes/person)
     * Each member should bring up their accomplishments or difficulties they've had during the sprint with their assigned task
     * The lead can make quick suggestions on future work baased each member's update
 4. 🚀 **Action Items:** Finalize next action items and work for everyone (~5-10 minutes)
