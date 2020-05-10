@@ -11,5 +11,5 @@ as well.
 Check out [Repository Management](./project-management/repositories.md) for guidelines on how to manage your GitHub repository and enforce coding standards.
 
 ::: warning
-TODO: [`ubclaunchpad/docs#49`](https://github.com/ubclaunchpad/docs/issues/49)
+TODO
 :::
