@@ -61,7 +61,7 @@ Some examples of good tasks recorded as GitHub Issues:
 * [`ubclaunchpad/ubclaunchpad.com#14`](https://github.com/ubclaunchpad/ubclaunchpad.com/issues/14)
   * ✅ Description includes a clear set of functionality that an implementation must achieve (the definition of completion)
   * ✅ Discussion includes ideas, a (literal) sketch of the implementation, and links to relevant resources
-* [`ubclaunchpad/rocket#207`](https://github.com/ubclaunchpad/rocket2/issues/207)
+* [`ubclaunchpad/rocket2#207`](https://github.com/ubclaunchpad/rocket2/issues/207)
   * ✅ Description includes a clear purpose ("the current implementation is unsustainable") and a clear definition of completion ("a new command to do x")
   * ✅ Discussion questions the specifics of the feature, how it will work, and links to relevant issues
 * [`ubclaunchpad/inertia#133`](https://github.com/ubclaunchpad/inertia/issues/133)
