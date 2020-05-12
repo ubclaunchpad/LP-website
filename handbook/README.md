@@ -6,6 +6,15 @@ Welcome to the [UBC Launch Pad](https://ubclaunchpad.com/) handbook! Launch Pad-
 
 Our [Manifesto](manifesto.md) outlines our vision and code of conduct.
 
+## 🚀 Onboarding <Badge type="tip" text="new"/>
+
+These pages helps you hit the ground running once you've joined us!
+
+* [**for Everyone**](./onboarding/everyone.md)
+* [**for Tech Leads**](./onboarding/tech-leads.md)
+* [**for Design**](./onboarding/design.md)
+* [**for Strategy**](./onboarding/strategy.md)
+
 ## ⚙️ Tools
 
 We use a variety of technology and tools at Launch Pad - these sections help you get started on what we use!
@@ -30,10 +39,6 @@ These are **guidelines**, not strict rules! Teams should adjust these processes 
 ## 🏡 Administration
 
 The [Administration page](administration.md) describes the structure of UBC Launch Pad.
-
-## 🚀 Onboarding <Badge type="tip" text="new"/>
-
-The [Onboarding page](onboarding.md) helps you hit the ground running once you've joined us!
 
 ## 📦 Official Repositories
 
