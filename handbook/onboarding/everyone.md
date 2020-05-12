@@ -1,5 +1,5 @@
-# 🚀 Onboarding for Tech Leads
+# 🚀 Onboarding for Everyone
 
 ::: warning
-TODO: document steps everyone should take when onboarding
+TODO
 :::
