@@ -53,5 +53,11 @@ module.exports = {
     ['@vuepress/google-analytics', {
       'ga': 'UA-63529563-2',
     }],
+
+    // analytics are under team@ubclaunchpad.com, property docs.ubclaunchpad.com
+    // dashboard: https://app.usefathom.com/share/oemmhhle/docs.ubclaunchpad.com
+    ['@ubclaunchpad/fathom', {
+      'siteID': 'OEMMHHLE',
+    }],
   ],
 }
