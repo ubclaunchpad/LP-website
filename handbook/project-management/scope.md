@@ -8,7 +8,9 @@ Note that on paper, it may seem like you have a lot of time since teams get a wh
 
 This is why scoping your project appropriately is vital to its success!
 
-## Ideation
+## Considerations
+
+This section...
 
 ### Core Feature and the MVP
 
