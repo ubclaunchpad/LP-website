@@ -4,7 +4,7 @@ This document outlines advice on how to scope your project in a way that makes i
 
 ## Launch Pad Limitations
 
-Note that on paper, it may seem like you have a lot of time since teams get a whole semester to complete their project. However, in between designing your project, learning the prerequisite technologies, adapting to feedback, midterms, breaks, absences, and more, teams don't actually have a lot of time to complete projects.
+Note that on paper, it may seem like you have a lot of time since teams get a whole semester to complete their project. However, in between designing your project, learning the prerequisite technologies, adapting to feedback, midterms, breaks, absences, and more, many previous teams actually struggled to complete the projects.
 
 This is why scoping your project appropriately is vital to its success!
 
