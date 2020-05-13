@@ -10,7 +10,7 @@ This is why scoping your project appropriately is vital to its success!
 
 ## Considerations
 
-This section...
+This section outlines considerations you should keep in mind as you plan out your project.
 
 ### Core Feature and the MVP
 
@@ -35,7 +35,7 @@ We call the core feature and this set of "requirements" the **Minimum Viable Pro
 This timeline is a *new and proposed* timeline, and will probably change based on our experiences trying it out.
 :::
 
-* **Week 0**: Brainstorm ideas and start to consolidate around one or two
+* **Week 0**: Brainstorm ideas and start to consolidate around one or two ideas
   * Designers will focus on user testing and prototyping
 * **Week 2**: Finalized project pitch and MVP writeup
   * Designers will continue user testing and prototyping with a focus on the MVP
