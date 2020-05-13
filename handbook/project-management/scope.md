@@ -50,7 +50,7 @@ This timeline is a *new and proposed* timeline, and will probably change based o
 * **Week 8**: Branding/design starts to come together, MVP looks nicer and smoother, some progress on stretch goals might be made
   * Teams should continue collecting feedback based on their in-progress implementation
   * Designers should start putting together promotional material and helping developers finalize design implementation
-  * Developers should shift focus to polish and a few stretch goals
+  * Developers should shift focus to polish and stretch goals
   * Remarks:
     * Remember that **polish takes a long time** - see the [Ninety-ninety rule](https://en.wikipedia.org/wiki/Ninety-ninety_rule):
       > The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other 90 percent of the development time.
