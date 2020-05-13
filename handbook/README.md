@@ -15,7 +15,7 @@ We use a variety of technology and tools at Launch Pad - these sections help you
 * [**Deployment**](./tools/deployment.md): Launch Pad's specific advice regarding deployment and getting your project out to the world.
 * [**Other Tools**](../resources/tools.md): Our Resources section has a page on general tools you can leverage to help you build awesome stuff!
 
-## 👨‍💼 Project Management
+## 👨‍💼 Project Management <Badge type="tip" text="updated"/>
 
 These documents compile hard-won advice about the best way to run (and participate in) a Launch Pad team and build great software. This isn't just geared towards team leads - it should be useful for everyone!
 
@@ -23,9 +23,9 @@ These documents compile hard-won advice about the best way to run (and participa
 These are **guidelines**, not strict rules! Teams should adjust these processes to the way they work. Open a pull request if there's something you think should be updated or changed!
 :::
 
-1. [**Project Scope**](./project-management/scope.md): Tips for planning out your project's overall scope and getting an initial idea laid out.
-2. [**Sprint Planning**](./project-management/sprints.md): Guidelines for how to plan out a week's work with your team.
-3. [**Repository Management**](./project-management/repositories.md): Guidelines for how to manage your GitHub repository and enforce coding standards. Remember: your repository is your main outlet to the outside world - and this outside world includes potential employers! Make it informative, organized, and pretty!
+* [**Project Scope**](./project-management/scope.md): Tips for planning out your project's overall scope and getting an initial idea laid out.
+* [**Sprint Planning**](./project-management/sprints.md): Guidelines and advice for how to plan out work with your team to drive forward progress on your project!
+* [**Repository Management**](./project-management/repositories.md): Guidelines for how to manage your GitHub repository and enforce coding standards. Remember: your repository is your main outlet to the outside world - and this outside world includes potential employers! Make it informative, organized, and pretty!
 
 ## 🏡 Administration
 

@@ -1,58 +1,74 @@
-# 🏃 Sprints
 
-Launch Pad uses agile software development, as is common in industry. In
-particular, Launch Pad uses a mixture of the Scrum and Kanban methodologies.
-This allows teams to manage small, achievable milestones and adjust projects as
-needed quickly and effectively.
+# 🏃 Sprint Planning <Badge type="tip" text="updated"/>
 
-An important part of the Scrum development methodology is sprint planning, where
-the team decides what issues they will work on for the next week or two.
-This document explains Launch Pad's sprint planning guidelines.
+Launch Pad uses "agile" software development, as is common in industry. This allows teams to manage small, achievable milestones and adjust projects as needed quickly and effectively.
 
-::: warning
-This page is a bit outdated!
+An important part of being "agile" is sprint planning and defining units of work ("tasks", sometimes referred to as "issues") - this document will take you through what that entails and how to utilize it to get your projects out to the world!
+
+This information is useful to everyone, regardless of your role at Launch Pad.
+
+::: tip
+
+This is **guidance** - feel free to adapt it to your team's needs and habits! If you have suggestions that have worked out for your team, please contribute them to this document!
+
 :::
 
-## Backlog
+## What is a Sprint?
 
-Before development on a project begins, the backlog should contain Epics that
-describe the project's requirements. As needed, these Epics should be broken
-down into smaller issues that build toward completing the Epic. Issues should
-be as small as possible but still contain enough information for
-**anyone on the team** to understand. Issues in the backlog should be ordered
-by priority.
+At Launch Pad, a **sprint** will typically constitute a period of work spanning a week. At the start of each sprint, you will:
 
-## Estimation
+* Reflect on your previous sprint
+* Plan work for the coming sprint
 
-Every issue created during sprint planning should have an estimate before work
-on it starts. Estimates for issues should be in terms of **relative complexity**,
-not time. The magnitude of estimates doesn't matter, so long as two issues that
-have the same estimate have approximately the same complexity.
+During each sprint, each member should have a few assigned tasks to work on - this is the primary way of driving forward progress on a project.
 
-The smaller in scope an issue is, the more accurately it can be estimated, so
-try to break down larger issues into several smaller-scoped ones.
+## Sprint Meetings
 
-Before beginning a project, teams should decide on some guidelines for estimation.
-For instance, an estimate of 1 is about as much work as adding an extra button
-in a navigation bar, and an estimate of 5 is about as much work as fetching and
-parsing data from GitHub's API.
+Sprint meetings should be conducted at the very start or end of each sprint. Most sprint meetings should have the following structure - we've also provided some guidance on roughly how long each step should take, though this will vary per team.
 
-## Scrum Meeting
+1. 📝 **Prep:** 1-2 days before your meeting, create a document outlining all of the following parts of the meeting in a few words per point.
+   * The goal is to have everyone briefly think about what they've achieved and problems they've faced so that meetings can run more smoothly!
+   * A good way to do this is to have a document posted to your team's Slack channel so everyone can add to it at their leisure before you meeting
+2. ✈️ **Overview:** At the start of the meeting, the lead gives general updates or comments overall progress (~1-2 minutes)
+3. 👋 **Standup:** Each member gives updates on their progress and reflects on their work during the previous sprint (~2-3 minutes/person)
+    * Each member should bring up their accomplishments or difficulties they've had during the sprint with their assigned task
+    * The lead can make quick suggestions on future work baased each member's update
+4. 🚀 **Action Items:** Finalize tasks that need to be done and assign work for everyone (~5-10 minutes)
+    * [Define and create tasks](#tasks) as GitHub issues, and make sure each member has a task assigned (new or old) through a GitHub issue
+5. ❓ **Follow-up**: Leave some time after each meeting to help each other out with any issues, discuss the project, or just socialize!
 
-Every week, each team should have a Scrum meeting from 11AM-12PM. At these
-meetings, teams should:
+## Tasks
 
-* Conduct a standup, where each member discusses what they accomplished during
-  the previous week and if anything is preventing them from completing their
-  currently assigned tasks ("blockers"). If there are blockers, add the
-  dependency relationship in ZenHub.
-* Update the ZenHub board as needed based on completed tasks. If the backlog is
-  small or empty, create new issues for unimplemented components from the
-  requirements.
-* Create a milestone for the sprint. Select issues from the backlog to
-  incorporate into the next sprint, assign them to the member with relevant
-  interest, experience, and/or bandwidth, and add them to the milestone.
-  Since every issue has an estimate, teams will discover their "weekly
-  bandwidth", measured in estimate points (or story points), after a few sprints.
-* If tasks require design work, make sure to note them alongside the task and
-  communicate the requirements to your team's designer(s).
+### Defining Tasks
+
+A **task** is a unit of work that needs to be done. One way of making sure a task is clear is to answer the following:
+
+* 💪 **Purpose**: Why does this task need to be done?
+* ✔ **Definition of Completion**: At what point is this task complete?
+
+A *definition of completion* creates a clear view of what a task encapsulates. This helps the team member working on the task know what to work towards and when to stop.
+
+### Managing Tasks
+
+Each task should be tracked as a **GitHub issue** (this is why we sometimes call tasks "issues") - the [official documentation](https://github.com/features/project-management/) gives a great overview of the feature.
+
+Each issue should clearly state the purpose and definition of completion of the task, as well as any other relevant information - **your goal is to leave enough information so that someone can hope into an issue and know exactly what is going on and what to do**.
+
+One way to do this is to liberally use issue references! On GitHub, each issue and pull request is assigned a number, using `#IssueNumber` (for example, `#13`) anywhere on GitHub will automatically create a link from one issue to another (and this works for pull requests as well!). This helps keep relevant information connected to each issue.
+
+Some examples of good tasks recorded as GitHub Issues:
+
+* [`ubclaunchpad/ubclaunchpad.com#14`](https://github.com/ubclaunchpad/ubclaunchpad.com/issues/14)
+  * ✅ Description includes a clear set of functionality that an implementation must achieve (the definition of completion)
+  * ✅ Discussion includes ideas, a (literal) sketch of the implementation, and links to relevant resources
+* [`ubclaunchpad/rocket2#207`](https://github.com/ubclaunchpad/rocket2/issues/207)
+  * ✅ Description includes a clear purpose ("the current implementation is unsustainable") and a clear definition of completion ("a new command to do x")
+  * ✅ Discussion questions the specifics of the feature, how it will work, and links to relevant issues
+* [`ubclaunchpad/inertia#133`](https://github.com/ubclaunchpad/inertia/issues/133)
+  * ✅ Description includes clear goals of the task, as well as a sketch of what an implementation might look like
+  * ✅ Discussion links relevant documentation to dependencies
+* [`ubclaunchpad/inertia#626`](https://github.com/ubclaunchpad/inertia/issues/626)
+  * ✅ Description includes a full error log and reproduction steps - this is useful for anyone trying to fix the problem!
+  * ✅ Discussion involves more logs, abundant links to relevant issues, and a full record of the exact steps taken to resolve the problem
+
+You can also attach [labels](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests) and [milestones](https://help.github.com/en/github/managing-your-work-on-github/viewing-your-milestones-progress) to each issue, and for those familiar with Kanban Boards, you can use [GitHub Projects](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) to help manage your issues. Feel free to pick a workflow that feels the most natural for your team!
