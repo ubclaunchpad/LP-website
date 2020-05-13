@@ -47,7 +47,7 @@ This timeline is a *new and proposed* timeline, and will probably change based o
   * Remarks:
     * At this point, the MVP will be quite clunky but should capture the MVP's core feature
     * At this point, midterms and whatnot will probably start to take a toll on progress
-* **Week 8**: Branding/design starts to come together, MVP looks nicer and smoother, some progress on stretch goals might be made
+* **Week 8**: Branding/design starts to come together, MVP is more polished, progress is made on stretch goals
   * Teams should continue collecting feedback based on their in-progress implementation
   * Designers should start putting together promotional material and helping developers finalize design implementation
   * Developers should shift focus to polish and stretch goals
