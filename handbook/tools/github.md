@@ -16,7 +16,7 @@ This page gives you some background knowledge that we hope will help you make th
 
 Markdown is a lightweight markup language designed to help you write formatted text without a heavyweight editor like Microsoft Word or Google Docs. You can write:
 
-* **bold statements** 
+* **bold statements**
 * *italicized whispers*
 * :astonished: emoji
 * [linked text](./img/github.md#markdown)
@@ -27,7 +27,7 @@ For example:
 ```md
 Markdown is a lightweight markup language designed to help you write formatted text without a heavyweight editor like Microsoft Word or Google Docs. You can write:
 
-* **bold statements** 
+* **bold statements**
 * *italicized whispers*
 * [linked text](./img/github.md#markdown)
 * :astonished: emoji
@@ -116,11 +116,11 @@ You can leave simple comments on pull requests similar to comments on [issues](#
 
 ![inline review comment](./img/github_review_inline.png)
 
-Each comment can leverage [Markdown]() formatting, but there are some other tricks you can leverage in your comments, such as suggestions:
+Each comment can leverage [Markdown](#markdown) formatting, but there are some other tricks you can leverage in your comments, such as suggestions:
 
 | Before | After |
 |--------|-------|
-| ![](./img/github_suggest_before.png) | ![](./img/github_suggest_after.png) |
+| ![before](./img/github_suggest_before.png) | ![after](./img/github_suggest_after.png) |
 
 You can leave a final word on a pull request by **approving** it (indicating the pull request author should feel free to add their changes to the repository, aka "merging") or **requesting changes** with the "Review changes" button:
 
@@ -131,9 +131,7 @@ You can leave a final word on a pull request by **approving** it (indicating the
 By default, GitHub sends you emails for everything that you are subscribed to. Since this can be rather annoying, you might want to disable that and have Launch Pad GitHub notifications arrive in you Slack messages instead - this way, you don't have to deal with a ton of spam in your personal email and you won't miss any important discussions with your team!
 
 1. Set up Slack notifications [here](https://github.com/settings/reminders/ubclaunchpad) - recommended options:
-
 ![slack notifications settings](./img/github_slack.png)
 
 2. Disable emails [here](https://github.com/settings/notifications) - recommended options:
-
 ![github emails settings](./img/github_emails.png)
