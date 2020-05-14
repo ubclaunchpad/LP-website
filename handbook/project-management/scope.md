@@ -62,7 +62,7 @@ At this point, teams should start asking people to try initial implementation an
 * 🎨 **Designers**: start work on collecting feedback based on the implementation, branding, and improving the MVP
   * Week 5: Continue user testing with the MVPs & may start playing around with microinteractions, branding.
   * Week 6: Start with branding (logos, name, colours, UI library), keep developers part of your branding ideation (let them do voting, this is their project as much as it is yours!)
-  * Week 7: Finalize branding, name, logo etc. 
+  * Week 7: Finalize branding, name, logo etc.
   * Make sure all assets are continuously being updated on centralized drive & Figma or Zeplin Files are being sent to developers.
 
 Remember that this MVP will be quite clunky but should capture the MVP's core feature. Also note that midterms and whatnot will probably start to take a toll on progress!
