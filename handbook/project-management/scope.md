@@ -36,7 +36,7 @@ This timeline is a *new and proposed* timeline, and will probably change based o
 :::
 
 * **Week 0**: Brainstorm ideas and start to consolidate around one or two ideas
-  * Designers will focus on user testing and prototyping
+  * Designers will focus on user research
 * **Week 2**: Finalized project pitch and MVP writeup
   * Designers will continue user testing and prototyping with a focus on the MVP
   * Developers will start implementation work
