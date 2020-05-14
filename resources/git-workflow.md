@@ -111,3 +111,5 @@ your direction and get pointers on how to best complete your task.
   review.
 * Once the reviewer accepts the changes, merge the PR.
 * Once it is merged, delete the branch.
+
+Learn more about pull requests in our [handbook's GitHub guide](../handbook/tools/github.md).

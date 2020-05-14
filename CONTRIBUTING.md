@@ -59,6 +59,7 @@ npm run serve    # runs the website locally
   ```
   <Badge type="tip" text="new"/>
   ```
+* Images should go in a `/img` folder in the same directory.
 
 ## VuePress
 
