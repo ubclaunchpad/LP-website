@@ -8,11 +8,7 @@ Note that on paper, it may seem like you have a lot of time since teams get a wh
 
 This is why scoping your project appropriately is vital to its success!
 
-## Considerations
-
-This section outlines considerations you should keep in mind as you plan out your project.
-
-### Core Feature and the MVP
+## Core Feature and the MVP
 
 In general, your idea should be able to be distilled down to a single core feature. For example:
 
@@ -29,34 +25,64 @@ This should be done *before* you start any sort of development. Using this core 
 
 We call the core feature and this set of "requirements" the **Minimum Viable Product**, or MVP.
 
-### Project Timeline
+## Project Timeline
 
 ::: warning
-This timeline is a *new and proposed* timeline, and will probably change based on our experiences trying it out.
+This timeline is a *new* and *proposed* timeline, and will probably change based on our experiences trying it out.
 :::
 
-* **Week 0**: Brainstorm ideas and start to consolidate around one or two ideas
-  * Designers will focus on user testing and prototyping
-* **Week 2**: Finalized project pitch and MVP writeup
-  * Designers will continue user testing and prototyping with a focus on the MVP
-  * Developers will start implementation work
-* **Week 5**: A *functional* MVP based on initial idea and prototypes
-  * Teams should start asking people to try initial implementation and give ideas and feedback
-  * Designers should start work on collecting feedback based on the implementation, branding, and improving the MVP
-  * Developers should work on making the core feature work well and implementing designs
-  * Remarks:
-    * At this point, the MVP will be quite clunky but should capture the MVP's core feature
-    * At this point, midterms and whatnot will probably start to take a toll on progress
-* **Week 8**: Branding/design starts to come together, MVP is more polished, progress is made on stretch goals
-  * Teams should continue collecting feedback based on their in-progress implementation
-  * Designers should start putting together promotional material and helping developers finalize design implementation
-  * Developers should shift focus to polish and stretch goals
-  * Remarks:
-    * Remember that **polish takes a long time** - see the [Ninety-ninety rule](https://en.wikipedia.org/wiki/Ninety-ninety_rule):
-      > The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other 90 percent of the development time.
-* **Final Week**: Promote the project through social media and platforms like [Product Hunt](https://www.producthunt.com/)!
+### Week 0: Brainstorming
 
-### Managing Risk
+In the first week, brainstorm with your team and start to consolidate around one or two ideas.
+
+* ⚒️ **Developers**: participate in user research work with designers
+  * Development should not begin yet!
+  * Tech leads can start proposing technologies for developers to get a bit of a head start on learning
+* 🎨 **Designers**: focus on user research
+  * This will involve activities like ideation sessions, interviews, personas, journey maps, user stories, sketching & heat-map voting.
+  * Initial ideation will involve the whole team (coming up with ideas & possible features)
+  * Designers may also ask developers to help with interviews and surveys to get more data.
+
+### Week 2: Finalized project pitch and MVP writeup
+
+Your team should prepare a clear, brief pitch (i.e. a short description) for your MVP and a high-level writeup of what your MVP will entail.
+
+* ⚒️ **Developers**: start implementation work under tech lead's guidance
+* 🎨 **Designers**: start wireframing and prototyping with a focus on the MVP
+  * Week 2: Mid-Fi Wireframes & prototype should be done by the end of the week.
+  * Week 3: User testing on Mid-fi prototype.
+  * Week 4: Hi-Fi wireframes and prototype should be done.
+  * At any point, always upload your finished designs (Mid-Fi & Hi-Fi) to your centralized drive for developers to access and always alert them when you have done so.
+
+### Week 5: A *functional* MVP based on initial idea and prototypes
+
+At this point, teams should start asking people to try initial implementation and give ideas and feedback.
+
+* ⚒️ **Developers**: work on making the core feature work well and implementing designs
+* 🎨 **Designers**: start work on collecting feedback based on the implementation, branding, and improving the MVP
+  * Week 5: Continue user testing with the MVPs & may start playing around with microinteractions, branding.
+  * Week 6: Start with branding (logos, name, colours, UI library), keep developers part of your branding ideation (let them do voting, this is their project as much as it is yours!)
+  * Week 7: Finalize branding, name, logo etc.
+  * Make sure all assets are continuously being updated on centralized drive & Figma or Zeplin Files are being sent to developers.
+
+Remember that this MVP will be quite clunky but should capture the MVP's core feature. Also note that midterms and whatnot will probably start to take a toll on progress!
+
+### Week 8: Polish
+
+At this point, branding/design starts to come together, MVP is more polished, progress is made on stretch goals. Teams should continue collecting feedback based on their in-progress implementation.
+
+* ⚒️ **Developers**: shift focus to polish and stretch goals
+* 🎨 **Designers**: start putting together promotional material and helping developers finalize design implementation
+
+Remember that *polish takes a long time* - see the [Ninety-ninety rule](https://en.wikipedia.org/wiki/Ninety-ninety_rule):
+
+> The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other 90 percent of the development time.
+
+### Final Week: Promote the project 🚀
+
+As teams round off their project, they should start working together with their designers and club leadership to promote their project through social media and platforms like [Product Hunt](https://www.producthunt.com/)!
+
+## Managing Risk
 
 Some requirements may be technically difficult to build, rely on a third-party API, or involve risk in some other way. In general, at the beginning of a project, there may be some unknown factors that a project's success depends on.
 
