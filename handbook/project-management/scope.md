@@ -37,12 +37,23 @@ This timeline is a *new and proposed* timeline, and will probably change based o
 
 * **Week 0**: Brainstorm ideas and start to consolidate around one or two ideas
   * Designers will focus on user research
+    * This will involve activities like ideation sessions, interviews, personas, journey maps, user stories, sketching & heat-  map voting.
+    * Initial ideation will involve the whole team (coming up with ideas & possible features)
+    * Designers may also ask developers to help with interviews and surveys to get more data.
 * **Week 2**: Finalized project pitch and MVP writeup
-  * Designers will start user testing and prototyping with a focus on the MVP
+  * Designers will start wireframing and prototyping with a focus on the MVP
+    * Week 2: Mid-Fi Wireframes & prototype should be done by the end of the week.
+    * Week 3: User testing on Mid-fi Prototype.
+    * Week 4: Hi-Fi wireframes & Prototype should be done.
+    * At any point, always upload your finished designs (Mid-Fi & Hi-Fi) to your centralized drive for developers to access and always alert them when you have done so.
   * Developers will start implementation work
 * **Week 5**: A *functional* MVP based on initial idea and prototypes
   * Teams should start asking people to try initial implementation and give ideas and feedback
   * Designers should start work on collecting feedback based on the implementation, branding, and improving the MVP
+    * Week 5: Continue user testing with the MVPs & may start playing around with microinteractions, branding.
+    * Week 6: Start with branding (Logos, Name, Colours, UI Library), keep developers part of your branding ideation (let them do voting, this is their project as much as it is yours!)
+    * Week 7: Finalize branding, name, logo etc. 
+    * Make sure all assets are continuously being updated on centralized drive & Figma or Zeplin Files are being sent to developers.
   * Developers should work on making the core feature work well and implementing designs
   * Remarks:
     * At this point, the MVP will be quite clunky but should capture the MVP's core feature
