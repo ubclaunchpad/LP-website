@@ -19,7 +19,7 @@ Markdown is a lightweight markup language designed to help you write formatted t
 * **bold statements**
 * *italicized whispers*
 * :astonished: emoji
-* [linked text](./img/github.md#markdown)
+* [linked text](./github.md#markdown)
 * lists, tables, headings, and more!
 
 For example:
@@ -29,9 +29,9 @@ Markdown is a lightweight markup language designed to help you write formatted t
 
 * **bold statements**
 * *italicized whispers*
-* [linked text](./img/github.md#markdown)
 * :astonished: emoji
-* lists, tables, headings, images, and more!
+* [linked text](./github.md#markdown)
+* lists, tables, headings, and more!
 ```
 
 This makes it easy and consistent to write, and easy for tools to interpret and render nicely (this page is rendered from a Markdown file!). Markdown works pretty much anywhere in GitHub, and writing Markdown on a `.md` file in your repository automatically formats it when you open it on GitHub. For example, check out `ubclaunchpad/ubclaunchpad.com`'s [`CONTRIBUTING.md` file on GitHub](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/CONTRIBUTING.md)! (here's the [plain text version](https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/CONTRIBUTING.md) for reference).
