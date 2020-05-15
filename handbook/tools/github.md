@@ -8,7 +8,7 @@ That means each project has an associated GitHub repository, and documentation f
 Using GitHub is especially important because **our [Slack workspace](./slack.md) does not retain messages forever** - any long-term knowledge, information, and discussions should be enshrined *somewhere* in a repository!
 :::
 
-This page gives you some background knowledge that we hope will help you make the most of GitHub off the bat, whether you're a developer, designer, or strategy member. For more advanced usage, check out [Repository Management](../project-management/repositories.md) for guidelines on how to manage your GitHub repository and enforce coding standards.
+This page gives you some background knowledge that we hope will help you make the most of GitHub off the bat, whether you're a developer, designer, or strategy member. For more advanced usage, check out [Repository Management](../project-management/repositories.md) for guidelines on how to manage your GitHub repository and enforce coding standards and our [Git Workflow guide](../../resources/git-workflow.md).
 
 ## Basics
 
