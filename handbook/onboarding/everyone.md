@@ -1,5 +1,52 @@
 # 🚀 Onboarding for Everyone
 
-::: warning
-TODO
+Welcome to UBC Launch Pad! This page takes you through some important items you need to get started 💪
+
+## Checklist
+
+::: tip
+If you don't have access to anything, or if you can't complete any of these steps for whatever reason, or if you have any questions, drop a message in [`#ask-leads`](https://ubclaunchpad.slack.com/messages/CK935RD3Q/)!
 :::
+
+### Slack Access
+
+Make sure you are part of the [UBC Launch Pad Slack workspace](https://ubclaunchpad.slack.com/).
+
+* Make sure you install the Slack app on your phone so you don't miss anything!
+* Read our [Slack](https://docs.ubclaunchpad.com/handbook/tools/slack) guide, which will tell you how to make the most of Slack and any noteworthy channels you should join off the bat!
+
+### GitHub Access
+
+Make sure you are part of the [UBC Launch Pad GitHub organization](https://github.com/ubclaunchpad/).
+
+* You should be able to access our private repositories, such as [`ubclaunchpad/ideas`](https://github.com/ubclaunchpad/ideas)
+* Read our [Intro to GitHub](../tools/github.md) guide, which will help you get started on leveraging GitHub and setting up notifications.
+
+### Rocket Setup
+
+[Rocket](https://github.com/ubclaunchpad/rocket2) is our Slack bot and team management tool - make sure you help Rocket get to know you! In any Slack channel, write the following:
+
+```
+/rocket user add
+```
+
+Then, you can give it some information about you:
+
+```
+/rocket user edit --github <username>
+```
+
+Learn more about Rocket in our [Slack guide's Rocket section](https://docs.ubclaunchpad.com/handbook/tools/slack#rocket).
+
+## Further Actions
+
+If you've got everything set up, congratulations - you are pretty much good to go! Make sure you take some time to get to know this website - it should contain everything you need to know to kickstart your time with Launch Pad, and if anything is missing please [let us know](https://github.com/ubclaunchpad/docs/issues/new)!
+
+* [Handbook](../README.md)
+* [Resources](../../resources/README.md)
+
+For some of you, there are additional things you should be aware of:
+
+* [for Design](./design.md)
+* [for Strategy](./strategy.md)
+* [for Leads](./leads.md)
