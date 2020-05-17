@@ -15,13 +15,6 @@ Make sure you are part of the [UBC Launch Pad Slack workspace](https://ubclaunch
 * Make sure you install the Slack app on your phone so you don't miss anything!
 * Read our [Slack](https://docs.ubclaunchpad.com/handbook/tools/slack) guide, which will tell you how to make the most of Slack and any noteworthy channels you should join off the bat!
 
-### GitHub Access
-
-Make sure you are part of the [UBC Launch Pad GitHub organization](https://github.com/ubclaunchpad/).
-
-* You should be able to access our private repositories, such as [`ubclaunchpad/ideas`](https://github.com/ubclaunchpad/ideas)
-* Read our [Intro to GitHub](../tools/github.md) guide, which will help you get started on leveraging GitHub and setting up notifications.
-
 ### Rocket Setup
 
 [Rocket](https://github.com/ubclaunchpad/rocket2) is our Slack bot and team management tool - make sure you help Rocket get to know you! In any Slack channel, write the following:
@@ -37,6 +30,14 @@ Then, you can give it some information about you:
 ```
 
 Learn more about Rocket in our [Slack guide's Rocket section](https://docs.ubclaunchpad.com/handbook/tools/slack#rocket).
+
+### GitHub Access
+
+Make sure you are part of the [UBC Launch Pad GitHub organization](https://github.com/ubclaunchpad/). [Rocket](#rocket-setup) should do this for you.
+
+* You should be able to access our private repositories, such as [`@ubclaunchpad/ideas`](https://github.com/ubclaunchpad/ideas)
+  * If you can't see the Ideas repository, check that you are in the team [`ubclaunchpad/all`](https://github.com/orgs/ubclaunchpad/teams/all) - if not,make sure you've [set up your profile on Rocket](#rocket-setup)!
+* Read our [Intro to GitHub](../tools/github.md) guide, which will help you get started on leveraging GitHub and setting up notifications.
 
 ## Further Actions
 
