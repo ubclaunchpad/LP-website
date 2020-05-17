@@ -128,6 +128,16 @@ You can leave a final word on a pull request by **approving** it (indicating the
 
 ## Setting Up Notifications
 
+### Watching Repositories
+
+"Watching" a repository is the only way to receive consistent notifications for updates to it. To watch a repository:
+
+![watch a repository](./img/github_watch.png)
+
+Make sure you do this for all repositories relevant to your team(s)!
+
+### Getting Notifications
+
 By default, GitHub sends you emails for everything that you are subscribed to. Since this can be rather annoying, you might want to disable that and have Launch Pad GitHub notifications arrive in you Slack messages instead - this way, you don't have to deal with a ton of spam in your personal email and you won't miss any important discussions with your team!
 
 1. Set up Slack notifications [here](https://github.com/settings/reminders/ubclaunchpad) - recommended options:
