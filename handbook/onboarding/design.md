@@ -30,3 +30,7 @@ Make sure all designers are given "editor" access to the [shared Launch Pad Desi
 ### Figma
 
 TODO
+
+## Workflows
+
+TODO: how the Design team will use handbook / GitHub / Drive / Figma etc.

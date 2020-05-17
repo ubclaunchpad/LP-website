@@ -34,3 +34,7 @@ Make sure that you are **watching** all relevant repositories so that you don't 
 Make sure all leads are given "editor" access to the [shared Launch Pad folder](https://drive.google.com/drive/folders/1u-U3w0V0MaLQrWtDdw_8n15V2lO-6gXo), which is owned by the `team@ubclaunchpad.com` account (more details are in the [Exec repository](https://github.com/ubclaunchpad/exec)).
 
 TODO: detailed drive hierarchy
+
+## Workflows
+
+TODO: how leads will use handbook / GitHub / Drive etc.
