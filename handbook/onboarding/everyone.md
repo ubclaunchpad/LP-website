@@ -35,8 +35,8 @@ Learn more about Rocket in our [Slack guide's Rocket section](https://docs.ubcla
 
 Make sure you are part of the [UBC Launch Pad GitHub organization](https://github.com/ubclaunchpad/). [Rocket](#rocket-setup) should do this for you.
 
-* You should be able to access our private repositories, such as [`@ubclaunchpad/ideas`](https://github.com/ubclaunchpad/ideas)
-  * If you can't see the Ideas repository, check that you are in the team [`ubclaunchpad/all`](https://github.com/orgs/ubclaunchpad/teams/all) - if not,make sure you've [set up your profile on Rocket](#rocket-setup)!
+* You should be able to access our private repositories, such as [`ubclaunchpad/ideas`](https://github.com/ubclaunchpad/ideas)
+  * If you can't see the Ideas repository, check that you are in the GitHub team [`@ubclaunchpad/all`](https://github.com/orgs/ubclaunchpad/teams/all) - if not,make sure you've [set up your profile on Rocket](#rocket-setup)!
 * Read our [Intro to GitHub](../tools/github.md) guide, which will help you get started on leveraging GitHub and setting up notifications.
 
 ## Further Actions
