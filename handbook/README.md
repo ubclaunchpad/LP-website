@@ -10,10 +10,10 @@ Our [Manifesto](manifesto.md) outlines our vision and code of conduct.
 
 These pages helps you hit the ground running once you've joined us!
 
-* [**for Everyone**](./onboarding/everyone.md)
-* [**for Tech Leads**](./onboarding/tech-leads.md)
+* [**for Everyone**](./onboarding/everyone.md) - read this one first!
 * [**for Design**](./onboarding/design.md)
 * [**for Strategy**](./onboarding/strategy.md)
+* [**for Leads**](./onboarding/leads.md)
 
 ## ⚙️ Tools
 
