@@ -102,11 +102,13 @@ Note that everything you can do with an [issue](#issues), you can do with a pull
 
 One of the most important activies you'll participate in as a member of Launch Pad is **reviewing pull requests**, as it is a core part of collaborating on projects in a systematic manner. A review typically involves looking at the changes in a pull request and leaving *any* sort of comment. Pull requests are the perfect place to:
 
-* ❓ **ask questions** about something you don't understand or are unsure about (both as a reviewer, and as the creator of a pull request!)
-* 💭 **raise suggestions** about a possible improvement to the change
-* 💡 **learn** how to implement features - since pull requests often have a single purpose, it's a good way to see what changes are required to do something
-* 📝 **record** why changes are made - you can go through a repository's history to find pull requests associated with a file to better understand why things are the way things are
-* 👏 **support and celebrate** your teammates' hard work by showing that you've looked at their changes and appreciate their contributions!
+* ❓ **Ask questions** about something you don't understand or are unsure about (both as a reviewer, and as the creator of a pull request!)
+* 💡 **Learn** how to implement features - since pull requests often have a single purpose, it's a good way to see what changes are required to do something. You will learn new things from how your peers write code and you will be more aware of how to write code that is easier for your reviewers to understand.
+* 💭 **Raise suggestions** about a possible improvement to the change - receiving such feedback can give you valuable insight into aspects of a change that you hadn’t considered, and being a reviewer gives you the ability to share knowledge you have that others do not. Every person, regardless of experience level, has both something to learn and something to contribute!
+* 📝 **Record** why changes are made - you can go through a repository's history to find pull requests associated with a file to better understand why things are the way things are. Writing a good PR description (and commit messages) also develops your technical communication skills.
+* 👏 **Support and celebrate** your teammates' hard work by showing that you've looked at their changes and appreciate their contributions!
+
+For more details, the [Sourcegraph company handbook](https://about.sourcegraph.com/handbook/engineering/code_reviews#why-do-we-require-peer-code-reviews) has an excellent section on why the company requires pull request reviews - it covers rationale common in the industry.
 
 ![example review](./img/github_review.png)
 
