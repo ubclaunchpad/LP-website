@@ -29,7 +29,8 @@ Make sure all strategy members are given "editor" access to the [shared Launch P
 
 ## Workflows
 
-**To acquire sponsorships:**
+### Acquiring Sponsorships
+
 - Use email templates under email_template repository on Github
 - Refer to [handbook Manifesto] (https://docs.ubclaunchpad.com/handbook/manifesto) when creating/adjusting outreach content for each contact
 - Track sponsor contact list and status on [this google sheet] (https://docs.google.com/spreadsheets/d/1J0_NkNDB1l3v_Akytx9IEcPoBAs6pSNYmYTWlurrrm0/edit#gid=31565804)
@@ -38,7 +39,8 @@ Make sure all strategy members are given "editor" access to the [shared Launch P
 - Send the invoice to the sponsor and wait for confirmation from ECE
 - Record revenue on the Income and Expense spreadsheet under the [Finance folder] (https://drive.google.com/drive/u/2/folders/1DX9E-FJ8EH40kYM_HO8tC1Y_Z0UuSBbq)
 
-**To plan & host events:**
+### Planing and Hosting Events
+
 - Follow the [event planning timeline] (https://docs.google.com/document/u/2/d/1ANyga1iAEQloIF3EBFgSswayjiwjT2hjuP8KcCHqFIM/edit?usp=drive_web&ouid=115294296634134257227)
 - Can refer to [Guide for Meeting with clubs] (https://docs.google.com/document/d/1Hy3TZY6rh_02lGwtWu_6_DfIExMnfY8ZH5KMVGIYVJw/edit) for collaborative event planning
 - Create a folder under [Events] (https://drive.google.com/drive/u/2/folders/1eRUGpbt2CJevxJQpPqevL9rDA-GABIet) for each event and store all relevant document in the folder
