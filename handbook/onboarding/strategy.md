@@ -29,18 +29,38 @@ Make sure all strategy members are given "editor" access to the [shared Launch P
 
 ## Workflows
 
-**To acquire sponsorships:**
-- Use email templates under email_template repository on Github
-- Refer to [handbook Manifesto] (https://docs.ubclaunchpad.com/handbook/manifesto) when creating/adjusting outreach content for each contact
-- Track sponsor contact list and status on [this google sheet] (https://docs.google.com/spreadsheets/d/1J0_NkNDB1l3v_Akytx9IEcPoBAs6pSNYmYTWlurrrm0/edit#gid=31565804)
-- Create an issue on Github - 1. Assign to a team member 2. Label "Sponsorship" 3. Append all email communication in the issue for future reference
-- Create an invoice using [this template] (https://drive.google.com/drive/u/2/folders/1-j9yUNGPIAKE6W_7MXjjGCzJdS3mEECZ) and save the invoice under the [invoice folder](https://drive.google.com/drive/u/2/folders/1-j9yUNGPIAKE6W_7MXjjGCzJdS3mEECZ) of that respective year 
-- Send the invoice to the sponsor and wait for confirmation from ECE
-- Record revenue on the Income and Expense spreadsheet under the [Finance folder] (https://drive.google.com/drive/u/2/folders/1DX9E-FJ8EH40kYM_HO8tC1Y_Z0UuSBbq)
+### Acquiring Sponsorships
 
-**To plan & host events:**
-- Follow the [event planning timeline] (https://docs.google.com/document/u/2/d/1ANyga1iAEQloIF3EBFgSswayjiwjT2hjuP8KcCHqFIM/edit?usp=drive_web&ouid=115294296634134257227)
-- Can refer to [Guide for Meeting with clubs] (https://docs.google.com/document/d/1Hy3TZY6rh_02lGwtWu_6_DfIExMnfY8ZH5KMVGIYVJw/edit) for collaborative event planning
-- Create a folder under [Events] (https://drive.google.com/drive/u/2/folders/1eRUGpbt2CJevxJQpPqevL9rDA-GABIet) for each event and store all relevant document in the folder
-- Create a post-event survey for member feedback
-- Always write a Thank You email to the partners/sponsors 
+* Create a [Sponsorship tracking issue on GitHub](https://github.com/ubclaunchpad/strategy/issues/new?assignees=&labels=sponsorship&template=sponsorship.md&title=)
+  1. Assign to a team member
+  2. Append all email communication in the issue for future reference
+* Use email templates under [`strategy` repository on GitHub](https://github.com/ubclaunchpad/strategy/tree/master/email-templates)
+* Refer to [handbook Manifesto](../manifesto.md) when creating/adjusting outreach content for each contact
+* Create an invoice using [this template](https://drive.google.com/drive/u/2/folders/1-j9yUNGPIAKE6W_7MXjjGCzJdS3mEECZ) and save the invoice under the [invoice folder](https://drive.google.com/drive/u/2/folders/1-j9yUNGPIAKE6W_7MXjjGCzJdS3mEECZ) of that respective year
+* Send the invoice to the sponsor and wait for confirmation from ECE
+* Record revenue on the Income and Expense spreadsheet under the [Finance folder](https://drive.google.com/drive/u/2/folders/1DX9E-FJ8EH40kYM_HO8tC1Y_Z0UuSBbq)
+
+### Planing and Hosting Events
+
+* Can refer to [Guide for Meeting with clubs](https://docs.google.com/document/d/1Hy3TZY6rh_02lGwtWu_6_DfIExMnfY8ZH5KMVGIYVJw/edit) for collaborative event planning
+* Create a folder under [Events](https://drive.google.com/drive/u/2/folders/1eRUGpbt2CJevxJQpPqevL9rDA-GABIet) for each event and store all relevant document in the folder
+* Create a post-event survey for member feedback
+* Always write a Thank You email to the partners/sponsors
+
+#### Planning Timeline
+
+* **Three weeks before event**
+  * Confirm room
+  * Confirm budget
+  * Ask design to make a poster and a banner by either asking during meeting or messaging #design Slack channel
+* **Two weeks before event**
+  * Get assets from design
+  * Make Facebook event page
+  * Advertise on Instagram
+  * Could ask other clubs to help advertise via Facebook if we want high attendance
+  * Email Michele to advertise on CS newsletter
+    * Newsletters go out every Friday, so  email should go out on Thursday the week before the event at the latest
+    * [Sample email](https://docs.google.com/document/d/1Y-JIwoOJCcFvolWytEHWCnFftkcX5YmP0UvMrlViuTE/edit)
+* **One week before event**
+  * Mention during club-wide standup and make announcement on #general Slack channel
+  * Determine who’s bringing refreshments (if any)
