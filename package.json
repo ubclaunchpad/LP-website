@@ -12,6 +12,7 @@
     "@ubclaunchpad/vuepress-plugin-fathom": "^1.1.0",
     "@vuepress/plugin-back-to-top": "^1.4.1",
     "@vuepress/plugin-google-analytics": "^1.4.1",
+    "emoji-regex": "^9.0.0",
     "markdownlint": "^0.20.2",
     "markdownlint-cli": "^0.22.0",
     "vuepress": "^1.4.1",
