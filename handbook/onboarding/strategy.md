@@ -42,25 +42,6 @@ Make sure all strategy members are given "editor" access to the [shared Launch P
 
 ### Planing and Hosting Events
 
-* Can refer to [Guide for Meeting with clubs](https://docs.google.com/document/d/1Hy3TZY6rh_02lGwtWu_6_DfIExMnfY8ZH5KMVGIYVJw/edit) for collaborative event planning
-* Create a folder under [Events](https://drive.google.com/drive/u/2/folders/1eRUGpbt2CJevxJQpPqevL9rDA-GABIet) for each event and store all relevant document in the folder
-* Create a post-event survey for member feedback
-* Always write a Thank You email to the partners/sponsors
+Create an [Event tracking issue](https://github.com/ubclaunchpad/strategy/issues/new?assignees=&labels=events&template=event.md&title=) in the strategy repository - all the things you need to do are included!
 
-#### Planning Timeline
-
-* **Three weeks before event**
-  * Confirm room
-  * Confirm budget
-  * Ask design to make a poster and a banner by either asking during meeting or messaging #design Slack channel
-* **Two weeks before event**
-  * Get assets from design
-  * Make Facebook event page
-  * Advertise on Instagram
-  * Could ask other clubs to help advertise via Facebook if we want high attendance
-  * Email Michele to advertise on CS newsletter
-    * Newsletters go out every Friday, so  email should go out on Thursday the week before the event at the latest
-    * [Sample email](https://docs.google.com/document/d/1Y-JIwoOJCcFvolWytEHWCnFftkcX5YmP0UvMrlViuTE/edit)
-* **One week before event**
-  * Mention during club-wide standup and make announcement on #general Slack channel
-  * Determine who’s bringing refreshments (if any)
+You can also refer to the [Guide for Meeting with clubs](https://docs.google.com/document/d/1Hy3TZY6rh_02lGwtWu_6_DfIExMnfY8ZH5KMVGIYVJw/edit) for collaborative event planning.
