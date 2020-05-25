@@ -1,8 +1,6 @@
 # 🚀 Onboarding for Strategy
 
-::: warning
-TODO
-:::
+Welcome to UBC Launch Pad, and congratulations (and thank you!) for joining the strategy team!
 
 ## Checklist
 
