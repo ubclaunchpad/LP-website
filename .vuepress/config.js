@@ -1,3 +1,5 @@
+const { path } = require('@vuepress/shared-utils')
+
 module.exports = {
   // header properties
   title: 'UBC Launch Pad Documentation',
@@ -59,5 +61,12 @@ module.exports = {
     ['@ubclaunchpad/fathom', {
       'siteID': 'OEMMHHLE',
     }],
+
+    // add custom results to search
+    () => ({
+      alias: {
+        '../services/flexsearchSvc': path.resolve(__dirname, '.lib/flexsearchSvc.js'),
+      },
+    }),
   ],
 }
