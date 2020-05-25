@@ -18,7 +18,7 @@ module.exports = {
       { text: 'Handbook', link: '/handbook/' },
       { text: 'Resources', link: '/resources/' },
       {
-        text: 'Links',
+        text: 'Quick Links',
         items: [
           { text: 'About Us', link: 'https://ubclaunchpad.com', target:'_blank' },
           { text: 'GitHub', link: 'https://ubclaunchpad.com/github' },

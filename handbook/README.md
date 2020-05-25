@@ -62,3 +62,5 @@ Some teams also have dedicated repositories:
   Lead-specific content, such as meeting notes. Note that this repo is only
   visible to Tech Leads.
 * [**Exec**](https://github.com/ubclaunchpad/exec): Repo containing details about managing Launch Pad, such as our accounts.
+
+Note that links to most of these repositories are available through the handy "Quick Links" dropdown in this website's navbar!
