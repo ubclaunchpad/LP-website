@@ -8,7 +8,7 @@ const matchOverride = async function(queryString, queryTerms, limit = 7) {
       slug: queryString,
       parentPageTitle: 'Sourcegraph',
       title: 'Search all',
-      contentStr: `Search for '${queryString}' in UBC Launch Pad's repositories`,
+      contentStr: `Search for '${queryString}' in Launch Pad's repositories`,
       external: true,
     });
   }
