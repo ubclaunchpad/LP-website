@@ -17,11 +17,11 @@ As a lead, you should also lead in Slack participation by example - please make 
 
 ### GitHub Teams
 
-Make sure you are a part of:
+Make sure you are a part of the following teams on GitHub:
 
-* [`@ubclaunchpad/leads`](https://github.com/orgs/ubclaunchpad/teams/leads), and check that you can access the [Leads repository](https://github.com/ubclaunchpad/leads) - this repository primarily contains interview resources and other leads tasks
+* [`@ubclaunchpad/leads`](https://github.com/orgs/ubclaunchpad/teams/leads), and check that you can access the [Leads repository](https://github.com/ubclaunchpad/leads) - this repository primarily contains interview resources and tracking issues
 * [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [Strategy repository](https://github.com/ubclaunchpad/strategy) - this repository contains sponsorship resources and event/sponsorship tracking issues
-* [`@ubclaunchpad/design`](https://github.com/orgs/ubclaunchpad/teams/design), and check that you can access the [Design repository](https://github.com/ubclaunchpad/design) - this repository contains (some) design assets, resources, and other tasks
+* [`@ubclaunchpad/design`](https://github.com/orgs/ubclaunchpad/teams/design), and check that you can access the [Design repository](https://github.com/ubclaunchpad/design) - this repository contains (some) design assets, resources, and tracking issues
 
 Additionally, the presidents should also be a part of [`@ubclaunchpad/exec`](https://github.com/orgs/ubclaunchpad/teams/exec) and familiarize themselves with the [Exec repository](https://github.com/ubclaunchpad/exec), where we keep track of accounts and credentials.
 
