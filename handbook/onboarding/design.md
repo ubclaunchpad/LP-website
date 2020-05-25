@@ -33,4 +33,11 @@ TODO
 
 ## Workflows
 
+::: tip
+We use GitHub and Slack for pretty much *everything* - make sure you are intimately familiar with **both**, regardless of your role, by reading our handcrafted guides:
+
+* [GitHub guide](https://docs.ubclaunchpad.com/handbook/tools/github)
+* [Slack guide](https://docs.ubclaunchpad.com/handbook/tools/slack)
+:::
+
 TODO: how the Design team will use handbook / GitHub / Drive / Figma etc.

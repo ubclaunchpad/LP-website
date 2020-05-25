@@ -19,11 +19,11 @@ As a lead, you should also lead in Slack participation by example - please make 
 
 Make sure you are a part of:
 
-* [`@ubclaunchpad/leads`](https://github.com/orgs/ubclaunchpad/teams/leads), and check that you can access the [Leads repository](https://github.com/ubclaunchpad/leads)
-* [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [Strategy repository](https://github.com/ubclaunchpad/strategy)
-* [`@ubclaunchpad/design`](https://github.com/orgs/ubclaunchpad/teams/design), and check that you can access the [Design repository](https://github.com/ubclaunchpad/design)
+* [`@ubclaunchpad/leads`](https://github.com/orgs/ubclaunchpad/teams/leads), and check that you can access the [Leads repository](https://github.com/ubclaunchpad/leads) - this repository primarily contains interview resources and other leads tasks
+* [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [Strategy repository](https://github.com/ubclaunchpad/strategy) - this repository contains sponsorship resources and event/sponsorship tracking issues
+* [`@ubclaunchpad/design`](https://github.com/orgs/ubclaunchpad/teams/design), and check that you can access the [Design repository](https://github.com/ubclaunchpad/design) - this repository contains (some) design assets, resources, and other tasks
 
-Additional, the president(s) should also be a part of [`@ubclaunchpad/exec`](https://github.com/orgs/ubclaunchpad/teams/exec) and familiarize themselves with the [Exec repository](https://github.com/ubclaunchpad/exec), where we keep track of accounts and credentials.
+Additionally, the presidents should also be a part of [`@ubclaunchpad/exec`](https://github.com/orgs/ubclaunchpad/teams/exec) and familiarize themselves with the [Exec repository](https://github.com/ubclaunchpad/exec), where we keep track of accounts and credentials.
 
 ::: tip
 Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifcations, check our [GitHub guide](../tools/github.md#setting-up-notifications).
@@ -33,8 +33,38 @@ Make sure that you are **watching** all relevant repositories so that you don't 
 
 Make sure all leads are given "editor" access to the [shared Launch Pad folder](https://drive.google.com/drive/folders/1u-U3w0V0MaLQrWtDdw_8n15V2lO-6gXo), which is owned by the `team@ubclaunchpad.com` account (more details are in the [Exec repository](https://github.com/ubclaunchpad/exec)).
 
-TODO: detailed drive hierarchy
+Within the shared Launch Pad folder, try to maintain the following structure:
+
+* [Projects](https://drive.google.com/drive/u/0/folders/18piFDBdAUuZAOf9xOgpf2_HBUuVNae0S) - folders for project teams
+  * Each tech lead should create a folder for their project inside a year subfolder ("Projects YYYY") of this folder
+  * Inside each project folder, each lead should create a document for meeting notes. All their project meetings should go in this document. See [Sprint Planning](../project-management/sprints.md) for more details. When teams are formed, make sure each folder is shared with all team members.
+* [Strategy](https://drive.google.com/drive/u/0/folders/0BwdNv1PZjDeXMkc1eDVNY1ZHT00) - see [Onboarding for Strategy](./strategy.md)
+* [Design](https://drive.google.com/drive/u/0/folders/1Zfe25r3D77hGdyMkj0tlxHNa-r7fAq1d) - see [Onboarding for Design](./design.md)
+* [Leads](https://drive.google.com/drive/u/0/folders/1hgPcUC_DrFMmzZ04pBSlZFig4v9AbTuv) - that's for us!
+  * Leads should create a document for meeting notes titled "Leads: Meeting Notes YYYY". All leads meetings should go in this document.
+* [Exec](https://drive.google.com/drive/u/0/folders/10b_2H5EhPpJtdgNi7QizRhWC9Qtivr8L) - for the presidents
+  * Presidents should create a document for meeting notes titled "Exec: Meeting Notes YYYY". All exec meetings should go in this document.
 
 ## Workflows
 
-TODO: how leads will use handbook / GitHub / Drive etc.
+::: tip
+We use GitHub and Slack for pretty much *everything* - make sure you are intimately familiar with **both**, regardless of your role, by reading our handcrafted guides:
+
+* [GitHub guide](https://docs.ubclaunchpad.com/handbook/tools/github)
+* [Slack guide](https://docs.ubclaunchpad.com/handbook/tools/slack)
+:::
+
+### Projects
+
+The handbook's Project Management pages are a must-read - for all leads:
+
+* [Scope](../project-management/scope.md) - how to develop and scope ideas for Launch Pad projects, as well as the timeline for development
+* [Sprints](../project-management/sprints.md) - how to plan and collaborate with your team to deliver on your project
+
+Additionally, technical leads will want to take a look at the [Repository Management](https://docs.ubclaunchpad.com/handbook/project-management/repositories) page to help them set up tooling for their projects.
+
+### Meetings
+
+Leads meetings between all leads (technical and non-technical) should happen on a regular basis.
+
+TODO: flesh out what we want meetings to be like

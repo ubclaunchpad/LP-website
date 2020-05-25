@@ -29,6 +29,13 @@ Make sure all strategy members are given "editor" access to the [shared Launch P
 
 ## Workflows
 
+::: tip
+We use GitHub and Slack for pretty much *everything* - make sure you are intimately familiar with **both**, regardless of your role, by reading our handcrafted guides:
+
+* [GitHub guide](https://docs.ubclaunchpad.com/handbook/tools/github)
+* [Slack guide](https://docs.ubclaunchpad.com/handbook/tools/slack)
+:::
+
 ### Acquiring Sponsorships
 
 * Create a [Sponsorship tracking issue on GitHub](https://github.com/ubclaunchpad/strategy/issues/new?assignees=&labels=sponsorship&template=sponsorship.md&title=)
