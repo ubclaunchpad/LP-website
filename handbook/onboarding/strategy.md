@@ -44,4 +44,4 @@ Make sure all strategy members are given "editor" access to the [shared Launch P
 
 Create an [Event tracking issue](https://github.com/ubclaunchpad/strategy/issues/new?assignees=&labels=events&template=event.md&title=) in the strategy repository - all the things you need to do are included!
 
-You can also refer to the [Guide for Meeting with clubs](https://docs.google.com/document/d/1Hy3TZY6rh_02lGwtWu_6_DfIExMnfY8ZH5KMVGIYVJw/edit) for collaborative event planning
+You can also refer to the [Guide for Meeting with clubs](https://docs.google.com/document/d/1Hy3TZY6rh_02lGwtWu_6_DfIExMnfY8ZH5KMVGIYVJw/edit) for collaborative event planning.
