@@ -43,7 +43,21 @@ module.exports = {
 
   plugins: [
     // fulltext search for site content - https://github.com/leo-buneev/vuepress-plugin-fulltext-search
-    'fulltext-search',
+    ['fulltext-search', {
+      processSuggestions: `export default async function(suggestions, queryString, queryTerms) {
+        if (queryString) {
+          suggestions.push({
+            path: 'https://sourcegraph.com/search?patternType=literal&q=repo:ubclaunchpad/*+',
+            slug: queryString,
+            parentPageTitle: 'Sourcegraph',
+            title: 'Search all',
+            contentStr: 'Search for "' + queryString + '" in Launch Pad repositories',
+            external: true,
+          });
+        }
+        return suggestions;
+      }`,
+    }],
 
     // remove trailing .html for example - https://vuepress.github.io/en/plugins/clean-urls
     'vuepress-plugin-clean-urls',
@@ -61,12 +75,5 @@ module.exports = {
     ['@ubclaunchpad/fathom', {
       'siteID': 'OEMMHHLE',
     }],
-
-    // add custom results to search
-    () => ({
-      alias: {
-        '../services/flexsearchSvc': path.resolve(__dirname, '.lib/flexsearchSvc.js'),
-      },
-    }),
   ],
 }
