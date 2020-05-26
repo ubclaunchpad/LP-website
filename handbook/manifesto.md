@@ -43,6 +43,10 @@ The phrase is in our club name, but what does it mean? "Software engineering" as
 
 ### Sponsors and Partners
 
+Our club would not be what it is today without the help of our [partners and sponsors](https://ubclaunchpad.com/#sponsors), who provide us with the resources and tools to help our members learn and deliver on their projects and goals.
+
+If you are interested in working with us in any capacity, please feel free to reach out to us at [team@ubclaunchpad.com](team@ubclaunchpad.com) or refer to our [sponsorship package](https://ubclaunchpad.com/sponsorship)!
+
 #### What we offer
 
 * **Talent Pool**: our members are students who went through a rigorous selection process, who are dedicated in advancing their skills, and are experienced in a professional working environment. Many of our past alumni went to top firms and are recognized by industry leaders.
