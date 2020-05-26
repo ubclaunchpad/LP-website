@@ -28,6 +28,7 @@ While the [Easy Way](#the-easy-way) is good for small changes, writing larger ch
    git checkout -b my-new-branch
    ```
 2. Make changes and commit them (make sure you have [good commit messages](https://chris.beams.io/posts/git-commit/#seven-rules)!)
+   * We recommend using [Visual Studio Code](https://code.visualstudio.com/).
 3. Run `npm install` and `npm run lint` to ensure your code follows our style rules.
    * (optional) run `npm run serve` to test out the updated website locally!
 4. Push your local branch to the remote repository using `git push origin HEAD`
@@ -60,6 +61,7 @@ npm run serve    # runs the website locally
   <Badge type="tip" text="new"/>
   ```
 * Images should go in a `/img` folder in the same directory.
+* Headers can *start* with emoji, but don't put emojis anywhere else in a header!
 
 ## VuePress
 

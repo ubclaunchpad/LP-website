@@ -1,3 +1,13 @@
+const vuepressUtils = require('@vuepress/shared-utils');
+const emojiRegex = require('emoji-regex')();
+
+// custom slugify function to extend the default one by stripping out leading emoji
+const slugify = (s) => {
+  return vuepressUtils.slugify(s)
+    .replace(emojiRegex, '')
+    .replace(/^(\-)/, '');
+}
+
 module.exports = {
   // header properties
   title: 'UBC Launch Pad Documentation',
@@ -72,6 +82,12 @@ module.exports = {
       colorThemes: [],
       disableThemeIgnore: true,
     },
+  },
+
+  // markdown features
+  markdown: {
+    slugify,
+    anchor: { permalink: true, permalinkBefore: true, permalinkSymbol: '#', slugify }
   },
 
   plugins: [
