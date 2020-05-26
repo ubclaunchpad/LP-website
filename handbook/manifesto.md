@@ -41,7 +41,7 @@ The phrase is in our club name, but what does it mean? "Software engineering" as
 
 > Programming means getting a program working. You have a problem to solve, you write some code, you run it, you get your answer, you’re done. That’s programming, and that's difficult enough by itself. But what if that code has to keep working, day after day? What if five other programmers need to work on the code too? Then you start to think about version control systems, to track how the code changes over time and to coordinate with the other programmers. You add unit tests, to make sure bugs you fix are not reintroduced over time, not by you six months from now, and not by that new team member who’s unfamiliar with the code. You think about modularity and design patterns, to divide the program into parts that team members can work on mostly independently. You use tools to help you find bugs earlier. You look for ways to make programs as clear as possible, so that bugs are less likely. You make sure that small changes can be tested quickly, even in large programs. You're doing all of this because your programming has turned into **software engineering**.
 
-### For sponsors and partners
+### Sponsors and Partners
 
 #### What we offer
 
