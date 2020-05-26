@@ -21,8 +21,6 @@ module.exports = {
         text: 'Quick Links',
         items: [
           { text: 'About Us', link: 'https://ubclaunchpad.com' },
-          { text: 'GitHub', link: 'https://ubclaunchpad.com/github' },
-          { text: 'Facebook', link: 'https://ubclaunchpad.com/facebook' },
           {
             text: 'GitHub Repositories',
             items: [
@@ -44,6 +42,15 @@ module.exports = {
               { text: 'Exec', link: 'https://drive.google.com/drive/u/0/folders/10b_2H5EhPpJtdgNi7QizRhWC9Qtivr8L' },
             ]
           },
+          {
+            text: 'Miscellaneous',
+            items: [
+              { text: 'GitHub', link: 'https://ubclaunchpad.com/github' },
+              { text: 'Slack', link: 'https://ubclaunchpad.com/slack' },
+              { text: 'Facebook', link: 'https://ubclaunchpad.com/facebook' },
+              { text: 'Medium', link: 'https://ubclaunchpad.com/medium' },
+            ]
+          }
         ]
       },
     ],
