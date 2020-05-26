@@ -17,7 +17,7 @@ See [our Slack guide](/handbook/tools/slack.md) for more details.
 
 ### GitHub Teams
 
-Make sure you are a part of the GitHub team [`@ubclaunchpad/design`](https://github.com/orgs/ubclaunchpad/teams/design), and check that you have access to the [Design repository](https://github.com/ubclaunchpad/design).
+Make sure you are a part of the GitHub team [`@ubclaunchpad/design`](https://github.com/orgs/ubclaunchpad/teams/design), and check that you have access to the [Design repository](https://github.com/ubclaunchpad/design) - this repository contains (some) design assets, resources, and tracking issues.
 
 ::: tip
 Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifcations, check our [GitHub guide](../tools/github.md#setting-up-notifications).
@@ -32,5 +32,12 @@ Make sure all designers are given "editor" access to the [shared Launch Pad Desi
 TODO
 
 ## Workflows
+
+::: tip
+We use GitHub and Slack for pretty much *everything* - make sure you are intimately familiar with **both**, regardless of your role, by reading our handcrafted guides:
+
+* [GitHub guide](https://docs.ubclaunchpad.com/handbook/tools/github)
+* [Slack guide](https://docs.ubclaunchpad.com/handbook/tools/slack)
+:::
 
 TODO: how the Design team will use handbook / GitHub / Drive / Figma etc.

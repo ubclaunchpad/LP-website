@@ -26,7 +26,9 @@ During each sprint, each member should have a few assigned tasks to work on - th
 
 Sprint meetings should be conducted at the very start or end of each sprint. Most sprint meetings should have the following structure - we've also provided some guidance on roughly how long each step should take, though this will vary per team.
 
-1. 📝 **Prep:** 1-2 days before your meeting, create a document outlining all of the following parts of the meeting in a few words per point.
+At the start of the project, the lead should have created a project folder in Google Drive with a meeting document and shared it with their team - ask your lead if you don't have access to your team's meeting notes and project folder.
+
+1. 📝 **Prep:** 1-2 days before your meeting, update your meeting document to outline all of the following parts of the meeting in a few words per point.
    * The goal is to have everyone briefly think about what they've achieved and problems they've faced so that meetings can run more smoothly!
    * A good way to do this is to have a document posted to your team's Slack channel so everyone can add to it at their leisure before you meeting
 2. ✈️ **Overview:** At the start of the meeting, the lead gives general updates or comments overall progress (~1-2 minutes)
