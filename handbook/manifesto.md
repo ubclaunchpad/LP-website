@@ -10,9 +10,9 @@ This document is a guidance of what Launch Pad stands for, and how we can pitch 
 
 ### Launch Pad’s Value Proposition
 
-Technical advancements have created enormous opportunities in the world, people are capable for more than ever before. In this fast changing world, we want to provide a space for students who are passionate about technologies to develop their skills, to explore new possibilities, to share their expertise and learn from others, and to gain hands-on experience in building out what they envision. 
+Technical advancements have created enormous opportunities in the world, people are capable for more than ever before. In this fast changing world, we want to provide a space for students who are passionate about technologies to develop their skills, to explore new possibilities, to share their expertise and learn from others, and to gain hands-on experience in building out what they envision.
 
-Ranking 1st in Computer Science in Canada, UBC has many communities that help to connect students with industry leaders through events, workshops, and Hackathons. However, there is a lack of opportunity for students to apply their knowledge and skills and commit on a project they are passionate about. 
+Ranking 1st in Computer Science in Canada, UBC has many communities that help to connect students with industry leaders through events, workshops, and Hackathons. However, there is a lack of opportunity for students to apply their knowledge and skills and commit on a project they are passionate about.
 
 Therefore, as a software development club, Launch Pad aims to create the best space for students to learn and practice industry-standard tools and techniques, to develop multidisciplinary teamwork, and to figure out what they can do with technologies.
 
@@ -22,7 +22,7 @@ As the leading software development club at UBC, Launch Pad prepares students fo
 
 #### Three-liner
 
-As the leading technology club at UBC,  Launch Pad is devoted to create a collaborative and professional environment for software development. It is our goal to provide the best space for students to apply and develop their technical skills outside of classroom, to learn and practice industry-standard tools, and to build passion projects with like-minded individuals. 
+As the leading technology club at UBC,  Launch Pad is devoted to create a collaborative and professional environment for software development. It is our goal to provide the best space for students to apply and develop their technical skills outside of classroom, to learn and practice industry-standard tools, and to build passion projects with like-minded individuals.
 
 ### What We Do
 
