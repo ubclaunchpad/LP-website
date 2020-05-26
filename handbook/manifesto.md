@@ -4,9 +4,9 @@
 These documents are a work in progress.
 :::
 
-## Vision
+## Vision <Badge type="tip" text="updated"/>
 
-This document is a guidance of what Launch Pad stands for, and how we can pitch Launch Pad to our potential partners and sponsors.
+This section is a guidance of what Launch Pad stands for, and how we can pitch Launch Pad to our potential partners and sponsors.
 
 ### Launch Pad’s Value Proposition
 
