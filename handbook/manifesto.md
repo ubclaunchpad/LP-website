@@ -6,24 +6,77 @@ These documents are a work in progress.
 
 ## Vision
 
-> To be the leading university technology organization to ready our members for
-industry and entrepreneurship.
+This document is a guidance of what Launch Pad stands for, and how we can pitch Launch Pad to our potential partners and sponsors.
 
-UBC Launch Pad is a student team devoted to building software projects in a
-collaborative and professional environment.
+### Launch Pad’s Value Proposition
 
-Our primary objective is to provide the best space at UBC for students to meet
-other tech enthusiasts, build projects in a team setting, and practice
-professional development tools and principles.
+Technical advancements have created enormous opportunities in the world, people are capable for more than ever before. In this fast changing world, we want to provide a space for students who are passionate about technologies to develop their skills, to explore new possibilities, to share their expertise and learn from others, and to gain hands-on experience in building out what they envision. 
 
-Our secondary objective is to connect with the UBC and Vancouver tech community
-by hosting tech-focused events. Examples include interview workshops, tech
-talks, and hackathons. We aim to build public interest in tech at UBC and
-provide our members with opportunities to develop soft skills like public
-speaking and event planning.
+Ranking 1st in Computer Science in Canada, UBC has many communities that help to connect students with industry leaders through events, workshops, and Hackathons. However, there is a lack of opportunity for students to apply their knowledge and skills and commit on a project they are passionate about. 
 
-If you're interested in hosting a tech talk or have an event idea, post on
-Slack or talk to one of the execs!
+Therefore, as a software development club, Launch Pad aims to create the best space for students to learn and practice industry-standard tools and techniques, to develop multidisciplinary teamwork, and to figure out what they can do with technologies.
+
+#### One-liner
+
+As the leading software development club at UBC, Launch Pad prepares students for the future by providing a space for them to learn and practice industry-standard tools through building projects with like-minded individuals.
+
+#### Three-liner
+
+As the leading technology club at UBC,  Launch Pad is devoted to create a collaborative and professional environment for software development. It is our goal to provide the best space for students to apply and develop their technical skills outside of classroom, to learn and practice industry-standard tools, and to build passion projects with like-minded individuals. 
+
+### What We Do
+
+Members in Launch Pad form into teams to work on an 8-month development project based on their interests and skill sets. Each team consists of a tech-lead, developers and designers, where they collaboratively go through the design thinking process to design and build a product.
+
+As a club, Launch Pad supports every member’s experience through multiple ways:
+
+1. We provide enormous resources (Launch Pad’s database and guidelines) from experienced members to support members in their development process
+2. We connect members with industry professionals to learn about the industry skills through internal workshops
+3. We design team structure to enable mentorship and multidisciplinary teamwork from their peers
+4. We recruit with high standards to ensure everyone in Launch Pad is driven and dedicated in their own expertise
+
+### What We Offer
+
+::: warning
+This needs to be fleshed out more.
+:::
+
+#### Talent Pool
+
+Our members are students who went through a rigorous selection process, who are dedicated in advancing their skills, and are experienced in a professional working environment. Many of our past alumni went to top firms and are recognized by industry leaders.
+
+#### Brand/Product Awareness
+
+Our members are always looking for tools for development.
+
+#### Innovative Ideas
+
+Our members are problem-solvers across diversed backgrounds.
+
+### What We Need
+
+We need long-term support on two fronts:
+
+#### Club Activities
+
+This includes everything from nice things like occasionally holding internal
+events or food to improve team-bonding and productivity, to organizing workshops
+and external events that aim to raise awareness about Launch Pad and spread the
+expertise that some of our members have acquired.
+
+Events both external and internal are expensive, workshops take many hours to
+organize and hold, but making sure we do these things on a regular basis is
+important for keeping morale up, improving productivity, and draw more people
+with an inclination to join Launch Pad to get involved.
+
+#### Services and Resources
+
+Many of our projects rely on servers, tools, and resources that are not free.
+We also try to find organization tools, teaching aides, etc. to help run Launch
+Pad better. All of this costs money, and the lack of funding means we have to
+shut down some cool projects. Continued, long-term investment in Launch Pad
+helps us teach our members to use industry-standard tools and practices, as well
+as deploying awesome applications.
 
 ## Code of Conduct
 
