@@ -51,10 +51,6 @@ TODO
 
 #### What we offer
 
-::: warning
-This needs to be fleshed out more, especially regarding who this section is aimed at.
-:::
-
 * **Talent Pool**: our members are students who went through a rigorous selection process, who are dedicated in advancing their skills, and are experienced in a professional working environment. Many of our past alumni went to top firms and are recognized by industry leaders.
 * **Brand/Product Awareness**: our members are always looking for tools to help them make cool things faster and better. They often take these tools into our future workplaces and projects.
 * **Innovative Ideas**: our members are problem-solvers across diverse backgrounds.
