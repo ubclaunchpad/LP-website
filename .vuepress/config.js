@@ -20,10 +20,9 @@ module.exports = {
       {
         text: 'Quick Links',
         items: [
-          { text: 'About Us', link: 'https://ubclaunchpad.com', target:'_blank' },
+          { text: 'About Us', link: 'https://ubclaunchpad.com' },
           { text: 'GitHub', link: 'https://ubclaunchpad.com/github' },
           { text: 'Facebook', link: 'https://ubclaunchpad.com/facebook' },
-          { text: 'Instagram', link: 'https://ubclaunchpad.com/instagram' },
           {
             text: 'GitHub Repositories',
             items: [
