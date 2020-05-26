@@ -6,7 +6,7 @@ These sections are a work in progress.
 
 ## Vision <Badge type="tip" text="updated"/>
 
-This section provides guidance on what Launch Pad stands for.
+This section provides guidance on what Launch Pad stands for and what we offer.
 
 ### Our Value Proposition
 
