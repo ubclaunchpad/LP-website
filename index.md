@@ -21,6 +21,10 @@ features:
 
 <br />
 
+### Searching
+
+You can easily search the entire website using the search bar in the navigation bar! You can also press `s` and start typing to immediately start a search.
+
 ### Dark mode <Badge type="tip" text="new"/>
 
 Hit the gear icon in the navigation bar to toggle dark mode!
