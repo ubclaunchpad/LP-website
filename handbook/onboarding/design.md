@@ -37,7 +37,7 @@ If you decide to use Google Drive with your team, make sure you add links to you
 
 ### Figma
 
-Make sure that you have a Figma account which you can create here: [Figma](https://www.figma.com/). It's completely free to use, web based and its the best collaborative design tool out there!
+Make sure that you [have a Figma account](https://www.figma.com/). It's completely free to use, web based, and is Launch Pad's recommended collaborative design tool.
 
 You can also [download the Figma app on your desktop](https://www.figma.com/downloads/).
 
