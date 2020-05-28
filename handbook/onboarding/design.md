@@ -17,7 +17,7 @@ See [our Slack guide](/handbook/tools/slack.md) for more details.
 
 ### GitHub Teams
 
-Designers should have a presence in Github to know what is going on between product teams. First step would be to make a [Github](https://github.com/) account if you don't have one!
+Designers should have a presence in GitHub to know what is going on between product teams. First step would be to [make a GitHub account](https://github.com/join) if you don't have one!
 
 Second, Make sure you are a part of the GitHub team [`@ubclaunchpad/design`](https://github.com/orgs/ubclaunchpad/teams/design), and check that you have access to the [Design repository](https://github.com/ubclaunchpad/design) - this repository contains (some) design assets, resources, and tracking issues.
 
