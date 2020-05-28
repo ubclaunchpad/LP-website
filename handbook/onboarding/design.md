@@ -38,7 +38,8 @@ If you decide to use Google Drive with your team, make sure you add links to you
 ### Figma
 
 Make sure that you have a Figma account which you can create here: [Figma](https://www.figma.com/). It's completely free to use, web based and its the best collaborative design tool out there!
-* You can also download the Figma app on your desktop here: [Download Link](https://www.figma.com/downloads/)
+
+You can also [download the Figma app on your desktop](https://www.figma.com/downloads/).
 
 Other alternatives available out there are Adobe XD and Sketch. If you plan to use any of those tools, it is recommended that you import your designs into Figma so that you can share your prototypes and wireframe files with your developers.
 
