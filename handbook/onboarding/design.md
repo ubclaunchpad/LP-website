@@ -33,7 +33,7 @@ Make sure that you are **watching** all relevant repositories so that you don't 
 
 Make sure all designers are given "editor" access to the [shared Launch Pad Design subfolder](https://drive.google.com/drive/u/0/folders/1Zfe25r3D77hGdyMkj0tlxHNa-r7fAq1d), which is owned by the `team@ubclaunchpad.com` account.
 
-Also, if your team decides to use google drive, make sure you are added to that by your project lead. Also make sure that you are linking your gdrive assets to your Github repository for easy accessibility.
+If you decide to use Google Drive with your team, make sure you add links to your Google Drive assets to your team's GitHub repository for easy accessibility.
 
 ### Figma
 
