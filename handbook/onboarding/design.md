@@ -44,7 +44,7 @@ Other alternatives available out there are Adobe XD and Sketch. If you plan to u
 
 ## Workflows
 
-The Agile Method is the workflow that teams in LaunchPad usually follow. It is important that you familiarize youself with this type of workflow especially working in cross-functional product teams. 
+The Agile Method is the workflow that teams in Launch Pad usually follow. It is important that you familiarize youself with this type of workflow especially working in cross-functional product teams - you can learn more about it in our [handbook's sprint planning guide](../project-management/sprints.md).
 
 During the whole cycle, you will have to make sure that all your assets are constantly being uploaded into Github. (or gdrive links can be found in your project's Github repository)
 
