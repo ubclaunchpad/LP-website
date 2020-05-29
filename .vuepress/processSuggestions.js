@@ -2,7 +2,7 @@
 export default async function(suggestions, queryString, queryTerms) {
   if (queryString) {
     suggestions.push({
-      path: 'https://sourcegraph.com/search?patternType=literal&q=repo:ubclaunchpad/*+',
+      path: 'https://sourcegraph.com/search?patternType=literal&q=repo:^github.com/ubclaunchpad/*+',
       slug: queryString,
       parentPageTitle: 'Other',
       title: 'Content and code',
