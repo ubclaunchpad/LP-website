@@ -17,7 +17,7 @@
     "markdownlint-cli": "^0.22.0",
     "vuepress": "^1.4.1",
     "vuepress-plugin-clean-urls": "^1.1.1",
-    "vuepress-plugin-fulltext-search": "^2.0.2",
+    "vuepress-plugin-fulltext-search": "https://github.com/bobheadlabs/vuepress-plugin-fulltext-search.git",
     "vuepress-theme-yuu": "^2.2.1"
   }
 }

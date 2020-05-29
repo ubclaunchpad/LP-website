@@ -1,3 +1,5 @@
+const fs = require('fs');
+const { path } = require('@vuepress/shared-utils');
 const vuepressUtils = require('@vuepress/shared-utils');
 const emojiRegex = require('emoji-regex')();
 
@@ -92,7 +94,9 @@ module.exports = {
 
   plugins: [
     // fulltext search for site content - https://github.com/leo-buneev/vuepress-plugin-fulltext-search
-    'fulltext-search',
+    ['fulltext-search', {
+      processSuggestions: fs.readFileSync(path.resolve(__dirname, 'processSuggestions.js')),
+    }],
 
     // remove trailing .html for example - https://vuepress.github.io/en/plugins/clean-urls
     'vuepress-plugin-clean-urls',
