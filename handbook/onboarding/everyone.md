@@ -38,6 +38,11 @@ Make sure you are part of the [UBC Launch Pad GitHub organization](https://githu
 * You should be able to access our private repositories, such as [`ubclaunchpad/ideas`](https://github.com/ubclaunchpad/ideas)
   * If you can't see the Ideas repository, check that you are in the GitHub team [`@ubclaunchpad/all`](https://github.com/orgs/ubclaunchpad/teams/all) - if not,make sure you've [set up your profile on Rocket](#rocket-setup)!
 * Read our [Intro to GitHub](../tools/github.md) guide, which will help you get started on leveraging GitHub and setting up notifications.
+  * Make sure you read the section on notifications for Slack - GitHub will be the primary way to manage tasks and have structured discussions, so you don't want to miss any updates!
+
+### Drive Access
+
+Make sure you have access to our [Projects Folder](https://drive.google.com/drive/u/0/folders/18piFDBdAUuZAOf9xOgpf2_HBUuVNae0S) on Google Drive - this is where your team's loose documents will live!
 
 ## Further Actions
 

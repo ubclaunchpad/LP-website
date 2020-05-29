@@ -1,8 +1,6 @@
 # 🚀 Onboarding for Strategy
 
-::: warning
-TODO
-:::
+Welcome to UBC Launch Pad, and congratulations (and thank you!) for joining the strategy team!
 
 ## Checklist
 
@@ -17,7 +15,7 @@ See [our Slack guide](/handbook/tools/slack.md) for more details.
 
 ### GitHub Teams
 
-Make sure you are a part of [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [Strategy repository](https://github.com/ubclaunchpad/strategy).
+Make sure you are a part of the GitHub team [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [Strategy repository](https://github.com/ubclaunchpad/strategy) - this repository contains sponsorship resources and event/sponsorship tracking issues.
 
 ::: tip
 Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifcations, check our [GitHub guide](../tools/github.md#setting-up-notifications).
@@ -28,6 +26,13 @@ Make sure that you are **watching** all relevant repositories so that you don't 
 Make sure all strategy members are given "editor" access to the [shared Launch Pad Strategy subfolder](https://drive.google.com/drive/folders/0BwdNv1PZjDeXMkc1eDVNY1ZHT00), which is owned by the `team@ubclaunchpad.com` account.
 
 ## Workflows
+
+::: tip
+We use GitHub and Slack for pretty much *everything* - make sure you are intimately familiar with **both**, regardless of your role, by reading our handcrafted guides:
+
+* [GitHub guide](https://docs.ubclaunchpad.com/handbook/tools/github)
+* [Slack guide](https://docs.ubclaunchpad.com/handbook/tools/slack)
+:::
 
 ### Acquiring Sponsorships
 
