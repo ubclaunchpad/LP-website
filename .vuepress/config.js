@@ -95,7 +95,7 @@ module.exports = {
   plugins: [
     // fulltext search for site content - https://github.com/leo-buneev/vuepress-plugin-fulltext-search
     ['fulltext-search', {
-      processSuggestions: fs.readFileSync(path.resolve(__dirname, 'processSuggestions.js')),
+      functions: fs.readFileSync(path.resolve(__dirname, 'fulltextSearchFunctions.js')),
     }],
 
     // remove trailing .html for example - https://vuepress.github.io/en/plugins/clean-urls
