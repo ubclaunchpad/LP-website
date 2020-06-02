@@ -1,6 +1,9 @@
+import * as Fathom from 'fathom-client';
+
 // This function extends suggestions provided by the fulltext-search plugin
-export default async function(suggestions, queryString, queryTerms) {
+export async function processSuggestions(suggestions, queryString) {
   if (queryString) {
+    // these suggestions help users quickly jump to search on other relevant platforms
     suggestions.push({
       path: 'https://sourcegraph.com/search?patternType=literal&q=repo:^github.com/ubclaunchpad/*+',
       slug: queryString,
@@ -17,4 +20,16 @@ export default async function(suggestions, queryString, queryTerms) {
     });
   }
   return suggestions;
+}
+
+// view these in fathom - https://app.usefathom.com/share/oemmhhle/docs.ubclaunchpad.com
+const GOAL_SITESEARCH = 'SJ8NSKV1';
+const GOAL_EXTENDEDSEARCH = 'VMCQLNMK';
+
+export async function onGoToSuggestion(i, suggestion) {
+  if (suggestion.external === true) {
+    Fathom.trackGoal(GOAL_EXTENDEDSEARCH, 0);
+  } else {
+    Fathom.trackGoal(GOAL_SITESEARCH, 0);
+  }
 }
