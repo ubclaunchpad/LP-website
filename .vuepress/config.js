@@ -112,9 +112,7 @@ module.exports = {
     // analytics are under team@ubclaunchpad.com, property docs.ubclaunchpad.com
     // dashboard: https://app.usefathom.com/share/oemmhhle/docs.ubclaunchpad.com
     ['@ubclaunchpad/fathom', {
-      // TODO: replace with https://chinchilla.ubclaunchpad.com/script.js
-      // once https://github.com/unstacked/fathom-client/issues/5 is closed
-      'fathomURL': 'https://chinchilla.ubclaunchpad.com/tracker.js',
+      'fathomURL': 'https://chinchilla.ubclaunchpad.com/script.js',
       'siteID': 'OEMMHHLE',
     }],
   ],
