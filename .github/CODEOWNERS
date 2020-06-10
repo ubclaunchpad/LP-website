@@ -2,8 +2,8 @@
 * @ubclaunchpad/exec @ubclaunchpad/leads
 
 # team onboarding pages
-handbook/onboarding/design @ubclaunchpad/design
-handbook/onboarding/strategy @ubclaunchpad/strategy
+handbook/onboarding/design @ubclaunchpad/design @ubclaunchpad/exec @ubclaunchpad/leads
+handbook/onboarding/strategy @ubclaunchpad/strategy @ubclaunchpad/exec @ubclaunchpad/leads
 
 # messaging and direction
-handbook/manifesto.md @ubclaunchpad/strategy
+handbook/manifesto.md @ubclaunchpad/strategy @ubclaunchpad/exec @ubclaunchpad/leads
