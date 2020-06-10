@@ -9,15 +9,15 @@
     "lint": "markdownlint . --ignore node_modules --ignore index.md"
   },
   "dependencies": {
-    "@ubclaunchpad/vuepress-plugin-fathom": "^1.2.1",
-    "@vuepress/plugin-back-to-top": "^1.4.1",
-    "@vuepress/plugin-google-analytics": "^1.4.1",
-    "emoji-regex": "^9.0.0",
-    "markdownlint": "^0.20.2",
-    "markdownlint-cli": "^0.22.0",
-    "vuepress": "^1.4.1",
-    "vuepress-plugin-clean-urls": "^1.1.1",
+    "@ubclaunchpad/vuepress-plugin-fathom": "~1.2.1",
+    "@vuepress/plugin-back-to-top": "~1.5.1",
+    "@vuepress/plugin-google-analytics": "~1.5.1",
+    "emoji-regex": "~9.0.0",
+    "markdownlint": "~0.20.3",
+    "markdownlint-cli": "~0.23.1",
+    "vuepress": "~1.5.1",
+    "vuepress-plugin-clean-urls": "~1.1.1",
     "vuepress-plugin-fulltext-search": "https://github.com/bobheadlabs/vuepress-plugin-fulltext-search.git",
-    "vuepress-theme-yuu": "^2.2.1"
+    "vuepress-theme-yuu": "~2.3.0"
   }
 }
