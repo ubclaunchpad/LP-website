@@ -27,7 +27,7 @@ Make sure that you are **watching** all relevant repositories so that you don't 
 
 Make sure all designers are given "editor" access to the [shared Launch Pad Design subfolder](https://drive.google.com/drive/u/0/folders/1Zfe25r3D77hGdyMkj0tlxHNa-r7fAq1d), which is owned by the `team@ubclaunchpad.com` account.
 
-***Everything* you add to Drive should be placed in an appropriate UBC Launch Pad Google Drive folder!** This helps us make sure that we never lose access to designs and assets. Typically:
+**Everything you add to Drive should be placed in an appropriate UBC Launch Pad Google Drive folder!** This helps us make sure that we never lose access to designs and assets. Typically:
 
 * Team or project-specific assets should go in the correct team subfolder in [the Projects folder](https://drive.google.com/drive/u/0/folders/18piFDBdAUuZAOf9xOgpf2_HBUuVNae0S).
 * Launch Pad assets should go in [the Design folder](https://drive.google.com/drive/u/0/folders/1Zfe25r3D77hGdyMkj0tlxHNa-r7fAq1d).
@@ -40,7 +40,7 @@ If you decide to use Google Drive with your team for anything, make sure you add
 
 Make sure that you [have a Figma account](https://www.figma.com/). It's completely free to use, web based, and is Launch Pad's recommended collaborative design tool. You can also [download the Figma app on your desktop](https://www.figma.com/downloads/).
 
-***Every* Figma documents you create should be shared with the `team@ubclaunchpad.com` Figma account!** This helps us make sure that we never lose access to designs and assets.
+**Every Figma document you create should be shared with the `team@ubclaunchpad.com` Figma account!** This helps us make sure that we never lose access to designs and assets.
 
 Other alternatives available out there are Adobe XD and Sketch. If you plan to use any of those tools, it is recommended that you import your designs into Figma so that you can share your prototypes and wireframe files with your developers.
 
