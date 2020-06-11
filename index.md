@@ -21,9 +21,11 @@ features:
 
 <br />
 
-### Search
+### Search everything
 
-You can easily search this *entire* website using the search bar in the navigation bar! You can also press `s` and start typing to immediately start a search.
+You can easily search this *entire* website using the search bar in the navigation bar! Pressing `s` allows you to immediately start typing a query.
+
+In addition to results from this website, you can easily hop into a "code and content" or "issues and pull requests" search from the suggestions, which will give you results from *everything* in the UBC Launch Pad GitHub organization!
 
 ### Dark mode <Badge type="tip" text="new"/>
 
