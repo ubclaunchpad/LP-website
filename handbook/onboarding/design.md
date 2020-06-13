@@ -53,6 +53,6 @@ During the whole cycle, you will have to make sure that all your assets are eith
 ::: tip
 We use GitHub and Slack for pretty much *everything* - make sure you are intimately familiar with **both**, regardless of your role, by reading our handcrafted guides:
 
-* [GitHub guide](https://docs.ubclaunchpad.com/handbook/tools/github)
-* [Slack guide](https://docs.ubclaunchpad.com/handbook/tools/slack)
+* [GitHub guide](/handbook/tools/github)
+* [Slack guide](/handbook/tools/slack)
 :::
