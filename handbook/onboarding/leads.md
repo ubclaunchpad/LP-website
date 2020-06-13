@@ -51,8 +51,8 @@ Within the shared Launch Pad folder, try to maintain the following structure:
 ::: tip
 We use GitHub and Slack for pretty much *everything* - make sure you are intimately familiar with **both**, regardless of your role, by reading our handcrafted guides:
 
-* [GitHub guide](https://docs.ubclaunchpad.com/handbook/tools/github)
-* [Slack guide](https://docs.ubclaunchpad.com/handbook/tools/slack)
+* [GitHub guide](/handbook/tools/github)
+* [Slack guide](/handbook/tools/slack)
 :::
 
 ### Projects
@@ -62,7 +62,7 @@ The handbook's Project Management pages are a must-read - for all leads:
 * [Scope](../project-management/scope.md) - how to develop and scope ideas for Launch Pad projects, as well as the timeline for development
 * [Sprints](../project-management/sprints.md) - how to plan and collaborate with your team to deliver on your project
 
-Additionally, technical leads will want to take a look at the [Repository Management](https://docs.ubclaunchpad.com/handbook/project-management/repositories) page to help them set up tooling for their projects.
+Additionally, technical leads will want to take a look at the [Repository Management](/handbook/project-management/repositories) page to help them set up tooling for their projects.
 
 ### Meetings
 

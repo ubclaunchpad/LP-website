@@ -13,7 +13,7 @@ If you don't have access to anything, or if you can't complete any of these step
 Make sure you are part of the [UBC Launch Pad Slack workspace](https://ubclaunchpad.slack.com/).
 
 * Make sure you install the Slack app on your phone so you don't miss anything!
-* Read our [Slack](https://docs.ubclaunchpad.com/handbook/tools/slack) guide, which will tell you how to make the most of Slack and any noteworthy channels you should join off the bat!
+* Read our [Slack](/handbook/tools/slack) guide, which will tell you how to make the most of Slack and any noteworthy channels you should join off the bat!
 
 ### Rocket Setup
 
@@ -29,7 +29,7 @@ Then, you can give it some information about you:
 /rocket user edit --github <username>
 ```
 
-Learn more about Rocket in our [Slack guide's Rocket section](https://docs.ubclaunchpad.com/handbook/tools/slack#rocket).
+Learn more about Rocket in our [Slack guide's Rocket section](/handbook/tools/slack#rocket).
 
 ### GitHub Access
 

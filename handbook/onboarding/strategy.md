@@ -30,8 +30,8 @@ Make sure all strategy members are given "editor" access to the [shared Launch P
 ::: tip
 We use GitHub and Slack for pretty much *everything* - make sure you are intimately familiar with **both**, regardless of your role, by reading our handcrafted guides:
 
-* [GitHub guide](https://docs.ubclaunchpad.com/handbook/tools/github)
-* [Slack guide](https://docs.ubclaunchpad.com/handbook/tools/slack)
+* [GitHub guide](/handbook/tools/github)
+* [Slack guide](/handbook/tools/slack)
 :::
 
 ### Acquiring Sponsorships
