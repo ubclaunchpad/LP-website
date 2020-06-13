@@ -49,7 +49,7 @@ There are a number of other important repositories that provide places for docum
   to improve Launch Pad, potential projects, event ideas... anything you want!
 * [**Alumni Directory**](https://github.com/ubclaunchpad/alumni-directory): An
   internal directory with past Launch Pad members and what they are doing now.
-* [**ubclaunchpad.com**](https://github.com/ubclaunchpad/ubclaunchpad.com): This repository houses the source code for our website, as well as documentation on how to use it (for example, to add `ubclaunchpad.com/...` redirect links), how to update its content (for example, to change the website's featured teams or update recruitment status), and how to make your own contributions!
+* [**ubclaunchpad.com**](https://github.com/ubclaunchpad/ubclaunchpad.com): This repository houses the source code for our website, as well as documentation on how to use it, update its content, and make your own contributions!
 * [**Docs**](https://github.com/ubclaunchpad/ideas): The repository that hosts the content on this website! Changes to `docs.ubclaunchpad.com` happen here.
 
 Some teams also have dedicated repositories:
