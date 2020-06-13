@@ -9,7 +9,7 @@ export async function processSuggestions(suggestions, queryString) {
       slug: queryString,
       parentPageTitle: 'Other',
       title: 'Content and code',
-      contentStr: 'Search in our repositories',
+      contentStr: 'Search the content of our repositories',
       external: true,
     }, {
       path: 'https://github.com/search?type=Issues&q=org%3Aubclaunchpad+',
