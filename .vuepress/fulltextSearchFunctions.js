@@ -9,13 +9,19 @@ export async function processSuggestions(suggestions, queryString) {
       slug: queryString,
       parentPageTitle: 'Other',
       title: 'Content and code',
-      contentStr: 'Search our repositories',
+      contentStr: 'Search the content of our repositories',
       external: true,
     }, {
-      path: 'https://github.com/search?q=org%3Aubclaunchpad+type%3Aissue+',
+      path: 'https://github.com/search?type=Issues&q=org%3Aubclaunchpad+',
       slug: queryString,
       title: 'Issues and pull requests',
-      contentStr: 'Search our GitHub organization',
+      contentStr: 'Search our GitHub discussions',
+      external: true,
+    }, {
+      path: 'https://github.com/search?type=Repositories&q=org%3Aubclaunchpad+',
+      slug: queryString,
+      title: 'Repositories',
+      contentStr: 'Find Launch Pad repositories',
       external: true,
     });
   }
