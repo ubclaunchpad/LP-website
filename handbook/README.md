@@ -54,7 +54,7 @@ Some teams also have dedicated repositories:
 
 Note that links to most of these repositories are available through the handy "Quick Links" dropdown in this website's navbar!
 
-## 🗳 Recruitment <Badge type="tip" text="new"/>
+## 🗳️ Recruitment <Badge type="tip" text="new"/>
 
 Launch Pad recruitment documentation and material lives in these pages!
 
