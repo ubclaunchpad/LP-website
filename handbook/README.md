@@ -4,7 +4,7 @@ Welcome to the [UBC Launch Pad](https://ubclaunchpad.com/) handbook! Launch Pad-
 
 ## 🔖 Manifesto
 
-Our [Manifesto](manifesto.md) outlines our vision and code of conduct.
+Our [Manifesto](manifesto.md) outlines our vision, what we do, how we work with partners, and our code of conduct.
 
 ## 🚀 Onboarding <Badge type="tip" text="new"/>
 
@@ -35,10 +35,6 @@ These are **guidelines**, not strict rules! Teams should adjust these processes 
 * [**Project Scope**](./project-management/scope.md): Tips for planning out your project's overall scope and getting an initial idea laid out.
 * [**Sprint Planning**](./project-management/sprints.md): Guidelines and advice for how to plan out work with your team to drive forward progress on your project!
 * [**Repository Management**](./project-management/repositories.md): Guidelines for how to manage your GitHub repository and enforce coding standards. Remember: your repository is your main outlet to the outside world - and this outside world includes potential employers! Make it informative, organized, and pretty!
-
-## 🏡 Administration
-
-The [Administration page](administration.md) describes the structure of UBC Launch Pad.
 
 ## 📦 Official Repositories
 

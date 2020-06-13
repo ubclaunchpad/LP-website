@@ -1,12 +1,14 @@
 # 🔖 Manifesto
 
+This document is the UBC Launch Pad manifesto: a high-level overview of our vision, what we do, our values, and how we work with our sponsors and partners.
+
+If you have any questions, please do not hesitate to [get in touch](/introduction.md#get-in-touch)!
+
 ::: warning
 These sections are a work in progress.
 :::
 
 ## Vision <Badge type="tip" text="updated"/>
-
-This section provides guidance on what Launch Pad stands for and what we offer.
 
 ### Our Value Proposition
 
@@ -24,7 +26,15 @@ As the leading software development club at UBC, Launch Pad prepares students fo
 
 As the leading technology club at UBC,  Launch Pad is devoted to create a collaborative and professional environment for software development. It is our goal to provide the best space for students to apply and develop their technical skills outside of classroom, to learn and practice industry-standard tools, and to build passion projects with like-minded individuals.
 
-### What We Do
+### Software Engineering
+
+The phrase is in our club name, but what does it mean? "Software engineering" as a whole is pretty well summed up by this quote from a [blog post by Russ Cox](https://research.swtch.com/vgo-eng), one of the creators of the Go Programming Language:
+
+> Programming means getting a program working. You have a problem to solve, you write some code, you run it, you get your answer, you’re done. That’s programming, and that's difficult enough by itself. But what if that code has to keep working, day after day? What if five other programmers need to work on the code too? Then you start to think about version control systems, to track how the code changes over time and to coordinate with the other programmers. You add unit tests, to make sure bugs you fix are not reintroduced over time, not by you six months from now, and not by that new team member who’s unfamiliar with the code. You think about modularity and design patterns, to divide the program into parts that team members can work on mostly independently. You use tools to help you find bugs earlier. You look for ways to make programs as clear as possible, so that bugs are less likely. You make sure that small changes can be tested quickly, even in large programs. You're doing all of this because your programming has turned into **software engineering**.
+
+Our goal is that through what we do, we can provide our members with an experience that helps them learn important principles in software engineering.
+
+## What We Do
 
 Members in Launch Pad form into teams to work on an 8-month development project based on their interests and skill sets. Each team consists of a tech-lead, developers and designers, where they collaboratively go through the design thinking process to design and build a product.
 
@@ -35,41 +45,42 @@ As a club, Launch Pad supports every member’s experience through multiple ways
 3. We design team structure to enable mentorship and multidisciplinary teamwork from their peers
 4. We recruit with high standards to ensure everyone in Launch Pad is driven and dedicated in their own expertise
 
-#### What is Software Engineering?
+### Club Structure
 
-The phrase is in our club name, but what does it mean? "Software engineering" as a whole is pretty well summed up by this quote from a [blog post by Russ Cox](https://research.swtch.com/vgo-eng), one of the creators of the Go Programming Language:
+#### Project Teams
 
-> Programming means getting a program working. You have a problem to solve, you write some code, you run it, you get your answer, you’re done. That’s programming, and that's difficult enough by itself. But what if that code has to keep working, day after day? What if five other programmers need to work on the code too? Then you start to think about version control systems, to track how the code changes over time and to coordinate with the other programmers. You add unit tests, to make sure bugs you fix are not reintroduced over time, not by you six months from now, and not by that new team member who’s unfamiliar with the code. You think about modularity and design patterns, to divide the program into parts that team members can work on mostly independently. You use tools to help you find bugs earlier. You look for ways to make programs as clear as possible, so that bugs are less likely. You make sure that small changes can be tested quickly, even in large programs. You're doing all of this because your programming has turned into **software engineering**.
+Launch Pad primarily consists of agile development teams centered around a shared project. Each team consists of a Tech Lead and a number of Developers, usually between 5 to 8.
 
-### Sponsors and Partners
+**Tech Leads** are experienced developers who are responsible for managing the team by planning the project roadmap, assigning tickets during sprints, and implementing challenging features. They are also available as a resource to less experienced developers on the team. If you have any trouble with your issue, questions about Launch Pad, or just a random technical question: ask your Tech Lead.
+
+**Teams** focus on a particular platform or technology, like Android, Web, or Machine Learning, and build a project for that platform. Platform teams are meant to balance learning with creation: teams working together have the ability to build interesting projects, less experienced developers have the opportunity to learn in the process, and more experienced developers get a taste of management and mentoring. Teams aim to model the experience of building a product at a software company.
+
+#### Design Team
+
+UBC Launch Pad has a Design team that handles designs and asset creation for Launch Pad projects. Each project that requires design help should have one or more designers working with the team.
+
+#### Strategy Team
+
+UBC Launch Pad has a Strategy team that focusses on strategically growing the team. This team will focus on increasing campus awareness and forming strategic partnerships in order to further contribute to Launch Pad's vision to be the leading university technology club in Vancouver, Canada, or maybe even the world.
+
+## Sponsors and Partners
 
 Our club would not be what it is today without the help of our [partners and sponsors](https://ubclaunchpad.com/#sponsors), who provide us with the resources and tools to help our members learn and deliver on their projects and goals.
 
 If you are interested in working with us in any capacity, please feel free to reach out to us at [team@ubclaunchpad.com](team@ubclaunchpad.com) or refer to our [sponsorship package](https://ubclaunchpad.com/sponsorship)!
 
-#### What we offer
+### What we offer
 
 * **Talent Pool**: our members are students who went through a rigorous selection process, who are dedicated in advancing their skills, and are experienced in a professional working environment. Many of our past alumni went to top firms and are recognized by industry leaders.
 * **Brand/Product Awareness**: our members are always looking for tools to help them make cool things faster and better. They often take these tools into our future workplaces and projects.
 * **Innovative Ideas**: our members are problem-solvers across diverse backgrounds.
 
-#### How you can support us
+### How partners can support us
 
 We need long-term support on two fronts:
 
-* **Club Activities**: this includes everything from nice things like occasionally holding internal
-events or food to improve team-bonding and productivity, to organizing workshops
-and external events that aim to raise awareness about Launch Pad and spread the
-expertise that some of our members have acquired. Events both external and internal are expensive, workshops take many hours to
-organize and hold, but making sure we do these things on a regular basis is
-important for keeping morale up, improving productivity, and draw more people
-with an inclination to join Launch Pad to get involved.
-* **Services and Resources**: many of our projects rely on servers, tools, and resources that are not free.
-We also try to find organization tools, teaching aides, etc. to help run Launch
-Pad better. All of this costs money, and the lack of funding means we have to
-shut down some cool projects. Continued, long-term investment in Launch Pad
-helps us teach our members to use industry-standard tools and practices, as well
-as deploying awesome applications.
+* **Club Activities**: this includes everything from nice things like occasionally holding internal events or food to improve team-bonding and productivity, to organizing workshops and external events that aim to raise awareness about Launch Pad and spread the expertise that some of our members have acquired. Events both external and internal are expensive, workshops take many hours to organize and hold, but making sure we do these things on a regular basis is important for keeping morale up, improving productivity, and draw more people with an inclination to join Launch Pad to get involved.
+* **Services and Resources**: many of our projects rely on servers, tools, and resources that are not free. We also try to find organization tools, teaching aides, etc. to help run Launch Pad better. All of this costs money, and the lack of funding means we have to shut down some cool projects. Continued, long-term investment in Launch Pad helps us teach our members to use industry-standard tools and practices, as well as deploying awesome applications.
 
 ## Code of Conduct
 
@@ -80,18 +91,14 @@ This section is outdated! TODO: update to reflect our current values
 All members must agree to and abide by the following policies:
 
 * Treat everyone in Launch Pad with respect.
-* Attend meetings every week for 4 hours to the best of your ability, and notify
-  your team in advance if you will be absent or can't work on your tasks.
+* Attend meetings every week for 4 hours to the best of your ability, and notify your team in advance if you will be absent or can't work on your tasks.
 * Complete the ticket(s) assigned to you each week to the best of your ability.
-* Be available on Slack throughout the week, responding to messages within 24
-  hours.
+* Be available on Slack throughout the week, responding to messages within 24 hours.
 
 Any of the following are reasons for expulsion from Launch Pad:
 
 * Not treating other Launch Pad members with respect
 * Consistently missing meetings without notifying your tech lead
-* Consistently not completing your weekly ticket without notifying your tech
-  lead
-* Consistently showing up late to meetings, missing meetings, or failing to
-  complete tickets
+* Consistently not completing your weekly ticket without notifying your tech lead
+* Consistently showing up late to meetings, missing meetings, or failing to complete tickets
 * Consistently not responding to or ignoring Slack messages
