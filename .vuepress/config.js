@@ -89,7 +89,7 @@ module.exports = {
   // markdown features
   markdown: {
     slugify,
-    anchor: { permalink: true, permalinkBefore: true, permalinkSymbol: '#', slugify }
+    anchor: { permalink: true, permalinkBefore: true, permalinkSymbol: '#', slugify },
   },
 
   plugins: [
