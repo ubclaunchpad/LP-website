@@ -51,7 +51,7 @@ There are a number of other important repositories that provide places for docum
 Some teams also have dedicated repositories:
 
 * [**Strategy**](https://github.com/ubclaunchpad/strategy): The main repo for the
-  strategy team, containing sponsorship-related discussion.
+  strategy team, containing sponsorship-related discussi!on.
 * [**Design**](https://github.com/ubclaunchpad/design): The main repo for the design
   team, containing Launch Pad graphical assets and design-related discussion.
 * [**Tech Leads**](https://github.com/ubclaunchpad/tech-leads): A repo for Tech
@@ -60,3 +60,19 @@ Some teams also have dedicated repositories:
 * [**Exec**](https://github.com/ubclaunchpad/exec): Repo containing details about managing Launch Pad, such as our accounts.
 
 Note that links to most of these repositories are available through the handy "Quick Links" dropdown in this website's navbar!
+
+## 🗳 Recruitment <Badge type="tip" text="new"/>
+
+Launch Pad recruitment documentation and material lives in these pages!
+
+::: warning
+These pages are a work in progress.
+:::
+
+* **Role descriptions**: These pages describe roles that Launch Pad recruits for. They should be written such that we can send each page individually to prospective recruits to help them get an idea of what each role entails!
+  * Developer (TODO)
+  * Design (TODO)
+  * Strategy (TODO)
+  * [Design Lead](./recruitment/design-lead.md)
+  * [Tech Lead](./recruitment/tech-lead.md)
+* **Interview processes** are documented in the [`ubclaunchpad/leads`](https://github.com/ubclaunchpad/leads) repository.

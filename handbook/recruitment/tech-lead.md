@@ -1,4 +1,5 @@
 ---
+# this page is meant to be sent to non-Launch Pad members as recruitment material - exclude it from search
 search: false
 ---
 
