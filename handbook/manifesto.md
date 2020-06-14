@@ -92,6 +92,6 @@ All members must agree to and abide by the following policies:
 
 Any of the following are reasons for expulsion from Launch Pad:
 
-* Not treating other Launch Pad members with respect
-* Consistently missing meetings without notifying your tech lead
-* Consistently not responding to or ignoring Slack messages
+* Not treating other Launch Pad members with respect.
+* Consistently missing meetings without notifying your tech lead.
+* Consistently not responding to or ignoring Slack messages.
