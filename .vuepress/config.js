@@ -68,8 +68,27 @@ module.exports = {
     ],
     searchPlaceholder: 'Search...',
 
-    // automatically generate a sidebar for each page
-    sidebar: 'auto',
+    sidebar: {
+      // generate grouped sidebars for groups of pages
+      '/handbook/onboarding/': [
+        'everyone',
+        'design',
+        'strategy',
+        'leads',
+      ],
+      '/handbook/project-management/': [
+        'scope',
+        'sprints',
+        'repositories',
+      ],
+      '/handbook/tools/': [
+        'slack',
+        'github',
+        'deployment',
+      ],
+      // automatically generate a sidebar for each page
+      '/': 'auto',
+    },
     sidebarDepth: 2,
     smoothScroll: true,
 
