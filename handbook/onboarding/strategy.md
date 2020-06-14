@@ -1,4 +1,4 @@
-# 🚀 Onboarding for Strategy
+# 💼 Onboarding for Strategy
 
 Welcome to UBC Launch Pad, and congratulations (and thank you!) for joining the strategy team!
 

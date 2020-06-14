@@ -1,4 +1,4 @@
-# 🚀 Onboarding for Leads
+# 🎉 Onboarding for Leads
 
 Welcome to UBC Launch Pad, and congratulations (and thank you!) for joining us as a lead!
 

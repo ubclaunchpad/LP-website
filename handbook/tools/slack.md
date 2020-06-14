@@ -1,4 +1,4 @@
-# 💬 Slack Guide
+# 💬 Slack
 
 We use [Slack](https://slack.com) for team-wide communication, announcements, and project-specific coordination. The workspace can be found [here](https://ubclaunchpad.slack.com). You should receive an invite in your email to join the workspace - if you haven't, please reach out to your lead or one of the presidents for help!
 

@@ -68,6 +68,7 @@ module.exports = {
     ],
     searchPlaceholder: 'Search...',
 
+    // see https://vuepress.vuejs.org/theme/default-theme-config.html#multiple-sidebars
     sidebar: {
       // generate grouped sidebars for groups of pages
       '/handbook/onboarding/': [
