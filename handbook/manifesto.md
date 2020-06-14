@@ -87,7 +87,7 @@ We need long-term support on two fronts:
 All members must agree to and abide by the following policies:
 
 * Treat everyone in Launch Pad with respect.
-* Complete the ticket(s) assigned to you during [sprint planning](/handbook/project-management/sprints.md) to the best of your ability.
+* Work on the ticket(s) assigned to you during [sprint planning](/handbook/project-management/sprints.md) to the best of your ability.
 * Be an active observer and pariticipant in relevant discussions on [Slack](/handbook/tools/slack.md) and [GitHub](/handbook/tools/github.md), our chosen mediums of communication.
 
 Any of the following are reasons for expulsion from Launch Pad:
