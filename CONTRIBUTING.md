@@ -37,7 +37,33 @@ While the [Easy Way](#the-easy-way) is good for small changes, writing larger ch
 
 More details on using `git` is available in our [Git Workflow guide](./resources/git-workflow.md).
 
-## Scripts
+## Structuring Content
+
+In general:
+
+* `handbook/` should have Launch Pad-specific documentation (some of it might be generally useful, however - if so, link to it from Resources)
+* `resources/` should have general learning resources
+* Before creating a new section, look for an existing section where your new content could live instead, and create links from other relevant sections if possible.
+* Feel free to add a badge to new or updated content:
+  ```
+  <Badge type="tip" text="new"/>
+  ```
+* Images should go in a `/img` folder in the same directory.
+* Headers can *start* with emoji, but don't put emojis anywhere else in a header!
+* Use **relative links** to content within the website - this means `/handbook/file.md` instead of `https://docs.ubclaunchpad.com/..`!
+
+### Nested Folders
+
+Any folders deeper than the top-level documents (such as `handbook/`, `resources/`) should *not* have a dedicated README in its folder - instead, a "table of contents" of the directory should be placed in one of the top-level documents' READMEs. For example, the contents of `resources/project-management` are listed in `resources/README.md` and *not* `resources/project-management/README.md`.
+
+When adding a new file to a subfolder of content (for example, `handbook/tools`), make sure you:
+
+* add a link to `handbook/README.md`
+* if the subfolder has a [defined sidebar group](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/docs%24+file:%5E%5C.vuepress/config%5C.js+sidebar&patternType=literal), add your new page to the group
+
+## Technical Details
+
+### Scripts
 
 This repo offers some `package.json` scripts to help you out:
 
@@ -48,29 +74,14 @@ npm run hooks    # installs the git commit hook that runs the linter before you 
 npm run serve    # runs the website locally
 ```
 
-## Structuring Content <Badge type="tip" text="new"/>
-
-* Any folders deeper than the top-level documents (such as `handbook/`, `resources/`) should not have a dedicated README in its folder - instead, a "table of contents" of the directory should be placed in one of the top-level documents' READMEs.
-  * For example, the contents of `resources/project-management` are listed in `resources/README.md` and *not* `resources/project-management/README.md`.
-* Before creating a new section, look for an existing section where your new content could live instead, and create links from other relevant sections if possible.
-* In general:
-  * `handbook/` should have Launch Pad-specific documentation (some of it might be generally useful, however - if so, link to it from Resources)
-  * `resources/` should have general learning resources
-* Feel free to add a badge to new or updated content:
-  ```
-  <Badge type="tip" text="new"/>
-  ```
-* Images should go in a `/img` folder in the same directory.
-* Headers can *start* with emoji, but don't put emojis anywhere else in a header!
-
-## VuePress
+### VuePress
 
 This website is based on [VuePress](https://vuepress.vuejs.org/guide/) - refer to the
 VuePress documentation for more details. VuePress takes the [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) content in this repository (all those `.md` files) and turns them into the pretty website on `docs.ubclaunchpad.com`.
 
 Most VuePress configuration lives in [`.vuepress/config.js`](./.vuepress/config.js).
 
-## Deployment
+### Deployment
 
 Deployments are handled automatically by the [Netlify](https://www.netlify.com/) - the website is managed under the "Launch Pad OSS Sponsored" team. Build and deploy options can be declared in [`netlify.toml`](./netlify.toml).
 
