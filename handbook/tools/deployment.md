@@ -1,4 +1,4 @@
-# Deployment
+# 🚢 Deployment
 
 For general deployment advice, see [the Deployment page in Resources](../../resources/deployment.md).
 This page specifically documents options available to Launch Pad projects.

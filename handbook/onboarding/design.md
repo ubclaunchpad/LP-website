@@ -1,4 +1,4 @@
-# 🚀 Onboarding for Design
+# 🎨 Onboarding for Design
 
 ## Checklist
 
