@@ -86,6 +86,7 @@ module.exports = {
         'slack',
         'github',
         'deployment',
+        'analytics',
       ],
       // automatically generate a sidebar for each page
       '/': 'auto',
