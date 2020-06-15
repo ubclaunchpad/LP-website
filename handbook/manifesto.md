@@ -84,21 +84,14 @@ We need long-term support on two fronts:
 
 ## Code of Conduct
 
-::: warning
-This section is outdated! TODO: update to reflect our current values
-:::
-
 All members must agree to and abide by the following policies:
 
 * Treat everyone in Launch Pad with respect.
-* Attend meetings every week for 4 hours to the best of your ability, and notify your team in advance if you will be absent or can't work on your tasks.
-* Complete the ticket(s) assigned to you each week to the best of your ability.
-* Be available on Slack throughout the week, responding to messages within 24 hours.
+* Work on the ticket(s) assigned to you during [sprint planning](/handbook/project-management/sprints.md) to the best of your ability.
+* Be an active observer and pariticipant in relevant discussions on [Slack](/handbook/tools/slack.md) and [GitHub](/handbook/tools/github.md), our chosen mediums of communication.
 
 Any of the following are reasons for expulsion from Launch Pad:
 
-* Not treating other Launch Pad members with respect
-* Consistently missing meetings without notifying your tech lead
-* Consistently not completing your weekly ticket without notifying your tech lead
-* Consistently showing up late to meetings, missing meetings, or failing to complete tickets
-* Consistently not responding to or ignoring Slack messages
+* Not treating other Launch Pad members with respect.
+* Consistently missing meetings without notifying your tech lead.
+* Consistently not responding to or ignoring Slack messages.
