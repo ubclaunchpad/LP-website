@@ -23,6 +23,7 @@ We use a variety of technology and tools at Launch Pad - these sections help you
 * [**GitHub**](./tools/github.md): Guidance on getting started with our GitHub organization! GitHub is where we host, document, and manage the code in all our projects.
 * [**Deployment**](./tools/deployment.md): Launch Pad's recommendations regarding deployment and getting your project out to the world.
 * [**Analytics**](./tools/analytics.md): Launch Pad's recommendations regarding setting up analytics to see how users interact with your projects.
+* [**Social Media**](./tools/social-media.md): Documentation about our social media accounts and how to use them to help showcase our work!
 * [**Other Tools**](../resources/tools.md): Our Resources section has a page on general tools you can leverage to help you build awesome stuff!
 
 ## 👨‍💼 Project Management <Badge type="tip" text="updated"/>
