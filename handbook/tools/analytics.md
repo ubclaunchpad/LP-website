@@ -13,7 +13,7 @@ Analytics are a fantastic way to get some concrete feedback on what users are do
 
 To get started, reach out to [`#ask-leads`](https://ubclaunchpad.slack.com/messages/CK935RD3Q/) to get a site and dashboard set up in Fathom - we will provide you with a site code and public dashboard.
 
-Using the site code, you get Fathom set up on your project! Note that we have a custom domain set up for our tracker script, `https://chinchilla.ubclaunchpad.com/script.js`, to avoid being blocked by adblockers (this is especially important given that Launch Pad projects are relatively low-traffic).
+Using the site code, you can now set up analytics on your project! Note that we have a custom domain set up for our tracker script, `https://chinchilla.ubclaunchpad.com/script.js`, to avoid being blocked by adblockers (this is especially important given that Launch Pad projects are relatively low-traffic).
 
 * Most projects can leverage the provided [code snippet](https://usefathom.com/support/tracking). Make sure you take a look at the [advanced options](https://usefathom.com/support/tracking-advanced) to make sure your snippet is configured correctly - for example, a good setup for a ReactJS project would be:
   ```html
