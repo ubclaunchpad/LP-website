@@ -14,7 +14,7 @@ The content in this website is written in [Markdown](https://github.com/adam-p/m
 
 The easiest way to make a quick change is to simply hit the "Help us improve this page" link that's available on the bottom of every page:
 
-![help us](./assets/help-us-improve.png)
+![help us](./img/help-us-improve.png)
 
 This will open up an editor in the GitHub interface, where you can make small changes and submit them as a pull request entirely from your browser.
 

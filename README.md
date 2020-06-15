@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://docs.ubclaunchpad.com">
-    <img src="./assets/homepage.png" width="50%" alt="homepage"/>
+    <img src="./img/homepage.png" width="50%" alt="homepage"/>
   </a>
 </p>
 
