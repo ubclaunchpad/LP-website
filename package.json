@@ -10,7 +10,6 @@
   "dependencies": {
     "@ubclaunchpad/vuepress-plugin-fathom": "~1.2.1",
     "@vuepress/plugin-back-to-top": "~1.5.2",
-    "@vuepress/plugin-google-analytics": "~1.5.2",
     "emoji-regex": "~9.0.0",
     "markdownlint": "~0.20.3",
     "markdownlint-cli": "~0.23.1",
