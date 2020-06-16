@@ -127,12 +127,9 @@ module.exports = {
     '@vuepress/back-to-top',
 
     // analytics are under team@ubclaunchpad.com, property docs.ubclaunchpad.com
-    ['@vuepress/google-analytics', {
-      'ga': 'UA-63529563-2',
-    }],
-
-    // analytics are under team@ubclaunchpad.com, property docs.ubclaunchpad.com
     // dashboard: https://app.usefathom.com/share/oemmhhle/docs.ubclaunchpad.com
+    // See https://docs.ubclaunchpad.com/handbook/tools/analytics for more about Fathom
+    // See https://github.com/ubclaunchpad/vuepress-plugin-fathom for more about this plugin
     ['@ubclaunchpad/fathom', {
       'fathomURL': 'https://chinchilla.ubclaunchpad.com/script.js',
       'siteID': 'OEMMHHLE',

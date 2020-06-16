@@ -88,3 +88,9 @@ Deployments are handled automatically by the [Netlify](https://www.netlify.com/)
 This means that when your changes are merged to `master`, your contribution will automatically be deployed!
 
 Also note that individual pull requests also get their own preview deployment - Netlify will comment on your pull request with a link to the preview. This is useful for reviewing changes! Look out for a comment from the Netlify bot.
+
+### Analytics
+
+We use [Fathom Analytics](https://usefathom.com/) to track visits and interactions on the website (via [`@ubclaunchpad/vuepress-plugin-fathom`](https://github.com/ubclaunchpad/vuepress-plugin-fathom)). Since most of the site is just plain Markdown, the only [goals](https://usefathom.com/support/goals) we track are interactions with search suggestions - see [`fulltextSearchFunctions.js`](./.vuepress/fulltextSearchFunctions.js) for more details.
+
+The site's analytics dashboard is available [here](https://app.usefathom.com/share/oemmhhle/docs.ubclaunchpad.com).
