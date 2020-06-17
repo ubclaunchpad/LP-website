@@ -7,6 +7,10 @@ search: false
 
 > UBC Launch Pad 2020 Team
 
+::: warning We are not currently accepting applications for this role.
+Sign up for [our newsletter](https://ubclaunchpad.com/newsletter) to get updates!
+:::
+
 ## Summary
 
 This year, we are establishing a closer leadership team, where tech-leads’ responsibility extends from simplifying leading your project to engage in club-wise planning and decision making. Therefore, we are looking for someone who is passionate about Launch Pad, and is willing to take initiatives in growing not only as a person, but also as a team!
