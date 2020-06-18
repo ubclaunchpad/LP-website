@@ -89,7 +89,12 @@ module.exports = {
         'analytics',
         'social-media',
       ],
-      // automatically generate a sidebar for each page
+      '/resources/groundwork/': [
+        'web',
+        'android',
+        'ios',
+      ],
+      // automatically generate a sidebar for each page by default
       '/': 'auto',
     },
     sidebarDepth: 2,
