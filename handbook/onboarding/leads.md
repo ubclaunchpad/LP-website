@@ -46,6 +46,8 @@ Within the shared Launch Pad folder, try to maintain the following structure:
 * [Exec](https://drive.google.com/drive/u/0/folders/10b_2H5EhPpJtdgNi7QizRhWC9Qtivr8L) - for the presidents
   * Presidents should create a document for meeting notes titled "Exec: Meeting Notes YYYY". All exec meetings should go in this document.
 
+**Do not add credentials (usernames, passwords) in Google Drive**. Instead, add them to the private [Exec repository](https://github.com/ubclaunchpad/exec/blob/master/assets.md) and provide the credentials to those who need it as required.
+
 ## Workflows
 
 ::: tip
