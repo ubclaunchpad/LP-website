@@ -64,10 +64,10 @@ Launch Pad recruitment documentation and material lives in these pages!
 These pages are a work in progress.
 :::
 
+* [**Overview**](/handbook/recruitment/overview.md) goes over the why and how of recruitment at Launch Pad.
 * **Role descriptions**: These pages describe roles that Launch Pad recruits for. They should be written such that we can send each page individually to prospective recruits to help them get an idea of what each role entails!
   * Developer (TODO)
   * Design (TODO)
   * Strategy (TODO)
   * [Design Lead](./recruitment/design-lead.md)
   * [Tech Lead](./recruitment/tech-lead.md)
-* **Interview processes** are documented in the [`ubclaunchpad/leads`](https://github.com/ubclaunchpad/leads) repository.
