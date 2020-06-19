@@ -1,6 +1,6 @@
 # Recruitment Overview
 
-This document provides a overview of how and why we do recruitment. Our interview processes are documented in the [Leads repository](https://github.com/ubclaunchpad/leads).
+This document provides a overview of why and how we do recruitment at [UBC Launch Pad](https://ubclaunchpad.com). Our interview processes are documented in the [Leads repository](https://github.com/ubclaunchpad/leads).
 
 ::: warning
 This page is a work in progress!
@@ -20,7 +20,7 @@ When recruiting for techncial roles, we aim to categorize applicants into the fo
     * demonstrable use programming paradigms (even as simple as loops)
 * **Experienced**: (2 internships OR outstanding project) AND nails technical question AND interest in mentorship
 
-To provide support to our less experienced members and ensure a productive time for everyone, when recruiting we aim to have:
+To provide support to our less experienced members and ensure a productive environment for everyone, when recruiting we aim to have:
 
-* Around 40% of members be "beginners".
-* At least 20% of members (including leads) be "experienced".
+* around 40% of members be "beginners".
+* at least 20% of members (including leads) be "experienced".
