@@ -8,7 +8,7 @@ This page is a work in progress - see our [planning document](https://docs.googl
 
 This section provides some recommended combinations of technology you can leverage. Feel free to use this guidance to build your own stack by adjusting them as needed (for example, by replacing certain elements or combining different stacks).
 
-::: info
+::: tip
 Have some technologies you enjoy using? See our [Contribution Guide](/CONTRIBUTING.md) to add it here!
 :::
 
