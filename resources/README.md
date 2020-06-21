@@ -4,6 +4,14 @@ This page provides a bevy of good self-learning resources for every topic, acces
 
 If you want further pointers, get in touch with your tech lead - they can direct you to more resources or to another Launch Pad member that knows more. And if you want to add even more resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
+## 🚀 Project Groundwork
+
+These pages contain resources to help you kickstart your project!
+
+* [Web](/resources/groundwork/web.md)
+* [Android](/resources/groundwork/android.md)
+* [iOS](/resources/groundwork/iOS.md)
+
 ## 🛶 Git Workflow
 
 A recommended git/GitHub collaborative development workflow is introduced in
