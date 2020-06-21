@@ -30,7 +30,18 @@ At the start of the project, the lead should have created a project folder in Go
 
 1. 📝 **Prep:** 1-2 days before your meeting, update your meeting document to outline all of the following parts of the meeting in a few words per point.
    * The goal is to have everyone briefly think about what they've achieved and problems they've faced so that meetings can run more smoothly!
-   * A good way to do this is to have a document posted to your team's Slack channel so everyone can add to it at their leisure before you meeting
+   * A good way to do this is to have a document posted to your team's Slack channel or your team's GitHub discussions so everyone can add to it at their leisure before you meeting. An example of document could be one where each member contributes the following:
+      > **Last Week**:
+      > * Started working on issue #1
+      > * Submitted PR #2 for logging
+      >
+      > **This Week**:
+      > * Continue to work on issue #1
+      > * Get PR #2 reviewed and merged
+      >
+      > **Blockers**:
+      > * Had 3 mid terms last week
+      > * Could not get debugger to work
 2. ✈️ **Overview:** At the start of the meeting, the lead gives general updates or comments overall progress (~1-2 minutes)
 3. 👋 **Standup:** Each member gives updates on their progress and reflects on their work during the previous sprint (~2-3 minutes/person)
     * Each member should bring up their accomplishments or difficulties they've had during the sprint with their assigned task
