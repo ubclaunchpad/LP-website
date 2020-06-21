@@ -30,7 +30,7 @@ At the start of the project, the lead should have created a project folder in Go
 
 1. 📝 **Prep:** 1-2 days before your meeting, update your meeting document to outline all of the following parts of the meeting in a few words per point.
    * The goal is to have everyone briefly think about what they've achieved and problems they've faced so that meetings can run more smoothly!
-   * A good way to do this is to have a document posted to your team's Slack channel or your team's GitHub discussions so everyone can add to it at their leisure before you meeting. An example of document could be one where each member contributes the following:
+   * A good way to do this is to have a document posted to your team's Slack channel or your team's GitHub discussions so everyone can add to it at their leisure before your team meeting. An example of document could be one where each member contributes the following:
       > **Last Week**:
       > * Started working on issue #1
       > * Submitted PR #2 for logging
@@ -45,7 +45,7 @@ At the start of the project, the lead should have created a project folder in Go
 2. ✈️ **Overview:** At the start of the meeting, the lead gives general updates or comments overall progress (~1-2 minutes)
 3. 👋 **Standup:** Each member gives updates on their progress and reflects on their work during the previous sprint (~2-3 minutes/person)
     * Each member should bring up their accomplishments or difficulties they've had during the sprint with their assigned task
-    * The lead can make quick suggestions on future work baased each member's update
+    * The lead can make quick suggestions on future work based each member's update
 4. 🚀 **Action Items:** Finalize tasks that need to be done and assign work for everyone (~5-10 minutes)
     * [Define and create tasks](#tasks) as GitHub issues, and make sure each member has a task assigned (new or old) through a GitHub issue
 5. ❓ **Follow-up**: Leave some time after each meeting to help each other out with any issues, discuss the project, or just socialize!
