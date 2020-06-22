@@ -8,7 +8,9 @@ Any Launch Pad original content could make good social media posts to help us sh
 
 ## Accounts
 
-You can find direct links to our accounts in the [`ubclaunchpad.com` site configuration](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+file:%5Esrc/config%5C.ts+socials+&patternType=literal). Credentials are available in the [Exec repository](https://github.com/ubclaunchpad/exec) - please reach out to [`#ask-leads`](https://ubclaunchpad.slack.com/archives/CK935RD3Q) to get in touch with one of the presidents if you are interested in helping us run our social media accounts!
+You can find direct links to our accounts in the [`ubclaunchpad.com` site configuration](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+file:config.ts+socials%28.*%3F%29%5C%7B%28.%7C%5Cn%29*%3F%7D&patternType=regexp&case=yes).
+
+Credentials are available in the [Exec repository](https://github.com/ubclaunchpad/exec) - please reach out to [`#ask-leads`](https://ubclaunchpad.slack.com/archives/CK935RD3Q) to get in touch with one of the presidents if you are interested in helping us run our social media accounts!
 
 ### Facebook
 
