@@ -79,7 +79,7 @@ Commits on the remote issue branch should contain logical chunks of functionalit
 and be accompanied by descriptive commit messages. A commit description should
 be a brief, succinct, and accurate overview of your changes - messages like
 "fix" or "attempt 12" are uninformative and unhelpful, while "Added check to
-account for edge case in AddUser()" is a good message. You can refer to
+account for edge case in render()" is a good message. You can refer to
 [this guide](https://chris.beams.io/posts/git-commit/#seven-rules) for an
 overview of how to write good commit messages.
 
@@ -99,7 +99,7 @@ you would like some help doing so, ask your Tech Lead.
 When the issue being worked on is ready to be merged into `master` and all
 relevant commits on that branch have been pushed to GitHub, OR when you feel
 like you are stuck and need help, create a pull request on GitHub. Opening
-work-in-progress pull requests for your banch is a good way to get feedback on
+work-in-progress pull requests for your branch is a good way to get feedback on
 your direction and get pointers on how to best complete your task.
 
 * Request a review from anyone who is familiar with the section of the codebase

@@ -1,4 +1,4 @@
-# 💬 Programming Langauges
+# 💬 Programming Languages
 
 Resources for various programming languages! If you want further pointers, get
 in touch with your tech lead - they can direct you to more resources or to
@@ -39,7 +39,7 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
 
 ## Shell Scripting
 
-* [ShellCheck](https://www.shellcheck.net) is a bash shell script linter
+* [Shell Check](https://www.shellcheck.net) is a bash shell script linter
   that can be used online or via your command line.
 * Matt Might has a
   [bash scripting tutorial](http://matt.might.net/articles/bash-by-example/)
