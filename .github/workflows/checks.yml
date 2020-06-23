@@ -8,11 +8,19 @@ jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
+    # set up dependencies
     - uses: actions/checkout@v2
-    - run: git fetch origin master # have master available for comparison
     - uses: actions/setup-node@v1
       with: { node-version: 12.x }
     - run: npm install
-    - run: npm run lint
-    - run: npm run spellcheck || true
-    - run: npm run build
+
+    # have master available for comparison
+    - run: git fetch origin master
+
+    # run checks
+    - name: Linters
+      run: npm run lint
+    - name: Spellcheck
+      run: npm run spellcheck || true # optional
+    - name: Build
+      run: npm run build
