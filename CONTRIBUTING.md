@@ -94,7 +94,7 @@ Also note that individual pull requests also get their own preview deployment - 
 
 We use [GitHub Actions](https://github.com/features/actions) to run checks to make sure the website content is nicely formatted and mostly correct. You can see the output under the "Checks" tab on your pull request - whenever you open a pull request, check this tab to see if anything needs your attention!
 
-![pr checks tab](img/pr-checks.png)
+![pr checks tab](./img/pr-checks.png)
 
 We have the following Actions set up:
 
