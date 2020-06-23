@@ -8,7 +8,9 @@ add an [issue](https://github.com/ubclaunchpad/docs/issues) to this repository
 
 ## Making a Change
 
-The content in this website is written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), a plain-text markup format. We use [VuePress](#vuepress) to convert Markdown files into this website - making a change to `docs.ubclaunchpad.com` simply involves editing these files.
+The content in this website is written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), a plain-text markup format. We use [VuePress](#vuepress) to convert Markdown files into this website - making a change to `docs.ubclaunchpad.com` simply involves editing these files and creating a [pull request](/handbook/tools/github.md#pull-requests).
+
+Once you've made your pull request, [Netlify](https://www.netlify.com/) will then deploy a preview of your change - see [Deployment](#deployment). GitHub Actions will also runs checks to tell you if anything is wrong - see [Checks](#checks).
 
 ### The Easy Way
 
@@ -33,8 +35,6 @@ While the [Easy Way](#the-easy-way) is good for small changes, writing larger ch
    * (optional) run `npm run serve` to test out the updated website locally!
 4. Push your local branch to the remote repository using `git push origin HEAD`
 5. Make a pull request on GitHub's web interface (and make sure to fill out the provided template!)
-6. [Netlify](https://www.netlify.com/) will then deploy a preview of your change - see [Deployment](#deployment)
-7. Be sure to check the GitHub Actions checks output under the spellcheck script for spelling errors. (Note: The spell checker dictionary isn't quite robust. It may sometimes mark correct spellings as errors. You can add misidentified spellings to the dictionary via the .spelling file.)
 
 More details on using `git` is available in our [Git Workflow guide](./resources/git-workflow.md).
 
@@ -89,6 +89,24 @@ Deployments are handled automatically by the [Netlify](https://www.netlify.com/)
 This means that when your changes are merged to `master`, your contribution will automatically be deployed!
 
 Also note that individual pull requests also get their own preview deployment - Netlify will comment on your pull request with a link to the preview. This is useful for reviewing changes! Look out for a comment from the Netlify bot.
+
+### Checks
+
+We use [GitHub Actions](https://github.com/features/actions) to run checks to make sure the website content is nicely formatted and mostly correct. You can see the output under the "Checks" tab on your pull request - whenever you open a pull request, check this tab to see if anything needs your attention!
+
+![pr checks tab](img/pr-checks.png)
+
+We have the following Actions set up:
+
+* [![Checks](https://github.com/ubclaunchpad/docs/workflows/Checks/badge.svg)](https://github.com/ubclaunchpad/docs/actions?query=workflow%3AChecks) ([`checks.yml`](./.github/workflows/checks.yml))
+  * Linter: this step checks if your Markdown is formatted correctly.
+  * Spellcheck: this step checks if your spelling is good. Since the tool often reports false positives, misspellings won't fail your pull request, but you should still check!
+* [![Compress images](https://github.com/ubclaunchpad/docs/workflows/Compress%20images/badge.svg)](https://github.com/ubclaunchpad/docs/actions?query=workflow%3A%22Compress+images%22) ([`compress.yml`](./.github/workflows/compress.yml))
+  * This runs whenever images are added - if an image's size can be reduced, this tool will automatically compress it and push it to your branch!
+
+::: tip Note on the spellchecker
+The spellchecker dictionary is not very robust. It may sometimes mark correct spellings as errors. You can add misidentified spellings to the dictionary via the [`.spelling`](./.spelling) file.
+:::
 
 ### Analytics
 
