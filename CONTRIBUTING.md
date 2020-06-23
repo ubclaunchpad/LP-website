@@ -70,7 +70,6 @@ This repo offers some `package.json` scripts to help you out:
 ```sh
 npm install             # installs our standard Markdown linter and site builder
 npm run lint            # runs the linter to check for style errors
-npm run hooks           # installs the git commit hook that runs the linter before you commit
 npm run sc <filepath>   # runs markdown spell checker on <filepath>
 npm run serve           # runs the website locally
 ```
