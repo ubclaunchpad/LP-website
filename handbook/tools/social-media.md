@@ -22,7 +22,7 @@ TODO
 
 ### Medium
 
-Our Medium publication can accept posts from anyone - just reach out to get your Medium account added as an editor, and we can publish your posts under our shared publicatin!
+Our Medium publication can accept posts from anyone - just reach out to get your Medium account added as an editor, and we can publish your posts under our shared publication!
 
 ### LinkedIn
 

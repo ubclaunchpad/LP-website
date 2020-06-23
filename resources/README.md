@@ -66,7 +66,7 @@ Want to make your project available to the world? Head on over to our
 
 ## 🎨 Front End Development
 
-* Grab, an Uber competitor in Southeast Asia, has a great big
+* Grab, an Uber competitor in South East Asia, has a great big
   [guide to front end development](https://github.com/grab/front-end-guide/blob/master/README.md),
   which covers everything from React to hosting and deployment.
 
@@ -94,7 +94,7 @@ Want to make your project available to the world? Head on over to our
 * [Project Euler](https://projecteuler.net/) is a very different style of coding
   challenge site - it has a much sparser presentation than rivals like LeetCode
   and HackerRank, and generally focuses on (sometimes rather esoteric) mathematical
-  conundrums. But for the mathmatically-inclined programmer, it can be a rich
+  conundrums. But for the mathematically-inclined programmer, it can be a rich
   resource for delightful insights. Also, our very own ML Tech Lead Kevin built
   a [command line tool](https://github.com/iKevinY/EulerPy) to make it easier
   to work on Project Euler problems in Python!
@@ -111,12 +111,12 @@ Having trouble with Windows? Check out [our Windows guidance](./Windows.md)!
   published and becoming famous.
 * The consulting firm Thoughtbot recently made their
   [Upcase learning platform](https://thoughtbot.com/upcase) free for everyone.
-  It has a lot of short video lectures on a variety of topics, espcially
+  It has a lot of short video lectures on a variety of topics, especially
   Ruby and Vim, which can be quite useful for new developers.
 * [every-programmer-should-know](https://github.com/mtdvio/every-programmer-should-know)
   provides a collection of technical things every software developer should
   know.
-* [Slides](https://slides.ubclaunchpad.com/) contains slideshow decs for most
+* [Slides](https://slides.ubclaunchpad.com/) contains slideshow decks for most
   UBC Launch Pad presentations and workshops, both internal and external.
 
 ## 🧗 Exploration
