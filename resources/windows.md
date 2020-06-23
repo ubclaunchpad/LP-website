@@ -79,18 +79,18 @@ performing a dual boot installation is relatively safe unless you deviate from
 following the steps provided in the guides linked in this document.
 
 You'll need to download the Xubuntu 18.04 from [here](https://xubuntu.org/download).
-Preferrably you should download the torrent from the Xubuntu website and use a
+Preferably you should download the torrent from the Xubuntu website and use a
 torrent program like BitTorrent from [here](https://www.bittorrent.com/downloads/win).
 BitTorrent is a program that allows you to download large files from the internet
-given a torrent file, which in our case would be the one obtained from the xubuntu
+given a torrent file, which in our case would be the one obtained from the Xubuntu
 website. Here's a guide on [how to use BitTorrent](https://www.dailydot.com/debug/how-to-use-bittorrent/).
 Don't install the anti-virus because you wont need it if you're torrenting from
-a safe website like xubuntu.  You also should stop seeding after a day once you're
+a safe website like Xubuntu.  You also should stop seeding after a day once you're
 done the download (seeding helps other people using BitTorrent to download the
 same files by giving them some of your internet connection/bandwidth).
 
-Once you download the Xubuntu iso file using BitTorrent, you'll need a USB stick
-and Rufus (get it from [here](https://rufus.ie/en_IE.html)) to burn the iso file
+Once you download the Xubuntu ISO file using BitTorrent, you'll need a USB stick
+and Rufus (get it from [here](https://rufus.ie/en_IE.html)) to burn the ISO file
 onto the USB stick in order to make it a bootable Ubuntu USB stick. The USB stick
 will allow you to try out Xubuntu, as well as install it onto your SSD/HDD. [Instructions](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows#0).
 
@@ -104,9 +104,9 @@ have to restart your computer and press either F9 or F2 or F10... it's dependent
 on your computer so you might need to google how to enter into your BIOS for your
 specific laptop. Once you end up in your computer's BIOS, use your arrow keys to
 navigate towards the boot menu section and then configure it such that you will
-boot from your usb stick (check out step 2 from
+boot from your USB stick (check out step 2 from
 [here](https://www.forbes.com/sites/jasonevangelho/2018/08/29/beginners-guide-how-to-install-ubuntu-linux/).
-Once you've chosen for your computer to boot from usb, restart and you'll end up
+Once you've chosen for your computer to boot from USB, restart and you'll end up
 running from your USB with a GUI that will guide you through installing ubuntu
 on your SSD. Follow the steps in forbes.com guide after that and your done
 installing Xubuntu!

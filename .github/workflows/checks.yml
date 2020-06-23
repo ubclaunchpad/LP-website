@@ -11,6 +11,16 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with: { node-version: 12.x }
-    - run: npm install
-    - run: npm run lint
-    - run: npm run build
+    - name: Setup
+      run: |
+        npm install
+        git fetch origin master # have master available for comparison
+
+    # run checks
+    - name: ⭐ Linters
+      run: npm run lint
+    - name: ⭐ Spellcheck
+      run: npm run spellcheck
+      continue-on-error: true
+    - name: ⭐ Build
+      run: npm run build

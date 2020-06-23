@@ -68,6 +68,11 @@ module.exports = {
     ],
     searchPlaceholder: 'Search...',
 
+    // disable automatically setting hash (`#...`) on URL when scrolling down a page
+    // makes it hard to link pages when enabled, since often as soon as you land on a page an
+    // awkward anchor will get appended to your link
+    activeHeaderLinks: false,
+
     // see https://vuepress.vuejs.org/theme/default-theme-config.html#multiple-sidebars
     sidebar: {
       // generate grouped sidebars for groups of pages
@@ -89,7 +94,13 @@ module.exports = {
         'analytics',
         'social-media',
       ],
-      // automatically generate a sidebar for each page
+      '/resources/groundwork/': [
+        'stack-choosing',
+        'web',
+        'android',
+        'ios',
+      ],
+      // automatically generate a sidebar for each page by default
       '/': 'auto',
     },
     sidebarDepth: 2,

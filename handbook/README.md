@@ -40,7 +40,7 @@ These are **guidelines**, not strict rules! Teams should adjust these processes 
 
 ## 📦 Official Repositories
 
-There are a number of other important repositories that provide places for documentation and discussion. Note that these are all private to the `ubclaunchpad` GitHub organization; if you have not been added to the org, talk to your Tech Lead or one of the Presidents in [`#ask-leads`](https://ubclaunchpad.slack.com/messages/CK935RD3Q/).
+There are a number of other important repositories that provide places for documentation and discussion. Note that these are all private to the `ubclaunchpad` GitHub organization; if you have not been added to the organization, talk to your Tech Lead or one of the Presidents in [`#ask-leads`](https://ubclaunchpad.slack.com/messages/CK935RD3Q/).
 
 * [**Ideas**](https://github.com/ubclaunchpad/ideas): The goal of this repository is to be a place where anyone in Launch Pad can submit ideas for anything - how to improve Launch Pad, potential projects, event ideas... anything you want!
 * [**Alumni Directory**](https://github.com/ubclaunchpad/alumni-directory): An internal directory with past Launch Pad members and what they are doing now.
@@ -64,10 +64,10 @@ Launch Pad recruitment documentation and material lives in these pages!
 These pages are a work in progress.
 :::
 
+* [**Overview**](/handbook/recruitment/overview.md) goes over the why and how of recruitment at Launch Pad.
 * **Role descriptions**: These pages describe roles that Launch Pad recruits for. They should be written such that we can send each page individually to prospective recruits to help them get an idea of what each role entails!
   * Developer (TODO)
   * Design (TODO)
   * Strategy (TODO)
   * [Design Lead](./recruitment/design-lead.md)
   * [Tech Lead](./recruitment/tech-lead.md)
-* **Interview processes** are documented in the [`ubclaunchpad/leads`](https://github.com/ubclaunchpad/leads) repository.

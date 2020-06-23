@@ -1,6 +1,6 @@
 {
     "MD001": false,
-    "MD004": { "style": "asterisk" },
+    "MD004": { "style": "consistent" },
     "MD010": false,
     "MD013": false,
     "MD022": false,

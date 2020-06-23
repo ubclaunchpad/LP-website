@@ -36,7 +36,7 @@ Our goal is that through what we do, we can provide our members with an experien
 
 ## What We Do
 
-Members in Launch Pad form into teams to work on an 8-month development project based on their interests and skill sets. Each team consists of a tech-lead, developers and designers, where they collaboratively go through the design thinking process to design and build a product.
+Members in Launch Pad form into teams to work on an 8 month development project based on their interests and skill sets. Each team consists of a tech-lead, developers and designers, where they collaboratively go through the design thinking process to design and build a product.
 
 As a club, Launch Pad supports every member’s experience through multiple ways:
 
@@ -49,7 +49,7 @@ As a club, Launch Pad supports every member’s experience through multiple ways
 
 #### Project Teams
 
-Launch Pad primarily consists of agile development teams centered around a shared project. Each team consists of a Tech Lead and a number of Developers, usually between 5 to 8.
+Launch Pad primarily consists of agile development teams centred around a shared project. Each team consists of a Tech Lead and a number of Developers, usually between 5 to 8.
 
 **Tech Leads** are experienced developers who are responsible for managing the team by planning the project roadmap, assigning tickets during sprints, and implementing challenging features. They are also available as a resource to less experienced developers on the team. If you have any trouble with your issue, questions about Launch Pad, or just a random technical question: ask your Tech Lead.
 
@@ -88,7 +88,7 @@ All members must agree to and abide by the following policies:
 
 * Treat everyone in Launch Pad with respect.
 * Work on the ticket(s) assigned to you during [sprint planning](/handbook/project-management/sprints.md) to the best of your ability.
-* Be an active observer and pariticipant in relevant discussions on [Slack](/handbook/tools/slack.md) and [GitHub](/handbook/tools/github.md), our chosen mediums of communication.
+* Be an active observer and participant in relevant discussions on [Slack](/handbook/tools/slack.md) and [GitHub](/handbook/tools/github.md), our chosen mediums of communication.
 
 Any of the following are reasons for expulsion from Launch Pad:
 
