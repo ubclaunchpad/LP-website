@@ -21,6 +21,7 @@ jobs:
     - name: Linters
       run: npm run lint
     - name: Spellcheck
-      run: npm run spellcheck || true # optional
+      run: npm run spellcheck
+      continue-on-error: true
     - name: Build
       run: npm run build
