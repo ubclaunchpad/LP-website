@@ -8,9 +8,10 @@ If you want further pointers, get in touch with your tech lead - they can direct
 
 These pages contain resources to help you kickstart your project!
 
-* [Web](/resources/groundwork/web.md)
-* [Android](/resources/groundwork/android.md)
-* [iOS](/resources/groundwork/iOS.md)
+* [Choosing a Stack](/resources/groundwork/stack-choosing.md)
+* [Web Groundwork](/resources/groundwork/web.md)
+* [Android Groundwork](/resources/groundwork/android.md)
+* [iOS Groundwork](/resources/groundwork/iOS.md)
 
 ## 🛶 Git Workflow
 

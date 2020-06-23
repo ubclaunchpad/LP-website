@@ -95,6 +95,7 @@ module.exports = {
         'social-media',
       ],
       '/resources/groundwork/': [
+        'stack-choosing',
         'web',
         'android',
         'ios',
