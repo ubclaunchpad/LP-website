@@ -6,7 +6,7 @@
     "serve": "vuepress dev",
     "build": "vuepress build",
     "lint": "markdownlint . --ignore node_modules --ignore index.md",
-    "sc": "mdspell -a -n -x -r --en-us"
+    "spellcheck": "mdspell -a -n -x -r --en-gb $(git diff --name-only HEAD master | grep .md)"
   },
   "dependencies": {
     "@ubclaunchpad/vuepress-plugin-fathom": "~1.2.1",

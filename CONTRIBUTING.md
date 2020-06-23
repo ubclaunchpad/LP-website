@@ -34,6 +34,7 @@ While the [Easy Way](#the-easy-way) is good for small changes, writing larger ch
 4. Push your local branch to the remote repository using `git push origin HEAD`
 5. Make a pull request on GitHub's web interface (and make sure to fill out the provided template!)
 6. [Netlify](https://www.netlify.com/) will then deploy a preview of your change - see [Deployment](#deployment)
+7. Be sure to check the GitHub Actions checks output under the spellcheck script for spelling errors. (Note: The spell checker dictionary isn't quite robust. It might identify programming terminology as spelling error.)
 
 More details on using `git` is available in our [Git Workflow guide](./resources/git-workflow.md).
 
@@ -68,10 +69,10 @@ When adding a new file to a subfolder of content (for example, `handbook/tools`)
 This repo offers some `package.json` scripts to help you out:
 
 ```sh
-npm install             # installs our standard Markdown linter and site builder
-npm run lint            # runs the linter to check for style errors
-npm run sc <filepath>   # runs markdown spell checker on <filepath>
-npm run serve           # runs the website locally
+npm install           # installs our standard Markdown linter and site builder
+npm run lint          # runs the linter to check for style errors
+npm run spellcheck    # runs markdown spell checker on all changed files
+npm run serve         # runs the website locally
 ```
 
 ### VuePress
