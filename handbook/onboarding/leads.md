@@ -26,7 +26,7 @@ Make sure you are a part of the following teams on GitHub:
 Additionally, the presidents should also be a part of [`@ubclaunchpad/exec`](https://github.com/orgs/ubclaunchpad/teams/exec) and familiarize themselves with the [Exec repository](https://github.com/ubclaunchpad/exec), where we keep track of accounts and credentials.
 
 ::: tip
-Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifcations, check our [GitHub guide](../tools/github.md#setting-up-notifications).
+Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifications, check our [GitHub guide](../tools/github.md#setting-up-notifications).
 :::
 
 ### Google Drive

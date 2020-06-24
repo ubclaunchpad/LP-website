@@ -18,7 +18,7 @@ See [our Slack guide](/handbook/tools/slack.md) for more details.
 Make sure you are a part of the GitHub team [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [Strategy repository](https://github.com/ubclaunchpad/strategy) - this repository contains sponsorship resources and event/sponsorship tracking issues.
 
 ::: tip
-Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifcations, check our [GitHub guide](../tools/github.md#setting-up-notifications).
+Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifications, check our [GitHub guide](../tools/github.md#setting-up-notifications).
 :::
 
 ### Google Drive

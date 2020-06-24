@@ -20,7 +20,7 @@ Make sure you are a part of the GitHub team [`@ubclaunchpad/design`](https://git
 Also familiarize yourself with GitHub and how it works. We will be using GitHub for most of our product management and asset sharing (this is where we should consolidate all assets and asset links) You don't need to become a pro right away, most of your GitHub use will be with issues and pull requests - check how those work in our [GitHub guide](../tools/github.md).
 
 ::: tip
-Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifcations, check our [GitHub guide](../tools/github.md#setting-up-notifications).
+Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifications, check our [GitHub guide](../tools/github.md#setting-up-notifications).
 :::
 
 ### Google Drive
