@@ -20,7 +20,7 @@ Make sure you are a part of the GitHub team [`@ubclaunchpad/design`](https://git
 Also familiarize yourself with GitHub and how it works. We will be using GitHub for most of our product management and asset sharing (this is where we should consolidate all assets and asset links) You don't need to become a pro right away, most of your GitHub use will be with issues and pull requests - check how those work in our [GitHub guide](../tools/github.md).
 
 ::: tip
-Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifcations, check our [GitHub guide](../tools/github.md#setting-up-notifications).
+Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifications, check our [GitHub guide](../tools/github.md#setting-up-notifications).
 :::
 
 ### Google Drive
@@ -46,7 +46,7 @@ Other alternatives available out there are Adobe XD and Sketch. If you plan to u
 
 ## Workflows
 
-The Agile Method is the workflow that teams in Launch Pad usually follow. It is important that you familiarize youself with this type of workflow especially working in cross-functional product teams - you can learn more about it in our [handbook's sprint planning guide](../project-management/sprints.md).
+The Agile Method is the workflow that teams in Launch Pad usually follow. It is important that you familiarize yourself with this type of workflow especially working in cross-functional product teams - you can learn more about it in our [handbook's sprint planning guide](../project-management/sprints.md).
 
 During the whole cycle, you will have to make sure that all your assets are either constantly being uploaded into GitHub OR that links to Google Drive or Figma can be found in your project's GitHub repository. If you upload something outside of GitHub, make sure that it is shared appropriately - see the sections on [Google Drive](#google-drive) and [Figma](#figma) for more details!
 
