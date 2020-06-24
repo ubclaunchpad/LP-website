@@ -4,7 +4,7 @@ Welcome to the [UBC Launch Pad](https://ubclaunchpad.com/) handbook! Launch Pad-
 
 Our goals with this handbook are to:
 
-* 📝 Create a comprehensive set of documentation that anyone can leverage to participate in and run Launch Pad - with a written process available, everyone has an equal opportunity to understand and participate in the club, rather than just those "in the know".
+* 📝 Create a comprehensive set of documentation that anyone can leverage to participate in and run Launch Pad - with written processes available, everyone has an equal opportunity to understand what we do and participate, rather than just those "in the know".
 * 🧠 Accumulate resources and lessons learned so that future generations of Launch Pad can focus on iterating and improving, rather than figuring out how to run the club from scratch every year.
 * 💪 Empower members find information they need independently, and hopefully enable others to learn from our work.
 
