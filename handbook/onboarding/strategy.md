@@ -20,7 +20,7 @@ Make sure you are a part of the GitHub team [`@ubclaunchpad/strategy`](https://g
 Account credentials are generally tracked in the [Exec repository](https://github.com/ubclaunchpad/exec/blob/master/assets.md) - reach out to [`#ask-leads`](https://ubclaunchpad.slack.com/messages/CK935RD3Q/) if you need login details to anything, and they will help you get access.
 
 ::: tip
-Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifcations, check our [GitHub guide](../tools/github.md#setting-up-notifications).
+Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifications, check our [GitHub guide](../tools/github.md#setting-up-notifications).
 :::
 
 ### Google Drive
