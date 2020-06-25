@@ -19,9 +19,9 @@ As a lead, you should also lead in Slack participation by example - please make 
 
 Make sure you are a part of the following teams on GitHub:
 
-* [`@ubclaunchpad/leads`](https://github.com/orgs/ubclaunchpad/teams/leads), and check that you can access the [Leads repository](https://github.com/ubclaunchpad/leads) - this repository primarily contains interview resources and tracking issues
-* [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [Strategy repository](https://github.com/ubclaunchpad/strategy) - this repository contains sponsorship resources and event/sponsorship tracking issues
-* [`@ubclaunchpad/design`](https://github.com/orgs/ubclaunchpad/teams/design), and check that you can access the [Design repository](https://github.com/ubclaunchpad/design) - this repository contains (some) design assets, resources, and tracking issues
+* [`@ubclaunchpad/leads`](https://github.com/orgs/ubclaunchpad/teams/leads), and check that you can access the [private Leads repository](https://github.com/ubclaunchpad/leads) - this repository primarily contains interview resources and tracking issues
+* [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [private Strategy repository](https://github.com/ubclaunchpad/strategy) - this repository contains sponsorship resources and event/sponsorship tracking issues
+* [`@ubclaunchpad/design`](https://github.com/orgs/ubclaunchpad/teams/design), and check that you can access the [public Design repository](https://github.com/ubclaunchpad/design) - this repository contains (some) design assets, resources, and tracking issues
 
 Additionally, the presidents should also be a part of [`@ubclaunchpad/exec`](https://github.com/orgs/ubclaunchpad/teams/exec) and familiarize themselves with the [Exec repository](https://github.com/ubclaunchpad/exec), where we keep track of accounts and credentials.
 
@@ -45,6 +45,14 @@ Within the shared Launch Pad folder, try to maintain the following structure:
   * Leads should create a document for meeting notes titled "Leads: Meeting Notes YYYY". All leads meetings should go in this document.
 * [Exec](https://drive.google.com/drive/u/0/folders/10b_2H5EhPpJtdgNi7QizRhWC9Qtivr8L) - for the presidents
   * Presidents should create a document for meeting notes titled "Exec: Meeting Notes YYYY". All exec meetings should go in this document.
+
+::: warning
+In general, assume pretty liberal with access to folders in Google Drive (since it is hard to keep track of access over time, especially for individual documents, and for ease of use we generally share entire folders with everyone).
+
+Sensitive information (such as contact details for sponsors) should be tracked in one of our [private GitHub repositories](#github-teams) and distributed as required (for example, by linking to specific issues from Drive documents).
+
+Similarly, **do not add credentials (usernames, passwords) in Google Drive**. Instead, get them added to the private [Exec repository](https://github.com/ubclaunchpad/exec/blob/master/assets.md) and provide the credentials to those who need it as required.
+:::
 
 ## Workflows
 

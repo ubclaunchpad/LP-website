@@ -15,7 +15,9 @@ See [our Slack guide](/handbook/tools/slack.md) for more details.
 
 ### GitHub Teams
 
-Make sure you are a part of the GitHub team [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [Strategy repository](https://github.com/ubclaunchpad/strategy) - this repository contains sponsorship resources and event/sponsorship tracking issues.
+Make sure you are a part of the GitHub team [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [private Strategy repository](https://github.com/ubclaunchpad/strategy) - this repository contains sponsorship resources and event/sponsorship tracking issues.
+
+Account credentials are generally tracked in the [Exec repository](https://github.com/ubclaunchpad/exec/blob/master/assets.md) - reach out to [`#ask-leads`](https://ubclaunchpad.slack.com/messages/CK935RD3Q/) if you need login details to anything, and they will help you get access.
 
 ::: tip
 Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifications, check our [GitHub guide](../tools/github.md#setting-up-notifications).
@@ -24,6 +26,14 @@ Make sure that you are **watching** all relevant repositories so that you don't 
 ### Google Drive
 
 Make sure all strategy members are given "editor" access to the [shared Launch Pad Strategy subfolder](https://drive.google.com/drive/folders/0BwdNv1PZjDeXMkc1eDVNY1ZHT00), which is owned by the `team@ubclaunchpad.com` account.
+
+::: warning
+In general, assume pretty liberal with access to folders in Google Drive (since it is hard to keep track of access over time, especially for individual documents, and for ease of use we generally share entire folders with everyone).
+
+Sensitive information (such as contact details for sponsors) should be tracked in one of our [private GitHub repositories](#github-teams) and distributed as required (for example, by linking to specific issues from Drive documents).
+
+Similarly, **do not add credentials (usernames, passwords) in Google Drive**. Instead, get them added to the private [Exec repository](https://github.com/ubclaunchpad/exec/blob/master/assets.md) and provide the credentials to those who need it as required.
+:::
 
 ## Workflows
 
