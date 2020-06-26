@@ -53,7 +53,38 @@ TODO
 
 ### Sync Stack
 
-TODO
+| Pros | Cons |
+|------|------|
+| Both Frontend and Backend are in one language (TypeScript). Express (Node.js) is low level, meaning it gives you a lot of control, allows for customizability, and is generally easy to debug. | React is not the easiest frontend framework to learn |
+Redis is a simple, light weight key value storage database. Accountless means much less overhead and initial set up. | Complex structures and data relationships may not fit well with Redis. Accountless means it can be difficult to “attach” information to a specific user. |
+
+**Frontend**: React.js (TypeScript)
+
+- Frameworks and libraries
+  - Material UI: [Material UI](https://material-ui.com/) is React UI framework for easily building React components.
+- Tooling
+  - [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) is a simple way to setup the frontend.
+- Considerations
+  - Pro: React is currently (2020) the most popular frontend framework. This means that it has a lot of community support (eg. stack overflow), and large number of libraries/packages which can help with your project.
+  - Pro + Con: React is unopinionated - meaning the build and structure of your applications is up to you. For example, you can write your components in either class components or functional components, each has it’s own set up advantages, it’s up to you to decide which is best for your application
+- References
+  - [TypeScript resources](/resources/languages.md#typescript)
+
+**Backend**: Node.js (TypeScript)
+- Frameworks and libraries
+  - Express: Express.js is a popular Node.js server-side framework. It provides a set of features that makes backend developing easier. Like React, it is unopinioated and there are many ways to solve the same problem. [Express app generator](https://expressjs.com/en/starter/generator.html) can quickly set up application boilerplate
+  - Logging: [`Pino`](https://github.com/pinojs/pino) is a low overhead multi-purpose Node.js logger
+- Tooling
+
+**Datastore**: Redis
+
+- Frameworks and libraries
+
+**Other Tooling**: None
+
+**Examples**:
+
+- [`ubclaunchpad/sync`](https://github.com/ubclaunchpad/sync)
 
 ### Rob's Stack
 
