@@ -99,10 +99,10 @@ An abundance of external libraries and tooling available for these frameworks al
   - [MongoDB documentation](https://docs.mongodb.com/)
 
 **Other Tooling**:
-  - For managing dependencies, [`npm`](https://www.npmjs.com/) is the default for Node.js but [`yarn`](https://yarnpkg.com/) is a good alternative
+- For managing dependencies, [`npm`](https://www.npmjs.com/) is the default for Node.js but [`yarn`](https://yarnpkg.com/) is a good alternative
 
 **Examples**:
-- [`ubclaunchpad/food-doods`](https://github.com/ubclaunchpad/food-doods) is an example of a microservice architecture using Express.js on top of Node.js and MongoDB 
+- [`ubclaunchpad/food-doods`](https://github.com/ubclaunchpad/food-doods) is an example of a microservice architecture using Express.js on top of Node.js and MongoDB
 
 ### Sync Stack
 
