@@ -58,7 +58,7 @@ An abundance of external libraries and tooling available for these frameworks al
 
 - Frameworks and libraries
   - Component UI libraries: [`AntDesign`](https://ant.design/docs/react/introduce), [`MaterialUI`](https://material-ui.com/), [`SemanticUI`](https://semantic-ui.com/)
-  - [`React Router`](https://github.com/ReactTraining/react-router): allows us to build SPAs with navigation
+  - [`React Router`](https://github.com/ReactTraining/react-router): allows us to build single-page applications with navigation
   
 - Tooling
   - For getting started, [`create-react-app`](https://create-react-app.dev/) produces React boilerplate setup with no configuration needed
@@ -67,10 +67,11 @@ An abundance of external libraries and tooling available for these frameworks al
   - For build tools, [`Babel`](https://babeljs.io/docs/en/) transcompiles modern JavaScript and JSX into older versions for compatibility
 - Considerations
   - Pro: React's popularity in the community means that there is no shortage of learning resources
-  - Con: React is less opinionated than front-end frameworks like Vue or Angular and can become difficult to structurally maintain in the long run. React also uses a lot of "magic" and beginners diving deep into it without learning JavaScript fundamentals beforehand often find themselves struggling later
+  - Con: React is less opinionated than other front-end frameworks like Vue or Angular and can become difficult to structurally maintain in the long run. React also uses a lot of "magic" and beginners diving deep into it without learning JavaScript fundamentals beforehand often find themselves struggling later
 
 - References
   - [React documentation](https://reactjs.org/)
+  - [JavaScript resources](/resources/languages.md#javascript)
   - [TypeScript resources](/resources/languages.md#typescript)
 
 **Backend**: Node.js
@@ -81,7 +82,7 @@ An abundance of external libraries and tooling available for these frameworks al
 - Tooling
   - For productivity, [`nodemon`](https://nodemon.io/) automatically restarts the application upon changes detected
 - Considerations
-  - Pro: Node.js applications scale up well and are known for their being performant. Like React, it is also backed by a large community and hence, learning resources are always available
+  - Pro: Node.js applications scale up well and are known for being performant. Like React, it is also backed by a large community and hence, learning resources are always available
   - Con: Being a single-threaded environment, Node.js is not suitable for CPU-intensive applications (e.g. audio/video processing)
 - References
   - [Node.js documentation](https://nodejs.org/en/)
@@ -89,11 +90,14 @@ An abundance of external libraries and tooling available for these frameworks al
 **Datastore**: MongoDB
 
 - Frameworks and libraries
-  - [`Mongoose`](https://mongoosejs.com/): an Object Data Modelling (ODM) library for MongoDB
+  - [`Mongoose`](https://mongoosejs.com/): a popular Object Data Modelling (ODM) library for MongoDB
 - Tooling
-  - For visualizing and manipulating data quickly, [`MongoDB Compass`](https://www.mongodb.com/products/compass) can be installed on Mac, Linux, or Windows
+  - For visualizing and manipulating data quickly, [`MongoDB Compass`](https://www.mongodb.com/products/compass) or [`Studio 3T`](https://studio3t.com/) can be installed on Mac, Linux, or Windows
 - Considerations
-  - Pro: Being a NoSQL database, MongoDB is good for non-structured or schemaless data. The usage of JSON-like documents makes it pair well with Node.js.
+  - Pro:
+    - Being a NoSQL database, MongoDB is good for non-structured or schemaless data. The usage of JSON-like documents makes it pair well with Node.js
+    - A [`Docker Image`](https://hub.docker.com/_/mongo) for MongoDB is available. If you have Docker installed, you can spin up a MongoDB container very easily without installing mongo locally
+    - A cloud-hosted MongoDB service, [`MongoDB Atlas`](https://www.mongodb.com/cloud/atlas) is available on AWS, Azure and Google Cloud. With this service, you can deploy, operate, and scale a MongoDB database in just a few clicks
   - Con: MongoDB Atlas Free Tier only allows 10GB in/out of a cluster per week - see [Atlas M0 (Free Tier), M2, and M5 Limitations](https://docs.atlas.mongodb.com/reference/free-shared-limitations/)
 - References
   - [MongoDB documentation](https://docs.mongodb.com/)
