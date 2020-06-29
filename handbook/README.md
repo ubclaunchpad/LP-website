@@ -1,10 +1,18 @@
 # Club Handbook
 
-Welcome to the [UBC Launch Pad](https://ubclaunchpad.com/) handbook! Launch Pad-wide documentation is hosted in these sections - if you're not sure about something, this is the first place to check.
+Welcome to the [UBC Launch Pad](https://ubclaunchpad.com/) handbook! Launch Pad-wide documentation is hosted in these sections - if you're not sure about something, this is the first place to check. The easiest way to find something is to run a search in the navigation bar!
+
+Our goals with this handbook are to:
+
+* 📝 Create a comprehensive set of documentation that anyone can leverage to participate in and run Launch Pad - with written processes available, everyone has an equal opportunity to understand what we do and participate, rather than just those "in the know".
+* 🧠 Accumulate resources and lessons learned so that future generations of Launch Pad can focus on iterating and improving, rather than figuring out how to run the club from scratch every year.
+* 💪 Empower members to find information they need independently, and hopefully enable others to learn from our work.
+
+For this to work, **we need your help to keep the handbook up to date**! That means proactively making changes when you see something incorrect, outdated, or that you disagree with, and participating in [pull requests to change the handbook](https://github.com/ubclaunchpad/docs/pulls). To learn more about how you can contribute, take a look at our [Contribution Guide](/CONTRIBUTING.md), or reach out for help in [`#ask-for-help`](https://ubclaunchpad.slack.com/messages/CJXM08QBB)!
 
 ## 🔖 Manifesto
 
-Our [Manifesto](manifesto.md) outlines our vision, what we do, how we work with partners, and our code of conduct.
+Our [**Manifesto**](manifesto.md) outlines our vision, what we do, how we work with partners, and our code of conduct.
 
 ## 🚀 Onboarding <Badge type="tip" text="new"/>
 
