@@ -90,7 +90,7 @@ An abundance of external libraries and tooling available for these frameworks al
 **Datastore**: MongoDB
 
 - Frameworks and libraries
-  - [`Mongoose`](https://mongoosejs.com/): a popular Object Data Modelling (ODM) library for MongoDB
+  - [`Mongoose`](https://mongoosejs.com/): a popular library for using MongoDB from Node.js applications
 - Tooling
   - For visualizing and manipulating data quickly, [`MongoDB Compass`](https://www.mongodb.com/products/compass) or [`Studio 3T`](https://studio3t.com/) can be installed on Mac, Linux, or Windows
 - Considerations
