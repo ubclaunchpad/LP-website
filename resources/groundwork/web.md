@@ -71,8 +71,8 @@ TODO
 
 **Backend**: Node.js (TypeScript)
 - Frameworks and libraries
-  - Express: Express.js is a popular Node.js server-side framework. It provides a set of features that makes backend developing easier. Like React, it is unopinioated and there are many ways to solve the same problem. [Express app generator](https://expressjs.com/en/starter/generator.html) can quickly set up application boilerplate
-  - Logging: [`Pino`](https://github.com/pinojs/pino) is a low overhead multi-purpose Node.js logger
+  - [Express](https://expressjs.com/) is a popular Node.js server-side framework. It provides a set of features that makes backend developing easier. Like React, it is unopinioated and there are many ways to solve the same problem. [Express app generator](https://expressjs.com/en/starter/generator.html) can quickly set up application boilerplate
+  - Logging: [`Pino`](https://github.com/pinojs/pino) is a low-overhead structured Node.js logger.
 - Tooling
 
 **Datastore**: Redis
