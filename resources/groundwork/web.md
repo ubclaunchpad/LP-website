@@ -66,8 +66,7 @@ TODO
   - [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) is a simple way to setup the frontend.
 - Considerations
   - Pro: React is currently (2020) the most popular frontend framework. This means that it has a lot of community support (eg. stack overflow), and large number of libraries/packages which can help with your project.
-  - Pro + Con: React is unopinionated - meaning the build and structure of your applications is up to you. For example, you can write your components in either class components or functional components (taking advantage of hooks), each has it’s own set up advantages, it’s up to you to decide which is best for your application
-- References
+  - Pro + Con: React is unopinionated - meaning the build and structure of your application is up to you. There are many ways to do everything in React, and each approach has its own advantages and disadvantages, so it's up to you to decide which is best for your project.
   - [TypeScript resources](/resources/languages.md#typescript)
 
 **Backend**: Node.js (TypeScript)
