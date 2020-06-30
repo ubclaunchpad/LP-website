@@ -49,7 +49,62 @@ Have some technologies you enjoy using? See our [Contribution Guide](/CONTRIBUTI
 
 ### MERN Stack
 
-TODO
+| Pros | Cons |
+|------|------|
+| The frontend and backend share similar languages and libraries. | React has a steeper learning curve than other front-end libraries/frameworks. |
+An abundance of external libraries and tooling available for these frameworks allows us to focus on application-specific logic instead of boilerplate code. | The abundance of tooling available can be initially overwhelming. |
+
+**Frontend**: React.js
+
+- Frameworks and libraries
+  - Component UI libraries: [`AntDesign`](https://ant.design/docs/react/introduce), [`MaterialUI`](https://material-ui.com/), [`SemanticUI`](https://semantic-ui.com/)
+  - [`React Router`](https://github.com/ReactTraining/react-router): allows us to build single-page applications with navigation
+- Tooling
+  - For getting started, [`create-react-app`](https://create-react-app.dev/) produces React boilerplate setup with no configuration needed
+  - For debugging purposes, [`React Developer Tools`](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) is a Chrome extension that allows developers to inspect the component hierarchy
+  - For managing application state, [`Redux`](https://redux.js.org/) is a popular choice
+  - For build tools, [`Babel`](https://babeljs.io/docs/en/) transcompiles modern JavaScript and JSX into older versions for compatibility
+- Considerations
+  - Pro: React's popularity in the community means that there is no shortage of learning resources
+  - Con: React is less opinionated than other front-end frameworks like Vue or Angular and can become difficult to structurally maintain in the long run. React also uses a lot of "magic" and beginners diving deep into it without learning JavaScript fundamentals beforehand often find themselves struggling later
+- References
+  - [React documentation](https://reactjs.org/)
+  - [JavaScript resources](/resources/languages.md#javascript)
+  - [TypeScript resources](/resources/languages.md#typescript)
+
+**Backend**: Node.js
+
+- Frameworks and libraries
+  - [`Express.js`](https://expressjs.com/): a minimal web application framework used for building REST APIs
+  - [`Socket.io`](https://socket.io/): allows us to manage real-time event-based communication using web sockets
+- Tooling
+  - For productivity, [`nodemon`](https://nodemon.io/) automatically restarts the application upon changes detected
+- Considerations
+  - Pro: Node.js applications scale up well and are known for being performant. Like React, it is also backed by a large community and hence, learning resources are always available
+  - Con: Being a single-threaded environment, Node.js is not suitable for CPU-intensive applications (e.g. audio/video processing)
+- References
+  - [Node.js documentation](https://nodejs.org/en/)
+
+**Datastore**: MongoDB
+
+- Frameworks and libraries
+  - [`Mongoose`](https://mongoosejs.com/): a popular library for using MongoDB from Node.js applications
+- Tooling
+  - For visualizing and manipulating data quickly, [`Studio 3T`](https://studio3t.com/) can be installed on Mac, Linux, or Windows
+- Considerations
+  - Pro:
+    - Being a NoSQL database, MongoDB is good for non-structured or schemaless data. The usage of JSON-like documents makes it pair well with Node.js
+    - A [`Docker Image`](https://hub.docker.com/_/mongo) for MongoDB is available. If you have Docker installed, you can spin up a MongoDB container very easily without installing mongo locally
+    - A cloud-hosted MongoDB service, [`MongoDB Atlas`](https://www.mongodb.com/cloud/atlas) is available on AWS, Azure and Google Cloud. With this service, you can deploy, operate, and scale a MongoDB database in just a few clicks
+  - Con: MongoDB Atlas Free Tier only allows 10GB in/out of a cluster per week - see [Atlas M0 (Free Tier), M2, and M5 Limitations](https://docs.atlas.mongodb.com/reference/free-shared-limitations/)
+- References
+  - [MongoDB documentation](https://docs.mongodb.com/)
+
+**Other Tooling**:
+- For managing dependencies, [`npm`](https://www.npmjs.com/) is the default for Node.js
+
+**Examples**:
+- [`ubclaunchpad/food-doods`](https://github.com/ubclaunchpad/food-doods) is an example of a microservice architecture where the recipe and user services use Node.js, Express.js and MongoDB Atlas with Mongoose
 
 ### Sync Stack
 
