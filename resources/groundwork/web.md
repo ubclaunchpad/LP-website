@@ -55,8 +55,8 @@ TODO
 
 | Pros | Cons |
 |------|------|
-| Both Frontend and Backend are in one language (TypeScript). Express (Node.js) is low level, meaning it gives you a lot of control, allows for customizability, and is generally easy to debug. | React is not the easiest frontend framework to learn |
-Redis is a simple, light weight key value storage database. Accountless means much less overhead and initial set up. | Complex data structures and data relationships may not fit well with a simple key value store. Accountless means it can be difficult to “attach” information to a specific user. |
+| Shared language means easier onboarding for inexperienced members. Unopinionated technologies allow for customizability - especially consider this stack if you have a niche use case. | React is not the easiest frontend framework to learn |
+ Going "accountless" means much less overhead and initial set up, and skips the need to handle user accounts and credentials. | Complex data structures and data relationships may not fit well with a simple key value store. "Accountless" means it can be difficult to “attach” information to a specific user. |
 
 **Frontend**: React.js (TypeScript)
 
