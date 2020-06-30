@@ -51,7 +51,7 @@ Have some technologies you enjoy using? See our [Contribution Guide](/CONTRIBUTI
 
 | Pros | Cons |
 |------|------|
-| You can use either JavaScript or TypeScript with React and Node.js. This can minimize the cognitive overhead of switching between stacks, allowing your team to be more productive. | React has a steeper learning curve than other front-end libraries/frameworks. |
+| The frontend and backend share similar languages and libraries. | React has a steeper learning curve than other front-end libraries/frameworks. |
 An abundance of external libraries and tooling available for these frameworks allows us to focus on application-specific logic instead of boilerplate code. | The abundance of tooling available can be initially overwhelming. |
 
 **Frontend**: React.js
@@ -59,16 +59,14 @@ An abundance of external libraries and tooling available for these frameworks al
 - Frameworks and libraries
   - Component UI libraries: [`AntDesign`](https://ant.design/docs/react/introduce), [`MaterialUI`](https://material-ui.com/), [`SemanticUI`](https://semantic-ui.com/)
   - [`React Router`](https://github.com/ReactTraining/react-router): allows us to build single-page applications with navigation
-  
 - Tooling
   - For getting started, [`create-react-app`](https://create-react-app.dev/) produces React boilerplate setup with no configuration needed
-  - For debugging purposes, [`React Developer Tools`](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en#:~:text=React%20Developer%20Tools%20is%20a,%22%20and%20%22%E2%9A%9B%EF%B8%8F%20Profiler%22) is a Chrome extension that allows developers to inspect the component hierarchy
+  - For debugging purposes, [`React Developer Tools`](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) is a Chrome extension that allows developers to inspect the component hierarchy
   - For managing application state, [`Redux`](https://redux.js.org/) is a popular choice
   - For build tools, [`Babel`](https://babeljs.io/docs/en/) transcompiles modern JavaScript and JSX into older versions for compatibility
 - Considerations
   - Pro: React's popularity in the community means that there is no shortage of learning resources
   - Con: React is less opinionated than other front-end frameworks like Vue or Angular and can become difficult to structurally maintain in the long run. React also uses a lot of "magic" and beginners diving deep into it without learning JavaScript fundamentals beforehand often find themselves struggling later
-
 - References
   - [React documentation](https://reactjs.org/)
   - [JavaScript resources](/resources/languages.md#javascript)
@@ -92,7 +90,7 @@ An abundance of external libraries and tooling available for these frameworks al
 - Frameworks and libraries
   - [`Mongoose`](https://mongoosejs.com/): a popular library for using MongoDB from Node.js applications
 - Tooling
-  - For visualizing and manipulating data quickly, [`MongoDB Compass`](https://www.mongodb.com/products/compass) or [`Studio 3T`](https://studio3t.com/) can be installed on Mac, Linux, or Windows
+  - For visualizing and manipulating data quickly, [`Studio 3T`](https://studio3t.com/) can be installed on Mac, Linux, or Windows
 - Considerations
   - Pro:
     - Being a NoSQL database, MongoDB is good for non-structured or schemaless data. The usage of JSON-like documents makes it pair well with Node.js
@@ -103,10 +101,10 @@ An abundance of external libraries and tooling available for these frameworks al
   - [MongoDB documentation](https://docs.mongodb.com/)
 
 **Other Tooling**:
-- For managing dependencies, [`npm`](https://www.npmjs.com/) is the default for Node.js but [`yarn`](https://yarnpkg.com/) is a good alternative
+- For managing dependencies, [`npm`](https://www.npmjs.com/) is the default for Node.js
 
 **Examples**:
-- [`ubclaunchpad/food-doods`](https://github.com/ubclaunchpad/food-doods) is an example of a microservice architecture using Express.js on top of Node.js and MongoDB
+- [`ubclaunchpad/food-doods`](https://github.com/ubclaunchpad/food-doods) is an example of a microservice architecture where the recipe and user services use Node.js, Express.js and MongoDB Atlas with Mongoose
 
 ### Sync Stack
 
