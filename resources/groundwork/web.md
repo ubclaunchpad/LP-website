@@ -78,7 +78,7 @@ TODO
 **Datastore**: Redis
 
 - Frameworks and libraries
-  - [`Redis`](https://redis.io/) is an open source NoSQL in-memory data store which can be used as a database and/or a cache
+  - [`Redis`](https://redis.io/) is a versatile "key-value" store (like a big hashmap) which can be used as a database and/or a cache
 - Considerations
   - Pro: The [community](https://redis.io/) version of Redis is free
   - Pro: Simple key-value storage, no schemas or column names required
