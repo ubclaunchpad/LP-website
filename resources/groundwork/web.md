@@ -108,7 +108,42 @@ An abundance of external libraries and tooling available for these frameworks al
 
 ### Sync Stack
 
-TODO
+| Pros | Cons |
+|------|------|
+| Shared language means easier onboarding for inexperienced members. Unopinionated technologies allow for customizability - especially consider this stack if you have a niche use case. | React is not the easiest frontend framework to learn |
+ Going "accountless" means much less overhead and initial set up, and skips the need to handle user accounts and credentials. | Complex data structures and data relationships may not fit well with a simple key value store. "Accountless" means it can be difficult to “attach” information to a specific user. |
+
+**Frontend**: React.js (TypeScript)
+
+- Frameworks and libraries
+  - Material UI: [Material UI](https://material-ui.com/) is React UI framework for easily building React components.
+- Tooling
+  - [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) is a simple way to setup the frontend.
+- Considerations
+  - Pro: React is currently (2020) the most popular frontend framework. This means that it has a lot of community support (eg. stack overflow), and large number of libraries/packages which can help with your project.
+  - Pro + Con: React is unopinionated - meaning the build and structure of your application is up to you. There are many ways to do everything in React, and each approach has its own advantages and disadvantages, so it's up to you to decide which is best for your project.
+  - [TypeScript resources](/resources/languages.md#typescript)
+
+**Backend**: Node.js (TypeScript)
+- Frameworks and libraries
+  - [Express](https://expressjs.com/) is a popular Node.js server-side framework. It provides a set of features that makes backend developing easier. Like React, it is unopinioated and there are many ways to solve the same problem. [Express app generator](https://expressjs.com/en/starter/generator.html) can quickly set up application boilerplate
+  - Logging: [`Pino`](https://github.com/pinojs/pino) is a low-overhead structured Node.js logger.
+- Tooling
+
+**Datastore**: Redis
+
+- Frameworks and libraries
+  - [`Redis`](https://redis.io/) is a versatile "key-value" store (like a big hashmap) which can be used as a database and/or a cache
+- Considerations
+  - Pro: Simple key-value storage, no schemas or column names required
+  - Pro: In-memory database means it has high read and write speed - great for real-time applications
+  - Con: In-memory database means data sets can't be larger than memory
+
+**Other Tooling**: None
+
+**Examples**:
+
+- [`ubclaunchpad/sync`](https://github.com/ubclaunchpad/sync)
 
 ### Rob's Stack
 
