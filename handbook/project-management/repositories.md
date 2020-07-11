@@ -6,7 +6,7 @@ All project work (code or not), documentation, etc. should be done or tracked in
 
 Make sure your entire team has [set up notifications correctly](/handbook/tools/github.md#setting-up-notifications)! This helps everyone stay in the loop on your project's progress.
 
-## Repository documentation
+## Documentation
 
 Each repository should be accompanied by a set of documentation written in [Markdown](/handbook/tools/github.md#markdown) starting with the README, typically named `README.md`. Your README is the primary way for your team to showcase your awesome project to the world - take the time to make it informative and legible!
 
