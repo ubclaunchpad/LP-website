@@ -1,9 +1,5 @@
 # Web Groundwork
 
-::: warning
-This page is a work in progress - see our [planning document](https://docs.google.com/document/d/1ZyX8MtEF7v_ka6EvxtyrTnYZv_0YCwVAyygOQmzARYY/edit#).
-:::
-
 ## Stacks
 
 This section provides some recommended combinations of technology you can leverage. Feel free to use this guidance to build your own stack by adjusting them as needed (for example, by replacing certain elements or combining different stacks).
