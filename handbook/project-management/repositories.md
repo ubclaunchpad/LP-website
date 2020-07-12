@@ -1,45 +1,25 @@
 # 📦 Repository Management
 
-All project work (code or not), documentation, etc. should be done or tracked in
-a repository within the UBC Launch Pad GitHub organization. This page outlines
-general advice for how to maintain repositories.
+All project work (code or not), documentation, etc. should be done or tracked in a repository within the UBC Launch Pad GitHub organization. This page outlines general advice for how to use and maintain repositories.
 
-## Staying Up to Date
+## Notifications
 
-Make sure your entire team is "Watching" your project repository - you can do
-this from the top right of the GitHub project page. This allows you to receive
-notifications in the web interface.
+Make sure your entire team has [set up notifications correctly](/handbook/tools/github.md#setting-up-notifications)! This helps everyone stay in the loop on your project's progress.
 
-If you do not like the GitHub notification emails, you can disable the emails
-and instead configure [Pull Reminders](https://pullreminders.com/) for yourself
-or for your team's channel. This can be done via the web interface or the Slack
-bot in the Launch Pad workspace - just shoot `@Pull Reminders` a message.
+## Documentation
 
-## Repository README
+Each repository should be accompanied by a set of documentation written in [Markdown](/handbook/tools/github.md#markdown) starting with the README, typically named `README.md`. Your README is the primary way for your team to showcase your awesome project to the world - take the time to make it informative and legible!
 
-The primary source of truth for any repository should be the README.
+In your README, make sure you include or link to:
 
-At the top of the README, you should provide a summary of your software, and in
-particular briefly and succinctly outline what role your project plays or what
-problem it solves.
-
-Installation instructions should come immediately after this summary.
-Your installation instructions should be written in as simple and clear a manner
-as possible and any differences in installation between different operating
-systems or environments should be made clear. It is also usually helpful to
-include separate development setup instructions, especially if this involves
-any extra dependencies or tools.
-
-Optionally, you may want to include sections below this that explain the
-high-level operation of the tool, list any major dependencies, and/or credit
-your hard-working developers and designers.
-
-Many continuous integration, code coverage, and documentation sites provide
-"badges" of project status that you can place at the top of your README.
-These are highly recommended - they make your README look much more professional.
-
-For a fantastic example of a README page, check out Launch Pad's
-[Inertia](https://github.com/ubclaunchpad/inertia/blob/master/README.md) project.
+* **A summary of your software** - in particular, briefly and succinctly outline what role your project plays or what problem it solves.
+  * For example, the [`ubclaunchpad/inertia` README](https://github.com/ubclaunchpad/inertia/blob/master/README.md) includes a section on what the project does, its features, and who might want to use it.
+* **Usage instructions** - this could be a link to a deployed website and/or how to download and get started with using your project.
+  * For example, the [`ubclaunchpad/ubclaunchpad.com` README](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/README.md) includes a link to the deployed website and the [project's `USING.md`](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/USING.md), which covers some tips on how to use the website.
+* **Development instructions** - make sure to cover everything that someone might need to get started with development on your project without any help. This could include development environment setup, project structure, and best practices. Since this can get quite lengthy, you can place this documentation in a separate `CONTRIBUTING.md` file, and link to it from your project README.
+  * For example, the [`ubclaunchpad/ubclaunchpad.com` Contribution Guide](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/CONTRIBUTING.md) and [`ubclaunchpad/inertia` Contribution Guide](https://github.com/ubclaunchpad/inertia/blob/master/CONTRIBUTING.md) both include detailed instructions on how to get set up and start hacking on the project.
+* **Project writeup** - this could be a link to a blog post, a part of your README, or another file that documents your project's journey from start to end. It's a great way to highlight the work that went into your project!
+  * For example, the [`ubclaunchpad/food-doods` README](https://github.com/ubclaunchpad/food-doods/blob/master/README.md) documents the team's ideas, pain points they encountered, design mockups, and more.
 
 ## Enforcing Standards
 
