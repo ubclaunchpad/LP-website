@@ -8,26 +8,60 @@ Any Launch Pad original content could make good social media posts to help us sh
 
 ## Accounts
 
-You can find direct links to our accounts in the [`ubclaunchpad.com` site configuration](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+file:config.ts+socials%28.*%3F%29%5C%7B%28.%7C%5Cn%29*%3F%7D&patternType=regexp&case=yes).
+You can find direct links to our accounts in the [`ubclaunchpad.com` site configuration](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+file:config.ts+socials%28.*%3F%29%5C%7B%28.%7C%5Cn%29*%3F%7D&patternType=regexp&case=yes). Accounts can easily be linked via [redirects](https://ubclaunchpad.com/config/#adding-a-custom-redirect), for example:
+
+* [https://ubclaunchpad.com/facebook](https://ubclaunchpad.com/facebook)
+* [https://ubclaunchpad.com/instagram](https://ubclaunchpad.com/instagram)
+* [https://ubclaunchpad.com/medium](https://ubclaunchpad.com/medium)
 
 Credentials are available in the [Exec repository](https://github.com/ubclaunchpad/exec) - please reach out to [`#ask-leads`](https://ubclaunchpad.slack.com/archives/CK935RD3Q) to get in touch with one of the presidents if you are interested in helping us run our social media accounts!
 
-### Facebook
+## Social Media Campaigns
 
-TODO
+Outside of occasionally sharing miscellaneous tidbits from [`#ot-sharing`](https://ubclaunchpad.slack.com/archives/C01622TSU9W), we should focus on creating social media posts as part of campaigns, each centered around a long-form article. This helps us have consistent messaging and (hopefully) higher-quality, more engaging content.
 
-### Instagram
+### Preparation
 
-TODO
+Decide on a start date and topic for the social media campaign. A preparation workflow could look like:
 
-### Medium
+1. [Create a Medium article](#medium-articles) (finish 5 days before start date)
+2. [Split article into mini-posts](#mini-posts) (start after Medium article, finish 1 day before start date)
+3. [Write a newsletter issue](#newsletter) (start after Medium article, finish 3 days before start date)
 
-Our Medium publication can accept posts from anyone - just reach out to get your Medium account added as an editor, and we can publish your posts under our shared publication!
+#### Medium Articles
 
-### LinkedIn
+Articles should start off as a Google Document in the Launch Pad drive, where the author can collaborate with members of Launch Pad to write a draft. Once the draft is finalized, the author should create a [draft Medium post](https://help.medium.com/hc/en-us/articles/214874698-Your-drafts-posts) under their own account, where final copy edits should take place. Just reach out to get your Medium account added as an editor, and we will be able to submit drafts under our [shared publication](https://ubclaunchpad.com/medium).
 
-TODO
+Each article should have a footer section copied from our other posts with links to our social media - for example, see the end of [this Medium article](https://medium.com/ubc-launch-pad-software-engineering-blog/what-is-ubc-launch-pad-d3bbfe6322dc).
 
-### Newsletter
+#### Mini-posts
 
-We currently use [Buttondown](https://buttondown.email/) as our newsletter provider. The newsletter should primarily be used to provide updates (when applications open, club events, etc) or to provide highlights of past or recent Launch Pad content (such as Medium articles or Instagram posts).
+Once the article is prepared, segment it out into a series of mini-posts that can be adapted to work as Facebook and Instagram posts.
+
+Each of these should generally target a specific section of the article, with:
+
+* A brief blurb for the relvant section of the article
+* Some relevant image
+* Link to article
+  * For Facebook, the link could just be in the body of the post
+  * For Instagram, the link could be set in the profile, with a note in the post
+
+#### Newsletter Issues
+
+We currently use [Buttondown](https://buttondown.email/) as our newsletter provider. Newsletter issues have to be written in [Markdown](github.md#markdown), and should contain the following sections:
+
+* High-level summary of what Launch Pad has been up to
+* Short blurb for the article and link to it
+* Feature other content - this could be old articles, past projects, updates on current projects (like milestones, links to pull requests, etc.)
+* Brief summary of what's coming up next
+
+A good tool for drafting newsletter issues in Markdown is [hackmd.io](https://hackmd.io/) - you can log in using the UBC Launch Pad Google account.
+
+### Publishing
+
+On the start date, a publishing schedule could look like:
+
+1. Publish the [Medium article](#medium-articles)
+2. Share the Medium article with a brief blurb on LinkedIn
+3. Send out the [newsletter issue](#newsletter)
+4. On 2-day intervals, publish the [mini-posts](#mini-posts) Facebook and Instagram posts - for example, at +0 days, +2 days, +4 days, etc.
