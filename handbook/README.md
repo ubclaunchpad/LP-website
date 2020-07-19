@@ -33,6 +33,7 @@ We use a variety of technology and tools at Launch Pad - these sections help you
 * [**Deployment**](./tools/deployment.md): Launch Pad's recommendations regarding deployment and getting your project out to the world.
 * [**Analytics**](./tools/analytics.md): Launch Pad's recommendations regarding setting up analytics to see how users interact with your projects.
 * [**Social Media**](./tools/social-media.md): Documentation about our social media accounts and how to use them to help showcase our work!
+* [**Email**](./tools/email.md): Our email accounts and how to use them.
 * [**Other Tools**](../resources/tools.md): Our Resources section has a page on general tools you can leverage to help you build awesome stuff!
 
 ## 👨‍💼 Project Management <Badge type="tip" text="updated"/>
