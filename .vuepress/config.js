@@ -93,6 +93,7 @@ module.exports = {
         'deployment',
         'analytics',
         'social-media',
+        'email',
       ],
       '/resources/groundwork/': [
         'stack-choosing',
