@@ -29,6 +29,6 @@ We recommend using [Netlify's file-based configuration](https://docs.netlify.com
 
 ### Heroku
 
-:: warning
-TODO [#110](https://github.com/ubclaunchpad/docs/issues/110)
-::
+[Heroku](https://www.heroku.com/what) is a cloud platform that allows you deploy a variety of applications. Heroku can be used as a [remote target](https://devcenter.heroku.com/articles/git), or you can have it [track a branch on a Github repository](https://devcenter.heroku.com/articles/github-integration) and auto-deploy whenever that branch is updated. You can find more information on [Heroku's documentation](https://devcenter.heroku.com/).
+
+Heroku is typically a good option to quickly bootstrap applications, it also offers a [free option](https://www.heroku.com/free) with some limitations.
