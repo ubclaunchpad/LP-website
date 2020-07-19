@@ -64,4 +64,4 @@ On the start date, a publishing schedule could look like:
 1. Publish the [Medium article](#medium-articles)
 2. Share the Medium article with a brief blurb on LinkedIn
 3. Send out the [newsletter issue](#newsletter)
-4. On 2-day intervals, publish the [mini-posts](#mini-posts) Facebook and Instagram posts - for example, at +0 days, +2 days, +4 days, etc.
+4. On 2-day intervals, publish the [mini-posts](#mini-posts) as Facebook and Instagram posts - for example, at +0 days, +2 days, +4 days, etc.
