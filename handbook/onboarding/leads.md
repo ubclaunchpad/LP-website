@@ -54,6 +54,12 @@ Sensitive information (such as contact details for sponsors) should be tracked i
 Similarly, **do not add credentials (usernames, passwords) in Google Drive**. Instead, get them added to the private [Exec repository](https://github.com/ubclaunchpad/exec/blob/master/assets.md) and provide the credentials to those who need it as required.
 :::
 
+### Email and Accounts
+
+All leads will be given access to the `strategy@ubclaunchpad.com` Gmail account to help in correspondance with partners and sponsors. Learn more about Launch Pad email in [the email documentation](/handbook/tools/email.md).
+
+To gain access to various social media accounts, see the [social media documentation](/handbook/tools/social-media.md).
+
 ## Workflows
 
 ::: tip
