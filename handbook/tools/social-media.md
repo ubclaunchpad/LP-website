@@ -16,9 +16,13 @@ You can find direct links to our accounts in the [`ubclaunchpad.com` site config
 
 Credentials are available in the [Exec repository](https://github.com/ubclaunchpad/exec) - please reach out to [`#ask-leads`](https://ubclaunchpad.slack.com/archives/CK935RD3Q) to get in touch with one of the presidents if you are interested in helping us run our social media accounts!
 
+Please reach out to the presidents to create accounts for social media or third-party services so that we can keep track of them. Also see our [email documentation](./email.md).
+
 ## Social Media Campaigns
 
 Outside of occasionally sharing miscellaneous tidbits from [`#ot-sharing`](https://ubclaunchpad.slack.com/archives/C01622TSU9W), we should focus on creating social media posts as part of campaigns, each centered around a long-form article. This helps us have consistent messaging and (hopefully) higher-quality, more engaging content.
+
+All content prepared for social media campaigns should be stored or linked to in the [Social Media](https://drive.google.com/drive/folders/1tRSa-obWwr_JU57tpscqmxIUZPlfqckQ?usp=sharing) folder (under Strategy).
 
 ### Preparation
 
@@ -62,6 +66,6 @@ A good tool for drafting newsletter issues in Markdown is [hackmd.io](https://ha
 On the start date, a publishing schedule could look like:
 
 1. Publish the [Medium article](#medium-articles)
-2. Share the Medium article with a brief blurb on LinkedIn
+2. Share the Medium article with a brief blurb on LinkedIn (this should be the only LinkedIn post)
 3. Send out the [newsletter issue](#newsletter)
 4. On 2-day intervals, publish the [mini-posts](#mini-posts) as Facebook and Instagram posts - for example, at +0 days, +2 days, +4 days, etc.
