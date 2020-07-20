@@ -70,7 +70,7 @@ A good tool for drafting newsletter issues in Markdown is [hackmd.io](https://ha
 In lieu of a link shortener, we use [redirects (short links)](https://ubclaunchpad.com/config/#adding-a-custom-redirect) for paths on `ubclaunchpad.com` (for example, `ubclaunchpad.com/medium`). We maintain a redirect, `ubclaunchpad.com/latest`, that should always point to the latest campaign's [Medium article](#medium-articles).
 
 ::: warning
-The `ubclaunchpad.com/latest` short link **should only be used in Instagram posts and for sharing directly with people** - we don't want links in longer-standing content (for example, Facebook/LinkedIn/newsletter posts) to become outdated over time!
+The `ubclaunchpad.com/latest` short link **should only be used in the Instagram profile's website field and for sharing directly with people** - we don't want links in longer-standing content (for example, Facebook/LinkedIn/newsletter posts) to become outdated over time!
 :::
 
 ### Publishing
