@@ -32,9 +32,9 @@ All content prepared for social media campaigns should be stored or linked to in
 
 Decide on a start date and topic for the social media campaign. A preparation workflow could look like:
 
-1. [Create a Medium article](#medium-articles) (finish 5 days before start date)
+1. Create a [Medium article](#medium-articles) (finish 5 days before start date)
 2. Split the article into [mini-posts](#mini-posts) (start after creating the Medium article, finish 1 day before start date)
-3. [Write a newsletter issue](#newsletter-issues) (start after creating the Medium article, finish 3 days before start date)
+3. Write a [newsletter issue](#newsletter-issues) (start after creating the Medium article, finish 3 days before start date)
 
 #### Medium Articles
 
