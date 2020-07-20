@@ -8,15 +8,19 @@ Any Launch Pad original content could make good social media posts to help us sh
 
 ## Accounts
 
-You can find direct links to our accounts in the [`ubclaunchpad.com` site configuration](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+file:config.ts+socials%28.*%3F%29%5C%7B%28.%7C%5Cn%29*%3F%7D&patternType=regexp&case=yes). Accounts can easily be linked via [redirects](https://ubclaunchpad.com/config/#adding-a-custom-redirect), for example:
+You can find direct links to our accounts in the [`ubclaunchpad.com` site configuration](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+file:config.ts+socials%28.*%3F%29%5C%7B%28.%7C%5Cn%29*%3F%7D&patternType=regexp&case=yes). Accounts can easily be linked via [redirects](https://ubclaunchpad.com/config/#adding-a-custom-redirect) (this can also be used to add short links for other things), for example:
 
 * [https://ubclaunchpad.com/facebook](https://ubclaunchpad.com/facebook)
 * [https://ubclaunchpad.com/instagram](https://ubclaunchpad.com/instagram)
 * [https://ubclaunchpad.com/medium](https://ubclaunchpad.com/medium)
 
-Credentials are available in the [Exec repository](https://github.com/ubclaunchpad/exec) - please reach out to [`#ask-leads`](https://ubclaunchpad.slack.com/archives/CK935RD3Q) to get in touch with one of the presidents if you are interested in helping us run our social media accounts!
+Credentials for accounts are available in the [Exec repository](https://github.com/ubclaunchpad/exec) - please reach out to [`#ask-leads`](https://ubclaunchpad.slack.com/archives/CK935RD3Q) to get in touch with one of the presidents if you are interested in helping us run our social media accounts!
 
 Please reach out to the presidents to create accounts for social media or third-party services so that we can keep track of them. Also see our [email documentation](./email.md).
+
+## Analytics
+
+Analytics are a great way to track the impact of social media posts and campaigns - learn more about the tooling we have in the [analytics documentation](analytics.md)!
 
 ## Social Media Campaigns
 

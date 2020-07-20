@@ -23,3 +23,7 @@ Using the site code, you can now set up analytics on your project! Note that we 
 * If you need more granular control, you can use [`fathom-client`](https://github.com/derrickreimer/fathom-client) instead of the embedding the tracker script - see [example usages in Launch Pad](https://sourcegraph.com/search?q=repo:%5Egithub.com/ubclaunchpad/*+Fathom.load%28&patternType=literal).
   * for [Vue.js](https://vuejs.org/) projects, you can use [`@ubclanchpad/vue-fathom`](https://github.com/ubclaunchpad/vue-fathom)
   * for [Vuepress](https://vuepress.vuejs.org/) projects, you can use [`@ubclaunchpad/vuepress-plugin-fathom`](https://github.com/ubclaunchpad/vuepress-plugin-fathom)
+
+## Social Media
+
+[Facebook](https://www.facebook.com/ubclaunchpad/insights/), [Medium](https://medium.com/ubc-launch-pad-software-engineering-blog/stats/overview), and [Buttondown (newsletter)](https://buttondown.email/analytics) have built-in analytics. We also have analytics set up for a few of our sites, linked above.
