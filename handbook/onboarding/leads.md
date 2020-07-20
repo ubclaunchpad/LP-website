@@ -77,3 +77,11 @@ Additionally, technical leads will want to take a look at the [Repository Manage
 Leads meetings between all leads (technical and non-technical) should happen on a regular basis.
 
 TODO: flesh out what we want meetings to be like
+
+## Further Reading
+
+* [Recruitment](/handbook#recruitment)
+* [Analytics](/handbook/tools/analytics.md)
+* [Social Media](/handbook/tools/social-media.md)
+* [`ubclaunchpad.com` Usage Guide](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/USING.md)
+* [`ubclaunchpad.com` Configuration Guide](https://ubclaunchpad.com/config/)
