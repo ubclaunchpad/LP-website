@@ -29,6 +29,10 @@ We recommend using [Netlify's file-based configuration](https://docs.netlify.com
 
 ### Heroku
 
-[Heroku](https://www.heroku.com/what) is a cloud platform that allows you deploy a variety of applications. Heroku can be used as a [remote target](https://devcenter.heroku.com/articles/git), or you can have it [track a branch on a Github repository](https://devcenter.heroku.com/articles/github-integration) and auto-deploy whenever that branch is updated. You can find more information on [Heroku's documentation](https://devcenter.heroku.com/).
+[Heroku](/resources/deployment.md#heroku) is also a good option that UBC Launch Pad has used in the past. It is a cheap alternative to deploy simple applications. Heroku has a free option that is useful for demos or for applications that do not require to stay up all the time.
 
-Heroku is typically a good option to quickly bootstrap applications, it also offers a [free option](https://www.heroku.com/free) with some limitations.
+[`ubclaunchpad/sync`](https://github.com/ubclaunchpad/sync) uses Heroku to deploy it's backend.
+
+::: tip
+As a student, you have access to [Github's student developer pack](https://education.github.com/pack), which includes a free Heroku [hobby dyno](https://devcenter.heroku.com/articles/dyno-types). The hobby dyno is a great deployment option for small scale applications, and unlike the free dyno, the application does not go to sleep.
+:::
