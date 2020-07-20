@@ -29,8 +29,8 @@ All content prepared for social media campaigns should be stored or linked to in
 Decide on a start date and topic for the social media campaign. A preparation workflow could look like:
 
 1. [Create a Medium article](#medium-articles) (finish 5 days before start date)
-2. [Split article into mini-posts](#mini-posts) (start after Medium article, finish 1 day before start date)
-3. [Write a newsletter issue](#newsletter) (start after Medium article, finish 3 days before start date)
+2. Split the article into [mini-posts](#mini-posts) (start after creating the Medium article, finish 1 day before start date)
+3. [Write a newsletter issue](#newsletter-issues) (start after creating the Medium article, finish 3 days before start date)
 
 #### Medium Articles
 
@@ -44,7 +44,7 @@ Once the article is prepared, segment it out into a series of mini-posts that ca
 
 Each of these should generally target a specific section of the article, with:
 
-* A brief blurb for the relvant section of the article
+* A brief blurb for the relevant section of the article
 * Some relevant image
 * Link to article
   * For Facebook, the link could just be in the body of the post
@@ -67,5 +67,5 @@ On the start date, a publishing schedule could look like:
 
 1. Publish the [Medium article](#medium-articles)
 2. Share the Medium article with a brief blurb on LinkedIn (this should be the only LinkedIn post)
-3. Send out the [newsletter issue](#newsletter)
+3. Send out the [newsletter issue](#newsletter-issues)
 4. On 2-day intervals, publish the [mini-posts](#mini-posts) as Facebook and Instagram posts - for example, at +0 days, +2 days, +4 days, etc.
