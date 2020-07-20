@@ -26,4 +26,6 @@ Using the site code, you can now set up analytics on your project! Note that we 
 
 ## Social Media
 
-[Facebook](https://www.facebook.com/ubclaunchpad/insights/), [Medium](https://medium.com/ubc-launch-pad-software-engineering-blog/stats/overview), and [Buttondown (newsletter)](https://buttondown.email/analytics) have built-in analytics. We also have analytics set up for a few of our sites, linked above.
+[Facebook](https://www.facebook.com/ubclaunchpad/insights/), [Medium](https://medium.com/ubc-launch-pad-software-engineering-blog/stats/overview), and [Buttondown (newsletter)](https://buttondown.email/analytics) have built-in analytics. Instagram also has built-in analytics through the Insights tab on the mobile app (not available on web yet).
+
+We also have analytics set up for a few UBC Launch Pad websites, linked above.
