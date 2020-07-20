@@ -65,6 +65,14 @@ We currently use [Buttondown](https://buttondown.email/) as our newsletter provi
 
 A good tool for drafting newsletter issues in Markdown is [hackmd.io](https://hackmd.io/) - you can log in using the UBC Launch Pad Google account.
 
+#### Short Links
+
+In lieu of a link shortener, we use [redirects (short links)](https://ubclaunchpad.com/config/#adding-a-custom-redirect) for paths on `ubclaunchpad.com` (for example, `ubclaunchpad.com/medium`). We maintain a redirect, `ubclaunchpad.com/latest`, that should always point to the latest campaign's [Medium article](#medium-articles).
+
+::: warning
+The `ubclaunchpad.com/latest` short link **should only be used in Instagram posts and for sharing directly with people** - we don't want links in longer-standing content (for example, Facebook/LinkedIn/newsletter posts) to become outdated over time!
+:::
+
 ### Publishing
 
 On the start date, a publishing schedule could look like:
@@ -72,5 +80,6 @@ On the start date, a publishing schedule could look like:
 1. Publish the [Medium article](#medium-articles)
 2. Share the Medium article with a brief blurb on LinkedIn (this should be the only LinkedIn post)
 3. Send out the [newsletter issue](#newsletter-issues)
-4. Post an update in [`#ot-random`](https://ubclaunchpad.slack.com/archives/C061Q5328) about the new campaign
-5. On 2-day intervals, publish the [mini-posts](#mini-posts) as Facebook and Instagram posts - for example, at +0 days, +2 days, +4 days, etc.
+4. Update the [`/latest` short link](#short-links)
+5. Post an update in [`#ot-random`](https://ubclaunchpad.slack.com/archives/C061Q5328) about the new campaign
+6. On 2-day intervals, publish the [mini-posts](#mini-posts) as Facebook and Instagram posts - for example, at +0 days, +2 days, +4 days, etc.
