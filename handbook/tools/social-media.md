@@ -82,4 +82,4 @@ On the start date, a publishing schedule could look like:
 3. Send out the [newsletter issue](#newsletter-issues)
 4. Update the [`/latest` short link](#short-links)
 5. Post an update in [`#ot-random`](https://ubclaunchpad.slack.com/archives/C061Q5328) about the new campaign
-6. On 2-day intervals, publish the [mini-posts](#mini-posts) as Facebook and Instagram posts - for example, at +0 days, +2 days, +4 days, etc.
+6. On 2-day intervals, publish the [mini-posts](#mini-posts) as Facebook and Instagram posts - for example, at +0 days, +2 days, +4 days, etc. Optionally share the posts as stories as well.
