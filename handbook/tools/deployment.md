@@ -29,6 +29,10 @@ We recommend using [Netlify's file-based configuration](https://docs.netlify.com
 
 ### Heroku
 
-:: warning
-TODO [#110](https://github.com/ubclaunchpad/docs/issues/110)
-::
+[Heroku](/resources/deployment.md#heroku) is also a good option that UBC Launch Pad has used in the past. It is a cheap alternative to deploy simple applications. Heroku has a free option that is useful for demos or for applications that do not require to stay up all the time.
+
+[`ubclaunchpad/sync`](https://github.com/ubclaunchpad/sync) uses Heroku to deploy its backend.
+
+::: tip
+As a student, you have access to [Github's student developer pack](https://education.github.com/pack), which includes a free Heroku [hobby dyno](https://devcenter.heroku.com/articles/dyno-types). The hobby dyno is a great deployment option for small scale applications, and unlike the free dyno, the application does not go to sleep.
+:::
