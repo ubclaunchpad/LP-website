@@ -7,6 +7,7 @@ Our goals with this handbook are to:
 * 📝 Create a comprehensive set of documentation that anyone can leverage to participate in and run Launch Pad - with written processes available, everyone has an equal opportunity to understand what we do and participate, rather than just those "in the know".
 * 🧠 Accumulate resources and lessons learned so that future generations of Launch Pad can focus on iterating and improving, rather than figuring out how to run the club from scratch every year.
 * 💪 Empower members to find information they need independently, and hopefully enable others to learn from our work.
+* 💬 Create a culture where people are willing to share and learn from others' experiences.
 
 For this to work, **we need your help to keep the handbook up to date**! That means proactively making changes when you see something incorrect, outdated, or that you disagree with, and participating in [pull requests to change the handbook](https://github.com/ubclaunchpad/docs/pulls). To learn more about how you can contribute, take a look at our [Contribution Guide](/CONTRIBUTING.md), or reach out for help in [`#ask-for-help`](https://ubclaunchpad.slack.com/messages/CJXM08QBB)!
 
