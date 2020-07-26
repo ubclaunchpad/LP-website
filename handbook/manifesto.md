@@ -86,7 +86,7 @@ We need long-term support on two fronts:
 
 All members must agree to and abide by the following policies:
 
-* Treat everyone in and outside of Launch Pad with respect - we do not condone any discrimination or intolerance against each other or any group of people.
+* Treat everyone with respect - we do not condone any form of discrimination or intolerance.
 * Work on the ticket(s) assigned to you during [sprint planning](/handbook/project-management/sprints.md) to the best of your ability.
 * Be an active observer and participant in relevant discussions on [Slack](/handbook/tools/slack.md) and [GitHub](/handbook/tools/github.md), our chosen mediums of communication.
 
