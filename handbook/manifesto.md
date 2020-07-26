@@ -63,6 +63,20 @@ UBC Launch Pad has a Design team that handles designs and asset creation for Lau
 
 UBC Launch Pad has a Strategy team that focusses on strategically growing the team. This team will focus on increasing campus awareness and forming strategic partnerships in order to further contribute to Launch Pad's vision to be the leading university technology club in Vancouver, Canada, or maybe even the world.
 
+## Code of Conduct
+
+All members must agree to and abide by the following policies:
+
+* Treat everyone with respect - we do not condone any form of discrimination or intolerance.
+* Work on the ticket(s) assigned to you during [sprint planning](/handbook/project-management/sprints.md) to the best of your ability.
+* Be an active observer and participant in relevant discussions on [Slack](/handbook/tools/slack.md) and [GitHub](/handbook/tools/github.md), our chosen mediums of communication.
+
+Any of the following are reasons for expulsion from Launch Pad:
+
+* Not treating others with respect.
+* Consistently missing meetings without notifying your tech lead.
+* Consistently not responding to or ignoring Slack messages.
+
 ## Sponsors and Partners
 
 Our club would not be what it is today without the help of our [partners and sponsors](https://ubclaunchpad.com/#sponsors), who provide us with the resources and tools to help our members learn and deliver on their projects and goals.
@@ -81,17 +95,3 @@ We need long-term support on two fronts:
 
 * **Club Activities**: this includes everything from nice things like occasionally holding internal events or food to improve team-bonding and productivity, to organizing workshops and external events that aim to raise awareness about Launch Pad and spread the expertise that some of our members have acquired. Events both external and internal are expensive, workshops take many hours to organize and hold, but making sure we do these things on a regular basis is important for keeping morale up, improving productivity, and draw more people with an inclination to join Launch Pad to get involved.
 * **Services and Resources**: many of our projects rely on servers, tools, and resources that are not free. We also try to find organization tools, teaching aides, etc. to help run Launch Pad better. All of this costs money, and the lack of funding means we have to shut down some cool projects. Continued, long-term investment in Launch Pad helps us teach our members to use industry-standard tools and practices, as well as deploying awesome applications.
-
-## Code of Conduct
-
-All members must agree to and abide by the following policies:
-
-* Treat everyone with respect - we do not condone any form of discrimination or intolerance.
-* Work on the ticket(s) assigned to you during [sprint planning](/handbook/project-management/sprints.md) to the best of your ability.
-* Be an active observer and participant in relevant discussions on [Slack](/handbook/tools/slack.md) and [GitHub](/handbook/tools/github.md), our chosen mediums of communication.
-
-Any of the following are reasons for expulsion from Launch Pad:
-
-* Not treating others with respect.
-* Consistently missing meetings without notifying your tech lead.
-* Consistently not responding to or ignoring Slack messages.
