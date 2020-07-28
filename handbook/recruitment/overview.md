@@ -24,3 +24,15 @@ To provide support to our less experienced members and ensure a productive envir
 
 * around 40% of members be "beginners".
 * at least 20% of members (including leads) be "experienced".
+
+### Design Roles
+
+When recruiting for design roles, it is important to note that most teams will consist of only 1 designer, sometimes 2. Because of this, experience levels of designers per team may vary. Our definition experience levels are as follows:
+
+* **Beginner**: 1st or 2nd year student OR student from any major/faculty with interest in UX AND 1 simple case study
+* **Experienced**: 1-3 comprehensive case studies OR 1 or more UX design internships AND interest in mentorship
+
+Our goal is to recruit a 60-40 ratio with 60% being beginners and 40% being experienced. This is to provide support to beginner designers as well as keeping a efficient and productive environment.
+
+Given these goals, we would require our applicants to have the following:
+* At least 1 case study showcasing their design skills.
