@@ -47,6 +47,16 @@ As a club, Launch Pad supports every member’s experience through multiple ways
 
 ### Club Structure
 
+#### Co-Presidents
+
+Launch Pad is lead by two co-presidents. The role of the co-presidents is to act as the face of the club, manage our resources and accounts, and help the leadership team feel empowered and supported in initiatives they want to drive. The co-presidents do this by providing the leadership team with whatever guidance and resources you need, such as contacts, accounts, money, advice, and so on. Co-presidents also help ensure Launch Pad's initiatives and activities are aligned with the club's mission and objectives.
+
+Co-presidents also act as de-facto leads of the [strategy team](#strategy-team).
+
+#### Leadership Team
+
+Launch Pad's Leadership team consist of our [**co-presidents**](#co-presidents), **tech leads**, and **design lead**.
+
 #### Project Teams
 
 Launch Pad primarily consists of agile development teams centred around a shared project. Each team consists of a Tech Lead and a number of Developers, usually between 5 to 8.
@@ -58,6 +68,8 @@ Launch Pad primarily consists of agile development teams centred around a shared
 #### Design Team
 
 UBC Launch Pad has a Design team that handles designs and asset creation for Launch Pad projects. Each project that requires design help should have one or more designers working with the team.
+
+Each year, one member is appointed as the **Design Lead**. The design lead's role is to support the design team and act as the bridge between the [leadership team](#leadership-team) and designers.
 
 #### Strategy Team
 
