@@ -13,7 +13,7 @@ Objectives and results for each year are documented in this page. Each school ye
 
 ## 2020
 
-- **Encourage loser collaboration between developers and designers**
+- **Encourage more collaboration between developers and designers**
   - Every single club member participates in at least 3 discussions on GitHub (issues and pull requests)
 
 - **Mentorship & diversity within the club**
