@@ -11,12 +11,12 @@ If you are interested in working with us in any capacity, please feel free to re
 ## What we offer
 
 * **Talent Pool**: our members are students who went through a rigorous selection process, who are dedicated in advancing their skills, and are experienced in a professional working environment. Many of our past alumni went to top firms and are recognized by industry leaders.
-* **Brand/Product Awareness**: our members are always looking for tools to help them make cool things faster and better. They often take these tools into our future workplaces and projects.
+* **Brand/Product Awareness**: our members are always looking for tools to help them make cool things faster and better. They often take these tools into their own future workplaces and projects.
 * **Innovative Ideas**: our members are problem-solvers across diverse backgrounds.
 
 ## How partners can support us
 
 We need long-term support on two fronts:
 
-* **Club Activities**: this includes everything from nice things like occasionally holding internal events or food to improve team-bonding and productivity, to organizing workshops and external events that aim to raise awareness about Launch Pad and spread the expertise that some of our members have acquired. Events both external and internal are expensive, workshops take many hours to organize and hold, but making sure we do these things on a regular basis is important for keeping morale up, improving productivity, and draw more people with an inclination to join Launch Pad to get involved.
-* **Services and Resources**: many of our projects rely on servers, tools, and resources that are not free. We also try to find organization tools, teaching aides, etc. to help run Launch Pad better. All of this costs money, and the lack of funding means we have to shut down some cool projects. Continued, long-term investment in Launch Pad helps us teach our members to use industry-standard tools and practices, as well as deploying awesome applications.
+* **Club Activities**: this includes everything from occasionally holding internal events, to organizing workshops and external events. Both external and internal events are expensive and workshops take many hours to organize and hold. However, ensuring we hold those events on a regular basis is important for keeping morale up, improving productivity, and drawing more people to get involved.
+* **Services and Resources**: many of our projects rely on servers, tools, and resources that are not free. We also try to find organization tools, teaching aids, etc. to help run Launch Pad better. All of this costs money, and the lack of funding means we have to shut down some cool projects. Long-term investments in Launch Pad help us teach our members to use industry-standard tools and practices, as well as deploy awesome applications.
