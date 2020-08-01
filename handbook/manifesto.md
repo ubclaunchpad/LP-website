@@ -73,7 +73,7 @@ Each year, one member is appointed as the **Design Lead**. The design lead's rol
 
 #### Strategy Team
 
-UBC Launch Pad has a Strategy team that focusses on strategically growing the team. This team will focus on increasing campus awareness and forming strategic partnerships in order to further contribute to Launch Pad's vision to be the leading university technology club in Vancouver, Canada, or maybe even the world. Learn more about being on the strategy team in the [strategy onboarding guide](/handbook/onboarding/strategy.md).
+UBC Launch Pad has a Strategy team that focuses on strategically growing the team. This team will focus on increasing campus awareness and forming strategic partnerships in order to further contribute to Launch Pad's vision to be the leading university technology club in Vancouver, Canada, or maybe even the world. Learn more about being on the strategy team in the [strategy onboarding guide](/handbook/onboarding/strategy.md).
 
 ## Code of Conduct
 
