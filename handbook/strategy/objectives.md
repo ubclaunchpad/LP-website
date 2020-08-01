@@ -21,3 +21,6 @@ Objectives have the following format:
 
 - **All administrative info and processes are included in the handbook**
   - Leadership spends no time reinventing admin tasks
+
+- **Improve project completion rate**
+  - Every project achieves its [MVP](/handbook/project-management/scope.md#core-feature-and-the-mvp) and is in a state where we are able to advertise them on Product Hunt (or equivalent platform)
