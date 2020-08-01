@@ -18,7 +18,7 @@ Objectives and results for each year are documented in this page. Each school ye
 
 - **Mentorship & diversity within the club**
   - 40% of new members are “beginners”
-  - Every lead and 2 developers from each team participates in a cross-team discussion
+  - Every lead and 2 developers from each team participates in a project-related discussion with another team on GitHub (issues and pull requests)
   - Add 10 new contributors to the handbook
 
 - **All administrative info and processes are included in the handbook**
