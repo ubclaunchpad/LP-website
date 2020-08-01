@@ -11,7 +11,7 @@ Objectives have the following format:
 
 ## 2020
 
-- **Encourage more collaboration between developers and designers**
+- **Encourage collaboration and communication between developers and designers**
   - Every single club member participates in at least 3 discussions on GitHub (issues and pull requests)
 
 - **Mentorship & diversity within the club**
