@@ -49,7 +49,7 @@ As a club, Launch Pad supports every member’s experience through multiple ways
 
 #### Co-Presidents
 
-Launch Pad is lead by two co-presidents. The role of the co-presidents is to act as the face of the club, manage our resources and accounts, and help the leadership team feel empowered and supported in initiatives they want to drive. The co-presidents do this by providing the leadership team with whatever guidance and resources you need, such as contacts, accounts, money, advice, and so on. Co-presidents also help ensure Launch Pad's initiatives and activities are aligned with the club's mission and objectives.
+Launch Pad is lead by two co-presidents. The role of the co-presidents is to act as the face of the club, manage our resources and accounts, and help the leadership team feel empowered and supported in initiatives they want to drive. The co-presidents do this by providing the leadership team with whatever guidance and resources they need, such as contacts, accounts, money, advice, and so on. Co-presidents also help ensure Launch Pad's initiatives and activities are aligned with the club's mission and objectives.
 
 Co-presidents also act as de-facto leads of the [strategy team](#strategy-team).
 
