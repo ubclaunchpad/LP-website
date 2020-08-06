@@ -32,7 +32,7 @@ Some channels are featured in this document, but you can easily find a full list
 
 ### Off-Topic (`#ot-`) Channels
 
-* [`#ot-sharing`](https://app.slack.com/client/T061Q8S7J/C01622TSU9W): Share original Launch Pad content (articles, images, and more) for us to share on social media!
+* [`#cop-sharing`](https://app.slack.com/client/T061Q8S7J/C01622TSU9W): Share original Launch Pad content (articles, images, and more) for us to share on social media!
 * [`#ot-buy-and-sell`](https://ubclaunchpad.slack.com/messages/CJVFFGYUT/): UBC Launch Pad buy and sell!
 * [`#ot-memes`](https://ubclaunchpad.slack.com/messages/CFBN3BX8Q/): What's life without some dank memes to spice it up?
 * [`#ot-rock-it-beats`](https://ubclaunchpad.slack.com/messages/CC2JK7677/): Music to code to!

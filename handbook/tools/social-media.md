@@ -4,7 +4,7 @@ Launch Pad maintains a variety of social media accounts to help us reach out to 
 
 ## Contributing Content
 
-Any Launch Pad original content could make good social media posts to help us showcase what we do! Just post it in [`#ot-sharing`](https://ubclaunchpad.slack.com/archives/C01622TSU9W) to get started. You can also use this channel to request to have your Launch Pad project featured or shared!
+Any Launch Pad original content could make good social media posts to help us showcase what we do! Just post it in [`#cop-sharing`](https://ubclaunchpad.slack.com/archives/C01622TSU9W) to get started. You can also use this channel to request to have your Launch Pad project featured or shared!
 
 ## Accounts
 
@@ -24,7 +24,7 @@ Analytics are a great way to track the impact of social media posts and campaign
 
 ## Social Media Campaigns
 
-Outside of occasionally sharing miscellaneous tidbits from [`#ot-sharing`](https://ubclaunchpad.slack.com/archives/C01622TSU9W), we should focus on creating social media posts as part of campaigns, each centered around a long-form article. This helps us have consistent messaging and (hopefully) higher-quality, more engaging content.
+Outside of occasionally sharing miscellaneous tidbits from [`#cop-sharing`](https://ubclaunchpad.slack.com/archives/C01622TSU9W), we should focus on creating social media posts as part of campaigns, each centered around a long-form article. This helps us have consistent messaging and (hopefully) higher-quality, more engaging content.
 
 All content prepared for social media campaigns should be stored or linked to in the [Social Media](https://drive.google.com/drive/folders/1tRSa-obWwr_JU57tpscqmxIUZPlfqckQ?usp=sharing) folder (under Strategy).
 
