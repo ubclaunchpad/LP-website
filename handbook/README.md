@@ -13,7 +13,7 @@ For this to work, **we need your help to keep the handbook up to date**! That me
 
 ## 🔖 Manifesto
 
-Our [**Manifesto**](manifesto.md) outlines our vision, what we do, how we work with partners, and our code of conduct.
+Our [**Manifesto**](manifesto.md) outlines our vision, what we do, and our code of conduct.
 
 ## 🚀 Onboarding <Badge type="tip" text="new"/>
 
@@ -65,6 +65,13 @@ Some teams also have dedicated repositories:
 * [**Exec**](https://github.com/ubclaunchpad/exec): Repo containing details about managing Launch Pad, such as our accounts.
 
 Note that links to most of these repositories are available through the handy "Quick Links" dropdown in this website's navbar!
+
+## ♟ Strategy
+
+These pages document our efforts in improving the club and our reach.
+
+* [**Objectives**](./strategy/objectives.md): Launch Pad's yearly objectives, goals, and our learnings.
+* [**Sponsors and Partners**](./strategy/sponsors-and-partners.md): How we work with sponsors and partners!
 
 ## 🗳️ Recruitment <Badge type="tip" text="new"/>
 
