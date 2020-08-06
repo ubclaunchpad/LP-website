@@ -47,9 +47,19 @@ As a club, Launch Pad supports every member’s experience through multiple ways
 
 ### Club Structure
 
+#### Co-Presidents
+
+Launch Pad is lead by two co-presidents. The role of the co-presidents is to act as the face of the club, manage our resources and accounts, and help the leadership team feel empowered and supported in initiatives they want to drive. The co-presidents do this by providing the leadership team with whatever guidance and resources they need, such as contacts, accounts, money, advice, and so on. Co-presidents also help ensure Launch Pad's initiatives and activities are aligned with the club's mission and objectives.
+
+Co-presidents also act as de-facto leads of the [strategy team](#strategy-team).
+
+#### Leadership Team
+
+Launch Pad's Leadership team consist of our [**co-presidents**](#co-presidents), **tech leads**, and **design lead**. Learn more about being on the leadership team in the [leads onboarding guide](/handbook/onboarding/leads.md).
+
 #### Project Teams
 
-Launch Pad primarily consists of agile development teams centred around a shared project. Each team consists of a Tech Lead and a number of Developers, usually between 5 to 8.
+Launch Pad primarily consists of agile development teams centred around a shared project. Each team consists of a Tech Lead and a number of Developers, usually between 5 to 8. Learn more about being on a project team in the [onboarding guide](/handbook/onboarding/everyone.md).
 
 **Tech Leads** are experienced developers who are responsible for managing the team by planning the project roadmap, assigning tickets during sprints, and implementing challenging features. They are also available as a resource to less experienced developers on the team. If you have any trouble with your issue, questions about Launch Pad, or just a random technical question: ask your Tech Lead.
 
@@ -57,11 +67,13 @@ Launch Pad primarily consists of agile development teams centred around a shared
 
 #### Design Team
 
-UBC Launch Pad has a Design team that handles designs and asset creation for Launch Pad projects. Each project that requires design help should have one or more designers working with the team.
+UBC Launch Pad has a Design team that handles designs and asset creation for Launch Pad projects. Each project that requires design help should have one or more designers working with the team. Learn more about the design team in the [design onboarding guide](/handbook/onboarding/design.md).
+
+Each year, one member is appointed as the **Design Lead**. The design lead's role is to support the design team and act as the bridge between the [leadership team](#leadership-team) and designers.
 
 #### Strategy Team
 
-UBC Launch Pad has a Strategy team that focusses on strategically growing the team. This team will focus on increasing campus awareness and forming strategic partnerships in order to further contribute to Launch Pad's vision to be the leading university technology club in Vancouver, Canada, or maybe even the world.
+UBC Launch Pad has a Strategy team that focuses on strategically growing the team. This team will focus on increasing campus awareness and forming strategic partnerships in order to further contribute to Launch Pad's vision to be the leading university technology club in Vancouver, Canada, or maybe even the world. Learn more about being on the strategy team in the [strategy onboarding guide](/handbook/onboarding/strategy.md).
 
 ## Code of Conduct
 
