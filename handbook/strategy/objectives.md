@@ -1,4 +1,4 @@
-# Launch Pad Objectives
+# 🏎 Launch Pad Objectives
 
 We want to create a set of clear, measurable objectives for each school year, in rough order of priority. This helps hold us accountable to our goals, ensure that we are improving the club, and learn from our experiences.
 

@@ -68,8 +68,9 @@ Note that links to most of these repositories are available through the handy "Q
 
 ## ♟ Strategy
 
-These pages document our efforts in improving the club and our reach.
+These pages document our efforts in improving Launch Pad and our reach. While the [Strategy team](/handbook/onboarding/strategy.md) will own some of content and processes described in these pages, these documents still involve everyone in Launch Pad!
 
+* [**Recurring Processes**](./strategy/recurring-processes.md): Administrative processes that we run every year.
 * [**Objectives**](./strategy/objectives.md): Launch Pad's yearly objectives, goals, and our learnings.
 * [**Sponsors and Partners**](./strategy/sponsors-and-partners.md): How we work with sponsors and partners!
 
