@@ -50,6 +50,10 @@ We use GitHub and Slack for pretty much *everything* - make sure you are intimat
 * [Slack guide](/handbook/tools/slack)
 :::
 
+### Recurring Processes
+
+The Strategy team is responsible for driving efforts on our [recurring processes](/handbook/strategy/recurring-processes.md) with the Leadership team.
+
 ### Acquiring Sponsorships
 
 * Create a [Sponsorship tracking issue on GitHub](https://github.com/ubclaunchpad/strategy/issues/new?assignees=&labels=sponsorship&template=sponsorship.md&title=)

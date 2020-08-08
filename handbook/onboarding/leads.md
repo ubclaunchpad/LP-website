@@ -71,6 +71,10 @@ We use GitHub and Slack for pretty much *everything* - make sure you are intimat
 * [Slack guide](/handbook/tools/slack)
 :::
 
+### Recurring Processes
+
+The Leadership team is responsible, with the help of the Strategy team, for implementing our [recurring processes](/handbook/strategy/recurring-processes.md). This includes selecting the next generationg of Launch Pad leads, working towards our club objectives, and more.
+
 ### Projects
 
 The handbook's Project Management pages are a must-read - for all leads:
