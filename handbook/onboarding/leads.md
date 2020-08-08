@@ -2,6 +2,8 @@
 
 Welcome to UBC Launch Pad, and congratulations (and thank you!) for joining us as a lead!
 
+The role of the Launch Pad leadership team is documented in our [manifesto](/handbook/manifesto.md#club-structure). Specifics of responsibilities are also available in the [tech lead role description](/handbook/recruitment/tech-lead.md) and [design lead role description](/handbook/recruitment/tech-lead.md).
+
 ## Checklist
 
 ### Slack Channels

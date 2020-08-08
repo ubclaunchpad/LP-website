@@ -2,12 +2,14 @@
 
 We want to create a set of clear, measurable objectives for each school year, in rough order of priority. This helps hold us accountable to our goals, ensure that we are improving the club, and learn from our experiences.
 
-Objectives and results for each year are documented in this page. Each school year is denoted by the year of the fall semester, typically in September, and ends around May of the following year. At the end of each school year, we will see how close we got to our goals and assess how we can improve the following year.
+Objectives and results for each year are documented in this page. Each school year is denoted by the year of the fall semester, typically in September, and ends around May of the following year. At regular intervals, we will evaluate how close we got to our goals and assess how we can improve the following year - learn more in our [recurring processes documentation](/handbook/strategy/recurring-processes.md#evaluating-objectives).
 
 Objectives have the following format:
 
 - **Objective: some overarching theme we want to work towards**
-  - Result: some measureable result we want to achieve to make progress towards this objective
+  - Result: some *measureable, numeric result* we want to achieve to make progress towards this objective
+
+Whenever our [objectives are evaluated](/handbook/strategy/recurring-processes.md#evaluating-objectives), add nested dot points documenting our progress towards our goals.
 
 ## 2020
 
