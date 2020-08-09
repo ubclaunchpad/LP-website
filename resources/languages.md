@@ -45,3 +45,11 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
   [bash scripting tutorial](http://matt.might.net/articles/bash-by-example/)
   that's comprehensive without being overwhelming.
 * Check out some [shell scripts used by projects at Launch Pad](https://sourcegraph.com/search?q=repo:ubclaunchpad/*+lang:shell&patternType=literal)
+
+## Rust
+
+* [The Rust Programming Language Book](https://doc.rust-lang.org/book/) is a free introductory book to Rust. The book also includes multiple projects that it will lead you through.
+* [Rust by Example](https://doc.rust-lang.org/rust-by-example/index.html) is a great way to learn Rust by writing Rust!
+* [Rustlings](https://github.com/rust-lang/rustlings) is a collection of exercises, with an awesome CLI you can use to check your answers and get hints.
+* [Learning Rust With Entirely Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/index.html) another amazing book for hands-on learning.
+* Check out [`awesome-rust`](https://github.com/rust-unofficial/awesome-rust#resources) for more resources!
