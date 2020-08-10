@@ -7,7 +7,7 @@ search: false
 
 > UBC Launch Pad 2020 Team
 
-:::
+:::  warning We are not currently accepting applications for this role.
 Sign up for [our newsletter](https://ubclaunchpad.com/newsletter) to get updates!
 :::
 
@@ -43,6 +43,5 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club man
 
 * A passion for learning and experimenting, and a willingness to participate actively
 * Folks of all skill levels, whether you are a complete beginner just starting out or if you’ve done several internships and have a portfolio of awesome projects - learn more about our [recruitment goals](https://docs.ubclaunchpad.com/handbook/recruitment/overview) in our handbook
-
 
 
