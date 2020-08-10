@@ -3,7 +3,7 @@
 search: false
 ---
 
-# Designers 🚀 <img align="right" src="https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/src/assets/rocket.png" width="100px">
+# Designer 🚀 <img align="right" src="https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/src/assets/rocket.png" width="100px">
 
 > UBC Launch Pad 2020 Team
 
@@ -48,5 +48,4 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club man
 * PDF portfolio (Google Drive Link)
 * PDF Case studies (Google Drive Link)
 * Slide Deck (Google Slides Link)
-
 
