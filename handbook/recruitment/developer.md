@@ -13,7 +13,7 @@ Sign up for [our newsletter](https://ubclaunchpad.com/newsletter) to get updates
 
 ## Summary
 
-As a developer at UBC Launch Pad, you will be working with other developers and designers to ideate and build a project for 4-8 months! Each team will be supported by an experienced tech lead who provides the expertise needed to execute on the team’s vision. 
+As a developer at UBC Launch Pad, you will be working with other developers and designers to ideate and build a project for 4-8 months! Each team will be supported by an experienced tech lead who provides the expertise needed to execute on the team’s vision.
 
 Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/handbook/manifesto), which includes our vision and code of conduct.
 
@@ -21,8 +21,8 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club man
 
 * Learn and build collaboratively with other developers and designers
 * Attend team meetings and complete tasks to the best of your ability with the support of your lead and team
-* Communicate with your tech lead or co-presidents if you need any support 
-* Follow the [onboarding procedures](https://docs.ubclaunchpad.com/handbook/onboarding/everyone) to prepare yourself for the term  
+* Communicate with your tech lead or co-presidents if you need any support
+* Follow the [onboarding procedures](https://docs.ubclaunchpad.com/handbook/onboarding/everyone) to prepare yourself for the term
 
 ## What you get
 
