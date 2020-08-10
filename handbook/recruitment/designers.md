@@ -44,8 +44,7 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club man
 ## Requirements
 
 * Samples of personal projects. This can be:
-* A website portfolio
-* PDF portfolio (Google Drive Link)
-* PDF Case studies (Google Drive Link)
-* Slide Deck (Google Slides Link)
-
+  * A website portfolio
+  * PDF portfolio (Google Drive Link)
+  * PDF Case studies (Google Drive Link)
+  * Slide Deck (Google Slides Link)
