@@ -24,7 +24,6 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club man
 * Communicate with your tech lead or co-presidents if you need any support 
 * Follow the [onboarding procedures](https://docs.ubclaunchpad.com/handbook/onboarding/everyone) to prepare yourself for the term  
 
-
 ## What you get
 
 * An amazing documentation website to equip you with all the tools you need to succeed!
