@@ -2,6 +2,8 @@
 
 Welcome to UBC Launch Pad, and congratulations (and thank you!) for joining us as a lead!
 
+The role of the Launch Pad leadership team is documented in our [manifesto](/handbook/manifesto.md#club-structure). The specifics of each role's responsibilities are also available in the [tech lead role description](/handbook/recruitment/tech-lead.md) and [design lead role description](/handbook/recruitment/design-lead.md).
+
 ## Checklist
 
 ### Slack Channels
@@ -68,6 +70,10 @@ We use GitHub and Slack for pretty much *everything* - make sure you are intimat
 * [GitHub guide](/handbook/tools/github)
 * [Slack guide](/handbook/tools/slack)
 :::
+
+### Recurring Processes
+
+The Leadership team is responsible, with the help of the Strategy team, for implementing our [recurring processes](/handbook/strategy/recurring-processes.md). This includes selecting the next generation of Launch Pad leads, working towards our club objectives, and more.
 
 ### Projects
 

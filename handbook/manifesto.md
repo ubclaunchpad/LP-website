@@ -47,15 +47,15 @@ As a club, Launch Pad supports every member’s experience through multiple ways
 
 ### Club Structure
 
+#### Leadership Team
+
+Launch Pad's Leadership team consist of our [**co-presidents**](#co-presidents), **tech leads**, and **design lead**. Learn more about being on the leadership team in the [leads onboarding guide](/handbook/onboarding/leads.md), and learn more about how the leadership team is selected in our [recurring processes documentation](/handbook/strategy/recurring-processes.md#selecting-leadership).
+
 #### Co-Presidents
 
 Launch Pad is lead by two co-presidents. The role of the co-presidents is to act as the face of the club, manage our resources and accounts, and help the leadership team feel empowered and supported in initiatives they want to drive. The co-presidents do this by providing the leadership team with whatever guidance and resources they need, such as contacts, accounts, money, advice, and so on. Co-presidents also help ensure Launch Pad's initiatives and activities are aligned with the club's mission and objectives.
 
-Co-presidents also act as de-facto leads of the [strategy team](#strategy-team).
-
-#### Leadership Team
-
-Launch Pad's Leadership team consist of our [**co-presidents**](#co-presidents), **tech leads**, and **design lead**. Learn more about being on the leadership team in the [leads onboarding guide](/handbook/onboarding/leads.md).
+Co-presidents also act as leads of the [strategy team](#strategy-team).
 
 #### Project Teams
 
@@ -74,6 +74,8 @@ Each year, one member is appointed as the **Design Lead**. The design lead's rol
 #### Strategy Team
 
 UBC Launch Pad has a Strategy team that focuses on strategically growing the team. This team will focus on increasing campus awareness and forming strategic partnerships in order to further contribute to Launch Pad's vision to be the leading university technology club in Vancouver, Canada, or maybe even the world. Learn more about being on the strategy team in the [strategy onboarding guide](/handbook/onboarding/strategy.md).
+
+The Strategy team is lead by the [**co-presidents**](#co-presidents).
 
 ## Code of Conduct
 
