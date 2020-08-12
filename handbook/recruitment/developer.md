@@ -7,8 +7,10 @@ search: false
 
 > UBC Launch Pad 2020 Team
 
-:::  warning We are not currently accepting applications for this role.
-Sign up for [our newsletter](https://ubclaunchpad.com/newsletter) to get updates!
+::: tip
+We are currently accepting applications for this role!
+
+To apply, fill out [this Google Form](https://forms.gle/p3U3WuiNH7pafFgp7) before 11:59 PM on August 21, 2020.
 :::
 
 ## Summary
