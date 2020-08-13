@@ -7,12 +7,6 @@ search: false
 
 > UBC Launch Pad 2020 Team
 
-::: tip
-We are currently accepting applications for this role!
-
-To apply, fill out [this Google Form](https://forms.gle/p3U3WuiNH7pafFgp7) before 11:59 PM on August 21, 2020.
-:::
-
 ## Summary
 
 As a developer at UBC Launch Pad, you will be working with other developers and designers to ideate and build a project for 4-8 months! Each team will be supported by an experienced tech lead who provides the expertise needed to execute on the team’s vision.
@@ -44,3 +38,8 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club man
 
 * A passion for learning and experimenting, and a willingness to participate actively
 * We welcome folks of all skill levels, whether you are a complete beginner just starting out or if you’ve done several internships and have a portfolio of awesome projects - learn more about our [recruitment goals](https://docs.ubclaunchpad.com/handbook/recruitment/overview) in our handbook
+
+::: tip We are currently accepting applications for this role!
+
+To apply, fill out [this Google Form](https://forms.gle/p3U3WuiNH7pafFgp7) before 11:59 PM on August 21, 2020.
+:::

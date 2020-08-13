@@ -7,12 +7,6 @@ search: false
 
 > UBC Launch Pad 2020 Team
 
-::: tip
-We are currently accepting applications for this role!
-
-To apply, fill out [this Google Form](https://forms.gle/4u6qeKqrzav2MzwK7) before 11:59 PM on August 21, 2020.
-:::
-
 ## Summary
 
 As a designer at UBC Launch Pad, you will be working with other designers and developers to ideate and build a project for 4-8 months! You will be creating beautiful interfaces that provide great user experiences while being supported by Launch Pad’s design lead and your team’s tech lead.
@@ -49,3 +43,8 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club man
   * PDF portfolio (Google Drive Link)
   * PDF Case studies (Google Drive Link)
   * Slide Deck (Google Slides Link)
+
+::: tip We are currently accepting applications for this role!
+
+To apply, fill out [this Google Form](https://forms.gle/4u6qeKqrzav2MzwK7) before 11:59 PM on August 21, 2020.
+:::
