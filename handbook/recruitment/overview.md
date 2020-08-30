@@ -39,7 +39,7 @@ To provide support to our less experienced members and ensure a productive envir
 
 ### Social media
 
-Usage of [social media](/handbook/tools/social-media.md) should accompany each round of recruitment to help encourage people to apply. For example, in the past we've done a ["leads feature" campaign (2020)](https://drive.google.com/drive/u/0/folders/1aXhzhIFAad0HU1W6M02Qi_bgKwn0_Bym), where we introduce each lead in a series of social media posts.
+Usage of [social media](/handbook/tools/social-media.md) should accompany each round of recruitment to help encourage people to apply. For example, in the past we've done a ["leads feature" campaign (2020)](https://drive.google.com/drive/u/0/folders/1aXhzhIFAad0HU1W6M02Qi_bgKwn0_Bym), where we introduced each lead in a series of social media posts.
 
 A few things to note:
 
