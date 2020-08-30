@@ -90,6 +90,7 @@ module.exports = {
       '/handbook/tools/': [
         'slack',
         'github',
+        'drive',
         'deployment',
         'analytics',
         'social-media',
