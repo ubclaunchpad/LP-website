@@ -39,36 +39,48 @@ To provide support to our less experienced members and ensure a productive envir
 
 ### Social media
 
-TODO
+Usage of [social media](/handbook/tools/social-media.md) should accompany each round of recruitment to help encourage people to apply. For example, in the past we've done a ["leads feature" campaign (2020)](https://drive.google.com/drive/u/0/folders/1aXhzhIFAad0HU1W6M02Qi_bgKwn0_Bym), where we introduce each lead in a series of social media posts.
+
+A few things to note:
+
+* Make sure to follow the [steps for a social media campaign](/handbook/tools/social-media.md#social-media-campaigns) as guidance, especially regarding setting up the Google Drive folder correctly, to make sure we have reference material in the future.
+* Do not use the word "hiring", as we do not provide pay - "recruitment" is a more accurate and less intimidating term.
 
 ### Applications
 
+All materials pertaining to accepting applications (Google Forms, spreadsheets, and so on) should be tracked in the [Recruitment folder (under Leads)](https://drive.google.com/drive/u/0/folders/0BwdNv1PZjDeXNXZiQm55Q2VBc1U).
+
 #### Accepting applications
 
-TODO
+Applications are generally accepted through Google Form submissions.
 
-* Setting up Google forms
-* Website updates: ubclaunchpad.com, docs.ubclaunchpad.com
+1. Create a folder under Recruitment for the recruitment season (for example, `YYYY MM`).
+2. Make a copy of the template forms provided in the Recruitment folder and make the appropriate adjustments relevant to the recruitment season.
+3. Enable responses under the "Responses" tab of the form.
+4. Make the appropriate website updates:
+   1. [`docs.ubclaunchpad.com`](https://github.com/ubclaunchpad/docs): make sure our [role description pages](/handbook/README.md#recruitment) are up to date, with links to the relevant Google Forms at the bottom of each page.
+   2. [`ubclaunchpad.com`](https://github.com/ubclaunchpad/ubclaunchpad.com): [configure recruitment status](https://ubclaunchpad.com/config/#configuring-recruitment-status).
+
+#### Closing applications
+
+1. Disable responses under the "Responses" tab of the form.
+2. Make the appropriate website updates:
+   1. [`docs.ubclaunchpad.com`](https://github.com/ubclaunchpad/docs): remove links to application Google Forms from the [role description pages](/handbook/README.md#recruitment)
+   2. [`ubclaunchpad.com`](https://github.com/ubclaunchpad/ubclaunchpad.com): [configure recruitment status](https://ubclaunchpad.com/config/#configuring-recruitment-status).
 
 #### Screening applicants
 
-To screen applications, we provide a set of criteria, each to be graded on a 0-2 scale from "unsatisfactory" to "excellent" *relative to the applicant's skill level*.
+To screen applications, we provide a set of criteria, each to be graded on a 0-2 scale from "unsatisfactory" to "excellent" *relative to the applicant's skill level* so that we can try to achieve the experience distributions described in our [recruitment goals](#goals). These scores are used to determine which candidates we interview.
 
 For Developers, we have the following criteria:
 
 * C1: Willingness to learn (self-drive, taking time outside of classes and work to learn and build things)
 * C2: Passion and interest (for example, comprehensiveness of answer to "tell us about a project", even if not technically comprehensive)
-* C2: Rate the best of the provided items from the OR/AND's from the relevant skill bucket they fall in
+* C3: Rate the best of the provided items from the OR/AND's from the relevant skill bucket they fall in
 
 For designers, we have the following criteria:
 
 * TODO
-
-#### Closing applications
-
-TODO
-
-* Website updates
 
 ### Interviews
 
