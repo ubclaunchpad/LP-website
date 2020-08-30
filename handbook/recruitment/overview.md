@@ -72,15 +72,11 @@ Applications are generally accepted through Google Form submissions.
 
 To screen applications, we provide a set of criteria, each to be graded on a 0-2 scale from "unsatisfactory" to "excellent" *relative to the applicant's skill level* so that we can try to achieve the experience distributions described in our [recruitment goals](#goals). These scores are used to determine which candidates we interview.
 
-For Developers, we have the following criteria:
+For most of our entry roles (developers, designers, and strategy), we have the following criteria:
 
 * C1: Willingness to learn (self-drive, taking time outside of classes and work to learn and build things)
 * C2: Passion and interest (for example, comprehensiveness of answer to "tell us about a project", even if not technically comprehensive)
 * C3: Rate the best of the provided items from the OR/AND's from the relevant skill bucket they fall in
-
-For designers, we have the following criteria:
-
-* TODO
 
 ### Interviews
 
