@@ -1,10 +1,6 @@
 # Recruitment Overview
 
-This document provides a overview of why and how we do recruitment at [UBC Launch Pad](https://ubclaunchpad.com). Our interview processes are documented in the [Leads repository](https://github.com/ubclaunchpad/leads).
-
-::: warning
-This page is a work in progress!
-:::
+This document provides a overview of why and how we do recruitment at [UBC Launch Pad](https://ubclaunchpad.com).
 
 ## Goals
 
@@ -38,3 +34,44 @@ To provide support to our less experienced members and ensure a productive envir
 
 * around 60% of the design team be "beginners".
 * at least 40% of design team (including lead) be "experienced".
+
+## Process
+
+### Social media
+
+TODO
+
+### Applications
+
+#### Accepting applications
+
+TODO
+
+* Setting up Google forms
+* Website updates: ubclaunchpad.com, docs.ubclaunchpad.com
+
+#### Screening applicants
+
+To screen applications, we provide a set of criteria, each to be graded on a 0-2 scale from "unsatisfactory" to "excellent" *relative to the applicant's skill level*.
+
+For Developers, we have the following criteria:
+
+* C1: Willingness to learn (self-drive, taking time outside of classes and work to learn and build things)
+* C2: Passion and interest (for example, comprehensiveness of answer to "tell us about a project", even if not technically comprehensive)
+* C2: Rate the best of the provided items from the OR/AND's from the relevant skill bucket they fall in
+
+For designers, we have the following criteria:
+
+* TODO
+
+#### Closing applications
+
+TODO
+
+* Website updates
+
+### Interviews
+
+Our interview processes are documented in the [private Leads repository](https://github.com/ubclaunchpad/leads). This includes guides, questions, scoring criteria, email templates, and more.
+
+Members of Launch Pad who are not [leads](/handbook/onboarding/leads.md) may be temporarily granted access to the Leads repository so that they can access our interview documentation.
