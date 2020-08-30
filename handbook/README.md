@@ -48,6 +48,26 @@ These are **guidelines**, not strict rules! Teams should adjust these processes 
 * [**Sprint Planning**](./project-management/sprints.md): Guidelines and advice for how to plan out work with your team to drive forward progress on your project!
 * [**Repository Management**](./project-management/repositories.md): Guidelines for how to manage your GitHub repository and enforce coding standards. Remember: your repository is your main outlet to the outside world - and this outside world includes potential employers! Make it informative, organized, and pretty!
 
+## ♟ Strategy
+
+These pages document our efforts in improving Launch Pad and our reach. While the [Strategy team](/handbook/onboarding/strategy.md) will own some of content and processes described in these pages, these documents still involve everyone in Launch Pad!
+
+* [**Recurring Processes**](./strategy/recurring-processes.md): Administrative processes that we run every year.
+* [**Objectives**](./strategy/objectives.md): Launch Pad's yearly objectives, goals, and our learnings.
+* [**Sponsors and Partners**](./strategy/sponsors-and-partners.md): How we work with sponsors and partners!
+
+## 🗳️ Recruitment <Badge type="tip" text="new"/>
+
+Launch Pad recruitment documentation and material lives in these pages!
+
+* [**Overview**](/handbook/recruitment/overview.md) goes over the why and how of recruitment at Launch Pad.
+* **Role descriptions**: These pages describe roles that Launch Pad recruits for. They should be written such that we can send each page individually to prospective candidates to help them get an idea of what each role entails!
+  * [Developer](./recruitment/developer.md)
+  * [Design](./recruitment/designer.md)
+  * Strategy (TODO)
+  * [Design Lead](./recruitment/design-lead.md)
+  * [Tech Lead](./recruitment/tech-lead.md)
+
 ## 📦 Official Repositories
 
 There are a number of other important repositories that provide places for documentation and discussion. Note that these are all private to the `ubclaunchpad` GitHub organization; if you have not been added to the organization, talk to your Tech Lead or one of the Presidents in [`#ask-leads`](https://ubclaunchpad.slack.com/messages/CK935RD3Q/).
@@ -65,27 +85,3 @@ Some teams also have dedicated repositories:
 * [**Exec**](https://github.com/ubclaunchpad/exec): Repo containing details about managing Launch Pad, such as our accounts.
 
 Note that links to most of these repositories are available through the handy "Quick Links" dropdown in this website's navbar!
-
-## ♟ Strategy
-
-These pages document our efforts in improving Launch Pad and our reach. While the [Strategy team](/handbook/onboarding/strategy.md) will own some of content and processes described in these pages, these documents still involve everyone in Launch Pad!
-
-* [**Recurring Processes**](./strategy/recurring-processes.md): Administrative processes that we run every year.
-* [**Objectives**](./strategy/objectives.md): Launch Pad's yearly objectives, goals, and our learnings.
-* [**Sponsors and Partners**](./strategy/sponsors-and-partners.md): How we work with sponsors and partners!
-
-## 🗳️ Recruitment <Badge type="tip" text="new"/>
-
-Launch Pad recruitment documentation and material lives in these pages!
-
-::: warning
-These pages are a work in progress.
-:::
-
-* [**Overview**](/handbook/recruitment/overview.md) goes over the why and how of recruitment at Launch Pad.
-* **Role descriptions**: These pages describe roles that Launch Pad recruits for. They should be written such that we can send each page individually to prospective recruits to help them get an idea of what each role entails!
-  * [Developer](./recruitment/developer.md)
-  * [Design](./recruitment/designer.md)
-  * Strategy (TODO)
-  * [Design Lead](./recruitment/design-lead.md)
-  * [Tech Lead](./recruitment/tech-lead.md)
