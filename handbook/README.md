@@ -30,6 +30,7 @@ We use a variety of technology and tools at Launch Pad - these sections help you
 
 * [**Slack**](./tools/slack.md): Best practices, channels, bots, and general information about our Slack workspace! Slack is where most Launch Pad discussions and announcements happen.
 * [**GitHub**](./tools/github.md): Guidance on getting started with our GitHub organization! GitHub is where we host, document, and manage the code in all our projects.
+* [**Google Drive**](./tools/drive.md): How to use Launch Pad's shared Google Drive folders.
 * [**Deployment**](./tools/deployment.md): Launch Pad's recommendations regarding deployment and getting your project out to the world.
 * [**Analytics**](./tools/analytics.md): Launch Pad's recommendations regarding setting up analytics to see how users interact with your projects.
 * [**Social Media**](./tools/social-media.md): Documentation about our social media accounts and how to use them to help showcase our work!

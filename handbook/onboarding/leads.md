@@ -35,26 +35,7 @@ Make sure that you are **watching** all relevant repositories so that you don't 
 
 Make sure all leads are given "editor" access to the [shared Launch Pad folder](https://drive.google.com/drive/folders/1u-U3w0V0MaLQrWtDdw_8n15V2lO-6gXo), which is owned by the `team@ubclaunchpad.com` account (more details are in the [Exec repository](https://github.com/ubclaunchpad/exec)).
 
-Within the shared Launch Pad folder, try to maintain the following structure:
-
-* [Projects](https://drive.google.com/drive/u/0/folders/18piFDBdAUuZAOf9xOgpf2_HBUuVNae0S) - folders for project teams
-  * Note that everyone should be granted access to this folder (part of [Onboarding for Everyone](../onboarding/everyone.md))
-  * Each tech lead should create a folder for their project inside a year subfolder ("Projects YYYY") of this folder
-  * Inside each project folder, each lead should create a document for meeting notes. All their project meetings should go in this document. See [Sprint Planning](../project-management/sprints.md) for more details.
-* [Strategy](https://drive.google.com/drive/u/0/folders/0BwdNv1PZjDeXMkc1eDVNY1ZHT00) - see [Onboarding for Strategy](./strategy.md)
-* [Design](https://drive.google.com/drive/u/0/folders/1Zfe25r3D77hGdyMkj0tlxHNa-r7fAq1d) - see [Onboarding for Design](./design.md)
-* [Leads](https://drive.google.com/drive/u/0/folders/1hgPcUC_DrFMmzZ04pBSlZFig4v9AbTuv) - that's for us!
-  * Leads should create a document for meeting notes titled "Leads: Meeting Notes YYYY". All leads meetings should go in this document.
-* [Exec](https://drive.google.com/drive/u/0/folders/10b_2H5EhPpJtdgNi7QizRhWC9Qtivr8L) - for the presidents
-  * Presidents should create a document for meeting notes titled "Exec: Meeting Notes YYYY". All exec meetings should go in this document.
-
-::: warning
-In general, assume pretty liberal with access to folders in Google Drive (since it is hard to keep track of access over time, especially for individual documents, and for ease of use we generally share entire folders with everyone).
-
-Sensitive information (such as contact details for sponsors) should be tracked in one of our [private GitHub repositories](#github-teams) and distributed as required (for example, by linking to specific issues from Drive documents).
-
-Similarly, **do not add credentials (usernames, passwords) in Google Drive**. Instead, get them added to the private [Exec repository](https://github.com/ubclaunchpad/exec/blob/master/assets.md) and provide the credentials to those who need it as required.
-:::
+Learn more about managing these folders in the [Google Drive documentation](/handbook/tools/drive.md).
 
 ### Email and Accounts
 
