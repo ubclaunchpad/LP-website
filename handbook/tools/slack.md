@@ -8,7 +8,7 @@ We use [Slack](https://slack.com) for team-wide communication, announcements, an
 * [**Use threads**](https://slackhq.com/getting-the-most-out-of-threads) for conversations, especially in large channels! This helps prevent spam and makes it easier to catch up on missed conversations.
 * Name channels using our [naming scheme](#naming-slack-channels) to make it easier for others to find your channels.
 * If it is important, **do not leave it in Slack**! We are on the free tier of Slack, so messages eventually expire. Anything important or permanent should be in a [GitHub issue or repository](/handbook/tools/github.md)!
-* If a discussion pertains to club-wide decisions, **please do not use direct messages** - whenever possible, have the discussion in a shared channel where relevant so that there is more visibility into what's going on, and to avoid excluding team members. Good places to start discussions are relevant `#tm-` or `#ask-` channels.
+* If a discussion pertains to club-wide decisions, **please do not use direct messages** - whenever possible, have the discussion in a relevant shared channel so that there is more visibility into what's going on, and to avoid excluding team members who might be able to contribute useful input. Good places to start discussions are relevant `#tm-` or `#ask-` channels.
   * If it doesn't feel like a discussion pertains to any specific channel, feel free to create a new channel (following our [naming scheme](#naming-slack-channels)) and link to it from other channels so that people can drop in on discussions they want to contribute to!
 
 ## Naming Slack Channels
