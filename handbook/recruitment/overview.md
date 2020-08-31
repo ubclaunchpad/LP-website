@@ -4,9 +4,9 @@ This document provides a overview of why and how we do recruitment at [UBC Launc
 
 ## Goals
 
-We have an application and interview process to join Launch Pad because software engineering is inherently a collaborative process — one that requires every contributor to work well with each other. We want to make sure that every member has an interest in learning and the support required to do so, whatever their skill level is. For the most part, this support comes from our [leads](/handbook/manifesto.md#project-teams), who also have to put in a great deal of effort to manage teams, plan projects, provide technical guidance, organize events, liaison with sponsors, and more. Given the small number of people at Launch Pad who have the background, time, and willingness to do all this, we sadly can’t accept and adequately support everyone who applies.
+We have an application and interview process to join Launch Pad because software engineering is inherently a collaborative process — one that requires every contributor to work well with each other. We want to make sure that every member is commited and has the support required to do so, regardless what their skill level is. For the most part, this support comes from our [leads](/handbook/manifesto.md#project-teams), who also have to put in a great deal of effort to manage teams, plan projects, provide technical guidance, organize events, liaison with sponsors, and more. Given the small number of people at Launch Pad who have the background, time, and willingness to do all this, we sadly can’t accept and adequately support everyone who applies.
 
-That said, a major goal of Launch Pad is to support beginners and people from a wide range of backgrounds. We want to continue to iterate on our process (for example, our questions and criteria) to make sure that Launch Pad membership as diverse and inclusive as possible.
+That said, a major goal of Launch Pad is to support beginners and people from a wide range of backgrounds. We want to continue to iterate on our process (for example, our questions and criteria) to make sure that Launch Pad membership is as diverse and inclusive as possible.
 
 ### Technical Roles
 
@@ -43,7 +43,7 @@ To provide support to our less experienced members and ensure a productive envir
 
 ### Social media
 
-Usage of [social media](/handbook/tools/social-media.md) should accompany each round of recruitment to help encourage people to apply. For example, in the past we've done a ["leads feature" campaign (2020)](https://drive.google.com/drive/u/0/folders/1aXhzhIFAad0HU1W6M02Qi_bgKwn0_Bym), where we introduced each lead in a series of social media posts.
+Usage of [social media](/handbook/tools/social-media.md) should accompany each round of recruitment to encourage people to apply. For example, in the past we've done a ["leads feature" campaign (2020)](https://drive.google.com/drive/u/0/folders/1aXhzhIFAad0HU1W6M02Qi_bgKwn0_Bym), where we introduced each lead in a series of social media posts.
 
 A few things to note:
 
@@ -74,7 +74,7 @@ Applications are generally accepted through Google Form submissions.
 
 #### Screening applicants
 
-To screen applications, we provide a set of criteria, each to be graded on a 0-2 scale from "unsatisfactory" to "excellent" *relative to the applicant's skill level* so that we can try to achieve the experience distributions described in our [recruitment goals](#goals). These scores are used to determine which candidates we interview.
+To screen applications, we provide a set of criteria, each to be graded on a 0-2 scale from "unsatisfactory" to "excellent" *relative to the applicant's skill level* so that we can try to achieve the experience distributions described in our [recruitment goals](#goals). These scores are used to determine the candidates to interview.
 
 For most of our entry roles (developers, designers, and strategy), we have the following criteria:
 
