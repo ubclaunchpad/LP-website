@@ -1,12 +1,12 @@
 # Recruitment Overview
 
-This document provides a overview of why and how we do recruitment at [UBC Launch Pad](https://ubclaunchpad.com). Our interview processes are documented in the [Leads repository](https://github.com/ubclaunchpad/leads).
-
-::: warning
-This page is a work in progress!
-:::
+This document provides a overview of why and how we do recruitment at [UBC Launch Pad](https://ubclaunchpad.com).
 
 ## Goals
+
+We have an application and interview process to join Launch Pad because software engineering is inherently a collaborative process — one that requires every contributor to work well with each other. We want to make sure that every member is commited and has the support required to do so, regardless of what their skill level is. For the most part, this support comes from our [leads](/handbook/manifesto.md#project-teams), who also have to put in a great deal of effort to manage teams, plan projects, provide technical guidance, organize events, liaison with sponsors, and more. Given the small number of people at Launch Pad who have the background, time, and willingness to do all this, we sadly can’t accept and adequately support everyone who applies.
+
+That said, a major goal of Launch Pad is to support beginners and people from a wide range of backgrounds. We want to continue to iterate on our process (for example, our questions and criteria) to make sure that Launch Pad membership is as diverse and inclusive as possible.
 
 ### Technical Roles
 
@@ -38,3 +38,52 @@ To provide support to our less experienced members and ensure a productive envir
 
 * around 60% of the design team be "beginners".
 * at least 40% of design team (including lead) be "experienced".
+
+## Process
+
+### Social media
+
+Usage of [social media](/handbook/tools/social-media.md) should accompany each round of recruitment to encourage people to apply. For example, in the past we've done a ["leads feature" campaign (2020)](https://drive.google.com/drive/u/0/folders/1aXhzhIFAad0HU1W6M02Qi_bgKwn0_Bym), where we introduced each lead in a series of social media posts.
+
+A few things to note:
+
+* Make sure to follow the [steps for a social media campaign](/handbook/tools/social-media.md#social-media-campaigns) as guidance, especially regarding setting up the Google Drive folder correctly, to make sure we have reference material in the future.
+* Do not use the word "hiring", as we do not provide pay - "recruitment" is a more accurate and less intimidating term.
+
+### Applications
+
+All materials pertaining to accepting applications (Google Forms, spreadsheets, and so on) should be tracked in the [Recruitment folder (under Leads)](https://drive.google.com/drive/u/0/folders/0BwdNv1PZjDeXNXZiQm55Q2VBc1U).
+
+#### Accepting applications
+
+Applications are generally accepted through Google Form submissions.
+
+1. Create a folder under Recruitment for the recruitment season (for example, `YYYY MM`).
+2. Make a copy of the template forms provided in the Recruitment folder and make the appropriate adjustments relevant to the recruitment season.
+3. Enable responses under the "Responses" tab of the form.
+4. Make the appropriate website updates:
+   1. [`docs.ubclaunchpad.com`](https://github.com/ubclaunchpad/docs): make sure our [role description pages](/handbook/README.md#recruitment) are up to date, with links to the relevant Google Forms at the bottom of each page.
+   2. [`ubclaunchpad.com`](https://github.com/ubclaunchpad/ubclaunchpad.com): [configure recruitment status](https://ubclaunchpad.com/config/#configuring-recruitment-status).
+
+#### Closing applications
+
+1. Disable responses under the "Responses" tab of the form.
+2. Make the appropriate website updates:
+   1. [`docs.ubclaunchpad.com`](https://github.com/ubclaunchpad/docs): remove links to application Google Forms from the [role description pages](/handbook/README.md#recruitment)
+   2. [`ubclaunchpad.com`](https://github.com/ubclaunchpad/ubclaunchpad.com): [configure recruitment status](https://ubclaunchpad.com/config/#configuring-recruitment-status).
+
+#### Screening applicants
+
+To screen applications, we provide a set of criteria, each to be graded on a 0-2 scale from "unsatisfactory" to "excellent" *relative to the applicant's skill level* so that we can try to achieve the experience distributions described in our [recruitment goals](#goals). These scores are used to determine the candidates to interview.
+
+For most of our entry roles (developers, designers, and strategy), we have the following criteria:
+
+* C1: Willingness to learn (self-drive, taking time outside of classes and work to learn and build things)
+* C2: Passion and interest (for example, comprehensiveness of answer to "tell us about a project", even if not technically comprehensive)
+* C3: Rate the best of the provided items from the OR/AND's from the relevant skill bucket they fall in
+
+### Interviews
+
+Our interview processes are documented in the [private Leads repository](https://github.com/ubclaunchpad/leads). This includes guides, questions, scoring criteria, email templates, and more.
+
+Members of Launch Pad who are not [leads](/handbook/onboarding/leads.md) may be temporarily granted access to the Leads repository so that they can access our interview documentation.

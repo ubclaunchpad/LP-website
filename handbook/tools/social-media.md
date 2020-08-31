@@ -26,7 +26,9 @@ Analytics are a great way to track the impact of social media posts and campaign
 
 Outside of occasionally sharing miscellaneous tidbits from [`#cop-sharing`](https://ubclaunchpad.slack.com/archives/C01622TSU9W), we should focus on creating social media posts as part of campaigns, each centered around a long-form article. This helps us have consistent messaging and (hopefully) higher-quality, more engaging content.
 
+::: tip
 All content prepared for social media campaigns should be stored or linked to in the [Social Media](https://drive.google.com/drive/folders/1tRSa-obWwr_JU57tpscqmxIUZPlfqckQ?usp=sharing) folder (under Strategy).
+:::
 
 ### Preparation
 
