@@ -82,8 +82,23 @@ For most of our entry roles (developers, designers, and strategy), we have the f
 * C2: Passion and interest (for example, comprehensiveness of answer to "tell us about a project", even if not technically comprehensive)
 * C3: Rate the best of the provided items from the OR/AND's from the relevant skill bucket they fall in
 
+Once applicants have been screened, decide on a score threshold for each skill level and send out interview offers and decision updates to candidates. See [emails (in Leads)](https://github.com/ubclaunchpad/leads/blob/master/interviews/emails.md) for email templates, and please remember our [feedback policy](#feedback).
+
 ### Interviews
 
 Our interview processes are documented in the [private Leads repository](https://github.com/ubclaunchpad/leads). This includes guides, questions, scoring criteria, email templates, and more.
 
 Members of Launch Pad who are not [leads](/handbook/onboarding/leads.md) may be temporarily granted access to the Leads repository so that they can access our interview documentation.
+
+Once applicants have been interviewed, decide on a score threshold for each skill level and send out offers and decision updates to candidates. See [emails (in Leads)](https://github.com/ubclaunchpad/leads/blob/master/interviews/emails.md) for email templates, and please remember our [feedback policy](#feedback).
+
+### Feedback
+
+Unfortunately, we *do not* provide feedback regarding a decision for either the [screening](#screening-applicants) or [interview](#interviews) phase of a candidate's application process. This means we can not provide specific answers to questions like:
+
+* "Why did I get rejected?"
+* "How could I have answered X question better?"
+* "Should I have brought up Y, Z in response to X question?"
+* "Who graded me?"
+
+However, feel free to provide more general advice to candidates that reach out, such as resume pointers or things the candidate can do to round out their skills.
