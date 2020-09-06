@@ -25,6 +25,8 @@ To provide support to our less experienced members and ensure a productive envir
 * around 40% of members be "beginners".
 * at least 20% of members (including leads) be "experienced".
 
+Each lead typically leads 1 team. We aim for a club size of 8 developers (excluding the lead) per team, to accomodate for members potentially leaving throughout the semester.
+
 ### Design Roles
 
 When recruiting for design roles, it is important to note that most teams will consist of only 1 designer, sometimes 2. Because of this, experience levels of designers per team may vary. Our definition experience levels are as follows:
