@@ -94,17 +94,6 @@ Members of Launch Pad who are not [leads](/handbook/onboarding/leads.md) may be 
 
 Once applicants have been interviewed, decide on a score threshold for each skill level and send out offers and decision updates to candidates. See [emails (in Leads)](https://github.com/ubclaunchpad/leads/blob/master/interviews/emails.md) for email templates, and please remember our [feedback policy](#feedback).
 
-### Feedback
-
-Unfortunately, we *do not* provide feedback regarding a decision for either the [screening](#screening-applicants) or [interview](#interviews) phase of a candidate's application process. This means we can not provide specific answers to questions like:
-
-* "Why did I get rejected?"
-* "How could I have answered X question better?"
-* "Should I have brought up Y, Z in response to X question?"
-* "Who graded me?"
-
-However, feel free to provide more general advice to candidates that reach out, such as resume pointers or things the candidate can do to round out their skills.
-
 ## Frequently asked questions
 
 ### Referrals
@@ -115,7 +104,18 @@ We do not have a referral process at Launch Pad. Members can advocate on a candi
 
 All decisions sent out for either the [screening](#screening-applicants) or [interview](#interviews) are final, unless a mistake was made by reviewers while sending out decisions. Also refer to our [feedback policy](#feedback).
 
-That said, this does not mean that reviewers at Launch Pad never make an incorrect decision - see [improving recruitment](#improving-recruitment)
+That said, this does not mean that reviewers at Launch Pad never make an incorrect decision - see [improving recruitment](#improving-recruitment).
+
+### Feedback
+
+Unfortunately, we *do not* provide feedback regarding a decision for either the [screening](#screening-applicants) or [interview](#interviews) phase of a candidate's application process. This means we can not provide specific answers to questions like:
+
+* "Why did I get rejected?"
+* "How could I have answered X question better?"
+* "Should I have brought up Y, Z in response to X question?"
+* "Who graded me?"
+
+However, feel free to provide more general advice to candidates that reach out, such as resume pointers or things the candidate can do to round out their skills.
 
 ## Improving recruitment
 
