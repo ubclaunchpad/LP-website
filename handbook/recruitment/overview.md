@@ -115,7 +115,7 @@ Unfortunately, we *do not* provide feedback regarding a decision for either the 
 * "Should I have brought up Y, Z in response to X question?"
 * "Who graded me?"
 
-However, feel free to provide more general advice to candidates that reach out, such as resume pointers or things the candidate can do to round out their skills.
+However, Launch Pad members should feel free to provide more general advice to candidates that reach out, such as resume pointers or things the candidate can do to round out their skills at their description - keep in mind that this feedback does not necessarily reflect how Launch Pad's decisions are made.
 
 ## Improving recruitment
 
