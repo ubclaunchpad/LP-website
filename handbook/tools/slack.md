@@ -11,6 +11,14 @@ We use [Slack](https://slack.com) for team-wide communication, announcements, an
 * If a discussion pertains to club-wide decisions, **please do not use direct messages** - whenever possible, have the discussion in a relevant shared channel so that there is more visibility into what's going on, and to avoid excluding team members who might be able to contribute useful input. Good places to start discussions are relevant `#tm-` or `#ask-` channels.
   * If it doesn't feel like a discussion pertains to any specific channel, feel free to create a new channel (following our [naming scheme](#naming-slack-channels)) and link to it from other channels so that people can drop in on discussions they want to contribute to!
 
+#### Finding People
+
+You can also ask around in [#ot-random](https://ubclaunchpad.slack.com/archives/C061Q5328), [#ot-meetups](https://ubclaunchpad.slack.com/archives/C017WMMJY7L), or [#ask-leads](https://ubclaunchpad.slack.com/archives/CK935RD3Q) to meet everyone!
+
+In Slack, you can also identify Launch Pad leads by finding people who have the Launch Pad logo next to their name (set as their Slack status), which you can hover over to learn more:
+
+![lead status](img/lead-status.png)
+
 ## Naming Slack Channels
 
 We use a channel naming scheme to make channels easier to find (based on [ideas#13](https://github.com/ubclaunchpad/ideas/issues/13)) that leverages the following prefixes:
