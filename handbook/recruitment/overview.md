@@ -96,6 +96,12 @@ Once applicants have been interviewed, decide on a score threshold for each skil
 
 ## Frequently asked questions
 
+### Experience
+
+Lack of experience does not necessarily disqualify a candidate. In fact, we actively seek to recruit members from a wide range of experience levels - please see our [recruitment goals](#goals) for more details.
+
+Historically, due to the sheer number of applications that falls in the lower experience levels, we interview a higher percentage of applicants that fall into higher experience levels, so please do not manipulate your application to fall into a lower experience level!
+
 ### Referrals
 
 We do not have a referral process at Launch Pad. Members can advocate on a candidate's behalf, which could mean that the candidate's application gets a closer look during [screening](#screening-applicants), but we strive to stick to the criteria and grading we have laid out in our [screening criteria](#screening-applicants) and [interview guides](https://github.com/ubclaunchpad/leads).
