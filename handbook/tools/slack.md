@@ -17,7 +17,7 @@ You can also ask around in [#ot-random](https://ubclaunchpad.slack.com/archives/
 
 In Slack, you can also identify Launch Pad leads by finding people who have the Launch Pad logo next to their name (set as their Slack status), which you can hover over to learn more:
 
-![lead status](img/lead-status.png)
+![lead status](./img/lead-status.png)
 
 Keep our [best practices](#slack-best-practices) in mind when reaching out to people - for example, use threads in channels and don't use direct messages for discussions pertaining to club-wide decisions.
 

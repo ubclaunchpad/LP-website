@@ -21,9 +21,9 @@ As a lead, you should also lead in Slack participation by example - please make 
 
 To help people identify you, make sure you set a status in Slack indicating your role!
 
-![update status](img/update-status.png)
+![update status](./img/update-status.png)
 
-![set status](img/leads-set-status.png)
+![set status](./img/leads-set-status.png)
 
 ### GitHub Teams
 
