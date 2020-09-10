@@ -1,4 +1,4 @@
-# Recruitment Overview
+# 🗳️ Recruitment Overview
 
 This document provides a overview of why and how we do recruitment at [UBC Launch Pad](https://ubclaunchpad.com).
 
@@ -6,7 +6,7 @@ This document provides a overview of why and how we do recruitment at [UBC Launc
 
 We have an application and interview process to join Launch Pad because software engineering is inherently a collaborative process — one that requires every contributor to work well with each other. We want to make sure that every member is commited and has the support required to do so, regardless of what their skill level is. For the most part, this support comes from our [leads](/handbook/manifesto.md#project-teams), who also have to put in a great deal of effort to manage teams, plan projects, provide technical guidance, organize events, liaison with sponsors, and more. Given the small number of people at Launch Pad who have the background, time, and willingness to do all this, we sadly can’t accept and adequately support everyone who applies.
 
-That said, a major goal of Launch Pad is to support beginners and people from a wide range of backgrounds. We want to continue to iterate on our process (for example, our questions and criteria) to make sure that Launch Pad membership is as diverse and inclusive as possible.
+That said, a major goal of Launch Pad is to support beginners and people from a wide range of backgrounds. We want to continue to iterate on our process (for example, our questions and criteria) to make sure that Launch Pad membership is as diverse and inclusive as possible - see [improving recruitment](#improving-recruitment).
 
 ### Technical Roles
 
@@ -104,3 +104,29 @@ Unfortunately, we *do not* provide feedback regarding a decision for either the 
 * "Who graded me?"
 
 However, feel free to provide more general advice to candidates that reach out, such as resume pointers or things the candidate can do to round out their skills.
+
+## Frequently asked questions
+
+### Referrals
+
+We do not have a referral process at Launch Pad. Members can advocate on a candidate's behalf, which could mean that the candidate's application gets a closer look during [screening](#screening-applicants), but we strive to stick to the criteria and grading we have laid out in our [screening criteria](#screening-applicants) and [interview guides](https://github.com/ubclaunchpad/leads).
+
+### Decisions
+
+All decisions sent out for either the [screening](#screening-applicants) or [interview](#interviews) are final, unless a mistake was made by reviewers while sending out decisions. Also refer to our [feedback policy](#feedback).
+
+That said, this does not mean that reviewers at Launch Pad never make an incorrect decision - see [improving recruitment](#improving-recruitment)
+
+## Improving recruitment
+
+To achieve our [recruitment goals](#goals), we strive to continue iterating on our recruitment processes. This means in *every* scenario where something like the following happens:
+
+* scoring leads to a seemingly suitable candidate being disqualified
+* wording of a question causes confusion
+* a candidate, interviewer, or reviewer has a bad experience
+
+We should investigate what went wrong (for example, why was this person scored incorrectly, or what we could do to clarify a question) so that we can look into improving our process and criteria (for example, by improving scoring guidance, or updating our recommended wording for a question).
+
+These improvements should be submitted as [pull requests](/handbook/tools/github.md) to our recruitment documentation for feedback and discussion - for all steps up until interviews, that would be in [`ubclaunchpad/docs`](https://github.com/ubclaunchpad/docs), and for interviews and final decisions that would be in [`ubclaunchpad/leads`](https://github.com/ubclaunchpad/leads) (private to Launch Pad [leads](/handbook/onboarding/leads.md)).
+
+Feel free to bring up feedback regarding recruitment internally in [#ask-leads](https://ubclaunchpad.slack.com/archives/CK935RD3Q) or reach out via [team@ubclaunchpad.com](team@ubclaunchpad.com).
