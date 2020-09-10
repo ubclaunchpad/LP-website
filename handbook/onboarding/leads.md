@@ -17,6 +17,14 @@ Everyone should join a **private** channel named `#tm-leads-YYYY` (for example, 
 
 As a lead, you should also lead in Slack participation by example - please make sure you join any channels you find interesting and participate in them! See [our Slack guide](/handbook/tools/slack.md#finding-channels) for more details.
 
+### Slack Status
+
+To help people identify you, make sure you set a status in Slack indicating your role!
+
+![update status](./img/update-status.png)
+
+![set status](./img/leads-set-status.png)
+
 ### GitHub Teams
 
 Make sure you are a part of the following teams on GitHub:

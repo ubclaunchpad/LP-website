@@ -12,8 +12,8 @@ If you don't have access to anything, or if you can't complete any of these step
 
 Make sure you are part of the [UBC Launch Pad Slack workspace](https://ubclaunchpad.slack.com/).
 
-* Make sure you install the Slack app on your phone so you don't miss anything!
-* Read our [Slack](/handbook/tools/slack) guide, which will tell you how to make the most of Slack and any noteworthy channels you should join off the bat!
+* Make sure you install the Slack app on your phone and laptop so you don't miss anything!
+* Read our [Slack](/handbook/tools/slack) guide, which will tell you how to make the most of Slack, how to find and meet people, and any noteworthy channels you should join off the bat!
 
 ### Rocket Setup
 
