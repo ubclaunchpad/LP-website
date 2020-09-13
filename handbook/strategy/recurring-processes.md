@@ -18,13 +18,13 @@ At the end of a school year (towards the end of the winter semester), the Strate
 
 The [club objectives page](/handbook/strategy/objectives.md) should be updated with our progress, and improvements we could make to our processes should be updated throughout the handbook. An announcement should be made in Slack about our goals, any outcomes from the retrospective, and whether the club has any feedback for the leadership team.
 
-## Kick-off Event
+## Kickoff Event
 
-Each school year starts with a kick-off event where new members are introduced to Launch Pad and project ideation happens. Smaller-scale versions of this event might happen at the start of the second semester, depending on how many new projects are started.
+Each school year starts with a kickoff event where new members are introduced to Launch Pad and project ideation happens. Smaller-scale versions of this event might happen at the start of the second semester, depending on how many new projects are started.
 
 ### Schedule
 
-This schedule might vary year to year, but kick-off events will generally follow this format.
+This schedule might vary year to year, but kickoff events will generally follow this format.
 
 | Time | Activity
 | ---- | --------
@@ -44,9 +44,9 @@ Project ideation revolves around the guidelines provided in our [Project Scope g
 
 In general, the process is as follows:
 
-1. Prior to kick-off, we will ask for some "core feature" submissions via Google Forms from the entire club
+1. Prior to kickoff, we will ask for some "core feature" submissions via Google Forms from the entire club
 2. Leads will review the submissions and consolidate them into "ideas", with each lead adopting one idea. These will ask as discussion points.
-3. During kick-off, the "ideas" will be presented to the club, and we will form discussion groups based on interest to refine each "idea" back down into a "core feature". Discussions will take place over several iterations.
+3. During kickoff, the "ideas" will be presented to the club, and we will form discussion groups based on interest to refine each "idea" back down into a "core feature". Discussions will take place over several iterations.
    * At each iteration, leads will provide updates on where each "idea" is going. In between iterations, members will be able to move between groups based on what they might be interested in.
 4. After the last round of discussions, the groups will become Launch Pad project teams!
 
