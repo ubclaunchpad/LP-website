@@ -34,7 +34,9 @@ This schedule might vary year to year, but kickoff events will generally follow 
 | 15m  | Break
 | 10m  | Presentation: "Project Ideation" - see [Ideation](#ideation)
 | 15m  | Ideation: Round 1
+| 5m   | Break and ideas updates
 | 15m  | Ideation: Round 2
+| 5m   | Break and ideas updates
 | 15m  | Ideation: Round 3
 | TODO | TODO
 
