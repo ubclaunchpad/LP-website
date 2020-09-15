@@ -49,7 +49,7 @@ These are **guidelines**, not strict rules! Teams should adjust these processes 
 * [**Sprint Planning**](./project-management/sprints.md): Guidelines and advice for how to plan out work with your team to drive forward progress on your project!
 * [**Repository Management**](./project-management/repositories.md): Guidelines for how to manage your GitHub repository and enforce coding standards. Remember: your repository is your main outlet to the outside world - and this outside world includes potential employers! Make it informative, organized, and pretty!
 
-## ♟ Strategy
+## 💼 Strategy
 
 These pages document our efforts in improving Launch Pad and our reach. While the [Strategy team](/handbook/onboarding/strategy.md) will own some of content and processes described in these pages, these documents still involve everyone in Launch Pad!
 
