@@ -38,7 +38,7 @@ This schedule might vary year to year, but kickoff events will generally follow 
 | 15m  | Ideation: Round 2
 | 5m   | Break and ideas updates
 | 15m  | Ideation: Round 3
-| TODO | TODO
+| 15m  | Conclusion
 
 ### Ideation
 
@@ -50,7 +50,7 @@ In general, the process is as follows:
 2. Leads will review the submissions and consolidate them into "ideas", with each lead adopting one idea. These will act as discussion points.
 3. During kickoff, the "ideas" will be presented to the club, and we will form discussion groups based on interest to refine each "idea" back down into a "core feature". Discussions will take place over several iterations.
    * At each iteration, leads will provide updates on where each "idea" is going. In between iterations, members will be able to move between groups based on what they might be interested in.
-4. After the last round of discussions, the groups will become Launch Pad project teams!
+4. After the last round of discussions, we will ask everyone for their group preferences and try to assign everyone to a team such that the teams are reasonably balanced in size and experience.
 
 Note that the goal of ideation is to simply define a ["core feature"](/handbook/project-management/scope.md#core-feature-and-the-mvp) which will then be specc'd out into a minimum viable product (MVP) during the following week. This is when implementation and design details can be decided, so don't worry too much about that during ideation!
 
