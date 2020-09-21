@@ -29,10 +29,10 @@ This schedule might vary year to year, but kickoff events will generally follow 
 | Time | Activity
 | ---- | --------
 | 30m  | Presentation: "Welcome to Launch Pad"
-| 15m  | Icebreaker: Round 1
-| 15m  | Icebreaker: Round 2
+| 15m  | [Icebreaker](#icebreakers): Round 1
+| 15m  | [Icebreaker](#icebreakers): Round 2
 | 15m  | Break
-| 10m  | Presentation: "Project Ideation" - see [Ideation](#ideation)
+| 10m  | Presentation: ["Project Ideation"](#project-ideation)
 | 15m  | Ideation: Round 1
 | 5m   | Break and ideas updates
 | 15m  | Ideation: Round 2
@@ -40,7 +40,15 @@ This schedule might vary year to year, but kickoff events will generally follow 
 | 15m  | Ideation: Round 3
 | 15m  | Conclusion
 
-### Ideation
+### Icebreakers
+
+Icebreakers are intended to help everyone familiarize themselves with some members of Launch Pad. Members are assigned to groups in each icebreaker round, where everyone works together on an activity. We have done various activities for icebreakers in the past, but our current activity is a discussion prompt:
+
+> Find up to three things everyone in your group has in common (for example, syllables in names or sock colour) and one dimension where you are the most diverse (for example, nationality or major).
+
+The goal of this activity is for groups to collaborate by coming up with a strategy for finding commonalities and differences, while getting to know each other better!
+
+### Project Ideation
 
 Project ideation revolves around the guidelines provided in our [Project Scope guide](/handbook/project-management/scope.md), especially our guidelines about using a "core feature" to help narrrow MVP scope.
 
