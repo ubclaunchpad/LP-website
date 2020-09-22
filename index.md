@@ -25,7 +25,7 @@ features:
 
 You can easily search this *entire* website using the search bar in the navigation bar! Pressing `s` allows you to immediately start typing a query. In addition to results from this website, you can easily hop into a "code and content" or "issues and pull requests" search from the suggestions, which will give you results from *everything* in the UBC Launch Pad GitHub organization!
 
-You can also add this website as a custom search engine in many browsers (for example, [Chrome](https://support.google.com/chrome/answer/95426))! Just set the following fields:
+You can also add this website as a custom search engine in many browsers (for example, [Chrome](https://support.google.com/chrome/answer/95426)) and tools like [Alfred](https://www.alfredapp.com/help/features/web-search/#custom)! Just set the following fields:
 
 - Search Engine: `Launch Pad`
 - Keyword: `lp`
