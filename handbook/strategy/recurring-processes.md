@@ -18,6 +18,50 @@ At the end of a school year (towards the end of the winter semester), the Strate
 
 The [club objectives page](/handbook/strategy/objectives.md) should be updated with our progress, and improvements we could make to our processes should be updated throughout the handbook. An announcement should be made in Slack about our goals, any outcomes from the retrospective, and whether the club has any feedback for the leadership team.
 
+## Kickoff Event
+
+Each school year starts with a kickoff event where new members are introduced to Launch Pad and project ideation happens. Smaller-scale versions of this event might happen at the start of the second semester, depending on how many new projects are started.
+
+### Schedule
+
+This schedule might vary year to year, but kickoff events will generally follow this format.
+
+| Time | Activity
+| ---- | --------
+| 30m  | Presentation: "Welcome to Launch Pad"
+| 15m  | [Icebreaker](#icebreakers): Round 1
+| 15m  | [Icebreaker](#icebreakers): Round 2
+| 15m  | Break
+| 10m  | Presentation: ["Project Ideation"](#project-ideation)
+| 15m  | Ideation: Round 1
+| 5m   | Break and ideas updates
+| 15m  | Ideation: Round 2
+| 5m   | Break and ideas updates
+| 15m  | Ideation: Round 3
+| 15m  | Conclusion
+
+### Icebreakers
+
+Icebreakers are intended to help everyone familiarize themselves with some members of Launch Pad. Members are assigned to groups in each icebreaker round, where everyone works together on an activity. We have done various activities for icebreakers in the past, but our current activity is a discussion prompt:
+
+> Find up to three things everyone in your group has in common (for example, syllables in names or sock colour) and one dimension where you are the most diverse (for example, nationality or major).
+
+The goal of this activity is for groups to collaborate by coming up with a strategy for finding commonalities and differences, while getting to know each other better!
+
+### Project Ideation
+
+Project ideation revolves around the guidelines provided in our [Project Scope guide](/handbook/project-management/scope.md), especially our guidelines about using a "core feature" to help narrrow MVP scope.
+
+In general, the process is as follows:
+
+1. Prior to kickoff, we will ask for some "core feature" submissions via Google Forms from the entire club
+2. Leads will review the submissions and consolidate them into "ideas", with each lead adopting one idea. These will act as discussion points.
+3. During kickoff, the "ideas" will be presented to the club, and we will form discussion groups based on interest to refine each "idea" back down into a "core feature". Discussions will take place over several iterations.
+   * At each iteration, leads will provide updates on where each "idea" is going. In between iterations, members will be able to move between groups based on what they might be interested in.
+4. After the last round of discussions, we will ask everyone for their group preferences and try to assign everyone to a team such that the teams are reasonably balanced in size and experience.
+
+Note that the goal of ideation is to simply define a ["core feature"](/handbook/project-management/scope.md#core-feature-and-the-mvp) which will then be specc'd out into a minimum viable product (MVP) during the following week. This is when implementation and design details can be decided, so don't worry too much about that during ideation!
+
 ## Selecting Leadership
 
 This section documents how Launch Pad's leadership team is selected. Learn more about club leadership in our [manifesto's "club structure" section](/handbook/manifesto.md#club-structure).
