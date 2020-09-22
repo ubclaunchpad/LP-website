@@ -17,6 +17,7 @@ module.exports = {
   head: [
     ['meta', { property: 'og:image', content: 'https://ubclaunchpad.com/share.jpg' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['script', { src: '/scrollToAnchorHack.js' }],
   ],
 
   // https://vuepress-theme-yuu.netlify.app/ for dark theme
