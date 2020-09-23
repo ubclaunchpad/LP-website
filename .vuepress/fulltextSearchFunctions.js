@@ -5,7 +5,7 @@ export async function processSuggestions(suggestions, queryString) {
   if (queryString) {
     // these suggestions help users quickly jump to search on other relevant platforms
     suggestions.push({
-      path: 'https://sourcegraph.com/search?patternType=literal&q=repo:^github.com/ubclaunchpad/*+',
+      path: 'https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/.*+fork:no+',
       slug: queryString,
       parentPageTitle: 'Other',
       title: 'Content and code',
