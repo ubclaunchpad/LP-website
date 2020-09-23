@@ -28,6 +28,7 @@ Then, you can give it some information about you:
 
 ```
 /rocket user edit --github <username>
+/rocket user edit --email <email>
 ```
 
 Learn more about Rocket in our [Slack guide's Rocket section](/handbook/tools/slack#rocket).
