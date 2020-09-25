@@ -14,7 +14,7 @@ Similarly, **do not add credentials (usernames, passwords) in Google Drive**. In
 
 ## Folders
 
-A list of shared Drive folders used at Launch Pad can be found in the "Quick Links" dropdown in the top right corner of the [`docs.ubclaunchpad.com`](https://docs.ubclaunchpad.com/) website. These folders are defined in [the site configuration](https://sourcegraph.com/github.com/ubclaunchpad/docs/-/blob/.vuepress/config.js#L37-45). Please refer to the [onboarding documentation](/handbook/onboarding/everyone.md) to see which folders should be shared with you.
+A list of shared Drive folders used at Launch Pad can be found in the "Quick Links" dropdown in the top right corner of the [`docs.ubclaunchpad.com`](https://docs.ubclaunchpad.com/) website. These folders are defined in [the site configuration](https://sourcegraph.com/github.com/ubclaunchpad/docs/-/blob/.vuepress/config.js#L37-45). Please refer to the [onboarding documentation](/handbook/onboarding/everyone.md) to see which folders should be shared with you. Access and permissions folders is configured by [Rocket](/handbook/onboarding/everyone.md#rocket-setup) - ask someone to add you to the appropriate Rocket team, and check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.
 
 All folders should be a subfolder of the [shared Launch Pad folder](https://drive.google.com/drive/folders/1u-U3w0V0MaLQrWtDdw_8n15V2lO-6gXo) for easier access management. Within the shared Launch Pad folder, we try to maintain the following structure:
 

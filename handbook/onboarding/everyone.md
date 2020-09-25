@@ -24,18 +24,24 @@ Make sure you are part of the [UBC Launch Pad Slack workspace](https://ubclaunch
 /rocket user add
 ```
 
-Then, you can give it some information about you:
+Then, you can give it some information about you - the following are particularly important, since it is how you will be granted access to the correct G[GitHub teams](#github-access) and [Google Drive folders](#drive-access):
 
 ```
 /rocket user edit --github <username>
 /rocket user edit --email <email>
 ```
 
-Learn more about Rocket in our [Slack guide's Rocket section](/handbook/tools/slack#rocket).
+You can verify your information is correct by sending:
+
+```
+/rocket user view
+```
+
+Learn more about Rocket in our [Slack guide's Rocket section](/handbook/tools/slack#rocket)!
 
 ### GitHub Access
 
-Make sure you are part of the [UBC Launch Pad GitHub organization](https://github.com/ubclaunchpad/). [Rocket](#rocket-setup) should do this for you.
+Make sure you are part of the [UBC Launch Pad GitHub organization](https://github.com/ubclaunchpad/). [Rocket](#rocket-setup) should do this for you - check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.
 
 * You should be able to access our private repositories, such as [`ubclaunchpad/ideas`](https://github.com/ubclaunchpad/ideas)
   * If you can't see the Ideas repository, check that you are in the GitHub team [`@ubclaunchpad/all`](https://github.com/orgs/ubclaunchpad/teams/all) - if not,make sure you've [set up your profile on Rocket](#rocket-setup)!
@@ -44,7 +50,7 @@ Make sure you are part of the [UBC Launch Pad GitHub organization](https://githu
 
 ### Drive Access
 
-Make sure you have access to our [Projects Folder](https://drive.google.com/drive/u/0/folders/18piFDBdAUuZAOf9xOgpf2_HBUuVNae0S) on Google Drive - this is where your team's loose documents will live!
+Make sure you have access to our [Projects Folder](https://drive.google.com/drive/u/0/folders/18piFDBdAUuZAOf9xOgpf2_HBUuVNae0S) on Google Drive - this is where your team's loose documents will live. [Rocket](#rocket-setup) should do this for you - check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.
 
 ## Further Actions
 
