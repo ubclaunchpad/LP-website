@@ -27,13 +27,13 @@ To help people identify you, make sure you set a status in Slack indicating your
 
 ### GitHub Teams
 
-Make sure you are a part of the following teams on GitHub:
+Make sure you are a part of the following teams on GitHub - [Rocket](/handbook/onboarding/everyone.md#rocket-setup) should do this for you - check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.
 
 * [`@ubclaunchpad/leads`](https://github.com/orgs/ubclaunchpad/teams/leads), and check that you can access the [private Leads repository](https://github.com/ubclaunchpad/leads) - this repository primarily contains interview resources and tracking issues
 * [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [private Strategy repository](https://github.com/ubclaunchpad/strategy) - this repository contains sponsorship resources and event/sponsorship tracking issues
 * [`@ubclaunchpad/design`](https://github.com/orgs/ubclaunchpad/teams/design), and check that you can access the [public Design repository](https://github.com/ubclaunchpad/design) - this repository contains (some) design assets, resources, and tracking issues
 
-Additionally, the presidents should also be a part of [`@ubclaunchpad/exec`](https://github.com/orgs/ubclaunchpad/teams/exec) and familiarize themselves with the [Exec repository](https://github.com/ubclaunchpad/exec), where we keep track of accounts and credentials.
+Additionally, the presidents should also be a part of [`@ubclaunchpad/exec`](https://github.com/orgs/ubclaunchpad/teams/exec) and familiarize themselves with the [Exec repository](https://github.com/ubclaunchpad/exec), where we keep track of accounts and credentials. Permissions for this repository is managed by hand.
 
 ::: tip
 Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifications, check our [GitHub guide](../tools/github.md#setting-up-notifications).
@@ -41,7 +41,7 @@ Make sure that you are **watching** all relevant repositories so that you don't 
 
 ### Google Drive
 
-Make sure all leads are given "editor" access to the [shared Launch Pad folder](https://drive.google.com/drive/folders/1u-U3w0V0MaLQrWtDdw_8n15V2lO-6gXo), which is owned by the `team@ubclaunchpad.com` account (more details are in the [Exec repository](https://github.com/ubclaunchpad/exec)).
+Make sure all leads are given "editor" access to the [shared Launch Pad folder](https://drive.google.com/drive/folders/1u-U3w0V0MaLQrWtDdw_8n15V2lO-6gXo), which is owned by the `team@ubclaunchpad.com` account (more details are in the [Exec repository](https://github.com/ubclaunchpad/exec)). [Rocket](#rocket-setup) should do this for you - check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.
 
 Learn more about managing these folders in the [Google Drive documentation](/handbook/tools/drive.md).
 
@@ -72,6 +72,12 @@ The handbook's Project Management pages are a must-read - for all leads:
 * [Sprints](../project-management/sprints.md) - how to plan and collaborate with your team to deliver on your project
 
 Additionally, technical leads will want to take a look at the [Repository Management](/handbook/project-management/repositories) page to help them set up tooling for their projects.
+
+To set up your team, **use Rocket**, which will automatically configure GitHub teams for you. To create a team, set up a Slack channel with all your team members, then:
+
+```
+/rocket team create [TEAM] --lead [LEAD] --channel [CHANNEL]
+```
 
 ### Meetings
 

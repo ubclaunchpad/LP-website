@@ -24,7 +24,7 @@ Make sure you are part of the [UBC Launch Pad Slack workspace](https://ubclaunch
 /rocket user add
 ```
 
-Then, you can give it some information about you:
+Then, you can give it some information about you - the following are particularly important, since it is how you will be granted access to the correct G[GitHub teams](#github-access) and [Google Drive folders](#drive-access):
 
 ```
 /rocket user edit --github <username>
