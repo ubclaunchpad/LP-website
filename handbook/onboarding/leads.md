@@ -25,6 +25,10 @@ To help people identify you, make sure you set a status in Slack indicating your
 
 ![set status](./img/leads-set-status.png)
 
+### Rocket Team
+
+Make sure you get added to the `leads` [Rocket](/handbook/tools/slack#rocket) team by the co-presidents. Co-presidents should also make sure they are added to the `exec` Rocket team.
+
 ### GitHub Teams
 
 Make sure you are a part of the following teams on GitHub - [Rocket](/handbook/onboarding/everyone.md#rocket-setup) should do this for you - check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.

@@ -13,6 +13,10 @@ Make sure you are added to:
 
 See [our Slack guide](/handbook/tools/slack.md) for more details.
 
+### Rocket Team
+
+Make sure you get added to the `strategy` [Rocket](/handbook/tools/slack#rocket) team by the co-presidents.
+
 ### GitHub Teams
 
 Make sure you are a part of the GitHub team [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [private Strategy repository](https://github.com/ubclaunchpad/strategy) - this repository contains sponsorship resources and event/sponsorship tracking issues. [Rocket](/handbook/onboarding/everyone.md#rocket-setup) should do this for you - check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.

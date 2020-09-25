@@ -64,3 +64,5 @@ For some of you, there are additional things you should be aware of:
 * [for Design](./design.md)
 * [for Strategy](./strategy.md)
 * [for Leads](./leads.md)
+
+When project teams are formed, make sure your tech lead adds you to the appropriate [Rocket](/handbook/tools/slack#rocket) team!

@@ -29,3 +29,11 @@ All folders should be a subfolder of the [shared Launch Pad folder](https://driv
   * Spreadsheets and Google Forms used for [recruitment](/handbook/recruitment/overview.md) are also kept in this folder.
 * [Exec](https://drive.google.com/drive/u/0/folders/10b_2H5EhPpJtdgNi7QizRhWC9Qtivr8L) - for the co-presidents
   * Presidents should create a document for meeting notes titled "Exec: Meeting Notes YYYY". All exec meetings should go in this document.
+
+Access and permissions folders is configured by [Rocket](/handbook/onboarding/everyone.md#rocket-setup) - ask someone to add you to the appropriate Rocket team, and check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem. Strategy, Design, and everyone else each only have access to folders relevant to their role. Leads have access to all the above folders throught the UBC Launch Pad shared folder. This is configured using [Rocket](/handbook/tools/slack#rocket):
+
+```
+/rocket team edit [TEAM] --folder [FOLDER ID]
+```
+
+Rocket then automatically performs the appropriate permissions updates.
