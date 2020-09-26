@@ -10,7 +10,7 @@ This is why scoping your project appropriately is vital to its success!
 
 ## Core Feature and the MVP
 
-In general, your idea should be able to be distilled down to a single core feature. For example:
+In many cases, your *idea* should be able to be distilled down to a **single** *core feature*. For example:
 
 | Idea | Core Feature |
 |------|--------------|
@@ -18,12 +18,24 @@ In general, your idea should be able to be distilled down to a single core featu
 | "a choose-your-own adventure game where you try and survive as a UBC student" | interface to make choices and present consequences
 | "slack bot and team management system for Launch Pad" | update GitHub teams via Slack
 
-This should be done *before* you start any sort of development. Using this core feature, you should determine:
+Anything broader than an *idea* is likely more of a theme. Narrowing down your *core feature* should be done **before** you start any sort of development - see [ideation](#ideation) for some tips. Using this *core feature*, you should then determine:
 
 * 💪 **Requirements**: Everything you need to achieve to deliver your core feature, and *nothing else*.
-* 🛣 **Stretch Goals**: A *small* set of additional things that must be done to deliver on anything you want to achieve that does not fall within your core feature.
+* 🛣 **Stretch Goals**: A *small* set of additional things that must be done to deliver on anything you want to achieve that does not fall within your *core feature*.
 
-We call the core feature and this set of "requirements" the **Minimum Viable Product**, or MVP.
+We call the *core feature* and this set of "requirements" the **Minimum Viable Product**, or MVP.
+
+### Ideation
+
+To help narrow down a *core feature*, start with a *theme*, which could be something like "productivity and tasks scheduling" or "Launch Pad internal tooling". From here, try to ask questions like the following to drive discussions:
+
+* What pain points do you or certain demographics face regarding this *theme*?
+* What kind of specific functions can address these pain points?
+* Are these specific functions broad, like an *idea*, or can they be narrowed down further to a *core feature*?
+
+Avoid talking about technical details, unless it is critical to your ideas and core features - for example, an idea that will require mobile features will likely have to be a mobile application. Be wary of having a technology you want to *really* want to use and trying to apply it to every problem you see.
+
+At Launch Pad, ideation will often happen at [kickoff events](/handbook/strategy/recurring-processes.md#kickoff-event).
 
 ## Project Timeline
 
