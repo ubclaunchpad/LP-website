@@ -33,7 +33,13 @@ To help narrow down a *core feature*, start with a *theme*, which could be somet
 * What kind of specific functions can address these pain points?
 * Are these specific functions broad, like an *idea*, or can they be narrowed down further to a *core feature*?
 
-Avoid talking about technical details, unless it is critical to your ideas and core features - for example, an idea that will require mobile features will likely have to be a mobile application. Be wary of having a technology you want to *really* want to use and trying to apply it to every problem you see.
+During discussions, keep the following in mind as well:
+
+* Go around the group to engage as many people as possible.
+* Be encouraging and positive, even if you think the ideas is not very good.
+* Instead of rejecting an idea or feature, you can discuss what kind of problem the idea is trying to tackle and suggest another potential approach, or discuss similar problems instead.
+
+**Avoid talking about technical details**, unless it is critical to your ideas and core features - for example, an idea that will require mobile features will likely have to be a mobile application. Be wary of having a technology you want to *really* want to use and trying to apply it to every problem you see.
 
 At Launch Pad, ideation will often happen at [kickoff events](/handbook/strategy/recurring-processes.md#kickoff-event).
 
