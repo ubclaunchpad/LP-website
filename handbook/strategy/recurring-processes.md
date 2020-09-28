@@ -50,13 +50,13 @@ The goal of this activity is for groups to collaborate by coming up with a strat
 
 ### Project Ideation
 
-Project ideation revolves around the guidelines provided in our [Project Scope guide](/handbook/project-management/scope.md), especially our guidelines about using a "core feature" to help narrrow MVP scope.
+Project ideation revolves around the guidelines provided in our [Project Scope guide](/handbook/project-management/scope.md), especially our guidelines about using a "core feature" to help narrrow MVP scope. The goal of ideation is not just to come up with ideas, but to also form our [project teams](/handbook/manifesto.md#project-teams).
 
 In general, the process is as follows:
 
 1. Prior to kickoff, we will ask for some "core feature" submissions via Google Forms from the entire club
-2. Leads will review the submissions and consolidate them into "ideas", with each lead adopting one idea. These will act as discussion points.
-3. During kickoff, the "ideas" will be presented to the club, and we will form discussion groups based on interest to refine each "idea" back down into a "core feature". Discussions will take place over several iterations.
+2. Leads will review the submissions and consolidate them into "themes", with each lead adopting one idea that they are interested in working on. These will act as topics for discussion groups that will become Launch Pad teams.
+3. During kickoff, the "themes" will be presented to the club, and we will form discussion groups based on interest to try and refine each "theme" back down into an "idea", and then a "core feature". Discussions will take place over several iterations.
    * At each iteration, leads will provide updates on where each "idea" is going. In between iterations, members will be able to move between groups based on what they might be interested in. Learn more about this process in our [Project Scope guide](/handbook/project-management/scope.md#ideation).
    * If a group arrives at a seemingly certain *core feature* in an early iteration, either try and dive deeper into your core feature to make sure that it is solid or explore different takes on your theme.
 4. After the last round of discussions, we will ask everyone for their group preferences and try to assign everyone to a team such that the teams are reasonably balanced in size and experience.
