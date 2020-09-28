@@ -36,7 +36,7 @@ While the [Easy Way](#the-easy-way) is good for small changes, writing larger ch
 4. Push your local branch to the remote repository using `git push origin HEAD`
 5. Make a pull request on GitHub's web interface (and make sure to fill out the provided template!)
 
-More details on using `git` is available in our [Git Workflow guide](./resources/git-workflow.md).
+More details on using `git` are available in our [Git Workflow guide](./resources/git-workflow.md).
 
 ## Structuring Content
 
