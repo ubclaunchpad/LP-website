@@ -68,20 +68,37 @@ We use GitHub and Slack for pretty much *everything* - make sure you are intimat
 
 The Leadership team is responsible, with the help of the Strategy team, for implementing our [recurring processes](/handbook/strategy/recurring-processes.md). This includes selecting the next generation of Launch Pad leads, working towards our club objectives, and more.
 
-### Projects
+### Projects and Teams
 
 The handbook's Project Management pages are a must-read - for all leads:
 
-* [Scope](../project-management/scope.md) - how to develop and scope ideas for Launch Pad projects, as well as the timeline for development
-* [Sprints](../project-management/sprints.md) - how to plan and collaborate with your team to deliver on your project
+* [Scope](../project-management/scope.md) - how to develop and scope ideas for Launch Pad projects, as well as a suggested timeline for your team's progress.
+* [Sprints](../project-management/sprints.md) - how to plan and collaborate with your team to deliver on your project, including advice on how to run meetings.
 
-Additionally, technical leads will want to take a look at the [Repository Management](/handbook/project-management/repositories) page to help them set up tooling for their projects.
+Additionally, technical leads will want to take a look at the [Repository Management](/handbook/project-management/repositories) page for advice on how to set up tooling for their projects.
 
-To set up your team, **use Rocket**, which will automatically configure GitHub teams for you. To create a team, set up a Slack channel with all your team members, then:
+#### Starting a Team
 
-```
-/rocket team create [TEAM] --lead [LEAD] --channel [CHANNEL]
-```
+Team formation happens in [kickoff events](/handbook/strategy/recurring-processes.md#project-ideation). Once teams have formed, follow these steps to get started!
+
+1. Create a **public** Slack channel using the [naming scheme](/handbook/tools/slack.md#naming-slack-channels) (e.g. `#tm-TEAMNAME`), and add all the developers and designers in your team to the channel.
+   1. Make sure everyone on your team has set up their Rocket profiles, as per the [onboarding](/handbook/onboarding/everyone.md#rocket-setup).
+2. Run the following command in Slack so that Rocket can set up your GitHub team:
+   ```
+   /rocket team create $TEAM --lead $YOU --channel $CHANNEL
+   ```
+3. Set up your repository!
+   1. Verify that your team has been created in the [GitHub teams page](https://github.com/orgs/ubclaunchpad/teams). If your team members have set up Rocket correctly, they should all be in the team.
+   2. [Create a repository](https://github.com/organizations/ubclaunchpad/repositories/new). Under your new repository's "Settings" page, go to "Manage access" and:
+      1. Invite the GitHub team Rocket created for you with "Maintain" permission.
+      2. We recommend you create public repositories, but if you want to start off with a private repository, invite the `ubclaunchpad/all` team as well with "Write" permission.
+   3. We recommend that you set up branch protection - under "Settings", go to "Branches" and add a rule for your default branch with "Require pull requests before merging". You can add more rules once you have more tooling set up for your repository - see [Repository Management](/handbook/project-management/repositories) for ideas.
+   4. Add a link to the repository in your Slack channel description.
+4. Set up your drive folder!
+   1. Within the shared "Launch Pad Projects" folder, create a folder for your team under your the appropriate year folder. You should not need to invite anyone to the folder.
+   2. Create a document for all your meeting notes - see [sprint meetings](../project-management/sprints.md#sprint-meetings) for ideas.
+   3. Add a link to your drive folder in your Slack channel description.
+5. Announce your channel in the leads channel so that other leads can join in on your discussions!
 
 ### Meetings
 
