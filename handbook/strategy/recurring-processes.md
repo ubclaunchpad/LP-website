@@ -42,11 +42,13 @@ This schedule might vary year to year, but kickoff events will generally follow 
 
 ### Icebreakers
 
-Icebreakers are intended to help everyone familiarize themselves with some members of Launch Pad. Members are assigned to groups in each icebreaker round, where everyone works together on an activity. We have done various activities for icebreakers in the past, but our current activity is a discussion prompt:
+Icebreakers are intended to help everyone familiarize themselves with some members of Launch Pad. Members are assigned to groups in each icebreaker round, where everyone works together on an activity. We have done various activities for icebreakers in the past, but one such activity is a discussion prompt:
 
 > Find up to three things everyone in your group has in common (for example, syllables in names or sock colour) and one dimension where you are the most diverse (for example, nationality or major).
 
-The goal of this activity is for groups to collaborate by coming up with a strategy for finding commonalities and differences, while getting to know each other better!
+The lead in the group should start by encouraging each member to make a self-introduction. The goal of this activity is for groups to collaborate by coming up with a strategy for finding commonalities and differences, while getting to know each other better!
+
+[docs#186](https://github.com/ubclaunchpad/docs/issues/186) tracks possible improvements we could make to our icebreakers.
 
 ### Project Ideation
 
