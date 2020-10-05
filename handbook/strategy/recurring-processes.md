@@ -24,7 +24,7 @@ Each school year starts with a kickoff event where new members are introduced to
 
 ### Schedule
 
-This schedule might vary year to year, but kickoff events will generally follow this format.
+This schedule might vary year to year, but kickoff events will generally follow this format. Because a *lot* happens at our kickoff events, particularly project ideation, these have traditionally been all-day events. The current format is already condensed, due to remote requirements.
 
 | Time | Activity
 | ---- | --------
@@ -33,11 +33,12 @@ This schedule might vary year to year, but kickoff events will generally follow 
 | 15m  | [Icebreaker](#icebreakers): Round 2
 | 15m  | Break
 | 10m  | Presentation: ["Project Ideation"](#project-ideation)
-| 15m  | Ideation: Round 1
-| 5m   | Break and ideas updates
-| 15m  | Ideation: Round 2
-| 5m   | Break and ideas updates
-| 15m  | Ideation: Round 3
+| 10m  | Ideation: Round 1 (short)
+| 10m  | Ideation: Round 2 (short)
+| 10m  | Ideation: Round 3 (short)
+| 10m  | Break and ideas updates
+| 15m  | Ideation: Round 4 (long)
+| 15m  | Ideation: Round 5 (long)
 | 15m  | Conclusion
 
 ### Icebreakers
@@ -58,9 +59,10 @@ In general, the process is as follows:
 
 1. Prior to kickoff, we will ask for some "core feature" submissions via Google Forms from the entire club
 2. Leads will review the submissions and consolidate them into "themes", with each lead adopting one idea that they are interested in working on. These will act as topics for discussion groups that will become Launch Pad teams.
-3. During kickoff, the "themes" will be presented to the club, and we will form discussion groups based on interest to try and refine each "theme" back down into an "idea", and then a "core feature". Discussions will take place over several iterations.
-   * At each iteration, leads will provide updates on where each "idea" is going. In between iterations, members will be able to move between groups based on what they might be interested in. Learn more about this process in our [Project Scope guide](/handbook/project-management/scope.md#ideation).
-   * If a group arrives at a seemingly certain *core feature* in an early iteration, either try and dive deeper into your core feature to make sure that it is solid or explore different takes on your theme.
+3. During kickoff, the "themes" will be presented to the club, and we will form discussion groups based on interest to try and refine each "theme" back down into an "idea", and then a "core feature" - learn more about this process in our [Project Scope guide](/handbook/project-management/scope.md#ideation). Discussions will take place over several iterations, between which members are encouraged to switch groups.
+   * For the **first 3 shorter rounds**, members will be *required* to switch to different groups. The goal of these rounds is to brainstorm and accumulate potential directions.
+   * After the first 3 rounds, leads will provide updates on where each group is going.
+   * For the **last 2 longer rounds**, leads will start focusing on narrowing down ideas and prioritizing more feasible directions. Members will still be able to move in between these rounds.
 4. After the last round of discussions, we will ask everyone for their group preferences and try to assign everyone to a team such that the teams are reasonably balanced in size and experience.
 
 Note that the goal of ideation is to simply define a ["core feature"](/handbook/project-management/scope.md#core-feature-and-the-mvp) which will then be specc'd out into a minimum viable product (MVP) during the following week. This is when implementation and design details can be decided, so don't worry too much about that during ideation!
