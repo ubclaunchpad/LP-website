@@ -100,6 +100,19 @@ Team formation happens in [kickoff events](/handbook/strategy/recurring-processe
    3. Add a link to your drive folder in your Slack channel description.
 5. Announce your channel in the leads channel so that other leads can join in on your discussions!
 
+#### 1-1's with Team Members
+
+We recommend that leads schedule 1-1 ("one-on-one") meetings with their team members on a biweekly or monthly basis. Leads might want to make the first of these meetings mandatory, and keep the subsequent ones optional.
+
+1-1's can run for 10 to 20 minutes each, and they are opportunities for leads to:
+
+* Get to know their team members on a more personal level
+* Figure out what their goals out and how they (or the rest of Launch Pad) can help them achieve those goals
+* Determine if team members need any additional additional support from Launch Pad
+* Get feedback about team and club operations
+
+Leads should keep track of any noteworthy items to bring up during [leads meetings](#meetings).
+
 ### Meetings
 
 Leads meetings between all leads (technical and non-technical) should happen on a weekly basis. These meetings should have a [sprint meetings](../project-management/sprints.md#sprint-meetings)-style meeting notes document set up for the year. During meetings:
