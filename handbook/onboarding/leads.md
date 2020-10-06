@@ -102,9 +102,13 @@ Team formation happens in [kickoff events](/handbook/strategy/recurring-processe
 
 ### Meetings
 
-Leads meetings between all leads (technical and non-technical) should happen on a regular basis.
+Leads meetings between all leads (technical and non-technical) should happen on a weekly basis. These meetings should have a [sprint meetings](../project-management/sprints.md#sprint-meetings)-style meeting notes document set up for the year. During meetings:
 
-TODO: flesh out what we want meetings to be like
+* The **co-presidents** will provide club updates and discussion topics.
+* All **tech leads** will provide updates on their team's progress (including their designers). They should provide at least on highlight from their team for the week as well.
+* The **design lead** will provide other non-team design updates or thoughts not brought up by leads. They should also bring up updates and feedback they have heard from designers, and provide at least one highlight from the designers for the week.
+
+As everyone provides their updates, we should keep track of discussion topics to follow up on and spend the remainder of the meeting having any necessary discussions.
 
 ## Further Reading
 
