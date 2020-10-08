@@ -9,7 +9,7 @@ search: false
 
 ## Summary
 
-TODO
+TODO([docs#189](https://github.com/ubclaunchpad/docs/issues/189))
 
 <!-- Comment out when accepting applications, also uncomment the form at the bottom -->
 ::: tip We are not currently accepting applications for this role.
@@ -18,11 +18,11 @@ Sign up for our [newsletter](https://ubclaunchpad.com/newsletter) to get updates
 
 ## Responsibilities
 
-TODO
+TODO([docs#189](https://github.com/ubclaunchpad/docs/issues/189))
 
 ## What you get
 
-TODO
+TODO([docs#189](https://github.com/ubclaunchpad/docs/issues/189))
 
 <!--
 ::: tip We are currently accepting applications for this role!

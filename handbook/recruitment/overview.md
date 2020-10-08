@@ -10,7 +10,7 @@ That said, a major goal of Launch Pad is to support beginners and people from a 
 
 ### Technical Roles
 
-When recruiting for techncial roles, we aim to categorize applicants into the following categories:
+When recruiting for techncial (developer) roles, we aim to categorize applicants into the following categories:
 
 * **Beginner**: 1st or 2nd year student OR course project OR simple project (hackathon) OR tutorial project
 * **Independent**: Completed 1 internship OR a non-course "advanced project"
@@ -27,6 +27,8 @@ To provide support to our less experienced members and ensure a productive envir
 
 Each lead typically leads 1 team. We aim for a club size of 8 developers (excluding the lead) per team, to accomodate for members potentially leaving throughout the semester.
 
+You can learn more about technical roles in the [Developer role description](/handbook/recruitment/developer.md).
+
 ### Design Roles
 
 When recruiting for design roles, it is important to note that most teams will consist of only 1 designer, sometimes 2. Because of this, experience levels of designers per team may vary. Our definition experience levels are as follows:
@@ -40,6 +42,14 @@ To provide support to our less experienced members and ensure a productive envir
 
 * around 60% of the design team be "beginners".
 * at least 40% of design team (including lead) be "experienced".
+
+You can learn more about design roles in the [Designer role description](/handbook/recruitment/strategy.md).
+
+### Strategy Roles
+
+TODO([docs#189](https://github.com/ubclaunchpad/docs/issues/189))
+
+You can learn more about strategy roles in the [Strategy role description](/handbook/recruitment/strategy.md).
 
 ## Process
 
