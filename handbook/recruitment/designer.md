@@ -11,7 +11,7 @@ search: false
 
 As a designer at UBC Launch Pad, you will be working with other designers and developers to ideate and build a project for 4-8 months! You will be creating beautiful interfaces that provide great user experiences while being supported by Launch Pad’s design lead and your team’s tech lead.
 
-Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/handbook/manifesto), which includes our vision and code of conduct.
+Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/handbook/manifesto), which includes our vision and code of conduct. You can also learn about how recruitment works in Launch Pad in our [recruitment overview](/handbook/recruitment/overview.md).
 
 <!-- Comment out when accepting applications, also uncomment the form at the bottom -->
 ::: tip We are not currently accepting applications for this role.

@@ -11,7 +11,7 @@ search: false
 
 As a developer at UBC Launch Pad, you will be working with other developers and designers to ideate and build a project for 4-8 months! Each team will be supported by an experienced tech lead who provides the expertise needed to execute on the team’s vision.
 
-Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/handbook/manifesto), which includes our vision and code of conduct.
+Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/handbook/manifesto), which includes our vision and code of conduct. You can also learn about how recruitment works in Launch Pad in our [recruitment overview](/handbook/recruitment/overview.md).
 
 <!-- Comment out when accepting applications, also uncomment the form at the bottom -->
 ::: tip We are not currently accepting applications for this role.

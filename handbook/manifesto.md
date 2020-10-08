@@ -61,19 +61,19 @@ Co-presidents also act as leads of the [strategy team](#strategy-team).
 
 Launch Pad primarily consists of agile development teams centred around a shared project. Each team consists of a Tech Lead and a number of Developers, usually between 5 to 8. Learn more about being on a project team in the [onboarding guide](/handbook/onboarding/everyone.md).
 
-**Tech Leads** are experienced developers who are responsible for managing the team by planning the project roadmap, assigning tickets during sprints, and implementing challenging features. They are also available as a resource to less experienced developers on the team. If you have any trouble with your issue, questions about Launch Pad, or just a random technical question: ask your Tech Lead.
+**Tech Leads** are experienced developers who are responsible for managing the team by planning the project roadmap, assigning tickets during sprints, and implementing challenging features. They are also available as a resource to less experienced developers on the team. If you have any trouble with your issue, questions about Launch Pad, or just a random technical question: ask your Tech Lead. Learn more about Tech Leads in the [role description](/handbook/recruitment/tech-lead.md).
 
-**Teams** focus on a particular platform or technology, like Android, Web, or Machine Learning, and build a project for that platform. Platform teams are meant to balance learning with creation: teams working together have the ability to build interesting projects, less experienced developers have the opportunity to learn in the process, and more experienced developers get a taste of management and mentoring. Teams aim to model the experience of building a product at a software company.
+**Teams** focus on a particular platform or technology, like Android, Web, or Machine Learning, and build a project for that platform. Platform teams are meant to balance learning with creation: teams working together have the ability to build interesting projects, less experienced developers have the opportunity to learn in the process, and more experienced developers get a taste of management and mentoring. Teams aim to model the experience of building a product at a software company. Learn more about Developers in the [developer role description](/handbook/recruitment/developer.md).
 
 #### Design Team
 
-UBC Launch Pad has a Design team that handles designs and asset creation for Launch Pad projects. Each project that requires design help should have one or more designers working with the team. Learn more about the design team in the [design onboarding guide](/handbook/onboarding/design.md).
+UBC Launch Pad has a Design team that handles designs and asset creation for Launch Pad projects. Each project that requires design help should have one or more designers working with the team. Learn more about the design team in the [design onboarding guide](/handbook/onboarding/design.md), and designers in the [designer role description](/handbook/recruitment/designer.md).
 
-Each year, one member is appointed as the **Design Lead**. The design lead's role is to support the design team and act as the bridge between the [leadership team](#leadership-team) and designers.
+Each year, one member is appointed as the **Design Lead**. The design lead's role is to support the design team and act as the bridge between the [leadership team](#leadership-team) and designers. Learn more about the Design Leads in the [role description](/handbook/recruitment/design-lead.md).
 
 #### Strategy Team
 
-UBC Launch Pad has a Strategy team that focuses on strategically growing the team. This team will focus on increasing campus awareness and forming strategic partnerships in order to further contribute to Launch Pad's vision to be the leading university technology club in Vancouver, Canada, or maybe even the world. Learn more about being on the strategy team in the [strategy onboarding guide](/handbook/onboarding/strategy.md).
+UBC Launch Pad has a Strategy team that focuses on strategically growing the team. This team will focus on increasing campus awareness and forming strategic partnerships in order to further contribute to Launch Pad's vision to be the leading university technology club in Vancouver, Canada, or maybe even the world. Learn more about being on the strategy team in the [strategy onboarding guide](/handbook/onboarding/strategy.md), and strategy members in the [strategy role description](/handbook/recruitment/strategy.md).
 
 The Strategy team is lead by the [**co-presidents**](#co-presidents).
 
