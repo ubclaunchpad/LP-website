@@ -113,6 +113,12 @@ We recommend that leads schedule 1-1 ("one-on-one") meetings with their team mem
 
 Leads should keep track of any noteworthy items to bring up during [leads meetings](#meetings).
 
+#### Team Tools
+
+Other than [Slack](/handbook/tools/slack.md), [GitHub](/handbook/tools/github.md), and [Google Drive](/handbook/tools/drive.md), we have a variety of recommended tooling listed in the [tools section](/handbook/README.md#tools).
+
+**For team and knowledge management**, we recommend that leads stick to the recommended tools, so that each team's material is available for everyone to access, and to keep management tooling to a minimum - certain platforms like GitHub are already a bit of a learning curve for some members, on top of other technical tools they need to learn to leverage.
+
 ### Meetings
 
 Leads meetings between all leads (technical and non-technical) should happen on a weekly basis. These meetings should have a [sprint meetings](../project-management/sprints.md#sprint-meetings)-style meeting notes document set up for the year. During meetings:
