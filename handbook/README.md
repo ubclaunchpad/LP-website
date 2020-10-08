@@ -65,7 +65,7 @@ Launch Pad recruitment documentation and material lives in these pages!
 * **Role descriptions**: These pages describe roles that Launch Pad recruits for. They should be written such that we can send each page individually to prospective candidates to help them get an idea of what each role entails!
   * [Developer](./recruitment/developer.md)
   * [Design](./recruitment/designer.md)
-  * Strategy (TODO)
+  * [Strategy](./recruitment/strategy.md)
   * [Design Lead](./recruitment/design-lead.md)
   * [Tech Lead](./recruitment/tech-lead.md)
 

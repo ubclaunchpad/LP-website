@@ -13,6 +13,7 @@ As a designer at UBC Launch Pad, you will be working with other designers and de
 
 Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/handbook/manifesto), which includes our vision and code of conduct.
 
+<!-- Comment out when accepting applications, also uncomment the form at the bottom -->
 ::: tip We are not currently accepting applications for this role.
 Sign up for our [newsletter](https://ubclaunchpad.com/newsletter) to get updates!
 :::
