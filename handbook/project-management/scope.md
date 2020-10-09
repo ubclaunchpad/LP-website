@@ -57,9 +57,9 @@ In the first week, brainstorm with your team and start to consolidate around one
 * ⚒️ **Developers**: participate in user research work with designers
   * Development should not begin yet!
   * Tech leads can start proposing technologies for developers to get a bit of a head start on learning
-* 🎨 **Designers**: focus on user research
+* 🎨 **Designers**: focus on user research & start wireframing
   * This will involve activities like ideation sessions, interviews, personas, journey maps, user stories, sketching & heat-map voting.
-  * Initial ideation will involve the whole team (coming up with ideas & possible features)
+  * finalize features through sketches & user stories.
   * Designers may also ask developers to help with interviews and surveys to get more data.
 
 ### Week 2: Finalized project pitch and MVP writeup
@@ -68,9 +68,9 @@ Your team should prepare a clear, brief pitch (i.e. a short description) for you
 
 * ⚒️ **Developers**: start implementation work under tech lead's guidance
 * 🎨 **Designers**: start wireframing and prototyping with a focus on the MVP
-  * Week 2: Mid-Fi Wireframes & prototype should be done by the end of the week.
-  * Week 3: User testing on Mid-fi prototype.
-  * Week 4: Hi-Fi wireframes and prototype should be done.
+  * Week 2: Hi-Fi Wireframes & prototype should be done by the end of the week.
+  * Week 3: User testing on Hi-Fi prototype.
+  * Week 4: Iterate from user testing. Hi-Fi wireframes and prototype should be done.
   * At any point, always upload your finished designs (Mid-Fi & Hi-Fi) to your centralized drive for developers to access and always alert them when you have done so.
 
 ### Week 5: A *functional* MVP based on initial idea and prototypes
