@@ -65,7 +65,7 @@ A *definition of completion* creates a clear view of what a task encapsulates. T
 
 Each task should be tracked as a **GitHub issue** (this is why we sometimes call tasks "issues"). Learn more about issues in [our GitHub guide](/handbook/tools/github.md#issues), or in [GitHub's official project management documentation](https://github.com/features/project-management/).
 
-Each issue should clearly state the purpose and definition of completion of the task, as well as any other relevant information - **your goal is to leave enough information so that someone can hope into an issue and know exactly what is going on and what to do**.
+Each issue should clearly state the purpose and definition of completion of the task, as well as any other relevant information - **your goal is to leave enough information so that someone can hop into an issue and know exactly what is going on and what to do**.
 
 One way to do this is to liberally use issue references! On GitHub, each issue and pull request is assigned a number, using `#IssueNumber` (for example, `#13`) anywhere on GitHub will automatically create a link from one issue to another (and this works for pull requests as well!). This helps keep relevant information connected to each issue.
 
