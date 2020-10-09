@@ -89,7 +89,7 @@ Team formation happens in [kickoff events](/handbook/strategy/recurring-processe
    ```
 3. Set up your repository!
    1. Verify that your team has been created in the [GitHub teams page](https://github.com/orgs/ubclaunchpad/teams). If your team members have set up Rocket correctly, they should all be in the team.
-   2. [Create a repository](https://github.com/organizations/ubclaunchpad/repositories/new). Under your new repository's "Settings" page, go to "Manage access" and:
+   2. [Create a repository](https://github.com/organizations/ubclaunchpad/repositories/new). When doing so, make sure you check "Add a README file" so that GitHub can initialize the Git repository as well (you can also initialize it manually afterwards by pushing to the repository if you want). Under your new repository's "Settings" page, go to "Manage access" and:
       1. Invite the GitHub team Rocket created for you with "Maintain" permission.
       2. We recommend you create public repositories, but if you want to start off with a private repository, invite the `ubclaunchpad/all` team as well with "Write" permission.
    3. We recommend that you set up branch protection - under "Settings", go to "Branches" and add a rule for your default branch with "Require pull requests before merging". You can add more rules once you have more tooling set up for your repository - see [Repository Management](/handbook/project-management/repositories) for ideas.
