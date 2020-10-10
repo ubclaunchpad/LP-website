@@ -1,14 +1,15 @@
+<!-- Give a brief description of your changes here. -->
+
+
 ### Related Tickets
 
-<!-- List relevant tickets, e.g. 'Closes #<some_ticket_number>', or just write 'n/a' -->
+<!--
+e.g. "Affects #123"
 
-Closes #
-
-### Changes
-
-<!-- Briefly describe the changes you made -->
-
-
+Create a copy of that line for each GitHub Issue affected, and replace
+"Affects" with "Closes" if merging this will close the relevant ticket. If this
+change is not for a particular ticket, just write "n/a" instead.
+-->
 
 ### Checklist
 
