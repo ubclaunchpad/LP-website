@@ -65,9 +65,11 @@ Some channels are featured in this document, but you can easily find a full list
 
 ### Rocket <Badge type="tip" text="updated"/>
 
-[Rocket 2](https://github.com/ubclaunchpad/rocket2) is our very own Slack bot, used for managing our roster across Slack and GitHub. Members use it mainly to automatically add themselves to the GitHub organization.
+[Rocket 2](https://github.com/ubclaunchpad/rocket2) is our very own Slack bot, used for managing our roster across Slack and GitHub. Members use it mainly to automatically add themselves to the GitHub organization, Google Drive, and more.
 
-You can get started by editing your profile to include your GitHub username with `/rocket user add` and `/rocket user edit --github $USERNAME`. The first command will add your Slack account into the system and the second will link your account to GitHub and send an invitation for the UBC Launch Pad organization. Adding your email will also send you invitations to the appropriate Google Drive folders!
+You can get started by writing `/rocket user add` in our Slack workspace! For more details on getting set up with Rocket, please refer to our [onboarding guide](/handbook/onboarding/everyone.md#rocket-setup).
+
+Leads at Launch Pad also use Rocket to create and manage teams - learn more in the [leads onboarding guide](/handbook/onboarding/leads.md#starting-a-team).
 
 For more commands, type `/rocket help`. If you are interested in how it works, check out the [documentation page](https://rocket2.readthedocs.io/en/latest/).
 
