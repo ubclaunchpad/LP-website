@@ -57,6 +57,12 @@ These pages document our efforts in improving Launch Pad and our reach. While th
 * [**Objectives**](./strategy/objectives.md): Launch Pad's yearly objectives, goals, and our learnings.
 * [**Sponsors and Partners**](./strategy/sponsors-and-partners.md): How we work with sponsors and partners!
 
+## 🎨 Design
+
+These pages document Launch Pad design standards. For more about how the design team works, refer to the [Design team](/handbook/onboarding/strategy.md) onboarding.
+
+* [Branding](./design/branding.md): How to represent Launch Pad!
+
 ## 🗳️ Recruitment <Badge type="tip" text="new"/>
 
 Launch Pad recruitment documentation and material lives in these pages!
