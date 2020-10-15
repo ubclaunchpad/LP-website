@@ -39,16 +39,30 @@ export default {
 .search-bar-container {
 
   .search-box {
+    // fill container
     width: 100%;
 
     input {
+      // fill parent
       width: 100%;
     }
 
     .suggestions {
+      // fill parent
       width: 100%;
       max-width: none;
+
+      // make sure list is above everything else
       z-index: 999;
+    }
+
+    * {
+      :hover {
+        * {
+          // gets overriden by vuepress theme (not needed in navbar)
+          text-decoration: none !important;
+        }
+      }
     }
   }
 }
