@@ -40,7 +40,7 @@ export async function processSuggestions(suggestions, queryString) {
     // these suggestions help users quickly jump to search on other relevant platforms
     suggestions.push({
       external: true,
-      path: 'https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/.*+fork:no+',
+      path: 'https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/.*+fork:yes+',
       slug: queryString,
       // show parent for first result only
       parentPageTitle: 'Other',
