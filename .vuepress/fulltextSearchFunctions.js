@@ -52,12 +52,6 @@ export async function processSuggestions(suggestions, queryString) {
       slug: queryString,
       title: 'Issues and pull requests',
       contentStr: 'Search our GitHub discussions',
-    }, {
-      external: true,
-      path: 'https://github.com/search?type=Repositories&q=org%3Aubclaunchpad+',
-      slug: queryString,
-      title: 'Repositories',
-      contentStr: 'Find Launch Pad repositories',
     });
   }
   return suggestions;
