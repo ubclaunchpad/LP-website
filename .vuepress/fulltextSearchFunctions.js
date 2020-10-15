@@ -1,12 +1,21 @@
+/**
+ * This file is provided as a string to the fulltext-search plugin. Learn more here:
+ * https://github.com/ubclaunchpad/vuepress-plugin-fulltext-search#functions
+ * 
+ * Because of this, its dependencies must also be dependencies of the plugin! In general,
+ * this means that we cannot import modules. To share variables, we get around this by
+ * copy-pasting dependencies like `quickLinks.js` at build time.
+ */
 import * as Fathom from 'fathom-client';
 
 // This function extends suggestions provided by the fulltext-search plugin
 export async function processSuggestions(suggestions, queryString) {
   if (queryString) {
-    // render suggestions from ./quickLinks.js - variables are appended to the start
-    // this file at build time
+    // render suggestions from navbar quick links
     let frstQuickLinkSuggestion = true;
     [
+      // These variables are appended to the start this file at build time, so they are
+      // not defined here - see `quickLinks.js`.
       quickLinkRepositories,
       quickLinkDrive,
       quickLinkMisc,

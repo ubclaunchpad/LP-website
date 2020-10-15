@@ -1,3 +1,11 @@
+/**
+ * Certain groups of navbar links are defined here for use in `config.js` and search.
+ * 
+ * Learn more about the format here: https://vuepress.vuejs.org/theme/default-theme-config.html#navbar-links
+ * 
+ * See bottom of this file for more documentation on how this is used.
+ */
+
 const quickLinkRepositories = {
   text: 'GitHub Repositories',
   items: [
@@ -31,6 +39,15 @@ const quickLinkMisc = {
   ],  
 };
 
+/**
+ * This module is used in two places:
+ * 
+ * - `config.js`, for which we must export a CommonJS module
+ * - `fulltextSearchFunctions.js`, where this file must work when copy-pasted into the file
+ * 
+ * To achieve this, we conditionally set up a `module.exports` based on whether the
+ * context in which this file is imported, otherwise we just define these variables.
+ */
 if (typeof module === 'object' && module.exports) {
   module.exports = {
     quickLinkRepositories,

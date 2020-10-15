@@ -35,6 +35,7 @@ module.exports = {
         text: 'Quick Links',
         items: [
           { text: 'About Us', link: 'https://ubclaunchpad.com' },
+          // see `quickLinks.js`
           quickLinks.quickLinkRepositories,
           quickLinks.quickLinkDrive,
           quickLinks.quickLinkMisc,
@@ -105,6 +106,11 @@ module.exports = {
   plugins: [
     // fulltext search for site content - https://github.com/ubclaunchpad/vuepress-plugin-fulltext-search
     ['fulltext-search', {
+      // functions is provided as a Javascript string, which is then rendered as a dynamic
+      // module. Because of this, we cannot really do local imports, so any dependencies
+      // are just appended together.
+      //
+      // See docstrings in the imported files for more details.
       functions: [
         fs.readFileSync(path.resolve(__dirname, 'quickLinks.js')),
         fs.readFileSync(path.resolve(__dirname, 'fulltextSearchFunctions.js')),
