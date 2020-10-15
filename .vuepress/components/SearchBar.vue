@@ -2,7 +2,7 @@
   <div class="search-bar-container" :style="{
     width: width || '100%'
   }">
-    <SearchBox />
+    <SearchBox ref="searchbox" />
   </div>
 </template>
 
@@ -11,7 +11,15 @@ import SearchBox from '@SearchBox'
 
 export default {
   components: { SearchBox },
-  props: ['width'],
+  props: ['width', 'permafocus'],
+  mounted() {
+    // always keep input in focus
+    if (this.permafocus) {
+      const searchRef = this.$refs.searchbox.$refs.input;
+      searchRef.focus();
+      searchRef.onblur = () => searchRef.focus();
+    }
+  }
 }
 </script>
 

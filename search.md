@@ -6,6 +6,7 @@ sidebar: false
 
 # Launch Pad Search
 
-<SearchBar />
+<!-- see .vuepress/components/SearchBar.vue -->
+<SearchBar :permafocus="true" />
 
 <br />
