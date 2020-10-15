@@ -58,6 +58,7 @@ export default {
       // fill parent
       width: 100%;
       max-width: none;
+      min-width: 100px;
 
       // make sure list is above everything else
       z-index: 999;
