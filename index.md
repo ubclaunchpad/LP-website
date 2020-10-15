@@ -6,13 +6,13 @@ heroImage: https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/maste
 heroText: ubclaunchpad/docs
 tagline: 📚 The official UBC Launch Pad knowledge base
 actionText: Search →
-actionLink: '/search'
+actionLink: '/search/'
 ---
 
 <!-- markdownlint-disable -->
 
 <p align="center">
-The goal of <code>docs.ubclaunchpad.com</code> is to gather advice, resources, best practices, and more for everyone to refer to! If you feel any of this documentation is unclear, out of date, or incorrect, please <a href="/CONTRIBUTING">help us make it better</a>!
+The goal of <code>docs.ubclaunchpad.com</code> is to gather advice, resources, best practices, and more to empower members to find information they need independently, and hopefully enable others to learn from our work! If you feel anything on this website is unclear, out of date, or incorrect, please <a href="/CONTRIBUTING">help us make it better</a>!
 </p>
 
 <br />
