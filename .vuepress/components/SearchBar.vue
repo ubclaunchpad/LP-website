@@ -2,7 +2,7 @@
   <div class="search-bar-container" :style="{
     width: width || '100%'
   }">
-    <SearchBox ref="searchbox" />
+    <SearchBox ref="searchbox" class="no-collapse" />
   </div>
 </template>
 
@@ -52,6 +52,10 @@ export default {
       width: 100%;
       box-sizing: border-box;
       left: 0;
+      // prevent border from being removed on small screens (plugin feature)
+      [border-color="transparent"] {
+        border-color: unset;
+      }
     }
 
     .suggestions {

@@ -19,7 +19,7 @@
     "sass-loader": "~10.0.3",
     "vuepress": "~1.7.0",
     "vuepress-plugin-clean-urls": "~1.1.2",
-    "vuepress-plugin-fulltext-search": "git+https://github.com/ubclaunchpad/vuepress-plugin-fulltext-search.git#6b7c8b63cc80cda1b094013dff9627f48211c8d1",
+    "vuepress-plugin-fulltext-search": "git+https://github.com/ubclaunchpad/vuepress-plugin-fulltext-search.git#fd7f388d4c562e8426efb0de57158817e4bbea9c",
     "vuepress-theme-yuu": "~2.3.0"
   }
 }
