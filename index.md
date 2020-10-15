@@ -52,7 +52,7 @@ You can add this website as a custom search engine in many browsers (for example
 - Keyword: `lp`
 - URL: `https://docs.ubclaunchpad.com/search?query=%s`
 
-If you find the navigation bar search a bit cramped, try out the [dedicated search page](/search.md).
+Search is also available from the navigation bar on most pages. If you find the navigation bar search a bit cramped, you can also try out the [dedicated search page](/search.md).
 
 ### Dark mode
 
