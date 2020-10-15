@@ -80,7 +80,7 @@ npm run serve         # runs the website locally
 This website is based on [VuePress](https://vuepress.vuejs.org/guide/) - refer to the
 VuePress documentation for more details. VuePress takes the [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) content in this repository (all those `.md` files) and turns them into the pretty website on `docs.ubclaunchpad.com`.
 
-Most VuePress configuration lives in [`.vuepress/config.js`](./.vuepress/config.js).
+Most VuePress configuration lives in [`.vuepress/config.js`](https://sourcegraph.com/github.com/ubclaunchpad/docs/-/blob/.vuepress/config.js).
 
 #### Analytics
 
@@ -90,7 +90,20 @@ The site's analytics dashboard is available [here](https://app.usefathom.com/sha
 
 #### Search
 
-Search is implemented through the UBC Launch Pad project [`vuepress-plugin-fulltext-search`](https://github.com/ubclaunchpad/vuepress-plugin-fulltext-search) (also aliased as `fulltext-search`), which is a fork of an open-source project that contains a variety of new features and customizations tailored for this website.
+Search for this website is implemented through the UBC Launch Pad project [`vuepress-plugin-fulltext-search`](https://github.com/ubclaunchpad/vuepress-plugin-fulltext-search) (also aliased as `fulltext-search`), which is a fork of an open-source project that contains a variety of new features and customizations tailored for this website.
+
+It contains a significant amount of hackery - to learn about customizing and improving our search, look at:
+
+1. The [search plugin's usage documentation](https://github.com/ubclaunchpad/vuepress-plugin-fulltext-search/blob/master/README.md)
+2. [`.vuepress/config.js`](https://sourcegraph.com/github.com/ubclaunchpad/docs/-/blob/.vuepress/config.js), particularly the `plugins` section
+3. [`fulltextSearchFunctions.js`](https://sourcegraph.com/github.com/ubclaunchpad/docs/-/blob/.vuepress/fulltextSearchFunctions.js), where hooks to the plugin are defined
+4. Based on what you are interested in:
+   * [Indexing code](https://sourcegraph.com/github.com/ubclaunchpad/vuepress-plugin-fulltext-search/-/blob/services/flexsearchSvc.js)
+   * [Matching code](https://sourcegraph.com/github.com/ubclaunchpad/vuepress-plugin-fulltext-search/-/blob/services/matchQuery.js)
+   * [Search box](https://sourcegraph.com/github.com/ubclaunchpad/vuepress-plugin-fulltext-search/-/blob/components/SearchBox.vue)
+   * [Search library documentation](https://github.com/nextapps-de/flexsearch#api-overview)
+
+If you make a change in the plugin, you must [update the pinned commit in `package.json`](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/docs%24+file:%5Epackage%5C.json+%28%22vuepress-plugin-fulltext-search%22:+%22%29.*&patternType=regexp) and run `npm install` to update `package-lock.json`.
 
 ### CI/CD
 
