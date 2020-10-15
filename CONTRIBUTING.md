@@ -82,7 +82,19 @@ VuePress documentation for more details. VuePress takes the [Markdown](https://g
 
 Most VuePress configuration lives in [`.vuepress/config.js`](./.vuepress/config.js).
 
-### Deployment
+#### Analytics
+
+We use [Fathom Analytics](https://usefathom.com/) to track visits and interactions on the website (via [`@ubclaunchpad/vuepress-plugin-fathom`](https://github.com/ubclaunchpad/vuepress-plugin-fathom)). Since most of the site is just plain Markdown, the only [goals](https://usefathom.com/support/goals) we track are interactions with search suggestions - see [`fulltextSearchFunctions.js`](./.vuepress/fulltextSearchFunctions.js) for more details.
+
+The site's analytics dashboard is available [here](https://app.usefathom.com/share/oemmhhle/docs.ubclaunchpad.com).
+
+#### Search
+
+Search is implemented through the UBC Launch Pad project [`vuepress-plugin-fulltext-search`](https://github.com/ubclaunchpad/vuepress-plugin-fulltext-search) (also aliased as `fulltext-search`), which is a fork of an open-source project that contains a variety of new features and customizations tailored for this website.
+
+### CI/CD
+
+#### Deployment
 
 Deployments are handled automatically by the [Netlify](https://www.netlify.com/) - the website is managed under the "Launch Pad OSS Sponsored" team. Build and deploy options can be declared in [`netlify.toml`](./netlify.toml).
 
@@ -90,7 +102,7 @@ This means that when your changes are merged to `master`, your contribution will
 
 Also note that individual pull requests also get their own preview deployment - Netlify will comment on your pull request with a link to the preview. This is useful for reviewing changes! Look out for a comment from the Netlify bot.
 
-### Checks
+#### Checks
 
 We use [GitHub Actions](https://github.com/features/actions) to run checks to make sure the website content is nicely formatted and mostly correct. You can see the output under the "Checks" tab on your pull request - whenever you open a pull request, check this tab to see if anything needs your attention!
 
@@ -107,9 +119,3 @@ We have the following Actions set up:
 ::: tip Note on the spellchecker
 The spellchecker dictionary is not very robust. It may sometimes mark correct spellings as errors. You can add misidentified spellings to the dictionary via the [`.spelling`](./.spelling) file.
 :::
-
-### Analytics
-
-We use [Fathom Analytics](https://usefathom.com/) to track visits and interactions on the website (via [`@ubclaunchpad/vuepress-plugin-fathom`](https://github.com/ubclaunchpad/vuepress-plugin-fathom)). Since most of the site is just plain Markdown, the only [goals](https://usefathom.com/support/goals) we track are interactions with search suggestions - see [`fulltextSearchFunctions.js`](./.vuepress/fulltextSearchFunctions.js) for more details.
-
-The site's analytics dashboard is available [here](https://app.usefathom.com/share/oemmhhle/docs.ubclaunchpad.com).
