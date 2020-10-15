@@ -5,11 +5,16 @@ permalink: /
 heroImage: https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/src/assets/about.png
 heroText: ubclaunchpad/docs
 tagline: 📚 The official UBC Launch Pad knowledge base
-actionText: Search →
-actionLink: '/search/'
+search: false
 ---
 
 <!-- markdownlint-disable -->
+
+<p align="center">
+<SearchBar width="60%" />
+</p>
+
+<br />
 
 <p align="center">
 The goal of <code>docs.ubclaunchpad.com</code> is to gather advice, resources, best practices, and more to empower members to find information they need independently, and hopefully enable others to learn from our work! If you feel anything on this website is unclear, out of date, or incorrect, please <a href="/CONTRIBUTING">help us make it better</a>!
@@ -39,11 +44,9 @@ If you are a member of Launch Pad, feel free to drop questions for Launch Pad le
 
 ## Tips and Tricks
 
-### Search everything
+### Search from anywhere
 
-You can easily search this entire website from any page using the search bar in the navigation bar! Pressing `s` allows you to immediately start typing a query. In addition to results from this website, you can easily hop into a "code and content" or "issues and pull requests" search from the suggestions, which will give you results from *everything* in the UBC Launch Pad GitHub organization!
-
-You can also add this website as a custom search engine in many browsers (for example, [Chrome](https://support.google.com/chrome/answer/95426)) and tools like [Alfred](https://www.alfredapp.com/help/features/web-search/#custom)! Just set the following fields:
+You can add this website as a custom search engine in many browsers (for example, [Chrome](https://support.google.com/chrome/answer/95426)) and tools like [Alfred](https://www.alfredapp.com/help/features/web-search/#custom)! Just set the following fields:
 
 - Search Engine: `Launch Pad`
 - Keyword: `lp`

@@ -37,14 +37,21 @@ export default {
 
 <style lang="scss">
 .search-bar-container {
+  // always maximize width on small enough screens, regardless of provided width
+  @media (max-width: 1024px) {
+    width: 100% !important;
+  }
 
   .search-box {
     // fill container
     width: 100%;
+    margin-right: 0;
 
     input {
       // fill parent
       width: 100%;
+      box-sizing: border-box;
+      left: 0;
     }
 
     .suggestions {
@@ -59,7 +66,7 @@ export default {
     * {
       :hover {
         * {
-          // gets overriden by vuepress theme (not needed in navbar)
+          // override by vuepress theme (not needed in navbar)
           text-decoration: none !important;
         }
       }
