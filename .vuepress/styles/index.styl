@@ -4,4 +4,12 @@
   font-family: 'Nunito', sans-serif;
 
 a
-  font-weight: 600
+  font-weight: 600;
+
+// Dark mode overrides to fix inconsistencies
+.yuu-theme-dark
+  .suggestion
+    a
+      .suggestion-row
+        .page-title
+          background: $darkPrimaryBg !important;
