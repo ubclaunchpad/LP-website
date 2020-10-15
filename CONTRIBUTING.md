@@ -80,9 +80,34 @@ npm run serve         # runs the website locally
 This website is based on [VuePress](https://vuepress.vuejs.org/guide/) - refer to the
 VuePress documentation for more details. VuePress takes the [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) content in this repository (all those `.md` files) and turns them into the pretty website on `docs.ubclaunchpad.com`.
 
-Most VuePress configuration lives in [`.vuepress/config.js`](./.vuepress/config.js).
+Most VuePress configuration lives in [`.vuepress/config.js`](https://sourcegraph.com/github.com/ubclaunchpad/docs/-/blob/.vuepress/config.js).
 
-### Deployment
+#### Analytics
+
+We use [Fathom Analytics](https://usefathom.com/) to track visits and interactions on the website (via [`@ubclaunchpad/vuepress-plugin-fathom`](https://github.com/ubclaunchpad/vuepress-plugin-fathom)). Since most of the site is just plain Markdown, the only [goals](https://usefathom.com/support/goals) we track are interactions with search suggestions - see [`fulltextSearchFunctions.js`](./.vuepress/fulltextSearchFunctions.js) for more details.
+
+The site's analytics dashboard is available [here](https://app.usefathom.com/share/oemmhhle/docs.ubclaunchpad.com).
+
+#### Search
+
+Search for this website is implemented through the UBC Launch Pad project [`vuepress-plugin-fulltext-search`](https://github.com/ubclaunchpad/vuepress-plugin-fulltext-search) (also aliased as `fulltext-search`), which is a fork of an open-source project that contains a variety of new features and customizations tailored for this website.
+
+It contains a significant amount of hackery - to learn about customizing and improving our search, look at:
+
+1. The [search plugin's usage documentation](https://github.com/ubclaunchpad/vuepress-plugin-fulltext-search/blob/master/README.md)
+2. [`.vuepress/config.js`](https://sourcegraph.com/github.com/ubclaunchpad/docs/-/blob/.vuepress/config.js), particularly the `plugins` section
+3. [`fulltextSearchFunctions.js`](https://sourcegraph.com/github.com/ubclaunchpad/docs/-/blob/.vuepress/fulltextSearchFunctions.js), where hooks to the plugin are defined
+4. Based on what you are interested in:
+   * [Indexing code](https://sourcegraph.com/github.com/ubclaunchpad/vuepress-plugin-fulltext-search/-/blob/services/flexsearchSvc.js)
+   * [Matching code](https://sourcegraph.com/github.com/ubclaunchpad/vuepress-plugin-fulltext-search/-/blob/services/matchQuery.js)
+   * [Search box](https://sourcegraph.com/github.com/ubclaunchpad/vuepress-plugin-fulltext-search/-/blob/components/SearchBox.vue)
+   * [Search library documentation](https://github.com/nextapps-de/flexsearch#api-overview)
+
+If you make a change in the plugin, you must [update the pinned commit in `package.json`](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/docs%24+file:%5Epackage%5C.json+%28%22vuepress-plugin-fulltext-search%22:+%22%29.*&patternType=regexp) and run `npm install` to update `package-lock.json`.
+
+### CI/CD
+
+#### Deployment
 
 Deployments are handled automatically by the [Netlify](https://www.netlify.com/) - the website is managed under the "Launch Pad OSS Sponsored" team. Build and deploy options can be declared in [`netlify.toml`](./netlify.toml).
 
@@ -90,7 +115,7 @@ This means that when your changes are merged to `master`, your contribution will
 
 Also note that individual pull requests also get their own preview deployment - Netlify will comment on your pull request with a link to the preview. This is useful for reviewing changes! Look out for a comment from the Netlify bot.
 
-### Checks
+#### Checks
 
 We use [GitHub Actions](https://github.com/features/actions) to run checks to make sure the website content is nicely formatted and mostly correct. You can see the output under the "Checks" tab on your pull request - whenever you open a pull request, check this tab to see if anything needs your attention!
 
@@ -107,9 +132,3 @@ We have the following Actions set up:
 ::: tip Note on the spellchecker
 The spellchecker dictionary is not very robust. It may sometimes mark correct spellings as errors. You can add misidentified spellings to the dictionary via the [`.spelling`](./.spelling) file.
 :::
-
-### Analytics
-
-We use [Fathom Analytics](https://usefathom.com/) to track visits and interactions on the website (via [`@ubclaunchpad/vuepress-plugin-fathom`](https://github.com/ubclaunchpad/vuepress-plugin-fathom)). Since most of the site is just plain Markdown, the only [goals](https://usefathom.com/support/goals) we track are interactions with search suggestions - see [`fulltextSearchFunctions.js`](./.vuepress/fulltextSearchFunctions.js) for more details.
-
-The site's analytics dashboard is available [here](https://app.usefathom.com/share/oemmhhle/docs.ubclaunchpad.com).
