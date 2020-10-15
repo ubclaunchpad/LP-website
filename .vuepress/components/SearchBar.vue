@@ -11,16 +11,32 @@
  * @SearchBox is an alias for the Vuepress search box. For docs.ubclaunchpad.com, it
  * is the search box provided by our search plugin:
  * https://github.com/ubclaunchpad/vuepress-plugin-fulltext-search/blob/master/components/SearchBox.vue
- * 
- * It can be used directly in markdown, like so:
- * 
- *     <SearchBar width="50%" />
- * 
- * You can add additional customizations in the styling of this component, and override
- * the styles provided by the search plugin as desired.
  */
 import SearchBox from '@SearchBox'
 
+/**
+ * SearchBar is a standalone version of the search bar in the navigation bar provided by
+ * our search plugin, `vuepress-plugin-fulltext-search`. It is intended to be used
+ * embedded directly into Markdown files, like so:
+ * 
+ *     <ClientOnly>
+ *       <SearchBar width="60%" />
+ *     </ClientOnly>
+ * 
+ * You can add additional customizations in the styling of this component, and override
+ * the styles provided by the search plugin as desired. When using this in a file, we
+ * recommend adding frontmatter to disable the navigation bar search to avoid duplicate
+ * search boxes:
+ * 
+ *     ---
+ *     search: false # disable navbar search
+ *     ---
+ *
+ * We wrap the component in `<ClientOnly>` because of some Vuepress complications - not
+ * really sure why, but seems to be required for this compoonent to work consistently,
+ * so just add it to be safe. You can read more about it here:
+ * https://vuepress.vuejs.org/guide/using-vue.html#browser-api-access-restrictions
+ */
 export default {
   components: { SearchBox },
   props: ['width', 'permafocus'],

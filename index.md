@@ -11,10 +11,7 @@ search: false
 <!-- markdownlint-disable -->
 
 <p align="center">
-  <!--
-    ClientOnly: https://vuepress.vuejs.org/guide/using-vue.html#browser-api-access-restrictions
-    Frankly, unsure why this is needed, but seems to do the trick?
-  -->
+  <!-- see `.vuepress/components/SearchBar.vue` -->
   <ClientOnly>
     <SearchBar width="60%" />
   </ClientOnly>
