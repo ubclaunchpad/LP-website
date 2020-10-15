@@ -19,7 +19,7 @@ The goal of <code>docs.ubclaunchpad.com</code> is to gather advice, resources, b
 
 ## Contents
 
-### 📖 Club Handbook <Badge type="tip" text="new"/>
+### 📖 Club Handbook
 
 The [**Club Handbook**](./handbook/README.md) contains everything you need to know about being in Launch Pad: documents outlining Launch Pad's mission, our vision, how we are run, resources about managing projects, and more!
 
@@ -48,6 +48,8 @@ You can also add this website as a custom search engine in many browsers (for ex
 - Search Engine: `Launch Pad`
 - Keyword: `lp`
 - URL: `https://docs.ubclaunchpad.com/search?query=%s`
+
+If you find the navigation bar search a bit cramped, try out the [dedicated search page](/search.md).
 
 ### Dark mode
 
