@@ -53,7 +53,7 @@ More advanced testing topics include "unit testing" and "integration testing", t
 
 ### Testing interactions with other services
 
-Often, you will want to test interactions with other services such as a database (Postgres, MongoDB, DynamoDB, etc). The best way to do this is to run them as Docker containers locally - this makes them easy to set up and validate behaviour against. This also helps during development, since you can spin up your project locally without setting up authentication against a deployed instance and potentially running into problems with, for example, sharing a database with someone else.
+Often, you will want to test interactions with other services such as a database (PostgreSQL, MongoDB, DynamoDB, etc). The best way to do this is to run them as Docker containers locally - this makes them easy to set up and validate behaviour against. This also helps during development, since you can spin up your project locally without setting up authentication against a deployed instance and potentially running into problems with, for example, sharing a database with someone else.
 
 In your programmatic tests, if you write to a database, make sure to include "teardown" steps after each test (to revert any changes a test makes, to avoid affecting other tests).
 
@@ -100,4 +100,4 @@ We currently recommend [Codecov](https://codecov.io/) for aggregating and viewin
 
 ### Continuous Deployment
 
-Nowadays, continuous deployment for smaller projects typically happen externally in other services - see our recommendations in [deplyment options](/handbook/tools/deployment.md).
+Nowadays, continuous deployment for smaller projects typically happen externally in other services - see our recommendations in [deployment options](/handbook/tools/deployment.md).
