@@ -7,22 +7,26 @@ cheat.sh
 forbes.com
 
 # programming terminology
-Golang
-Vue
-VuePress
-Node.js
-Netlify
-GitKraken
-PowerShell
-Xubuntu
-OpenSUSE
-Structs
+structs
 READMEs
 linter
+linters
 plugin
-hackery
+teardown
+config
 
-# services
+# names and services
+eslint
+pycodestyle
+flake8
+mypy
+fmt
+govet
+pytest
+MongoDB
+PostgreSQL
+DynamoDB
+IntelliJ
 LeetCode
 HackerRank
 Sourcegraph
@@ -32,6 +36,16 @@ Anki
 Thoughtbot
 Uber
 Figma
+Codecov
+Golang
+Vue
+VuePress
+Node.js
+Netlify
+GitKraken
+PowerShell
+Xubuntu
+OpenSUSE
 
 # other
 Onboarding
@@ -45,3 +59,6 @@ slideshow
 tldr
 kickstart
 Rustlings
+hackery
+writeup
+mockups
