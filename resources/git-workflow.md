@@ -1,11 +1,54 @@
 # 🛶 Git Workflow
 
 Teams at Launch Pad will use the git version control system and GitHub website
-to build software collaboratively. This document describes a recommended GitHub
-workflow for Launch Pad teams, as well as a basic intro on how to execute that
-workflow yourself.
+to build software collaboratively. This document starts with a "zero-to-hero"
+guide to Git and concludes with a recommended GitHub workflow for Launch Pad
+teams as well as a basic intro on how to execute that workflow yourself.
 
-## Updating Your Copy of the Codebase
+If you're familiar with Git, feel free to jump ahead to the [recommended workflow](#recommended-workflow) section.
+
+## Git Zero to Hero
+
+### What is Git?
+
+Git is fundamentally a *version control system* - a tool that lets you maintain
+a timeline of changes that have occured in your project. Having a version
+history is great because you get to freely make changes without ever worrying
+about losing prior work.
+
+::: tip
+Git is not the same thing as Git*Hub*. GitHub is a platform that lets you store
+(and do other things) your Git-tracked folders (known as repositories) on a
+remote server. This lets you easily share these repositories across team
+members.
+:::
+
+On top of keeping history, Git comes with a set of features that make it truly
+great for collaborative work. Git allows you to create *branches*, alternative
+versions of your code, that could later be *merged* back to the main history.
+We'll get to this in a bit - let's first talk about how to get your repository
+set up.
+
+### Creating a Repository
+
+TODO: Should this be more conceptual or more tutorial-like?
+
+### Saving Changes
+
+Saving changes in a Git repository is a two-step process: first you have to
+*stage* your changed files, then you have to *commit* them.
+
+You can think of a Git commit as a snapshot or milestone along your project
+timeline. Each commit comes with a message that describes what changes that
+milestone introduced.
+
+### Branches
+
+### Merging
+
+## Recommended Workflow
+
+### Updating Your Copy of the Codebase
 
 Most projects will have a primary branch, which will usually be called `master`.
 Before beginning new development, make sure you have checked out your project's
@@ -17,7 +60,7 @@ git checkout master
 git pull
 ```
 
-## Branches
+### Using Branches
 
 When you begin working on a feature or bug fix associated with a GitHub issue,
 create a new branch from `master`; the most convenient way to do this is:
@@ -57,7 +100,7 @@ git pull origin master
 Alternatively, you can rebase ("replay" your commits on top of the latest
 `master` commit) instead by running `git pull --rebase origin master` instead.
 
-## Developing and Committing Code
+### Developing and Committing Code
 
 All new code should be committed to the new issue branch. To make commits, first
 you must "stage" your new code:
@@ -94,7 +137,7 @@ git push origin HEAD
 Commits can be edited if you feel your commits are not descriptive enough - if
 you would like some help doing so, ask your Tech Lead.
 
-## Pull Request
+### Pull Request
 
 When the issue being worked on is ready to be merged into `master` and all
 relevant commits on that branch have been pushed to GitHub, OR when you feel
