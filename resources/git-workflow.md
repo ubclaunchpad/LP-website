@@ -11,8 +11,8 @@ If you're familiar with Git, feel free to jump ahead to the [recommended workflo
 
 ### What is Git?
 
-Git is fundamentally a *version control system* - a tool that lets you maintain
-a timeline of changes that have occured in your project. Having a version
+Git is a *version control system* - a tool that lets you maintain
+a timeline of changes that have occured in your project. Think of it as awesome alternative to saving dozens of copies of a document labelled "report-v1", "report-v2", "report-FINAL", and so on. Having version
 history is great because you get to freely make changes without ever worrying
 about losing prior work.
 
@@ -26,6 +26,8 @@ members.
 On top of keeping history, Git comes with a set of features that make it truly
 great for collaborative work. Git allows you to create *branches*, alternative
 versions of your code, that could later be *merged* back to the main history.
+This allows everyone to make changes to a repository without worrying
+about changes that other people are doing!
 We'll get to this in a bit - let's first talk about how to get your repository
 set up.
 
@@ -38,9 +40,10 @@ TODO: Should this be more conceptual or more tutorial-like?
 Saving changes in a Git repository is a two-step process: first you have to
 *stage* your changed files, then you have to *commit* them.
 
-You can think of a Git commit as a snapshot or milestone along your project
-timeline. Each commit comes with a message that describes what changes that
-milestone introduced.
+You can think of a Git commit as a snapshot along your project
+timeline. Each commit comes with a message that describes what changes each
+new snapshot introduced, and consists of a "diff" - the difference between
+this snapshot and the previous.
 
 ### Branches
 
