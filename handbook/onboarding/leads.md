@@ -31,13 +31,13 @@ Make sure you get added to the `leads` [Rocket](/handbook/tools/slack#rocket) te
 
 ### GitHub Teams
 
-Make sure you are a part of the following teams on GitHub - [Rocket](/handbook/onboarding/everyone.md#rocket-setup) should do this for you - check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.
+Make sure you are a part of the following teams on GitHub - [Rocket](/handbook/onboarding/everyone.md#rocket-setup) should do this for you if you are a part of the `leads` Rocket team. Ceck your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.
 
 * [`@ubclaunchpad/leads`](https://github.com/orgs/ubclaunchpad/teams/leads), and check that you can access the [private Leads repository](https://github.com/ubclaunchpad/leads) - this repository primarily contains interview resources and tracking issues
 * [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [private Strategy repository](https://github.com/ubclaunchpad/strategy) - this repository contains sponsorship resources and event/sponsorship tracking issues
 * [`@ubclaunchpad/design`](https://github.com/orgs/ubclaunchpad/teams/design), and check that you can access the [public Design repository](https://github.com/ubclaunchpad/design) - this repository contains (some) design assets, resources, and tracking issues
 
-Additionally, the presidents should also be a part of [`@ubclaunchpad/exec`](https://github.com/orgs/ubclaunchpad/teams/exec) and familiarize themselves with the [Exec repository](https://github.com/ubclaunchpad/exec), where we keep track of accounts and credentials. Permissions for this repository is managed by hand.
+Additionally, the presidents should also be a part of [`@ubclaunchpad/exec`](https://github.com/orgs/ubclaunchpad/teams/exec) and familiarize themselves with the [Exec repository](https://github.com/ubclaunchpad/exec), where we keep track of accounts, credentials, handoff instructions, and more. Permissions for this repository is granted with the `exec` Rocket team.
 
 ::: tip
 Make sure that you are **watching** all relevant repositories so that you don't miss any updates! To learn more about setting up your GitHub notifications, check our [GitHub guide](../tools/github.md#setting-up-notifications).
