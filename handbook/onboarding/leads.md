@@ -129,6 +129,12 @@ Leads meetings between all leads (technical and non-technical) should happen on 
 
 As everyone provides their updates, we should keep track of discussion topics to follow up on and spend the remainder of the meeting having any necessary discussions.
 
+### Reimbursements
+
+Reimbursement requests should be filed in the [Leads repository using the reimbursement template](https://github.com/ubclaunchpad/leads/issues/new?assignees=&labels=reimbursement&template=reimbursement.md&title=), which also contains follow-up instructions. Leads should handle filing this on behalf of team members where appropriate.
+
+Co-presidents can find more details [in the Exec repository](https://github.com/ubclaunchpad/exec/blob/master/assets.md#finances).
+
 ## Further Reading
 
 * [Recruitment](/handbook#recruitment)
