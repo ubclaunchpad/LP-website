@@ -31,7 +31,7 @@ We use a channel naming scheme to make channels easier to find (based on [ideas#
 * `#tm-` for teams
 * `#nt-` for notifications (some Slack bots and integrations can send updates to specific channels)
 
-All channels should be named using this scheme.
+All channels should be named using this scheme. The only exception is [#thanks](https://ubclaunchpad.slack.com/archives/C01B3HFG4RW), to make it easier to give thanks to your awesome teammates! 😁
 
 Some channels are featured in this document, but you can easily find a full list of each category of channel by searching for a prefix!
 
