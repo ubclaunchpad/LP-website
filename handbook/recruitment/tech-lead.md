@@ -19,21 +19,20 @@ If you are a member of Launch Pad, feel free to reach out to your lead to learn 
 
 ## Responsibilities
 
-* **Lead a team** of developers and designers over 4-month development process
-* Drive **high-level architecture design and planning** of your team's project
-  * Learn more about project scoping in our [handbook](/handbook/project-management/scope.md) 🔍
-* Spearhead **sprint planning** for your team's project
-  * Learn more about sprint planning in our [handbook](/handbook/project-management/sprints.md) 🚴🏼
-* **Support members** throughout the development process when they need help
-* Provide **feedback and progress updates** to the leadership team to learn from each other's work, and to help the co-presidents coordinate
-* Be an active member on the leadership team to voice out your ideas and opinions on how we can make Launch Pad the best experience for everyone!
-* Engage in the recruitment process of new developers by reviewing applications and conducting technical interviews
-* Nominate future tech-leads (keep an eye on who’s being a superstar 👀)
+* 📣 **Lead a team** of developers and designers over 4-month development process
+* 🔍 Drive [**technical design and project scoping**](/handbook/project-management/scope.md) of your team's project
+* 🚴🏼 Spearhead [**sprint planning**](/handbook/project-management/sprints.md) for your team's project
+* 🎳 **Support members** throughout the development process when they need help
+* ✅ Provide **feedback and progress updates** to the leadership team to learn from each other's work, and to help the co-presidents coordinate teams
+* 💬 Be an active member on the leadership team to **voice out your ideas and opinions on how we can make Launch Pad the best experience for everyone**!
+* 📚 **Contribute your experience and processes** to our [documentation website](https://docs.ubclaunchpad.com)
+* 📝 Engage in the [**recruitment process**](/handbook/recruitment/overview.md) by reviewing applications, conducting interviews, and nominating future tech-leads
 
 ## What you get
 
 * An [amazing documentation website](https://docs.ubclaunchpad.com) to equip you with all the tools you need to succeed!
-* Develop your leadership skills by leading a cross-disciplinary team with autonomy with the support of other experienced leads
-* Advanced your development skills by overseeing a long-term development project
-* Demonstrate you are a problem-solver by creating a meaningful project with your team
-* Make some life-long relationships with the people from Launch Pad 💫
+* Develop your leadership and communication skills by leading a cross-disciplinary team with the support of other experienced leads
+* Take your technical skills to the next level by overseeing a long-term, in-depth development project
+* Flexibility and autonomy to make this experience about things you care about
+* Make meaningful contributions towards [Launch Pad's mission](/handbook/manifesto.md)
+* Create life-long relationships with the people from Launch Pad 💫
