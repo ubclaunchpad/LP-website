@@ -30,6 +30,11 @@ Outside of occasionally sharing miscellaneous tidbits from [`#cop-sharing`](http
 All content prepared for social media campaigns should be stored or linked to in the [Social Media](https://drive.google.com/drive/folders/1tRSa-obWwr_JU57tpscqmxIUZPlfqckQ?usp=sharing) folder (under Strategy).
 :::
 
+::: warning
+This is just a guideline for a potential format for social media usage.
+Evaluate on a case-by-case basis (particularly with things like the [mini-posts](#mini-posts), which had mixed results when we trialed it in 2020), but if we come up with a new standard or process, please update this document!
+:::
+
 ### Preparation
 
 Decide on a start date and topic for the social media campaign. A preparation workflow could look like:
