@@ -14,7 +14,7 @@ As a developer at UBC Launch Pad, you will be working with other developers and 
 Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/handbook/manifesto), which includes our vision and code of conduct. You can also learn about how recruitment works in Launch Pad in our [recruitment overview](/handbook/recruitment/overview.md).
 
 <!-- Comment out when accepting applications, also uncomment the form at the bottom -->
-::: tip We are not currently accepting applications for this role.
+::: warning We are not currently accepting applications for this role.
 Sign up for our [newsletter](https://ubclaunchpad.com/newsletter) to get updates!
 :::
 

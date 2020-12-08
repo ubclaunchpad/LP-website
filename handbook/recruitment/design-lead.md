@@ -11,7 +11,7 @@ search: false
 
 This year, we are establishing a closer leadership team, where tech-leads’ responsibility extends from simplifying leading your project to engage in club-wise planning and decision making. Therefore, we are looking for someone who is passionate about Launch Pad, and is willing to take initiatives in growing not only as a person, but also as a team!
 
-::: tip We generally do not accept applications for this role.
+::: tip We do not accept applications for this role.
 Our design leads are [selected through a nomination process](/handbook/strategy/recurring-processes.md#leads).
 :::
 

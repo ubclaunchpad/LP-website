@@ -121,6 +121,7 @@ We recommend that leads schedule 1-1 ("one-on-one") meetings with their team mem
 
 * Get to know their team members on a more personal level
 * Figure out what their goals out and how they (or the rest of Launch Pad) can help them achieve those goals
+  * Especially keep in mind that you will be asked to [nominate potential leads](/handbook/strategy/recurring-processes.md#leads), so encourage members who express interest in taking on this role!
 * Determine if team members need any additional additional support from Launch Pad
 * Get feedback about team and club operations
 

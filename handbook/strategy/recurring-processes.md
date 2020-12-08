@@ -84,6 +84,7 @@ Relevant handoff tasks are documented in the [leads onboarding guide](/handbook/
 ### Leads
 
 Each semester, each [tech lead](/handbook/manifesto.md#project-teams) and the [design lead](/handbook/manifesto.md#design-team) should nominate members they have worked with whom they believe would make good leads.
+Leads should let their members know that they can indicate their interest for this role.
 
 Candidates should be nominated based on active participation in Launch Pad, a robust foundation in relevant technical/design skills, and an aptitude for mentorship. Nominees should be provided with the [tech lead role description](/handbook/recruitment/tech-lead.md) or [design lead role description](/handbook/recruitment/design-lead.md) to help them decide if they are interested in the role.
 
