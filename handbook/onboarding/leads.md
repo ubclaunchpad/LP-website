@@ -100,6 +100,19 @@ Team formation happens in [kickoff events](/handbook/strategy/recurring-processe
    3. Add a link to your drive folder in your Slack channel description.
 5. Announce your channel in the leads channel so that other leads can join in on your discussions!
 
+#### Continuing a Team
+
+Some teams may want to continue their projects for multiple semesters.
+As a lead, please keep the following in mind before you decide to continue your team's project:
+
+* New members cannot (generally) be recruited into an existing team.
+  * There is a significant curve to onboarding someone not just to the project idea, but also to the tech stack and your individual team dynamics, in time for them to make meaningful contributions within the span of a single semester.
+  * Historically, exceedingly few new members elect to join existing teams when we have offered this option in the past.
+  * This reduces the number of new members we can take on each semester.
+* If you decide not to continue a project, that does not mean the project is dead forever - Launch Pad repositories are generally open source, and there have been cases of projects continuing long after it ceases to be a standard active Launch Pad project.
+
+Only continue a project if you are confident you will be retaining your team's most active members, and at least 75% of your team is enthusiastic about continuing.
+
 #### 1-1's with Team Members
 
 We recommend that leads schedule 1-1 ("one-on-one") meetings with their team members on a biweekly or monthly basis. Leads might want to make the first of these meetings mandatory, and keep the subsequent ones optional.
