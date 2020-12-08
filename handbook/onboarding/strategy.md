@@ -79,6 +79,10 @@ You can also refer to the [Guide for Meeting with clubs](https://docs.google.com
 
 Social media management workflows are documented in the [social media guide](/handbook/tools/social-media.md).
 
+### Reimbursements
+
+Reimbursement requests should be filed in the [Leads repository using the reimbursement template](https://github.com/ubclaunchpad/leads/issues/new?assignees=&labels=reimbursement&template=reimbursement.md&title=), which also contains follow-up instructions.
+
 ## Further Reading
 
 * [Analytics](/handbook/tools/analytics.md)
