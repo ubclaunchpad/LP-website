@@ -43,5 +43,5 @@ We recommend using [Netlify's file-based configuration](https://docs.netlify.com
 [`ubclaunchpad/sync`](https://github.com/ubclaunchpad/sync) uses Heroku to deploy its backend.
 
 ::: tip
-As a student, you have access to [Github's student developer pack](https://education.github.com/pack), which includes a free Heroku [hobby dyno](https://devcenter.heroku.com/articles/dyno-types). The hobby dyno is a great deployment option for small scale applications, and unlike the free dyno, the application does not go to sleep.
+As a student, you have access to [GitHub's student developer pack](https://education.github.com/pack), which includes a free Heroku [hobby dyno](https://devcenter.heroku.com/articles/dyno-types). The hobby dyno is a great deployment option for small scale applications, and unlike the free dyno, the application does not go to sleep.
 :::
