@@ -1,6 +1,8 @@
 # urls
 ubclaunchpad.com
 docs.ubclaunchpad.com
+sync.ubclaunchpad.com
+design.ubclaunchpad.com
 Shields.io
 devhints.io
 cheat.sh
@@ -14,6 +16,10 @@ linters
 plugin
 teardown
 config
+frontends
+backend
+backends
+dyno
 
 # names and services
 eslint
@@ -46,6 +52,8 @@ GitKraken
 PowerShell
 Xubuntu
 OpenSUSE
+GSuite
+Heroku
 
 # other
 Onboarding
