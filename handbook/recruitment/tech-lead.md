@@ -36,3 +36,10 @@ If you are a member of Launch Pad, feel free to reach out to your lead to learn 
 * Flexibility and autonomy to make this experience about things you care about
 * Make meaningful contributions towards [Launch Pad's mission](/handbook/manifesto.md)
 * Create life-long relationships with the people from Launch Pad 💫
+
+## Time commitment
+
+Time commitment can vary significantly based on your own preferences as well as the requirements of your team.
+If you decide to lead the planning of an event or some other initiative, for example, your time commitment might look very different from a lead who is primarily focused on their team.
+In general, our [leads onboarding](/handbook/onboarding/leads.md) covers most of a lead's basic responsibilities (about 1 hour of leads meeting and 1 hour of team meeting per week), but how much time your team needs will depend on how you run your team, how much support your members require, and the nature of your team's project.
+Our [project management guides](/handbook/README.md#project-management) give a bit of a starting point for the specifics of what you need to do to run a project, but you'll also have your fellow leads as a resource if you need help and advice!
