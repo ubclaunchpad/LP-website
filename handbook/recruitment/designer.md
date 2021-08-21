@@ -14,9 +14,9 @@ As a designer at UBC Launch Pad, you will be working with other designers and de
 Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/handbook/manifesto), which includes our vision and code of conduct. You can also learn about how recruitment works in Launch Pad in our [recruitment overview](/handbook/recruitment/overview.md).
 
 <!-- Comment out when accepting applications, also uncomment the form at the bottom -->
-::: warning We are not currently accepting applications for this role.
+<!-- ::: warning We are not currently accepting applications for this role.
 Sign up for our [newsletter](https://ubclaunchpad.com/newsletter) to get updates!
-:::
+::: -->
 
 ## Responsibilities
 
@@ -37,8 +37,8 @@ Sign up for our [newsletter](https://ubclaunchpad.com/newsletter) to get updates
 
 ## Time commitment
 
-* September 12th (TBD) - semester kickoff
-* Weekly team meetings (1 hour per week) and occasional club meetings
+* Club meetings every other Saturday from 12pm-3pm (the first hour is required, the rest of the time is to hang out, work, and eat lunch together and we highly recommend staying if you can!)
+* 1 hour bi-weekly sub-team meetings (alternating with the club-wide Saturday meetings) that are scheduled based on sub-team member availability
 * Around 5 hours per week working on tasks
 
 ## Requirements
