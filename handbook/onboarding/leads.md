@@ -86,13 +86,13 @@ Team formation happens in [kickoff events](/handbook/strategy/recurring-processe
    ```
    /rocket team create TEAM_NAME --lead SLACK_HANDLE --channel TEAM_CHANNEL
    ```
-   
+
    For example, if your team name is `Facebook for Cats`, your Slack handle is `@Jane Doe`, and the team Slack channel you created in step 1 is called `#tm-facebook-for-cats`, then you should write:
-   
+
    ```
    /rocket team create "Facebook for Cats" --lead @Jane Doe --channel #tm-facebook-for-cats
    ```
-   
+
 3. Set up your repository!
    1. Verify that your team has been created in the [GitHub teams page](https://github.com/orgs/ubclaunchpad/teams). If your team members have set up Rocket correctly, they should all be in the team.
    2. [Create a repository](https://github.com/organizations/ubclaunchpad/repositories/new). When doing so, make sure you check "Add a README file" so that GitHub can initialize the Git repository as well (you can also initialize it manually afterwards by pushing to the repository if you want). Under your new repository's "Settings" page, go to "Manage access" and:
