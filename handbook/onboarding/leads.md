@@ -57,10 +57,12 @@ To gain access to various social media accounts, see the [social media documenta
 
 ## Workflows
 
+::: tip
 We use GitHub and Slack for pretty much *everything* - make sure you are intimately familiar with **both**, regardless of your role, by reading our handcrafted guides:
 
 * [GitHub guide](/handbook/tools/github)
 * [Slack guide](/handbook/tools/slack)
+:::
 
 ### Recurring Processes
 
@@ -92,6 +94,12 @@ Team formation happens in [kickoff events](/handbook/strategy/recurring-processe
    ```
    /rocket team create "Facebook for Cats" --lead @Jane Doe --channel #tm-facebook-for-cats
    ```
+
+   ::: tip
+   Note that the `SLACK_HANDLE` and `TEAM_CHANNEL` parameters will be parsed by Slack as tags, so spaces are okay. If you have spaces in your team name, however, please ensure that you surround it in quotation marks like the example.
+
+   ![image](https://user-images.githubusercontent.com/18269656/135139055-3882629d-52ca-49e9-b9b8-5b359de96a4c.png)
+   :::
 
 3. Set up your repository!
    1. Verify that your team has been created in the [GitHub teams page](https://github.com/orgs/ubclaunchpad/teams). If your team members have set up Rocket correctly, they should all be in the team.
