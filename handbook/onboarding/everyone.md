@@ -27,8 +27,15 @@ Make sure you are part of the [UBC Launch Pad Slack workspace](https://ubclaunch
 Then, you can give it some information about you - the following are particularly important, since it is how you will be granted access to the correct [GitHub teams](#github-access) and [Google Drive folders](#drive-access):
 
 ```
-/rocket user edit --github $USERNAME
-/rocket user edit --email $EMAIL
+/rocket user edit --github USERNAME
+/rocket user edit --email EMAIL
+```
+
+For example, if your GitHub username is `JaneDoe` and your email is `janedoe@gmail.com`, you would write:
+
+```
+/rocket user edit --github JaneDoe
+/rocket user edit --email janedoe@gmail.com
 ```
 
 You can verify your information is correct by sending:
@@ -44,7 +51,7 @@ Learn more about Rocket in our [Slack guide's Rocket section](/handbook/tools/sl
 Make sure you are part of the [UBC Launch Pad GitHub organization](https://github.com/ubclaunchpad/). [Rocket](#rocket-setup) should do this for you - check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.
 
 * You should be able to access our private repositories, such as [`ubclaunchpad/ideas`](https://github.com/ubclaunchpad/ideas)
-  * If you can't see the Ideas repository, check that you are in the GitHub team [`@ubclaunchpad/all`](https://github.com/orgs/ubclaunchpad/teams/all) - if not,make sure you've [set up your profile on Rocket](#rocket-setup)!
+  * If you can't see the Ideas repository, check that you are in the GitHub team [`@ubclaunchpad/all`](https://github.com/orgs/ubclaunchpad/teams/all) - if not, make sure you've [set up your profile on Rocket](#rocket-setup)!
 * Read our [Intro to GitHub](../tools/github.md) guide, which will help you get started on leveraging GitHub and setting up notifications.
   * Make sure you read the section on notifications for Slack - GitHub will be the primary way to manage tasks and have structured discussions, so you don't want to miss any updates!
 
