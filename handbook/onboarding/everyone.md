@@ -32,6 +32,7 @@ Then, you can give it some information about you - the following are particularl
 ```
 
 For example, if your GitHub username is `JaneDoe` and your email is `janedoe@gmail.com`, you would write:
+
 ```
 /rocket user edit --github JaneDoe
 /rocket user edit --email janedoe@gmail.com
