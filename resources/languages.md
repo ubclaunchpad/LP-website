@@ -53,3 +53,7 @@ resources, feel free to [make a pull request](../CONTRIBUTING.md).
 * [Rustlings](https://github.com/rust-lang/rustlings) is a collection of exercises, with an awesome CLI you can use to check your answers and get hints.
 * [Learning Rust With Entirely Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/index.html) another amazing book for hands-on learning.
 * Check out [`awesome-rust`](https://github.com/rust-unofficial/awesome-rust#resources) for more resources!
+
+## Ruby on Rails
+
+* [Ruby on Rails Beginner's Guide](https://revelry.co/rails-beginners-guide/) is a great introduction to Rails with beginner exercises for practice.
