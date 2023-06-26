@@ -1,5 +1,0 @@
-# Make markdown show up as repo language
-*.md linguist-vendored=false
-*.md linguist-generated=false
-*.md linguist-documentation=false
-*.md linguist-detectable=true

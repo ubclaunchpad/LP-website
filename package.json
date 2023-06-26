@@ -1,25 +1,46 @@
 {
-  "name": "docs",
-  "version": "1.0.0",
-  "description": "📚 The official UBC Launch Pad knowledge base",
-  "scripts": {
-    "serve": "vuepress dev",
-    "build": "vuepress build",
-    "lint": "markdownlint . --ignore node_modules --ignore index.md",
-    "spellcheck": "mdspell --ignore-acronyms --ignore-numbers --report --en-gb $(git diff --name-only HEAD origin/master | grep .md)"
-  },
-  "dependencies": {
-    "@ubclaunchpad/vuepress-plugin-fathom": "~1.2.1",
-    "@vuepress/plugin-back-to-top": "~1.7.0",
-    "emoji-regex": "~9.1.1",
-    "markdown-spellcheck": "~1.3.1",
-    "markdownlint": "~0.21.0",
-    "markdownlint-cli": "~0.24.0",
-    "sass": "~1.27.0",
-    "sass-loader": "~10.0.3",
-    "vuepress": "~1.7.0",
-    "vuepress-plugin-clean-urls": "~1.1.2",
-    "vuepress-plugin-fulltext-search": "git+https://github.com/ubclaunchpad/vuepress-plugin-fulltext-search.git#fd7f388d4c562e8426efb0de57158817e4bbea9c",
-    "vuepress-theme-yuu": "~2.3.0"
-  }
+	"name": "launch-pad-docs",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-cloudflare": "^2.3.0",
+		"@sveltejs/kit": "^1.5.0",
+		"@types/google.accounts": "^0.0.7",
+		"@types/node": "^20.2.1",
+		"@types/three": "^0.152.0",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte": "^2.26.0",
+		"mdsvex": "^0.10.6",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
+		"sass": "^1.62.1",
+		"svelte": "^3.54.0",
+		"svelte-check": "^3.0.1",
+		"svelte-preprocess": "^5.0.3",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"vite": "^4.3.9"
+	},
+	"dependencies": {
+		"@types/gapi": "^0.0.44",
+		"fs": "^0.0.1-security",
+		"jwt-decode": "^3.1.2",
+		"path": "^0.12.7",
+		"rehype-autolink-headings": "^6.1.1",
+		"rehype-slug": "^5.1.0"
+	},
+	"type": "module"
 }

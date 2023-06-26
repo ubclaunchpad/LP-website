@@ -1,54 +1,38 @@
-<p align="center">
-  <a href="https://docs.ubclaunchpad.com">
-    <img src="./img/homepage.png" width="50%" alt="homepage"/>
-  </a>
-</p>
+# create-svelte
 
-<h3 align="center">
-  <a href="https://docs.ubclaunchpad.com">docs.ubclaunchpad.com</a>
-</h3>
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-<p align="center">
-  UBC Launch Pad's official knowledge base.
-</p>
+## Creating a project
 
-<p align="center">
-  <a href="https://github.com/ubclaunchpad/docs/actions?workflow=Checks">
-    <img src="https://github.com/ubclaunchpad/docs/workflows/Checks/badge.svg"
-      alt="Checks Status" />
-  </a>
-  <a href="https://app.netlify.com/sites/ubclaunchpad-docs/deploys">
-    <img src="https://api.netlify.com/api/v1/badges/54de0b2a-89ee-4432-9f90-51bf0ef53b4f/deploy-status"
-      alt="Deploy Status" />
-  </a>
-  <a href="https://docs.ubclaunchpad.com">
-    <img src="https://img.shields.io/website/https/docs.ubclaunchpad.com.svg"
-      alt="Website Status"/>
-  </a>
-  <a href="https://app.usefathom.com/share/oemmhhle/docs.ubclaunchpad.com">
-    <img src="https://img.shields.io/badge/dynamic/json?color=%23533feb&label=current&query=%24.total&suffix=%20visitors&url=https%3A%2F%2Fapp.usefathom.com%2Fsites%2F4942%2Fcurrent_visitors"
-      alt="Current Visitors">
-  </a>
-</p>
+If you're seeing this, you've probably already done this step. Congrats!
 
-<br />
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-<!-- markdownlint-disable -->
-
-## ⚒️ Contributing
-
-To get started:
-
-```sh
-git clone https://github.com/ubclaunchpad/docs.git
-cd docs
+# create a new project in my-app
+npm create svelte@latest my-app
 ```
 
-Then make the changes you want to make to the site's content, commit it, and make a pull request! Optionally:
+## Developing
 
-```sh
-npm install    # install dependencies
-npm run serve  # run website locally
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-Head on over to the [Contribution Guide](./CONTRIBUTING.md) for more details!
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
