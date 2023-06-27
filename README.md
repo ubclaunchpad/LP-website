@@ -6,3 +6,17 @@ We've built this hub that brings all the docs together in one app. The hub is bu
 
 We don't directly store any posts in this repository; this is a server-side rendered solution to streamline how we share and build on our knowledge as a club
 
+
+
+[Star Port](https://github.com/ubclaunchpad/StarPort)
+[Cosmic Gateway](https://github.com/ubclaunchpad/CosmicGateway)
+--
+
+[Docs](https://github.com/ubclaunchpad/docs)
+--
+
+[General Docs](https://github.com/ubclaunchpad/ideas)
+[Design Docs](https://github.com/ubclaunchpad/design)
+[Strategy Docs](https://github.com/ubclaunchpad/strategy)
+[Exec Docs](https://github.com/ubclaunchpad/exec)
+[Leads Docs](https://github.com/ubclaunchpad/leads)
