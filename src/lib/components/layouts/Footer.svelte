@@ -5,7 +5,7 @@
 		display: flex;
 		width: 100%;
 		justify-content: center;
-		border-top: 1px solid var(--color-bg-1);
-		padding: 1rem;
+		border-top: 1px solid var(--color-border-0);
+		padding: 0.5rem;
 	}
 </style>

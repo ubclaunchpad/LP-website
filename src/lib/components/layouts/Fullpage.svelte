@@ -43,7 +43,7 @@
 			<div />
 		</section>
 
-		<section class="subnav" />
+		<!-- <section class="subnav" /> -->
 	</nav>
 	<section>
 		<aside>
@@ -66,9 +66,9 @@
 				{/if}
 
 				<div class="item bottom" class:open={showNav}>
-					<a href="/">
+					<!-- <a href="/">
 						<img src={logo} alt="logo" width="36px" />
-					</a>
+					</a> -->
 				</div>
 			</div>
 		</aside>

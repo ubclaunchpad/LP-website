@@ -1,8 +1,11 @@
 import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
 import sveltePreprocess from 'svelte-preprocess';
+import containers from 'remark-containers';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeWrapAll from 'rehype-wrap-all';
+import rehypeHighlightCodeBlock from '@mapbox/rehype-highlight-code-block';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -20,7 +23,19 @@ const config = {
 		}),
 		mdsvex({
 			extensions: ['.md'],
-			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
+			rehypePlugins: [
+				[rehypeSlug],
+				[rehypeAutolinkHeadings, 'before'],
+				[
+					rehypeWrapAll,
+					{
+						wrapper: 'div.table-wrapper',
+						selector: 'table'
+					}
+				],
+				rehypeHighlightCodeBlock
+			],
+			remarkPlugins: [containers]
 		})
 	],
 

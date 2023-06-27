@@ -1,8 +1,15 @@
 // src/routes/blog/[slug]/+page.js
 export async function load({ params }) {
-	const slug = params.slug || 'index';
+	let slug = params.slug || 'index';
+
+	if (slug.endsWith('index')) {
+		slug = slug.replace('index', 'README');
+	}
+
+	console.log('slug', slug);
 
 	try {
+		console.log('sss', params);
 		const post = await import('/src/docs/' + slug + '.md');
 		// const { title, date } = post.metadata;
 		const content = post.default;
@@ -16,3 +23,4 @@ export async function load({ params }) {
 
 	// goto('/');
 }
+// export const csr = false;

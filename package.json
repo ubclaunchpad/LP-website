@@ -35,12 +35,16 @@
 		"vite": "^4.3.9"
 	},
 	"dependencies": {
+		"@mapbox/rehype-highlight-code-block": "^1.0.0",
 		"@types/gapi": "^0.0.44",
 		"fs": "^0.0.1-security",
 		"jwt-decode": "^3.1.2",
 		"path": "^0.12.7",
 		"rehype-autolink-headings": "^6.1.1",
-		"rehype-slug": "^5.1.0"
+		"rehype-slug": "^5.1.0",
+		"rehype-wrap": "^1.1.0",
+		"rehype-wrap-all": "^1.1.0",
+		"remark-containers": "^1.2.0"
 	},
 	"type": "module"
 }

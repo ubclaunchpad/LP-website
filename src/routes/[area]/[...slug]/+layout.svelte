@@ -20,11 +20,7 @@
 </script>
 
 <article>
-	<div class="action">
-		<div />
-
-		<button> Edit this page on Github </button>
-	</div>
+	
 	<section class="blog">
 		<slot />
 	</section>
@@ -33,6 +29,7 @@
 <style lang="scss">
 	article {
 		width: 100%;
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -44,9 +41,9 @@
 		position: relative;
 
 		.blog {
-			max-width: 950px;
 			overflow-y: scroll;
-
+			width: 100%;
+			height: 100%;
 			:global(p) {
 				max-width: 800px;
 			}
@@ -57,7 +54,7 @@
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
-			position: absolute;
+			position: sticky;
 			top: 0;
 
 			button {

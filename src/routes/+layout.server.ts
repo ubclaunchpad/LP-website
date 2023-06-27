@@ -48,7 +48,12 @@ async function getFilesInDirectory(directoryPath: string): Promise<string[]> {
 	try {
 		const files = await fsPromises.readdir(directoryPath);
 		return files
-			.filter((file) => path.extname(file) === '.md' && !file.toLowerCase().includes('index'))
+			.filter(
+				(file) =>
+					path.extname(file) === '.md' &&
+					!file.toLowerCase().includes('index') &&
+					!file.toLowerCase().includes('readme')
+			)
 			.map((file) => path.basename(file, '.md'));
 	} catch (error) {
 		return [];
