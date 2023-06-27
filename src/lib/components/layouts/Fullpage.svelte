@@ -39,7 +39,7 @@
 				<img src={logo} alt="logo" width="36px" />
 			</a>
 			<h2>Launch Pad <span>(Docs)</span></h2>
-			<input class="search" placeholder="search"/>
+			<!-- <input class="search" placeholder="search" /> -->
 			<div />
 		</section>
 
@@ -88,6 +88,7 @@
 		overflow: hidden;
 		padding: 0;
 		height: 100svh;
+		width: 100svw;
 		.blur {
 			filter: blur(10px);
 			:global(*) {
@@ -110,7 +111,7 @@
 				width: 100%;
 				padding: 0.2rem;
 				column-gap: 0.8rem;
-				
+
 				h2 {
 					position: relative;
 					font-size: 1.1rem;
@@ -152,7 +153,9 @@
 		> section {
 			display: flex;
 			width: 100%;
-			overflow-y: scroll;
+			overflow: hidden;
+			flex-wrap: nowrap;
+			height: 100%;
 			main {
 				display: flex;
 				justify-content: space-between;
@@ -166,7 +169,7 @@
 			aside {
 				position: relative;
 				min-width: 2.4rem;
-				height: 100%;
+				// height: 100%;
 				background-color: var(--color-bg-1);
 				z-index: 100;
 				.compact {
@@ -176,11 +179,15 @@
 				}
 
 				.sidebar {
+					background-color: var(--color-bg-1);
+					overflow-y: scroll;
+
 					.item {
 						width: 2.4rem;
 						padding: 1rem 0.4rem;
 						display: flex;
 						justify-content: center;
+
 						button {
 							background-color: inherit;
 						}

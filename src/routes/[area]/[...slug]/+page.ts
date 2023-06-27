@@ -1,10 +1,9 @@
-import { goto } from '$app/navigation';
-
 // src/routes/blog/[slug]/+page.js
 export async function load({ params }) {
-	const slug = params.slug;
+	const slug = params.slug || 'index';
+
 	try {
-		const post = await import('../' + slug + '.md');
+		const post = await import('/src/docs/' + slug + '.md');
 		// const { title, date } = post.metadata;
 		const content = post.default;
 		return {
@@ -12,8 +11,8 @@ export async function load({ params }) {
 			// date
 		};
 	} catch (error) {
-		// console.log(error);
+		console.log(error);
 	}
 
-	goto('/');
+	// goto('/');
 }

@@ -8,8 +8,7 @@ interface Directory {
 }
 
 async function getPaths(): Promise<Directory> {
-	const currentDirectory = path.join(process.cwd(), 'src/routes/docs');
-
+	const currentDirectory = path.join(process.cwd(), 'src/docs');
 	try {
 		const siblingEntries = await fsPromises.readdir(currentDirectory, { withFileTypes: true });
 
@@ -49,7 +48,7 @@ async function getFilesInDirectory(directoryPath: string): Promise<string[]> {
 	try {
 		const files = await fsPromises.readdir(directoryPath);
 		return files
-			.filter((file) => path.extname(file) === '.md')
+			.filter((file) => path.extname(file) === '.md' && !file.toLowerCase().includes('index'))
 			.map((file) => path.basename(file, '.md'));
 	} catch (error) {
 		return [];
