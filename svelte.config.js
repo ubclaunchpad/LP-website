@@ -5,7 +5,6 @@ import containers from 'remark-containers';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeWrapAll from 'rehype-wrap-all';
-import rehypeHighlightCodeBlock from '@mapbox/rehype-highlight-code-block';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -22,18 +21,24 @@ const config = {
 			}
 		}),
 		mdsvex({
+			highlight: false,
 			extensions: ['.md'],
 			rehypePlugins: [
 				[rehypeSlug],
 				[rehypeAutolinkHeadings, 'before'],
 				[
 					rehypeWrapAll,
-					{
-						wrapper: 'div.table-wrapper',
-						selector: 'table'
-					}
-				],
-				rehypeHighlightCodeBlock
+					[
+						{
+							wrapper: 'div.table-wrapper',
+							selector: 'table'
+						},
+						{
+							wrapper: 'div.code-wrapper',
+							selector: 'pre'
+						}
+					]
+				]
 			],
 			remarkPlugins: [containers]
 		})

@@ -11,7 +11,6 @@ async function getPaths(): Promise<Directory> {
 	const currentDirectory = path.join(process.cwd(), 'src/docs');
 	try {
 		const siblingEntries = await fsPromises.readdir(currentDirectory, { withFileTypes: true });
-
 		const files = siblingEntries
 			.filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
 			.map((entry) => path.basename(entry.name, '.md'));
@@ -31,7 +30,7 @@ async function getPaths(): Promise<Directory> {
 			}));
 
 		return {
-			name: currentDirectory,
+			name: currentDirectory.replace(process.cwd(), '').replace(/\\/g, '/'),
 			files: files,
 			directories: await Promise.all(directories)
 		};
@@ -87,5 +86,3 @@ async function getPathsInDirectory(directoryPath: string): Promise<Directory[]> 
 export const load = async ({ params }) => {
 	return await getPaths(params.slug);
 };
-
-export const prerender = true;

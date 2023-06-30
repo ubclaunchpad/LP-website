@@ -31,9 +31,8 @@
 
 	a {
 		color: var(--color-link-0);
-		font-weight: 600;
 		padding: 0 2px;
-		text-decoration: none;
+		background-color: var(--color-blockquote-0);
 	}
 
 	p,
@@ -62,6 +61,12 @@
 		a {
 			content: '#';
 			padding-right: 5px;
+			background-color: inherit;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
 
 			span {
 				&::after {
@@ -103,9 +108,10 @@
 
 	h1 {
 		padding: 0;
-		padding-bottom: 0.4rem;
-		font-size: 2.2rem;
+		padding-bottom: 1.5rem;
+		font-size: 2.1rem;
 		line-height: 1.3;
+		color: var(--color-text-primary);
 	}
 
 	h2 {
@@ -270,14 +276,39 @@
 		background-color: var(--color-code-block);
 	}
 
+	.code-wrapper {
+		background-color: var(--color-code-block);
+		padding: 0 0;
+		border: 1px solid var(--color-border-0);
+		font-size: 14px;
+		line-height: 1.4;
+		border-radius: var(--border-radius-medium);
+		overflow: hidden;
+
+		&::after {
+			content: '';
+			display: flex;
+			justify-content: flex-end;
+			background-color: blue;
+			padding: 0.5rem;
+			height: 20px;
+			background-color: var(--color-blockquote-0);
+		}
+	}
+
 	pre {
 		background-color: var(--color-code-block);
-		padding: 10px 5px;
-		border-radius: var(--border-radius-medium);
+		padding: 1rem;
+		border-bottom: 1px solid var(--color-border-0);
+		font-size: 14px;
+		line-height: 1.4;
 
 		code {
 			background-color: transparent;
 		}
+	}
+	.task-list-item {
+		list-style-type: none;
 	}
 
 	code,
@@ -285,7 +316,7 @@
 		padding: 2px 4px;
 		border-radius: 2px;
 		font-family: var(--font-monospace);
-		color: var(--color-text-primary);
+		// color: var(--color-text-primary);
 		background-color: var(--color-code-block);
 	}
 
@@ -454,7 +485,6 @@
 				th {
 					padding: 0.4rem;
 					white-space: nowrap;
-					font-weight: 600;
 					height: 1rem;
 					border-bottom: 1px solid var(--color-table-border-0);
 				}

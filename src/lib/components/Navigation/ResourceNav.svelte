@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { fly, slide } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 	import Icon from '../general/Icon.svelte';
 	import ChevronDownIcon from '../general/icons/ChevronDownIcon.svelte';
 	import ChevronRightIcon from '../general/icons/ChevronRightIcon.svelte';
 	import FileIcon from '../general/icons/FileIcon.svelte';
-	import FolderIcon from '../general/icons/FolderIcon.svelte';
 	import DirectoryIcon from '../general/icons/DirectoryIcon.svelte';
 	export let directory;
 	let isExpanded = true;
@@ -38,7 +37,7 @@
 			{#if directory.files.length > 0}
 				{#each directory.files as file}
 					<li>
-						<a href={`/docs/${directory.name}/${file}`}>
+						<a href={`/${directory.name}/${file}`}>
 							<Icon>
 								<FileIcon />
 							</Icon>
@@ -67,13 +66,18 @@
 </li>
 
 <style lang="scss">
+	a {
+		text-decoration: none;
+		color: var(--color-text-2);
+	}
 	li {
+		list-style: none;
 		padding: 1rem;
 	}
 
 	.dir {
-		padding: 0.5rem 0;
-		font-size: 0.9rem;
+		padding: 0.3rem 0;
+		font-size: 0.75rem;
 		color: var(--color-bg-primary);
 		font-weight: 600;
 	}
@@ -81,18 +85,27 @@
 	.header {
 		display: flex;
 		width: 100%;
-		column-gap: 0.8rem;
+		column-gap: 5px;
 		padding: 0.5rem 0.2rem;
 		border-radius: var(--border-radius-medium);
 		background-color: inherit;
-		color: var(--color-text-1);
+		color: var(--color-text-2);
+		align-items: center;
 		font-weight: 600;
-
 		&:hover {
 			background-color: inherit;
 		}
+
+		button {
+			background-color: transparent;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 		:global(svg) {
 			stroke-width: 2px;
+			background-color: inherit;
+			stroke: var(--color-text-2);
 		}
 	}
 
@@ -107,21 +120,20 @@
 		list-style-type: none;
 		font-size: 0.8rem;
 		li {
-			padding: 0.4rem 1rem;
+			padding: 0.4rem 0.3rem;
 
 			a {
 				display: flex;
-				column-gap: 1rem;
+				column-gap: 5px;
 				align-items: center;
 				text-decoration: none;
-				color: var(--color-text-1);
+				font-size: 0.7rem;
 
 				&:hover {
-					text-decoration: underline;
 				}
 
 				:global(svg) {
-					width: 24px;
+					width: 14px;
 				}
 
 				p {

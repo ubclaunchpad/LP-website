@@ -23,6 +23,7 @@
 		flex: 1;
 		padding: 0.3rem;
 		border-radius: 4px;
+		background-color: red;
 		column-gap: 1rem;
 		justify-content: center;
 		overflow-y: scroll;

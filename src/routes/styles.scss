@@ -2,6 +2,7 @@
 html {
 	font-family: 'Inter', sans-serif;
 	background-color: var(--color-bg-primary-dark);
+	scroll-behavior: smooth;
 }
 
 :disabled {
@@ -44,12 +45,12 @@ svg {
 }
 
 select {
-	border: 1px solid var(--color-border-1);
+	border: 1px solid var(--color-border-0);
 	color: var(--color-text-1);
 	font-family: inherit;
-	background-color: var(--color-bg-3);
-	padding: 0.5rem 1rem;
-	border-radius: 7px;
+	background-color: var(--color-bg-2);
+	padding: 0.5rem 0.6rem;
+	border-radius: var(--border-radius-medium);
 	font-size: 0.9rem;
 	appearance: none;
 	text-overflow: ellipsis;
