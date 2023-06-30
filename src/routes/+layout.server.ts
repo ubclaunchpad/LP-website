@@ -86,3 +86,6 @@ async function getPathsInDirectory(directoryPath: string): Promise<Directory[]> 
 export const load = async ({ params }) => {
 	return await getPaths(params.slug);
 };
+
+
+export const prerender = true;
