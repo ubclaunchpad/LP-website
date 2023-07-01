@@ -6,9 +6,13 @@ We store a great deal of documents that encompasses our club information, good r
 
 We want members have an easy way to view all these docs while ensuring our access scopes are in place and team can also have their own private docs. That's why we've built this wiki tool.
 
-> The hub brings all the docs together in one app. It is built on our internal authentication system that tailors your experience based on access scopes
+---
 
-**We don't directly store any documents on this repository; this is a solution to streamline how we share and build on our knowledge as a club**
+The hub brings all the docs together in one app. It is built on our internal authentication system that tailors your experience based on access scopes
+
+---
+
+_We don't directly store any documents on this repository; this is a solution to streamline how we share and build on our knowledge as a club_
 
 ## 📝 Wiki Management
 
@@ -34,13 +38,13 @@ You can publish or modify any of the docs by going to the resource repository. Y
 
 #### Syncing changes
 
-The hub will resync when areas are updated. We have yet to decided how frequently we will sync but in general we anticipate the docs will be updated within minutes.
+The hub will resync when areas are updated. We have yet to decide how frequently we will sync but in general we anticipate the docs will be updated within minutes if not seconds.
 
 - [ ] in the future we will run some background checks before syncing to ensure the doc "areas" follow the standards we need
 
 #### Best Practices
 
-In general we want our areas to only include `.md` files and all the reference attatchments to be either accessbile publicly or exists in the repository
+In general follow the best pratices of writing in markdown and if you include any sort of attatchments makes sure the attatchments are publicly available
 
 ### Removing a Source
 
@@ -52,7 +56,30 @@ this contributing section is only to update how this hub renders the docs, and t
 
 you can clone the repo and work on exisintg issues or create issues yourself.
 
-Note: the repo by design does not include any documents to enure security. To view local documents, you can add your markdown files under the `src/docs` directory.
+Note: the repo by design does not include any documents to enure security. To view local documents, you can implmenet some bypass routes in the api.
+
+### TODO
+
+- Document display
+
+  - [ ] Find workarounds to display images and other local contents
+  - [ ] Update the rendering process for tables and code blocks
+
+- Authentication
+
+  - [ ] Add authentication layers
+  - [ ] Implement the side bar to fetch directories (needs auth support)
+  - [ ] Add register and unregister features to the portal
+
+- Search
+
+  - [ ] Add search and indexing
+
+- Misc.
+
+  - [ ] Sync styles with portal
+  - [ ] Monitor performance
+  - [ ] Set up Notion Integration
 
 ### 🔗 Related
 
@@ -60,14 +87,14 @@ Note: the repo by design does not include any documents to enure security. To vi
 
 - [Cosmic Gateway](https://github.com/ubclaunchpad/CosmicGateway): Our portal UI
 
-## Current Areas in Our Wiki
+## Areas in Our Wiki
 
-| Area          | Repository Reference                     | Access Scopes |
-| ------------- | ---------------------------------------- | ------------- |
-| 📓 Handbook   | TBD                                      | `Public`      |
-| 💡Ideas       | https://github.com/ubclaunchpad/ideas    | TBD           |
-| 🎨 Designers  |                                          | TBD           |
-| 💻 Developers |                                          | TBD           |
-| ✏️ Strategy   | https://github.com/ubclaunchpad/strategy | TBD           |
-| 📄 Leads      | https://github.com/ubclaunchpad/leads    | TBD           |
-| 📃Execs       | https://github.com/ubclaunchpad/exec     | TBD           |
+| Area          | Repository Reference                       | Access Scopes | Status      |
+| ------------- | ------------------------------------------ | ------------- | ----------- |
+| 📓 Handbook   | TBD                                        | `Public`      | To be added |
+| 💡Ideas       | <https://github.com/ubclaunchpad/ideas>    | TBD           | To be added |
+| 🎨 Designers  |                                            | TBD           | To be added |
+| 💻 Developers |                                            | TBD           | To be added |
+| ✏️ Strategy   | <https://github.com/ubclaunchpad/strategy> | TBD           | To be added |
+| 📄 Leads      | <https://github.com/ubclaunchpad/leads>    | TBD           | To be added |
+| 📃Execs       | <https://github.com/ubclaunchpad/exec>     | TBD           | To be added |
