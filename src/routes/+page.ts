@@ -1,13 +1,13 @@
 export async function load() {
 	try {
-		const post = await import('./README' + '.md');
-		const content = post.default;
+		const res = await fetch(`/api/page?area=docs&path=README`, {
+			method: 'GET'
+		});
+		const pageContent = await res.text();
 		return {
-			content
+			pageContent
 		};
 	} catch (error) {
 		return {};
 	}
 }
-
-

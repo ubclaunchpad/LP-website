@@ -25,7 +25,7 @@
 		position: relative;
 
 		#bar {
-			background: repeating-linear-gradient(120deg, var(--color-bg-2), var(--color-bg-0));
+			background: repeating-linear-gradient(120deg, var(--color-bg-3), var(--color-bg-0));
 			height: 100%;
 			position: absolute;
 			background-size: 400% 100%;

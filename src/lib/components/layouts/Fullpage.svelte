@@ -45,7 +45,7 @@
 
 				<h2>Launch Pad <span>(Docs)</span></h2>
 			</div>
-			<input class="search" placeholder="search" />
+			<!-- <input class="search" placeholder="search" /> -->
 		</section>
 	</nav>
 
@@ -114,6 +114,7 @@
 				padding: 0.2rem;
 				padding-right: 0.5rem;
 				column-gap: 0.8rem;
+				min-height: 3rem;
 
 				> div {
 					display: flex;

@@ -92,9 +92,9 @@
 		color: var(--color-text-2);
 		align-items: center;
 		font-weight: 600;
-		&:hover {
-			background-color: inherit;
-		}
+		// &:hover {
+		// 	background-color: inherit;
+		// }
 
 		button {
 			background-color: transparent;
@@ -129,8 +129,8 @@
 				text-decoration: none;
 				font-size: 0.7rem;
 
-				&:hover {
-				}
+				// &:hover {
+				// }
 
 				:global(svg) {
 					width: 14px;

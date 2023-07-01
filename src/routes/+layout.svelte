@@ -3,11 +3,12 @@
 	import './styles.scss';
 	import './markdown.scss';
 	import DirectoryNavigation from '$lib/components/Navigation/DirectoryNavigation.svelte';
-	export let data;
+	import type { IDirectory } from './api/areas/+server';
+	export let data: { directories: IDirectory[] };
 </script>
 
 <Fullpage>
-	<DirectoryNavigation {data} slot="nav" />
+	<DirectoryNavigation directories={data.directories} slot="nav" />
 	<article>
 		<section class="blog">
 			<slot />

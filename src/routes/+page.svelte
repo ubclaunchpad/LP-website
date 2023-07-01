@@ -4,13 +4,11 @@
 
 <article>
 	<section class="body">
-		{#if data.content}
-			<div class="markdown">
-				<div id="write">
-					<svelte:component this={data.content} />
-				</div>
+		<div class="markdown">
+			<div id="write">
+				{@html data.pageContent}
 			</div>
-		{/if}
+		</div>
 	</section>
 </article>
 
