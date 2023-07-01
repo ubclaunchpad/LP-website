@@ -60,7 +60,7 @@
 				</select>
 
 				<div class="action">
-					<a href={`${PUBLIC_GITHUB_TEAM_URI}/${area}/${slug}.md`}>
+					<a href={`${PUBLIC_GITHUB_TEAM_URI}/${area}/edit/main/${slug}.md`}>
 						<Icon>
 							<EditIcon />
 						</Icon>
