@@ -22,7 +22,8 @@ export const GET = async ({ request, params, url }) => {
 	const res = await fetch(`${PUBLIC_GITHUB_API_URI}/${area}/contents/${path}.md`, {
 		method: 'GET',
 		headers: {
-			Accept: 'application/vnd.github.VERSION.html'
+			"Accept": 'application/vnd.github.VERSION.html',
+			"User-Agent": 'LP-DOC-V2'
 		}
 	});
 
