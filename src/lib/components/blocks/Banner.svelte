@@ -4,20 +4,14 @@
 	export let title: string;
 	export let description: string;
 	export let links = [];
-	export let type = 0;
 </script>
 
 <div class="wrapper">
-	{#each Array(type) as _}
-		<div />
-	{/each}
 	<div class="welcome">
 		<div class="title">
 			<h3>{title}</h3>
 		</div>
-		<p>
-			{description}
-		</p>
+		<slot />
 		<div class="refs">
 			{#each links as link}
 				<a href={link.link} target="_blank">
@@ -36,6 +30,12 @@
 		width: 100%;
 		flex: 1;
 		height: 100%;
+		display: flex;
+		flex-direction: column;
+		background-color: var(--color-bg-3);
+		padding: 3rem 1rem;
+		justify-content: center;
+		align-items: center;
 	}
 	.welcome {
 		display: flex;
@@ -44,6 +44,9 @@
 		align-items: flex-start;
 		width: 100%;
 		height: 100%;
+		max-width: 700px;
+
+		flex: 1;
 		.refs {
 			display: flex;
 			flex: 1;
@@ -77,34 +80,7 @@
 			}
 		}
 
-		&:nth-child(1) {
-			background: linear-gradient(
-				to bottom right,
-				var(--color-bg-primary-faded),
-				var(--color-bg-primary)
-			);
-		}
-
-		&:nth-child(2) {
-			background: linear-gradient(
-				to top right,
-				var(--color-bg-secondary-faded),
-				var(--color-bg-secondary)
-			);
-		}
-
-		&:nth-child(3) {
-			background: linear-gradient(
-				to top right,
-				var(--color-bg-tertiary-faded),
-				var(--color-bg-tertiary)
-			);
-		}
-
 		gap: 1rem;
-
-		border-radius: 10px;
-		box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 		padding: 1rem;
 
 		> p {

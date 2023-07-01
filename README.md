@@ -70,6 +70,7 @@ Note: the repo by design does not include any documents to enure security. To vi
   - [ ] Add authentication layers
   - [ ] Implement the side bar to fetch directories (needs auth support)
   - [ ] Add register and unregister features to the portal
+  - [ ] Remove direct github communication and use [Star Port](https://github.com/ubclaunchpad/StarPort) as a proxy.
 
 - Search
 

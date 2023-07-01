@@ -22,10 +22,18 @@ export const GET = async ({ request, params, url }) => {
 	const res = await fetch(`${PUBLIC_GITHUB_API_URI}/${area}/contents/${path}.md`, {
 		method: 'GET',
 		headers: {
-			Accept: 'application/vnd.github.VERSION.html',
-			'User-Agent': 'LP-DOC-V2'
+			Accept: 'application/vnd.github.VERSION.html'
 		}
 	});
+
+	if (res.status !== 200) {
+		return new Response('Page not found', {
+			status: 306,
+			headers: {
+				'Content-Type': 'text/html'
+			}
+		});
+	}
 
 	const page = await res.text();
 	cachedPages[cacheId] = page;

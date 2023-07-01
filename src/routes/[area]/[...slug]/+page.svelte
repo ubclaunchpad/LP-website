@@ -4,6 +4,7 @@
 	import { blur } from 'svelte/transition';
 	import { PUBLIC_GITHUB_TEAM_URI } from '$env/static/public';
 	import EditIcon from '$lib/components/general/icons/EditIcon.svelte';
+	import DocError from '$lib/components/blocks/DocError.svelte';
 	export let data;
 	const { area, slug } = data;
 	let headings: { id: string; name: string; level: number }[] = [];
@@ -15,11 +16,15 @@
 	}
 
 	const getContent = async () => {
-		setInterval(() => {}, 3000);
 		const res = await fetch(`/api/page?area=${area}&path=${slug}`, {
 			method: 'GET'
 		});
-		pageContent = await res.text();
+
+		if (res.status !== 200) {
+			throw new Error('Could not get document');
+		}
+
+		return (pageContent = await res.text());
 	};
 
 	const getHeadings = (): { id: string; name: string; level: number }[] => {
@@ -74,6 +79,8 @@
 					{@html pageContent}
 				</div>
 			</div>
+		{:catch e}
+			<DocError title={`${area}\t/\t${slug}`} {area} />
 		{/await}
 	</div>
 </div>
@@ -110,7 +117,7 @@
 			gap: 0.3rem;
 			overflow: hidden;
 			border: 1px solid var(--color-border-0);
-			background-color: inherit;
+			background-color: var(--color-bg-3);
 			border-radius: var(--border-radius-medium);
 			flex: 1;
 			.top {
@@ -158,6 +165,7 @@
 			flex-direction: column;
 			position: relative;
 			align-items: center;
+			background-color: var(--color-bg-1);
 		}
 
 		.markdown {
