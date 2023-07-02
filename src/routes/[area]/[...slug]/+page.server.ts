@@ -1,6 +1,6 @@
 export async function load({ params }) {
 	const area = params.area;
-	const slug = params.slug || 'README';
+	const slug = params.slug || 'index';
 	try {
 		return {
 			area,

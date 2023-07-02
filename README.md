@@ -90,6 +90,15 @@ Note: the repo by design does not include any documents to enure security. To vi
 
 ## Areas in Our Wiki
 
+> Currently only allow very limited routes
+>
+> - `/`
+>
+> - `/StarPort`
+> - `/CosmicGateway`
+
+After streamlining auth we will register the following
+
 | Area          | Repository Reference                       | Access Scopes | Status      |
 | ------------- | ------------------------------------------ | ------------- | ----------- |
 | 📓 Handbook   | TBD                                        | `Public`      | To be added |

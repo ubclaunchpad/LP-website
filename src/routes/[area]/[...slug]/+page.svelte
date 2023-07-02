@@ -5,14 +5,44 @@
 	import { PUBLIC_GITHUB_TEAM_URI } from '$env/static/public';
 	import EditIcon from '$lib/components/general/icons/EditIcon.svelte';
 	import DocError from '$lib/components/blocks/DocError.svelte';
+	import { unified } from 'unified';
+	import remarkparse from 'remark-parse';
+	import remarkRehype from 'remark-rehype';
+	import rehypeSanitize from 'rehype-sanitize';
+	import rehypestringify from 'rehype-stringify';
+	import remarkgfm from 'remark-gfm';
+	import rehypewrap from 'rehype-wrap-all';
 	export let data;
 	const { area, slug } = data;
+	const fileName = !slug || slug === 'index' ? 'README' : slug;
 	let headings: { id: string; name: string; level: number }[] = [];
 	let pageContent: string;
 	let sourceRef: HTMLElement;
 
 	$: if (sourceRef) {
 		headings = getHeadings();
+	}
+
+	async function parseMd(draft) {
+		const file = await unified()
+			.use(remarkparse)
+			.use(remarkgfm)
+			.use(remarkRehype)
+			.use(rehypeSanitize)
+			.use(rehypewrap, [
+				{
+					wrapper: 'div.table-wrapper',
+					selector: 'table'
+				},
+				{
+					wrapper: 'div.code-wrapper',
+					selector: 'pre'
+				}
+			])
+
+			.use(rehypestringify)
+			.process(draft);
+		return file.value;
 	}
 
 	const getContent = async () => {
@@ -23,8 +53,8 @@
 		if (res.status !== 200) {
 			throw new Error('Could not get document');
 		}
-
-		return (pageContent = await res.text());
+		const file = (await parseMd(await res.text())) as string;
+		pageContent = file;
 	};
 
 	const getHeadings = (): { id: string; name: string; level: number }[] => {
@@ -65,11 +95,11 @@
 				</select>
 
 				<div class="action">
-					<a href={`${PUBLIC_GITHUB_TEAM_URI}/${area}/edit/main/${slug}.md`}>
+					<a href={`${PUBLIC_GITHUB_TEAM_URI}/${area}/edit/main/${fileName}.md`}>
 						<Icon>
 							<EditIcon />
 						</Icon>
-						Edit on Github
+						Edit
 					</a>
 				</div>
 			</div>
@@ -91,6 +121,7 @@
 		justify-content: space-between;
 		width: 100%;
 		align-items: center;
+		position: sticky;
 	}
 	.selected {
 		background-color: var(--color-bg-btn-primary);
@@ -98,24 +129,24 @@
 	}
 
 	.page {
-		overflow-y: scroll;
-		padding: 0.5rem;
+		padding-left: 0;
 		display: flex;
 		justify-content: flex-end;
 		width: 100%;
 		flex-direction: column;
-		min-height: 100%;
-
+		overflow-y: hidden;
+		height: 100%;
 		.content {
 			scroll-behavior: smooth;
 			display: flex;
 			width: 100%;
-			height: 100%;
+			height: 100px;
 			flex-direction: column;
 			align-items: center;
 			padding: 0rem;
 			gap: 0.3rem;
-			overflow: hidden;
+			background-color: red;
+			overflow-y: scroll;
 			border: 1px solid var(--color-border-0);
 			background-color: var(--color-bg-3);
 			border-radius: var(--border-radius-medium);
@@ -125,19 +156,27 @@
 				justify-content: flex-start;
 				align-items: center;
 				width: 100%;
-				padding: 0.5rem;
+				position: sticky;
+				padding: 0.2rem;
 				background-color: var(--color-bg-3);
+
+				select {
+					width: 20rem;
+					font-size: 14px;
+					option {
+						font-size: 14px;
+					}
+				}
 			}
 		}
 		.action {
-			// padding: 0.5rem;
 			width: 100%;
 			display: flex;
 			justify-content: flex-end;
 			align-items: center;
 			column-gap: 0.5rem;
 			align-items: end;
-			height: 100%;
+
 			top: 0;
 			a {
 				padding: 0.2rem;
@@ -147,7 +186,7 @@
 				column-gap: 10px;
 				color: var(--color-text-2);
 				text-decoration: none;
-				font-size: 0.9rem;
+				font-size: 0.8rem;
 			}
 		}
 
@@ -166,20 +205,17 @@
 			position: relative;
 			align-items: center;
 			background-color: var(--color-bg-1);
-		}
-
-		.markdown {
 			width: 100%;
-			max-width: 850px;
 			height: 100%;
-			overflow-y: scroll;
+			overflow-y: hidden;
 			flex: 3;
 			padding: 4px;
 			#write {
-				width: 100%;
 				height: 100%;
+				max-width: 850px;
 				flex: 1;
 				flex-direction: column;
+				overflow-y: scroll;
 			}
 		}
 	}

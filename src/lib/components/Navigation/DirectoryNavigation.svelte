@@ -5,7 +5,7 @@
 </script>
 
 <div class="sidebar-content">
-	<div class="progress">This section is in progress</div>
+	<!-- <div class="progress">This section is in progress</div> -->
 	<!-- <ul class="directory-list">
 	
 		

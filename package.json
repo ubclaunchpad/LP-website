@@ -37,14 +37,19 @@
 	"dependencies": {
 		"@mapbox/rehype-highlight-code-block": "^1.0.0",
 		"@types/gapi": "^0.0.44",
-		"fs": "^0.0.1-security",
 		"jwt-decode": "^3.1.2",
 		"path": "^0.12.7",
 		"rehype-autolink-headings": "^6.1.1",
+		"rehype-parse": "^8.0.4",
+		"rehype-sanitize": "^5.0.1",
 		"rehype-slug": "^5.1.0",
-		"rehype-wrap": "^1.1.0",
+		"rehype-stringify": "^9.0.3",
 		"rehype-wrap-all": "^1.1.0",
-		"remark-containers": "^1.2.0"
+		"remark-containers": "^1.2.0",
+		"remark-gfm": "^3.0.1",
+		"remark-parse": "^10.0.2",
+		"remark-rehype": "^10.1.0",
+		"unified": "^10.1.2"
 	},
 	"type": "module"
 }

@@ -25,7 +25,7 @@
 		align-items: center;
 	}
 	.blog {
-		overflow-y: scroll;
+		overflow-y: hidden;
 		width: 100%;
 		height: 100%;
 		:global(p) {

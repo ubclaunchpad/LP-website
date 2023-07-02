@@ -4,6 +4,7 @@
 	import logo from '$lib/assets/logo.png';
 	import { onMount } from 'svelte';
 	import Loader from '../blocks/Loader.svelte';
+	import Icon from '../general/Icon.svelte';
 	let pageWidth: number;
 	$: isCompact = pageWidth < cutoff;
 	let collapse = true;
@@ -36,42 +37,38 @@
 		}
 	}}
 >
-	<nav>
-		<section class="topnav">
-			<div>
-				<a href="/">
-					<img src={logo} alt="logo" width="30px" />
-				</a>
-
-				<h2>Launch Pad <span>(Docs)</span></h2>
-			</div>
-			<!-- <input class="search" placeholder="search" /> -->
-		</section>
-	</nav>
-
 	<section>
 		{#if pageWidth}
-			<aside>
-				<div class="sidebar" class:compact={isCompact}>
-					{#if showNav}
-						<div
-							class="content"
-							transition:slide|global={{ axis: 'x', duration: transitionDuration }}
-						>
-							<slot name="nav" />
+			{#if !isCompact}
+				<aside>
+					<div class="sidebar" class:compact={isCompact}>
+						<div class="item" class:open={showNav}>
+							{#if isCompact}
+								<button on:click={() => (collapse = !collapse)}>
+									<Icon>
+										<MenuIcon width={'1rem'} />
+									</Icon>
+								</button>
+							{/if}
 						</div>
-					{/if}
-					<div />
-
-					<div class="item bottom" class:open={showNav}>
-						{#if isCompact}
-							<button on:click={() => (collapse = !collapse)}>
-								<MenuIcon width={'1rem'} />
-							</button>
+						{#if showNav}
+							<div
+								class="content"
+								transition:slide|global={{ axis: 'x', duration: transitionDuration }}
+							>
+								<slot name="nav" />
+							</div>
 						{/if}
+						<div />
+
+						<div class="item bottom" class:open={showNav}>
+							<button on:click={() => (collapse = !collapse)}>
+								<img src={logo} width="14px" />
+							</button>
+						</div>
 					</div>
-				</div>
-			</aside>
+				</aside>
+			{/if}
 
 			<main class:blur={!collapse && isCompact} on:click={collapseNav}>
 				<slot />
@@ -101,11 +98,11 @@
 		> nav {
 			width: 100%;
 			border-bottom: 1px solid var(--color-border-0);
+			background-color: var(--color-bg-primary);
 			justify-content: space-between;
 			align-items: center;
 			display: flex;
 			flex-direction: column;
-
 			.topnav {
 				display: flex;
 				justify-content: space-between;
@@ -175,6 +172,8 @@
 			overflow: hidden;
 			flex-wrap: nowrap;
 			height: 100%;
+			padding: 0.3rem;
+			column-gap: 10px;
 			main {
 				display: flex;
 				justify-content: space-between;
@@ -189,38 +188,50 @@
 				position: relative;
 				background-color: var(--color-bg-2);
 				z-index: 100;
+				overflow: hidden;
 				.sidebar {
 					position: relative;
-					overflow: hidden;
+					width: 14rem;
 					.content {
 						width: 14rem;
 						max-width: 100%;
 						flex: 1;
 						overflow-y: scroll;
+						position: absolute;
 					}
 
 					&.compact {
-						// width: 2.4rem;
+						width: 2.4rem;
 					}
 
 					.item {
 						width: 100%;
-						padding: 0.6rem 0.8rem;
+						padding: 0.6rem 0rem;
 						display: flex;
 						justify-content: flex-start;
 
 						button {
 							background-color: inherit;
+							padding: 0;
+							width: 100%;
 						}
-
 						&.bottom {
-							background-color: var(--color-bg-3);
+							button {
+								padding: 0;
+								width: 100%;
+							}
+
+							img {
+								width: 100%;
+								max-height: 25px;
+								object-fit: contain;
+							}
 							// position: absolute;
 						}
 					}
 					z-index: 200;
-					border-right: 1px solid var(--color-border-0);
-
+					border: 1px solid var(--color-border-0);
+					border-radius: var(--border-radius-medium);
 					height: 100%;
 					display: flex;
 					flex-direction: column;

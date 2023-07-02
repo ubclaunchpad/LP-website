@@ -1,4 +1,4 @@
-import { PUBLIC_GITHUB_API_URI } from '$env/static/public';
+import { PUBLIC_RESOURCE_URI } from '$env/static/public';
 const cachedPages: { [key: string]: string } = {};
 
 export const GET = async ({ request, params, url }) => {
@@ -19,13 +19,16 @@ export const GET = async ({ request, params, url }) => {
 		});
 	}
 
-	const res = await fetch(`${PUBLIC_GITHUB_API_URI}/${area}/contents/${path}.md`, {
+	console.log(`${PUBLIC_RESOURCE_URI}/${area}/${path}`);
+
+	const res = await fetch(`${PUBLIC_RESOURCE_URI}/${area}/${path}`, {
 		method: 'GET',
 		headers: {
-			Accept: 'application/vnd.github.VERSION.html'
+			Accept: 'text/html'
 		}
 	});
 
+	console.log(res.status);
 	if (res.status !== 200) {
 		return new Response('Page not found', {
 			status: 306,
