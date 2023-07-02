@@ -206,15 +206,18 @@
 			background-color: var(--color-bg-1);
 			width: 100%;
 			height: 100%;
-			overflow-y: hidden;
+			overflow: hidden;
 			flex: 3;
 			padding: 4px;
 			#write {
 				height: 100%;
 				max-width: 850px;
 				flex: 1;
+				width: 100%;
 				flex-direction: column;
+				flex-wrap: wrap;
 				overflow-y: scroll;
+				overflow-x: hidden;
 			}
 		}
 	}

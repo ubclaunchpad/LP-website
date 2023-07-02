@@ -213,9 +213,11 @@
 			#write {
 				height: 100%;
 				max-width: 850px;
+				width: 100%;
 				flex: 1;
 				flex-direction: column;
 				overflow-y: scroll;
+				overflow-x: hidden;
 			}
 		}
 	}
