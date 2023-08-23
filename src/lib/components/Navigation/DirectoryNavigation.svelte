@@ -1,57 +1,81 @@
 <script lang="ts">
-	import type { IDirectory } from '../../../routes/api/areas/+server';
-	import ResourceNav from './ResourceNav.svelte';
-	export let directories: IDirectory[];
+	export let directories;
+
 </script>
 
 <div class="sidebar-content">
-	<!-- <div class="progress">This section is in progress</div> -->
-	<!-- <ul class="directory-list">
-	
-		
-		{#each directories as directory}
-			<ResourceNav {directory} />
-		{/each}
-	</ul> -->
+	<div class="directory">
+		<span/>		<ul class="directory-list">
+			{#each Object.entries(directories.posts) as [directory, files]}
+				<li>
+					<a href={`/${files.slug}`}>
+						{files.slug}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</div>
+	{#each Object.entries(directories.directories) as [directory, files]}
+		<div class="directory">
+			<span>{directory}</span>
+			<ul class="directory-list">
+				{#each files as m}
+					<li>
+						<a href={`/${directory}/${m.slug}`}>
+							{m.slug}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+	{/each}
 </div>
 
 <style lang="scss">
-	.progress {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		color: var(--color-text-2);
-		opacity: 0.7;
-		width: 100%;
-		height: 100%;
-		font-size: 0.7rem;
-		flex: 1;
-	}
 	.sidebar-content {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 		row-gap: 1rem;
 		color: var(--color-text-1);
-		padding: 0rem 0.5rem;
+		padding: 0 0.5rem;
 		flex: 1;
 		height: 100%;
 
-		.directory-list {
+		.directory {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+
+			row-gap: 0.2rem;
 			list-style-type: none;
 			font-weight: 500;
 			text-transform: capitalize;
-			padding-bottom: 1rem;
-		}
-	}
+			padding: 0.8rem 0.4rem;
+			font-size: 1rem;
+			color: var(--color-text-3);
 
-	#content {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
-		flex: 1;
-		width: 100%;
-		overflow-y: scroll;
+			.directory-list {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				row-gap: 0.5rem;
+				list-style-type: none;
+				text-transform: capitalize;
+				padding: 0.6rem 1rem;
+				font-size: 0.9rem;
+
+				a {
+					color: var(--color-text-3);
+					text-decoration: none;
+					transition: color 0.2s ease-in-out;
+					&:hover {
+						color: var(--color-text-2);
+					}
+				}
+			}
+		}
+
+
 	}
 </style>

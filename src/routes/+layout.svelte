@@ -3,13 +3,12 @@
 	import './styles.scss';
 	import './markdown.scss';
 	import DirectoryNavigation from '$lib/components/Navigation/DirectoryNavigation.svelte';
-	import type { IDirectory } from './api/areas/+server';
-	export let data: { directories: IDirectory[] };
+	export let data;
 </script>
 
 <Fullpage>
-	<DirectoryNavigation directories={data.directories} slot="nav" />
-	<article>
+	<DirectoryNavigation directories={data.posts} slot="nav" />
+	<article slot="main">
 		<section class="blog">
 			<slot />
 		</section>
@@ -25,9 +24,9 @@
 		align-items: center;
 	}
 	.blog {
-		overflow-y: hidden;
 		width: 100%;
 		height: 100%;
+		overflow: hidden;
 		:global(p) {
 			max-width: 800px;
 		}

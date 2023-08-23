@@ -1,18 +1,8 @@
-import type { IDirectory } from './api/areas/+server';
-
-export const load = async (event) => {
-	let directories: IDirectory[] = [];
-	try {
-		const res = await event.fetch(`/api/areas`, {
-			method: 'GET'
-		});
-		directories = (await res.json()) as IDirectory[];
-		return {
-			directories
-		};
-	} catch (error) {
-		return {
-			directories
-		};
-	}
+import type { LayoutServerLoad } from './$types';
+export const load: LayoutServerLoad = async ({ fetch }) => {
+	const response = await fetch(`/api/posts`);
+	const posts = await response.json();
+	return {
+		posts
+	};
 };

@@ -37,6 +37,11 @@
 		}
 	}}
 >
+	<nav>
+		<div class="topnav">
+			<h2>Launch Pad Documentation</h2>
+		</div>
+	</nav>
 	<section>
 		{#if pageWidth}
 			{#if !isCompact}
@@ -59,19 +64,12 @@
 								<slot name="nav" />
 							</div>
 						{/if}
-						<div />
-
-						<div class="item bottom" class:open={showNav}>
-							<button on:click={() => (collapse = !collapse)}>
-								<img src={logo} width="14px" />
-							</button>
-						</div>
 					</div>
 				</aside>
 			{/if}
 
 			<main class:blur={!collapse && isCompact} on:click={collapseNav}>
-				<slot />
+				<slot name="main" />
 			</main>
 		{:else}
 			<Loader width={'100%'} height={'100%'} />
@@ -97,8 +95,8 @@
 		}
 		> nav {
 			width: 100%;
-			border-bottom: 1px solid var(--color-border-0);
-			background-color: var(--color-bg-primary);
+			background-color: var(--color-bg-0);
+			border-bottom: 1px solid var(--color-border-2);
 			justify-content: space-between;
 			align-items: center;
 			display: flex;
@@ -108,7 +106,7 @@
 				justify-content: space-between;
 				align-items: center;
 				width: 100%;
-				padding: 0.2rem;
+				padding: 1rem;
 				padding-right: 0.5rem;
 				column-gap: 0.8rem;
 				min-height: 3rem;
@@ -172,8 +170,8 @@
 			overflow: hidden;
 			flex-wrap: nowrap;
 			height: 100%;
-			padding: 0.3rem;
-			column-gap: 10px;
+			padding: 0;
+			column-gap: 0;
 			main {
 				display: flex;
 				justify-content: space-between;
@@ -181,23 +179,28 @@
 				flex-direction: column;
 				flex: 1;
 				overflow: scroll;
-				padding: 0rem;
+				padding: 0;
 			}
 
 			aside {
 				position: relative;
-				background-color: var(--color-bg-2);
-				z-index: 100;
+				background-color: var(--color-bg-1);
+				border-right: 1px solid var(--color-border-0);
 				overflow: hidden;
+				z-index: 200;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: flex-start;
 				.sidebar {
 					position: relative;
-					width: 14rem;
+					width: 20rem;
 					.content {
-						width: 14rem;
+						width: 100%;
 						max-width: 100%;
 						flex: 1;
 						overflow-y: scroll;
-						position: absolute;
 					}
 
 					&.compact {
@@ -206,37 +209,34 @@
 
 					.item {
 						width: 100%;
-						padding: 0.6rem 0rem;
+						padding: 0.6rem 0.3rem;
 						display: flex;
 						justify-content: flex-start;
+						align-items: center;
+						height: 2.8rem;
+						column-gap: 0.4rem;
+
+						h2 {
+							font-size: 0.9rem;
+							color: var(--color-text-primary);
+							font-weight: 600;
+							flex: 1;
+							padding: 0.4rem;
+						}
 
 						button {
 							background-color: inherit;
 							padding: 0;
 							width: 100%;
 						}
+
 						&.bottom {
 							button {
 								padding: 0;
 								width: 100%;
 							}
-
-							img {
-								width: 100%;
-								max-height: 25px;
-								object-fit: contain;
-							}
-							// position: absolute;
 						}
 					}
-					z-index: 200;
-					border: 1px solid var(--color-border-0);
-					border-radius: var(--border-radius-medium);
-					height: 100%;
-					display: flex;
-					flex-direction: column;
-					justify-content: space-between;
-					align-items: flex-start;
 				}
 			}
 		}
