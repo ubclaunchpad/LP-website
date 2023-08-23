@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ab6e7a6-43e4-4a88-a447-bc320670c5b4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Navigation/DirectoryNavigation.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Navigation/DirectoryNavigation.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Navigation/ResourceNav.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/blocks/Contributors.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/general/Notification.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/layouts/Fullpage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layouts/Fullpage.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/types/User.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/types/googleAuth.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/util/fetcher.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/util/user.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+page.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/[area]/[...slug]/+page.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/[area]/[...slug]/+page.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/areas/+server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/page/+server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/markdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/markdown.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +31,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "v2.1",
-    "last_opened_file_path": "/Users/armintalaie/Files/Projects/Launchpad/docs",
+    "last_opened_file_path": "/Users/armintalaie/Files/Projects/Launchpad/docs/src/docs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,6 +44,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/docs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/routes/handbook" />
       <recent name="$PROJECT_DIR$/src/routes/api/areas/[area]" />
@@ -92,7 +69,7 @@
       <workItem from="1688624966636" duration="390000" />
       <workItem from="1688625363457" duration="12474000" />
       <workItem from="1692679949423" duration="2775000" />
-      <workItem from="1692683123721" duration="19667000" />
+      <workItem from="1692683123721" duration="21379000" />
     </task>
     <servers />
   </component>

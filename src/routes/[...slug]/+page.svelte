@@ -33,7 +33,6 @@
 
 	.markdown {
 		max-width: 1000px;
-
 	}
 
 	.body {

@@ -1,11 +1,11 @@
 <script lang="ts">
 	export let directories;
-
 </script>
 
 <div class="sidebar-content">
 	<div class="directory">
-		<span/>		<ul class="directory-list">
+		<span />
+		<ul class="directory-list">
 			{#each Object.entries(directories.posts) as [directory, files]}
 				<li>
 					<a href={`/${files.slug}`}>
@@ -75,7 +75,5 @@
 				}
 			}
 		}
-
-
 	}
 </style>
