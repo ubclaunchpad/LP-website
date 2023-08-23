@@ -1,6 +1,6 @@
 # Club Handbook
 
-Welcome to the [UBC Launch Pad](https://ubclaunchpad.com/) handbook! Launch Pad-wide documentation is hosted in these sections - if you're not sure about something, this is the first place to check. The easiest way to find something is to run a search in the navigation bar!
+Welcome to the [UBC Launch Pad](https://ubclaunchpad.com/) handbook! Launch Pad-wide documentation is hosted in these sections - if you're not sure about something, this is the first place to check.
 
 Our goals with this handbook are to:
 
@@ -15,13 +15,15 @@ For this to work, **we need your help to keep the handbook up to date**! That me
 
 Our [**Manifesto**](manifesto.md) outlines our vision, what we do, and our code of conduct.
 
+> If you are interested in joining us check below
+
 ## 🚀 Onboarding
 
 These pages helps you hit the ground running once you've joined us!
 
 - [**for Everyone**](./onboarding/everyone.md) - read this one first!
+- [**for Developers**](./onboarding/developers.md) - read this one first!
 - [**for Design**](./onboarding/design.md)
-- [**for Strategy**](./onboarding/strategy.md)
 - [**for Leads**](./onboarding/leads.md)
 
 ## ⚙️ Tools
@@ -41,10 +43,6 @@ We use a variety of technology and tools at Launch Pad - these sections help you
 
 These documents compile hard-won advice about the best way to run (and participate in) a Launch Pad team and build great software. This isn't just geared towards team leads - it should be useful for everyone!
 
-::: tip
-These are **guidelines**, not strict rules! Teams should adjust these processes to the way they work. Open a pull request if there's something you think should be updated or changed!
-:::
-
 - [**Project Scope**](./project-management/scope.md): Tips for planning out your project's overall scope and getting an initial idea laid out.
 - [**Sprint Planning**](./project-management/sprints.md): Guidelines and advice for how to plan out work with your team to drive forward progress on your project!
 - [**Repository Management**](./project-management/repositories.md): Guidelines for how to manage your GitHub repository and enforce coding standards. Remember: your repository is your main outlet to the outside world - and this outside world includes potential employers! Make it informative, organized, and pretty!
@@ -63,7 +61,7 @@ These pages document Launch Pad design standards. For more about how the design 
 
 - [Branding](./design/branding.md): How to represent Launch Pad!
 
-## 🗳️ Recruitment <Badge type="tip" text="new"/>
+## 🗳️ Recruitment
 
 Launch Pad recruitment documentation and material lives in these pages!
 

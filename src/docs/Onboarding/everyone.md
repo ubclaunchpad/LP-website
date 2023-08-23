@@ -4,9 +4,7 @@ Welcome to UBC Launch Pad! This page takes you through some important items you 
 
 ## Checklist
 
-::: tip
 If you don't have access to anything, or if you can't complete any of these steps for whatever reason, or if you have any questions, drop a message in [`#ask-leads`](https://ubclaunchpad.slack.com/messages/CK935RD3Q/)!
-:::
 
 ### Slack Access
 

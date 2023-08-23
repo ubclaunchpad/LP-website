@@ -5,7 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ab6e7a6-43e4-4a88-a447-bc320670c5b4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/docs/groundwork/stack-choosing.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docs/groundwork/web.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/design/branding.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/manifesto.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/onboarding/design.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/onboarding/everyone.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/onboarding/img/leads-set-status.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/onboarding/img/update-status.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/onboarding/leads.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/onboarding/strategy.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/project-management/repositories.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/project-management/scope.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/project-management/sprints.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/recruitment/design-lead.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/recruitment/designer.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/recruitment/developer.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/recruitment/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/recruitment/strategy.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/recruitment/tech-lead.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/strategy/objectives.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/strategy/recurring-processes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/strategy/sponsors-and-partners.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/analytics.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/deployment.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/drive.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/email.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/github.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/img/github_emails.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/img/github_issue_example.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/img/github_issues.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/img/github_pullrequests.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/img/github_review.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/img/github_review_final.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/img/github_review_inline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/img/github_slack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/img/github_suggest_after.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/img/github_suggest_before.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/img/github_watch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/img/lead-status.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/slack.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/tools/social-media.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/resources/groundwork/stack-choosing.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/resources/groundwork/web.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Navigation/DirectoryNavigation.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Navigation/DirectoryNavigation.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layouts/Fullpage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layouts/Fullpage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/[...slug]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/[...slug]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/[...slug]/+page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/[...slug]/+page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +83,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "v2.1",
-    "last_opened_file_path": "/Users/armintalaie/Files/Projects/Launchpad/docs/src/docs",
+    "last_opened_file_path": "/Users/armintalaie/Files/Projects/Launchpad/docs/src/routes",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,18 +96,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/routes" />
       <recent name="$PROJECT_DIR$/src/docs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/routes/handbook" />
       <recent name="$PROJECT_DIR$/src/routes/api/areas/[area]" />
-      <recent name="$PROJECT_DIR$/src/routes/[area]" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/routes" />
       <recent name="$PROJECT_DIR$/src/docs" />
+      <recent name="$PROJECT_DIR$/src/lib/components/BlogComponents" />
+      <recent name="$PROJECT_DIR$/src/routes" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/routes/handbook" />
-      <recent name="$PROJECT_DIR$/src/routes/[area]" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -69,7 +121,7 @@
       <workItem from="1688624966636" duration="390000" />
       <workItem from="1688625363457" duration="12474000" />
       <workItem from="1692679949423" duration="2775000" />
-      <workItem from="1692683123721" duration="21379000" />
+      <workItem from="1692683123721" duration="29574000" />
     </task>
     <servers />
   </component>

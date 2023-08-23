@@ -37,36 +37,32 @@
 		}
 	}}
 >
-	<nav>
-		<div class="topnav">
-			<h2>Launch Pad Documentation</h2>
-		</div>
-	</nav>
 	<section>
 		{#if pageWidth}
-			{#if !isCompact}
-				<aside>
-					<div class="sidebar" class:compact={isCompact}>
-						<div class="item" class:open={showNav}>
-							{#if isCompact}
-								<button on:click={() => (collapse = !collapse)}>
-									<Icon>
-										<MenuIcon width={'1rem'} />
-									</Icon>
-								</button>
-							{/if}
-						</div>
-						{#if showNav}
-							<div
-								class="content"
-								transition:slide|global={{ axis: 'x', duration: transitionDuration }}
-							>
-								<slot name="nav" />
-							</div>
-						{/if}
+			<aside>
+				<nav>
+					<div class="topnav">
+						<h2>Launch Pad Documentation</h2>
 					</div>
-				</aside>
-			{/if}
+				</nav>
+				<div class="sidebar" class:compact={isCompact}>
+					{#if showNav}
+						<div
+							class="content"
+							transition:slide|global={{ axis: 'x', duration: transitionDuration }}
+						>
+							<slot name="nav" />
+						</div>
+					{/if}
+				</div>
+				<div class="item" class:open={showNav}>
+					<button on:click={() => (collapse = !collapse)}>
+						<Icon>
+							<MenuIcon width={'1rem'} />
+						</Icon>
+					</button>
+				</div>
+			</aside>
 
 			<main class:blur={!collapse && isCompact} on:click={collapseNav}>
 				<slot name="main" />
@@ -93,9 +89,8 @@
 				pointer-events: none;
 			}
 		}
-		> nav {
+		nav {
 			width: 100%;
-			background-color: var(--color-bg-0);
 			border-bottom: 1px solid var(--color-border-2);
 			justify-content: space-between;
 			align-items: center;
@@ -110,58 +105,12 @@
 				padding-right: 0.5rem;
 				column-gap: 0.8rem;
 				min-height: 3rem;
-
-				> div {
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-					a {
-						display: flex;
-						justify-content: space-between;
-						align-items: center;
-					}
-				}
 				h2 {
 					position: relative;
 					font-size: 1rem;
 					color: var(--color-text-2);
 					font-weight: 600;
-
-					span {
-						color: var(--color-text-primary);
-						font-weight: 500;
-					}
 				}
-
-				input {
-					right: 0;
-					// transform: translateX(-50%);
-					background-color: transparent;
-					border: 1px solid var(--color-border-0);
-					width: 100%;
-					max-width: 300px;
-
-					&:focus {
-						// border: none;
-						border-color: var(--color-border-1);
-					}
-				}
-
-				span {
-					position: static;
-					top: 100%;
-					left: 100%;
-					transform: translate(0%, -90%);
-					font-size: 0.7rem;
-					padding: 0 0rem;
-				}
-			}
-
-			.subnav {
-				display: flex;
-				border-top: 1px solid var(--color-border-0);
-				width: 100%;
-				height: 2rem;
 			}
 		}
 		> section {
@@ -185,57 +134,54 @@
 			aside {
 				position: relative;
 				background-color: var(--color-bg-1);
-				border-right: 1px solid var(--color-border-0);
-				overflow: hidden;
 				z-index: 200;
 				height: 100%;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
 				align-items: flex-start;
+				.item {
+					width: 100%;
+					padding: 0.6rem 0.3rem;
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					height: 2.8rem;
+					column-gap: 0.4rem;
+
+					h2 {
+						font-size: 0.9rem;
+						color: var(--color-text-primary);
+						font-weight: 600;
+						flex: 1;
+						padding: 0.4rem;
+					}
+
+					button {
+						background-color: inherit;
+						padding: 0;
+						width: 100%;
+					}
+
+					&.bottom {
+						button {
+							padding: 0;
+							width: 100%;
+						}
+					}
+				}
 				.sidebar {
 					position: relative;
 					width: 20rem;
+					overflow: scroll;
 					.content {
 						width: 100%;
 						max-width: 100%;
 						flex: 1;
-						overflow-y: scroll;
+						height: 100%;
 					}
-
 					&.compact {
 						width: 2.4rem;
-					}
-
-					.item {
-						width: 100%;
-						padding: 0.6rem 0.3rem;
-						display: flex;
-						justify-content: flex-start;
-						align-items: center;
-						height: 2.8rem;
-						column-gap: 0.4rem;
-
-						h2 {
-							font-size: 0.9rem;
-							color: var(--color-text-primary);
-							font-weight: 600;
-							flex: 1;
-							padding: 0.4rem;
-						}
-
-						button {
-							background-color: inherit;
-							padding: 0;
-							width: 100%;
-						}
-
-						&.bottom {
-							button {
-								padding: 0;
-								width: 100%;
-							}
-						}
 					}
 				}
 			}

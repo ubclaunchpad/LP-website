@@ -110,7 +110,7 @@ These risks should be identified as soon as possible and tackled step by step. F
 - If a feature is challenging to implement, **get a prototype working first**. This usually means getting a bare-minimum "proof of concept" working that doesn't strictly tie into your application, but simply demonstrates that something is possible. This helps your teammates provide feedback faster and gives you an indication of whether such an implementation is worth pursuing at all before you sink too much time into it!
 - If you have a dependency on a third-party data source, **contact or research the third party as soon as possible** and verify the data is available, adequately formatted, etc. before you decide for sure to use it.
 
-You can also manage risk with clearly-defined tasks that encapsulates small units of work - this helps prevent difficult, long-running tasks from ballooning into a huge amount of work that bogs down your project's progress. See [Sprint Planning: Tasks](./sprints.md#tasks) for more details on how to define tasks!
+You can also manage risk with clearly-defined tasks that encapsulates small units of work - this helps prevent difficult, long-running tasks from ballooning into a huge amount of work that bogs down your project's progress. See [Sprint Planning: Tasks](sprints.md#tasks) for more details on how to define tasks!
 
 ### Risky Ideas
 

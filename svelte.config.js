@@ -23,6 +23,9 @@ const config = {
 		mdsvex({
 			highlight: false,
 			extensions: ['.md'],
+			layout: {
+				_: './src/lib/components/posts/Layout.svelte'
+			},
 			rehypePlugins: [
 				[rehypeSlug],
 				[rehypeAutolinkHeadings, 'before'],
