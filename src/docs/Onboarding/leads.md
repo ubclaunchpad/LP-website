@@ -2,7 +2,7 @@
 
 Welcome to UBC Launch Pad, and congratulations (and thank you!) for joining us as a lead!
 
-The role of the Launch Pad leadership team is documented in our [manifesto](/handbook/manifesto.md#club-structure). The specifics of each role's responsibilities are also available in the [tech lead role description](/handbook/recruitment/tech-lead.md) and [design lead role description](/handbook/recruitment/design-lead.md).
+The role of the Launch Pad leadership team is documented in our [manifesto](../manifesto.md#club-structure). The specifics of each role's responsibilities are also available in the [tech lead role description](../Recruitment/tech-lead.md) and [design lead role description](../Recruitment/design-lead.md).
 
 ## Checklist
 
@@ -15,7 +15,7 @@ Everyone should join a **private** channel named `#tm-leads-YYYY` (for example, 
 - [`#ask-design`](https://ubclaunchpad.slack.com/archives/CK6D4QD8U): questions for design
 - [`#ask-strategy`](https://ubclaunchpad.slack.com/archives/CJVF0FQHG): questions for strategy
 
-As a lead, you should also lead in Slack participation by example - please make sure you join any channels you find interesting and participate in them! See [our Slack guide](/handbook/tools/slack.md#finding-channels) for more details.
+As a lead, you should also lead in Slack participation by example - please make sure you join any channels you find interesting and participate in them!
 
 ### Slack Status
 
@@ -25,13 +25,9 @@ To help people identify you, make sure you set a status in Slack indicating your
 
 ![set status](./img/leads-set-status.png)
 
-### Rocket Team
-
-Make sure you get added to the `leads` [Rocket](/handbook/tools/slack#rocket) team by the co-presidents. Co-presidents should also make sure they are added to the `exec` Rocket team.
-
 ### GitHub Teams
 
-Make sure you are a part of the following teams on GitHub - [Rocket](/handbook/onboarding/everyone.md#rocket-setup) should do this for you if you are a part of the `leads` Rocket team. Ceck your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.
+Make sure you are a part of the following teams on GitHub:
 
 - [`@ubclaunchpad/leads`](https://github.com/orgs/ubclaunchpad/teams/leads), and check that you can access the [private Leads repository](https://github.com/ubclaunchpad/leads) - this repository primarily contains interview resources and tracking issues
 - [`@ubclaunchpad/strategy`](https://github.com/orgs/ubclaunchpad/teams/strategy), and check that you can access the [private Strategy repository](https://github.com/ubclaunchpad/strategy) - this repository contains sponsorship resources and event/sponsorship tracking issues
@@ -45,9 +41,8 @@ Make sure that you are **watching** all relevant repositories so that you don't 
 
 ### Google Drive
 
-Make sure all leads are given "editor" access to the [shared Launch Pad folder](https://drive.google.com/drive/folders/1u-U3w0V0MaLQrWtDdw_8n15V2lO-6gXo), which is owned by the `team@ubclaunchpad.com` account (more details are in the [Exec repository](https://github.com/ubclaunchpad/exec)). [Rocket](#rocket-setup) should do this for you - check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.
-
-Learn more about managing these folders in the [Google Drive documentation](/handbook/tools/drive.md).
+Make sure all leads are given "editor" access to the [shared Launch Pad folder](https://drive.google.com/drive/u/2/folders/1hgPcUC_DrFMmzZ04pBSlZFig4v9AbTuv), which is owned by the `team@ubclaunchpad.com` account.
+Learn more about managing these folders in the [Google Drive documentation](../Tools/drive.md).
 
 ### Email and Accounts
 
