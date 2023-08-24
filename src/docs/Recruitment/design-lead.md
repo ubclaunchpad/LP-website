@@ -3,9 +3,9 @@
 search: false
 ---
 
-# Design Lead 🚀 <img align="right" src="https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/src/assets/rocket.png" width="100px">
+# Design Lead 🚀 
 
-> UBC Launch Pad 2020 Team
+
 
 ## Summary
 

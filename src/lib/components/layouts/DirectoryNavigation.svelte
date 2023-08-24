@@ -55,9 +55,14 @@
 			font-weight: 500;
 			text-transform: uppercase;
 			padding: 0.5rem 0.4rem 0.2rem;
-			font-size: 1rem;
+			font-size: 0.9rem;
 			color: var(--color-text-3);
 			border-top: 1px solid var(--color-border-2);
+
+
+			span {
+				opacity: 0.5;
+			}
 
 			&:first-child {
 				border-top: none;

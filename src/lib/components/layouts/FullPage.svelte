@@ -4,11 +4,12 @@
 	import { onMount } from 'svelte';
 	import Icon from '../general/Icon.svelte';
 	let pageWidth: number;
-	$: isCompact = pageWidth < cutoff;
+
 	let collapse = true;
 	const cutoff = 1200;
 	$: transitionDuration = isCompact ? 300 : 0;
-	$: showNav = pageWidth > cutoff || !collapse;
+	let showNav = false;
+	$: isCompact = pageWidth < cutoff;
 
 	onMount(() => {
 		pageWidth = document.body.clientWidth;
@@ -34,35 +35,63 @@
 >
 	<nav>
 		<div class="topnav">
-			<h2>Launch Pad Documentation</h2>
+			<div class="item">
+				<button on:click={() => (collapse = !collapse)}>
+					<Icon>
+						<MenuIcon width={'0.9rem'} />
+					</Icon>
+				</button>
+				<h2>Launch Pad Documentation</h2>
+			</div>
+
+
 		</div>
 	</nav>
 	<section>
-		<aside>
 
-			<div class="sidebar" class:compact={isCompact}>
-				<!--{#if showNav}-->
-				<div class="content" transition:slide|global={{ axis: 'x', duration: transitionDuration }}>
-					<slot name="nav" />
+			{#if !isCompact}
+				<aside>
+					<div class="sidebar" class:compact={isCompact}>
+						<div class="content" transition:slide|global={{ axis: 'x', duration: transitionDuration }}>
+							<slot name="nav" />
+						</div>
+					</div>
+					<div class="item" class:open={showNav}>
+						<button on:click={() => (collapse = !collapse)}>
+							<Icon>
+								<MenuIcon width={'1rem'} />
+							</Icon>
+						</button>
+					</div>
+				</aside>
+				{/if}
+
+		<main  on:click={collapseNav}>
+			{#if !collapse && isCompact}
+				<div class="compactBar">
+
+				<slot name="nav" />
+					<div></div>
 				</div>
-				<!--{/if}-->
-			</div>
-			<div class="item" class:open={showNav}>
-				<button on:click={() => (collapse = !collapse)}>
-					<Icon>
-						<MenuIcon width={'1rem'} />
-					</Icon>
-				</button>
-			</div>
-		</aside>
-
-		<main class:blur={!collapse && isCompact} on:click={collapseNav}>
+			{:else }
 			<slot name="main" />
+			{/if}
 		</main>
 	</section>
 </div>
 
 <style lang="scss">
+
+	.compactBar {
+		display: flex;
+		justify-content: flex-start;
+		width: 100%;
+
+		>div {
+			flex: 1;
+		}
+
+	}
 	#page {
 		display: flex;
 		flex-direction: column;
@@ -94,11 +123,33 @@
 				padding-right: 0.5rem;
 				column-gap: 0.8rem;
 				min-height: 3rem;
-				h2 {
-					position: relative;
-					font-size: 1rem;
-					color: var(--color-text-2);
-					font-weight: 600;
+				.item {
+					padding: 0;
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					column-gap: 0.4rem;
+					width: 100%;
+
+					h2 {
+						font-size: 0.9rem;
+						color: var(--color-text-primary);
+						font-weight: 600;
+						flex: 1;
+					}
+
+					button {
+						background-color: inherit;
+						padding: 0;
+
+					}
+
+					&.bottom {
+						button {
+							padding: 0;
+							width: 100%;
+						}
+					}
 				}
 			}
 		}

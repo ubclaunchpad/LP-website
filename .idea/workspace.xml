@@ -5,75 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ab6e7a6-43e4-4a88-a447-bc320670c5b4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/routes/(app)/+page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/(app)/[...slug]/+page.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Onboarding/design.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Onboarding/everyone.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Onboarding/leads.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Onboarding/strategy.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/design-lead.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/designer.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/developer.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/overview.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/strategy.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/tech-lead.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/analytics.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/deployment.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/drive.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/email.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/github.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/img/github_emails.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/img/github_issue_example.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/img/github_issues.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/img/github_pullrequests.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/img/github_review.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/img/github_review_final.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/img/github_review_inline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/img/github_slack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/img/github_suggest_after.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/img/github_suggest_before.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/img/github_watch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/img/lead-status.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/slack.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Tools/social-media.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/design-lead.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Recruitment/design-lead.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/designer.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Recruitment/designer.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/developer.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Recruitment/developer.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/overview.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Recruitment/overview.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/strategy.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Recruitment/strategy.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/tech-lead.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Recruitment/tech-lead.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/docs/groundwork/stack-choosing.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/docs/groundwork/web.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/project-management/repositories.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/docs/project-management/scope.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/docs/project-management/sprints.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/resources/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/resources/deployment.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/resources/exploration.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/resources/git-workflow.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/resources/languages.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/resources/tools.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/docs/strategy/objectives.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/docs/strategy/recurring-processes.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/docs/strategy/sponsors-and-partners.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Document.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/general/Document.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Navigation/DirectoryNavigation.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layouts/DirectoryNavigation.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/blocks/Banner.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/blocks/DocError.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/blocks/DocError.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/layouts/Fullpage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layouts/FullPage.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/layouts/MainPage.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/util/blogReader.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/+layout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+page.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/[...slug]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/[...slug]/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/[...slug]/+page.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/posts/+server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/posts/+server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/markdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/markdown.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layouts/DirectoryNavigation.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layouts/DirectoryNavigation.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layouts/FullPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layouts/FullPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(app)/[...slug]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/[...slug]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(app)/markdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/markdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(app)/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "v2.1",
-    "last_opened_file_path": "/Users/armintalaie/Files/Projects/lps/docs/src/docs",
+    "last_opened_file_path": "/Users/armintalaie/Files/Projects/lps/docs/src/docs/Onboarding",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -112,11 +65,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/docs/Onboarding" />
+      <recent name="$PROJECT_DIR$/src/docs/Recruitment" />
       <recent name="$PROJECT_DIR$/src/docs" />
       <recent name="$PROJECT_DIR$/src/routes/(app)/[...slug]" />
       <recent name="$PROJECT_DIR$/src/routes/(app)" />
-      <recent name="$PROJECT_DIR$/src/routes" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/lib/components/general" />

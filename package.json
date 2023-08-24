@@ -39,6 +39,7 @@
 		"@mapbox/rehype-highlight-code-block": "^1.0.0",
 		"@types/gapi": "^0.0.44",
 		"jwt-decode": "^3.1.2",
+		"mdsvex-relative-images": "^1.0.3",
 		"path": "^0.12.7",
 		"rehype-autolink-headings": "^6.1.1",
 		"rehype-parse": "^8.0.4",

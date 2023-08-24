@@ -3,9 +3,9 @@
 search: false
 ---
 
-# Designer 🚀 <img align="right" src="https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/src/assets/rocket.png" width="100px">
+# Designer 🚀 
 
-> UBC Launch Pad 2021 Team
+
 
 ## Summary
 
@@ -13,10 +13,7 @@ As a designer at UBC Launch Pad, you will be working with other designers and de
 
 Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/handbook/manifesto), which includes our vision and code of conduct. You can also learn about how recruitment works in Launch Pad in our [recruitment overview](/handbook/recruitment/overview.md).
 
-<!-- Comment out when accepting applications, also uncomment the form at the bottom -->
-<!-- ::: warning We are not currently accepting applications for this role.
-Sign up for our [newsletter](https://ubclaunchpad.com/newsletter) to get updates!
-::: -->
+
 
 ## Responsibilities
 
@@ -48,10 +45,3 @@ Sign up for our [newsletter](https://ubclaunchpad.com/newsletter) to get updates
   * PDF portfolio (Google Drive Link)
   * PDF Case studies (Google Drive Link)
   * Slide Deck (Google Slides Link)
-
-<!--
-::: tip We are currently accepting applications for this role!
-
-To apply, fill out [this Google Form](https://forms.gle/4u6qeKqrzav2MzwK7) before 11:59 PM on August 21, 2020.
-:::
--->

@@ -3,9 +3,9 @@
 search: false
 ---
 
-# Tech Lead 🚀 <img align="right" src="https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com/master/src/assets/rocket.png" width="100px">
+# Tech Lead 🚀
 
-> UBC Launch Pad Spring 2021
+
 
 ## Summary
 

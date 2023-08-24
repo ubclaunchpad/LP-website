@@ -11,7 +11,10 @@ html[data-theme='dark'] {
 
 	--color-bg-0-faded: #1c1c1e9f;
 	--color-bg-primary: #7566ff;
+	--color-bg-primary-alt: rgba(114, 101, 231, 0.07);
+
 	--color-bg-primary-faded: rgba(114, 101, 231, 0.65);
+
 
 	// Text colours
 	--color-text-0: #fdfdfd;
@@ -36,16 +39,19 @@ html[data-theme='dark'] {
 	--color-bg-secondary: #ff6c3d;
 	--color-bg-secondary-faded: rgba(255, 108, 61, 0.75);
 
-	--color-bg-tertiary: #083bce;
-	--color-bg-tertiary-faded: #083bce;
-
 	--color-text-dark: #000000;
 
 	--color-border-0: rgba(33, 35, 37, 0.87);
 	--color-border-1: rgba(33, 35, 37, 0.87);
 	--color-border-2: #2f3336;
 
-	--color-blockquote-0: var(--color-bg-1);
+	--color-blockquote-0: var(--color-bg-primary-alt);
+
+	--color-bg-table-header:  var(--color-bg-2);
+	--color-bg-table-row-0:  var(--color-bg-1);
+	--color-bg-table-row-1: var(--color-bg-2);
+
+	--color-code-block: var(--color-bg-2);
 }
 :root,
 html[data-theme='light'] {
