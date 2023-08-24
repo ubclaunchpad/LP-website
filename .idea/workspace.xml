@@ -5,28 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ab6e7a6-43e4-4a88-a447-bc320670c5b4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/design-lead.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Recruitment/design-lead.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/designer.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Recruitment/designer.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/developer.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Recruitment/developer.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/overview.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Recruitment/overview.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/strategy.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Recruitment/strategy.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Recruitment/tech-lead.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Recruitment/tech-lead.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/groundwork/stack-choosing.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/groundwork/web.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/project-management/scope.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/project-management/sprints.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/strategy/objectives.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/strategy/recurring-processes.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/strategy/sponsors-and-partners.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/layouts/DirectoryNavigation.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layouts/DirectoryNavigation.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/layouts/FullPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layouts/FullPage.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(app)/[...slug]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/[...slug]/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(app)/markdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/markdown.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(app)/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(app)/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
