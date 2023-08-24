@@ -1,15 +1,11 @@
-// import adapter from '@sveltejs/adapter-cloudflare';
-import adapter from '@sveltejs/adapter-static';
-
+import adapter from '@sveltejs/adapter-cloudflare';
 import { mdsvex } from 'mdsvex';
 import sveltePreprocess from 'svelte-preprocess';
 import containers from 'remark-containers';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeWrapAll from 'rehype-wrap-all';
-
 import { vitePreprocess } from '@sveltejs/kit/vite'
-
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
