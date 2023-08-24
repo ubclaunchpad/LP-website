@@ -1,4 +1,4 @@
-# 🐙 GitHub <Badge type="tip" text="new"/>
+# 🐙 GitHub
 
 We use [GitHub](https://github.com/) to host, document, and manage the code in all our projects. Our GitHub organization is [`ubclaunchpad`](https://github.com/ubclaunchpad/), and each repository is essentially a version-controlled folder of files (similar to what you might find on your computer).
 

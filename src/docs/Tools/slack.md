@@ -63,7 +63,7 @@ Some channels are featured in this document, but you can easily find a full list
 
 ## Bots & Apps
 
-### Rocket <Badge type="tip" text="updated"/>
+### Rocket
 
 [Rocket 2](https://github.com/ubclaunchpad/rocket2) is our very own Slack bot, used for managing our roster across Slack and GitHub. Members use it mainly to automatically add themselves to the GitHub organization, Google Drive, and more.
 

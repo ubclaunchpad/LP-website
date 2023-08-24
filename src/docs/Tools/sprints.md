@@ -1,4 +1,4 @@
-# 🏃 Sprint Planning <Badge type="tip" text="updated"/>
+# 🏃 Sprint Planning
 
 Launch Pad uses "agile" software development, as is common in industry. This allows teams to manage small, achievable milestones and adjust projects as needed quickly and effectively.
 
