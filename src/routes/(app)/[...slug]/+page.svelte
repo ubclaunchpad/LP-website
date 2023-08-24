@@ -3,9 +3,6 @@
 </script>
 
 <div class="page">
-	<nav>
-		<input />
-	</nav>
 	<article>
 		<section class="body">
 			{#if data.content}

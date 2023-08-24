@@ -20,34 +20,34 @@ Sign up for our [newsletter](https://ubclaunchpad.com/newsletter) to get updates
 
 ## Responsibilities
 
-- Learn and build collaboratively with other designers and developers
-- Attend team meetings and complete tasks to the best of your ability with the support of your lead and team
-- Spearhead the design of the project by conducting user research, user testing, wireframing, and prototyping, as outlined in our [project timeline](https://docs.ubclaunchpad.com/handbook/project-management/scope#project-timeline)
-- Communicate with your design lead or co-presidents if you need any support
-- Follow the [onboarding procedures](https://docs.ubclaunchpad.com/handbook/onboarding/everyone) to prepare yourself for the term
+* Learn and build collaboratively with other designers and developers
+* Attend team meetings and complete tasks to the best of your ability with the support of your lead and team
+* Spearhead the design of the project by conducting user research, user testing, wireframing, and prototyping, as outlined in our [project timeline](https://docs.ubclaunchpad.com/handbook/project-management/scope#project-timeline)  
+* Communicate with your design lead or co-presidents if you need any support
+* Follow the [onboarding procedures](https://docs.ubclaunchpad.com/handbook/onboarding/everyone) to prepare yourself for the term  
 
 ## What you get
 
-- An amazing documentation website to equip you with all the tools you need to succeed!
-- Learn and exercise professional design practices
-- Experience the full lifecycle of bringing a complex project to life
-- Advance your UX/UI skills by spearheading product design in the team
-- Demonstrate your problem-solving skills by creating a meaningful project with your team
-- Make some life-long relationships with the people from Launch Pad 💫
+* An amazing documentation website to equip you with all the tools you need to succeed!
+* Learn and exercise professional design practices
+* Experience the full lifecycle of bringing a complex project to life
+* Advance your UX/UI skills by spearheading product design in the team
+* Demonstrate your problem-solving skills by creating a meaningful project with your team
+* Make some life-long relationships with the people from Launch Pad 💫
 
 ## Time commitment
 
-- Club meetings every other Saturday from 12pm-3pm (the first hour is required, the rest of the time is to hang out, work, and eat lunch together and we highly recommend staying if you can!)
-- 1 hour bi-weekly sub-team meetings (alternating with the club-wide Saturday meetings) that are scheduled based on sub-team member availability
-- Around 5 hours per week working on tasks
+* Club meetings every other Saturday from 12pm-3pm (the first hour is required, the rest of the time is to hang out, work, and eat lunch together and we highly recommend staying if you can!)
+* 1 hour bi-weekly sub-team meetings (alternating with the club-wide Saturday meetings) that are scheduled based on sub-team member availability
+* Around 5 hours per week working on tasks
 
 ## Requirements
 
-- Samples of personal projects. This can be:
-  - A website portfolio
-  - PDF portfolio (Google Drive Link)
-  - PDF Case studies (Google Drive Link)
-  - Slide Deck (Google Slides Link)
+* Samples of personal projects. This can be:
+  * A website portfolio
+  * PDF portfolio (Google Drive Link)
+  * PDF Case studies (Google Drive Link)
+  * Slide Deck (Google Slides Link)
 
 <!--
 ::: tip We are currently accepting applications for this role!

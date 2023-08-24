@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import MenuIcon from '../general/icons/MenuIcon.svelte';
-	import logo from '$lib/assets/logo.png';
 	import { onMount } from 'svelte';
-	import Loader from '../blocks/Loader.svelte';
 	import Icon from '../general/Icon.svelte';
 	let pageWidth: number;
 	$: isCompact = pageWidth < cutoff;
@@ -24,9 +22,6 @@
 		if (!collapse) collapse = true;
 	};
 
-	const onNavigation = () => {
-		collapseNav();
-	};
 </script>
 
 <div
@@ -37,39 +32,33 @@
 		}
 	}}
 >
+	<nav>
+		<div class="topnav">
+			<h2>Launch Pad Documentation</h2>
+		</div>
+	</nav>
 	<section>
-		{#if pageWidth}
-			<aside>
-				<nav>
-					<div class="topnav">
-						<h2>Launch Pad Documentation</h2>
-					</div>
-				</nav>
-				<div class="sidebar" class:compact={isCompact}>
-					{#if showNav}
-						<div
-							class="content"
-							transition:slide|global={{ axis: 'x', duration: transitionDuration }}
-						>
-							<slot name="nav" />
-						</div>
-					{/if}
-				</div>
-				<div class="item" class:open={showNav}>
-					<button on:click={() => (collapse = !collapse)}>
-						<Icon>
-							<MenuIcon width={'1rem'} />
-						</Icon>
-					</button>
-				</div>
-			</aside>
+		<aside>
 
-			<main class:blur={!collapse && isCompact} on:click={collapseNav}>
-				<slot name="main" />
-			</main>
-		{:else}
-			<Loader width={'100%'} height={'100%'} />
-		{/if}
+			<div class="sidebar" class:compact={isCompact}>
+				<!--{#if showNav}-->
+				<div class="content" transition:slide|global={{ axis: 'x', duration: transitionDuration }}>
+					<slot name="nav" />
+				</div>
+				<!--{/if}-->
+			</div>
+			<div class="item" class:open={showNav}>
+				<button on:click={() => (collapse = !collapse)}>
+					<Icon>
+						<MenuIcon width={'1rem'} />
+					</Icon>
+				</button>
+			</div>
+		</aside>
+
+		<main class:blur={!collapse && isCompact} on:click={collapseNav}>
+			<slot name="main" />
+		</main>
 	</section>
 </div>
 
@@ -133,7 +122,7 @@
 
 			aside {
 				position: relative;
-				background-color: var(--color-bg-1);
+				border-right: 1px solid var(--color-border-2);
 				z-index: 200;
 				height: 100%;
 				display: flex;
@@ -174,6 +163,7 @@
 					position: relative;
 					width: 20rem;
 					overflow: scroll;
+					height: 100%;
 					.content {
 						width: 100%;
 						max-width: 100%;

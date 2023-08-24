@@ -2,7 +2,6 @@
 	import Icon from '../general/Icon.svelte';
 	import ArrowRightIcon from '../general/icons/ArrowRightIcon.svelte';
 	export let title: string;
-	export let description: string;
 	export let links = [];
 </script>
 

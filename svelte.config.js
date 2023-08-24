@@ -1,10 +1,15 @@
-import adapter from '@sveltejs/adapter-cloudflare';
+// import adapter from '@sveltejs/adapter-cloudflare';
+import adapter from '@sveltejs/adapter-static';
+
 import { mdsvex } from 'mdsvex';
 import sveltePreprocess from 'svelte-preprocess';
 import containers from 'remark-containers';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeWrapAll from 'rehype-wrap-all';
+
+import { vitePreprocess } from '@sveltejs/kit/vite'
+
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,6 +18,7 @@ const config = {
 	extensions: ['.svelte', '.md'],
 
 	preprocess: [
+		vitePreprocess(),
 		sveltePreprocess({
 			scss: {
 				// We can use a path relative to the root because
@@ -48,13 +54,11 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter({
-			// See below for an explanation of these options
-			routes: {
-				include: ['/*'],
-				exclude: ['<all>']
-			}
-		})
+		prerender: {
+			handleHttpError: "ignore",
+			handleMissingId: "ignore",
+		},
+		adapter: adapter()
 	}
 };
 

@@ -12,18 +12,18 @@ That said, a major goal of Launch Pad is to support beginners and people from a 
 
 When recruiting for techncial (developer) roles, we aim to categorize applicants into the following categories:
 
-- **Beginner**: 1st or 2nd year student OR course project OR simple project (hackathon) OR tutorial project
-- **Independent**: Completed 1 internship OR a non-course "advanced project"
-  - An advanced project meets the following criteria:
-    - long-term (for example, at least 1 month between the first to most recent commit)
-    - is non-trivial and the product of tangible effort (up to judgement)
-    - demonstrable use programming paradigms (even as simple as loops)
-- **Experienced**: (2 internships OR outstanding project) AND nails technical question AND interest in mentorship
+* **Beginner**: 1st or 2nd year student OR course project OR simple project (hackathon) OR tutorial project
+* **Independent**: Completed 1 internship OR a non-course "advanced project"
+  * An advanced project meets the following criteria:
+    * long-term (for example, at least 1 month between the first to most recent commit)
+    * is non-trivial and the product of tangible effort (up to judgement)
+    * demonstrable use programming paradigms (even as simple as loops)
+* **Experienced**: (2 internships OR outstanding project) AND nails technical question AND interest in mentorship
 
 To provide support to our less experienced members and ensure a productive environment for everyone, when recruiting we aim to have:
 
-- around 40% of members be "beginners".
-- at least 20% of members (including leads) be "experienced".
+* around 40% of members be "beginners".
+* at least 20% of members (including leads) be "experienced".
 
 Each lead typically leads 1 team. We aim for a club size of 8 developers (excluding the lead) per team, to accomodate for members potentially leaving throughout the semester.
 
@@ -33,15 +33,15 @@ You can learn more about technical roles in the [Developer role description](/ha
 
 When recruiting for design roles, it is important to note that most teams will consist of only 1 designer, sometimes 2. Because of this, experience levels of designers per team may vary. Our definition experience levels are as follows:
 
-- **Beginner**: 1st or 2nd year student OR student from any major/faculty with interest in UX AND 1 simple case study
-- **Experienced**: 1-3 comprehensive case studies OR 1 or more UX design internships AND interest in mentorship
+* **Beginner**: 1st or 2nd year student OR student from any major/faculty with interest in UX AND 1 simple case study
+* **Experienced**: 1-3 comprehensive case studies OR 1 or more UX design internships AND interest in mentorship
 
 Both of the above experience levels require at least 1 case study or showcase of design work (for example, a PDF or word document).
 
 To provide support to our less experienced members and ensure a productive environment for everyone, when recruiting we aim to have:
 
-- around 60% of the design team be "beginners".
-- at least 40% of design team (including lead) be "experienced".
+* around 60% of the design team be "beginners".
+* at least 40% of design team (including lead) be "experienced".
 
 You can learn more about design roles in the [Designer role description](/handbook/recruitment/strategy.md).
 
@@ -59,8 +59,8 @@ Usage of [social media](/handbook/tools/social-media.md) should accompany each r
 
 A few things to note:
 
-- Make sure to follow the [steps for a social media campaign](/handbook/tools/social-media.md#social-media-campaigns) as guidance, especially regarding setting up the Google Drive folder correctly, to make sure we have reference material in the future.
-- Do not use the word "hiring", as we do not provide pay - "recruitment" is a more accurate and less intimidating term.
+* Make sure to follow the [steps for a social media campaign](/handbook/tools/social-media.md#social-media-campaigns) as guidance, especially regarding setting up the Google Drive folder correctly, to make sure we have reference material in the future.
+* Do not use the word "hiring", as we do not provide pay - "recruitment" is a more accurate and less intimidating term.
 
 ### Applications
 
@@ -86,13 +86,13 @@ Applications are generally accepted through Google Form submissions.
 
 #### Screening applicants
 
-To screen applications, we provide a set of criteria, each to be graded on a 0-2 scale from "unsatisfactory" to "excellent" _relative to the applicant's skill level_ so that we can try to achieve the experience distributions described in our [recruitment goals](#goals). These scores are used to determine the candidates to interview.
+To screen applications, we provide a set of criteria, each to be graded on a 0-2 scale from "unsatisfactory" to "excellent" *relative to the applicant's skill level* so that we can try to achieve the experience distributions described in our [recruitment goals](#goals). These scores are used to determine the candidates to interview.
 
 For most of our entry roles (developers, designers, and strategy), we have the following criteria:
 
-- C1: Willingness to learn (self-drive, taking time outside of classes and work to learn and build things)
-- C2: Passion and interest (for example, comprehensiveness of answer to "tell us about a project", even if not technically comprehensive)
-- C3: Rate the best of the provided items from the OR/AND's from the relevant skill bucket they fall in
+* C1: Willingness to learn (self-drive, taking time outside of classes and work to learn and build things)
+* C2: Passion and interest (for example, comprehensiveness of answer to "tell us about a project", even if not technically comprehensive)
+* C3: Rate the best of the provided items from the OR/AND's from the relevant skill bucket they fall in
 
 Once applicants have been screened, decide on a score threshold for each skill level and send out interview offers and decision updates to candidates. See [emails (in Leads)](https://github.com/ubclaunchpad/leads/blob/master/interviews/emails.md) for email templates, and please remember our [feedback policy](#feedback).
 
@@ -124,22 +124,22 @@ That said, this does not mean that reviewers at Launch Pad never make an incorre
 
 ### Feedback
 
-Unfortunately, we _do not_ provide feedback regarding a decision for either the [screening](#screening-applicants) or [interview](#interviews) phase of a candidate's application process. This means we can not provide specific answers to questions like:
+Unfortunately, we *do not* provide feedback regarding a decision for either the [screening](#screening-applicants) or [interview](#interviews) phase of a candidate's application process. This means we can not provide specific answers to questions like:
 
-- "Why did I get rejected?"
-- "How could I have answered X question better?"
-- "Should I have brought up Y, Z in response to X question?"
-- "Who graded me?"
+* "Why did I get rejected?"
+* "How could I have answered X question better?"
+* "Should I have brought up Y, Z in response to X question?"
+* "Who graded me?"
 
 However, Launch Pad members should feel free to provide more general advice to candidates that reach out, such as resume pointers or things the candidate can do to round out their skills at their description - keep in mind that this feedback does not necessarily reflect how Launch Pad's decisions are made.
 
 ## Improving recruitment
 
-To achieve our [recruitment goals](#goals), we strive to continue iterating on our recruitment processes. This means in _every_ scenario where something like the following happens:
+To achieve our [recruitment goals](#goals), we strive to continue iterating on our recruitment processes. This means in *every* scenario where something like the following happens:
 
-- scoring leads to a seemingly suitable candidate being disqualified
-- wording of a question causes confusion
-- a candidate, interviewer, or reviewer has a bad experience
+* scoring leads to a seemingly suitable candidate being disqualified
+* wording of a question causes confusion
+* a candidate, interviewer, or reviewer has a bad experience
 
 We should investigate what went wrong (for example, why was this person scored incorrectly, or what we could do to clarify a question) so that we can look into improving our process and criteria (for example, by improving scoring guidance, or updating our recommended wording for a question).
 

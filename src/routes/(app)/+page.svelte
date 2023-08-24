@@ -1,16 +1,16 @@
 <script>
-	export let data;
+	// export let data;
 </script>
 
 <article>
 	<section class="body">
-		{#if data.content}
+		<!--{#if data.content}-->
 			<div class="markdown">
 				<div id="write">
-					<svelte:component this={data.content} />
+<!--					<svelte:component this={data.content} />-->
 				</div>
 			</div>
-		{/if}
+		<!--{/if}-->
 	</section>
 </article>
 
@@ -35,18 +35,5 @@
 
 	.body {
 		overflow: scroll;
-	}
-
-	.side {
-		width: 100%;
-		max-width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		flex: 1;
-		padding: 0.3rem;
-		column-gap: 1rem;
-		border-radius: var(--border-radius-medium);
-		background-color: var(--color-bg-1);
 	}
 </style>

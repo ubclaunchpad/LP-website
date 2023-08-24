@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { PUBLIC_GITHUB_TEAM_URI } from '$env/static/public';
-	import { STRATEGY_EMAIL } from '$lib/util/links';
+	import { GITHUB_LINK, STRATEGY_EMAIL } from '$lib/util/links';
 	import { blur } from 'svelte/transition';
 	import Banner from './Banner.svelte';
 	import Info from './Info.svelte';
@@ -11,14 +10,13 @@
 <div class="error-section" in:blur={{ duration: 700 }}>
 	<Banner
 		title={`${title}`}
-		description={''}
 		links={[
 			{
-				link: PUBLIC_GITHUB_TEAM_URI,
+				link: GITHUB_LINK,
 				text: 'View the team repo'
 			},
 			{
-				link: `${PUBLIC_GITHUB_TEAM_URI}/${area}`,
+				link: `${GITHUB_LINK}/${area}`,
 				text: 'View the requested Repository and its documents directly'
 			}
 		]}

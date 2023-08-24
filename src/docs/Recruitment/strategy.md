@@ -12,7 +12,6 @@ search: false
 TODO([docs#189](https://github.com/ubclaunchpad/docs/issues/189))
 
 <!-- Comment out when accepting applications, also uncomment the form at the bottom -->
-
 ::: warning We are not currently accepting applications for this role.
 Sign up for our [newsletter](https://ubclaunchpad.com/newsletter) to get updates!
 :::

@@ -1,19 +1,19 @@
 <script lang="ts">
-	import Fullpage from '$lib/components/layouts/Fullpage.svelte';
+	import FullPage from '$lib/components/layouts/FullPage.svelte';
 	import './styles.scss';
 	import './markdown.scss';
-	import DirectoryNavigation from '$lib/components/Navigation/DirectoryNavigation.svelte';
+	import DirectoryNavigation from '$lib/components/layouts/DirectoryNavigation.svelte';
 	export let data;
 </script>
 
-<Fullpage>
+<FullPage>
 	<DirectoryNavigation directories={data.posts} slot="nav" />
 	<article slot="main">
 		<section class="blog">
 			<slot />
 		</section>
 	</article>
-</Fullpage>
+</FullPage>
 
 <style lang="scss">
 	article {
