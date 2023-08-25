@@ -3,6 +3,8 @@
 	import MenuIcon from '../general/icons/MenuIcon.svelte';
 	import { onMount } from 'svelte';
 	import Icon from '../general/Icon.svelte';
+	import GithubIcon from '$lib/components/general/icons/GithubIcon.svelte';
+	import { DOCS_GITHUB_LINK, GITHUB_LINK } from '$lib/util/links';
 	let pageWidth: number;
 
 	let collapse = true;
@@ -22,7 +24,6 @@
 	const collapseNav = () => {
 		if (!collapse) collapse = true;
 	};
-
 </script>
 
 <div
@@ -38,59 +39,60 @@
 			<div class="item">
 				<button on:click={() => (collapse = !collapse)}>
 					<Icon>
-						<MenuIcon width={'0.9rem'} />
+						{#if isCompact}
+							<MenuIcon width={'1rem'} />
+						{/if}
 					</Icon>
 				</button>
-				<h2>Launch Pad Documentation</h2>
+				<a href="/">
+					<h2>Launch Pad Documentation</h2>
+				</a>
 			</div>
-
-
 		</div>
 	</nav>
 	<section>
-
-			{#if !isCompact}
-				<aside>
-					<div class="sidebar" class:compact={isCompact}>
-						<div class="content" transition:slide|global={{ axis: 'x', duration: transitionDuration }}>
-							<slot name="nav" />
-						</div>
+		{#if !isCompact}
+			<aside>
+				<div class="sidebar" class:compact={isCompact}>
+					<div
+						class="content"
+						transition:slide|global={{ axis: 'x', duration: transitionDuration }}
+					>
+						<slot name="nav" />
 					</div>
-					<div class="item" class:open={showNav}>
-						<button on:click={() => (collapse = !collapse)}>
-							<Icon>
-								<MenuIcon width={'1rem'} />
-							</Icon>
-						</button>
-					</div>
-				</aside>
-				{/if}
+				</div>
+				<div class="item" class:open={showNav}>
+					<a href={DOCS_GITHUB_LINK}>
+						<Icon>
+							<GithubIcon width={'1rem'} />
+						</Icon>
+					</a>
+				</div>
+			</aside>
+		{/if}
 
-		<main  on:click={collapseNav}>
+		<main on:click={collapseNav}>
 			{#if !collapse && isCompact}
 				<div class="compactBar">
-
-				<slot name="nav" />
-					<div></div>
+					<slot name="nav" />
+					<div />
 				</div>
-			{:else }
-			<slot name="main" />
+			{:else}
+				<slot name="main" />
 			{/if}
 		</main>
 	</section>
 </div>
 
 <style lang="scss">
-
 	.compactBar {
 		display: flex;
 		justify-content: flex-start;
 		width: 100%;
 
-		>div {
+		> div {
 			flex: 1;
 		}
-
 	}
 	#page {
 		display: flex;
@@ -121,6 +123,7 @@
 				width: 100%;
 				padding: 1rem;
 				padding-right: 0.5rem;
+
 				column-gap: 0.8rem;
 				min-height: 3rem;
 				.item {
@@ -131,9 +134,18 @@
 					column-gap: 0.4rem;
 					width: 100%;
 
+					a {
+						text-decoration: none;
+						&:hover {
+							h2 {
+								color: var(--color-text-2);
+							}
+						}
+					}
+
 					h2 {
-						font-size: 0.9rem;
-						color: var(--color-text-primary);
+						font-size: 1rem;
+						color: var(--color-text-primary-alt);
 						font-weight: 600;
 						flex: 1;
 					}
@@ -141,7 +153,6 @@
 					button {
 						background-color: inherit;
 						padding: 0;
-
 					}
 
 					&.bottom {
@@ -184,7 +195,7 @@
 					width: 100%;
 					padding: 0.6rem 0.3rem;
 					display: flex;
-					justify-content: flex-start;
+					justify-content: center;
 					align-items: center;
 					height: 2.8rem;
 					column-gap: 0.4rem;

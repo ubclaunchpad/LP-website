@@ -18,17 +18,17 @@ A list of shared Drive folders used at Launch Pad can be found in the "Quick Lin
 
 All folders should be a subfolder of the [shared Launch Pad folder](https://drive.google.com/drive/folders/1u-U3w0V0MaLQrWtDdw_8n15V2lO-6gXo) for easier access management. Within the shared Launch Pad folder, we try to maintain the following structure:
 
-* [Projects](https://drive.google.com/drive/u/0/folders/18piFDBdAUuZAOf9xOgpf2_HBUuVNae0S) - folders for project teams
-    * Note that everyone should be granted access to this folder (part of [Onboarding for Everyone](/handbook/onboarding/everyone.md))
-    * Each tech lead should create a folder for their project inside a year subfolder ("Projects YYYY") of this folder
-    * Inside each project folder, each lead should create a document for meeting notes. All their project meetings should go in this document. See [Sprint Planning](/handbook/project-management/sprints.md) for more details.
-* [Strategy](https://drive.google.com/drive/u/0/folders/0BwdNv1PZjDeXMkc1eDVNY1ZHT00) - see [Onboarding for Strategy](/handbook/onboarding/strategy.md)
-* [Design](https://drive.google.com/drive/u/0/folders/1Zfe25r3D77hGdyMkj0tlxHNa-r7fAq1d) - see [Onboarding for Design](/handbook/onboarding//design.md)
-* [Leads](https://drive.google.com/drive/u/0/folders/1hgPcUC_DrFMmzZ04pBSlZFig4v9AbTuv) - for the [leads](/handbook/onboarding/leads.md)
-    * Leads should create a document for meeting notes titled "Leads: Meeting Notes YYYY". All leads meetings should go in this document.
-    * Spreadsheets and Google Forms used for [recruitment](/handbook/recruitment/overview.md) are also kept in this folder.
-* [Exec](https://drive.google.com/drive/u/0/folders/10b_2H5EhPpJtdgNi7QizRhWC9Qtivr8L) - for the co-presidents
-    * Presidents should create a document for meeting notes titled "Exec: Meeting Notes YYYY". All exec meetings should go in this document.
+- [Projects](https://drive.google.com/drive/u/0/folders/18piFDBdAUuZAOf9xOgpf2_HBUuVNae0S) - folders for project teams
+  - Note that everyone should be granted access to this folder (part of [Onboarding for Everyone](/handbook/onboarding/everyone.md))
+  - Each tech lead should create a folder for their project inside a year subfolder ("Projects YYYY") of this folder
+  - Inside each project folder, each lead should create a document for meeting notes. All their project meetings should go in this document. See [Sprint Planning](/handbook/project-management/sprints.md) for more details.
+- [Strategy](https://drive.google.com/drive/u/0/folders/0BwdNv1PZjDeXMkc1eDVNY1ZHT00) - see [Onboarding for Strategy](/handbook/onboarding/strategy.md)
+- [Design](https://drive.google.com/drive/u/0/folders/1Zfe25r3D77hGdyMkj0tlxHNa-r7fAq1d) - see [Onboarding for Design](/handbook/onboarding//design.md)
+- [Leads](https://drive.google.com/drive/u/0/folders/1hgPcUC_DrFMmzZ04pBSlZFig4v9AbTuv) - for the [leads](/handbook/onboarding/leads.md)
+  - Leads should create a document for meeting notes titled "Leads: Meeting Notes YYYY". All leads meetings should go in this document.
+  - Spreadsheets and Google Forms used for [recruitment](/handbook/recruitment/overview.md) are also kept in this folder.
+- [Exec](https://drive.google.com/drive/u/0/folders/10b_2H5EhPpJtdgNi7QizRhWC9Qtivr8L) - for the co-presidents
+  - Presidents should create a document for meeting notes titled "Exec: Meeting Notes YYYY". All exec meetings should go in this document.
 
 Access and permissions folders is configured by [Rocket](/handbook/onboarding/everyone.md#rocket-setup) - ask someone to add you to the appropriate Rocket team, and check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem. Strategy, Design, and everyone else each only have access to folders relevant to their role. Leads have access to all the above folders throught the UBC Launch Pad shared folder. This is configured using [Rocket](/handbook/tools/slack#rocket):
 

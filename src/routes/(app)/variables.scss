@@ -15,12 +15,12 @@ html[data-theme='dark'] {
 
 	--color-bg-primary-faded: rgba(114, 101, 231, 0.65);
 
-
 	// Text colours
 	--color-text-0: #fdfdfd;
 	--color-text-1: #e2e2e2;
 	--color-text-2: #dedede;
 	--color-text-3: rgba(196, 196, 196, 0.87);
+
 	--color-link-0: var(--color-bg-primary);
 
 	// border radius
@@ -34,6 +34,7 @@ html[data-theme='dark'] {
 
 	--box-shadow-small: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 	--color-text-primary: #7a6dfa;
+	--color-text-primary-alt: #9389f3;
 	--color-text-secondary: #baa6ff;
 
 	--color-bg-secondary: #ff6c3d;
@@ -47,8 +48,8 @@ html[data-theme='dark'] {
 
 	--color-blockquote-0: var(--color-bg-primary-alt);
 
-	--color-bg-table-header:  var(--color-bg-2);
-	--color-bg-table-row-0:  var(--color-bg-1);
+	--color-bg-table-header: var(--color-bg-2);
+	--color-bg-table-row-0: var(--color-bg-1);
 	--color-bg-table-row-1: var(--color-bg-2);
 
 	--color-code-block: var(--color-bg-2);

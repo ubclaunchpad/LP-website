@@ -5,7 +5,7 @@ export const GET = async () => {
 	return json(allPosts);
 };
 
- const fetchMarkdownPosts = async () => {
+const fetchMarkdownPosts = async () => {
 	const prefix = '/src/docs/';
 	const allPostFiles = import.meta.glob('/src/docs/**/*.md', { eager: true });
 	const files: any = {
@@ -17,6 +17,7 @@ export const GET = async () => {
 		const file = allPostFiles[path];
 
 		path = path.replace(prefix, '');
+		if (path === 'index.md') continue;
 		const slug = path.split('/').at(-1)?.replace('.md', '');
 		const section = path.split('/').at(-2);
 

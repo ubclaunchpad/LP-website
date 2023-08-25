@@ -2,8 +2,6 @@
 
 Teams and projects are paired one-to-one. All teams include at least one lead with a number of developers and designers. Teams vary in size and developer/designer ratio.
 
-
-
 **Depending on the project teams can vary in the following ways:**
 
 ---
@@ -14,7 +12,7 @@ Team size can be larger if project scope is more demanding. As an estimate the a
 
 #### Roles
 
-Teams will by default include 1 or preferreably 2 designers and rest as developers. 
+Teams will by default include 1 or preferreably 2 designers and rest as developers.
 
 - If the project is exclusively a developer project it will not include any designers
 - If the project is exclusively a designer project it will not include any developers
@@ -25,12 +23,3 @@ Teams will include a balanced ratio of expereince and beginner members. This hel
 
 - If the project is demanding, more expereinced members are chosen
 - if the project is tailored to offer valuable experiences, more begnner members are choses
-
-
-
-
-
-
-
-
-

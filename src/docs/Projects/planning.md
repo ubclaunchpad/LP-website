@@ -2,8 +2,6 @@
 
 This document outlines advice on how to scope your project in a way that makes it easier to deliver on the (comparatively) tight schedules Launch Pad projects have.
 
-
-
 [#TODO](https://github.com/ubclaunchpad/docs/issues/252)
 
 ## Launch Pad Limitations
@@ -16,11 +14,11 @@ This is why scoping your project appropriately is vital to its success!
 
 In many cases, your _project_ should be able to be distilled down to a **single** _core feature_. For example:
 
-| Idea                                                         | Core Feature                                       |
-| ------------------------------------------------------------ | -------------------------------------------------- |
+| Idea                                                                                        | Core Feature                                       |
+| ------------------------------------------------------------------------------------------- | -------------------------------------------------- |
 | "a website where you can watch YouTube Videos with friends and chat and queue up playlists" | ability to watch YouTube videos in sync            |
-| "a choose-your-own adventure game where you try and survive as a UBC student" | interface to make choices and present consequences |
-| "slack bot and team management system for Launch Pad"        | update GitHub teams via Slack                      |
+| "a choose-your-own adventure game where you try and survive as a UBC student"               | interface to make choices and present consequences |
+| "slack bot and team management system for Launch Pad"                                       | update GitHub teams via Slack                      |
 
 Anything broader than an _idea_ is likely more of a theme. Narrowing down your _core feature_ should be done **before** you start any sort of development - see [ideation](#ideation) for some tips. Using this _core feature_, you should then determine:
 
@@ -51,8 +49,6 @@ During discussions, keep the following in mind as well:
 ## Project Timeline
 
 (ADD)
-
-
 
 ## Managing Risk
 

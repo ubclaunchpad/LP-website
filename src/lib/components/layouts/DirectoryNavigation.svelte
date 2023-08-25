@@ -3,18 +3,18 @@
 </script>
 
 <div class="sidebar-content">
-	<div class="directory">
-		<span />
-		<ul class="directory-list">
-			{#each Object.entries(directories.posts) as [directory, files]}
-				<li>
-					<a href={`/${files.slug}`}>
-						{files.slug}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	</div>
+	<!--	<div class="directory">-->
+	<!--		<span />-->
+	<!--		<ul class="directory-list">-->
+	<!--			{#each Object.entries(directories.posts) as [directory, files]}-->
+	<!--				<li>-->
+	<!--					<a href={`/${files.slug}`}>-->
+	<!--						{files.slug}-->
+	<!--					</a>-->
+	<!--				</li>-->
+	<!--			{/each}-->
+	<!--		</ul>-->
+	<!--	</div>-->
 	{#each Object.entries(directories.directories) as [directory, files]}
 		<div class="directory">
 			<span>{directory}</span>
@@ -58,7 +58,6 @@
 			font-size: 0.9rem;
 			color: var(--color-text-3);
 			border-top: 1px solid var(--color-border-2);
-
 
 			span {
 				opacity: 0.5;

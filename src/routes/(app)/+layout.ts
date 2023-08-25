@@ -1,4 +1,4 @@
-import type { LayoutLoad} from '../../../.svelte-kit/types/src/routes/(app)/$types';
+import type { LayoutLoad } from '../../../.svelte-kit/types/src/routes/(app)/$types';
 
 export const load: LayoutLoad = async ({ fetch }) => {
 	const response = await fetch(`/api/posts`);

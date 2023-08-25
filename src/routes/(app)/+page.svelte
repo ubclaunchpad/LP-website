@@ -1,16 +1,14 @@
-<script>
-	// export let data;
+<script lang="ts">
+	export let data;
 </script>
 
 <article>
 	<section class="body">
-		<!--{#if data.content}-->
-			<div class="markdown">
-				<div id="write">
-<!--					<svelte:component this={data.content} />-->
-				</div>
+		<div class="markdown">
+			<div id="write">
+				<svelte:component this={data.content} />
 			</div>
-		<!--{/if}-->
+		</div>
 	</section>
 </article>
 
@@ -35,5 +33,9 @@
 
 	.body {
 		overflow: scroll;
+		flex: 1;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 	}
 </style>

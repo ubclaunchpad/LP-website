@@ -1,5 +1,5 @@
 import type { PageLoad } from '../../../../.svelte-kit/types/src/routes/(app)/[...slug]/$types';
-import { error } from '@sveltejs/kit'
+import { error } from '@sveltejs/kit';
 
 export const load: PageLoad = async ({ params }) => {
 	let slug = params.slug;
@@ -22,6 +22,6 @@ export const load: PageLoad = async ({ params }) => {
 		};
 	} catch (e) {
 		console.log(e);
-		throw error(404, `Could not find ${params.slug}`)
+		throw error(404, `Could not find ${params.slug}`);
 	}
 };
