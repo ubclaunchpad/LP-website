@@ -22,6 +22,8 @@ export const load: PageLoad = async ({ params }) => {
 		};
 	} catch (e) {
 		console.log(e);
-		throw error(404, `Could not find ${params.slug}`);
+		throw error(404, {
+			message: 'Not found'
+		});
 	}
 };
