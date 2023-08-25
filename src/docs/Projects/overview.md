@@ -22,19 +22,19 @@ We have iterated over how we come up with projects over the years and currently 
 
 #### Stakeholder Projects
 
-
+[#TODO](https://github.com/ubclaunchpad/docs/issues/249)
 
 
 
 #### Established Projects
 
-
+[#TODO](https://github.com/ubclaunchpad/docs/issues/250)
 
 
 
 #### Self-directed projects
 
-
+[#TODO](https://github.com/ubclaunchpad/docs/issues/251)
 
 
 

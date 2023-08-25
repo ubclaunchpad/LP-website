@@ -2,6 +2,10 @@
 
 This document outlines advice on how to scope your project in a way that makes it easier to deliver on the (comparatively) tight schedules Launch Pad projects have.
 
+
+
+[#TODO](https://github.com/ubclaunchpad/docs/issues/252)
+
 ## Launch Pad Limitations
 
 Note that on paper, it may seem like you have a lot of time since teams get a whole semester to complete their project. However, in between designing your project, learning the prerequisite technologies, adapting to feedback, midterms, breaks, absences, and more, many previous teams actually struggled to complete the projects.
