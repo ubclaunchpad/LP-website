@@ -82,14 +82,14 @@
 		gap: 1rem;
 		padding: 1rem;
 
-		> p {
-			// max-width: 750px;
-			padding: 1rem;
-			font-size: 1rem;
-			font-weight: 500;
-			color: var(--color-text-0);
-			z-index: 2;
-		}
+		//> p {
+		//	// max-width: 750px;
+		//	padding: 1rem;
+		//	font-size: 1rem;
+		//	font-weight: 500;
+		//	color: var(--color-text-0);
+		//	z-index: 2;
+		//}
 
 		.title {
 			display: flex;

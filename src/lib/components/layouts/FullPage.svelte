@@ -64,7 +64,7 @@
 				<div class="item" class:open={showNav}>
 					<a href={DOCS_GITHUB_LINK}>
 						<Icon>
-							<GithubIcon width={'1rem'} />
+							<GithubIcon />
 						</Icon>
 					</a>
 				</div>
@@ -103,12 +103,12 @@
 		padding: 0;
 		height: 100svh;
 		width: 100svw;
-		.blur {
-			filter: blur(10px);
-			:global(*) {
-				pointer-events: none;
-			}
-		}
+		//.blur {
+		//	filter: blur(10px);
+		//	:global(*) {
+		//		pointer-events: none;
+		//	}
+		//}
 		nav {
 			width: 100%;
 			border-bottom: 1px solid var(--color-border-2);
