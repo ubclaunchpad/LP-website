@@ -2,7 +2,6 @@
 	import Icon from '../general/Icon.svelte';
 	import ArrowRightIcon from '../general/icons/ArrowRightIcon.svelte';
 	export let title: string;
-	export let description: string;
 	export let links = [];
 </script>
 
@@ -83,14 +82,14 @@
 		gap: 1rem;
 		padding: 1rem;
 
-		> p {
-			// max-width: 750px;
-			padding: 1rem;
-			font-size: 1rem;
-			font-weight: 500;
-			color: var(--color-text-0);
-			z-index: 2;
-		}
+		//> p {
+		//	// max-width: 750px;
+		//	padding: 1rem;
+		//	font-size: 1rem;
+		//	font-weight: 500;
+		//	color: var(--color-text-0);
+		//	z-index: 2;
+		//}
 
 		.title {
 			display: flex;
