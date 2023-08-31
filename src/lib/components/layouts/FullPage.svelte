@@ -1,12 +1,13 @@
 <script lang="ts">
-	import { slide } from 'svelte/transition';
+	import { slide, blur } from 'svelte/transition';
 	import MenuIcon from '../general/icons/MenuIcon.svelte';
 	import { onMount } from 'svelte';
 	import Icon from '../general/Icon.svelte';
 	import GithubIcon from '$lib/components/general/icons/GithubIcon.svelte';
 	import { DOCS_GITHUB_LINK, GITHUB_LINK } from '$lib/util/links';
+	import logo from '$lib/assets/logo.png';
 	let pageWidth: number;
-
+	const SLOTS = $$props.$$slots;
 	let collapse = true;
 	const cutoff = 1200;
 	$: transitionDuration = isCompact ? 300 : 0;
@@ -15,7 +16,6 @@
 
 	onMount(() => {
 		pageWidth = document.body.clientWidth;
-
 		window.addEventListener('resize', () => {
 			pageWidth = document.body.clientWidth;
 		});
@@ -45,13 +45,16 @@
 					</Icon>
 				</button>
 				<a href="/">
-					<h2>Launch Pad Documentation</h2>
+					<img src={logo} alt="Launch Pad Logo" />
+
+					<h2>Launch Pad <span>Documentation</span></h2>
 				</a>
 			</div>
+			<!--			<input placeholder="Search" />-->
 		</div>
 	</nav>
 	<section>
-		{#if !isCompact}
+		{#if !isCompact && SLOTS && SLOTS.nav}
 			<aside>
 				<div class="sidebar" class:compact={isCompact}>
 					<div
@@ -103,15 +106,11 @@
 		padding: 0;
 		height: 100svh;
 		width: 100svw;
-		//.blur {
-		//	filter: blur(10px);
-		//	:global(*) {
-		//		pointer-events: none;
-		//	}
-		//}
+		max-width: 1600px;
 		nav {
 			width: 100%;
 			border-bottom: 1px solid var(--color-border-2);
+			background-color: var(--color-black-2);
 			justify-content: space-between;
 			align-items: center;
 			display: flex;
@@ -121,8 +120,16 @@
 				justify-content: space-between;
 				align-items: center;
 				width: 100%;
-				padding: 1rem;
-				padding-right: 0.5rem;
+				padding: 0.5rem;
+				position: relative;
+
+				input {
+					border-radius: var(--border-radius-small);
+					background-color: var(--color-black-3);
+					font-size: 0.9rem;
+					padding: 0.4rem 1rem;
+					width: 300px;
+				}
 
 				column-gap: 0.8rem;
 				min-height: 3rem;
@@ -135,6 +142,15 @@
 					width: 100%;
 
 					a {
+						display: flex;
+						justify-content: flex-start;
+						align-items: center;
+
+						img {
+							width: 1.8rem;
+							height: 1.8rem;
+							border-radius: 50%;
+						}
 						text-decoration: none;
 						&:hover {
 							h2 {
@@ -144,10 +160,17 @@
 					}
 
 					h2 {
-						font-size: 1rem;
-						color: var(--color-text-primary-alt);
+						font-size: 1.3rem;
+						color: var(--color-text-2);
 						font-weight: 600;
+						text-transform: uppercase;
 						flex: 1;
+						span {
+							font-size: 0.8rem;
+							color: var(--color-text-2);
+							font-weight: 400;
+							text-transform: none;
+						}
 					}
 
 					button {
@@ -180,11 +203,21 @@
 				flex: 1;
 				overflow: scroll;
 				padding: 0;
+				//animation: fade 0.5s ease-in-out;
+
+				@keyframes fade {
+					from {
+						opacity: 0;
+					}
+					to {
+						opacity: 1;
+					}
+				}
 			}
 
 			aside {
 				position: relative;
-				border-right: 1px solid var(--color-border-2);
+				background-color: var(--color-black-2);
 				z-index: 200;
 				height: 100%;
 				display: flex;

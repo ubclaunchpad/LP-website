@@ -1,5 +1,5 @@
 import type { PageLoad } from '../../../../.svelte-kit/types/src/routes/(app)/[...slug]/$types';
-import { error } from '@sveltejs/kit';
+import { redirect} from '@sveltejs/kit';
 
 export const load: PageLoad = async ({ params }) => {
 	let slug = params.slug;
@@ -7,23 +7,21 @@ export const load: PageLoad = async ({ params }) => {
 		slug = slug.replace('.md', '');
 	}
 
-	try {
 		const fileSlug = slug.split('/');
-
 		let post;
 		if (fileSlug.length === 1) {
-			post = await import(`../../../docs/${fileSlug[0]}.md`);
+			throw redirect(308, `/${fileSlug[0]}/overview.md`);
 		} else {
-			post = await import(`../../../docs/${fileSlug[0]}/${fileSlug[1]}.md`);
+			try{
+				post = await import(`../../../docs/${fileSlug[0]}/${fileSlug[1]}.md`);
+			 } catch (e) {
+				console.log(e);
+				throw e;
+			}
 		}
 		const content = post.default;
 		return {
 			content
 		};
-	} catch (e) {
-		console.log(e);
-		throw error(404, {
-			message: 'Not found'
-		});
-	}
+
 };

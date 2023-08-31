@@ -1,5 +1,11 @@
 # Overview
 
+::: warning
+
+This page is outdated. We will update it shortly!
+
+:::
+
 This document provides a overview of our project management process at [UBC Launch Pad](https://ubclaunchpad.com).
 
 ## Projects

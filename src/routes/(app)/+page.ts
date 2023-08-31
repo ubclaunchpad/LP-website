@@ -1,6 +1,5 @@
 import type { PageLoad } from '../../../.svelte-kit/types/src/routes/(app)/$types';
 
-const path = '/src/docs';
 export const load: PageLoad = async () => {
 	try {
 		const name = 'index';

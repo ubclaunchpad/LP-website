@@ -1,5 +1,9 @@
 html[data-theme='dark'] {
 	--color-black: #000000;
+	--color-black-1: #0c0c0c;
+	--color-black-2: #101010;
+	--color-black-3: #171717;
+	--color-black-4: #252525;
 
 	// Background colours
 	--color-bg-0: #212121;
@@ -10,10 +14,16 @@ html[data-theme='dark'] {
 	--color-bg-5: #454556;
 
 	--color-bg-0-faded: #1c1c1e9f;
-	--color-bg-primary: #7566ff;
+	--color-bg-primary: #809cff;
 	--color-bg-primary-alt: rgba(114, 101, 231, 0.07);
 
 	--color-bg-primary-faded: rgba(114, 101, 231, 0.65);
+
+	// status background
+	--color-bg-info: #c3cfe3b1;
+	--color-bg-success: #b7e1e6;
+	--color-bg-warning: rgba(83, 0, 250, 0.09);
+	--color-bg-error: #ff6c3d;
 
 	// Text colours
 	--color-text-0: #fdfdfd;
@@ -33,8 +43,8 @@ html[data-theme='dark'] {
 	--border-radius-3xlarge: 35px;
 
 	--box-shadow-small: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-	--color-text-primary: #7a6dfa;
-	--color-text-primary-alt: #9389f3;
+	--color-text-primary: var(--color-bg-primary);
+	--color-text-primary-alt: var(--color-bg-primary);
 	--color-text-secondary: #baa6ff;
 
 	--color-bg-secondary: #ff6c3d;

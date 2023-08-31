@@ -1,5 +1,11 @@
 # ⏰ Recurring Processes
 
+::: warning
+
+This page is outdated. We will update it shortly!
+
+:::
+
 This page documents administrative processes that Launch Pad runs every year. In general, both the Leadership team and the Strategy team are responsible for driving efforts on these processes.
 
 ## Evaluating Objectives

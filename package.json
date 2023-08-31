@@ -36,6 +36,7 @@
 		"vite": "^4.3.9"
 	},
 	"dependencies": {
+		"@jsdevtools/rehype-toc": "^3.0.2",
 		"@mapbox/rehype-highlight-code-block": "^1.0.0",
 		"@types/gapi": "^0.0.44",
 		"jwt-decode": "^3.1.2",
@@ -51,6 +52,7 @@
 		"remark-gfm": "^3.0.1",
 		"remark-parse": "^10.0.2",
 		"remark-rehype": "^10.1.0",
+		"remark-toc": "^8.0.1",
 		"unified": "^10.1.2"
 	},
 	"type": "module"

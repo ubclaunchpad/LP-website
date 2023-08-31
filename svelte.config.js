@@ -32,6 +32,7 @@ const config = {
 			rehypePlugins: [
 				[rehypeSlug],
 				[rehypeAutolinkHeadings, 'before'],
+
 				[
 					rehypeWrapAll,
 					[

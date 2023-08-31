@@ -3,6 +3,12 @@
 search: false
 ---
 
+::: warning
+
+This page is outdated. We will update it shortly!
+
+:::
+
 # Design Lead 🚀
 
 ## Summary
@@ -23,7 +29,7 @@ Our design leads are [selected through a nomination process](/handbook/strategy/
 - Nominate future design lead (keep an eye on who’s being a superstar 👀)
 - Provide **feedback and progress updates** to the co-pres to help them understand the performance of the club
 - Be an active member on the leadership team to voice out your ideas and opinions on how we can make Launch Pad the best experience for everyone!
-- Help us document design and administrative processes for future generations of designers in our [handbook](https://docs.ubclaunchpad.com/handbook)!
+- Help us document design and administrative processes for future generations of designers in our [handbook](https://docs.ubclaunchpad.com/)!
 
 ## What you get
 

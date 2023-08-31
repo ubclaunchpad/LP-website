@@ -33,5 +33,14 @@ const fetchMarkdownPosts = async () => {
 			}
 		}
 	}
+
+	// sort all posts so that the first post is 'overview'
+	for (const section in files.directories) {
+		files.directories[section] = files.directories[section].sort((a: any, b: any) => {
+			if (a.slug === 'overview') return -1;
+			if (b.slug === 'overview') return 1;
+			return 0;
+		});
+	}
 	return files;
 };
