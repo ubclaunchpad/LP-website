@@ -106,7 +106,7 @@
 		:global(svg) {
 			stroke-width: 2px;
 			background-color: inherit;
-			stroke: var(--color-text-2);
+			stroke: var(--color-text-3);
 		}
 	}
 

@@ -3,15 +3,14 @@
 	import MenuIcon from '../general/icons/MenuIcon.svelte';
 	import { onMount } from 'svelte';
 	import Icon from '../general/Icon.svelte';
-	import GithubIcon from '$lib/components/general/icons/GithubIcon.svelte';
-	import { DOCS_GITHUB_LINK, GITHUB_LINK } from '$lib/util/links';
+	import { DOCS_GITHUB_LINK, GITHUB_LINK, WEBSITE_LINK } from '$lib/util/links';
 	import logo from '$lib/assets/logo.png';
 	let pageWidth: number;
 	const SLOTS = $$props.$$slots;
 	let collapse = true;
 	const cutoff = 1200;
 	$: transitionDuration = isCompact ? 300 : 0;
-	let showNav = false;
+	let showLinks = false;
 	$: isCompact = pageWidth < cutoff;
 
 	onMount(() => {
@@ -50,7 +49,24 @@
 					<h2>Launch Pad <span>Documentation</span></h2>
 				</a>
 			</div>
-			<!--			<input placeholder="Search" />-->
+			<div class="links">
+				<button on:click={() => (showLinks = !showLinks)}>Links</button>
+				{#if showLinks}
+					<div>
+						<ul>
+							<li>
+								<a href={DOCS_GITHUB_LINK}>Team repository</a>
+							</li>
+							<li>
+								<a href={GITHUB_LINK}>Docs</a>
+							</li>
+							<li>
+								<a href={WEBSITE_LINK}>Website</a>
+							</li>
+						</ul>
+					</div>
+				{/if}
+			</div>
 		</div>
 	</nav>
 	<section>
@@ -64,17 +80,10 @@
 						<slot name="nav" />
 					</div>
 				</div>
-				<div class="item" class:open={showNav}>
-					<a href={DOCS_GITHUB_LINK}>
-						<Icon>
-							<GithubIcon />
-						</Icon>
-					</a>
-				</div>
 			</aside>
 		{/if}
 
-		<main on:click={collapseNav}>
+		<main>
 			{#if !collapse && isCompact}
 				<div class="compactBar">
 					<slot name="nav" />
@@ -88,6 +97,67 @@
 </div>
 
 <style lang="scss">
+	.links {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+
+		> div {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: flex;
+			justify-content: flex-end;
+			width: 100%;
+			margin-top: 2rem;
+			z-index: 4;
+
+			ul {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+				padding: 0.5rem;
+				background-color: var(--color-black-4);
+				column-gap: 0.4rem;
+				li {
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					column-gap: 0.4rem;
+					padding: 0.4rem;
+					width: 100%;
+
+					border-radius: var(--border-radius-small);
+					&:hover {
+						background-color: var(--color-black-3);
+					}
+					a {
+						display: flex;
+						justify-content: flex-start;
+						align-items: center;
+						text-decoration: none;
+						color: var(--color-text-2);
+						font-size: 0.7rem;
+						width: 100%;
+						&:hover {
+							color: var(--color-text-1);
+						}
+					}
+				}
+			}
+		}
+
+		button {
+			border: 1px solid var(--color-black-4);
+			background-color: transparent;
+			border-radius: var(--border-radius-small);
+			padding: 0.5rem 0.8rem;
+			width: 100%;
+			min-width: 100px;
+			color: var(--color-text-2);
+		}
+	}
 	.compactBar {
 		display: flex;
 		justify-content: flex-start;
@@ -122,14 +192,6 @@
 				width: 100%;
 				padding: 0.5rem;
 				position: relative;
-
-				input {
-					border-radius: var(--border-radius-small);
-					background-color: var(--color-black-3);
-					font-size: 0.9rem;
-					padding: 0.4rem 1rem;
-					width: 300px;
-				}
 
 				column-gap: 0.8rem;
 				min-height: 3rem;
@@ -203,16 +265,6 @@
 				flex: 1;
 				overflow: scroll;
 				padding: 0;
-				//animation: fade 0.5s ease-in-out;
-
-				@keyframes fade {
-					from {
-						opacity: 0;
-					}
-					to {
-						opacity: 1;
-					}
-				}
 			}
 
 			aside {

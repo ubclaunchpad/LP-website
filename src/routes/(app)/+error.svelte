@@ -9,7 +9,6 @@
 </div>
 
 <style>
-
 	h1 {
 		font-size: 3rem;
 		padding: 1rem 0;
