@@ -1,5 +1,11 @@
 # 🔍 Project Planning
 
+::: warning
+
+This page is outdated. We will update it shortly!
+
+:::
+
 This document outlines advice on how to scope your project in a way that makes it easier to deliver on the (comparatively) tight schedules Launch Pad projects have.
 
 [#TODO](https://github.com/ubclaunchpad/docs/issues/252)

@@ -1,10 +1,10 @@
 # 🗳️ Recruitment Overview
 
-This document provides a overview of why and how we do recruitment at [UBC Launch Pad](https://ubclaunchpad.com).
+This document provides an overview of why and how we do recruitment at [UBC Launch Pad](https://ubclaunchpad.com).
 
 ## Goals
 
-We have an application and _sometimes_ interview process to join Launch Pad because software engineering is inherently a collaborative process — one that requires every contributor to work well with each other. We want to make sure that every member is commited and has the support required to do so, regardless of what their skill level is. For the most part, this support comes from our [leads](/handbook/manifesto.md#project-teams), who also have to put in a great deal of effort to manage teams, plan projects, provide technical guidance, organize events, liaison with sponsors, and more. Given the small number of people at Launch Pad who have the background, time, and willingness to do all this, <u>we sadly can’t accept and adequately support everyone who applies.</u>
+We have an application and _sometimes_ interview process to join Launch Pad because software engineering is inherently a collaborative process — one that requires every contributor to work well with each other. We want to make sure that every member is commited and has the support required to do so, regardless of what their skill level is. For the most part, this support comes from our leads, who also have to put in a great deal of effort to manage teams, plan projects, provide technical guidance, organize events, liaison with sponsors, and more. Given the small number of people at Launch Pad who have the background, time, and willingness to do all this, <u>we sadly can’t accept and adequately support everyone who applies.</u>
 
 That said, a major goal of Launch Pad is to support beginners and people from a wide range of backgrounds. We want to continue to iterate on our process (for example, our questions and criteria) to make sure that Launch Pad membership is as diverse and inclusive as possible - see [improving recruitment](#improving-recruitment).
 
@@ -29,7 +29,7 @@ To provide support to our less experienced members and ensure a productive envir
 
 Each lead typically leads 1 team. We aim for a club size of 8 developers (excluding the lead) per team, to accomodate for members potentially leaving throughout the semester due to scheduling or personal reasons.
 
-You can learn more about technical roles in the [Developer role description](/handbook/recruitment/developer.md).
+You can learn more about technical roles in the [Developer role description](/recruitment/developer.md).
 
 ### Design Roles
 
@@ -46,13 +46,13 @@ To provide support to our less experienced members and ensure a productive envir
 - at least 40% of design team (including lead) be "experienced".
 - Dedicated design channels where all designers regardless of team can collaborate with each other
 
-You can learn more about design roles in the [Designer role description](/handbook/recruitment/strategy.md).
+You can learn more about design roles in the [Designer role description](/recruitment/strategy.md).
 
 ### Strategy Roles
 
-TODO([docs#189](https://github.com/ubclaunchpad/docs/issues/189))
+When recruiting for strategy roles, it’s noteworthy that this role works with the club leads and we generally want to recruit 2-3 students.
 
-You can learn more about strategy roles in the [Strategy role description](/handbook/recruitment/strategy.md).
+You can learn more about strategy roles in the [Strategy role description](recruitment/strategy.md).
 
 ## Recruitment Process
 
@@ -70,11 +70,11 @@ After internal applications close, we open a general round where all students ar
 
 Once the deadlines close, the leads will go over all applications and sort them in their categories. Each lead takes into account several factors when looking at your application. Please check the applicant screening guidelines if interested.
 
-Ultimately, applicants are considered for only one team; if interest is expressed, it's also factored in.
-
-To provide flexibility, we allow different next steps for our leads based on the project.
+Ultimately, applicants are considered for only one team; if interest is expressed, it's factored in.
 
 #### Next Steps
+
+To provide flexibility, we allow different next steps for our leads based on the project.
 
 - Returning members: will be sent an email with the project they will be working on
 - Accepted applications:
@@ -121,6 +121,6 @@ To achieve our [recruitment goals](#goals), we strive to continue iterating on o
 
 We should investigate what went wrong (for example, why was this person scored incorrectly, or what we could do to clarify a question) so that we can look into improving our process and criteria (for example, by improving scoring guidance, or updating our recommended wording for a question).
 
-These improvements should be submitted as [pull requests](/handbook/tools/github.md) to our recruitment documentation for feedback and discussion - for all steps up until interviews, that would be in [`ubclaunchpad/docs`](https://github.com/ubclaunchpad/docs), and for interviews and final decisions that would be in [`ubclaunchpad/leads`](https://github.com/ubclaunchpad/leads) (private to Launch Pad [leads](/handbook/onboarding/leads.md)).
+These improvements should be submitted as [pull requests](/tools/github.md) to our recruitment documentation for feedback and discussion - for all steps up until interviews, that would be in [`ubclaunchpad/docs`](https://github.com/ubclaunchpad/docs), and for interviews and final decisions that would be in [`ubclaunchpad/leads`](https://github.com/ubclaunchpad/leads) (private to Launch Pad [leads](/onboarding/leads.md)).
 
 Feel free to bring up feedback regarding recruitment internally in [#ask-leads](https://ubclaunchpad.slack.com/archives/CK935RD3Q) or reach out via [team@ubclaunchpad.com](team@ubclaunchpad.com).

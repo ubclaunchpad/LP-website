@@ -1,5 +1,11 @@
 # 🎉 Onboarding for Leads
 
+::: warning
+
+This page is outdated. We will update it shortly!
+
+:::
+
 Welcome to UBC Launch Pad, and congratulations (and thank you!) for joining us as a lead!
 
 The role of the Launch Pad leadership team is documented in our [manifesto](../manifesto.md#club-structure). The specifics of each role's responsibilities are also available in the [tech lead role description](../Recruitment/tech-lead.md) and [design lead role description](../Recruitment/design-lead.md).

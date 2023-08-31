@@ -5,6 +5,7 @@ const YOUTUBE_LINK = 'https://www.youtube.com/channel/UCS0ghlwqTOc1RH_nYENNT5A';
 const MEDIUM_LINK = 'https://medium.com/ubc-launch-pad-software-engineering-blog';
 const GITHUB_LINK = 'https://github.com/ubclaunchpad';
 const DISCORD_LINK = 'https://discord.gg/yPaau4P47v';
+const WEBSITE_LINK = 'https://ubclaunchpad.com';
 const SLACK_LINK = '';
 const STRATEGY_EMAIL = '//strategy@ubclaunchpad.com';
 const DEV_EMAIL = 'dev@ubclaunchpad.com';
@@ -23,5 +24,6 @@ export {
 	STRATEGY_EMAIL,
 	DEV_EMAIL,
 	TEAM_EMAIL,
-	DOCS_GITHUB_LINK
+	DOCS_GITHUB_LINK,
+	WEBSITE_LINK
 };

@@ -1,7 +1,14 @@
 ---
 # this page is meant to be sent to non-Launch Pad members as recruitment material - exclude it from search
 search: false
+published: true
 ---
+
+::: warning
+
+This page is outdated. We will update it shortly!
+
+:::
 
 # Designer 🚀
 
@@ -9,7 +16,7 @@ search: false
 
 As a designer at UBC Launch Pad, you will be working with other designers and developers to ideate and build a project for 4-8 months! You will be creating beautiful interfaces that provide great user experiences while being supported by Launch Pad’s design lead and your team’s tech lead.
 
-Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/handbook/manifesto), which includes our vision and code of conduct. You can also learn about how recruitment works in Launch Pad in our [recruitment overview](/handbook/recruitment/overview.md).
+Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/manifesto), which includes our vision and code of conduct. You can also learn about how recruitment works in Launch Pad in our [recruitment overview](/handbook/recruitment).
 
 ## Responsibilities
 
@@ -17,7 +24,7 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club man
 - Attend team meetings and complete tasks to the best of your ability with the support of your lead and team
 - Spearhead the design of the project by conducting user research, user testing, wireframing, and prototyping, as outlined in our [project timeline](https://docs.ubclaunchpad.com/handbook/project-management/scope#project-timeline)
 - Communicate with your design lead or co-presidents if you need any support
-- Follow the [onboarding procedures](https://docs.ubclaunchpad.com/handbook/onboarding/everyone) to prepare yourself for the term
+- Follow the [onboarding procedures](https://docs.ubclaunchpad.com/onboarding/) to prepare yourself for the term
 
 ## What you get
 
@@ -30,8 +37,9 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club man
 
 ## Time commitment
 
-- Club meetings every other Saturday from 12pm-3pm (the first hour is required, the rest of the time is to hang out, work, and eat lunch together and we highly recommend staying if you can!)
-- 1 hour bi-weekly sub-team meetings (alternating with the club-wide Saturday meetings) that are scheduled based on sub-team member availability
+- Club meetings every Saturday from 11pm-2pm
+  - Meetings are primarily in-person
+  - _(most weeks)_ the first hour is required, the rest of the time is to hang out, work, and eat lunch together; we highly recommend staying if you can!
 - Around 5 hours per week working on tasks
 
 ## Requirements
@@ -41,3 +49,5 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club man
   - PDF portfolio (Google Drive Link)
   - PDF Case studies (Google Drive Link)
   - Slide Deck (Google Slides Link)
+    A passion for learning and experimenting, and a willingness to participate actively
+- We welcome folks of all skill levels, whether you are a complete beginner just starting out or if you’ve done several internships and have a portfolio of awesome projects - learn more about our [recruitment goals](https://docs.ubclaunchpad.com/recruitment) in our handbook
