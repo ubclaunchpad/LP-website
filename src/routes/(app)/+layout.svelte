@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './styles.scss';
 	import './markdown.scss';
-    import DirectoryNavigation from "$lib/components/layouts/DirectoryNavigation.svelte";
+	import DirectoryNavigation from '$lib/components/layouts/DirectoryNavigation.svelte';
 	export let data;
 </script>
 
@@ -9,11 +9,11 @@
 <!--{/key}-->
 
 <div class="hidden">
-    <DirectoryNavigation directories={data.posts}/>
+	<DirectoryNavigation directories={data.posts} />
 </div>
 
 <style lang="scss">
-    .hidden {
-        display: none;
-    }
+	.hidden {
+		display: none;
+	}
 </style>

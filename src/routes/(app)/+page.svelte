@@ -1,6 +1,7 @@
 <script lang="ts">
 	import FullPage from '$lib/components/layouts/FullPage.svelte';
-	import DirectoryNavigation from "$lib/components/layouts/DirectoryNavigation.svelte";
+	import FolderIcon from '$lib/components/general/icons/FolderIcon.svelte';
+	import introImg from '$lib/assets/images/outer_space.svg';
 	export let data;
 	const directories = data.posts.directories || {};
 </script>
@@ -8,11 +9,16 @@
 <FullPage>
 	<article slot="main">
 		<div class="contents">
+			<img src={introImg} alt="intro" />
 			<div class="directory-wrapper">
 				<section class="main-directory">
 					{#each Object.keys(directories) as dir}
 						<div>
-							<a href={`/${dir}`}>{dir}</a>
+							<div>
+								<FolderIcon />
+							</div>
+
+							<a href={`/${dir}`}> {dir}</a>
 						</div>
 					{/each}
 				</section>
@@ -29,8 +35,6 @@
 	</article>
 </FullPage>
 
-
-
 <slot />
 
 <style lang="scss">
@@ -46,11 +50,13 @@
 		border-radius: 4px;
 		column-gap: 1rem;
 		background-color: var(--color-black-2);
+		overflow: hidden;
 	}
 
 	img {
 		width: 300px;
 		max-width: 100% !important;
+		object-fit: contain;
 	}
 
 	.directory-wrapper {
@@ -75,6 +81,9 @@
 		background-color: var(--color-black-2);
 		cursor: pointer;
 		max-width: 1200px;
+		width: 100%;
+		overflow: hidden;
+		gap: 1rem;
 	}
 	.main-directory {
 		display: grid;
@@ -83,6 +92,14 @@
 		width: 100%;
 		gap: 10px;
 
+		@media (max-width: 1000px) {
+			grid-template-columns: repeat(3, 1fr);
+
+			@media (max-width: 500px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
 		> div {
 			display: flex;
 			flex-direction: column;
@@ -90,13 +107,57 @@
 			align-items: center;
 			padding: 0.4rem;
 			flex-wrap: wrap;
-			border-radius: var(--border-radius-small);
+			border-radius: var(--border-radius-medium);
 			border: 1px solid var(--color-black-3);
 			background-color: var(--color-black-1);
-			height: 50px;
-			width: 150px;
+			color: var(--color-text-2);
+
+			height: 100px;
+			min-height: fit-content;
+
+			@media (max-width: 500px) {
+				height: 40px;
+			}
+			width: 100%;
 			font-size: 1.1rem;
 			text-transform: capitalize;
+			position: relative;
+			overflow: hidden;
+
+			> div {
+				position: absolute;
+				width: 100%;
+				opacity: 0.1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				> :global(*) {
+					width: 40%;
+					height: 100%;
+					//fill: var(--color-text-3);
+					stroke: var(--color-text-3);
+					stroke-width: 1px;
+					object-fit: contain;
+				}
+			}
+
+			a {
+				color: var(--color-white-1);
+				text-decoration: none;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 1.1rem;
+				text-transform: capitalize;
+				transition: all 0.2s ease-in-out;
+				&:hover {
+					color: var(--color-white-2);
+				}
+				z-index: 5;
+			}
 		}
 	}
 </style>
