@@ -5,6 +5,7 @@
 	import Icon from '../general/Icon.svelte';
 	import { DOCS_GITHUB_LINK, GITHUB_LINK, WEBSITE_LINK } from '$lib/util/links';
 	import logo from '$lib/assets/logo.png';
+	import {quickLinkDrive, quickLinkMisc, quickLinkRepositories} from "$lib/util/quicklinks";
 	let pageWidth: number;
 	const SLOTS = $$props.$$slots;
 	let collapse = true;
@@ -53,17 +54,34 @@
 				<button on:click={() => (showLinks = !showLinks)}>Links</button>
 				{#if showLinks}
 					<div>
+
 						<ul>
-							<li>
-								<a href={DOCS_GITHUB_LINK}>Team repository</a>
-							</li>
-							<li>
-								<a href={GITHUB_LINK}>Docs</a>
-							</li>
-							<li>
-								<a href={WEBSITE_LINK}>Website</a>
-							</li>
+							<p>{quickLinkRepositories.text}</p>
+							{#each quickLinkRepositories.items as link}
+								<li>
+									<a href={link.link}>{link.text}</a>
+								</li>
+							{/each}
 						</ul>
+
+						<ul>
+							<p>{quickLinkDrive.text}</p>
+							{#each quickLinkDrive.items as link}
+								<li>
+									<a href={link.link}>{link.text}</a>
+								</li>
+							{/each}
+						</ul>
+
+						<ul>
+							<p>{quickLinkMisc.text}</p>
+							{#each quickLinkMisc.items as link}
+								<li>
+									<a href={link.link}>{link.text}</a>
+								</li>
+							{/each}
+						</ul>
+
 					</div>
 				{/if}
 			</div>
@@ -108,9 +126,12 @@
 			right: 0;
 			display: flex;
 			justify-content: flex-end;
-			width: 100%;
 			margin-top: 2rem;
-			z-index: 4;
+			z-index: 6;
+			border-radius: var(--border-radius-large);
+			border-top-right-radius: 0;
+			width: fit-content;
+			overflow: hidden;
 
 			ul {
 				display: flex;
@@ -120,6 +141,17 @@
 				padding: 0.5rem;
 				background-color: var(--color-black-4);
 				column-gap: 0.4rem;
+
+
+				p {
+					font-size: 0.7rem;
+					color: var(--color-text-2);
+					font-weight: 600;
+					height: 3rem;
+					text-transform: uppercase;
+					padding: 0.3rem;
+					border-bottom: 1px solid var(--color-border-2);
+				}
 				li {
 					display: flex;
 					justify-content: flex-start;

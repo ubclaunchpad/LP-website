@@ -50,7 +50,6 @@
 		border-radius: 4px;
 		column-gap: 1rem;
 		background-color: var(--color-black-2);
-		overflow: hidden;
 	}
 
 	img {
