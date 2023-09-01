@@ -15,7 +15,7 @@
 		<div class="header">
 			<p>
 
-				{directory.name.toString().toLowerCase()}
+				{directory.name}
 			</p>
 
 			<button on:click={toggleList}>

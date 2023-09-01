@@ -4,6 +4,8 @@
 	import introImg from '$lib/assets/images/outer_space.svg';
 	export let data;
 	const directories = data.posts.directories || {};
+
+	console.log(directories);
 </script>
 
 <FullPage>
@@ -18,7 +20,7 @@
 								<FolderIcon />
 							</div>
 
-							<a href={`/${dir}`}> {dir}</a>
+							<a href={`/${dir}`}>{dir}</a>
 						</div>
 					{/each}
 				</section>
@@ -119,7 +121,6 @@
 			}
 			width: 100%;
 			font-size: 1.1rem;
-			text-transform: capitalize;
 			position: relative;
 			overflow: hidden;
 
@@ -150,7 +151,7 @@
 				justify-content: center;
 				align-items: center;
 				font-size: 1.1rem;
-				text-transform: capitalize;
+				//text-transform: capitalize;
 				transition: all 0.2s ease-in-out;
 				&:hover {
 					color: var(--color-white-2);
