@@ -40,6 +40,7 @@ const config = {
 							wrapper: 'div.table-wrapper',
 							selector: 'table'
 						},
+
 						{
 							wrapper: 'div.code-wrapper',
 							selector: 'pre'

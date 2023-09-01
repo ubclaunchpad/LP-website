@@ -5,7 +5,7 @@
 	import Icon from '../general/Icon.svelte';
 	import { DOCS_GITHUB_LINK, GITHUB_LINK, WEBSITE_LINK } from '$lib/util/links';
 	import logo from '$lib/assets/logo.png';
-	import {quickLinkDrive, quickLinkMisc, quickLinkRepositories} from "$lib/util/quicklinks";
+	import { quickLinkDrive, quickLinkMisc, quickLinkRepositories } from '$lib/util/quicklinks';
 	let pageWidth: number;
 	const SLOTS = $$props.$$slots;
 	let collapse = true;
@@ -54,7 +54,6 @@
 				<button on:click={() => (showLinks = !showLinks)}>Links</button>
 				{#if showLinks}
 					<div>
-
 						<ul>
 							<p>{quickLinkRepositories.text}</p>
 							{#each quickLinkRepositories.items as link}
@@ -81,7 +80,6 @@
 								</li>
 							{/each}
 						</ul>
-
 					</div>
 				{/if}
 			</div>
@@ -141,7 +139,6 @@
 				padding: 0.5rem;
 				background-color: var(--color-black-4);
 				column-gap: 0.4rem;
-
 
 				p {
 					font-size: 0.7rem;
