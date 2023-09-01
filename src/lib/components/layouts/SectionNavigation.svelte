@@ -15,7 +15,7 @@
 		<div class="header">
 			<p>
 
-				{directory.name.toString().toLowerCase()}
+				{directory.name}
 			</p>
 
 			<button on:click={toggleList}>
@@ -36,7 +36,7 @@
 					{#if directory.files.length > 0}
 						{#each directory.files as file}
 							<li>
-								<a href={`/${directory.name.toString().toLowerCase()}/${file.slug}`}>
+								<a href={`/${directory.name}/${file.slug}`}>
 									<p>{file.slug}</p>
 								</a>
 							</li>
