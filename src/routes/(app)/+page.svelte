@@ -18,7 +18,7 @@
 								<FolderIcon />
 							</div>
 
-							<a href={`/${dir}`}> {dir}</a>
+							<a href={`/${dir.toString().toLowerCase()}`}> {dir}</a>
 						</div>
 					{/each}
 				</section>
