@@ -14,6 +14,7 @@
 	<li class="dir">
 		<div class="header">
 			<p>
+
 				{directory.name.toString().toLowerCase()}
 			</p>
 
