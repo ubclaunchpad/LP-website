@@ -10,7 +10,8 @@ This document provides a overview of our project management process at [UBC Laun
 
 ## Projects
 
-For each project we form a team consisting of developers, designers and a tech lead that will lead the project.
+> view our [project directory](./directory) for a list of all our projects.
+> For each project we form a team consisting of developers, designers and a tech lead that will lead the project.
 
 ### Categories
 

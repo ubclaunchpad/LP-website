@@ -77,9 +77,10 @@
 	}
 
 	warning {
-		background-color: vaR(--color-bg-warning);
+		background-color: var(--color-bg-primary-alt);
 		padding: 0.2rem 0.5rem;
-		border-radius: var(--border-radius-small);
+		border-radius: var(--border-radius-medium);
+		border: 1px solid var(--color-border-1);
 		margin: 1rem 0;
 		display: block;
 	}
