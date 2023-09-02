@@ -1,14 +1,10 @@
 # 🎉 Onboarding for Leads
 
-::: warning
 
-This page is outdated. We will update it shortly!
-
-:::
 
 Welcome to UBC Launch Pad, and congratulations (and thank you!) for joining us as a lead!
 
-The role of the Launch Pad leadership team is documented in our [manifesto](../manifesto.md#club-structure). The specifics of each role's responsibilities are also available in the [tech lead role description](../recruitment/tech-lead.md) and [design lead role description](../recruitment/design-lead.md).
+The role of the Launch Pad leadership team is documented in our manifesto. The specifics of each role's responsibilities are also available in the [tech lead role description](../recruitment/tech-lead.md) and [design lead role description](../recruitment/design-lead.md).
 
 ## Checklist
 
@@ -48,21 +44,21 @@ Make sure that you are **watching** all relevant repositories so that you don't 
 ### Google Drive
 
 Make sure all leads are given "editor" access to the [shared Launch Pad folder](https://drive.google.com/drive/u/2/folders/1hgPcUC_DrFMmzZ04pBSlZFig4v9AbTuv), which is owned by the `team@ubclaunchpad.com` account.
-Learn more about managing these folders in the [Google Drive documentation](../tools/drive.md).
+Learn more about managing these folders in the [Google Drive documentation](/tools/drive.md).
 
 ### Email and Accounts
 
-All leads will be given access to the `strategy@ubclaunchpad.com` Gmail account to help in correspondance with partners and sponsors. Learn more about Launch Pad email in [the email documentation](/handbook/tools/email.md).
+All leads will be given access to the `strategy@ubclaunchpad.com` Gmail account to help in correspondence with partners and sponsors. Learn more about Launch Pad email in [the email documentation](/handbook/tools/email.md).
 
-To gain access to various social media accounts, see the [social media documentation](/handbook/tools/social-media.md).
+To gain access to various social media accounts, see the [social media documentation](/tools/social-media.md).
 
 ## Workflows
 
 ::: tip
 We use GitHub and Slack for pretty much _everything_ - make sure you are intimately familiar with **both**, regardless of your role, by reading our handcrafted guides:
 
-- [GitHub guide](/handbook/tools/github)
-- [Slack guide](/handbook/tools/slack)
+- [GitHub guide](/tools/github)
+- [Slack guide](/tools/slack)
   :::
 
 ### Recurring Processes
@@ -136,21 +132,21 @@ We recommend that leads schedule 1-1 ("one-on-one") meetings with their team mem
 
 - Get to know their team members on a more personal level
 - Figure out what their goals out and how they (or the rest of Launch Pad) can help them achieve those goals
-  - Especially keep in mind that you will be asked to [nominate potential leads](/handbook/strategy/recurring-processes.md#leads), so encourage members who express interest in taking on this role!
-- Determine if team members need any additional additional support from Launch Pad
+  - Especially keep in mind that you will be asked to [nominate potential leads](/handbook/recurring-processes#leads), so encourage members who express interest in taking on this role!
+- Determine if team members need any additional support from Launch Pad
 - Get feedback about team and club operations
 
 Leads should keep track of any noteworthy items to bring up during [leads meetings](#meetings).
 
 #### Team Tools
 
-Other than [Slack](/handbook/tools/slack.md), [GitHub](/handbook/tools/github.md), and [Google Drive](/handbook/tools/drive.md), we have a variety of recommended tooling listed in the [tools section](/handbook/README.md#tools).
+Other than [Slack](/tools/slack.md), [GitHub](/tools/github.md), and [Google Drive](/tools/drive.md), we have a variety of recommended tooling listed in the tools section.
 
 **For team and knowledge management**, we recommend that leads stick to the recommended tools, so that each team's material is available for everyone to access, and to keep management tooling to a minimum - certain platforms like GitHub are already a bit of a learning curve for some members, on top of other technical tools they need to learn to leverage.
 
 ### Meetings
 
-Leads meetings between all leads (technical and non-technical) should happen on a weekly basis. These meetings should have a [sprint meetings](../project-management/sprints.md#sprint-meetings)-style meeting notes document set up for the year. During meetings:
+Leads meetings between all leads (technical and non-technical) should happen on a weekly basis. These meetings should have a sprint meetings-style meeting notes document set up for the year. During meetings:
 
 - The **co-presidents** will provide club updates and discussion topics.
 - All **tech leads** will provide updates on their team's progress (including their designers). They should provide at least on highlight from their team for the week as well.
@@ -167,7 +163,7 @@ Co-presidents can find more details [in the Exec repository](https://github.com/
 ## Further Reading
 
 - [Recruitment](/handbook#recruitment)
-- [Analytics](/handbook/tools/analytics.md)
-- [Social Media](/handbook/tools/social-media.md)
+- [Analytics](/tools/analytics.md)
+- [Social Media](/tools/social-media.md)
 - [`ubclaunchpad.com` Usage Guide](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/USING.md)
 - [`ubclaunchpad.com` Configuration Guide](https://ubclaunchpad.com/config/)

@@ -4,7 +4,7 @@ This document provides an overview of why and how we do recruitment at [UBC Laun
 
 ## Goals
 
-We have an application and _sometimes_ interview process to join Launch Pad because software engineering is inherently a collaborative process — one that requires every contributor to work well with each other. We want to make sure that every member is commited and has the support required to do so, regardless of what their skill level is. For the most part, this support comes from our leads, who also have to put in a great deal of effort to manage teams, plan projects, provide technical guidance, organize events, liaison with sponsors, and more. Given the small number of people at Launch Pad who have the background, time, and willingness to do all this, <u>we sadly can’t accept and adequately support everyone who applies.</u>
+We have an application and _sometimes_ interview process to join Launch Pad because software engineering is inherently a collaborative process — one that requires every contributor to work well with each other. We want to make sure that every member is committed and has the support required to do so, regardless of what their skill level is. For the most part, this support comes from our leads, who also have to put in a great deal of effort to manage teams, plan projects, provide technical guidance, organize events, liaison with sponsors, and more. Given the small number of people at Launch Pad who have the background, time, and willingness to do all this, <u>we sadly can’t accept and adequately support everyone who applies.</u>
 
 That said, a major goal of Launch Pad is to support beginners and people from a wide range of backgrounds. We want to continue to iterate on our process (for example, our questions and criteria) to make sure that Launch Pad membership is as diverse and inclusive as possible - see [improving recruitment](#improving-recruitment).
 
@@ -27,7 +27,7 @@ To provide support to our less experienced members and ensure a productive envir
 - around 40% of members be "beginners".
 - at least 20% of members (including leads) be "experienced".
 
-Each lead typically leads 1 team. We aim for a club size of 8 developers (excluding the lead) per team, to accomodate for members potentially leaving throughout the semester due to scheduling or personal reasons.
+Each lead typically leads 1 team. We aim for a club size of 8 developers (excluding the lead) per team, to accommodate for members potentially leaving throughout the semester due to scheduling or personal reasons.
 
 You can learn more about technical roles in the [Developer role description](/recruitment/developer.md).
 
@@ -46,13 +46,13 @@ To provide support to our less experienced members and ensure a productive envir
 - at least 40% of design team (including lead) be "experienced".
 - Dedicated design channels where all designers regardless of team can collaborate with each other
 
-You can learn more about design roles in the [Designer role description](/recruitment/strategy.md).
+You can learn more about design roles in the [Designer role description](/recruitment/designer.md).
 
 ### Strategy Roles
 
-When recruiting for strategy roles, it’s noteworthy that this role works with the club leads and we generally want to recruit 2-3 students.
+**When recruiting for strategy roles, it’s noteworthy that this role works with the club leads, and we generally want to recruit 2-3 students.**
 
-You can learn more about strategy roles in the [Strategy role description](recruitment/strategy.md).
+You can learn more about strategy roles in the [Strategy role description](/recruitment/strategy.md).
 
 ## Recruitment Process
 
@@ -62,7 +62,7 @@ we primarily recruit in September, followed by a smaller round in January with s
 
 Once applications open, you can fill out the related forms until the set deadline.
 
-We first open an internal application where returning and former members are invited to express inerest in continuing. As per our goals, we will re-recruit from our internal members first.
+We first open an internal application where returning and former members are invited to express interest in continuing. As per our goals, we will re-recruit from our internal members first.
 
 After internal applications close, we open a general round where all students are welcome to apply. The applications are then reviewed by our leads for the next steps.
 
@@ -78,7 +78,7 @@ To provide flexibility, we allow different next steps for our leads based on the
 
 - Returning members: will be sent an email with the project they will be working on
 - Accepted applications:
-  - for interview-based applications: an email with next steps will be sent out
+  - For interview-based applications: an email with next steps will be sent out
   - Otherwise: an acceptance email will await your confirmation
 - Rejected applications: will be notified as soon as possible via email
 
@@ -96,13 +96,13 @@ We do not have a referral process at Launch Pad. Members can advocate on a candi
 
 ### Decisions
 
-All decisions sent out for either the [screening](#screening-applicants) or [interview](#interviews) are final, unless a mistake was made by reviewers while sending out decisions. Also refer to our [feedback policy](#feedback).
+All decisions sent out for either the [screening](#screening-applicants) or interviews are final, unless a mistake was made by reviewers while sending out decisions. Also refer to our [feedback policy](#feedback).
 
 That said, this does not mean that reviewers at Launch Pad never make an incorrect decision - see [improving recruitment](#improving-recruitment).
 
 ### Feedback
 
-Unfortunately, we _do not_ provide feedback regarding a decision for either the [screening](#screening-applicants) or [interview](#interviews) phase of a candidate's application process. This means we can not provide specific answers to questions like:
+Unfortunately, we _do not_ provide feedback regarding a decision for either the [screening](#screening-applicants) or interviews phase of a candidate's application process. This means we can not provide specific answers to questions like:
 
 - "Why did I get rejected?"
 - "How could I have answered X question better?"
@@ -123,4 +123,4 @@ We should investigate what went wrong (for example, why was this person scored i
 
 These improvements should be submitted as [pull requests](/tools/github.md) to our recruitment documentation for feedback and discussion - for all steps up until interviews, that would be in [`ubclaunchpad/docs`](https://github.com/ubclaunchpad/docs), and for interviews and final decisions that would be in [`ubclaunchpad/leads`](https://github.com/ubclaunchpad/leads) (private to Launch Pad [leads](/onboarding/leads.md)).
 
-Feel free to bring up feedback regarding recruitment internally in [#ask-leads](https://ubclaunchpad.slack.com/archives/CK935RD3Q) or reach out via [team@ubclaunchpad.com](team@ubclaunchpad.com).
+Feel free to bring up feedback regarding recruitment internally in [#ask-leads](https://ubclaunchpad.slack.com/archives/CK935RD3Q) or reach out via [team@ubclaunchpad.com](mailto:team@ubclaunchpad.com).

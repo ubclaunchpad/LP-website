@@ -4,19 +4,13 @@ search: false
 published: true
 ---
 
-::: warning
-
-This page is outdated. We will update it shortly!
-
-:::
-
 # Strategy Coordinator 🚀
 
 ## Summary
 
-The Strategy Coordinator plays a vital role in planning and executing workshops and events for UBC Launch pad, This position requires excellent organizational skills, creativity, and marketing expertise. As the Strategy Coordinator, you will be responsible for coordinating workshops, managing social media platforms, monitoring email and newsletter communications, collaborating with the design lead for marketing promotions, and seeking sponsorship opportunities to enhance the club’s visibility and engagement.
+The Strategy Coordinator plays a vital role in planning and executing workshops, events, and expanding our club's presence externally. This position requires excellent organizational skills, creativity, and marketing expertise. As the Strategy Coordinator, you will be responsible for coordinating workshops, managing social media platforms, monitoring email and newsletter communications, collaborating with the design lead for marketing promotions, and seeking sponsorship opportunities to enhance the club’s visibility and engagement.
 
-Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/manifesto), which includes our vision and code of conduct. You can also learn about how recruitment works in Launch Pad in our [recruitment overview](/handbook/recruitment).
+Learn more about us on our [website](https://ubclaunchpad.com/) or our [club overview](https://docs.ubclaunchpad.com/handbook/overview.md), which includes our vision and code of conduct. You can also learn about how recruitment works in Launch Pad in our [recruitment overview](/handbook/recruitment).
 
 ## Responsibilities
 
@@ -45,10 +39,10 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club man
 
 ## Time commitment
 
-- Club lead meetings will take place between 10-11 every Saturday.
+- Club lead meetings will take place between 10-11 every Saturday among the leads + your own team's meetings.
 - Around 5 hours per week working on tasks
 
 ## Requirements
 
 - A passion for learning and experimenting, and a willingness to participate actively
-- We welcome folks of all skill levels, whether you are a complete beginner just starting out or if you’ve done several internships and have a portfolio of awesome projects - learn more about our [recruitment goals](https://docs.ubclaunchpad.com/recruitment) in our handbook
+- We welcome folks of all skill levels, whether you are a complete beginner just starting out or if you’ve done several internships and have a portfolio of awesome projects - learn more about our [recruitment goals](/recruitment.overview) in our handbook

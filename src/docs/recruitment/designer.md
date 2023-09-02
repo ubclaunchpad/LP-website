@@ -4,27 +4,21 @@ search: false
 published: true
 ---
 
-::: warning
-
-This page is outdated. We will update it shortly!
-
-:::
-
 # Designer 🚀
 
 ## Summary
 
 As a designer at UBC Launch Pad, you will be working with other designers and developers to ideate and build a project for 4-8 months! You will be creating beautiful interfaces that provide great user experiences while being supported by Launch Pad’s design lead and your team’s tech lead.
 
-Learn more about us on our [website](https://ubclaunchpad.com/) or our [club manifesto](https://docs.ubclaunchpad.com/manifesto), which includes our vision and code of conduct. You can also learn about how recruitment works in Launch Pad in our [recruitment overview](/handbook/recruitment).
+Learn more about us on our [website](https://ubclaunchpad.com/) or our [club overview](https://docs.ubclaunchpad.com/handbook/overview.md), which includes our vision and code of conduct. You can also learn about how recruitment works in Launch Pad in our [recruitment overview](/handbook/recruitment).
 
 ## Responsibilities
 
 - Learn and build collaboratively with other designers and developers
 - Attend team meetings and complete tasks to the best of your ability with the support of your lead and team
-- Spearhead the design of the project by conducting user research, user testing, wireframing, and prototyping, as outlined in our [project timeline](https://docs.ubclaunchpad.com/handbook/project-management/scope#project-timeline)
+- Spearhead the design of the project by conducting user research, user testing, wireframing, and prototyping
 - Communicate with your design lead or co-presidents if you need any support
-- Follow the [onboarding procedures](https://docs.ubclaunchpad.com/onboarding/) to prepare yourself for the term
+- Follow the [onboarding procedures](/onboarding/overview.md) to prepare yourself for the term
 
 ## What you get
 
@@ -50,4 +44,4 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club man
   - PDF Case studies (Google Drive Link)
   - Slide Deck (Google Slides Link)
     A passion for learning and experimenting, and a willingness to participate actively
-- We welcome folks of all skill levels, whether you are a complete beginner just starting out or if you’ve done several internships and have a portfolio of awesome projects - learn more about our [recruitment goals](https://docs.ubclaunchpad.com/recruitment) in our handbook
+- We welcome folks of all skill levels, whether you are a complete beginner just starting out or if you’ve done several internships and have a portfolio of awesome projects - learn more about our [recruitment goals](/recruitment/overview.md) in our handbook
