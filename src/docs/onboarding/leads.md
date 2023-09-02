@@ -8,7 +8,7 @@ This page is outdated. We will update it shortly!
 
 Welcome to UBC Launch Pad, and congratulations (and thank you!) for joining us as a lead!
 
-The role of the Launch Pad leadership team is documented in our [manifesto](../manifesto.md#club-structure). The specifics of each role's responsibilities are also available in the [tech lead role description](../Recruitment/tech-lead.md) and [design lead role description](../Recruitment/design-lead.md).
+The role of the Launch Pad leadership team is documented in our [manifesto](../manifesto.md#club-structure). The specifics of each role's responsibilities are also available in the [tech lead role description](../recruitment/tech-lead.md) and [design lead role description](../recruitment/design-lead.md).
 
 ## Checklist
 
@@ -48,7 +48,7 @@ Make sure that you are **watching** all relevant repositories so that you don't 
 ### Google Drive
 
 Make sure all leads are given "editor" access to the [shared Launch Pad folder](https://drive.google.com/drive/u/2/folders/1hgPcUC_DrFMmzZ04pBSlZFig4v9AbTuv), which is owned by the `team@ubclaunchpad.com` account.
-Learn more about managing these folders in the [Google Drive documentation](../Tools/drive.md).
+Learn more about managing these folders in the [Google Drive documentation](../tools/drive.md).
 
 ### Email and Accounts
 
