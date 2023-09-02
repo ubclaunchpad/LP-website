@@ -1,12 +1,6 @@
 # Overview
 
-::: warning
-
-This page is outdated. We will update it shortly!
-
-:::
-
-This document provides a overview of our project management process at [UBC Launch Pad](https://ubclaunchpad.com).
+This document provides an overview of our project management process at [UBC Launch Pad](https://ubclaunchpad.com).
 
 ## Projects
 
@@ -15,7 +9,7 @@ This document provides a overview of our project management process at [UBC Laun
 
 ### Categories
 
-We have iterated over how we come up with projects over the years and currently we have the following project categories:
+We have iterated over how we come up with projects over the years, and currently we have the following project categories:
 
 - Stakeholder Projects: These are projects that have an external stakeholder the project is being developed pro bono.
 - Established Projects: These are projects that have been carefully selected by the leads before recruitment. These projects could be in either ideation or in-progress stages.
@@ -35,12 +29,12 @@ We have iterated over how we come up with projects over the years and currently 
 
 ### Timelines
 
-Most projects are yearlong; starting in Septmeber and ending in April of next year. However there are some exceptions:
+Most projects are yearlong; starting in September and ending in April of next year, however there are some exceptions:
 
 - Projects that are smaller or already active can last only for one term (Sept-Dec or jan-Apr)
   - (Teams that finish a project in term 1 will take on another project in term 2)
-- Projects that require continous development will be worked on yearlong (mostly Sept-Apr) and in the following year, the same or new team will take on the project
-  - e.g. our internal club projects are continous
+- Projects that require continuous development will be worked on yearlong (mostly Sept-Apr) and in the following year, the same or new team will take on the project
+  - e.g. our internal club projects are continuous
 
 ## Teams
 

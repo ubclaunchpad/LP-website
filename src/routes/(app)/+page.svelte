@@ -4,8 +4,6 @@
 	import introImg from '$lib/assets/images/outer_space.svg';
 	export let data;
 	const directories = data.posts.directories || {};
-
-	console.log(directories);
 </script>
 
 <FullPage>

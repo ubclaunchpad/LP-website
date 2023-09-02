@@ -24,11 +24,11 @@ src="https://michelleykim.github.io/static/media/bluenav.a82a59e264955f90e44a.mp
 
 ### 📰 BrightNews
 
-Tired of hearing bad news all the time? Don’t worry! BrightNews is a website for all positive news.
+~~Tired of hearing bad news all the time? Don’t worry! BrightNews is a website for all positive news.~~
 
-This project aims to be more beginner-friendly and will be implemented in mainly 3 stages. First stage is just to develop the website’s frontend and set up a basic CRUD backend (news articles will be manually inputted). Second stage is to implement web scraping and sentiment analysis so that we can automate the process from the first stage. Third stage is reserved for future features (such as different categories, curated notifications, specific location, etc.).
+~~This project aims to be more beginner-friendly and will be implemented in mainly 3 stages. First stage is just to develop the website’s frontend and set up a basic CRUD backend (news articles will be manually inputted). Second stage is to implement web scraping and sentiment analysis so that we can automate the process from the first stage. Third stage is reserved for future features (such as different categories, curated notifications, specific location, etc.).~~
 
-We welcome students with all levels of experience. This project will involve all parts of software development from frontend, backend to working with AI and infrastructure. Join us if you’re interested in this project and want to experience different parts of software development!
+~~We welcome students with all levels of experience. This project will involve all parts of software development from frontend, backend to working with AI and infrastructure. Join us if you’re interested in this project and want to experience different parts of software development!~~
 
 ### 📚 ClassSync
 
@@ -37,6 +37,8 @@ Partnering with The C.O.D.E Initiative, a nonprofit organization, our team is dr
 Our vision revolves around building an intuitive ed-tech web platform that seamlessly connects parents, students, and volunteers. ClassSync acts as a centralized hub where parents can effortlessly enroll their children in courses, schedule classes with available tutors, and seamlessly track their real-time progress. For our dedicated volunteers, the platform provides a streamlined system to manage availability, appointments, access essential learning resources, and gather valuable feedback.
 
 The centralization of these crucial features simplifies and enhances the teaching and learning process, marking a significant step towards accessibility and convenience for all stakeholders.
+
+If building software for social good interests you, apply to join us in making a positive impact through ClassSync!
 
 ### 🤝 Code The Change
 

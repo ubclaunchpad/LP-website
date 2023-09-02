@@ -65,7 +65,7 @@ A _definition of completion_ creates a clear view of what a task encapsulates. T
 
 ### Managing Tasks
 
-Each task should be tracked as a **GitHub issue** (this is why we sometimes call tasks "issues"). Learn more about issues in [our GitHub guide](../Tools/github.md#issues), or in [GitHub's official project management documentation](https://github.com/features/project-management/).
+Each task should be tracked as a **GitHub issue** (this is why we sometimes call tasks "issues"). Learn more about issues in [our GitHub guide](/github.md#issues), or in [GitHub's official project management documentation](https://github.com/features/project-management/).
 
 Each issue should clearly state the purpose and definition of completion of the task, as well as any other relevant information - **your goal is to leave enough information so that someone can hop into an issue and know exactly what is going on and what to do**.
 

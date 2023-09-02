@@ -3,21 +3,16 @@
 search: false
 ---
 
-::: warning
-
-This page is outdated. We will update it shortly!
-
-:::
-
 # Design Lead 🚀
 
 ## Summary
 
-This year, we are establishing a closer leadership team, where tech-leads’ responsibility extends from simplifying leading your project to engage in club-wise planning and decision making. Therefore, we are looking for someone who is passionate about Launch Pad, and is willing to take initiatives in growing not only as a person, but also as a team!
+This year, we are establishing a closer leadership team, where tech-leads' responsibility extends from simplifying leading your project to engage in club-wise planning and decision-making. Therefore, we are looking for someone who is passionate about Launch Pad, and is willing to take initiatives in growing not only as a person, but also as a team!
 
-::: tip We do not accept applications for this role.
-Our design leads are [selected through a nomination process](/handbook/strategy/recurring-processes.md#leads).
-:::
+> We do not accept applications for this role.
+>
+> Our tech leads are [selected through a nomination process](/handbook/recurring-processes.md#leads).
+> If you are a member of Launch Pad, feel free to reach out to your lead to learn more!
 
 ## Responsibilities
 
@@ -34,6 +29,6 @@ Our design leads are [selected through a nomination process](/handbook/strategy/
 ## What you get
 
 - Develop your leadership skills by leading a cross-disciplinary team with autonomy
-- Advanced your design skills by overseeing a the design elements in multiple projects
+- Advanced your design skills by overseeing the design elements in multiple projects
 - Demonstrate you are a problem-solver by creating a meaningful project with your team
 - Make some life-long relationships with the people from Launch Pad 💫
