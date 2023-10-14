@@ -16,4 +16,6 @@ jobs:
         with:
           node-version: '16.x'
       - run: npm install
-      - run: npm test
+      - run: npm run lint
+      - run: npm run test
+      - run: npx mdspell -r '**/*.md' '!**/node_modules/**/*.md' --en-us
