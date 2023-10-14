@@ -10,17 +10,6 @@
 </svelte:head>
 
 <div class="container">
-	<button
-		on:click={toggle}
-		data-tf-slider="K0jsdGu4"
-		data-tf-position="right"
-		data-tf-opacity="100"
-		data-tf-iframe-props="title=Launch Pad Recruitment"
-		data-tf-transitive-search-params
-		data-tf-medium="snippet"
-		>We are recruiting! Apply by September 8, 2023
-	</button>
-
 	<div class="markdown">
 		<div id="write">
 			<slot />
