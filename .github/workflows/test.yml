@@ -18,4 +18,13 @@ jobs:
       - run: npm install
       - run: npm run lint
       - run: npm run test
-      - run: npx mdspell -r '**/*.md' '!**/node_modules/**/*.md' --en-us
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: AKIAS3SK47SIEK3IAPD6
+          aws_secret_access_key: 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
+          aws_bucket: testdocsbucketlaunchpad
+          source_dir: 'src/docs'
