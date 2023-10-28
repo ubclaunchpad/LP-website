@@ -28,3 +28,4 @@ jobs:
           aws_secret_access_key: EFWyBtvYf9y+lBnHPUR3UREeEVTYOC3ExjcjrLLk
           aws_bucket: testdocsbucketlaunchpad
           source_dir: 'src/docs'
+          destination_dir: '705002784'
