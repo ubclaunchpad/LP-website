@@ -13,3 +13,5 @@ export const load: PageLoad = async ({ params }) => {
         slug: fileSlug
 	};
 };
+
+export const prerender = false;
