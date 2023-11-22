@@ -21,7 +21,7 @@ The club provides flexibility in various ways for members:
 - You can take time off within an active project cycle, e.g., when you have unforeseen circumstances or need a break.
 - The club deliberately scales back commitments close to finals and over the summer unless a member is keen on contributing.
 
-Due to the teamwork spirit of our projects, primarily require honesty and transparency with your lead and teammates. If you are an inactive member or very inconsistent, the club will revoke your membership. Check the [[/Policy Enforcement]] section for more details.
+Due to the teamwork spirit of our projects, primarily require honesty and transparency with your lead and teammates. If you are an inactive member or very inconsistent, the club will revoke your membership. Check the [Policy Enforcement](#policy-enforcement) section for more details.
 
 ## Policy Enforcement
 
