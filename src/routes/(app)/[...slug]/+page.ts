@@ -19,6 +19,7 @@ export const load: PageLoad = async ({ params }) => {
 			throw e;
 		}
 	}
+	
 	const content = post.default;
 	return {
 		content

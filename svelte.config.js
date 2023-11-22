@@ -55,7 +55,8 @@ const config = {
 	kit: {
 		prerender: {
 			handleHttpError: 'ignore',
-			handleMissingId: 'ignore'
+			handleMissingId: 'ignore',
+			handleEntryGeneratorMismatch: 'ignore'
 		},
 		adapter: adapter()
 	}
