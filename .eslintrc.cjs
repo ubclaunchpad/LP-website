@@ -7,7 +7,29 @@ module.exports = {
 		'prettier'
 	],
 	parser: '@typescript-eslint/parser',
-	plugins: ['@typescript-eslint'],
+	plugins: ['@typescript-eslint', 'spellcheck'],
+	rules: {
+		"spellcheck/spell-checker": [1,
+				{
+						"comments": true,
+						"strings": true,
+						"identifiers": true,
+						"templates": true,
+						"lang": "en_US",
+						"skipWords": [
+								
+						],
+						"skipIfMatch": [
+								"http://[^s]*",
+								"^[-\\w]+\/[-\\w\\.]+$"
+						],
+						"skipWordIfMatch": [
+								"^foobar.*$"
+						],
+						"minLength": 2
+				 }
+		 ]
+ },
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020,

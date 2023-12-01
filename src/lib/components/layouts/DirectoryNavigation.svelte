@@ -5,6 +5,7 @@
 </script>
 
 <div class="sidebar-content">
+	<h4>Launch Pad Wiki</h4>
 	{#each Object.entries(directories.directories) as [directory, files]}
 		<SectionNavigation directory={{ name: directory, files: files }} />
 	{/each}

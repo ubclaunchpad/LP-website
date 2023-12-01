@@ -17,7 +17,7 @@
 			},
 			{
 				link: `${GITHUB_LINK}/${area}`,
-				text: 'View the requested Repository and its documents directly'
+				text: 'View the requested Repository and its documents directly.'
 			}
 		]}
 	>

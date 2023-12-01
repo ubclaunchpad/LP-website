@@ -1,23 +1,77 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
+	import { page } from '$app/stores';
+	import { beforeUpdate } from 'svelte';
 	import Icon from '$lib/components/general/Icon.svelte';
 	import ChevronRightIcon from '$lib/components/general/icons/ChevronRightIcon.svelte';
 	import ChevronDownIcon from '$lib/components/general/icons/ChevronDownIcon.svelte';
+	import handbook from '$lib/assets/handbook.png';
+	import onboarding from '$lib/assets/onboarding.png';
+	import projects from '$lib/assets/projects.png';
+	import recruitment from '$lib/assets/recruitment.png';
+	import templates from '$lib/assets/templates.png';
+	import tools from '$lib/assets/tools.png';
 	export let directory;
 	export let isExpanded = true;
+	
 	const toggleList = () => {
 		isExpanded = !isExpanded;
 	};
+
+	const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+	const pickImage = (name) => {
+		switch (name) {
+			case 'handbook':
+				return handbook;
+			case 'onboarding':
+				return onboarding;
+			case 'projects':
+				return projects;
+			case 'recruitment':
+				return recruitment;
+			case 'templates':
+				return templates;
+			case 'tools':
+				return tools;
+			default:
+				return handbook;
+		}
+	};
+
+	const getDirectory = () => {
+    const segments = new URL($page.url).pathname.split('/');
+    return `/${segments[1]}`;
+  };
+	const getSubDirectory = () => {
+    const segments = new URL($page.url).pathname.split('/');
+    return `/${segments[2]}`;
+  };
+
+	let directoryURL = getDirectory();
+  let subDirectoryURL = getSubDirectory();
+
+	beforeUpdate(() => {
+    directoryURL = getDirectory();
+    subDirectoryURL = getSubDirectory();
+  });
+
+	let isActive = (directoryURL === `/${directory.name}` ? 'active' : '');
+
+	console.log('directoryURL:', directoryURL);
+
+	
 </script>
 
 <div class="wrapper">
 	<li class="dir">
 		<div class="header">
-			<p>
-
-				{directory.name}
+			<img src={pickImage(directory.name)} alt="directoryImage">
+			<p class = {isActive}>
+				{capitalizeFirstLetter(directory.name)}
 			</p>
-
 			<button on:click={toggleList}>
 				{#if isExpanded}
 					<Icon>
@@ -37,7 +91,7 @@
 						{#each directory.files as file}
 							<li>
 								<a href={`/${directory.name}/${file.slug}`}>
-									<p>{file.slug}</p>
+									<p>{capitalizeFirstLetter(file.slug)}</p>
 								</a>
 							</li>
 						{/each}
@@ -55,6 +109,12 @@
 </div>
 
 <style lang="scss">
+	.active {
+		
+	}
+	img {
+		width: 20px;
+	}
 	a {
 		text-decoration: none;
 		color: var(--color-text-3);
@@ -93,10 +153,6 @@
 		color: var(--color-text-3);
 		align-items: center;
 		position: relative;
-
-		*:first-child {
-			flex: 1;
-		}
 
 		button {
 			background-color: transparent;

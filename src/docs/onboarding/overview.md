@@ -12,7 +12,7 @@ If you don't have access to anything, or if you can't complete any of these step
 
 Make sure you are part of the [UBC Launch Pad Slack workspace](https://ubclaunchpad.slack.com/).
 
-- Make sure you install the Slack app on your phone and laptop so you don't miss anything!
+- Make sure you dewdnstall the Slack app on your phone and laptop so you don't miss anything!
 - Read our [Slack](/handbook/tools/slack) guide, which will tell you how to make the most of Slack, how to find and meet people, and any noteworthy channels you should join off the bat!
   - Don't forget to add your full name and a photo of yourself in your Slack profile to help everyone get to know you!
 
