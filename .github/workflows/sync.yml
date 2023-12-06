@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: jamesA-githubactions-testing
+          ref: jamesA-githubactions-testing # Change to master later after review
       - name: Generate random number
         id: random
         run: echo "::set-output name=value::$(echo $RANDOM)"
@@ -24,6 +24,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           branch: sync-${{ steps.random.outputs.value }}
+      - uses: actions/checkout@v4
+        with:
+          ref: sync-${{ steps.random.outputs.value }}
       - name: create env file
         run: |
           touch .env
@@ -51,4 +54,4 @@ jobs:
           title: Docs auto-synchronization with S3
           body: Auto-created Pull Request
           branch: sync-${{ steps.random.outputs.value }}
-          base: master
+          base: jamesA-githubactions-testing # Change to master later after review
