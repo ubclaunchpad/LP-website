@@ -42,7 +42,7 @@ jobs:
           git add .
           git commit -m "Sync docs folder"
           git push -u origin sync-${{ steps.random.outputs.value }}
-       - name: create pull request towards the main branch
+      - name: create pull request towards the main branch
         uses: peter-evans/create-pull-request@v3.10.1
         with:
           token: ${{ secrets.GH_TOKEN }}
