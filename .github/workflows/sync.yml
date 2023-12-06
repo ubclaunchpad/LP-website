@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: jamesA-githubactions-testing # Change to master later after review
+          token: ${{ secrets.GH_TOKEN }}
       - name: Generate random number
         id: random
         run: echo "::set-output name=value::$(echo $RANDOM)"
@@ -27,6 +28,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: sync-${{ steps.random.outputs.value }}
+          token: ${{ secrets.GH_TOKEN }}
       - name: create env file
         run: |
           touch .env
@@ -45,7 +47,7 @@ jobs:
           git config user.email "<>"
           git add .
           git commit --allow-empty -m "Sync docs folder"
-          git push origin sync-${{ steps.random.outputs.value }}
+          git push
       - name: create pull request
         uses: peter-evans/create-pull-request@v5
         with:
