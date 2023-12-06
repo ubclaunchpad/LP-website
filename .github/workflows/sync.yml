@@ -5,7 +5,7 @@ on:
     - cron: '*/1 * * * *'
   push:
     branches:
-      - jamesA-githubactions-testing
+      - jamesA-githubactions-testing # Change jamesA-githubactions-testing to master later after review
 
 jobs:
   sync:
@@ -45,14 +45,12 @@ jobs:
       - run: npm run sync-script
       - name: commit and push new file
         run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "<>"
           git add .
-          git commit --allow-empty -m "Sync docs folder"
+          git commit --allow-empty -m "Cronjob/Sync docs folder with s3"
           git push
       - name: create pull request
         # Change jamesA-githubactions-testing to master later after review
         run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "<>"
-          gh pr create -B jamesA-githubactions-testing -H sync-${{ steps.random.outputs.value }} --title 'Sync docs folder with s3' --body 'Created by Github action'
+          gh pr create -B jamesA-githubactions-testing -H sync-${{ steps.random.outputs.value }} --title 'Cronjob/Sync docs folder with s3' --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
