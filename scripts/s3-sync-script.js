@@ -1,24 +1,25 @@
 import { GetObjectCommand, S3Client, ListObjectsV2Command } from '@aws-sdk/client-s3';
 import fs from 'fs';
+import 'dotenv/config';
 
 const importS3Files = async function () {
 	try {
 		const s3 = new S3Client({
 			region: 'us-west-1',
 			credentials: {
-				accessKeyId: 'AKIAWU54QO2ZQN4YWQXQ',
-				secretAccessKey: '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'
+				accessKeyId: process.env.AWS_STARPORT_BAR_AK ?? '',
+				secretAccessKey: process.env.AWS_STARPORT_BAR_SAK ?? ''
 			}
 		});
 		const bucketName = 'starport-bar';
 
-		const rootDirStack = [`75504261/`];
+		const rootDirStack = [`${process.env.REPOSITORY_ID}/`];
 
 		// Remove old docs folder
-		fs.rmSync('docs', { recursive: true, force: true });
+		fs.rmSync('src/docs', { recursive: true, force: true });
 
 		// Make new empty docs folder
-		fs.mkdir('docs', (err) => {
+		fs.mkdir('src/docs', (err) => {
 			if (err) {
 				console.log(`mkdir error: ${err}`);
 			}
@@ -47,7 +48,7 @@ const importS3Files = async function () {
 				);
 				const inputStream = getResponse.Body;
 				const s3Path = content.Key?.split('/');
-				const downloadPath = `docs/${s3Path?.slice(1, s3Path.length).join('/')}` ?? 'docs';
+				const downloadPath = `src/docs/${s3Path?.slice(1, s3Path.length).join('/')}` ?? 'src/docs';
 				const outputStream = fs.createWriteStream(downloadPath);
 				// @ts-ignore
 				inputStream?.pipe(outputStream);
@@ -60,8 +61,10 @@ const importS3Files = async function () {
 			(await listResponse.CommonPrefixes?.forEach((prefix) => {
 				const s3SubdirFolderPath = prefix.Prefix ?? '';
 				const subdirDownloadFolderPath =
-					`docs/${s3SubdirFolderPath?.split('/').slice(1, s3SubdirFolderPath.length).join('/')}` ??
-					'docs';
+					`src/docs/${s3SubdirFolderPath
+						?.split('/')
+						.slice(1, s3SubdirFolderPath.length)
+						.join('/')}` ?? 'src/docs';
 				rootDirStack.push(s3SubdirFolderPath);
 				fs.mkdir(subdirDownloadFolderPath, { recursive: true }, (err) => {
 					if (err) {
