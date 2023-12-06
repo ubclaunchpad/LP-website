@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: master
+          ref: jamesA-githubactions-testing
       - name: Generate random number
         id: random
         run: echo "::set-output name=value::$(echo $RANDOM)"
