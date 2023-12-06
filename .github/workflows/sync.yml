@@ -46,8 +46,8 @@ jobs:
           git add .
           git commit --allow-empty -m "Sync docs folder"
           git push origin sync-${{ steps.random.outputs.value }}
-      - name: create pull request towards the main branch
-        uses: peter-evans/create-pull-request@v3.10.1
+      - name: create pull request
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GH_TOKEN }}
           commit-message: Auto Pull Request
