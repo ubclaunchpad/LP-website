@@ -2,7 +2,10 @@ name: S3-synchronization-cronjob
 
 on:
   schedule:
-    - cron: '*/1 * * * *' # Every one minute
+    - cron: '*/1 * * * *'
+  push:
+    branches:
+      - jamesA-githubactions-testing
 
 jobs:
   sync:
