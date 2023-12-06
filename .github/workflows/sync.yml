@@ -42,7 +42,7 @@ jobs:
           git config user.email "<>"
           git add .
           git commit --allow-empty -m "Sync docs folder"
-          git push -u origin sync-${{ steps.random.outputs.value }}
+          git push origin sync-${{ steps.random.outputs.value }}
       - name: create pull request towards the main branch
         uses: peter-evans/create-pull-request@v3.10.1
         with:
