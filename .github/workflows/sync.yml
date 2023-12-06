@@ -1,9 +1,11 @@
 name: S3-synchronization-cronjob
 
 on:
+  schedule:
+    - cron: '*/10 * * * *'
   push:
     branches:
-      - jamesA-githubactions-testing
+      - jamesA-githubactions-testing # Change jamesA-githubactions-testing to master later after review
 
 jobs:
   sync:
@@ -11,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: jamesA-githubactions-testing # Change to master later after review
+          ref: jamesA-githubactions-testing # Change jamesA-githubactions-testing to master later after review
           token: ${{ secrets.GH_TOKEN }}
       - name: Generate random number
         id: random
@@ -49,6 +51,7 @@ jobs:
           git commit --allow-empty -m "Sync docs folder"
           git push
       - name: create pull request
+        # Change jamesA-githubactions-testing to master later after review
         run: gh pr create -B jamesA-githubactions-testing -H sync-${{ steps.random.outputs.value }} --title 'Sync docs folder with s3' --body 'Created by Github action'
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
