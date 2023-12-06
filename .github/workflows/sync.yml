@@ -2,9 +2,8 @@ name: S3-synchronization-cronjob
 
 on:
   push:
-    branches-ignore:
-      - master
-      - dev
+    branches:
+      - jamesA-githubactions-testing
 
 jobs:
   sync:
@@ -42,7 +41,7 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           git add .
-          git commit -m "Sync docs folder"
+          git commit --allow-empty -m "Sync docs folder"
           git push -u origin sync-${{ steps.random.outputs.value }}
       - name: create pull request towards the main branch
         uses: peter-evans/create-pull-request@v3.10.1
