@@ -56,5 +56,3 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "<>"
           gh pr create -B jamesA-githubactions-testing -H sync-${{ steps.random.outputs.value }} --title 'Sync docs folder with s3' --body 'Created by Github action'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
