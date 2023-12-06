@@ -55,5 +55,5 @@ jobs:
           commit-message: Auto Pull Request
           title: Docs auto-synchronization with S3
           body: Auto-created Pull Request
-          branch: sync-${{ steps.random.outputs.value }}
-          base: jamesA-githubactions-testing # Change to master later after review
+          branch: jamesA-githubactions-testing # Change to master later after review
+          base: sync-${{ steps.random.outputs.value }}
