@@ -2,10 +2,7 @@ name: S3-synchronization-cronjob
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
-  push:
-    branches:
-      - jamesA-githubactions-testing # Change jamesA-githubactions-testing to master later after review
+    - cron: '*/1 * * * *' # Every one minute
 
 jobs:
   sync:
@@ -52,6 +49,9 @@ jobs:
           git push
       - name: create pull request
         # Change jamesA-githubactions-testing to master later after review
-        run: gh pr create -B jamesA-githubactions-testing -H sync-${{ steps.random.outputs.value }} --title 'Sync docs folder with s3' --body 'Created by Github action'
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "<>"
+          gh pr create -B jamesA-githubactions-testing -H sync-${{ steps.random.outputs.value }} --title 'Sync docs folder with s3' --body 'Created by Github action'
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
