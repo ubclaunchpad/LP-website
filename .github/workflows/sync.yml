@@ -43,8 +43,8 @@ jobs:
       - run: npm run sync-script
       - name: commit and push new file
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "<>"
           git add .
           git commit --allow-empty -m "Sync docs folder"
           git push
