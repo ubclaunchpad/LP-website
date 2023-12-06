@@ -48,12 +48,12 @@ jobs:
           git add .
           git commit --allow-empty -m "Sync docs folder"
           git push
-      - name: create pull request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GH_TOKEN }}
-          commit-message: Auto Pull Request
-          title: Docs auto-synchronization with S3
-          body: Auto-created Pull Request
-          branch: jamesA-githubactions-testing # Change to master later after review
-          base: sync-${{ steps.random.outputs.value }}
+      # - name: create pull request
+      #   uses: peter-evans/create-pull-request@v5
+      #   with:
+      #     token: ${{ secrets.GH_TOKEN }}
+      #     commit-message: Auto Pull Request
+      #     title: Docs auto-synchronization with S3
+      #     body: Auto-created Pull Request
+      #     branch: sync-${{ steps.random.outputs.value }}
+      #     base: jamesA-githubactions-testing # Change to master later after review
