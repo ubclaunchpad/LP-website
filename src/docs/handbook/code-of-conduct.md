@@ -1,6 +1,6 @@
 # Code of Conduct
 
-UBC Launch Pad is committed to building a creative, inclusive, and collaborative tech community. This Code of Conduct outlines our expectations for all members and the standards for behaviour within our community. THIS IS AN INTENTIONALLY ADDED DUMMY STRING
+UBC Launch Pad is committed to building a creative, inclusive, and collaborative tech community. This Code of Conduct outlines our expectations for all members and the standards for behaviour within our community.
 
 ## Expectations
 
@@ -12,9 +12,9 @@ UBC Launch Pad is committed to building a creative, inclusive, and collaborative
 
 - **Active Participation:** Regular participation in meetings, project work, and community events is expected.
 - **Communication:** Maintain open and respectful communication. If unable to meet commitments, promptly inform your team.
-
+  
 Active participation is determined by your openness and communication with your team members and the club.
-THIS IS AN INTENTIONALLY ADDED DUMMY STRING
+
 The club provides flexibility in various ways for members:
 
 - You can return after a hiatus; e.g., you go on exchange or decide not to take on a project for certain years.
@@ -27,7 +27,7 @@ Due to the teamwork spirit of our projects, primarily require honesty and transp
 
 - **Initial Warning:** Members not adhering to these standards will receive a warning and guidance to improve.
 - **Probation Period:** Continued issues may result in a probation period, with close monitoring of participation and conduct.
-- **Membership Revocation:** Persistent inactivity or serious breaches of conduct may lead to the revocation of membership. _You can apply again to join if your membership is revoked._
+- **Membership Revocation:** Persistent inactivity or serious breaches of conduct may lead to the revocation of membership. *You can apply again to join if your membership is revoked.*
 
 ## Reporting and Confidentiality
 
