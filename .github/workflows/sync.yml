@@ -2,7 +2,7 @@ name: S3-synchronization-cronjob
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/30 * * * *' # Every 30 minutes
 
 jobs:
   sync:
