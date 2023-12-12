@@ -4,7 +4,7 @@ search: false
 published: true
 ---
 
-# Strategy Coordinator 🚀
+# Strategy Team 🚀
 
 ## Summary
 
@@ -31,11 +31,14 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club ove
 
 - Research potential sponsors and partnership opportunities aligned with UBC Launch pad’s objectives and values.
 - Seek out additional funding opportunities, and partnerships to support club activities and initiatives.
+- Build up a positive connection with sponsors and a network of industry contacts for enhanced brand visibility and a positive reputation for the organization.
+- Foster strong relationships with sponsors and partners to contribute to the growth and success of Launch Pad events
 
 ## What you get
 
 - An amazing documentation website to equip you with all the tools you need to succeed!
-- Make some life-long relationships with the people from Launch Pad 💫
+- Be a part of the largest tech club community at UBC and make some life-long relationships with the people from Launch Pad 💫
+- Expanding your network and opportunities for increased collaboration, networking, and the establishment of meaningful connections within the industry and peers in the same field
 
 ## Time commitment
 
