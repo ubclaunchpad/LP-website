@@ -54,4 +54,4 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club ove
 ## Requirements
 
 - A passion for learning and experimenting, and a willingness to participate actively
-- We welcome folks of all skill levels, whether you are a complete beginner just starting out or if you’ve done several internships and have a portfolio of awesome projects - learn more about our [recruitment goals](/recruitment.overview) in our handbook
+- We welcome folks of all skill levels, whether you are a complete beginner just starting out or if you’ve done several internships and have a portfolio of awesome projects - learn more about our [recruitment goals](/recruitment) in our handbook
