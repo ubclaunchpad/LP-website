@@ -34,6 +34,12 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club ove
 - Build up a positive connection with sponsors and a network of industry contacts for enhanced brand visibility and a positive reputation for the organization.
 - Foster strong relationships with sponsors and partners to contribute to the growth and success of Launch Pad events
 
+#### Fundraising
+
+- Develop and implement fundraising strategies to support UBC Launch Pad’s initiatives, including identifying potential donors and sponsors.
+- Organize fundraising events, campaigns, or activities to generate financial support for the club.
+- Coordinate with the team to align fundraising efforts with overall partnership strategies and maximize financial support for UBC Launch Pad.
+
 ## What you get
 
 - An amazing documentation website to equip you with all the tools you need to succeed!
