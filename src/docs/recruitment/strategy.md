@@ -4,7 +4,7 @@ search: false
 published: true
 ---
 
-# Strategy Coordinator 🚀
+# Strategy Team 🚀
 
 ## Summary
 
@@ -31,11 +31,20 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club ove
 
 - Research potential sponsors and partnership opportunities aligned with UBC Launch pad’s objectives and values.
 - Seek out additional funding opportunities, and partnerships to support club activities and initiatives.
+- Build up a positive connection with sponsors and a network of industry contacts for enhanced brand visibility and a positive reputation for the organization.
+- Foster strong relationships with sponsors and partners to contribute to the growth and success of Launch Pad events
+
+#### Fundraising
+
+- Develop and implement fundraising strategies to support UBC Launch Pad’s initiatives, including identifying potential donors and sponsors.
+- Organize fundraising events, campaigns, or activities to generate financial support for the club.
+- Coordinate with the team to align fundraising efforts with overall partnership strategies and maximize financial support for UBC Launch Pad.
 
 ## What you get
 
 - An amazing documentation website to equip you with all the tools you need to succeed!
-- Make some life-long relationships with the people from Launch Pad 💫
+- Be a part of the largest tech club community at UBC and make some life-long relationships with the people from Launch Pad 💫
+- Expanding your network and opportunities for increased collaboration, networking, and the establishment of meaningful connections within the industry and peers in the same field
 
 ## Time commitment
 
@@ -45,4 +54,4 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club ove
 ## Requirements
 
 - A passion for learning and experimenting, and a willingness to participate actively
-- We welcome folks of all skill levels, whether you are a complete beginner just starting out or if you’ve done several internships and have a portfolio of awesome projects - learn more about our [recruitment goals](/recruitment.overview) in our handbook
+- We welcome folks of all skill levels, whether you are a complete beginner just starting out or if you’ve done several internships and have a portfolio of awesome projects - learn more about our [recruitment goals](/recruitment) in our handbook
