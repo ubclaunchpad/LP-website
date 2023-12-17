@@ -22,6 +22,14 @@ Use this link to watch a short demo of the project’s UI:
 src="https://michelleykim.github.io/static/media/bluenav.a82a59e264955f90e44a.mp4?autoplay=0">
 </iframe>
 
+### 📰 BrightNews
+
+~~Tired of hearing bad news all the time? Don’t worry! BrightNews is a website for all positive news.~~
+
+~~This project aims to be more beginner-friendly and will be implemented in mainly 3 stages. First stage is just to develop the website’s frontend and set up a basic CRUD backend (news articles will be manually inputted). Second stage is to implement web scraping and sentiment analysis so that we can automate the process from the first stage. Third stage is reserved for future features (such as different categories, curated notifications, specific location, etc.).~~
+
+~~We welcome students with all levels of experience. This project will involve all parts of software development from frontend, backend to working with AI and infrastructure. Join us if you’re interested in this project and want to experience different parts of software development!~~
+
 ### 📚 ClassSync
 
 Partnering with The C.O.D.E Initiative, a nonprofit organization, our team is driving the creation of an innovative integrated ed-tech platform named ClassSync. This project seeks to revolutionize the educational landscape, particularly for underserved youth, including neurodivergent individuals, and those from Black, Indigenous, and People of Colour (BIPOC) communities.
@@ -32,7 +40,7 @@ The centralization of these crucial features simplifies and enhances the teachin
 
 If building software for social good interests you, apply to join us in making a positive impact through ClassSync!
 
-### 🤝 Code The Change (On Pause)
+### 🤝 Code The Change
 
 Interested in non-profits? The 'Code The Change' team will be working on building out sustainable, tech-oriented solutions for local non-profits. Inspired by a UBC club of the same name that folded in 2020 (https://github.com/CodetheChangeFoundation), we'll work on re-launching a number of incomplete, but high impact projects.
 
