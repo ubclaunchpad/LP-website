@@ -50,7 +50,7 @@ You can learn more about design roles in the [Designer role description](/recrui
 
 ### Strategy Roles
 
-**When recruiting for strategy roles, it’s noteworthy that this role works with the club leads, and we generally want to recruit 5-6 students.**
+**When recruiting for strategy roles, it’s noteworthy that this role works with the club leads, and we generally want to recruit 2-3 students.**
 
 You can learn more about strategy roles in the [Strategy role description](/recruitment/strategy.md).
 
