@@ -1,0 +1,20 @@
+# Once wiki team has finished making an app to edit docs then delete this file to make 'docs' repository read-only
+name: Github-to-s3-docs-upload 
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: ${{ secrets.AWS_STARPORT_BAR_AK }}
+          aws_secret_access_key: ${{ secrets.AWS_STARPORT_BAR_SAK }}
+          aws_bucket: starport-bar
+          source_dir: 'src/docs'
+          destination_dir: ${{ secrets.REPOSITORY_ID }}

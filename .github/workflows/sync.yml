@@ -1,4 +1,4 @@
-name: S3-synchronization-cronjob
+name: S3-to-github-synchronization-cronjob
 
 on:
   schedule:
