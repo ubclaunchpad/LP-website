@@ -52,3 +52,4 @@ jobs:
           gh pr create -B master -H sync-${{ steps.random.outputs.value }} --title 'Cronjob/Sync docs folder with s3' --body 'Created by Github action'
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
