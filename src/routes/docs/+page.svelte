@@ -18,7 +18,7 @@
 								<FolderIcon />
 							</div>
 
-							<a href={`/${dir}`}>{dir}</a>
+							<a href={`/docs/${dir}`}>{dir}</a>
 						</div>
 					{/each}
 				</section>

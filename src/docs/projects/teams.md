@@ -1,6 +1,5 @@
 # Teams
 
-
 Teams and projects are paired one-to-one. All teams include at least one lead with a number of developers and designers. Teams vary in size and developer/designer ratio.
 
 **Depending on the project teams can vary in the following ways:**
