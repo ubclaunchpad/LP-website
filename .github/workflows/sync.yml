@@ -1,13 +1,8 @@
 name: S3-synchronization-cronjob
 
-# on:
-#   schedule:
-#     - cron: '0 8 * * *' # Run every 8am
-
 on:
-  push:
-    branches:
-      - prevent-creation-of-stale-branches
+  schedule:
+    - cron: '0 8 * * *' # Run every 8am
 
 env:
   SYNC_BRANCH_NAME: 's3-sync-branch-91rf9321'
@@ -47,7 +42,7 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm install
-      # - run: npm run sync-script
+      - run: npm run sync-script
       - name: commit and push new file
         run: |
           git config --global user.name "S3 Synchronization Cronjob"
