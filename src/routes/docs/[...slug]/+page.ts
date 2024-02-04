@@ -1,4 +1,4 @@
-import type { PageLoad } from '../../../../.svelte-kit/types/src/routes/(app)/[...slug]/$types';
+import type { PageLoad } from './$types';
 import { redirect } from '@sveltejs/kit';
 
 export const load: PageLoad = async ({ params }) => {
@@ -10,7 +10,7 @@ export const load: PageLoad = async ({ params }) => {
 	const fileSlug = slug.split('/');
 	let post;
 	if (fileSlug.length === 1) {
-		throw redirect(308, `/${fileSlug[0]}/overview.md`);
+		throw redirect(308, `./${fileSlug[0]}/overview.md`);
 	} else {
 		try {
 			post = await import(`../../../docs/${fileSlug[0]}/${fileSlug[1]}.md`);
@@ -19,7 +19,7 @@ export const load: PageLoad = async ({ params }) => {
 			throw e;
 		}
 	}
-	
+
 	const content = post.default;
 	return {
 		content

@@ -14,7 +14,6 @@
 	<li class="dir">
 		<div class="header">
 			<p>
-
 				{directory.name}
 			</p>
 
@@ -36,7 +35,7 @@
 					{#if directory.files.length > 0}
 						{#each directory.files as file}
 							<li>
-								<a href={`/${directory.name}/${file.slug}`}>
+								<a href={`/docs/${directory.name}/${file.slug}`}>
 									<p>{file.slug}</p>
 								</a>
 							</li>

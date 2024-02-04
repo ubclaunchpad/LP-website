@@ -87,7 +87,7 @@
 	<div class="content">
 		{#await getContent()}
 			<div>loading</div>
-<!--			<Loader width={'100%'} height={'100%'} />-->
+			<!--			<Loader width={'100%'} height={'100%'} />-->
 		{:then}
 			<div class="top">
 				<div />

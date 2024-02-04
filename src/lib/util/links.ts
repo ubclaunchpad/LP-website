@@ -11,6 +11,13 @@ const STRATEGY_EMAIL = '//strategy@ubclaunchpad.com';
 const DEV_EMAIL = 'dev@ubclaunchpad.com';
 const TEAM_EMAIL = 'team@ubclaunchpad.com';
 const DOCS_GITHUB_LINK = 'https://github.com/ubclaunchpad/docs';
+const DOCS_LINK = '/docs';
+const DEVELOPER_ROLE_LINK = `${DOCS_LINK}/recruitment/developer`;
+const DESIGNER_ROLE_LINK = `${DOCS_LINK}/recruitment/designer`;
+const STRATEGY_ROLE_LINK = `${DOCS_LINK}/recruitment/strategy`;
+const TECH_LEAD_ROLE_LINK = `${DOCS_LINK}/recruitment/tech-lead`;
+const DESIGN_LEAD_ROLE_LINK = `${DOCS_LINK}/recruitment/design-lead`;
+const CO_PRESIDENT_ROLE_LINK = `${DOCS_LINK}/recruitment/co-president`;
 
 export {
 	INSTAGRAM_LINK,
@@ -25,5 +32,12 @@ export {
 	DEV_EMAIL,
 	TEAM_EMAIL,
 	DOCS_GITHUB_LINK,
-	WEBSITE_LINK
+	WEBSITE_LINK,
+	DOCS_LINK,
+	DEVELOPER_ROLE_LINK,
+	DESIGNER_ROLE_LINK,
+	STRATEGY_ROLE_LINK,
+	TECH_LEAD_ROLE_LINK,
+	DESIGN_LEAD_ROLE_LINK,
+	CO_PRESIDENT_ROLE_LINK
 };
