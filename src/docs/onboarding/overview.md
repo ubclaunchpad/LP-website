@@ -8,47 +8,27 @@ Welcome to UBC Launch Pad! This page takes you through some important items you 
 If you don't have access to anything, or if you can't complete any of these steps for whatever reason, or if you have any questions, drop a message in [`#ask-leads`](https://ubclaunchpad.slack.com/messages/CK935RD3Q/)!
 :::
 
-### Slack Access
+### Discord
 
-Make sure you are part of the [UBC Launch Pad Slack workspace](https://ubclaunchpad.slack.com/).
+Make sure you are part of the [UBC Launch Pad Discord server](https://ubclaunchpad.slack.com/).
 
-- Make sure you install the Slack app on your phone and laptop so you don't miss anything!
-- Read our [Slack](/handbook/tools/slack) guide, which will tell you how to make the most of Slack, how to find and meet people, and any noteworthy channels you should join off the bat!
-  - Don't forget to add your full name and a photo of yourself in your Slack profile to help everyone get to know you!
+- Make sure you install the Discord app on your phone and laptop so you don't miss anything!
+- Read our [Discord](../tools/discord.md) guide, which will tell you how to make the most of Discord, how to find and meet people, and any noteworthy channels you should check out!
+  - Don't forget to add your full name and a photo of yourself to your Slack profile to help everyone get to know you!
 
 ### Rocket Setup
 
-[Rocket](https://github.com/ubclaunchpad/rocket2) is our Slack bot and team management tool - make sure you help Rocket get to know you! In any Slack channel, write the following:
+Rocket is our Discord bot and team management tool - make sure you help Rocket get to know you! Once you join the Discord server, Rocket will have DMed you with steps to get verified. If, for some reason, your Discord privacy settings disallowed it, you can message Rocket and type the following:
 
 ```
-/rocket user add
+/verifyvoyager
 ```
 
-Then, you can give it some information about you - the following are particularly important, since it is how you will be granted access to the correct [GitHub teams](#github-access) and [Google Drive folders](#drive-access):
-
-```
-/rocket user edit --github USERNAME
-/rocket user edit --email EMAIL
-```
-
-For example, if your GitHub username is `JaneDoe` and your email is `janedoe@gmail.com`, you would write:
-
-```
-/rocket user edit --github JaneDoe
-/rocket user edit --email janedoe@gmail.com
-```
-
-You can verify your information is correct by sending:
-
-```
-/rocket user view
-```
-
-Learn more about Rocket in our [Slack guide's Rocket section](/handbook/tools/slack#rocket)!
+Then, Rocket will follow up with steps to verify your member status. For more information check out our [Rocket Guide](../tools/rocket.md).
 
 ### GitHub Access
 
-Make sure you are part of the [UBC Launch Pad GitHub organization](https://github.com/ubclaunchpad/). [Rocket](#rocket-setup) should do this for you - check your email for an invitation! Please do not ask to be added directly without checking with `#ask-rocket` if there is a problem.
+Make sure you are part of the [UBC Launch Pad GitHub organization](https://github.com/ubclaunchpad/).
 
 - You should be able to access our private repositories, such as [`ubclaunchpad/ideas`](https://github.com/ubclaunchpad/ideas)
   - If you can't see the Ideas repository, check that you are in the GitHub team [`@ubclaunchpad/all`](https://github.com/orgs/ubclaunchpad/teams/all) - if not, make sure you've [set up your profile on Rocket](#rocket-setup)!

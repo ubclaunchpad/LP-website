@@ -1,10 +1,14 @@
 # 💬 Slack
 
+::: warning
+Out of date - No longer maintained
+:::
+
 We use [Slack](https://slack.com) for team-wide communication, announcements, and project-specific coordination. The workspace can be found at [`ubclaunchpad.slack.com`](https://ubclaunchpad.slack.com). You should receive an invite in your email to join the workspace - if you haven't, please reach out to your lead or one of the presidents for help!
 
 ## Slack Best Practices
 
-- Install Slack on your devices and **enable notifications** so you don't miss discussions and annoucements!
+- Install Slack on your devices and **enable notifications** so you don't miss discussions and announcements!
 - [**Use threads**](https://slackhq.com/getting-the-most-out-of-threads) for conversations, especially in large channels! This helps prevent spam and makes it easier to catch up on missed conversations.
 - Name channels using our [naming scheme](#naming-slack-channels) to make it easier for others to find your channels.
 - If it is important, **do not leave it in Slack**! We are on the free tier of Slack, so messages eventually expire. Anything important or permanent should be in a [GitHub issue or repository](/handbook/tools/github.md)!

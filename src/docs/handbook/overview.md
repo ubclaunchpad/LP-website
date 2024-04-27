@@ -4,10 +4,6 @@ This document is the UBC Launch Pad manifesto: a high-level overview of our visi
 
 If you have any questions, please do not hesitate to [get in touch](#contact)!
 
-::: warning
-These sections are a work in progress.
-:::
-
 ## Vision
 
 ### Our Value Proposition

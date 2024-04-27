@@ -26,7 +26,7 @@ src="https://michelleykim.github.io/static/media/bluenav.a82a59e264955f90e44a.mp
 
 Partnering with The C.O.D.E Initiative, a nonprofit organization, our team is driving the creation of an innovative integrated ed-tech platform named ClassSync. This project seeks to revolutionize the educational landscape, particularly for underserved youth, including neurodivergent individuals, and those from Black, Indigenous, and People of Colour (BIPOC) communities.
 
-Our vision revolves around building an intuitive ed-tech web platform that seamlessly connects parents, students, and volunteers. ClassSync acts as a centralized hub where parents can effortlessly enroll their children in courses, schedule classes with available tutors, and seamlessly track their real-time progress. For our dedicated volunteers, the platform provides a streamlined system to manage availability, appointments, access essential learning resources, and gather valuable feedback.
+Our vision revolves around building an intuitive ed-tech web platform that seamlessly connects parents, students, and volunteers. ClassSync acts as a centralized hub where parents can effortlessly enrol their children in courses, schedule classes with available tutors, and seamlessly track their real-time progress. For our dedicated volunteers, the platform provides a streamlined system to manage availability, appointments, access essential learning resources, and gather valuable feedback.
 
 The centralization of these crucial features simplifies and enhances the teaching and learning process, marking a significant step towards accessibility and convenience for all stakeholders.
 

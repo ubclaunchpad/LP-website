@@ -3,7 +3,9 @@
 	import TOC from '$lib/components/general/TOC.svelte';
 	import { browser } from '$app/environment';
 	import { slide } from 'svelte/transition';
+	import DocumentStatus from '$lib/components/blocks/DocumentStatus.svelte';
 	export let data;
+	$: metadata = data.metadata || {};
 	let headings = [];
 	const cutoff = 1000;
 	let pageWidth = 0;
@@ -79,6 +81,7 @@
 			{/if}
 		{/key}
 		<section class="body">
+			<DocumentStatus date={metadata.updated} />
 			{#if data.content}
 				<svelte:component this={data.content} />
 			{/if}

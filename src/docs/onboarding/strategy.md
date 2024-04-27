@@ -1,11 +1,5 @@
 # 💼 Onboarding for Strategy
 
-::: warning
-
-This page is outdated. We will update it shortly!
-
-:::
-
 Welcome to UBC Launch Pad, and congratulations (and thank you!) for joining the strategy team!
 
 ## Checklist
@@ -47,7 +41,7 @@ Similarly, **do not add credentials (usernames, passwords) in Google Drive**. In
 
 ### Email and Accounts
 
-All Strategy members will be given access to the `strategy@ubclaunchpad.com` Gmail account to help in correspondance with partners and sponsors. Learn more about Launch Pad email in [the email documentation](/handbook/tools/email.md).
+All Strategy members will be given access to the `strategy@ubclaunchpad.com` Gmail account to help in correspondence with partners and sponsors. Learn more about Launch Pad email in [the email documentation](/handbook/tools/email.md).
 
 To gain access to various social media accounts, see the [social media documentation](/handbook/tools/social-media.md).
 

@@ -9,7 +9,7 @@
 <FullPage>
 	<article slot="main">
 		<div class="contents">
-			<img src={introImg} alt="intro" />
+			<!-- <img src={introImg} alt="intro" /> -->
 			<div class="directory-wrapper">
 				<section class="main-directory">
 					{#each Object.keys(directories) as dir}
@@ -43,7 +43,7 @@
 		max-width: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
+		justify-content: center;
 		align-items: center;
 		height: 100%;
 		flex: 1;
@@ -73,20 +73,20 @@
 	.contents {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: flex-end;
 		align-items: center;
 		padding: 1rem;
 		border-radius: var(--border-radius-large);
 		background-color: var(--color-black-2);
 		cursor: pointer;
-		max-width: 1200px;
+		max-width: 1600px;
 		width: 100%;
 		overflow: hidden;
 		gap: 1rem;
 	}
 	.main-directory {
 		display: grid;
-		grid-template-columns: repeat(6, minmax(150px, 150px));
+		grid-template-columns: repeat(5, minmax(150px, 250px));
 		justify-content: center;
 		width: 100%;
 		gap: 10px;
@@ -108,10 +108,10 @@
 			flex-wrap: wrap;
 			border-radius: var(--border-radius-medium);
 			border: 1px solid var(--color-black-3);
-			background-color: var(--color-black-1);
+			background-color: var(--color-black-3);
 			color: var(--color-text-2);
 
-			height: 100px;
+			height: 200px;
 			min-height: fit-content;
 
 			@media (max-width: 500px) {
@@ -148,7 +148,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				font-size: 1.1rem;
+				font-size: 1.5rem;
 				//text-transform: capitalize;
 				transition: all 0.2s ease-in-out;
 				&:hover {

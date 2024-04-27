@@ -1,11 +1,5 @@
 # 🧳 Sponsors and Partners
 
-::: warning
-
-This page is outdated. We will update it shortly!
-
-:::
-
 Launch Pad would not be what it is today without the help of our [partners and sponsors](https://ubclaunchpad.com/#sponsors), who provide us with the resources and tools to help our members learn and deliver on their projects and goals.
 
 If you are interested in working with us in any capacity, please feel free to reach out to us at [team@ubclaunchpad.com](team@ubclaunchpad.com) or refer to our [sponsorship package](https://ubclaunchpad.com/sponsorship)!
