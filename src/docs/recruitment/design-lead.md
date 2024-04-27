@@ -1,12 +1,14 @@
+---
+updated: 2024-04-26
+---
+
 # Design Lead
 
-User experience and design are big parts of software development. A product needs to make sense to the user, solve a problem, and consider all the ways users will interact with it. As a design lead, you will take charge of how Launch Pad can continue to support its designers. 
-
-
+User experience and design are big parts of software development. A product needs to make sense to the user, solve a problem, and consider all the ways users will interact with it. As a design lead, you will take charge of how Launch Pad can continue to support its designers.
 
 ## Responsibilities
 
-- **Lead a team** of designers over 8-month development process
+- **Lead a team** of designers over 8 months.
 - Spearhead the design recruitment by reviewing applications and conducting interviews
 - Collaborate with tech leads to learn how you can support the designers on their team
 - **Support and provide guidance** to other designers when they need help with their projects
@@ -16,8 +18,6 @@ User experience and design are big parts of software development. A product need
 - Be an active member on the leadership team to voice out your ideas and opinions on how we can make Launch Pad the best experience for everyone!
 - Provide **feedback and progress updates** to the co-pres to help them understand the performance of the club
 - Nominate future design lead (keep an eye on who’s being a superstar 👀)
-
-
 
 ## Recruitment
 
@@ -38,9 +38,7 @@ Lead applications are primarily chosen at the end of each academic year, typical
 - You have been with Launch Pad for at least one semester
 - You have shown initiative to take on leadership roles
 - You have been an active and consistent contributor to your current and past projects
-- You have worked on projects 
-
-
+- You have worked on projects
 
 ## What You Get
 

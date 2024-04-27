@@ -22,6 +22,7 @@ export const load: PageLoad = async ({ params }) => {
 
 	const content = post.default;
 	return {
-		content
+		content,
+		metadata: post.metadata
 	};
 };

@@ -1,11 +1,5 @@
 # ⏰ Recurring Processes
 
-::: warning
-
-This page is outdated. We will update it shortly!
-
-:::
-
 This page documents administrative processes that Launch Pad runs every year. In general, both the Leadership team and the Strategy team are responsible for driving efforts on these processes.
 
 ## Evaluating Objectives
@@ -32,21 +26,6 @@ Each school year starts with a kickoff event where new members are introduced to
 
 This schedule might vary year to year, but kickoff events will generally follow this format. Because a _lot_ happens at our kickoff events, particularly project ideation, these have traditionally been all-day events. The current format is already condensed, due to remote requirements.
 
-| Time | Activity                                              |
-| ---- | ----------------------------------------------------- |
-| 30m  | Presentation: "Welcome to Launch Pad"                 |
-| 15m  | [Icebreaker](#icebreakers): Round 1                   |
-| 15m  | [Icebreaker](#icebreakers): Round 2                   |
-| 15m  | Break                                                 |
-| 10m  | Presentation: ["Project Ideation"](#project-ideation) |
-| 10m  | Ideation: Round 1 (short)                             |
-| 10m  | Ideation: Round 2 (short)                             |
-| 10m  | Ideation: Round 3 (short)                             |
-| 10m  | Break and ideas updates                               |
-| 15m  | Ideation: Round 4 (long)                              |
-| 15m  | Ideation: Round 5 (long)                              |
-| 15m  | Conclusion                                            |
-
 ### Icebreakers
 
 Icebreakers are intended to help everyone familiarize themselves with some members of Launch Pad. Members are assigned to groups in each icebreaker round, where everyone works together on an activity. We have done various activities for icebreakers in the past, but one such activity is a discussion prompt:
@@ -54,8 +33,6 @@ Icebreakers are intended to help everyone familiarize themselves with some membe
 > Find up to three things everyone in your group has in common (for example, syllables in names or sock colour) and one dimension where you are the most diverse (for example, nationality or major).
 
 The lead in the group should start by encouraging each member to make a self-introduction. The goal of this activity is for groups to collaborate by coming up with a strategy for finding commonalities and differences, while getting to know each other better!
-
-[docs#186](https://github.com/ubclaunchpad/docs/issues/186) tracks possible improvements we could make to our icebreakers.
 
 ### Project Ideation
 
@@ -71,7 +48,7 @@ In general, the process is as follows:
    - For the **last 2 longer rounds**, leads will start focusing on narrowing down ideas and prioritizing more feasible directions. Members will still be able to move in between these rounds.
 4. After the last round of discussions, we will ask everyone for their group preferences and try to assign everyone to a team such that the teams are reasonably balanced in size and experience.
 
-Note that the goal of ideation is to simply define a ["core feature"](/handbook/project-management/scope.md#core-feature-and-the-mvp) which will then be specc'd out into a minimum viable product (MVP) during the following week. This is when implementation and design details can be decided, so don't worry too much about that during ideation!
+Note that the goal of ideation is to simply define a ["core feature"](/handbook/project-management/scope.md#core-feature-and-the-mvp) which will then be spec'd out into a minimum viable product (MVP) during the following week. This is when implementation and design details can be decided, so don't worry too much about that during ideation!
 
 ## Selecting Leadership
 

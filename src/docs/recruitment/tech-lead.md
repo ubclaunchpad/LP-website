@@ -17,7 +17,7 @@ You will have the opportunity to mentor, lead, and learn from both your project 
 
 ## Responsibilities
 
-- 📣 **Lead a team** of developers and designers over 4-month development process
+- 📣 **Lead a team** of developers and designers over 4 months.
 - 🔍 Drive **technical design and project scoping** of your team's project
 - 🚴🏼 Spearhead **sprint planning** for your team's project
 - 🎳 **Support members** throughout the development process when they need help

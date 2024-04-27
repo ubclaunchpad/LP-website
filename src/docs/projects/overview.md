@@ -11,7 +11,7 @@ This document provides an overview of our project management process at [UBC Lau
 
 We have iterated over how we come up with projects over the years, and currently we have the following project categories:
 
-- Stakeholder Projects: These are projects that have an external stakeholder the project is being developed pro bono.
+- Stakeholder Projects: These are projects that have an external stakeholder the project is being developed for free of charge.
 - Established Projects: These are projects that have been carefully selected by the leads before recruitment. These projects could be in either ideation or in-progress stages.
 - Self-directed Projects: These are projects are open-ended projects that have almost no prior guidelines. Once a team is formed, members come up with an idea in the first weeks and work towards developing that.
 
@@ -31,7 +31,7 @@ We have iterated over how we come up with projects over the years, and currently
 
 Most projects are yearlong; starting in September and ending in April of next year, however there are some exceptions:
 
-- Projects that are smaller or already active can last only for one term (Sept-Dec or jan-Apr)
+- Projects that are smaller or already active can last only for one term (Sept-Dec or Jan-Apr)
   - (Teams that finish a project in term 1 will take on another project in term 2)
 - Projects that require continuous development will be worked on yearlong (mostly Sept-Apr) and in the following year, the same or new team will take on the project
   - e.g. our internal club projects are continuous

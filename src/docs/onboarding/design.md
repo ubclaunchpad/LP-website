@@ -1,11 +1,5 @@
 # 🎨 Onboarding for Design
 
-::: warning
-
-This page is outdated. We will update it shortly!
-
-:::
-
 ## Checklist
 
 ### Slack Channels

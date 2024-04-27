@@ -44,7 +44,7 @@
 						{/if}
 					</Icon>
 				</button>
-				<a href="/">
+				<a href="/docs">
 					<img src={logo} alt="Launch Pad Logo" />
 
 					<h2>Launch Pad <span>Documentation</span></h2>

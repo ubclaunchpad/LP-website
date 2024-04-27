@@ -29,7 +29,7 @@ Learn more about us on our [website](https://ubclaunchpad.com/) or our [club ove
 
 ## Time commitment
 
-- Club meetings every Saturday from 11pm-2pm
+- Club meetings every Saturday from 11AM until 2PM
   - Meetings are primarily in-person
   - _(most weeks)_ the first hour is required, the rest of the time is to hang out, work, and eat lunch together; we highly recommend staying if you can!
 - Around 5 hours per week working on tasks
