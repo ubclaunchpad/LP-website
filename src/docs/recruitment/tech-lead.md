@@ -18,6 +18,8 @@ As a Tech Lead at UBC Launch Pad, you'll do more than manage projects—you'll b
 - 💬 Actively participate in the leadership team, **contributing ideas and feedback** to enhance the Launch Pad experience.
 - 📚 Document your processes and insights on our [documentation website](https://ubclaunchpad.com/docs) to **share knowledge and best practices**.
 - 📝 Participate in the **recruitment process**, conduct interviews, and help identify and mentor future Tech Leads.
+- 🤝 Collaborate with design leads to **support the designers** on your team, ensuring integration and coherence between design and development.
+- 🔧 Actively contribute to **enhancing Launch Pad’s internal tooling**, improving efficiency and effectiveness across projects.
 
 ## Recruitment
 
@@ -32,6 +34,7 @@ Lead applications are primarily chosen at the end of each academic year, typical
 - Interest in leading a team of developers and the ability to mentor peers.
 - Must be reliable, communicative, and effective in a team setting.
 - Strong analytical and problem-solving skills with the ability to lead technical discussions and solve challenges creatively.
+- A commitment of 6-8 hours per week is required to fulfill the responsibilities of the role effectively.
 
 ### Preferred Qualifications
 
