@@ -1,3 +1,7 @@
+---
+updated: 2024-04-27
+---
+
 # 🎉 Onboarding for Tech Leads
 
 Welcome to UBC Launch Pad! Congratulations—and thank you—for stepping into a leadership role with us!
