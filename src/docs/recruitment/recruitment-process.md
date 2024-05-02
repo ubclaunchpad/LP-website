@@ -1,9 +1,9 @@
 ---
 ---
+
 # Recruitment Process
 
 This document provides an overview of why and how we do recruitment at [UBC Launch Pad](https://ubclaunchpad.com).
-
 
 ### Technical Roles
 
@@ -13,10 +13,10 @@ When recruiting for technical (developer) roles,
 
 - **Beginner**: student is in 1st or 2nd year student OR course project OR simple project (hackathon)
 - **Intermediate**: Completed 1 internship OR a non-course "advanced project"
-    - An advanced project meets the following criteria:
-        - long-term (for example, at least 1 month between the first to most recent commit)
-        - is non-trivial and the product of tangible effort (up to judgement)
-        - demonstrable use programming paradigms (even as simple as loops)
+  - An advanced project meets the following criteria:
+    - long-term (for example, at least 1 month between the first to most recent commit)
+    - is non-trivial and the product of tangible effort (up to judgement)
+    - demonstrable use programming paradigms (even as simple as loops)
 - **Experienced**: (2 internships OR outstanding project) AND interest in mentorship
 
 To provide support to our less experienced members and ensure a productive environment for everyone, when recruiting we aim to have:
@@ -82,8 +82,8 @@ To provide flexibility, we allow different next steps for our leads based on the
 
 - Returning members: will be sent an email with the project they will be working on
 - Accepted applications:
-    - For interview-based applications: an email with next steps will be sent out
-    - Otherwise: an acceptance email will await your confirmation
+  - For interview-based applications: an email with next steps will be sent out
+  - Otherwise: an acceptance email will await your confirmation
 - Rejected applications: will be notified as soon as possible via email
 
 ## Frequently asked questions
