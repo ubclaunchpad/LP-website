@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let date;
-	const validityRange = 1000 * 60 * 60 * 24 * 7 * 4; // 4 weeks
+	const validityRange = 1000 * 60 * 60 * 24 * 7 * 4 * 3; // 12 weeks
 	const now = Date.now();
 
 	const isValid = () => {

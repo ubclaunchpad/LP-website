@@ -10,7 +10,7 @@ As a Tech Lead at UBC Launch Pad, you'll do more than manage projects—you'll b
 
 ## Responsibilities
 
--  **Lead a team** of developers and designers throughout an 8-month project cycle.
+- **Lead a team** of developers and designers throughout an 8-month project cycle.
 - 🔍 Drive the **technical design and scope** of your team's project, ensuring goals are clear and achievable.
 - 🚴🏼 Organize and lead **sprint planning** sessions to keep the project on track and momentum high.
 - 🎳 Provide **ongoing support and guidance** to team members throughout the development process.
