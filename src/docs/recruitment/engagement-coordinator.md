@@ -8,12 +8,15 @@ Marketing and engagement coordinators are responsible for managing the club's ma
 
 ## Responsibilities
 
-- **Lead the overall marketing and engagement efforts** of the club over the academic year.
-- **Create and coordinate content publication** of various in-house and external events, as well as other marketing assets.
-- **Capture and document club events** through photo and video.
-- **Manage the club's social media accounts** and engage with the club's members and the broader community.
-- **Help to plan, organize, and lead club events**, ensuring that both members and non-members alike are engaged.
-- **Collaborate** with the operations leads and designers to define the club's brand and ensure that it is consistently represented across all marketing materials.
+- 📊 **Lead the overall marketing and engagement efforts** of the club over the academic year.
+- ✍️ **Create and coordinate content publication** of various in-house and external events, as well as other marketing assets.
+- 📸 **Capture and document club events** through photo and video.
+- 🗃️ **Manage the club's social media accounts** and engage with the club's members and the broader community.
+- 📝 **Help to plan, organize, and lead club events**, ensuring that both members and non-members alike are engaged.
+- 🥂 **Help to plan online and offline club socials** and other engagement events to foster a sense of community within the club.
+- 🤝 **Collaborate** with the operations leads and designers to define the club's brand and ensure that it is consistently represented across all marketing materials.
+- 📈 **Track and analyze the club's marketing and engagement efforts**, and use this data to inform future decisions.
+- 📣 **Promote the club's events and initiatives** to the broader UBC community and beyond.
 
 ## Recruitment
 
@@ -41,4 +44,4 @@ Applications are primarily chosen at the ending at the end of each academic year
 ## Time commitment
 
 - Team meetings will take place (tentatively) every Saturday around 10-11.
-- Around 5 hours per week working on tasks
+- Around 6-8 hours per week working on tasks, possibly more as needed during short crunch times.
