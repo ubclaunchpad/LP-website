@@ -1,4 +1,7 @@
-# 🗳️ Recruitment Overview
+---
+---
+
+# 📌 Recruitment Overview
 
 This document provides an overview of why and how we do recruitment at [UBC Launch Pad](https://ubclaunchpad.com).
 
@@ -29,7 +32,7 @@ To provide support to our less experienced members and ensure a productive envir
 
 Each lead typically leads 1 team. We aim for a club size of 8 developers (excluding the lead) per team, to accommodate for members potentially leaving throughout the semester due to scheduling or personal reasons.
 
-You can learn more about technical roles in the [Developer role description](/recruitment/developer.md).
+You can learn more about technical roles in the [Developer role description](./developer.md).
 
 ### Design Roles
 
@@ -46,13 +49,13 @@ To provide support to our less experienced members and ensure a productive envir
 - at least 40% of design team (including lead) be "experienced".
 - Dedicated design channels where all designers regardless of team can collaborate with each other
 
-You can learn more about design roles in the [Designer role description](/recruitment/designer.md).
+You can learn more about design roles in the [Designer role description](./designer.md).
 
 ### Strategy Roles
 
 **When recruiting for strategy roles, it’s noteworthy that this role works with the club leads, and we generally want to recruit 5-6 students.**
 
-You can learn more about strategy roles in the [Strategy role description](/recruitment/strategy.md).
+You can learn more about strategy roles in the [Strategy role description](./strategy.md).
 
 ## Recruitment Process
 
