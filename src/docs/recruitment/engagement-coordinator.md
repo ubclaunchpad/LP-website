@@ -13,7 +13,7 @@ Marketing and engagement coordinators are responsible for managing the club's ma
 - 📸 **Capture and document club events** through photo and video.
 - 🗃️ **Manage the club's social media accounts** and engage with the club's members and the broader community.
 - 📝 **Help to plan, organize, and lead club events**, ensuring that both members and non-members alike are engaged.
-- 🥂 **Help to plan online and offline club socials** and other engagement events to foster a sense of community within the club.
+- 🥂 **Help to plan online (Discord) and offline (in-person) club socials**, as well as other engagement events to foster a sense of community within the club.
 - 🤝 **Collaborate** with the operations leads and designers to define the club's brand and ensure that it is consistently represented across all marketing materials.
 - 📈 **Track and analyze the club's marketing and engagement efforts**, and use this data to inform future decisions.
 - 📣 **Promote the club's events and initiatives** to the broader UBC community and beyond.
