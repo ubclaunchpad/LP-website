@@ -206,7 +206,18 @@
 		line-height: 1.225;
 		margin: 35px 0 15px;
 		padding-bottom: 0.5em;
-		border-bottom: 1px solid var(--color-border-2);
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 2px;
+			width: 100%;
+			background: linear-gradient(90deg, var(--color-bg-secondary), var(--color-bg-primary));
+			box-shadow: 0 0 40px var(--color-bg-secondary), 0 0 20px var(--color-bg-primary);
+			border-radius: 30%;
+		}
 	}
 
 	h3 {
@@ -243,13 +254,15 @@
 	}
 
 	hr {
-		height: 2px;
+		height: 3px;
 		padding: 0;
-		margin: 16px 0;
-		background-color: #e7e7e7;
+		margin: 10px 0 30px;
+		background: linear-gradient(90deg, var(--color-bg-primary), var(--color-bg-secondary));
 		border: 0 none;
 		overflow: hidden;
 		box-sizing: content-box;
+		box-shadow: 0 0 10px var(--color-bg-primary), 0 0 20px var(--color-bg-secondary);
+		border-radius: 50%;
 	}
 
 	& > h2:first-child {
