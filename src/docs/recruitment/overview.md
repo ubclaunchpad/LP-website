@@ -31,16 +31,12 @@ This team is for those who are passionate about operational roles, networking, p
 
 The Technical roles include developer and tech lead roles. As a developer you will be working within teams led by one or two tech leads. Check out the resources below for more details.
 
-There are two technical roles:
-
 - [Tech Lead](./tech-lead.md)
 - [Developer](./developer.md)
 
 ### Design Roles
 
 The Design Designers take on projects both external and internal ones. Designers work within teams led by tech leads or design leads. Check out the resources below for more details.
-
-There are two design roles:
 
 - [Design Lead](./design-lead.md)
 - [Designer](./designer.md)
