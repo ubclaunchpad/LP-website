@@ -33,31 +33,11 @@
 		padding: 0.9rem 0.5rem;
 		font-size: 1rem;
 		color: var(--color-text-muted);
-		background-color: var(--color-bg-0);
-		border: 1px solid var(--color-danger);
+		background-color: var(--color-black-1);
+		border: 1px solid var(--color-bg-0);
 		width: 100%;
 		border-radius: 6px;
-		box-shadow: 0 0 4px var(--color-danger);
 		color: var(--color-text-2);
-		font-style: italic;
-
-		&:before {
-			content: '⚠️';
-			border: 1px dashed var(--color-danger);
-			border-radius: 100%;
-			background-color: var(--color-bg-1);
-			display: flex;
-			color: var(--color-text-2);
-			justify-content: center;
-			align-items: center;
-			font-size: 1rem;
-			width: 20px;
-			height: 20px;
-			position: absolute;
-			top: 0;
-			left: 10px;
-			transform: translate(-50%, -50%);
-		}
 	}
 
 	.document-status-wrapper {
@@ -65,7 +45,6 @@
 		width: 100%;
 		justify-content: center;
 		padding: 0 0.6rem;
-		position: sticky;
 		top: 0;
 		z-index: 10;
 	}

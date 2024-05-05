@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import TOC from '$lib/components/general/TOC.svelte';
 	import { browser } from '$app/environment';
-	import { slide } from 'svelte/transition';
 	import DocumentStatus from '$lib/components/blocks/DocumentStatus.svelte';
 	export let data;
 	$: metadata = data.metadata || {};
@@ -64,22 +63,6 @@
 
 <div class="page">
 	<article>
-		{#key data.url}
-			{#if pageWidth < cutoff}
-				<div class="side-wrapper">
-					<section class="side floater">
-						<button on:click={() => (show = !show)}>
-							<p>Outline</p>
-							{#if show}
-								<div transition:slide|global={{ axis: 'y', duration: 300 }} class="toc floater">
-									<TOC {headings} />
-								</div>
-							{/if}
-						</button>
-					</section>
-				</div>
-			{/if}
-		{/key}
 		<section class="body">
 			<DocumentStatus date={metadata.updated} />
 			{#if data.content}

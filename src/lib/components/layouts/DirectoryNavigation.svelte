@@ -19,7 +19,7 @@
 		overflow-y: scroll;
 		row-gap: 0.4rem;
 		color: var(--color-text-1);
-		padding: 1rem 3rem;
+		padding: 1rem 1rem;
 		flex: 1;
 		height: 100%;
 	}
