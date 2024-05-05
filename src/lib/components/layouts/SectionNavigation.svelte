@@ -4,7 +4,7 @@
 	import ChevronRightIcon from '$lib/components/general/icons/ChevronRightIcon.svelte';
 	import ChevronDownIcon from '$lib/components/general/icons/ChevronDownIcon.svelte';
 	export let directory;
-	export let isExpanded = true;
+	export let isExpanded = false;
 	const toggleList = () => {
 		isExpanded = !isExpanded;
 	};
@@ -31,7 +31,7 @@
 		</div>
 		{#if isExpanded}
 			<div class="expanded">
-				<ul class="file-list" in:slide={{ axis: 'y', duration: 500 }}>
+				<ul class="file-list" in:slide={{ axis: 'y', duration: 300 }}>
 					{#if directory.files.length > 0}
 						{#each directory.files as file}
 							<li>

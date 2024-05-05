@@ -1,7 +1,5 @@
 <script lang="ts">
 	import FullPage from '$lib/components/layouts/FullPage.svelte';
-	import FolderIcon from '$lib/components/general/icons/FolderIcon.svelte';
-	import introImg from '$lib/assets/images/outer_space.svg';
 	export let data;
 	const directories = data.posts.directories || {};
 </script>
@@ -9,21 +7,15 @@
 <FullPage>
 	<article slot="main">
 		<div class="contents">
-			<!-- <img src={introImg} alt="intro" /> -->
 			<div class="directory-wrapper">
 				<section class="main-directory">
 					{#each Object.keys(directories) as dir}
 						<div>
-							<div>
-								<FolderIcon />
-							</div>
-
 							<a href={`/docs/${dir}`}>{dir}</a>
 						</div>
 					{/each}
 				</section>
 			</div>
-
 			<section class="body">
 				<div class="markdown">
 					<div id="write">
@@ -73,20 +65,19 @@
 	.contents {
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-end;
 		align-items: center;
 		padding: 1rem;
 		border-radius: var(--border-radius-large);
 		background-color: var(--color-black-2);
+		overflow: scroll;
 		cursor: pointer;
 		max-width: 1600px;
 		width: 100%;
-		overflow: hidden;
 		gap: 1rem;
 	}
 	.main-directory {
 		display: grid;
-		grid-template-columns: repeat(5, minmax(150px, 250px));
+		grid-template-columns: repeat(6, minmax(150px, 250px));
 		justify-content: center;
 		width: 100%;
 		gap: 10px;
@@ -108,8 +99,13 @@
 			flex-wrap: wrap;
 			border-radius: var(--border-radius-medium);
 			border: 1px solid var(--color-black-3);
-			background-color: var(--color-black-3);
+			background: linear-gradient(145deg, var(--color-black-3), var(--color-black-2));
 			color: var(--color-text-2);
+			transition: all 0.4s ease-in-out;
+
+			&:hover {
+				background: linear-gradient(145deg, var(--color-black-3) 90%, var(--color-black-2));
+			}
 
 			height: 200px;
 			min-height: fit-content;

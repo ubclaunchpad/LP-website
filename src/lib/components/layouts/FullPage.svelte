@@ -51,7 +51,7 @@
 				</a>
 			</div>
 			<div class="links">
-				<button on:click={() => (showLinks = !showLinks)}>Links</button>
+				<!-- <button on:click={() => (showLinks = !showLinks)}>Links</button> -->
 				{#if showLinks}
 					<div>
 						<ul>
@@ -86,13 +86,10 @@
 		</div>
 	</nav>
 	<section>
-		{#if !isCompact && SLOTS && SLOTS.nav}
-			<aside>
-				<div class="sidebar" class:compact={isCompact}>
-					<div
-						class="content"
-						transition:slide|global={{ axis: 'x', duration: transitionDuration }}
-					>
+		{#if SLOTS && SLOTS.nav}
+			<aside class:sheet={isCompact && !collapse} class:compact={isCompact}>
+				<div class="sidebar">
+					<div class="content" transition:slide={{ axis: 'x', duration: transitionDuration }}>
 						<slot name="nav" />
 					</div>
 				</div>
@@ -100,14 +97,7 @@
 		{/if}
 
 		<main>
-			{#if !collapse && isCompact}
-				<div class="compactBar">
-					<slot name="nav" />
-					<div />
-				</div>
-			{:else}
-				<slot name="main" />
-			{/if}
+			<slot name="main" />
 		</main>
 	</section>
 </div>
@@ -281,6 +271,7 @@
 		> section {
 			display: flex;
 			width: 100%;
+			position: relative;
 			overflow: hidden;
 			flex-wrap: nowrap;
 			height: 100%;
@@ -298,6 +289,53 @@
 
 			aside {
 				position: relative;
+				&.sheet {
+					position: fixed;
+					top: 20;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(0, 0, 0, 0.64);
+					z-index: 30;
+
+					&.compact {
+						display: flex;
+					}
+
+					.sidebar {
+						min-width: fit-content;
+						width: 18rem;
+						overflow: scroll;
+						height: 100%;
+						background: var(--color-black-2);
+						border-right: 1px solid var(--color-border-2);
+						justify-content: flex-start;
+						.content {
+							width: 100%;
+							max-width: 100%;
+							flex: 1;
+							height: 100%;
+						}
+					}
+				}
+
+				&.compact {
+					display: none;
+				}
+
+				.sidebar {
+					position: relative;
+					width: 20rem;
+					overflow: scroll;
+					height: 100%;
+					.content {
+						width: 100%;
+						max-width: 100%;
+						flex: 1;
+						height: 100%;
+					}
+				}
+
 				background-color: var(--color-black-2);
 				z-index: 200;
 				height: 100%;
@@ -333,21 +371,6 @@
 							padding: 0;
 							width: 100%;
 						}
-					}
-				}
-				.sidebar {
-					position: relative;
-					width: 20rem;
-					overflow: scroll;
-					height: 100%;
-					.content {
-						width: 100%;
-						max-width: 100%;
-						flex: 1;
-						height: 100%;
-					}
-					&.compact {
-						width: 2.4rem;
 					}
 				}
 			}
