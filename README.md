@@ -2,6 +2,22 @@
 
 This is the landing page for UBC Launch Pad, the leading student-run software engineering club at the University of British Columbia.
 
+## Contributing
+
+We appreciate any contributions to our docs. To contribute, please follow the steps below:
+1. Check out the [issues](https://github.com/ubclaunchpad/LP-website/issues) to see if there are any open issues that you would like to work on.
+2. If you find an issue that you would like to work on, assign yourself to the issue; if you want to contribute to an issue that is not listed, please create a new issue.
+
+### Contributing to the Codebase
+
+1. Fork the repository.
+2. Clone the forked repository to your local machine.
+3. Create a new branch for your changes.
+4. Follow the instructions in the [Getting Started](#getting-started) section to set up the project.
+5. Commit your changes.
+6. Push your changes to your forked repository.
+7. Create a pull request to the `main` branch of the original repository. Make sure to reference the issue you are working on in the pull request description.
+
 
 ## Getting Started
 
