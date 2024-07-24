@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c6ac1b72-3de1-4ae3-98c3-c11db02cf9d5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sync.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.npmrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.spelling" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/s3-sync-script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/code-of-conduct.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/objectives.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/privacy-policy.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/recurring-processes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/handbook/sponsors-and-partners.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/img/PurpleRocket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/img/background.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/img/hierarchy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/onboarding/design.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/onboarding/img/leads-set-status.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/onboarding/img/update-status.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/onboarding/leads.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/onboarding/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/onboarding/strategy.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/onboarding/tech-lead.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/projects/directory.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/projects/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/projects/planning.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/projects/teams.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/recruitment/design-lead.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/recruitment/designer.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/recruitment/developer.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/recruitment/engagement-coordinator.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/recruitment/logistics-coordinator.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/recruitment/operations-lead.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/recruitment/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/recruitment/recruitment-process.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/recruitment/sponsorships-coordinator.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/recruitment/tech-lead.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/resources/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/discord.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/drive.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/github.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/img/github_emails.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/img/github_issue_example.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/img/github_issues.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/img/github_pullrequests.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/img/github_review.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/img/github_review_final.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/img/github_review_inline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/img/github_slack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/img/github_suggest_after.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/img/github_suggest_before.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/img/github_watch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/img/lead-status.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/rocket.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/slack.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/tools/sprints.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/assets/PurpleRocket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/assets/background.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/assets/images/404.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/assets/images/galaxy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/assets/images/mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/assets/images/mask2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/assets/images/outer_space.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/assets/temp3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/blocks/Banner.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/blocks/DocError.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/blocks/DocumentStatus.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/blocks/Info.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/blocks/TopBanner.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/AnimateWrapper.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/Document.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/Icon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/TOC.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/AlertIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/AlignLeftIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/AlignRightIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/AnnouncementIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/ApplicationsIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/ArchiveIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/ArrowCircleRightIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/ArrowRightIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/AsterickIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/BookClosedIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/BoxIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/CalendarIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/CheckedIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/ChevronDownIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/ChevronLeftIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/ChevronRightIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/ChevronUpIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/CloseIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/CloudIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/DeleteIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/DirectoryIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/DiscordIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/DoneIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/DraggableIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/DribbbleIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/EditIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/ExpandIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/ExternalLinkIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/EyeIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/EyeOffIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/FaceContentIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/FaceSmileIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/FaceWinkIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/FacebookIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/FigmaIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/FileIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/FilterIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/FolderIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/GiftIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/GithubIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/GoogleIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/GridIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/HeartHandIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/HomeIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/InboxIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/InfoIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/InstagramIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/LinkIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/LinkedInIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/ListIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/MediumIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/MenuIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/OrderIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/PaperClipIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/PinIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/ProfileIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/RocketIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/RouteIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/SaveIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/SettingsIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/SquareIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/StarIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/UsersIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/VerticalDotsIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/YoutubeIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/decorative/starfilled.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/doodles/ArrowDoodle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/doodles/CircledDoodle.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/doodles/DirClosed.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/doodles/StarDoodle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/doodles/StartDoodle2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/doodles/StartDoodle3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/doodles/h4Doodle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/doodles/h5Doodle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/doodles/h6Doodle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/doodles/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/CopresRole.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/designLeadRole.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/designerRole.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/developerRole.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/developmentAndDesign.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/feedbackAndIteration.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/sponsor-access.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/sponsor-development.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/sponsor-discovery.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/sponsor-promotion.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/strategyRole.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/team.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/illustrations/techLeadRole.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/general/icons/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/ClubWorkflow.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/FeaturedProjects.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/FeaturedProjectsGallery.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/HomeFooter.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/HomeSection.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/Navbar.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/NewsletterSection.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/OpportunitySection.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/ProjectSection.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/RoleCell.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/RoleSection.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/SponsorSection.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/Sponsors.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/StatsSection.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/home/TeamWorkflow.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layouts/DirectoryNavigation.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layouts/Footer.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layouts/FullPage.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layouts/SectionNavigation.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/posts/Layout.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/posts/Tip.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/posts/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/util/links.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/util/quicklinks.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+error.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/api/posts/+server.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/docs/+layout.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/docs/+layout.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/docs/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/docs/+page.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/docs/[...slug]/+layout.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/docs/[...slug]/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/docs/[...slug]/+page.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/docs/markdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/docs/styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/docs/variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/markdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2jfsyJ1hh3eqiP2EdH2IrAXfsko" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;2024&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/armintalaie/Files/Projects/UBC-LAUNCH-PAD/src&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;application.passwordSafe&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/armintalaie/Files/Projects/UBC-LAUNCH-PAD/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6ac1b72-3de1-4ae3-98c3-c11db02cf9d5" name="Changes" comment="" />
+      <created>1721789719367</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721789719367</updated>
+      <workItem from="1721789720862" duration="5728000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
