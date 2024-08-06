@@ -22,9 +22,9 @@ export default function Home() {
         </div>
         <div className='flex flex-col items-end py-10 px-10'>
           <InfoButton text={'About us'}/>
-          <h1 className={`text-4xl font-medium  ${nunitoSans.variable} font-sans pt-5`}>{'What we do at'}</h1>
-          <h1 className={`text-4xl font-medium ${nunitoSans.variable} font-sans text-stone-300`}>{'Launchpad'}</h1>
-          <p className='text-stone-300 text-right py-10'>
+          <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}>{'What we do at'}</h1>
+          <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans text-indigo-400`}>{'Launch Pad'}</h1>
+          <p className='text-stone-400 text-right py-10'>
             {'At [Team/Organization Name], we embark on a journey of creation and collaboration. From brainstorming innovative ideas to executing complex coding tasks, we combine our technical prowess with a passion for learning. Our projects a rapidly evolving technological landscape.At [Team/Organization At [Team/Organization Name], we embark on a journey of creation and collaboration. Fro'}
           </p>
         </div>
