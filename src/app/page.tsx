@@ -2,6 +2,10 @@ import Navbar from '@/components/general/navbar';
 import { nunitoSans } from './fonts';
 import InfoButton from '@/components/buttons/infoButton';
 import ImageArea from '@/components/general/imageArea';
+import Developer from './../../public/icons/developer.svg'
+import Designer from './../../public/icons/designer.svg'
+import Strategist from './../../public/icons/strategist.svg'
+import InfoCard from '@/components/general/infoCard';
 
 const text = {
   heroTitle: "Welcome to UBC Launch Pad",
@@ -22,11 +26,21 @@ const lpImageProps = {
 }
 
 const memberRoles = [{
-  icon: "/images/launchpadTeam.png",
-  title: "Launchpad team posing for a photo",
-  text: "",
-  height: 580,
+  icon: <Developer/>,
+  title: "Developers",
+  description: "Build, test, and maintain software solutions, ensuring robust and scalable applications.",
+},
+{
+  icon: <Designer/>,
+  title: "Designers",
+  description: "Design, refine, and implement creative solutions, ensuring visually appealing and user-centric experiences."
+},
+{
+  icon: <Strategist/>,
+  title: "Strategists",
+  description: "Develop and execute strategic plans, work on internal communication, and shape the future direction of the club."
 }]
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center ">
@@ -55,7 +69,11 @@ export default function Home() {
             {text.joinUsText}
           </p>
         </div>
-        <ImageArea {...lpImageProps}/>
+        <div>
+        {memberRoles.map((role,index) => {
+          return <InfoCard key={index} { ...role}/>
+        })}
+          </div>
       </section>
     </main>
   );
