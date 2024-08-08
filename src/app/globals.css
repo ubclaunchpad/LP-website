@@ -43,3 +43,15 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.gelatine {
+  animation: gelatine 1.2s    
+}
+@keyframes gelatine {
+  from, to { transform: scale(1, 1); }
+  12.5% { transform: scale(0.9, 1.1); }
+  25% { transform: scale(1.1, 0.9); }
+  37.5% { transform: scale(0.95, 1.05); }
+  50% { transform: scale(1, 1); }
+}
