@@ -6,14 +6,16 @@ interface InfoCardProps {
 
 export default function InfoCard({icon, title, description}: InfoCardProps) {
     return (
-        <div className="flex items-center p-2 bg-zinc-700 text-white mb-4">
-          <div className="flex-shrink-0 p-2 rounded-lg">
+        <div className="flex items-center bg-zinc-700 text-white mb-4 p-2 rounded-lg">
+          <div className="flex-shrink-0 font-size-20 p-2 rounded-lg">
             {icon}
           </div>
-          <div className="flex flex-row ml-4 w-full">
-            <h2 className="p-4 mr-4 text-2xl w-3/12 font-medium">{title}</h2>
-            <p className="w-9/12 ml-3 py-2">{description}</p>
-          </div>
+          <span className="flex flex-row space-between items-center py-3">
+            <h2 className="px-3 py-3 md:px-1 md:py-1 md:mr-3 min-w-40 md:min-w-50 md:ml-4 md:mt-2 md:text-2xl xl:text-3xl font-light md:font-medium">{title}</h2>
+            <div className="max-w-80 md:max-w-160">
+            <p className="text-xs md:text-base">{description}</p>
+            </div>
+          </span>
         </div>
       );
 }
