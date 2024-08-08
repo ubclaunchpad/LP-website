@@ -6,6 +6,7 @@ import Developer from './../../public/icons/developer.svg'
 import Designer from './../../public/icons/designer.svg'
 import Strategist from './../../public/icons/strategist.svg'
 import InfoCard from '@/components/general/infoCard';
+import { Button } from '@/components/buttons/button';
 
 const text = {
   heroTitle: "Welcome to UBC Launch Pad",
@@ -23,8 +24,8 @@ const text = {
 const lpImageProps = {
   src: "/images/launchpadTeam.png",
   alt: "Launchpad team posing for a photo",
-  width: 998 * 2.5 ,
-  height: 580 * 2.5,
+  width: 998 * 2 ,
+  height: 580 * 2,
 }
 
 const memberRoles = [{
@@ -52,9 +53,9 @@ export default function Home() {
         <p className="text-lg">{text.heroDescription}</p>
       </section>
 
-      <section className="flex flex-col md:flex-row items-center w-full">
+      <section className="flex flex-col lg:flex-row items-center w-full">
         <ImageArea {...lpImageProps} />
-        <div className='flex flex-col items-center md:items-end py-10 pl-0 md:pl-10 pr-0 md:pr-12 w-full'>
+        <div className='flex flex-col items-center lg:items-end py-10 pl-0 lg:pl-10 pr-0 lg:pr-12 w-full'>
           <InfoButton text={'About us'} />
           <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}>{text.aboutUsTitle}</h1>
           <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans text-indigo-400 break-all`}>{text.aboutUsSubtitle}</h1>
@@ -64,20 +65,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col md:flex-row items-start justify-between w-full md:space-x-10">
-        <div className='flex flex-col text-center items-center md:items-start py-10 pl-0 md:pl-10 pr-0 md:pr-12 w-10/12'>
+      <section className="flex flex-col lg:flex-row items-start justify-between w-full lg:space-x-10">
+        <div className='flex flex-col text-center items-center lg:items-start py-10 pl-0 lg:pl-10 pr-0 lg:pr-12 w-full'>
           <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}>{text.joinUsTitle}</h1>
           <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans text-indigo-400`}>{text.joinUsSubtitle}</h1>
-          <p className='text-stone-400 text-center md:text-left py-10'>
+          <p className='text-stone-400 text-center lg:text-left py-10'>
             {text.joinUsText}
           </p>
         </div>
-        <div className="flex flex-col items-center py-10 pl-2 md:pl-10 pr-0 w-full">
+        <div className="flex flex-col items-center lg:items-start py-10 lg:pl-10 w-full">
           {memberRoles.map((role, index) => {
             return <InfoCard key={index} {...role} />
           })}
         </div>
       </section>
+      <Button variant='outline'>This is a button</Button>
     </main>
   );
 }
