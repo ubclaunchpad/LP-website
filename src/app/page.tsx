@@ -12,13 +12,14 @@ const text = {
   heroTitle: "Welcome to UBC Launch Pad",
   heroDescription: "A student-run software engineering team devoted to building software projects in a collaborative and professional environment",
   aboutUsTitle: "What we do at",
-  aboutUsSubtitle: "UBC Launch Pad",
+  aboutUsSubtitle: "Launch Pad",
   aboutUsText: `As the leading technology club at UBC, Launch Pad is devoted to create a collaborative and professional environment for software development. It is our goal to provide the best space for students to apply and develop their technical skills outside of classroom, to learn and practice industry-standard tools, and to build passion projects with like-minded individuals.
    
   In Launch Pad form into teams to work on an 8 month development project based on their interests and skill sets. Each team consists of a tech-lead, developers and designers, where they collaboratively go through the design thinking process to design and build a product.`,
   joinUsTitle: "Want to grow your skill?",
   joinUsSubtitle: "Join our team!",
-  joinUsText: "We are looking for students passionate about tech with varying levels of experience to join our teams! "
+  joinUsText: "We are looking for students passionate about tech with varying levels of experience to join our teams! ",
+  joinUsButton: "Join our team"
 }
 
 const lpImageProps = {
@@ -72,6 +73,7 @@ export default function Home() {
           <p className='text-stone-400 text-center lg:text-left py-10'>
             {text.joinUsText}
           </p>
+          <Button className='p-4' size={'xl'} icon><label className='text-lg'>{text.joinUsButton}</label></Button>
         </div>
         <div className="flex flex-col items-center lg:items-start py-10 lg:pl-10 w-full">
           {memberRoles.map((role, index) => {
@@ -79,7 +81,6 @@ export default function Home() {
           })}
         </div>
       </section>
-      <Button variant='outline'>This is a button</Button>
     </main>
   );
 }
