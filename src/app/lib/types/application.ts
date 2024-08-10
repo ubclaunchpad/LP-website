@@ -1,0 +1,1 @@
+export type ApplicationStatus = "pending" | "submitted" | "rejected" | "accepted" | "waitlisted" | "withdrawn" | "interviewing" | "interviewed" | "offered" | "declined";

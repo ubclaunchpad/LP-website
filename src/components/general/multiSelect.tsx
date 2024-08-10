@@ -4,10 +4,12 @@ import { useState } from "react";
 
 export default function MultiSelect({
   options,
+  value,
+  onChange,
 }: {
+  value: string[];
   options: Record<string, string>[];
 }) {
-  const [selectedOptions, setSelectedOptions] = useState<String[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -15,10 +17,11 @@ export default function MultiSelect({
       <button
         className="flex bg-neutral-800  h-11 rounded p-2 gap-2"
         onClick={() => setIsOpen(!isOpen)}
+        type="button"
       >
         <span className="text-white flex items-center gap-2 ">
           {options
-            .filter((option) => selectedOptions.includes(option.value))
+            .filter((option) => value?.includes(option.value))
             .map((option) => (
               <span
                 key={option.label}
@@ -41,22 +44,22 @@ export default function MultiSelect({
             <div
               key={index}
               className={`flex items-center h-10 flex-shrink-0 gap-2 rounded p-2 ${
-                selectedOptions.includes(option.value)
+                value?.includes(option.value)
                   ? "bg-indigo-800"
                   : "hover:bg-neutral-600 bg-opacity-45"
               }`}
               onClick={() => {
-                if (selectedOptions.includes(option.value)) {
-                  setSelectedOptions(
-                    selectedOptions.filter((value) => value !== option.value)
+                if (value?.includes(option.value)) {
+                  onChange(
+                    value.filter((value) => value !== option.value)
                   );
                 } else {
-                  setSelectedOptions([...selectedOptions, option.value]);
+                  onChange([...(value || []), option.value]);
                 }
               }}
             >
               <span className="w-6">
-                {selectedOptions.includes(option.value) ? "✓" : ""}
+                {value?.includes(option.value) ? "✓" : ""}
               </span>
               <span>{option.label}</span>
             </div>

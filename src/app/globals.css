@@ -51,3 +51,55 @@ body {
   37.5% { transform: scale(0.95, 1.05); }
   50% { transform: scale(1, 1); }
 }
+
+
+th {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  @apply bg-indigo-700;
+  /* position: sticky; */
+  top: 0;
+}
+
+td {
+  flex: 1;
+  padding: 0.65rem;
+}
+
+  tr {
+    width: 100%;
+    display: flex;
+    padding: 0;
+  }
+  table {
+    border-radius: 0.5rem;
+  }
+
+
+ tbody {
+  display: flex;
+  flex-direction: column;
+  @apply bg-zinc-700;
+
+  >:nth-child(odd) {
+    @apply bg-zinc-800;
+  }
+  >:nth-child(even) {
+    @apply bg-zinc-900;
+  }
+
+ 
+  overflow: hidden;
+
+  tr {
+    width: 100%;
+    display: flex;
+    min-height: 3rem;
+    
+  }
+}
+/* 
+td:first-child {
+  @apply bg-zinc-800;
+} */

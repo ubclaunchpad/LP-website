@@ -5,11 +5,11 @@ import { useState } from "react";
 export default function Select({
   options,
   value,
+  ...props
 }: {
   options: Record<string, string>[];
   value: string;
 }) {
-  const [selectedOption, setSelectedOption] = useState<String>(value);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -17,10 +17,11 @@ export default function Select({
       <button
         className="flex bg-neutral-800 items-center  h-11 rounded p-2 gap-2"
         onClick={() => setIsOpen(!isOpen)}
+        type="button"
       >
-        {selectedOption ? (
+        {value ? (
           <span className="text-white flex items-center gap-2 ">
-            {options.find((option) => option.value.toString() === selectedOption.toString())?.label}
+            {options.find((option) => option.value.toString() === value.toString())?.label}
           </span>
         ) : (
           <span className="text-white opacity-60 flex items-center gap-2 ">
@@ -40,17 +41,17 @@ export default function Select({
             <div
               key={index}
               className={`flex items-center gap-2 h-10 flex-shrink-0 rounded p-2 ${
-                selectedOption === option.value
+                value === option.value
                   ? "bg-indigo-800"
                   : "hover:bg-neutral-600 bg-opacity-45"
               }`}
               onClick={() => {
-                setSelectedOption(option.value);
+                props.onChange(option.value);
                 setIsOpen(false);
               }}
             >
               <span className="w-6">
-                {selectedOption === option.value ? "✓" : ""}
+                {value === option.value ? "✓" : ""}
               </span>
               <span>{option.label}</span>
             </div>

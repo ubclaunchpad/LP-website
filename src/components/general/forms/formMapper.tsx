@@ -21,21 +21,33 @@ export default function formQuestionMapper({
     case "url":
       return <Input type={question.type} placeholder={question.placeholder} value={value} onChange={(e) => OnChange(e.target.value)} {...props} />;
     case "date":
-      return <input type="date"  placeholder={question.placeholder} {...props} />;
+      return <input type="date"  placeholder={question.placeholder} {...props} onChange={(e) => OnChange(e.target.value)}/>;
     case "textarea":
-      return <textarea placeholder={question.placeholder} {...props} />;
+      return <Textarea placeholder={question.placeholder} value={value} onChange={(e) => OnChange(e.target.value)} {...props} />;
     case "select":
       if (question.config.multiple) {
-        return <MultiSelect options={question.options} {...props}/>;
+        return <MultiSelect options={question.options} value={value} {...props} onChange={(e) => OnChange(e)}/>;
       } 
       return (
-        <Select options={question.options} {...props} value={value} onChange={(e) => OnChange(e.target.value)} />
+        <Select options={question.options} {...props} value={value} onChange={(e) => OnChange(e)} />
       );
-    case "checkbox":
-      return <input type="checkbox" {...props}/>;
+      // <input type="checkbox" {...props}/>;
     case "upload":
-      return <input type="file" {...props}/>;
+      return <Input type="file" {...props} onChange={(e) => OnChange(e.target.files[0])}  />;
     default:
       return <div/>;
   }
 }
+
+
+function Textarea ({ value, onChange, ...props }) {
+  return (
+    <textarea
+      className="w-full p-2 border border-neutral-800 resize-none bg-neutral-800 rounded-md"
+      value={value || ""}
+      onChange={onChange}
+      {...props}
+    />
+  );
+}
+

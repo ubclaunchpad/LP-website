@@ -2,78 +2,47 @@
 
 import { FormQuestion } from "@/app/lib/types/questions";
 import formQuestionMapper from "./formMapper";
-import { useEffect, useState } from "react";
-import { z } from "zod";
-import { parseFactory } from "@/app/lib/util/helpers";
+import { useFormField } from "./applications/applicationForm";
 
-type ValueValidation = "VALID" | "INVALID" | "NOT_VALIDATED";
-
-export default function FormItem({ question, formAnswer }: { question: FormQuestion , formAnswer: string | string[] | undefined}) {
-  const [message, setMessage] = useState("");
-  const [isDirty, setIsDirty] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
-  const initialValue = formAnswer || "";
-  const [value, setValue] = useState(initialValue);
-  const [isValid, setIsValid] = useState<ValueValidation>("NOT_VALIDATED");
-
-  const handleOnFocus = () => {
-    setIsFocused(true);
-  };
-
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
-
-  useEffect(() => {
-    if (isFocused) {
-      setIsDirty(true);
-    }
-    if (!isFocused && isDirty) {
-      try {
-        parseFactory(question.config.schema)(value);
-        setMessage("");
-        setIsValid("VALID");
-      } catch (error) {
-        const zodError = error as z.ZodError;
-        setMessage(zodError?.issues[0]?.message);
-        setIsValid("INVALID");
-      }
-    } else {
-      setMessage("");
-      if (!isDirty) {
-        setIsValid("NOT_VALIDATED");
-      } else if (!isFocused && isDirty) {
-        setIsValid("VALID");
-      }
-    }
-  }, [isDirty, isFocused, question.config.schema, value]);
+export default function FormItemInput({
+  question,
+}: {
+  question: FormQuestion;
+}) {
+  const formField = useFormField(question.id);
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <label className="flex items-center gap-1">
-        <span className="">{question.label}</span>
-        {question.config.isRequired && <span className="text-red-500">*</span>}
-      </label>
-      <div className="flex items-center w-full gap-2 relative *:w-full">
-        {formQuestionMapper({
-          question: question,
-          value,
-          OnChange: setValue,
-          onFocus: handleOnFocus,
-          onBlur: handleBlur,
-        })}
-        {isValid === "VALID" && (
-          <span className="absolute right-2 pointer-events-none  top-2 text-green-500">
-            ✓
+      <div
+        className={`flex  gap-2 ${
+          question.label.length > 45 ? "flex-col" : "lg:flex-row flex-col"
+        }`}
+      >
+        <label
+          className={`flex   flex-shrink-0  pt-2 gap-1 ${
+            question.label.length > 45 ? "w-full" : "w-60 min-w-60 "
+          }`}
+        >
+          <span className="">{question.label}</span>
+          {question.config.isRequired && (
+            <span className="text-red-500">*</span>
+          )}
+        </label>
+        <div className="flex flex-col items-center  w-full gap-2 relative *:w-full">
+          {formQuestionMapper({
+            question: question,
+            value: formField.value,
+            OnChange: formField.eventHandlers.onChange,
+            // onFocus: handleOnFocus,
+            // onBlur: handleBlur,
+          })}
+          <span className="text-red-500 px-1 h-6 text-sm">
+            {formField.errors.error
+              ? formField.errors.error.issues[0].message
+              : ""}
           </span>
-        )}
-        {isValid === "INVALID" && (
-          <span className="absolute right-2 top-2 pointer-events-none  text-red-500">
-            ✗
-          </span>
-        )}
+        </div>
       </div>
-      <span className="text-red-500 px-1 h-6 text-sm">{message}</span>
     </div>
   );
 }

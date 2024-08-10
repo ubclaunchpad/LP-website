@@ -1,23 +1,5 @@
 
-import {ZodType, z} from "zod";
-// const formSteps = [
-//     {
-//       title: "Personal Information",
-//       questions: formQuestions,
-//     },
-//     {
-//       title: "Academic Information",
-//       questions: formQuestions2,
-//     },
-//     {
-//       title: "Launch Pad",
-//       questions: formQuestions,
-//     },
-//     {
-//       title: "Experience",
-//       questions: formQuestions,
-//     },
-//   ];
+import {SafeParseReturnType, ZodType, z} from "zod";
 
  export type QuestionFormat =
   | "text"
@@ -46,7 +28,7 @@ export type ListFormQuestion = BaseFormQuestion & {
     options: Record<string, string>[];
     config: {
         isRequired: true;
-        schema: ZodType<string>;
+        schema:  z.ZodTypeAny | z.ZodArray<z.ZodString, "many">;
         multiple?: boolean;
         allowCustom?: boolean;
     };
@@ -59,36 +41,41 @@ export type FormStep = {
     questions: FormQuestion[];
 };
 
-export type FormAnswers = Record<string, string | string[]>;
+export type FormAnswers = Record<string, string | string[] | boolean | File | null | number>;
+
+export type Obj = Record<string, string | string[] | boolean | File | null | number>;
+export type Application = {
+    application: Obj,
+    resume: File | null,
+    status: "pending" | "submitted" | "rejected" | "accepted" | "waitlisted" | "withdrawn" | "interviewing" | "interviewed" | "offered" | "declined";
+    meta: {
+        submittedAt: Date | null;
+        notes: string | null;
+        team: string | null;
+        reviewer: string | null;
+        level: "beginner" | "junior" | "intermediate" | "senior" | "not determined";
+    };
+}
 
 
-//   const exampleFormQuestion: FormQuestion = {
-//     type: "text",
-//     label: "First Name",
-//     id: "first-name",
-//     placeholder: "John",
-//     config: {
-//         isRequired: true,
-//         schema: z.string().min(2),
-//     },
+export type FormItem = {
+    errors: SafeParseReturnType<any, any>;
+    type: QuestionFormat;
+    initialValue: string | string[] | boolean | File | null | number;
+    value: string | string[] | boolean | File | null | number;
+    validation: ZodType<any>;
+    state: {
+        isValid: "VALID" | "INVALID" | "NOT_VALIDATED";
+    }
+    eventHandlers: {
+        onFocus: () => void;
+        onBlur: () => void;
+        onChange: (value: string | string[] | boolean | File | null | number) => void;
+    };
     
-// };
+};
 
-// const exampleSelectFormQuestion: ListFormQuestion = {
-//     type: "select",
-//     label: "Pronouns",
-//     id: "pronouns",
-//     placeholder: "Select",
-//     options: [
-//         { label: "He/Him", value: "he/him" },
-//         { label: "She/Her", value: "she/her" },
-//         { label: "They/Them", value: "they/them" },
-//         { label: "Other", value: "other" },
-//     ],
-//     config: {
-//         isRequired: true,
-//         schema: z.enum(["he/him", "she/her", "they/them", "other"]),
-//     },
-// };
-
+export type FormDetails = {
+    [key: string]: FormItem;
+};
 
