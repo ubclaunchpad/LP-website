@@ -4,7 +4,6 @@ import { login } from "../applications/auth";
 import Image from "next/image";
 import authService from "@/app/lib/util/auth";
 import { useEffect, useMemo, useState } from "react";
-import { client } from "@/app/lib/util/client";
 import Link from "next/link";
 
 const text = {
@@ -12,14 +11,12 @@ const text = {
   apply: "Log in",
 };
 
-
-
-export default function page() {
+export default function Authpage() {
   const [methods, setMethods] = useState([]);
 
   useEffect(() => {
     // console.log("logging in");
-    
+
     // client.collection('users').authWithOAuth2({ provider: 'google' }).then((res) => {
     //   console.log("logged in");
     //   console.log(res);
@@ -30,16 +27,22 @@ export default function page() {
     // ).catch((e) => {
     //   console.log(e);
     // });
-    authService.oAuthMethods().then((res) => {
-      console.log(res);
-      setMethods(res);
-    }).catch((e) => {
-      console.log(e);
-    });
+    authService
+      .oAuthMethods()
+      .then((res) => {
+        console.log(res);
+        setMethods(res as []);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   }, []);
 
-  const loginSection = useMemo(() => <AuthMethods methods={methods} />, [methods]);
-  
+  const loginSection = useMemo(
+    () => <AuthMethods methods={methods} />,
+    [methods]
+  );
+
   return (
     <div className="flex flex-col relative shadow justify-center items-center  w-full  p-10 rounded-xl max-h-full max-w-lg h-[600px]  border-neutral-800 bg-neutral-900 gap-4">
       <Image
@@ -55,7 +58,7 @@ export default function page() {
       {loginSection}
       <div className="flex flex-col items-center gap-4 w-full">
         <span className="text-white">or</span>
-        </div>
+      </div>
       <form
         action={login}
         className="flex flex-col justify-end items-center  w-full max-h-full  gap-4"
@@ -83,12 +86,17 @@ export default function page() {
   );
 }
 
+function AuthMethods({
+  methods,
+}: {
+  methods: { name: string; authUrl: string }[];
+}) {
+  const redirectURL = process.env.NEXT_PUBLIC_REDIRECT_URL;
 
-
-function AuthMethods({ methods }) {
-  const redirectURL= process.env.NEXT_PUBLIC_REDIRECT_URL;
-
-  async function saveToLocalStorage(provider) {
+  async function saveToLocalStorage(provider: {
+    name: string;
+    authUrl: string;
+  }) {
     localStorage.setItem("provider", JSON.stringify(provider));
   }
 
@@ -96,13 +104,16 @@ function AuthMethods({ methods }) {
     <div className="flex flex-col items-center gap-4 w-full">
       {methods.map((provider) => {
         return (
-          <Link href={provider.authUrl + redirectURL} key={provider.name} className="bg-white w-full flex items-center justify-center text-black font-bold rounded-md h-fit px-8 text-md p-2"
-            onClick={() => saveToLocalStorage(provider)}>
-              {provider.name}
+          <Link
+            href={provider.authUrl + redirectURL}
+            key={provider.name}
+            className="bg-white w-full flex items-center justify-center text-black font-bold rounded-md h-fit px-8 text-md p-2"
+            onClick={() => saveToLocalStorage(provider)}
+          >
+            {provider.name}
           </Link>
         );
       })}
     </div>
   );
-
 }

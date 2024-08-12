@@ -3,10 +3,10 @@
 
 import { useEffect, useState } from "react";
 import { client } from "@/app/lib/util/client";
-import { redirect } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export default function page() {
+export default function RedirectPage() {
   const [authState, setAuthState] = useState<"loading" | "success" | "error">(
     "loading"
   );
@@ -19,8 +19,9 @@ export default function page() {
       }
 
       const providerData = localStorage.getItem("provider");
-      if (!providerData) {
-        throw new Error("No provider data found");
+      const code = searchParams.get("code");
+      if (!providerData || !code) {
+        throw new Error("No provider data or code found");
       }
 
       const provider = JSON.parse(providerData);
@@ -29,9 +30,9 @@ export default function page() {
         .collection("users")
         .authWithOAuth2Code(
           provider.name,
-          searchParams.get("code"),
+          code,
           provider.codeVerifier,
-          process.env.NEXT_PUBLIC_REDIRECT_URL,
+          process.env.NEXT_PUBLIC_REDIRECT_URL!,
           {
             role: "default",
           }

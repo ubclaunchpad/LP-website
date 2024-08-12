@@ -31,7 +31,7 @@ export default function FormItemInput({
         <div className="flex flex-col items-center  w-full gap-2 relative *:w-full">
           {formQuestionMapper({
             question: question,
-            value: formField.value,
+            value: formField.value as string,
             OnChange: formField.eventHandlers.onChange,
             // onFocus: handleOnFocus,
             // onBlur: handleBlur,
