@@ -49,26 +49,26 @@ export async function getApplication() {
    const res = await pb.collection("applications").getFirstListItem(`userid="${data.model.id}"`);
     return res;
    } catch (e) {
-    // const newApplication: Application = {
-    //   application: {
-    //       ...createEmptyAnswers(),
-    //       email: email,
-    //   },
-    //   status: "pending",
-    //   resume: null,
-    //   meta: {
-    //     submittedAt: null,
-    //     team: null,
-    //     reviewer: null,
-    //     level: "not determined",
-    //     notes: null,
-    //   },
-    //   };
-      // const newApp = await pb.collection("applications").create({
-      //   ...newApplication,
-      //   userid: data.model.id,
-      // });    
-      return null;
+    const newApplication: Application = {
+      application: {
+          ...createEmptyAnswers(),
+          email: email,
+      },
+      status: "pending",
+      resume: null,
+      meta: {
+        submittedAt: null,
+        team: null,
+        reviewer: null,
+        level: "not determined",
+        notes: null,
+      },
+      };
+      const newApp = await pb.collection("applications").create({
+        ...newApplication,
+        userid: data.model.id,
+      });    
+      return newApp;
     }
 }
 
@@ -109,17 +109,23 @@ export async function getApplicationStatus() {
   };
   const token = cookies().get("pb_auth")?.value as string;
   const data = JSON.parse(token);
-  const res = await pb.collection("applications").getFirstListItem(`userid="${data.model.id}"`);
+  try {
+    const res = await pb.collection("applications").getFirstListItem(`userid="${data.model.id}"`);
 
-  if (!res) {
+    if (!res) {
+      return applicationStatus;
+    }
+  
+    if (res.status === "pending") {
+      applicationStatus.status = "pending";
+    } else {
+      applicationStatus.status = "submitted";
+    }
     return applicationStatus;
+  } catch (e) {
+     return {
+      status: "not started",
+     }
   }
 
-  if (res.status === "pending") {
-    applicationStatus.status = "pending";
-  } else {
-    applicationStatus.status = "submitted";
-  }
-
-  return applicationStatus;
 }

@@ -57,7 +57,7 @@ export default async function page() {
         <h2 className="text-2xl font-heading text-white">{text.accepted}</h2>
       </>
     ),
-    open: (
+    "not started": (
       <>
         <h2 className="text-2xl font-heading text-white">{text.open}</h2>
         <Link

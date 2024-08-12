@@ -31,7 +31,6 @@ export default function formQuestionMapper({
       return (
         <Select options={question.options} {...props} value={value} onChange={(e) => OnChange(e)} />
       );
-      // <input type="checkbox" {...props}/>;
     case "upload":
       return <Input type="file" {...props} onChange={(e) => OnChange(e.target.files[0])}  />;
     default:

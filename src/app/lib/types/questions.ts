@@ -36,9 +36,16 @@ export type ListFormQuestion = BaseFormQuestion & {
 
 export type FormQuestion = (BaseFormQuestion & { type: Exclude<QuestionFormat, "select"> }) | ListFormQuestion;
 
+export const STEP_TARGETS = {
+    'everyone': 'everyone',
+    'designer': 'designer',
+    'developer': 'developer',
+} as const;
+
 export type FormStep = {
     title: string;
     questions: FormQuestion[];
+    target: typeof STEP_TARGETS[keyof typeof STEP_TARGETS];
 };
 
 export type FormAnswers = Record<string, string | string[] | boolean | File | null | number>;
