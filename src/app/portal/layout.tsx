@@ -1,23 +1,25 @@
 import React from 'react';
-import Image from 'next/image';
+import { UserContextProvider } from '../lib/context/usercontext';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
+import PortalNavbar from '@/components/general/portal/portalNav';
 
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+
+  const authCookie = cookies().get("pb_auth");
+
+  if (!authCookie) {
+    redirect("/portal/auth");
+  }
   
-
-
   return (
-    <div className="w-screen h-screen bg-neutral-900 relative ">
-      <div className="h-full w-full flex flex-col items-center justify-center p-4 lg:p-10 gap-10 z-10 *:z-20">
+    <UserContextProvider authCookie={authCookie}>
+    <div className="w-screen min-h-screen bg-neutral-900 relative flex flex-col overflow-x-hidden ">
+      <PortalNavbar />
         {children}
-      </div>
-      <Image
-        src="/images/bg.png"
-        alt="hero"
-        className="z-1  top-0 left-0 hidden lg:fixed lg:block"
-        objectFit="cover"
-        fill
-      />
     </div>
+    </UserContextProvider>
   );
 }
+

@@ -18,11 +18,11 @@ export function middleware(request: NextRequest) {
       if (!token || isTokenExpired(token)) {
         console.log(token);
         console.log("Token is expired");
-        if (request.nextUrl.pathname.startsWith("/portal/auth")) {
+        if (request.nextUrl.pathname.startsWith("/auth")) {
           return NextResponse.next();
         }
         const url = request.nextUrl.clone();
-        url.pathname = "/portal/auth";
+        url.pathname = "/auth";
         return NextResponse.redirect(url);
       }
 

@@ -1,6 +1,6 @@
 "use client";
 import Input from "@/components/general/input";
-import { login } from "../applications/auth";
+import { login } from "../portal/applications/auth";
 import Image from "next/image";
 import authService from "@/app/lib/util/auth";
 import { useEffect, useMemo, useState } from "react";

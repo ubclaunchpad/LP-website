@@ -18,6 +18,9 @@ const config: Config = {
         sans: ["var(--font-nunito-sans)", ...fontFamily.sans],
         heading: ["var(--font-epilogue)", ...fontFamily.sans],
       },
+      backgroundColor: {
+        "primary": "rgb(var(--color-background-primary))",
+      }
 
     },
   },

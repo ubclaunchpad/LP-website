@@ -1,113 +1,47 @@
 "use client";
 
-import { formSteps } from "@/app/lib/data/applicationQuestions";
+import { form } from "@/app/lib/data/form";
 import FormTab from "../formTab";
 import {
   Application,
   FormDetails,
-  FormItem,
-  FormQuestion,
   FormStep,
   Obj,
 } from "@/app/lib/types/questions";
-import { useSearchParams } from "next/navigation";
-import { redirect } from "next/navigation";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { FormTabBottomBar } from "./formBottomBar";
+import BeforeSubmitTab from "./beforeSubmitTab";
 import {
-  handleFileUpload,
-  updateApplication,
-} from "@/app/portal/applications/actions";
+  questionToFormItem,
+  validateTab,
+  saveApplication,
+} from "@/app/lib/util/formHelpers";
 
 type FormContext = {
   formData: FormDetails;
   updateForm: (
     id: string,
-    value: string | string[] | boolean | File | null | number
+    value: string | string[] | boolean | File | null | number,
   ) => void;
 };
 
 const formContext = createContext<FormContext>({} as FormContext);
-
-function saveApplication(formAnswers: FormDetails) {
-  const fields: Obj = {};
-  const files: Obj = {};
-  Object.keys(formAnswers).forEach((key) => {
-    if (formAnswers[key].initialValue !== formAnswers[key].value) {
-      if (formAnswers[key].type === "upload") {
-        files[key] = formAnswers[key].value;
-      } else {
-        fields[key] = formAnswers[key].value;
-      }
-      return;
-    }
-  });
-
-  if (Object.keys(fields).length !== 0) {
-    updateApplication(fields)
-      .then((res) => {
-        // console.log(res);
-      })
-      .catch((e) => {
-        // console.log(e);
-      });
-  }
-
-  if (Object.keys(files).length !== 0) {
-    const formData = new FormData();
-    Object.keys(files).forEach((key) => {
-      formData.append(key, files[key] as File);
-    });
-    handleFileUpload(formData)
-      .then((res) => {
-        // console.log(res);
-      })
-      .catch((e) => {
-        // console.log(e);
-      });
-  }
-}
-
-function questionToFormItem(
-  question: FormQuestion,
-  initialValue: string,
-  updateForm: (
-    id: string,
-    value: string | string[] | boolean | File | null | number
-  ) => void
-): FormItem {
-  return {
-    errors: [] as any,
-    initialValue: initialValue,
-    type: question.type,
-    value: initialValue,
-    validation: question.config.schema,
-    state: {
-      isValid: "NOT_VALIDATED",
-    },
-    eventHandlers: {
-      onFocus: () => {},
-      onBlur: () => {},
-      onChange: (value) => {
-        updateForm(question.id, value);
-      },
-    },
-  };
-}
+const formQ = form as unknown as FormStep[];
 
 export default function ApplicationForm({
   application,
 }: {
   application: Application;
 }) {
-  const searchParams = useSearchParams();
+  const [currentStep, setCurrentStep] = useState(0);
   const [formAnswers, setFormAnswers] = useState<FormDetails>(
-    formStepsToFormDetails(formSteps, application.application)
+    formStepsToFormDetails(formQ, application.application),
   );
   const formAnswersRef = useRef(formAnswers);
 
   function formStepsToFormDetails(
     steps: readonly FormStep[],
-    intialValues: Obj
+    intialValues: Obj,
   ): FormDetails {
     const details: FormDetails = {};
     steps.forEach((step) => {
@@ -115,7 +49,7 @@ export default function ApplicationForm({
         details[question.id] = questionToFormItem(
           question,
           intialValues[question.id] as string,
-          updateForm
+          updateForm,
         );
       });
     });
@@ -124,7 +58,7 @@ export default function ApplicationForm({
 
   function updateForm(
     id: string,
-    value: string | string[] | boolean | File | null | number
+    value: string | string[] | boolean | File | null | number,
   ) {
     setFormAnswers((prev) => {
       return {
@@ -144,43 +78,51 @@ export default function ApplicationForm({
   }
 
   function getFormTabToRender(step: number) {
-    const role = formAnswers["role"].value as string;
-    const tab = step - 1;
-    return <FormTab step={formSteps[tab]} totalSteps={formSteps.length} role={role} />;
+    const role = "developer"; //formAnswers["role"].value as string;
+    const tab = step;
+    if (tab >= formQ.length) {
+      return <BeforeSubmitTab />;
+    }
+    return <FormTab step={formQ[tab]} totalSteps={formQ.length} role={role} />;
+  }
+
+  function goToNextTab() {
+    const { isValid, errors } = validateTab(formQ[currentStep], formAnswers);
+    if (!isValid) {
+      console.log(errors);
+      return;
+    }
+    if (currentStep > formQ.length + 1) {
+      return;
+    }
+    saveApplication(formAnswers);
+    setCurrentStep((prev) => prev + 1);
+  }
+
+  function goToPreviousTab() {
+    if (currentStep === 0) {
+      return;
+    }
+    setCurrentStep((prev) => prev - 1);
   }
 
   useEffect(() => {
     formAnswersRef.current = formAnswers;
   }, [formAnswers]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      saveApplication(formAnswersRef.current);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  if (!searchParams.get("step")) {
-    return redirect(`/portal/applications/apply?state=form&step=1`);
-  }
-
-  let step = 1;
-  try {
-
-    const q = parseInt(searchParams.get("step") as string);
-    if (q > 0 && q <= formSteps.length) {
-      step = q;
-    }
-  } catch (e) {
-    return redirect(`/portal/applications/apply?state=form&step=1`);
-  }
-
   return (
     <formContext.Provider value={{ formData: formAnswers, updateForm }}>
-      <main className="flex flex-col items-center  h-screen min-h-screen pt-10 pb-2 gap-0 w-full">
-        <form className="flex flex-col  items-center justify-center flex-shrink-0  w-full h-full gap-4 relative lg:p-2">
-          {getFormTabToRender(step)}
+      <main className="flex flex-col items-center justify-start  flex-1 gap-0 w-full">
+        <form className="flex flex-col flex-1 max-w-4xl  rounded border-neutral-800 items-center justify-center flex-shrink-0  w-full h-full gap-4 relative lg:p-2">
+          {getFormTabToRender(currentStep)}
+          <FormTabBottomBar
+            numberOfTabs={formQ.length}
+            currentTab={currentStep}
+            goToNextTab={goToNextTab}
+            goToPreviousTab={goToPreviousTab}
+          >
+            <></>
+          </FormTabBottomBar>
         </form>
       </main>
     </formContext.Provider>

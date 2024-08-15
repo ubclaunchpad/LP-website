@@ -308,7 +308,13 @@ const designQuestions: FormQuestion[] = [
     config: {
       isRequired: true,
       schema: z.array(
-        z.enum(["Figma", "Adobe Creative Suite", "Sketch", "InVision", "Other"])
+        z.enum([
+          "Figma",
+          "Adobe Creative Suite",
+          "Sketch",
+          "InVision",
+          "Other",
+        ]),
       ),
       multiple: true,
     },
@@ -352,7 +358,7 @@ const developerQuestions: FormQuestion[] = [
             "Web",
             "Infrastructure",
             "Other",
-          ])
+          ]),
         )
         .min(1)
         .max(3, { message: "Select up to 3" }),

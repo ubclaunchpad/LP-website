@@ -3,11 +3,14 @@
 import { cookies } from "next/headers";
 import { createEmptyAnswers } from "../../lib/data/applicationQuestions";
 import { Application, Obj } from "../../lib/types/questions";
-import PocketBase from 'pocketbase';
+import PocketBase from "pocketbase";
 import { ApplicationStatus } from "@/app/lib/types/application";
 
 const pb = new PocketBase(process.env.POCKETBASE_URL);
-await pb.admins.authWithPassword(process.env.POCKETBASE_ADMIN_EMAIL!, process.env.POCKETBASE_ADMIN_PASSWORD!);
+await pb.admins.authWithPassword(
+  process.env.POCKETBASE_ADMIN_EMAIL!,
+  process.env.POCKETBASE_ADMIN_PASSWORD!,
+);
 
 const applicationConfig = {
   name: "Launch Pad Application Portal",
@@ -21,38 +24,57 @@ export async function getApplicationConfig() {
   return applicationConfig;
 }
 
-export async function submitApplication({
-  formAnswers,
-}: {
-  formAnswers: Record<string, string | string[] | number>;
-}) {
-  if (!formAnswers["email"]) {
-    throw new Error("Email is required");
+export async function submitApplication() {
+  const token = cookies().get("pb_auth")?.value as string;
+  if (!token) {
+    return null;
   }
 
-  return formAnswers;
+  const data = JSON.parse(token);
+  const email = data.model.email;
+
+  if (!email) {
+    return null;
+  }
+
+  const m = await pb
+    .collection("applications")
+    .getFirstListItem(`userid="${data.model.id}"`);
+  const id = m.id;
+
+  await pb.collection("applications").update(id, {
+    status: "submitted",
+  });
+
+  // TODO: Send email to user
+  // TODO: Run form validation on server
+  // TODO: Handle file uploads with validation
+
+  return true;
 }
 
 export async function getApplication() {
-   const token = cookies().get("pb_auth")?.value as string;
-   if (!token) {
-     return null;
-   }
+  const token = cookies().get("pb_auth")?.value as string;
+  if (!token) {
+    return null;
+  }
 
-   const data = JSON.parse(token);
-   const email = data.model.email;
+  const data = JSON.parse(token);
+  const email = data.model.email;
 
-   if (!email) {
-     return null;
-   }
-   try {
-   const res = await pb.collection("applications").getFirstListItem(`userid="${data.model.id}"`);
+  if (!email) {
+    return null;
+  }
+  try {
+    const res = await pb
+      .collection("applications")
+      .getFirstListItem(`userid="${data.model.id}"`);
     return res;
-   } catch (e) {
+  } catch (e) {
     const newApplication: Application = {
       application: {
-          ...createEmptyAnswers(),
-          email: email,
+        ...createEmptyAnswers(),
+        email: email,
       },
       status: "pending",
       resume: null,
@@ -63,20 +85,21 @@ export async function getApplication() {
         level: "not determined",
         notes: null,
       },
-      };
-      const newApp = await pb.collection("applications").create({
-        ...newApplication,
-        userid: data.model.id,
-      });    
-      return newApp;
-    }
+    };
+    const newApp = await pb.collection("applications").create({
+      ...newApplication,
+      userid: data.model.id,
+    });
+    return newApp;
+  }
 }
-
 
 export async function updateApplication(application: Obj) {
   const token = cookies().get("pb_auth")?.value as string;
   const data = JSON.parse(token);
-  const m = await pb.collection("applications").getFirstListItem(`userid="${data.model.id}"`);
+  const m = await pb
+    .collection("applications")
+    .getFirstListItem(`userid="${data.model.id}"`);
   const id = m.id;
   const res = await pb.collection("applications").update(id, {
     application: {
@@ -88,34 +111,34 @@ export async function updateApplication(application: Obj) {
   return res;
 }
 
-
 export async function handleFileUpload(formData: FormData) {
   const resume = formData.get("resume") as File;
   const token = cookies().get("pb_auth")?.value as string;
   const data = JSON.parse(token);
-  const m = await pb.collection("applications").getFirstListItem(`userid="${data.model.id}"`);
+  const m = await pb
+    .collection("applications")
+    .getFirstListItem(`userid="${data.model.id}"`);
   const id = m.id;
-   await pb.collection("applications").update(id, {
-    files: [resume]
-    }
-  );
-
+  await pb.collection("applications").update(id, {
+    files: [resume],
+  });
 }
 
 export async function getApplicationStatus() {
- 
-  const applicationStatus: {status: ApplicationStatus | null} = {
+  const applicationStatus: { status: ApplicationStatus | null } = {
     status: null,
   };
   const token = cookies().get("pb_auth")?.value as string;
   const data = JSON.parse(token);
   try {
-    const res = await pb.collection("applications").getFirstListItem(`userid="${data.model.id}"`);
+    const res = await pb
+      .collection("applications")
+      .getFirstListItem(`userid="${data.model.id}"`);
 
     if (!res) {
       return applicationStatus;
     }
-  
+
     if (res.status === "pending") {
       applicationStatus.status = "pending";
     } else {
@@ -123,9 +146,8 @@ export async function getApplicationStatus() {
     }
     return applicationStatus;
   } catch (e) {
-     return {
+    return {
       status: "not started",
-     }
+    };
   }
-
 }

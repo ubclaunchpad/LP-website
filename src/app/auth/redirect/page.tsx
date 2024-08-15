@@ -51,18 +51,20 @@ export default function RedirectPage() {
         credentials: "include", // Ensure cookies are included in requests
       });
 
+      console.log("Logged in");
+
       setAuthState("success");
-      const ref = searchParams.get("ref");
-      if (ref) {
-        redirect(ref);
-      } else {
+      // const ref = searchParams.get("ref");
+      // if (ref) {
+      //   redirect(ref);
+      // } else {
         redirect("/portal/applications");
-      }
+      // }
     } catch (e) {
       setAuthState("error");
       console.log(e);
       console.log("Error logging in");
-      redirect("/portal/auth");
+      // redirect("/auth");
     }
   }
 

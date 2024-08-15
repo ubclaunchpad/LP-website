@@ -19,27 +19,66 @@ export default function formQuestionMapper({
     case "email":
     case "number":
     case "url":
-      return <Input type={question.type} placeholder={question.placeholder} value={value} onChange={(e) => OnChange(e.target.value)} {...props} />;
+      return (
+        <Input
+          type={question.type}
+          placeholder={question.placeholder}
+          value={value}
+          onChange={(e) => OnChange(e.target.value)}
+          {...props}
+        />
+      );
     case "date":
-      return <input type="date"  placeholder={question.placeholder} {...props} onChange={(e) => OnChange(e.target.value)}/>;
+      return (
+        <input
+          type="date"
+          placeholder={question.placeholder}
+          {...props}
+          onChange={(e) => OnChange(e.target.value)}
+        />
+      );
     case "textarea":
-      return <Textarea placeholder={question.placeholder} value={value} onChange={(e) => OnChange(e.target.value)} {...props} />;
+      return (
+        <Textarea
+          placeholder={question.placeholder}
+          value={value}
+          onChange={(e) => OnChange(e.target.value)}
+          {...props}
+        />
+      );
     case "select":
       if (question.config.multiple) {
-        return <MultiSelect options={question.options} value={value} {...props} onChange={(e) => OnChange(e)}/>;
-      } 
+        return (
+          <MultiSelect
+            options={question.options}
+            value={value}
+            {...props}
+            onChange={(e) => OnChange(e)}
+          />
+        );
+      }
       return (
-        <Select options={question.options} {...props} value={value} onChange={(e) => OnChange(e)} />
+        <Select
+          options={question.options}
+          {...props}
+          value={value}
+          onChange={(e) => OnChange(e)}
+        />
       );
     case "upload":
-      return <Input type="file" {...props} onChange={(e) => OnChange(e.target.files[0])}  />;
+      return (
+        <Input
+          type="file"
+          {...props}
+          onChange={(e) => OnChange(e.target.files[0])}
+        />
+      );
     default:
-      return <div/>;
+      return <div />;
   }
 }
 
-
-function Textarea ({ value, onChange, ...props }) {
+function Textarea({ value, onChange, ...props }) {
   return (
     <textarea
       className="w-full p-2 border border-neutral-800 resize-none bg-neutral-800 rounded-md"
@@ -49,4 +88,3 @@ function Textarea ({ value, onChange, ...props }) {
     />
   );
 }
-

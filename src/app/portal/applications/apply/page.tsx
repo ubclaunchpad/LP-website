@@ -5,12 +5,10 @@ import { Application } from "@/app/lib/types/questions";
 
 export default async function page({
   params,
-  searchParams,
 }: {
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const { step } = searchParams;
   const application = await getApplicationConfig();
   function isFormOpen() {
     const now = new Date();
@@ -19,10 +17,6 @@ export default async function page({
 
   if (!isFormOpen()) {
     return redirect(`/portal/applications`);
-  }
-
-  if (!step) {
-    return redirect(`/portal/applications/apply?state=form&step=1`);
   }
 
   let answers = await getApplication();
