@@ -7,6 +7,7 @@ import Designer from './../../public/icons/designer.svg'
 import Strategist from './../../public/icons/strategist.svg'
 import InfoCard from '@/components/general/infoCard';
 import { Button } from '@/components/buttons/button';
+import Link from 'next/link';
 
 const text = {
   heroTitle: "Welcome to UBC Launch Pad",
@@ -73,7 +74,9 @@ export default function Home() {
           <p className='text-stone-400 text-center lg:text-left py-10'>
             {text.joinUsText}
           </p>
+          <Link href='/portal/applications'>
           <Button className='p-4' size={'xl'} icon><label className='text-lg'>{text.joinUsButton}</label></Button>
+          </Link>
         </div>
         <div className="flex flex-col items-center lg:items-start py-10 lg:pl-10 w-full">
           {memberRoles.map((role, index) => {
