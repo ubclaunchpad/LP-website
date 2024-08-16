@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { submitApplication } from "@/app/portal/applications/actions";
-export default function BeforeSubmitTab() {
+export default function BeforeSubmitTab({
+  goToPreviousTab,
+}: {
+  goToPreviousTab: () => void;
+}) {
   const [submitted, setSubmitted] = useState(false);
 
   if (submitted) {
@@ -27,26 +31,36 @@ export default function BeforeSubmitTab() {
         Before you submit, please review your answers and make sure all the
         information is correct.
       </p>
-      <button
-        type="button"
-        className="bg-indigo-400 text-xl font-bold text-white p-2 w-fit px-4 hover:scale-105 transform transition-all duration-200 ease-in-out rounded"
-        onClick={() =>
-          submitApplication().then(
-            (res) => {
-              console.log("submitted!");
-              console.log(res);
-              setSubmitted(true);
-            },
-            (e) => {
-              console.log("error!");
-              console.log(e);
-              setSubmitted(false);
-            },
-          )
-        } //submitApplication(
-      >
-        Submit
-      </button>
+
+      <div className="flex items-center w-full gap-10 justify-center">
+        <button
+          type="button"
+          className="bg-gray-200 text-xl font-bold text-black p-2 w-fit px-4 hover:scale-105 transform transition-all duration-200 ease-in-out rounded"
+          onClick={goToPreviousTab}
+        >
+          Go back
+        </button>
+        <button
+          type="button"
+          className="bg-indigo-400 text-xl font-bold text-white p-2 w-fit px-4 hover:scale-105 transform transition-all duration-200 ease-in-out rounded"
+          onClick={() =>
+            submitApplication().then(
+              (res) => {
+                console.log("submitted!");
+                console.log(res);
+                setSubmitted(true);
+              },
+              (e) => {
+                console.log("error!");
+                console.log(e);
+                setSubmitted(false);
+              },
+            )
+          } //submitApplication(
+        >
+          Submit
+        </button>
+      </div>
     </div>
   );
 }

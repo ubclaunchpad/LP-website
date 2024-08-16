@@ -4,7 +4,6 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   try {
     const authSession = await req.json();
-
     const response = NextResponse.json({ message: "Cookie set" });
 
     // Set the cookie securely
@@ -13,14 +12,14 @@ export async function POST(req: NextRequest) {
       secure: process.env.NODE_ENV === "production", // Use HTTPS in production
       sameSite: "strict", // Prevent CSRF attacks
       path: "/",
-      maxAge: 60 * 60 * 24 * 7, // 1 week expiration
+      maxAge: 60 * 60 * 24 * 2, // 2 day expiration
     });
 
     return response;
   } catch (error) {
     return NextResponse.json(
       { message: "Failed to set cookie" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

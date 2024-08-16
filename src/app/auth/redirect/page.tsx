@@ -1,16 +1,16 @@
 "use client";
 
-
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { client } from "@/app/lib/util/client";
 import { redirect, useSearchParams } from "next/navigation";
-import Link from "next/link";
 
 export default function RedirectPage() {
   const [authState, setAuthState] = useState<"loading" | "success" | "error">(
-    "loading"
+    "loading",
   );
   const searchParams = useSearchParams();
+
+  const authenticateCallback = useCallback(authenticate, [searchParams]);
 
   async function authenticate() {
     try {
@@ -35,7 +35,7 @@ export default function RedirectPage() {
           process.env.NEXT_PUBLIC_REDIRECT_URL!,
           {
             role: "default",
-          }
+          },
         );
 
       await fetch("/api/set-cookie", {
@@ -54,47 +54,32 @@ export default function RedirectPage() {
       console.log("Logged in");
 
       setAuthState("success");
-      // const ref = searchParams.get("ref");
-      // if (ref) {
-      //   redirect(ref);
-      // } else {
-        redirect("/portal/applications");
-      // }
     } catch (e) {
       setAuthState("error");
       console.log(e);
       console.log("Error logging in");
-      // redirect("/auth");
     }
   }
 
   useEffect(() => {
-    authenticate();
-  }, []);
+    authenticateCallback();
+  }, [authenticateCallback]);
 
-  return (
-    <div className="flex flex-col relative shadow justify-center items-center  w-full  p-10 rounded-xl max-h-full max-w-lg h-[600px]  border-neutral-800 bg-neutral-900 gap-4">
-      {authState === "loading" && (
+  if (authState === "loading") {
+    return (
+      <div className="flex flex-col relative shadow justify-center items-center  w-full  p-10 rounded-xl max-h-full max-w-lg h-[600px]  border-neutral-800 bg-neutral-900 gap-4">
         <div className="flex flex-col items-center gap-4 w-full">
           <span className="text-white">Logging in...</span>
         </div>
-      )}
-      {authState === "success" && (
-        <div className="flex flex-col items-center gap-4 w-full">
-          <span className="text-white">Logged in!</span>
-          <Link
-            href="/portal/applications"
-            className="bg-white text-black font-bold rounded-md h-fit px-8 text-md p-2"
-          >
-            Take me to the portal
-          </Link>
-        </div>
-      )}
-      {authState === "error" && (
-        <div className="flex flex-col items-center gap-4 w-full">
-          <span className="text-white">Error logging in</span>
-        </div>
-      )}
-    </div>
-  );
+      </div>
+    );
+  }
+
+  if (authState === "success") {
+    redirect("/portal/applications");
+  }
+
+  if (authState === "error") {
+    redirect("/auth");
+  }
 }

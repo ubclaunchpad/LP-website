@@ -15,18 +15,6 @@ export default function Authpage() {
   const [methods, setMethods] = useState([]);
 
   useEffect(() => {
-    // console.log("logging in");
-
-    // client.collection('users').authWithOAuth2({ provider: 'google' }).then((res) => {
-    //   console.log("logged in");
-    //   console.log(res);
-    // }
-    // // authService.oAuthLogin().then((res) => {
-    // //   console.log(res);
-    // // }
-    // ).catch((e) => {
-    //   console.log(e);
-    // });
     authService
       .oAuthMethods()
       .then((res) => {
@@ -40,7 +28,7 @@ export default function Authpage() {
 
   const loginSection = useMemo(
     () => <AuthMethods methods={methods} />,
-    [methods]
+    [methods],
   );
 
   return (

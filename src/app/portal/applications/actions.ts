@@ -5,6 +5,7 @@ import { createEmptyAnswers } from "../../lib/data/applicationQuestions";
 import { Application, Obj } from "../../lib/types/questions";
 import PocketBase from "pocketbase";
 import { ApplicationStatus } from "@/app/lib/types/application";
+import { ApplicationRound } from "@/app/lib/types/application";
 
 const pb = new PocketBase(process.env.POCKETBASE_URL);
 await pb.admins.authWithPassword(
@@ -149,5 +150,16 @@ export async function getApplicationStatus() {
     return {
       status: "not started",
     };
+  }
+}
+
+export async function getApplicationInfo({ id }: { id: string }) {
+  try {
+    const application = await pb
+      .collection("application_rounds")
+      .getFirstListItem(`id="${id}"`);
+    return application as unknown as ApplicationRound;
+  } catch (e) {
+    return null;
   }
 }

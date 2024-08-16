@@ -1,6 +1,5 @@
 "use client";
 
-import { form } from "@/app/lib/data/form";
 import FormTab from "../formTab";
 import {
   Application,
@@ -16,6 +15,7 @@ import {
   validateTab,
   saveApplication,
 } from "@/app/lib/util/formHelpers";
+import { ApplicationRound } from "@/app/lib/types/application";
 
 type FormContext = {
   formData: FormDetails;
@@ -26,14 +26,16 @@ type FormContext = {
 };
 
 const formContext = createContext<FormContext>({} as FormContext);
-const formQ = form as unknown as FormStep[];
 
 export default function ApplicationForm({
   application,
+  applicationForm,
 }: {
   application: Application;
+  applicationForm: ApplicationRound;
 }) {
   const [currentStep, setCurrentStep] = useState(0);
+  const formQ = applicationForm.questions;
   const [formAnswers, setFormAnswers] = useState<FormDetails>(
     formStepsToFormDetails(formQ, application.application),
   );
@@ -81,7 +83,7 @@ export default function ApplicationForm({
     const role = "developer"; //formAnswers["role"].value as string;
     const tab = step;
     if (tab >= formQ.length) {
-      return <BeforeSubmitTab />;
+      return <BeforeSubmitTab goToPreviousTab={goToPreviousTab} />;
     }
     return <FormTab step={formQ[tab]} totalSteps={formQ.length} role={role} />;
   }

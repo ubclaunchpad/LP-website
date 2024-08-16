@@ -10,6 +10,7 @@ import {
   handleFileUpload,
   updateApplication,
 } from "@/app/portal/applications/actions";
+import { ApplicationRound } from "@/app/lib/types/application";
 
 export async function saveApplication(formAnswers: FormDetails) {
   const fields: Obj = {};
@@ -104,4 +105,11 @@ export function questionToFormItem(
       },
     },
   };
+}
+
+export function isFormOpen(applicationInfo: ApplicationRound) {
+  const now = new Date();
+  const start = new Date(applicationInfo.start);
+  const end = new Date(applicationInfo.end);
+  return now >= start && now <= end;
 }
