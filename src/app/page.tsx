@@ -1,4 +1,8 @@
 import Navbar from '@/components/general/navbar';
+import Hero from '@/components/general/hero';
+import Image from 'next/image';
+import Statistics from '@/components/general/statistics';
+import AlumniCarousel from '@/components/general/alumniCarousel';
 import { nunitoSans } from './fonts';
 import InfoButton from '@/components/buttons/infoButton';
 import ImageArea from '@/components/general/imageArea';
@@ -10,8 +14,6 @@ import { Button } from '@/components/buttons/button';
 import Link from 'next/link';
 
 const text = {
-  heroTitle: "Welcome to UBC Launch Pad",
-  heroDescription: "A student-run software engineering team devoted to building software projects in a collaborative and professional environment",
   aboutUsTitle: "What we do at",
   aboutUsSubtitle: "Launch Pad",
   aboutUsText: `As the leading technology club at UBC, Launch Pad is devoted to create a collaborative and professional environment for software development. It is our goal to provide the best space for students to apply and develop their technical skills outside of classroom, to learn and practice industry-standard tools, and to build passion projects with like-minded individuals.
@@ -49,12 +51,21 @@ const memberRoles = [{
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center px-4">
+    <div className="w-full flex justify-end">
       <Navbar />
-      <section className="flex flex-col items-center py-10 text-center">
-        <h1 className="text-4xl font-bold">{text.heroTitle}</h1>
-        <p className="text-lg">{text.heroDescription}</p>
+    </div>
+      <section className="flex flex-col items-center w-full h-auto text-center">
+        <div className="flex flex-col items-center">
+        <Hero />
+        </div>
       </section>
-
+      <div> 
+      <Statistics />
+      </div>
+      <div className="flex flex-col pb-4 text-center"> Our Alumni have worked as Developers & Designers, and more at </div>
+      <div className="w-full bg-stone-100">
+      <AlumniCarousel />
+      </div>
       <section className="flex flex-col lg:flex-row items-center w-full">
         <ImageArea {...lpImageProps} />
         <div className='flex flex-col items-center lg:items-end py-10 pl-0 lg:pl-10 pr-0 lg:pr-12 w-full'>

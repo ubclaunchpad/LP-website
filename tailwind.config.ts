@@ -9,8 +9,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        lightPurple: "#3A3543",
+        lightPurple2: "#CDC2E6", 
+        lightPurple3: "#6A3AD9",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        'gray-gradient': 'linear-gradient(90deg, #FFFFFF 0%, #999999 100%)',
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
