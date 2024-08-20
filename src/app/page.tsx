@@ -8,6 +8,7 @@ import Strategist from './../../public/icons/strategist.svg'
 import InfoCard from '@/components/general/infoCard';
 import { Button } from '@/components/buttons/button';
 import Link from 'next/link';
+import ProjectSection from '@/components/general/projectSection';
 
 const text = {
   heroTitle: "Welcome to UBC Launch Pad",
@@ -20,7 +21,8 @@ const text = {
   joinUsTitle: "Want to grow your skill?",
   joinUsSubtitle: "Join our team!",
   joinUsText: "We are looking for students passionate about tech with varying levels of experience to join our teams! ",
-  joinUsButton: "Join our team"
+  joinUsButton: "Join our team",
+
 }
 
 const lpImageProps = {
@@ -45,6 +47,58 @@ const memberRoles = [{
   title: "Strategists",
   description: "Develop and execute strategic plans, work on internal communication, and shape the future direction of the club."
 }]
+
+const mockImageProps = [
+  {
+      title: "Image1",
+      description: "Mock description",
+      imageSrc: "/images/launchpadTeam.png",
+      alt: "Launchpad team posing for a photo",
+      width: 372,
+      height: 213,
+  },
+  {
+      title: "Image2",
+      description: "Mock description",
+      imageSrc: "/images/launchpadTeam.png",
+      alt: "Launchpad team posing for a photo",
+      width: 372,
+      height: 213,
+  },
+  {
+      title: "Image3",
+      description: "Mock description",
+      imageSrc: "/images/launchpadTeam.png",
+      alt: "Launchpad team posing for a photo",
+      width: 372,
+      height: 213,
+  },
+  {
+      title: "Image4",
+      description: "Mock description",
+      imageSrc: "/images/launchpadTeam.png",
+      alt: "Launchpad team posing for a photo",
+      width: 372,
+      height: 213,
+  },
+  {
+      title: "Image5",
+      description: "Mock description",
+      imageSrc: "/images/launchpadTeam.png",
+      alt: "Launchpad team posing for a photo",
+      width: 372,
+      height: 213,
+  },
+  {
+      title: "Image6",
+      description: "Mock description",
+      imageSrc: "/images/launchpadTeam.png",
+      alt: "Launchpad team posing for a photo",
+      width: 372,
+      height: 213,
+  }
+]
+
 
 export default function Home() {
   return (
@@ -83,6 +137,10 @@ export default function Home() {
             return <InfoCard key={index} {...role} />
           })}
         </div>
+      </section>
+
+      <section className="flex flex-col lg:flex-row items-start justify-between w-full lg:space-x-10">
+        <ProjectSection projects={mockImageProps}/>
       </section>
     </main>
   );
