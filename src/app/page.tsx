@@ -70,6 +70,7 @@ export default async function Home() {
       <section className="flex flex-col lg:flex-row items-center space-x-10 space-y-5 w-full">
         <div className='lg:ml-10'>
         <ImageArea {...lpImageProps} />
+        </div>
         <div className='flex flex-col items-center lg:items-end py-10 pl-0 lg:pl-10 pr-0 lg:pr-12 w-full'>
           <InfoButton text={'About us'} />
           <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}>{text.aboutUsTitle}</h1>
@@ -113,4 +114,4 @@ export default async function Home() {
       </section>
     </main>
   );
-}
+};
