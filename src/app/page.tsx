@@ -1,17 +1,16 @@
 import Navbar from '@/components/general/navbar';
 import Hero from '@/components/general/hero';
-import Image from 'next/image';
 import Statistics from '@/components/general/statistics';
 import AlumniCarousel from '@/components/general/alumniCarousel';
 import { nunitoSans } from './fonts';
-import InfoButton from '@/components/buttons/infoButton';
 import ImageArea from '@/components/general/imageArea';
 import Developer from './../../public/icons/developer.svg'
 import Designer from './../../public/icons/designer.svg'
 import Strategist from './../../public/icons/strategist.svg'
 import InfoCard from '@/components/general/infoCard';
-import { Button } from '@/components/buttons/button';
 import Link from 'next/link';
+import InfoButton from "@/components/primitives/infoButton";
+import {Button} from "@/components/primitives/button";
 
 const text = {
   aboutUsTitle: "What we do at",
