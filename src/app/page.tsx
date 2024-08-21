@@ -2,14 +2,11 @@ import Navbar from "@/components/layouts/navbar";
 import { nunitoSans } from "./fonts";
 import InfoButton from "@/components/primitives/infoButton";
 import ImageArea from "@/components/general/imageArea";
-import Developer from "./../../public/icons/developer.svg";
-import Designer from "./../../public/icons/designer.svg";
-import Strategist from "./../../public/icons/strategist.svg";
-import InfoCard from "@/components/general/infoCard";
 import { Button } from "@/components/primitives/button";
 import Link from "next/link";
 import dynamic from 'next/dynamic';
 import getProjects from './lib/notion/projects';
+import MemberRoles from "@/components/general/memberRoles";
 
 const ProjectSection = dynamic(() => import('@/components/general/projectSection'), { ssr: false });
 
@@ -35,28 +32,6 @@ const lpImageProps = {
   height: 580 * 2,
 }
 
-const memberRoles = [
-  {
-    icon: <Developer width={60} height={60} className="scale-2" />,
-    title: "Developers",
-    description:
-      "Build, test, and maintain software solutions, ensuring robust and scalable applications.",
-  },
-  {
-    icon: <Designer width={60} height={60} />,
-    title: "Designers",
-    description:
-      "Design, refine, and implement creative solutions, ensuring visually appealing and user-centric experiences.",
-  },
-  {
-    icon: <Strategist width={60} height={60} />,
-    title: "Strategists",
-    description:
-      "Develop and execute strategic plans, work on internal communication, and shape the future direction of the club.",
-  },
-];
-
-
 export default async function Home() {
   const projects = await getProjects()
   return (
@@ -68,10 +43,10 @@ export default async function Home() {
       </section>
 
       <section className="flex flex-col lg:flex-row items-center space-x-10 space-y-5 w-full">
-        <div className='lg:ml-10'>
+        <div >
         <ImageArea {...lpImageProps} />
         </div>
-        <div className='flex flex-col items-center lg:items-end py-10 pl-0 lg:pl-10 pr-0 lg:pr-12 w-full'>
+        <div className='flex flex-col items-center lg:items-end py-10 pl-0 lg:pl-10 pr-0 md:pr-6 lg:pr-12 w-full'>
           <InfoButton text={'About us'} />
           <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}>{text.aboutUsTitle}</h1>
           <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans text-indigo-400 break-all`}>{text.aboutUsSubtitle}</h1>
@@ -81,8 +56,8 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col lg:flex-row items-start justify-between w-full lg:space-x-10">
-        <div className="flex flex-col text-center items-center lg:items-start py-10 pl-0 lg:pl-10 pr-0 lg:pr-12 w-full">
+      <section className="flex flex-col md:flex-row items-start justify-between w-full">
+        <div className="flex flex-col text-center items-center lg:items-start py-10 pl-0 lg:pl-10 md:pr-10 w-full">
           <h1
             className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}
           >
@@ -102,11 +77,7 @@ export default async function Home() {
             </Button>
           </Link>
         </div>
-        <div className="flex flex-col items-center lg:items-start py-10 lg:pl-10 w-full">
-          {memberRoles.map((role, index) => {
-            return <InfoCard key={index} {...role} />;
-          })}
-        </div>
+        <MemberRoles/>
       </section>
 
       <section className="flex flex-col lg:flex-row items-start justify-between w-full lg:space-x-10">

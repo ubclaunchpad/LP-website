@@ -20,6 +20,7 @@ const config: Config = {
       },
       backgroundColor: {
         primary: "rgb(var(--color-background-primary))",
+        secondary : "rgb(var(--color-background-secondary))",
         "lp-50": "var(--lp-50)",
         "lp-100": "var(--lp-100)",
         "lp-200": "var(--lp-200)",
