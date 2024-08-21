@@ -1,16 +1,16 @@
-import Navbar from '@/components/general/navbar';
-import Hero from '@/components/general/hero';
-import Statistics from '@/components/general/statistics';
-import AlumniCarousel from '@/components/general/alumniCarousel';
-import { nunitoSans } from './fonts';
-import ImageArea from '@/components/general/imageArea';
-import Developer from './../../public/icons/developer.svg'
-import Designer from './../../public/icons/designer.svg'
-import Strategist from './../../public/icons/strategist.svg'
-import InfoCard from '@/components/general/infoCard';
-import Link from 'next/link';
+import Navbar from "@/components/general/navbar";
+import Hero from "@/components/general/hero";
+import Statistics from "@/components/general/statistics";
+import AlumniCarousel from "@/components/general/alumniCarousel";
+import { nunitoSans } from "./fonts";
+import ImageArea from "@/components/general/imageArea";
+import Developer from "./../../public/icons/developer.svg";
+import Designer from "./../../public/icons/designer.svg";
+import Strategist from "./../../public/icons/strategist.svg";
+import InfoCard from "@/components/general/infoCard";
+import Link from "next/link";
 import InfoButton from "@/components/primitives/infoButton";
-import {Button} from "@/components/primitives/button";
+import { Button } from "@/components/primitives/button";
 
 const text = {
   aboutUsTitle: "What we do at",
@@ -20,77 +20,104 @@ const text = {
   In Launch Pad form into teams to work on an 8 month development project based on their interests and skill sets. Each team consists of a tech-lead, developers and designers, where they collaboratively go through the design thinking process to design and build a product.`,
   joinUsTitle: "Want to grow your skill?",
   joinUsSubtitle: "Join our team!",
-  joinUsText: "We are looking for students passionate about tech with varying levels of experience to join our teams! ",
-  joinUsButton: "Join our team"
-}
+  joinUsText:
+    "We are looking for students passionate about tech with varying levels of experience to join our teams! ",
+  joinUsButton: "Join our team",
+};
 
 const lpImageProps = {
   src: "/images/launchpadTeam.png",
   alt: "Launchpad team posing for a photo",
-  width: 998 * 2 ,
+  width: 998 * 2,
   height: 580 * 2,
-}
+};
 
-const memberRoles = [{
-  icon: <Developer width = {60} height = {60} className="scale-2"/>,
-  title: "Developers",
-  description: "Build, test, and maintain software solutions, ensuring robust and scalable applications.",
-},
-{
-  icon: <Designer width = {60} height = {60} />,
-  title: "Designers",
-  description: "Design, refine, and implement creative solutions, ensuring visually appealing and user-centric experiences."
-},
-{
-  icon: <Strategist width = {60} height = {60}/>,
-  title: "Strategists",
-  description: "Develop and execute strategic plans, work on internal communication, and shape the future direction of the club."
-}]
+const memberRoles = [
+  {
+    icon: <Developer width={60} height={60} className="scale-2" />,
+    title: "Developers",
+    description:
+      "Build, test, and maintain software solutions, ensuring robust and scalable applications.",
+  },
+  {
+    icon: <Designer width={60} height={60} />,
+    title: "Designers",
+    description:
+      "Design, refine, and implement creative solutions, ensuring visually appealing and user-centric experiences.",
+  },
+  {
+    icon: <Strategist width={60} height={60} />,
+    title: "Strategists",
+    description:
+      "Develop and execute strategic plans, work on internal communication, and shape the future direction of the club.",
+  },
+];
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center px-4">
-    <div className="w-full flex justify-end">
-      <Navbar />
-    </div>
+      <div className="w-full flex justify-end">
+        <Navbar />
+      </div>
       <section className="flex flex-col items-center w-full h-auto text-center">
         <div className="flex flex-col items-center">
-        <Hero />
+          <Hero />
         </div>
       </section>
-      <div> 
-      <Statistics />
+      <div>
+        <Statistics />
       </div>
-      <div className="flex flex-col pb-4 text-center"> Our Alumni have worked as Developers & Designers, and more at </div>
+      <div className="flex flex-col pb-4 text-center">
+        {" "}
+        Our Alumni have worked as Developers & Designers, and more at{" "}
+      </div>
       <div className="w-full bg-stone-100">
-      <AlumniCarousel />
+        <AlumniCarousel />
       </div>
       <section className="flex flex-col lg:flex-row items-center w-full">
         <ImageArea {...lpImageProps} />
-        <div className='flex flex-col items-center lg:items-end py-10 pl-0 lg:pl-10 pr-0 lg:pr-12 w-full'>
-          <InfoButton text={'About us'} />
-          <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}>{text.aboutUsTitle}</h1>
-          <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans text-indigo-400 break-all`}>{text.aboutUsSubtitle}</h1>
-          <p className='text-stone-400 text-center lg:text-right py-10 whitespace-pre-wrap'>
+        <div className="flex flex-col items-center lg:items-end py-10 pl-0 lg:pl-10 pr-0 lg:pr-12 w-full">
+          <InfoButton text={"About us"} />
+          <h1
+            className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}
+          >
+            {text.aboutUsTitle}
+          </h1>
+          <h1
+            className={`text-4xl font-bold ${nunitoSans.variable} font-sans text-indigo-400 break-all`}
+          >
+            {text.aboutUsSubtitle}
+          </h1>
+          <p className="text-stone-400 text-center lg:text-right py-10 whitespace-pre-wrap">
             {text.aboutUsText}
           </p>
         </div>
       </section>
 
       <section className="flex flex-col lg:flex-row items-start justify-between w-full lg:space-x-10">
-        <div className='flex flex-col text-center items-center lg:items-start py-10 pl-0 lg:pl-10 pr-0 lg:pr-12 w-full'>
-          <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}>{text.joinUsTitle}</h1>
-          <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans text-indigo-400`}>{text.joinUsSubtitle}</h1>
-          <p className='text-stone-400 text-center lg:text-left py-10'>
+        <div className="flex flex-col text-center items-center lg:items-start py-10 pl-0 lg:pl-10 pr-0 lg:pr-12 w-full">
+          <h1
+            className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}
+          >
+            {text.joinUsTitle}
+          </h1>
+          <h1
+            className={`text-4xl font-bold ${nunitoSans.variable} font-sans text-indigo-400`}
+          >
+            {text.joinUsSubtitle}
+          </h1>
+          <p className="text-stone-400 text-center lg:text-left py-10">
             {text.joinUsText}
           </p>
-          <Link href='/portal/applications'>
-          <Button className='p-4' size={'xl'} icon><label className='text-lg'>{text.joinUsButton}</label></Button>
+          <Link href="/portal/applications">
+            <Button className="p-4" size={"xl"} icon>
+              <label className="text-lg">{text.joinUsButton}</label>
+            </Button>
           </Link>
         </div>
         <div className="flex flex-col items-center lg:items-start py-10 lg:pl-10 w-full">
           {memberRoles.map((role, index) => {
-            return <InfoCard key={index} {...role} />
+            return <InfoCard key={index} {...role} />;
           })}
         </div>
       </section>
