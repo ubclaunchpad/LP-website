@@ -9,6 +9,7 @@ import InfoCard from '@/components/general/infoCard';
 import { Button } from '@/components/buttons/button';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import getProjects from './lib/notion/projects';
 
 const ProjectSection = dynamic(() => import('@/components/general/projectSection'), { ssr: false });
 
@@ -50,74 +51,9 @@ const memberRoles = [{
   description: "Develop and execute strategic plans, work on internal communication, and shape the future direction of the club."
 }]
 
-const cache = new Map();
-const cacheTTL = 0 //24 * 60 * 60 * 1000;
-
-async function getProjects() {
-  const cacheKey = 'notion_projects';
-  const now = Date.now();
-  const notionDatabaseId = '3b9310c551614c3d83dd2e87ff05f508';
-  const notionApiKey = 'secret_vKggckZ7D2nIElIIUWzAtmZpf5v8OTKSC5t9HDbuAOY' // TODO - store in .env
-  
-  
-  if (cache.has(cacheKey)) {
-    const { data, timestamp } = cache.get(cacheKey);
-    if (now - timestamp < cacheTTL) {
-      return data;
-    }
-  }
-
-  const filter = {
-    "filter": {
-      "or": [
-      {
-        "property": "Year",
-        "multi_select": {
-          "contains": "2023"
-        }
-      },
-      {
-        "property": "Year",
-        "multi_select": {
-          "contains": "2022"
-        }
-      }
-    ]
-    }
-  }
-
-  const res = await fetch(`https://api.notion.com/v1/databases/${notionDatabaseId}/query`, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${notionApiKey}`,
-      'Content-Type': 'application/json',
-      'Notion-Version': '2022-06-28'
-    },
-    body: JSON.stringify(filter)
-  });
-
-  if (!res.ok) {
-    console.error;
-    throw new Error('Failed to fetch data');
-  }
-
-  const data = await res.json();
-  cache.set(cacheKey, { data, timestamp: now });
-
-  return data.results.map((item: any) => ({
-    title: item.properties.Name.title[0].text.content,
-    description: item.properties.Oneliner.rollup.array[0].rich_text[0].text.content,
-    imageSrc: item.properties["Files & media"]?.files?.[0]?.file?.url ?? "/images/launchpadTeam.png",
-    alt: "Mock", 
-    width: 372,
-    height: 213,
-
-  }))
-}
 
 export default async function Home() {
   const projects = await getProjects()
-  console.log(projects)
   return (
     <main className="flex min-h-screen flex-col items-center px-4">
       <Navbar />
