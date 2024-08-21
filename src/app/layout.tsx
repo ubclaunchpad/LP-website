@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { epilogue, nunitoSans } from '@/app/fonts';
-
+import { epilogue, nunitoSans } from "@/app/fonts";
 
 export const metadata: Metadata = {
   title: "UBC Launch Pad",
-  description: "A student-run software engineering team devoted to building software projects in a collaborative and professional environment",
+  description:
+    "A student-run software engineering team devoted to building software projects in a collaborative and professional environment",
 };
 
 export default function RootLayout({

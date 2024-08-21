@@ -1,6 +1,6 @@
-'use client'
-import Image from 'next/image'
-import { useState } from 'react'
+"use client";
+import Image from "next/image";
+import { useState } from "react";
 
 interface ImageAreaProps {
     src: string;
