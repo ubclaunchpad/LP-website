@@ -40,7 +40,7 @@ const ProjectSection = ({projects}: ProjectSectionProps) => {
     </span>
     <Swiper
         spaceBetween={30}
-        slidesPerView={3}
+        slidesPerView={window.innerWidth< 678 ? 1 :3}
         loop={true}
         centeredSlides={true}
         modules={[Navigation]}

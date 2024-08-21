@@ -18,7 +18,7 @@ export default function ImageArea({src, alt, width, height}: ImageAreaProps) {
                     alt={alt}
                     width={width}
                     height={height}
-                    objectFit='cover'
+                    objectFit='contain'
                 />
             </div>
         </div>

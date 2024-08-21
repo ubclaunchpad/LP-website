@@ -21,11 +21,11 @@ const ImageCard = ({ title, description, imageSrc, alt, width, height}: ImageCar
     return (
     //TODO: Add custom colours to tailwind config
     <div className="bg-[#3A3543] rounded-2xl py-1 text-white text-center">
-        <div className="mt-8">
+        <div className="mt-8 w-full">
         <h2 className="text-xl font-normal mb-2">{title}</h2>
         <p className="font-extralight">{description}</p>
         </div>
-        <div className="rounded-lg w-full">
+        <div className="rounded-lg space-x-10 space-y-10">
             <ImageArea {...imageProps}/>
         </div>
     </div>
