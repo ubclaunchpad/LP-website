@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Cosmic Gateway",
+    "description": "Cosmic Gateway is Launch Pad's internal club tools",
+    "imageSrc": "/images/launchpadTeam.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213
+  },
+  {
+    "title": "Nom Appetit",
+    "description": "A restaurant tracking app designed to finally answer the question: “Where do you want to eat?”",
+    "imageSrc": "/images/launchpadTeam.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213
+  },
+  {
+    "title": "EpiLog",
+    "description": "A mobile application intended for patients with epilepsy to log seizures and keep track of events such as appointments and medications.",
+    "imageSrc": "/images/launchpadTeam.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213
+  },
+  {
+    "title": "BlueNav",
+    "description": "BlueNav was an interactive degree planner for UBC students, that provided an easy-to-understand summary of pending degree requirements for undergrad students",
+    "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/6d1b10f6-a15d-4835-aff0-7163d1ec21b6/Screenshot_2024-08-18_at_12.48.01_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240822%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240822T224154Z&X-Amz-Expires=3600&X-Amz-Signature=d32b14997478cb097745b4ebc9457f31a90a6ed23e8c894ae4491c0d0fe7466c&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213
+  },
+  {
+    "title": "ClassSync",
+    "description": "Centralized ed-tech platform in collaboration with The C.O.D.E Initiative.",
+    "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/dd54a2e8-6018-45c2-b93a-1b72eaa6d2c9/Screenshot_2024-08-18_at_3.32.04_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240822%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240822T224154Z&X-Amz-Expires=3600&X-Amz-Signature=e7e8db27ec867bbcae8b282a50a1d935874a9dfb96c484fda78d2cf51876be54&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213
+  },
+  {
+    "title": "Labby ",
+    "description": "BC Cancer Lab Management System",
+    "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/3a892c2b-b439-41de-92ed-8e616fbf10ac/AGV_vUdo9dhqBSqcrMZ6HUXgS7thsKvHfelNEUHp9cEFPR9RDMPkxwSC3Fns6YYTNz12tJ0EHtDvq8Oun05IwLA0smPgxac1D5w52ukbr4AcH6ihtg45G4mk76kc.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240822%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240822T224154Z&X-Amz-Expires=3600&X-Amz-Signature=dc60806768189cc8de967aca019ae7bf1e9a5b9ed018b03f89ff8edab25c5fc9&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213
+  }
+]

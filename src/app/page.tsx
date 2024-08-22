@@ -5,10 +5,22 @@ import ImageArea from "@/components/general/imageArea";
 import { Button } from "@/components/primitives/button";
 import Link from "next/link";
 import dynamic from 'next/dynamic';
-import getProjects from './lib/notion/projects';
 import MemberRoles from "@/components/general/memberRoles";
 
 const ProjectSection = dynamic(() => import('@/components/general/projectSection'), { ssr: false });
+
+const refreshProjects = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/refresh`, {
+    method: "POST",
+    headers: {
+      'content-type': 'application/json',
+    }
+  });
+
+  const data = await res.json()
+  return data.data
+  
+}
 
 const text = {
   heroTitle: "Welcome to UBC Launch Pad",
@@ -33,7 +45,7 @@ const lpImageProps = {
 }
 
 export default async function Home() {
-  const projects = await getProjects()
+  const projects = await refreshProjects()
   return (
     <main className="flex min-h-screen flex-col items-center px-4">
       <Navbar />
