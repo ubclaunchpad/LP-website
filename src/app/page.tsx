@@ -8,6 +8,8 @@ import Strategist from "./../../public/icons/strategist.svg";
 import InfoCard from "@/components/general/infoCard";
 import { Button } from "@/components/primitives/button";
 import Link from "next/link";
+import FaqSection from "@/components/general/faqSection";
+import {faqs} from "@/lib/data/generalData";
 
 const text = {
   heroTitle: "Welcome to UBC Launch Pad",
@@ -109,6 +111,7 @@ export default function Home() {
           })}
         </div>
       </section>
+      <FaqSection faqs={faqs}/>
     </main>
   );
 }
