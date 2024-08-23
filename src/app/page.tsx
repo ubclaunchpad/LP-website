@@ -8,6 +8,11 @@ import Strategist from "./../../public/icons/strategist.svg";
 import InfoCard from "@/components/general/infoCard";
 import { Button } from "@/components/primitives/button";
 import Link from "next/link";
+import {faqs, navItems} from "@/lib/data/generalData";
+import FaqSection from "@/components/general/faqSection";
+import MailingList from "@/components/general/mailingList";
+import ExecSection from "@/components/general/execSection";
+import FooterSection from "@/components/general/footerSection";
 
 const text = {
   heroTitle: "Welcome to UBC Launch Pad",
@@ -55,8 +60,8 @@ const memberRoles = [
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center px-4">
-      <Navbar />
+    <main className="flex min-h-screen flex-col items-center ">
+      <Navbar navItems={navItems}/>
       <section className="flex flex-col items-center py-10 text-center">
         <h1 className="text-4xl font-bold">{text.heroTitle}</h1>
         <p className="text-lg">{text.heroDescription}</p>
@@ -109,6 +114,10 @@ export default function Home() {
           })}
         </div>
       </section>
+      <FaqSection faqs={faqs}/>
+      <MailingList />
+      <ExecSection />
+      <FooterSection />
     </main>
   );
 }
