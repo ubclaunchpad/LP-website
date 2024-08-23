@@ -31,7 +31,7 @@ export default function FaqSection({ faqs }: FaqSectionProps) {
                 setOpenIndex={setOpenIndex}
             />
         ));
-    }, [faqs, openIndex, setOpenIndex]);
+    }, [ openIndex, setOpenIndex]);
 
     return (
         <div className="flex flex-col items-center">
