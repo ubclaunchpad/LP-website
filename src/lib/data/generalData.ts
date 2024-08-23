@@ -69,3 +69,50 @@ export const navItems: NavBarItem[] = [
 ];
 
 
+export const footerLinks = [
+    {
+        section: "Quick Links",
+        links: [
+            {
+                name: "Discord",
+                url: "https://discord.gg/M74UgEZS8M",
+            },
+            {
+                name: "Medium",
+                url: "https://medium.com/ubc-launch-pad-software-engineering-blog",
+            },
+            {
+                name: "Docs",
+                url: "https://launchpadubc.notion.site/65c5e68a3b1b4d84bcb972f29db80b06?v=a59aebaa79c8408488ccf492b0e1991d&pvs=4",
+            },
+        ],
+    },
+    {
+        section: "Contact Us",
+        links: [
+            {
+                name: "General Inquiries",
+                url: "mailto:strategy@ubclaunchpad.com",
+            },
+            {
+                name: "Sponsorship Inquiries",
+                url: "mailto:team@ubclaunchpad.com",
+            },
+        ],
+    },
+];
+
+export const bottomFooterLinks = [
+    {
+        name: "Facebook",
+        url: "https://www.facebook.com/ubclaunchpad",
+    },
+    {
+        name: "Instagram",
+        url: "https://www.instagram.com/ubclaunchpad",
+    },
+    {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/company/10054664",
+    },
+];
