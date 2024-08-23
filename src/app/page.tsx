@@ -1,7 +1,4 @@
 import Navbar from "@/components/general/navbar";
-import Hero from "@/components/general/hero";
-import Statistics from "@/components/general/statistics";
-import AlumniCarousel from "@/components/general/alumniCarousel";
 import { nunitoSans } from "./fonts";
 import ImageArea from "@/components/general/imageArea";
 import Developer from "./../../public/icons/developer.svg";
@@ -16,6 +13,7 @@ import ExecSection from "@/components/general/execSection";
 import FooterSection from "@/components/general/footerSection";
 import InfoButton from "@/components/primitives/infoButton";
 import { Button } from "@/components/primitives/button";
+import HeroSection from "@/components/general/heroSection";
 
 const text = {
   aboutUsTitle: "What we do at",
@@ -64,21 +62,8 @@ export default function Home() {
       <div className="w-full flex justify-end">
         <Navbar navItems={navItems}/>
       </div>
-      <section className="flex flex-col items-center w-full h-auto text-center">
-        <div className="flex flex-col items-center">
-          <Hero />
-        </div>
-      </section>
-      <div>
-        <Statistics />
-      </div>
-      <div className="flex flex-col pb-4 text-center">
-        {" "}
-        Our Alumni have worked as Developers & Designers, and more at{" "}
-      </div>
-      <div className="w-full bg-stone-100">
-        <AlumniCarousel />
-      </div>
+
+      <HeroSection />
       <section className="flex flex-col lg:flex-row items-center w-full">
         <ImageArea {...lpImageProps} />
         <div className="flex flex-col items-center lg:items-end py-10 pl-0 lg:pl-10 pr-0 lg:pr-12 w-full">
