@@ -1,4 +1,5 @@
 import {Faq} from "@/components/general/faqSection";
+import {NavBarItem} from "@/components/layouts/navbar";
 
 export const faqs: Faq[] = [
     {
@@ -39,3 +40,32 @@ export const faqs: Faq[] = [
         answer: "You will always be a member once you have joined, but to join a project you will have to apply again. Starting in 2024, being a previous member does not guarantee your placement on a team - however, you will be given priority in the recruitment process. This is to guarantee the overall quality of the teams."
     }
 ];
+
+export const navItems: NavBarItem[] = [
+    {
+        name: "About",
+        url: "#about",
+    },
+    {
+        name: "Projects",
+        url: "#projects",
+    },
+    {
+        name: "Be a Partner",
+        url: "#partner",
+    },
+    {
+        name: "Our Team",
+        url: "#team",
+    },
+    {
+        name: "FAQ",
+        url: "#faq",
+    },
+    {
+        name: "Contact",
+        url: "#contact",
+    },
+];
+
+
