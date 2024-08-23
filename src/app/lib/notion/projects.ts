@@ -2,32 +2,25 @@ import fs from 'fs';
 import path from 'path';
 
 async function getProjects() {
-  
-  const projectsFilePath = path.join(process.cwd(),'src', 'lib', 'data', 'projects.json');
+  const projectsFilePath = path.join(process.cwd(), 'src', 'lib', 'data', 'projects.json');
   const notionDatabaseId = process.env.NOTION_DB_ID;
   const notionApiKey = process.env.NOTION_DB_SECRET;
-  const projectsData = JSON.parse(fs.readFileSync(projectsFilePath, 'utf8'));
-  if (projectsData.length > 0) {
-    return projectsData;
+  let projectsData = JSON.parse(fs.readFileSync(projectsFilePath, 'utf8'));
+
+  const cacheValidFor = 30 * 24 * 60 * 60 * 1000; // 1 month
+  const now = Date.now();
+
+  if (projectsData.timestamp && (now - projectsData.timestamp < cacheValidFor)) {
+    return projectsData.projects;
   }
 
-  // Fetch data from notion if not cached
+  // Fetch starred projects from Notion
   const filter = {
     "filter": {
-      "or": [
-        {
-          "property": "Year",
-          "multi_select": {
-            "contains": "2023"
-          }
-        },
-        {
-          "property": "Year",
-          "multi_select": {
-            "contains": "2022"
-          }
-        }
-      ]
+      "property": "Starred", 
+      "checkbox": {
+        "equals": true
+      }
     }
   };
 
@@ -42,6 +35,7 @@ async function getProjects() {
   });
 
   if (!res.ok) {
+    console.error('Failed to fetch data');
     throw new Error('Failed to fetch data');
   }
 
@@ -56,9 +50,14 @@ async function getProjects() {
     height: 213,
   }));
 
-  fs.writeFileSync(projectsFilePath, JSON.stringify(formattedData, null, 2), 'utf8');
+  const cacheData = {
+    timestamp: now,
+    projects: formattedData,
+  };
+  
+  fs.writeFileSync(projectsFilePath, JSON.stringify(cacheData, null, 2), 'utf8');
 
   return formattedData;
 }
 
-export default getProjects
+export default getProjects;
