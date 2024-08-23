@@ -1,11 +1,11 @@
 import NewFormDialog from "@/components/portal/admin/newFormDialog";
 import { getForms } from "@/app/portal/admin/actions";
 import Link from "next/link";
-import {Form} from "@/lib/types/application";
+import { Form } from "@/lib/types/application";
 
 // TODO: Replace dialog with built-in HTML dialog
 export default async function Page() {
-  const forms = await getForms() as unknown as Form[];
+  const forms = (await getForms()) as unknown as Form[];
 
   return (
     <div className="flex flex-col gap-4 flex-1 w-full p-4">

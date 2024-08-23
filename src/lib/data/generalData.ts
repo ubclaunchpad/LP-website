@@ -1,5 +1,6 @@
 import {Faq} from "@/components/general/faqSection";
 import {NavBarItem} from "@/components/layouts/navbar";
+import {Stat} from "@/components/general/statistics";
 
 export const faqs: Faq[] = [
     {
@@ -115,4 +116,10 @@ export const bottomFooterLinks = [
         name: "LinkedIn",
         url: "https://www.linkedin.com/company/10054664",
     },
+];
+
+export const statsData: Stat[] = [
+    { value: "500+", label: "Members" },
+    { value: "50+", label: "Projects" },
+    { value: "7+", label: "Majors" },
 ];
