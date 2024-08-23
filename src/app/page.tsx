@@ -93,7 +93,7 @@ export default async function Home() {
       </section>
 
       <section className="flex flex-col lg:flex-row items-start justify-between w-full lg:space-x-10">
-        <ProjectSection projects={projects}/>
+        <ProjectSection projects={projects ?? []}/>
       </section>
     </main>
   );
