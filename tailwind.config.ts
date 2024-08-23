@@ -24,6 +24,9 @@ const config: Config = {
         sans: ["var(--font-nunito-sans)", ...fontFamily.sans],
         heading: ["var(--font-epilogue)", ...fontFamily.sans],
       },
+      transitionProperty: {
+        height: "height"
+      },
       backgroundColor: {
         primary: "rgb(var(--color-background-primary))",
         "lp-50": "var(--lp-50)",

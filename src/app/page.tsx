@@ -9,6 +9,11 @@ import Designer from "./../../public/icons/designer.svg";
 import Strategist from "./../../public/icons/strategist.svg";
 import InfoCard from "@/components/general/infoCard";
 import Link from "next/link";
+import {faqs, navItems} from "@/lib/data/generalData";
+import FaqSection from "@/components/general/faqSection";
+import MailingList from "@/components/general/mailingList";
+import ExecSection from "@/components/general/execSection";
+import FooterSection from "@/components/general/footerSection";
 import InfoButton from "@/components/primitives/infoButton";
 import { Button } from "@/components/primitives/button";
 
@@ -55,9 +60,9 @@ const memberRoles = [
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center px-4">
+    <main className="flex min-h-screen flex-col items-center ">
       <div className="w-full flex justify-end">
-        <Navbar />
+        <Navbar navItems={navItems}/>
       </div>
       <section className="flex flex-col items-center w-full h-auto text-center">
         <div className="flex flex-col items-center">
@@ -121,6 +126,10 @@ export default function Home() {
           })}
         </div>
       </section>
+      <FaqSection faqs={faqs}/>
+      <MailingList />
+      <ExecSection />
+      <FooterSection />
     </main>
   );
 }

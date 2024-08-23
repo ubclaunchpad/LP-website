@@ -1,61 +1,31 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image  from "next/image";
 
-type NavBarItem = {
+const logo = "/icons/logoVariants/logoPrimaryWithText.svg";
+
+export type NavBarItem = {
   name: string;
   url: string;
 };
 
-const navItems: NavBarItem[] = [
-  {
-    name: "About",
-    url: "#about",
-  },
-  {
-    name: "Projects",
-    url: "#projects",
-  },
-  {
-    name: "Be a Partner",
-    url: "#partner",
-  },
-  {
-    name: "Our Team",
-    url: "#team",
-  },
-  {
-    name: "FAQ",
-    url: "#faq",
-  },
-  {
-    name: "Contact",
-    url: "#contact",
-  },
-];
+type NavbarProps = {
+  navItems: NavBarItem[];
+};
 
-export default function Navbar() {
+// TODO: Add Mobile Hamburger Menu
+export default function Navbar({navItems}: NavbarProps) {
   return (
-    <div className="flex justify-between items-center w-full p-4 md:p-10">
-      <div className="flex items-center">
-        <a href="/">
-          <Image
-            src="/images/logo_navbar.svg"
-            alt="Logo"
-            width={180}
-            height={180}
-            className="h-12 pr-4 md:h-16"
-          />
-        </a>
-      </div>
-      <ul className="flex p-10">
-        {navItems.map((item, index) => (
-          <li key={index}>
-            <Link href={item.url} className={"text-white px-10"}>
-              {item.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <nav className={"flex justify-between items-center w-full p-6"}>
+        <Image src={logo} alt="Logo" width={141} height={49} unoptimized />
+        <ul className=" justify-between  gap-12 items-center hidden lg:flex">
+          {navItems.map((item, index) => (
+              <li key={index}>
+                <Link href={item.url} className={"text-white "}>
+                  {item.name}
+                </Link>
+              </li>
+          ))}
+        </ul>
+      </nav>
   );
 }
