@@ -1,5 +1,4 @@
 'use client'
-import { nunitoSans } from './../../app/fonts';
 import InfoButton from '@/components/primitives/infoButton';
 import { Button }  from '@/components/primitives/button';
 import ImageCard from './imageCard';
@@ -33,7 +32,7 @@ const ProjectSection = ({projects}: ProjectSectionProps) => {
     <div className='flex flex-col text-center items-center justify-center md: justify-between py-10 w-full'>
     <span className='flex flex-col md:flex-row text-center items-center justify-between md:px-10 py-10 w-full'>
         <span className='flex flex-col-reverse md:flex-row items-center'>
-            <h1 className={`text-4xl font-bold ${nunitoSans.variable} font-sans py-2 md:py-0 md:pr-4`}>{text.projectsTitle}</h1> 
+            <h1 className={`text-4xl font-bold font-sans py-2 md:py-0 md:pr-4`}>{text.projectsTitle}</h1> 
             <span className='p-2'>
                 <InfoButton text={'2024/2025'} />
             </span>
