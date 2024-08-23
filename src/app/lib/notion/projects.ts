@@ -5,7 +5,7 @@ async function getProjects() {
   const projectsFilePath = path.join(process.cwd(), 'src', 'lib', 'data', 'projects.json');
   const notionDatabaseId = process.env.NOTION_DB_ID;
   const notionApiKey = process.env.NOTION_DB_SECRET;
-  let projectsData = JSON.parse(fs.readFileSync(projectsFilePath, 'utf8'));
+  const projectsData = JSON.parse(fs.readFileSync(projectsFilePath, 'utf8'));
 
   const cacheValidFor = 30 * 24 * 60 * 60 * 1000; // 1 month
   const now = Date.now();
