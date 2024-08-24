@@ -15,10 +15,10 @@ export default function FormItemInput({
   return (
     <div className="flex flex-col gap-2 w-full">
       <div
-        className={`flex  gap-2 ${question.label.length > 45 || expanded ? "flex-col" : "lg:flex-row flex-col"}`}
+        className={`flex  gap-2 ${question.label.length > 40 || expanded ? "flex-col" : "lg:flex-row flex-col"}`}
       >
         <label
-          className={`flex   flex-shrink-0  pt-2 gap-1 ${question.label.length > 45 || expanded ? "w-full" : "w-60 min-w-60 "}`}
+          className={`flex   flex-shrink-0  pt-2 gap-1 ${question.label.length > 40 || expanded ? "w-full" : "w-60 min-w-60 "}`}
         >
           <span className="">{question.label}</span>
           {question.config.validation.isRequired && (

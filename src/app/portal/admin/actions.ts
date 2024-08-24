@@ -1,10 +1,6 @@
 "use server";
 import { db } from "@/db";
 
-// export async function getUsers() {
-//   return db.users.findMany();
-// }
-
 export async function getForms() {
   return db.forms.findMany();
 }
@@ -14,8 +10,13 @@ export async function createForm(data: { title: string; description: string }) {
 }
 
 export async function getForm(id: number) {
-  console.log("Getting form", id);
-  return db.forms.findUnique({ where: { id } });
+  try {
+    return db.forms.findFirst({ where: {
+        id: BigInt(id) } });
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
 }
 
 export async function updateForm(

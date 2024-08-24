@@ -28,7 +28,7 @@ export default function MultiSelect({
           {options
             .filter((option) => value?.includes(option.value))
             .map((option) => (
-              <span key={option.label} className="p-0.5 px-2 rounded bg-lp-700">
+              <span key={option.label} className="p-0.5 px-2 rounded bg-lp-500">
                 {option.label}
               </span>
             ))}
@@ -47,7 +47,7 @@ export default function MultiSelect({
               key={index}
               className={`flex items-center h-10 flex-shrink-0 gap-2 rounded p-2 ${
                 value?.includes(option.value)
-                  ? "bg-lp-700"
+                  ? "bg-lp-500"
                   : "hover:bg-background-800 bg-opacity-45"
               }`}
               onClick={() => {

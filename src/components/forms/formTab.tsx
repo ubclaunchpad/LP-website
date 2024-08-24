@@ -22,7 +22,7 @@ export default function FormTab({
               question={question}
               key={index}
               questionData={formData[question.id]}
-              expanded={true}
+              expanded={false}
             />
           ))}
         </div>
