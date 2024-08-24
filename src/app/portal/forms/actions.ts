@@ -1,9 +1,11 @@
 "use server";
-
+import { render } from '@react-email/components';
 import { db } from "@/db";
 import { FormStep, Obj } from "@/lib/types/questions";
 import { createClient } from "@/lib/utils/supabase/server";
 import { JSONValidationToZod } from "@/lib/utils/forms/helpers";
+import {sendEmail} from "@/lib/utils/forms/email";
+import {SubmissionTemplate} from "@/components/forms/emailTemplates/submissionTemplate";
 
 export async function submitApplication({ formId }: { formId: bigint }) {
   const supabase = createClient();
@@ -36,12 +38,10 @@ export async function submitApplication({ formId }: { formId: bigint }) {
     form: form.questions as unknown as FormStep[],
     formAnswers: res.details as Obj,
   });
-  console.log(isValid, errors);
   if (!isValid) {
     return errors;
   }
-  console.log("Submitting application");
-  const up = await db.submissions.update({
+  await db.submissions.update({
     where: {
       user_id_form_id: {
         form_id: formId,
@@ -52,11 +52,17 @@ export async function submitApplication({ formId }: { formId: bigint }) {
       status: "submitted",
     },
   });
-  console.log(up);
 
-  // TODO: Send email to user
-  // TODO: Run form validation on server
-  // TODO: Handle file uploads with validation
+  const appEmail = res.details? res.details as Obj : {};
+  const template = await render(SubmissionTemplate({formTitle: form.title}));
+  await sendEmail({
+    from: "no-reply@ubclaunchpad.com",
+    fromName: "No-reply UBC Launch Pad",
+    to: data.user.email!.toString(),
+    subject: `${form.title} - Form Submitted`,
+    html: template,
+    cc: appEmail?.email as string,
+  })
   return true;
 }
 
@@ -127,10 +133,7 @@ function validateFormAnswers({
       const result = validation.safeParse(value);
       if (!result.success) {
         isValid = false;
-        console.log(validation.isOptional());
         errors.push(result.error.message);
-        console.log(result.error.errors);
-        console.log(question.id);
       }
     });
   });

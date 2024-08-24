@@ -11,13 +11,13 @@ export default function BeforeSubmitTab({
 
   if (submitted) {
     return (
-      <div className="flex flex-col items-center justify-center flex-1 gap-4 w-full">
+      <div className="flex flex-col p-10  justify-center flex-1 gap-4 w-full">
         <h2 className="text-2xl font-heading font-bold">
-          {"Your application has been submitted!"}
+          {"Your form has been submitted!"}
         </h2>
         <p>
           {
-            "Thank you for applying to the Developer Program. We'll review your application and get back to you as soon as possible."
+            "If you have any questions, please contact us at strategy@ubclaunchpad.com."
           }
         </p>
       </div>
@@ -25,7 +25,7 @@ export default function BeforeSubmitTab({
   }
 
   return (
-    <div className="flex flex-col items-center justify-center flex-1 gap-4 w-full">
+    <div className="flex flex-col text-lg justify-center p-10 flex-1 gap-4 w-full">
       <h2 className="text-2xl font-heading font-bold">
         {"You're one step away from submitting your application!"}
       </h2>
@@ -34,7 +34,7 @@ export default function BeforeSubmitTab({
         information is correct.
       </p>
 
-      <div className="flex items-center w-full gap-10 justify-center">
+      <div className="flex items-center w-full gap-10 ">
         <button
           type="button"
           className="bg-gray-200 text-xl font-bold text-black p-2 w-fit px-4 hover:scale-105 transform transition-all duration-200 ease-in-out rounded"
