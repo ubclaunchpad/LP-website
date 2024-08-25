@@ -49,7 +49,7 @@
 //   }
 // }
 
-import {type NextRequest, NextResponse} from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { updateSession } from "@/lib/utils/supabase/middleware";
 
 export async function middleware(request: NextRequest) {
