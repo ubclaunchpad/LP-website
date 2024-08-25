@@ -18,7 +18,7 @@ export default async function Layout({
 
   return (
     <UserContextProvider user={data.user}>
-      <div className="w-screen min-h-screen bg-background-950 relative flex flex-col overflow-x-hidden ">
+      <div className="w-screen min-h-screen bg-background-900 relative flex flex-col overflow-x-hidden ">
         <PortalNavbar />
         {children}
       </div>

@@ -13,7 +13,7 @@ export async function submitApplication({ formId }: { formId: bigint }) {
   if (!data.user || error) {
     return null;
   }
-  const res = await db.submissions.findUnique({
+  const resPromise =  db.submissions.findUnique({
     where: {
       user_id_form_id: {
         form_id: formId,
@@ -21,16 +21,16 @@ export async function submitApplication({ formId }: { formId: bigint }) {
       },
     },
   });
-  if (!res) {
-    return null;
-  }
 
-  const form = await db.forms.findUnique({
+  const formPromise =  db.forms.findUnique({
     where: {
       id: formId,
     },
   });
-  if (!form) {
+
+  const [res, form] = await Promise.all([resPromise, formPromise]);
+
+  if (!res || !form) {
     return null;
   }
 
@@ -41,7 +41,7 @@ export async function submitApplication({ formId }: { formId: bigint }) {
   if (!isValid) {
     return errors;
   }
-  await db.submissions.update({
+  const updateSubmission = db.submissions.update({
     where: {
       user_id_form_id: {
         form_id: formId,
@@ -53,6 +53,15 @@ export async function submitApplication({ formId }: { formId: bigint }) {
     },
   });
 
+  const createApplication = db.applications.create({
+    data: {
+      id: res.id!,
+      status: "to review",
+      reviewer_id: null,
+    },
+  });
+
+  await Promise.all([updateSubmission, createApplication]);
   const appEmail = res.details? res.details as Obj : {};
   const template = await render(SubmissionTemplate({formTitle: form.title}));
   await sendEmail({

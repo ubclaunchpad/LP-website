@@ -27,6 +27,18 @@ const config: Config = {
       transitionProperty: {
         height: "height"
       },
+      textColor: {
+        "lp-50": "var(--lp-50)",
+        "lp-100": "var(--lp-100)",
+        "lp-200": "var(--lp-200)",
+        "lp-300": "var(--lp-300)",
+        "lp-400": "var(--lp-400)",
+        "lp-500": "var(--lp-500)",
+        "lp-600": "var(--lp-600)",
+        "lp-700": "var(--lp-700)",
+        "lp-800": "var(--lp-800)",
+        "lp-900": "var(--lp-900)",
+      },
       backgroundColor: {
         primary: "rgb(var(--color-background-primary))",
         "lp-50": "var(--lp-50)",
