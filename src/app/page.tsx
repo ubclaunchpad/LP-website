@@ -2,22 +2,32 @@ import Navbar from "@/components/general/navbar";
 import { nunitoSans } from "./fonts";
 import ImageArea from "@/components/general/imageArea";
 import Link from "next/link";
-import {faqs, navItems} from "@/lib/data/generalData";
 import FaqSection from "@/components/general/faqSection";
 import MailingList from "@/components/general/mailingList";
 import ExecSection from "@/components/general/execSection";
 import FooterSection from "@/components/general/footerSection";
 import InfoButton from "@/components/primitives/infoButton";
-import ImageArea from "@/components/general/imageArea";
-import Link from "next/link";
 import {faqs, navItems} from "@/lib/data/generalData";
-import FaqSection from "@/components/general/faqSection";
-import MailingList from "@/components/general/mailingList";
-import ExecSection from "@/components/general/execSection";
-import FooterSection from "@/components/general/footerSection";
-import InfoButton from "@/components/primitives/infoButton";
 import { Button } from "@/components/primitives/button";
+import HeroSection from "@/components/general/heroSection";
+import MemberRoles from "@/components/general/memberRoles";
+import ProjectSection from "@/components/general/projectSection";
 
+const refreshProjects = async () => {
+    const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/refresh`,
+        {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            cache: "no-store",
+        },
+);
+
+    const data = await res.json();
+    return data.data;
+};
 
 const text = {
   aboutUsTitle: "What we do at",

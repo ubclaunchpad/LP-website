@@ -30,6 +30,8 @@ export async function submitApplication({ formId }: { formId: bigint }) {
 
   const [res, form] = await Promise.all([resPromise, formPromise]);
 
+  console.log(res, form);
+
   if (!res || !form) {
     return null;
   }
@@ -38,9 +40,13 @@ export async function submitApplication({ formId }: { formId: bigint }) {
     form: form.questions as unknown as FormStep[],
     formAnswers: res.details as Obj,
   });
-  if (!isValid) {
-    return errors;
-  }
+
+  console.log(isValid, errors);
+  // if (!isValid) {
+  //   return errors;
+  // }
+
+  console.log("valid");
   const updateSubmission = db.submissions.update({
     where: {
       user_id_form_id: {
@@ -142,6 +148,7 @@ function validateFormAnswers({
       const result = validation.safeParse(value);
       if (!result.success) {
         isValid = false;
+        console.log(`Error in ${question.id}: ${result.error.message}`);
         errors.push(result.error.message);
       }
     });
