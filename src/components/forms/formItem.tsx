@@ -18,11 +18,11 @@ export default function FormItemInput({
         className={`flex  gap-2 ${question.label.length > 40 || expanded ? "flex-col" : "lg:flex-row flex-col"}`}
       >
         <label
-          className={`flex   flex-shrink-0  pt-2 gap-1 ${question.label.length > 40 || expanded ? "w-full" : "w-60 min-w-60 "}`}
+          className={`flex   flex-shrink-0  pt-2 gap-0.5 ${question.label.length > 40 || expanded ? "w-full" : "w-60 min-w-60 "}`}
         >
           <span className="">{question.label}</span>
           {question.config.validation.isRequired && (
-            <span className="text-red-500">*</span>
+            <span className="text-lp-600">*</span>
           )}
         </label>
         <div className="flex flex-col items-center  w-full gap-2 relative *:w-full">

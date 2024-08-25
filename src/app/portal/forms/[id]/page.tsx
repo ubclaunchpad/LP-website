@@ -11,9 +11,9 @@ import { getUserApplication } from "@/app/portal/forms/actions";
 import { Form } from "@/lib/types/application";
 
 const text = {
-  closed: "This form is now closed. If you have any questions, please contact us at strategy@ubclaunchad.com.",
+  closed: "This form is now closed.",
   submitted:
-    "Your application has been submitted. If you have any questions, please contact us at strategy@ubclaunchad.com.",
+    "Your application has been submitted.",
   rejected:
     "Unfortunately, it looks like your application was not successful this time. However, we encourage you to apply again in the future.",
   default: "No longer available",

@@ -74,7 +74,7 @@ export default function FormQuestionMapper({
 function Textarea({ value, onChange, ...props }) {
   return (
     <textarea
-      className="w-full p-2 border border-background-900 resize-none bg-background-900 rounded-md"
+      className="w-full p-2 border border-background-600 bg-background-700  rounded-md"
       value={value || ""}
       onChange={onChange}
       {...props}

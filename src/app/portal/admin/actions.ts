@@ -1,8 +1,16 @@
 "use server";
-import { db } from "@/db";
+import {db} from "@/db";
 
 export async function getForms() {
-  return db.forms.findMany();
+  const users = await db.users.findMany();
+    return users.reduce((acc: Record<string, any>, user: any) => {
+        acc[user.id] = {...user, name: user["raw_user_meta_data"]?.full_name};
+        return acc;
+    }, {});
+}
+
+export async function getUsers() {
+    return db.users.findMany();
 }
 
 export async function createForm(data: { title: string; description: string }) {
@@ -29,4 +37,30 @@ export async function updateForm(
   },
 ) {
   return db.forms.update({ where: { id }, data });
+}
+
+
+export async function getSubmissions(formId: number) {
+  const app = await db.submissions
+      .findMany({
+          include: {
+              users: true,
+              applications: true,
+
+          },
+          where: { form_id: BigInt(formId), status: { not: "pending" } },
+          } );
+  console.log(app);
+
+  return app.map((submission) => {
+      const details = submission.details ? submission.details as any : {};
+        return {
+            ...submission,
+            ...details,
+            appStatus: submission.applications?.status,
+            appReviewer: submission.applications?.reviewer_id,
+            email: submission.users?.email,
+            userid: submission.users?.id,
+        }
+    })
 }
