@@ -1,37 +1,25 @@
-import Navbar from "@/components/layouts/navbar";
+import Navbar from "@/components/general/navbar";
 import { nunitoSans } from "./fonts";
+import ImageArea from "@/components/general/imageArea";
+import Link from "next/link";
+import {faqs, navItems} from "@/lib/data/generalData";
+import FaqSection from "@/components/general/faqSection";
+import MailingList from "@/components/general/mailingList";
+import ExecSection from "@/components/general/execSection";
+import FooterSection from "@/components/general/footerSection";
 import InfoButton from "@/components/primitives/infoButton";
 import ImageArea from "@/components/general/imageArea";
-import { Button } from "@/components/primitives/button";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-import MemberRoles from "@/components/general/memberRoles";
+import {faqs, navItems} from "@/lib/data/generalData";
+import FaqSection from "@/components/general/faqSection";
+import MailingList from "@/components/general/mailingList";
+import ExecSection from "@/components/general/execSection";
+import FooterSection from "@/components/general/footerSection";
+import InfoButton from "@/components/primitives/infoButton";
+import { Button } from "@/components/primitives/button";
 
-const ProjectSection = dynamic(
-  () => import("@/components/general/projectSection"),
-  { ssr: false },
-);
-
-const refreshProjects = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/refresh`,
-    {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      cache: "no-store",
-    },
-  );
-
-  const data = await res.json();
-  return data.data;
-};
 
 const text = {
-  heroTitle: "Welcome to UBC Launch Pad",
-  heroDescription:
-    "A student-run software engineering team devoted to building software projects in a collaborative and professional environment",
   aboutUsTitle: "What we do at",
   aboutUsSubtitle: "Launch Pad",
   aboutUsText: `As the leading technology club at UBC, Launch Pad is devoted to create a collaborative and professional environment for software development. It is our goal to provide the best space for students to apply and develop their technical skills outside of classroom, to learn and practice industry-standard tools, and to build passion projects with like-minded individuals.
@@ -54,13 +42,12 @@ const lpImageProps = {
 export default async function Home() {
   const projects = await refreshProjects();
   return (
-    <main className="flex min-h-screen flex-col items-center px-4">
-      <Navbar />
-      <section className="flex flex-col items-center py-10 text-center">
-        <h1 className="text-4xl font-bold">{text.heroTitle}</h1>
-        <p className="text-lg">{text.heroDescription}</p>
-      </section>
+    <main className="flex min-h-screen flex-col items-center ">
+      <div className="w-full flex justify-end">
+        <Navbar navItems={navItems}/>
+      </div>
 
+      <HeroSection />
       <section className="flex flex-col lg:flex-row items-center space-x-10 space-y-5 w-full">
         <div>
           <ImageArea {...lpImageProps} />
@@ -110,6 +97,10 @@ export default async function Home() {
       <section className="flex flex-col lg:flex-row items-start justify-between w-full lg:space-x-10">
         <ProjectSection projects={projects ?? []} />
       </section>
+      <FaqSection faqs={faqs}/>
+      <MailingList />
+      <ExecSection />
+      <FooterSection />
     </main>
   );
 }

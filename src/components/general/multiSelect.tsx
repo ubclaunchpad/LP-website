@@ -20,7 +20,7 @@ export default function MultiSelect({
   return (
     <div className="relative flex flex-col w-full">
       <button
-        className="flex bg-background-900  items-center min-h-11 rounded p-2 gap-2"
+        className="flex border border-background-600 bg-background-700  items-center min-h-11 rounded p-2 gap-2"
         onClick={() => setIsOpen(!isOpen)}
         type="button"
       >
@@ -28,7 +28,7 @@ export default function MultiSelect({
           {options
             .filter((option) => value?.includes(option.value))
             .map((option) => (
-              <span key={option.label} className="p-0.5 px-2 rounded bg-lp-700">
+              <span key={option.label} className="p-0.5 px-2 rounded bg-lp-500">
                 {option.label}
               </span>
             ))}
@@ -41,13 +41,13 @@ export default function MultiSelect({
         ></div>
       )}
       {isOpen && (
-        <div className="absolute max-h-80 overflow-y-scroll bg-background-900 gap-1 flex flex-col rounded border border-background-800 top-0  shadow-lg left-0 w-full transform z-40 overflow-hidden p-2 ">
+        <div className="absolute max-h-80 overflow-y-scroll bg-background-700 gap-1 flex flex-col rounded border border-background-600 top-0  shadow-lg left-0 w-full transform z-40 overflow-hidden p-2 ">
           {options.map((option, index) => (
             <div
               key={index}
               className={`flex items-center h-10 flex-shrink-0 gap-2 rounded p-2 ${
                 value?.includes(option.value)
-                  ? "bg-lp-700"
+                  ? "bg-lp-500"
                   : "hover:bg-background-800 bg-opacity-45"
               }`}
               onClick={() => {

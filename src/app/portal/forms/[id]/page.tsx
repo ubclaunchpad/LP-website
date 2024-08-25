@@ -11,12 +11,12 @@ import { getUserApplication } from "@/app/portal/forms/actions";
 import { Form } from "@/lib/types/application";
 
 const text = {
-  closed: "Applications are now closed. Please check back next term.",
+  closed: "This form is now closed.",
   submitted:
-    "Your application has been submitted. If you have any questions, please contact us at strategy@ubclaunchad.com.",
+    "Your application has been submitted.",
   rejected:
     "Unfortunately, it looks like your application was not successful this time. However, we encourage you to apply again in the future.",
-  default: "An error occurred. Please try again later.",
+  default: "No longer available",
 };
 
 export default async function page({

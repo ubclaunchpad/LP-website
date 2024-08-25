@@ -1,9 +1,11 @@
 "use server";
-
+import { render } from '@react-email/components';
 import { db } from "@/db";
 import { FormStep, Obj } from "@/lib/types/questions";
 import { createClient } from "@/lib/utils/supabase/server";
 import { JSONValidationToZod } from "@/lib/utils/forms/helpers";
+import {sendEmail} from "@/lib/utils/forms/email";
+import {SubmissionTemplate} from "@/components/forms/emailTemplates/submissionTemplate";
 
 export async function submitApplication({ formId }: { formId: bigint }) {
   const supabase = createClient();
@@ -11,7 +13,7 @@ export async function submitApplication({ formId }: { formId: bigint }) {
   if (!data.user || error) {
     return null;
   }
-  const res = await db.submissions.findUnique({
+  const resPromise =  db.submissions.findUnique({
     where: {
       user_id_form_id: {
         form_id: formId,
@@ -19,16 +21,16 @@ export async function submitApplication({ formId }: { formId: bigint }) {
       },
     },
   });
-  if (!res) {
-    return null;
-  }
 
-  const form = await db.forms.findUnique({
+  const formPromise =  db.forms.findUnique({
     where: {
       id: formId,
     },
   });
-  if (!form) {
+
+  const [res, form] = await Promise.all([resPromise, formPromise]);
+
+  if (!res || !form) {
     return null;
   }
 
@@ -36,12 +38,10 @@ export async function submitApplication({ formId }: { formId: bigint }) {
     form: form.questions as unknown as FormStep[],
     formAnswers: res.details as Obj,
   });
-  console.log(isValid, errors);
   if (!isValid) {
     return errors;
   }
-  console.log("Submitting application");
-  const up = await db.submissions.update({
+  const updateSubmission = db.submissions.update({
     where: {
       user_id_form_id: {
         form_id: formId,
@@ -52,11 +52,26 @@ export async function submitApplication({ formId }: { formId: bigint }) {
       status: "submitted",
     },
   });
-  console.log(up);
 
-  // TODO: Send email to user
-  // TODO: Run form validation on server
-  // TODO: Handle file uploads with validation
+  const createApplication = db.applications.create({
+    data: {
+      id: res.id!,
+      status: "to review",
+      reviewer_id: null,
+    },
+  });
+
+  await Promise.all([updateSubmission, createApplication]);
+  const appEmail = res.details? res.details as Obj : {};
+  const template = await render(SubmissionTemplate({formTitle: form.title}));
+  await sendEmail({
+    from: "no-reply@ubclaunchpad.com",
+    fromName: "No-reply UBC Launch Pad",
+    to: data.user.email!.toString(),
+    subject: `${form.title} - Form Submitted`,
+    html: template,
+    cc: appEmail?.email as string,
+  })
   return true;
 }
 
@@ -127,10 +142,7 @@ function validateFormAnswers({
       const result = validation.safeParse(value);
       if (!result.success) {
         isValid = false;
-        console.log(validation.isOptional());
         errors.push(result.error.message);
-        console.log(result.error.errors);
-        console.log(question.id);
       }
     });
   });

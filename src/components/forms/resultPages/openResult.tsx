@@ -24,7 +24,7 @@ export default function OpenForm({ form }: { form: Form }) {
         <h1 className="text-5xl text-left w-full font-heading text-white">
           {form.title}
         </h1>
-        <div className="flex items-center justify-between gap-10">
+        <div className="flex flex-col  justify-between gap-10">
           <h2 className="text-xl  font-heading text-white">{text.open}</h2>
           <Button
             onClick={createApplication}

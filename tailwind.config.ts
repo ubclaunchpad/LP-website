@@ -9,14 +9,35 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        lightPurple: "#3A3543",
+        lightPurple2: "#CDC2E6",
+        lightPurple3: "#6A3AD9",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gray-gradient": "linear-gradient(90deg, #FFFFFF 0%, #999999 100%)",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
         sans: ["var(--font-nunito-sans)", ...fontFamily.sans],
         heading: ["var(--font-epilogue)", ...fontFamily.sans],
+      },
+      transitionProperty: {
+        height: "height"
+      },
+      textColor: {
+        "lp-50": "var(--lp-50)",
+        "lp-100": "var(--lp-100)",
+        "lp-200": "var(--lp-200)",
+        "lp-300": "var(--lp-300)",
+        "lp-400": "var(--lp-400)",
+        "lp-500": "var(--lp-500)",
+        "lp-600": "var(--lp-600)",
+        "lp-700": "var(--lp-700)",
+        "lp-800": "var(--lp-800)",
+        "lp-900": "var(--lp-900)",
       },
       backgroundColor: {
         primary: "rgb(var(--color-background-primary))",

@@ -96,8 +96,6 @@ th {
   width: 100%;
   display: flex;
   padding: 10px;
-  @apply bg-indigo-700;
-  /* position: sticky; */
   top: 0;
 }
 
@@ -118,13 +116,13 @@ table {
 tbody {
   display: flex;
   flex-direction: column;
-  @apply bg-zinc-700;
+  @apply bg-background-700;
 
   > :nth-child(odd) {
-    @apply bg-zinc-800;
+    @apply bg-background-700;
   }
   > :nth-child(even) {
-    @apply bg-zinc-900;
+    @apply bg-background-800;
   }
 
   overflow: hidden;

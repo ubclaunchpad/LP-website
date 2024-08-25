@@ -1,13 +1,14 @@
 generator client {
   provider        = "prisma-client-js"
+  output          = "../node_modules/.prisma/client"
   previewFeatures = ["multiSchema"]
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-  // directUrl = env("DIRECT_URL")
-  schemas  = ["auth", "public"]
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+  schemas   = ["auth", "public"]
 }
 
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
@@ -317,6 +318,7 @@ model users {
   mfa_factors                 mfa_factors[]
   one_time_tokens             one_time_tokens[]
   sessions                    sessions[]
+  applications                applications[]
   submissions                 submissions[]
 
   @@index([instance_id])
@@ -338,13 +340,14 @@ model form_status {
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model forms {
-  id          BigInt        @id @default(autoincrement())
+  id          BigInt        @id @unique @default(autoincrement())
   title       String        @unique
   questions   Json          @default("{}")
   config      Json          @default("{}")
   open_at     DateTime?     @db.Timestamptz(6)
   close_at    DateTime?     @db.Timestamptz(6)
   created_at  DateTime      @default(now()) @db.Timestamptz(6)
+  type        form_type?    @default(survey)
   form_status form_status[]
   submissions submissions[]
 
@@ -354,16 +357,30 @@ model forms {
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model submissions {
-  user_id    String   @db.Uuid
-  form_id    BigInt
-  status     String?
-  meta       Json?    @default("{}")
-  details    Json?    @default("{}")
-  created_at DateTime @default(now()) @db.Timestamptz(6)
-  forms      forms    @relation(fields: [form_id], references: [id], onDelete: Cascade)
-  users      users    @relation(fields: [user_id], references: [id])
+  user_id      String        @db.Uuid
+  form_id      BigInt
+  status       String?
+  meta         Json?         @default("{}")
+  details      Json?         @default("{}")
+  created_at   DateTime      @default(now()) @db.Timestamptz(6)
+  id           String?       @unique @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  applications applications?
+  forms        forms         @relation(fields: [form_id], references: [id], onDelete: Cascade)
+  users        users         @relation(fields: [user_id], references: [id])
 
   @@id([user_id, form_id])
+  @@schema("public")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model applications {
+  id          String      @id @db.Uuid
+  status      String?     @default("to review")
+  reviewer_id String?     @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  notes       String?
+  submissions submissions @relation(fields: [id], references: [id], onDelete: Cascade)
+  users       users?      @relation(fields: [reviewer_id], references: [id], onUpdate: Restrict)
+
   @@schema("public")
 }
 
@@ -406,4 +423,13 @@ enum one_time_token_type {
   phone_change_token
 
   @@schema("auth")
+}
+
+/// This enum is commented in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+enum form_type {
+  recruitment
+  survey
+  other
+
+  @@schema("public")
 }
