@@ -8,6 +8,8 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
+  eslint: {
+    ignoreDuringBuilds: false,
   },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
