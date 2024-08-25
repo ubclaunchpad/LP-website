@@ -14,7 +14,8 @@ const refreshProjects = async () => {
     method: "POST",
     headers: {
       'content-type': 'application/json',
-    }
+    },
+    cache: 'no-store'
   });
 
   const data = await res.json()

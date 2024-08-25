@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'
 import { Navigation } from 'swiper/modules';
 import useIsMobile from '@/app/lib/hooks/useIsMobile';
+import { useMemo } from 'react';
 
 type ProjectSectionProps = {
     projects: Project[],
@@ -18,6 +19,7 @@ type Project = {
     alt: string,
     width: number, 
     height: number
+    url: string,
 }
 
 
@@ -26,8 +28,22 @@ const text = {
 }
 
 const ProjectSection = ({projects}: ProjectSectionProps) => {
-    const BREAKPOINT = 768;
-    const isMobile = useIsMobile(BREAKPOINT);
+    const MOBILESIZE = 768,TABLETSIZE = 900, LARGESIZE = 1600
+    const isMobile = useIsMobile(MOBILESIZE);
+    const isLargeScreen = !useIsMobile(LARGESIZE);
+    const isTablet = useIsMobile(TABLETSIZE);
+    const carouselSize = useMemo(() => {
+        if(isLargeScreen){
+            return 5;
+        } else if(isMobile) {
+            return 1;
+        } else if(isTablet) {
+            return 2;
+        } else {
+            return 3;
+        }
+
+    }, [isMobile, isLargeScreen])
     return(
     <div className='flex flex-col text-center items-center justify-center md: justify-between py-10 w-full'>
     <span className='flex flex-col md:flex-row text-center items-center justify-between md:px-10 py-10 w-full'>
@@ -45,16 +61,14 @@ const ProjectSection = ({projects}: ProjectSectionProps) => {
     <span className='flex text-center items-center justify-between lg:px-10 py-10 w-full'>
     <Swiper
         spaceBetween={30}
-        slidesPerView={isMobile ? 1 : 3} // use only 1 slide carousel for mobile 
+        slidesPerView={carouselSize} // use only 1 slide carousel for mobile 
         loop={true}
-        centeredSlides={true}
         modules={[Navigation]}
         navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
-        className="w-full"
       >
         {projects.map((project, index) => (
           <SwiperSlide key={index} className="flex justify-center items-center w-auto">
-            <ImageCard {...project} />
+            <ImageCard {...project}/>
           </SwiperSlide>
         ))}
     </Swiper>

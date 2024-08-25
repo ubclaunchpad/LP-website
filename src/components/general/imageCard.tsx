@@ -6,27 +6,28 @@ type ImageCardProps = {
     imageSrc: string,
     alt: string, 
     width: number, 
-    height: number
+    height: number,
+    url: string,
 }
 
 
-const ImageCard = ({ title, description, imageSrc, alt, width, height}: ImageCardProps) => {
+const ImageCard = ({ title, description, imageSrc, alt, width, height, url}: ImageCardProps) => {
 
     const imageProps = {
         src: imageSrc,
         alt,
         width, 
-        height
+        height,
     }
     return (
     
-    <div className="flex flex-col justify-between bg-secondary rounded-2xl py-1 text-white items-center text-center">
+    <div className="flex flex-col justify-between bg-secondary rounded-2xl py-1 text-white items-center text-center min-h-5/12">
         <div className="mt-8 w-full h-full">
-            <h2 className="text-xl font-normal mb-2">{title}</h2>
+            <a className="text-xl font-normal mb-3" href={url} >{title}</a>
             <p className="font-extralight px-2">{description}</p>
         </div>
-        <div className="w-10/12">
-            <ImageArea {...imageProps}/>
+        <div className="w-10/12 py-5">
+            <ImageArea {...imageProps} className="rounded-2xl"/>
         </div>
     </div>
     );

@@ -40,14 +40,14 @@ async function getProjects() {
   }
 
   const data = await res.json();
-
   const formattedData = data.results.map((item: any) => ({
     title: item.properties.Name.title[0].text.content,
-    description: item.properties.Oneliner.rollup.array[0].rich_text[0].text.content,
+    description: item.properties.Oneliner.rich_text?.[0]?.text?.content ?? `This was one of Launch Pad's previous projects. This description is just to fill space for testing`,
     imageSrc: item.properties["Files & media"]?.files?.[0]?.file?.url ?? "/images/launchpadTeam.png",
     alt: "Mock",
     width: 372,
     height: 213,
+    url: item.public_url,
   }));
 
   const cacheData = {
@@ -56,7 +56,6 @@ async function getProjects() {
   };
   
   fs.writeFileSync(projectsFilePath, JSON.stringify(cacheData, null, 2), 'utf8');
-
   return formattedData;
 }
 
