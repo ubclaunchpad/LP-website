@@ -1,0 +1,68 @@
+{
+  "timestamp": 1724628277544,
+  "projects": [
+    {
+      "title": "Microvan",
+      "description": "Microvan seeks to streamline their internal processes and keep up with competitors by switching to online auctions. As a result, we designed an online auction website and admin management system for the company.",
+      "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/32b30b4b-3933-4585-9a8f-ad804f6f1528/microvan_notion.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T232438Z&X-Amz-Expires=3600&X-Amz-Signature=3fb71d6ac8eacf0d3bc0b1744dc34a2e083705a4936f9ebadcc002b15af12039&X-Amz-SignedHeaders=host&x-id=GetObject",
+      "alt": "Mock",
+      "width": 372,
+      "height": 213,
+      "url": "https://launchpadubc.notion.site/Microvan-5ae6a5d55e7141ad952e99f2e62d396a"
+    },
+    {
+      "title": "Cosmic Gateway",
+      "description": "Cosmic Gateway is Launch Pad's internal club tools, including the website, project management and deployment platforms ",
+      "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/015ffcd4-6377-43ae-a8b2-211c195df611/cosmic_gateway.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T232438Z&X-Amz-Expires=3600&X-Amz-Signature=a0a835761bb35c667aaa5a88763a63c6458e79daf7a947323c3c87b4628c3c11&X-Amz-SignedHeaders=host&x-id=GetObject",
+      "alt": "Mock",
+      "width": 372,
+      "height": 213,
+      "url": "https://launchpadubc.notion.site/Cosmic-Gateway-6be0d37b607542afa355f405b8d1fd36"
+    },
+    {
+      "title": "Nom Appetit",
+      "description": "Nom Appetit is a social restaurant tracking and recommendation app, designed to finally answer the question of “So… where do you want to eat?”",
+      "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/3b517896-dec1-4ea5-aa1a-2f2252a219f8/nom_apetit_home.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T232438Z&X-Amz-Expires=3600&X-Amz-Signature=68e02901ef189ccd0dadfd33109415b41193dd7f0b042e7f096c96d4d0ee03af&X-Amz-SignedHeaders=host&x-id=GetObject",
+      "alt": "Mock",
+      "width": 372,
+      "height": 213,
+      "url": "https://launchpadubc.notion.site/Nom-Appetit-fa196383c8654badaeb43bfc085c7a36"
+    },
+    {
+      "title": "EpiLog",
+      "description": "Epilog is a mobile app that was designed to help epilepsy patients with tracking medications, appointments and monitoring seizures",
+      "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/0b0f728a-4c4c-4b00-bcd3-96a00bfaf444/epilog.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T232438Z&X-Amz-Expires=3600&X-Amz-Signature=d31d871d386ac36b632b331494ebb3c4a7da1c9bc353c64a6c70835caf7d4659&X-Amz-SignedHeaders=host&x-id=GetObject",
+      "alt": "Mock",
+      "width": 372,
+      "height": 213,
+      "url": "https://launchpadubc.notion.site/EpiLog-51a750b63ca749169b5f859c3a6560b3"
+    },
+    {
+      "title": "BlueNav",
+      "description": "BlueNav was an interactive degree planner for UBC students, that provided an easy-to-understand summary of pending degree requirements for undergrad students",
+      "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/ce295441-846e-4f2e-832c-2c07b758e9c6/bluenavlogin.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T232438Z&X-Amz-Expires=3600&X-Amz-Signature=55585f26866ae6fec8e1220f2eef54db0180f4db255a40ef0be85d8501dc7091&X-Amz-SignedHeaders=host&x-id=GetObject",
+      "alt": "Mock",
+      "width": 372,
+      "height": 213,
+      "url": "https://launchpadubc.notion.site/BlueNav-a5f9bf80bd504c6685ce0bfc921f9586"
+    },
+    {
+      "title": "ClassSync",
+      "description": "ClassSync is a centralized ed-tech platform in collaboration with The C.O.D.E Initiative, creating a seamless experience for both students and volunteers.",
+      "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/ee7d8000-9e62-4bb1-959e-aaaf9370ff20/classsync.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T232438Z&X-Amz-Expires=3600&X-Amz-Signature=ffb3e918af1425544a8d431f5e927f516c68543c6eff10196475b66139b3f8f6&X-Amz-SignedHeaders=host&x-id=GetObject",
+      "alt": "Mock",
+      "width": 372,
+      "height": 213,
+      "url": "https://launchpadubc.notion.site/ClassSync-0dc8c3e8e54941869976e9b54585ef00"
+    },
+    {
+      "title": "Labby ",
+      "description": "Labby was a ticket management system platform developed in collaboration with   the non-profit organization BC Cancer, to meet their needs.",
+      "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/7a55ea12-ce50-49f0-bf4b-b0f71c823b23/labby.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T232438Z&X-Amz-Expires=3600&X-Amz-Signature=e887fdf4b9e30e0296842f2034456615a2d88439a384048425cbd4a254023a7f&X-Amz-SignedHeaders=host&x-id=GetObject",
+      "alt": "Mock",
+      "width": 372,
+      "height": 213,
+      "url": "https://launchpadubc.notion.site/Labby-b00fa2bdf707461687a898563dd5c833"
+    }
+  ]
+}

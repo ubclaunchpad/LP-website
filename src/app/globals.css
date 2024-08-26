@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 39, 36, 45;
+  --background-end-rgb: 3, 33, 39;
+  --color-background-primary: 43, 40, 49;
+  --color-background-secondary: 58, 53, 67;
+
+  --lp-50: #edf3ff;
+  --lp-100: #deeaff;
+  --lp-200: #c4d8ff;
+  --lp-300: #a0bdff;
+  --lp-400: #809cff;
+  --lp-500: #5b72f9;
+  --lp-600: #3d4aee;
+  --lp-700: #2f37d3;
+  --lp-800: #2932aa;
+  --lp-900: #293286;
+  --lp-950: #181b4e;
+
+  --background-50: #f1f2f6;
+  --background-100: #e2e4eb;
+  --background-200: #c1c6d0;
+  --background-300: #8894a8;
+  --background-400: #525d6e;
+  --background-500: #303640;
+  --background-600: #272c35;
+  --background-700: #20242b;
+  --background-800: #1b1e25;
+  --background-900: #16181d;
+  --background-950: #101215;
+}
+
+html {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+  h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 43, 40, 49;
+    --background-end-rgb: 34, 33, 37;
+    --color-background-primary: 43, 40, 49;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.gelatine {
+  animation: gelatine 1.2s;
+}
+@keyframes gelatine {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+  12.5% {
+    transform: scale(0.9, 1.1);
+  }
+  25% {
+    transform: scale(1.1, 0.9);
+  }
+  37.5% {
+    transform: scale(0.95, 1.05);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+}
+
+th {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  top: 0;
+}
+
+td {
+  flex: 1;
+  padding: 0.65rem;
+}
+
+tr {
+  width: 100%;
+  display: flex;
+  padding: 0;
+}
+table {
+  border-radius: 0.5rem;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  @apply bg-background-700;
+
+  > :nth-child(odd) {
+    @apply bg-background-700;
+  }
+  > :nth-child(even) {
+    @apply bg-background-800;
+  }
+
+  overflow: hidden;
+
+  tr {
+    width: 100%;
+    display: flex;
+    min-height: 3rem;
+  }
+}
+/*
+td:first-child {
+  @apply bg-zinc-800;
+} */
+
+.white-glow {
+  -webkit-box-shadow: 0px 0px 177px 27px rgba(120, 110, 138, 0.44);
+  -moz-box-shadow: 0px 0px 177px 27px rgba(120, 110, 138, 0.44);
+  box-shadow: 0px 0px 177px 27px rgba(120, 110, 138, 0.44);
+}
