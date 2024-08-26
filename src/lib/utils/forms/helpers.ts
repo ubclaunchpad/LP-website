@@ -31,7 +31,7 @@ export async function saveApplication(
     const formIdNumber = BigInt(formId);
     updateApplication({ application: fields, formId: formIdNumber })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((e) => {
         console.log(e);

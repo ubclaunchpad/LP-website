@@ -29,8 +29,7 @@ export async function submitApplication({ formId }: { formId: bigint }) {
   });
 
   const [res, form] = await Promise.all([resPromise, formPromise]);
-
-  console.log(res, form);
+  // console.log(res, form);
 
   if (!res || !form) {
     return null;
@@ -46,7 +45,6 @@ export async function submitApplication({ formId }: { formId: bigint }) {
   //   return errors;
   // }
 
-  console.log("valid");
   const updateSubmission = db.submissions.update({
     where: {
       user_id_form_id: {

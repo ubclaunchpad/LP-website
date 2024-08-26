@@ -31,7 +31,6 @@ export function getFormFields({ users }: { users: any }): FormFields {
         if (!reviewerId) {
           return "Not assigned";
         }
-        console.log(users);
         const reviewer = users[reviewerId];
         return reviewer.name ? reviewer.name : reviewer.email;
       },
@@ -219,12 +218,7 @@ export default function DataTableWrapper<TData>({
   data,
   users,
 }: DataTableWrapperProps<TData>) {
-  const userObj = users.reduce((acc: any, user: any) => {
-    acc[user.id] = { ...user, name: user["raw_user_meta_data"]?.full_name };
-    return acc;
-  }, {});
-
-  const fields = getFormFields({ users: userObj });
+  const fields = getFormFields({ users: users });
   const fieldData = data as unknown as (string | number)[];
   const columns = createColumns(fields);
   return <DataTable columns={columns} data={fieldData} fields={fields} />;

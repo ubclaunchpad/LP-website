@@ -2,15 +2,15 @@
 import { db } from "@/db";
 
 export async function getForms() {
+  return db.forms.findMany();
+}
+
+export async function getUsers() {
   const users = await db.users.findMany();
   return users.reduce((acc: Record<string, any>, user: any) => {
     acc[user.id] = { ...user, name: user["raw_user_meta_data"]?.full_name };
     return acc;
   }, {});
-}
-
-export async function getUsers() {
-  return db.users.findMany();
 }
 
 export async function createForm(data: { title: string; description: string }) {
@@ -50,8 +50,6 @@ export async function getSubmissions(formId: number) {
     },
     where: { form_id: BigInt(formId), status: { not: "pending" } },
   });
-  console.log(app);
-
   return app.map((submission: any) => {
     const details = submission.details ? (submission.details as any) : {};
     return {

@@ -96,7 +96,6 @@ export default function ApplicationForm({
       formAnswers: newFormAnswers,
     } = validateTab(formQ[currentStep], formAnswers);
     setFormAnswers(Object.assign({}, newFormAnswers));
-    console.log(errors);
     if (!isValid) {
       // TODO: Include a toast message UI
       return;
