@@ -16,7 +16,9 @@ type NavbarProps = {
 export default function Navbar({ navItems }: NavbarProps) {
   return (
     <nav className={"flex justify-between items-center w-full p-6"}>
+      <a href="/">
       <Image src={logo} alt="Logo" width={141} height={49} unoptimized />
+      </a>
       <ul className=" justify-between  gap-12 items-center hidden lg:flex">
         {navItems.map((item, index) => (
           <li key={index}>
