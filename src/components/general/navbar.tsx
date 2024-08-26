@@ -22,7 +22,7 @@ export default function Navbar({ navItems }: NavbarProps) {
       <ul className=" justify-between  gap-12 items-center hidden lg:flex">
         {navItems.map((item, index) => (
           <li key={index}>
-            <Link href={item.url} className={"text-white "}>
+            <Link href={item.url} className={"text-white hover:text-violet-400"}>
               {item.name}
             </Link>
           </li>
