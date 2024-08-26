@@ -52,7 +52,7 @@ export async function getSubmissions(formId: number) {
   });
   console.log(app);
 
-  return app.map((submission) => {
+  return app.map((submission: any) => {
     const details = submission.details ? (submission.details as any) : {};
     return {
       ...submission,
