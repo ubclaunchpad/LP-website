@@ -39,7 +39,7 @@ export default function FaqSection({ faqs }: FaqSectionProps) {
   );
 
   return (
-    <div className="flex flex-col items-center py-10 pt-20 ">
+    <div className="flex flex-col items-center py-10 pt-20">
       <h2
         className="text-3xl text-heading font-[600] text-[48px] text-white "
         id={"faq"}

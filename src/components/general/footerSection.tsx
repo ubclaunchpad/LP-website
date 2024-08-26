@@ -24,7 +24,9 @@ export default function FooterSection() {
             "flex flex-col items-center md:items-start   w-full gap-4 max-w-3xl"
           }
         >
+          <a href = "/">
           <Image src={logo} alt="Logo" width={256} height={85} unoptimized />
+          </a>
           <p className={"opacity-70"}>{text.subheading}</p>
         </div>
         <div
@@ -44,7 +46,7 @@ export default function FooterSection() {
                 <Link
                   key={index}
                   href={link.url}
-                  className={" text-[#F5F6FF] w-full "}
+                  className={" text-[#F5F6FF] w-full hover:text-purple-400"}
                   target={"_blank"}
                   rel={"noopener noreferrer"}
                 >
@@ -57,14 +59,14 @@ export default function FooterSection() {
       </div>
       <div className={" w-full   min-h-[1px] bg-white opacity-20"}></div>
       <div
-        className={"flex gap-4 justify-between sm:flex-row flex-col  w-full  "}
+        className={"flex gap-4 justify-between sm:flex-row flex-col  w-full"}
       >
         <div className={"flex gap-6"}>
           {bottomFooterLinks.map((link, index) => (
             <Link
               key={index}
               href={link.url}
-              className={" text-[#F5F6FF] opacity-80 w-full "}
+              className={" text-[#F5F6FF] opacity-80 w-full hover:text-purple-400"}
               target={"_blank"}
               rel={"noopener noreferrer"}
             >

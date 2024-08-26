@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 39, 36, 45;
@@ -35,6 +36,8 @@
 }
 
 html {
+  @apply scroll-smooth;
+  
   h1,
   h2,
   h3,
