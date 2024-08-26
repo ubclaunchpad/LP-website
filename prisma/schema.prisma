@@ -376,7 +376,7 @@ model submissions {
 model applications {
   id          String      @id @db.Uuid
   status      String?     @default("to review")
-  reviewer_id String?     @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  reviewer_id String?     @db.Uuid
   notes       String?
   submissions submissions @relation(fields: [id], references: [id], onDelete: Cascade)
   users       users?      @relation(fields: [reviewer_id], references: [id], onUpdate: Restrict)

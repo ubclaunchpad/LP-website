@@ -96,19 +96,19 @@ export function isFormOpen(form: Form) {
 function typeToZodType(type: string) {
   switch (type) {
     case "string":
-      return z.string( { message: "Please enter a valid text" });
+      return z.string({ message: "Please enter a valid text" });
     case "number":
-      return z.number( { message: "Please enter a valid number" });
+      return z.number({ message: "Please enter a valid number" });
     case "email":
-      return z.string().email( { message: "Please enter a valid email" });
+      return z.string().email({ message: "Please enter a valid email" });
     case "url":
-      return z.string().url( { message: "Please enter a valid URL" });
+      return z.string().url({ message: "Please enter a valid URL" });
     case "date":
       return z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
     case "select":
-      return z.string( { message: "Please select an option" });
+      return z.string({ message: "Please select an option" });
     default:
-      return z.string( { message: "Invalid type" });
+      return z.string({ message: "Invalid type" });
   }
 }
 

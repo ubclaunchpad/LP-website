@@ -7,27 +7,21 @@ import MailingList from "@/components/general/mailingList";
 import ExecSection from "@/components/general/execSection";
 import FooterSection from "@/components/general/footerSection";
 import InfoButton from "@/components/primitives/infoButton";
-import {faqs, navItems} from "@/lib/data/generalData";
+import { faqs, navItems, projects } from "@/lib/data/generalData";
 import { Button } from "@/components/primitives/button";
 import HeroSection from "@/components/general/heroSection";
 import MemberRoles from "@/components/general/memberRoles";
 import ProjectSection from "@/components/general/projectSection";
 
-const refreshProjects = async () => {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/refresh`,
-        {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-            },
-            cache: "no-store",
-        },
-);
-
-    const data = await res.json();
-    return data.data;
-};
+// const refreshProjects = async () => {
+//     const res = await fetch(
+//         `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/refresh`
+// );
+//
+//     const data = await res.json();
+//     console.log(data.data);
+//     return data.data;
+// };
 
 const text = {
   aboutUsTitle: "What we do at",
@@ -50,15 +44,18 @@ const lpImageProps = {
 };
 
 export default async function Home() {
-  const projects = await refreshProjects();
+  // const projects = await refreshProjects();
   return (
-    <main className="flex min-h-screen flex-col items-center ">
+    <main className="flex min-h-screen flex-col items-center  max-w-screen overflow-x-hidden">
       <div className="w-full flex justify-end">
-        <Navbar navItems={navItems}/>
+        <Navbar navItems={navItems} />
       </div>
 
       <HeroSection />
-      <section className="flex flex-col lg:flex-row items-center space-x-10 space-y-5 w-full">
+      <section
+        className="flex flex-col lg:flex-row max-w-[1340px] items-center  px-8 w-full"
+        id={"about"}
+      >
         <div>
           <ImageArea {...lpImageProps} />
         </div>
@@ -74,13 +71,13 @@ export default async function Home() {
           >
             {text.aboutUsSubtitle}
           </h1>
-          <p className="text-stone-400 text-center lg:text-right py-10 whitespace-pre-wrap">
+          <p className="text-white text-center lg:text-right py-10 whitespace-pre-wrap text-balance max-w-lg">
             {text.aboutUsText}
           </p>
         </div>
       </section>
 
-      <section className="flex flex-col md:flex-row items-start justify-between w-full">
+      <section className="flex flex-col md:flex-row items-start justify-between max-w-[1340px] px-8 w-full">
         <div className="flex flex-col text-center items-center lg:items-start py-10 pl-0 lg:pl-10 md:pr-10 w-full">
           <h1
             className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}
@@ -95,7 +92,7 @@ export default async function Home() {
           <p className="text-stone-400 text-center lg:text-left py-10">
             {text.joinUsText}
           </p>
-          <Link href="/portal/applications">
+          <Link href="/portal/forms/241">
             <Button className="p-4" size={"xl"} icon>
               <label className="text-lg">{text.joinUsButton}</label>
             </Button>
@@ -104,10 +101,13 @@ export default async function Home() {
         <MemberRoles />
       </section>
 
-      <section className="flex flex-col lg:flex-row items-start justify-between w-full lg:space-x-10">
+      <section
+        className="flex flex-col lg:flex-row items-start justify-between w-full lg:space-x-10"
+        id={"projects"}
+      >
         <ProjectSection projects={projects ?? []} />
       </section>
-      <FaqSection faqs={faqs}/>
+      <FaqSection faqs={faqs} />
       <MailingList />
       <ExecSection />
       <FooterSection />

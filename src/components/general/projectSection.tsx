@@ -7,6 +7,7 @@ import "swiper/css";
 import { Navigation } from "swiper/modules";
 import useIsMobile from "@/app/lib/hooks/useIsMobile";
 import { useMemo } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 type ProjectSectionProps = {
   projects: Project[];
@@ -56,22 +57,17 @@ const ProjectSection = ({ projects }: ProjectSectionProps) => {
           </span>
         </span>
         <span className="hidden md:flex md:flex-row md:space-x-2">
-          <Button
-            variant={"secondary"}
-            icon
-            reverse
-            className="swiper-button-prev"
-          >
-            <label>{"Prev"}</label>
+          <Button variant={"dark"} className="swiper-button-prev gap-2">
+            <ArrowLeft size={20} />
           </Button>
-          <Button variant={"dark"} icon className="swiper-button-next">
-            <label>{"Next"}</label>
+          <Button variant={"dark"} className="swiper-button-next gap-2">
+            <ArrowRight size={20} />
           </Button>
         </span>
       </span>
       <span className="flex text-center items-center justify-between lg:px-10 py-10 w-full">
         <Swiper
-          spaceBetween={30}
+          spaceBetween={10}
           slidesPerView={carouselSize} // use only 1 slide carousel for mobile
           loop={true}
           modules={[Navigation]}
@@ -83,7 +79,7 @@ const ProjectSection = ({ projects }: ProjectSectionProps) => {
           {projects.map((project, index) => (
             <SwiperSlide
               key={index}
-              className="flex justify-center items-center w-auto"
+              className="flex justify-center items-center min-h-[500px] p-4 w-auto"
             >
               <ImageCard {...project} />
             </SwiperSlide>

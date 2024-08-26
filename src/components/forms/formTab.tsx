@@ -17,10 +17,10 @@ export default function FormTab({
       </h2>
       <div className="flex-1 flex-col flex gap-2 w-full relative">
         <div className="w-full flex-1 flex flex-col gap-2">
-          {questions.map((question, index) => (
+          {questions.map((question) => (
             <FormItemInput
               question={question}
-              key={index}
+              key={question.id}
               questionData={formData[question.id]}
               expanded={false}
             />

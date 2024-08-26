@@ -37,7 +37,7 @@ export default function AlumniCarousel() {
   }, []);
 
   return (
-    <div className="bg-white p-4 max-h-24 w-full h-full overflow-hidden">
+    <div className="bg-white  bg-opacity-20 p-4 max-h-24 w-full h-full overflow-hidden">
       <div id="carouselContainer" className="flex gap-16">
         <div className="flex-shrink-0">
           <a href="https://www.google.com/">

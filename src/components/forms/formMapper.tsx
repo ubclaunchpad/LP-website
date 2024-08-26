@@ -32,7 +32,7 @@ export default function FormQuestionMapper({
       return (
         <Input
           type={question.type}
-          placeholder={question.placeholder}
+          placeholder={question.placeholder?.toString()}
           value={value ? value.toString() : undefined}
           onChange={(e) => OnChange(e.target.value)}
           {...props}

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import UserBubble from "@/components/portal/userBubble";
-import {useState} from "react";
+import { useState } from "react";
 
 export type Tab = {
   label: string;
@@ -14,11 +14,10 @@ export type TabViewProps = {
 };
 
 function isActive(id: string, selectedTab?: string) {
-   return id.split("/").pop()?.split("?")[0]
-       === selectedTab
+  return id.split("/").pop()?.split("?")[0] === selectedTab;
 }
 
-export default function TabView({ tabs, children, selectedTab}: TabViewProps) {
+export default function TabView({ tabs, children, selectedTab }: TabViewProps) {
   const [activeTab, setActiveTab] = useState(selectedTab);
 
   return (
@@ -35,11 +34,10 @@ export default function TabView({ tabs, children, selectedTab}: TabViewProps) {
                 href={tab.route}
                 key={index}
                 className={` border-t border-x p-4 py-2 border-background-600 rounded-t-xl text-white ${
-                    isActive(tab.route, activeTab)
-                        ? "bg-lp-500"
-                        : "bg-background-800"
-                    }`
-                }
+                  isActive(tab.route, activeTab)
+                    ? "bg-lp-500"
+                    : "bg-background-800"
+                }`}
               >
                 {tab.label}
               </Link>

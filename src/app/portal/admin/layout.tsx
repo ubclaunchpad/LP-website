@@ -3,7 +3,6 @@ import { UserContextProvider } from "@/lib/context/usercontext";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/utils/supabase/server";
 
-
 export default async function Layout({
   children,
 }: {
@@ -16,9 +15,5 @@ export default async function Layout({
     redirect("/portal/auth");
   }
 
-  return (
-    <UserContextProvider user={data.user}>
-      {children}
-    </UserContextProvider>
-  );
+  return <UserContextProvider user={data.user}>{children}</UserContextProvider>;
 }

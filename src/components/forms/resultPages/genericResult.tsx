@@ -18,7 +18,13 @@ export default function GenericResult({
         <h2 className="text-lg text-white">{message}</h2>
         <p className="text-lg pb-4 text-white">
           If you have any questions, please contact us at{" "}
-          <Link href={"mailto:strategy@ubclaunchpad.com"} className={"text-lp-600"} >strategy@ubclaunchpad.com</Link>.
+          <Link
+            href={"mailto:strategy@ubclaunchpad.com"}
+            className={"text-lp-600"}
+          >
+            strategy@ubclaunchpad.com
+          </Link>
+          .
         </p>
       </div>
     </div>

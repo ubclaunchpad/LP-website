@@ -25,7 +25,7 @@ const config: Config = {
         heading: ["var(--font-epilogue)", ...fontFamily.sans],
       },
       transitionProperty: {
-        height: "height"
+        height: "height",
       },
       textColor: {
         "lp-50": "var(--lp-50)",

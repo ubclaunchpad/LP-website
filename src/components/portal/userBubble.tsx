@@ -3,8 +3,8 @@
 import { userContext } from "@/lib/context/usercontext";
 import Image from "next/image";
 import { useContext, useState, useRef } from "react";
-import {createClient} from "@/lib/utils/supabase/client";
-import {useRouter} from "next/navigation";
+import { createClient } from "@/lib/utils/supabase/client";
+import { useRouter } from "next/navigation";
 
 export default function UserBubble() {
   const { user } = useContext(userContext);
@@ -23,7 +23,7 @@ export default function UserBubble() {
     if (error) {
       console.error("Error logging out:", error.message);
     } else {
-        router.push("/auth");
+      router.push("/auth");
     }
   }
 
@@ -53,9 +53,7 @@ export default function UserBubble() {
         className={`flex items-center gap-2  p-2 rounded-full border-neutral-700 ${showMenu ? "bg-neutral-800" : ""}`}
         onClick={() => setShowMenu(!showMenu)}
       >
-        <span
-          className={`flex  items-center gap-2 `}
-        >
+        <span className={`flex  items-center gap-2 `}>
           <Image
             src={"/icons/profileIcon.svg"}
             alt="user"

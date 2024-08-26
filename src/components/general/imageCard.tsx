@@ -1,4 +1,5 @@
-import ImageArea from "./imageArea";
+import Link from "next/link";
+import Image from "next/image";
 
 type ImageCardProps = {
   title: string;
@@ -26,17 +27,27 @@ const ImageCard = ({
     height,
   };
   return (
-    <div className="flex flex-col justify-between bg-secondary rounded-2xl py-1 text-white items-center text-center min-h-5/12">
-      <div className="mt-8 w-full h-full">
-        <a className="text-xl font-normal mb-3" href={url}>
-          {title}
-        </a>
-        <p className="font-extralight px-2">{description}</p>
+    <Link
+      className="flex flex-col flex-1 max-h-[400px] p-2 min-h-[400px] h-full justify-between bg-secondary hover:bg-lp-500 duration-200 hover:scale-105 rounded-2xl py-1 text-white items-center text-center "
+      href={url}
+    >
+      <div className="py-8 w-full h-full">
+        <h2 className="text-xl font-normal pb-10">{title}</h2>
+        <p className="font-extralight  text-ellipsis overflow-hidden line-clamp-3 px-2">
+          {description}
+        </p>
       </div>
-      <div className="w-10/12 py-5">
-        <ImageArea {...imageProps} className="rounded-2xl" />
+      <div className=" w-full overflow-hidden rounded-lg flex-1 relative">
+        <Image
+          src={imageSrc}
+          alt={alt}
+          fill={true}
+          objectFit={"cover"}
+          unoptimized
+          className={`rounded overflow-hidden relative `}
+        />
       </div>
-    </div>
+    </Link>
   );
 };
 

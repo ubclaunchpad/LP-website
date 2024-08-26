@@ -12,8 +12,7 @@ import { Form } from "@/lib/types/application";
 
 const text = {
   closed: "This form is now closed.",
-  submitted:
-    "Your application has been submitted.",
+  submitted: "Your application has been submitted.",
   rejected:
     "Unfortunately, it looks like your application was not successful this time. However, we encourage you to apply again in the future.",
   default: "No longer available",
@@ -27,15 +26,16 @@ export default async function page({
   if (!params.id) {
     redirect("/portal/forms");
   }
-  const form = (await getForm(Number(params.id))) as unknown as Form;
+  const formP = getForm(Number(params.id)) as unknown as Promise<Form>;
+  const appP = getUserApplication({
+    formId: Number(params.id) as unknown as bigint,
+  });
+  const [form, app] = await Promise.all([formP, appP]);
 
   if (!form) {
     redirect("/portal/forms");
   }
 
-  const app = await getUserApplication({
-    formId: form.id as unknown as bigint,
-  });
   const status = app?.status;
   const formStatus = isFormOpen(form);
 

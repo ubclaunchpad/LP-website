@@ -12,11 +12,10 @@ const text = {
 
 export default function OpenForm({ form }: { form: Form }) {
   const router = useRouter();
-  async function createApplication() {
-    const res = await startApplication({ formId: BigInt(form.id) });
-    if (res) {
-      return router.push(`/portal/forms/${form.id}/apply`);
-    }
+  function createApplication() {
+    startApplication({ formId: BigInt(form.id) }).then(() => {
+      router.push(`/portal/forms/${form.id}/apply`);
+    });
   }
   return (
     <div className="flex flex-col items-center justify-center h-full p-10 gap-10 w-full z-10 *:z-20">

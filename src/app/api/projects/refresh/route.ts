@@ -1,6 +1,6 @@
 import getProjects from "@/app/lib/notion/projects";
 import { NextRequest, NextResponse } from "next/server";
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function GET(req: NextRequest, res: NextResponse) {
   try {
     const data = await getProjects();
     return NextResponse.json({ status: 200, success: true, data });

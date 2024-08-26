@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { UserContextProvider } from "@/lib/context/usercontext";
 import { redirect } from "next/navigation";
 import PortalNavbar from "@/components/portal/portalNav";
@@ -20,7 +20,7 @@ export default async function Layout({
     <UserContextProvider user={data.user}>
       <div className="w-screen min-h-screen bg-background-900 relative flex flex-col overflow-x-hidden ">
         <PortalNavbar />
-        {children}
+        <Suspense>{children}</Suspense>
       </div>
     </UserContextProvider>
   );

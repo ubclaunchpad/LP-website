@@ -1,11 +1,11 @@
 "use server";
-import { render } from '@react-email/components';
+import { render } from "@react-email/components";
 import { db } from "@/db";
 import { FormStep, Obj } from "@/lib/types/questions";
 import { createClient } from "@/lib/utils/supabase/server";
 import { JSONValidationToZod } from "@/lib/utils/forms/helpers";
-import {sendEmail} from "@/lib/utils/forms/email";
-import {SubmissionTemplate} from "@/components/forms/emailTemplates/submissionTemplate";
+import { sendEmail } from "@/lib/utils/forms/email";
+import { SubmissionTemplate } from "@/components/forms/emailTemplates/submissionTemplate";
 
 export async function submitApplication({ formId }: { formId: bigint }) {
   const supabase = createClient();
@@ -13,7 +13,7 @@ export async function submitApplication({ formId }: { formId: bigint }) {
   if (!data.user || error) {
     return null;
   }
-  const resPromise =  db.submissions.findUnique({
+  const resPromise = db.submissions.findUnique({
     where: {
       user_id_form_id: {
         form_id: formId,
@@ -22,7 +22,7 @@ export async function submitApplication({ formId }: { formId: bigint }) {
     },
   });
 
-  const formPromise =  db.forms.findUnique({
+  const formPromise = db.forms.findUnique({
     where: {
       id: formId,
     },
@@ -68,8 +68,8 @@ export async function submitApplication({ formId }: { formId: bigint }) {
   });
 
   await Promise.all([updateSubmission, createApplication]);
-  const appEmail = res.details? res.details as Obj : {};
-  const template = await render(SubmissionTemplate({formTitle: form.title}));
+  const appEmail = res.details ? (res.details as Obj) : {};
+  const template = await render(SubmissionTemplate({ formTitle: form.title }));
   await sendEmail({
     from: "no-reply@ubclaunchpad.com",
     fromName: "No-reply UBC Launch Pad",
@@ -77,7 +77,7 @@ export async function submitApplication({ formId }: { formId: bigint }) {
     subject: `${form.title} - Form Submitted`,
     html: template,
     cc: appEmail?.email as string,
-  })
+  });
   return true;
 }
 
