@@ -94,7 +94,7 @@ export default async function Home() {
           </p>
           <Link href="/portal/forms/241">
             <Button className="p-4" size={"xl"} icon>
-              <label className="text-lg">{text.joinUsButton}</label>
+              <span className="text-lg">{text.joinUsButton}</span>
             </Button>
           </Link>
         </div>
