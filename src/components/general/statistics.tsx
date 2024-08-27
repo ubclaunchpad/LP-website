@@ -1,5 +1,8 @@
+"use client"
+
 import React from "react";
 import Image from "next/image";
+import CountUp from "react-countup";
 import { statsData } from "@/lib/data/generalData";
 
 export interface Stat {
@@ -26,7 +29,7 @@ export default function Statistics() {
             style={{ boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" }}
           >
             <h2 className="text-4xl text-center w-full font-heading font-semibold">
-              {stat.value}
+              <CountUp end={parseInt(stat.value)} duration={2} suffix="+" />
             </h2>
             <p className="text-md text-lightPurple3 bg-lightPurple2 rounded-lg px-4 py-1  mx-auto inline-block">
               {stat.label}
