@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 39, 36, 45;
@@ -37,7 +36,7 @@
 
 html {
   @apply scroll-smooth;
-  
+
   h1,
   h2,
   h3,
@@ -136,13 +135,57 @@ tbody {
     min-height: 3rem;
   }
 }
-/*
-td:first-child {
-  @apply bg-zinc-800;
-} */
 
 .white-glow {
   -webkit-box-shadow: 0px 0px 177px 27px rgba(120, 110, 138, 0.44);
   -moz-box-shadow: 0px 0px 177px 27px rgba(120, 110, 138, 0.44);
   box-shadow: 0px 0px 177px 27px rgba(120, 110, 138, 0.44);
+}
+
+.space-flow > :nth-child(3n + 1) {
+  animation: space-flow-1 3s infinite ease-in-out;
+}
+
+.space-flow > :nth-child(3n + 2) {
+  animation: space-flow-2 3.5s infinite ease-in-out;
+}
+
+.space-flow > :nth-child(3n + 3) {
+  animation: space-flow-3 5s infinite ease-in-out;
+}
+
+@keyframes space-flow-1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0.5rem, -0.5rem);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes space-flow-2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-0.5rem, 0.5rem);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes space-flow-3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0.7rem, -0.3rem);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

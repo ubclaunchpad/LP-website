@@ -24,8 +24,8 @@ export default function FooterSection() {
             "flex flex-col items-center md:items-start   w-full gap-4 max-w-3xl"
           }
         >
-          <a href = "/">
-          <Image src={logo} alt="Logo" width={256} height={85} unoptimized />
+          <a href="/">
+            <Image src={logo} alt="Logo" width={256} height={85} unoptimized />
           </a>
           <p className={"opacity-70"}>{text.subheading}</p>
         </div>
@@ -66,7 +66,9 @@ export default function FooterSection() {
             <Link
               key={index}
               href={link.url}
-              className={" text-[#F5F6FF] opacity-80 w-full hover:text-purple-400"}
+              className={
+                " text-[#F5F6FF] opacity-80 w-full hover:text-purple-400"
+              }
               target={"_blank"}
               rel={"noopener noreferrer"}
             >

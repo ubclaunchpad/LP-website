@@ -1,9 +1,5 @@
-import NotFoundWrapper from "@/components/layouts/notFoundWrapper";
+import { NotFoundPage } from "@/components/layouts/inaccessiblePageWrapper";
 
 export default function NotFound() {
-  return (
-    <NotFoundWrapper
-      links={[{ href: "/", label: "Find your way back home" }]}
-    />
-  );
+  return <NotFoundPage />;
 }
