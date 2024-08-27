@@ -3,7 +3,7 @@ import { Button } from "@/components/primitives/button";
 import Link from "next/link";
 
 const text = {
-  title: "UBC Launch Pad ",
+  title: "UBC Launch Pad",
   titleEnd: "🪐",
   description:
     "A student-run software engineering team devoted to building software projects in a collaborative and professional environment",
