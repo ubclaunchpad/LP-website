@@ -28,7 +28,7 @@ export default function LandingPage() {
           </p>
           <Link href="/portal/forms/241">
             <Button className="p-3 px-6" size={"xl"}>
-              <label className="text-lg">{text.joinus}</label>
+              <span className="text-lg">{text.joinus}</span>
             </Button>
           </Link>
         </div>
