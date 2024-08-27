@@ -3,23 +3,13 @@ import { login } from "./actions";
 import { Button } from "@/components/primitives/button";
 
 const text = {
-  title: "UBC Launch Pad Portal",
+  title: "Launch Pad Portal",
   login: "Log in With Google",
 };
 
 export default function Authpage() {
   return (
-    <div className="flex flex-col relative shadow justify-center items-center  w-full  p-10 rounded-xl max-h-full max-w-lg h-[600px]    gap-4">
-      <Image
-        src="/images/logo_circle.png"
-        width={180}
-        height={180}
-        className="rounded-full absolute top-0 transform -translate-y-1/2 border-4 border-neutral-900 shadow-lg hover:scale-105 transition-transform duration-300"
-        alt="UBC Launch Pad logo"
-      />
-      <span className="text-4xl  font-bold font-heading text-white pt-20 pb-10">
-        {text.title}
-      </span>
+    <div className="flex flex-col relative shadow justify-center items-center  w-full  p-10 rounded-xl max-h-full max-w-lg h-[600px]    gap-10">
       <div className="flex flex-col items-center gap-4 w-full"></div>
       <form
         action={login}
@@ -27,7 +17,7 @@ export default function Authpage() {
       >
         <Button
           className={
-            "bg-white w-full flex items-center justify-center text-black font-bold rounded-md h-fit px-8 text-md p-2"
+            "text-2xl white-glow w-fit bg-white  rounded-full z-10 p-1 px-8 text-black hover:scale-110 transition-all duration-300"
           }
           formAction={login}
         >

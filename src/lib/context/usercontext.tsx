@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import { redirect } from "next/navigation";
 //@ts-expect-error: The type definitions for @supabase/auth-js exists but the IDE is not able to find it
 import { User } from "@supabase/auth-js";
 
 type UserContext = {
   user: User;
+  userMetadata: { [key: string]: any } | null;
 };
 
 export const userContext = React.createContext({} as UserContext);
@@ -14,18 +14,17 @@ export const userContext = React.createContext({} as UserContext);
 export function UserContextProvider({
   children,
   user,
+  userMetadata,
 }: {
   children: React.ReactNode;
   user: User;
+  userMetadata: { [key: string]: any } | null;
 }) {
-  if (!user) {
-    redirect("/portal/auth");
-  }
-
   return (
     <userContext.Provider
       value={{
         user: user,
+        userMetadata: userMetadata,
       }}
     >
       {children}
