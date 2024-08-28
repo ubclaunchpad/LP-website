@@ -17,5 +17,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return <Unauthorized />;
   }
 
-  return children;
+  return <div className={"text-white bg-background-800"}>{children}</div>;
 }

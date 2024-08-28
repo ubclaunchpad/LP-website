@@ -1,5 +1,7 @@
 "use server";
 import { db } from "@/db";
+import {FormStep} from "@/lib/types/questions";
+import {FormFields} from "@/app/portal/admin/forms/[id]/submissions/columns";
 
 export async function getForms() {
   return db.forms.findMany();
@@ -61,4 +63,42 @@ export async function getSubmissions(formId: number) {
       userid: submission.users?.id,
     };
   });
+}
+
+
+function formatFormFields(questionSteps: FormStep[]) : FormFields
+{
+    const questionMap: FormFields = {};
+    questionSteps.forEach((step) => {
+        step.questions.forEach((question) => {
+            questionMap[question.id] = {
+                label: question.label,
+                // id: question.id,
+                type: question.type,
+            };
+        });
+    });
+    return questionMap;
+}
+
+export async function getAllFormDetails(formId: bigint): Promise<{ rawForm: any, formFields: FormFields, submissions: any[] }>
+{
+    try {
+        const form = await db.forms.findFirst({
+            where: { id: formId },
+        });
+
+        if (!form) {
+            return { rawForm: null, formFields: {}, submissions: [] };
+        }
+
+        const formFields = formatFormFields(form.questions as unknown as FormStep[]);
+        const submissions = await getSubmissions(formId as unknown as number);
+
+        return { rawForm: form, formFields, submissions };
+    }
+    catch (e) {
+        console.log(e);
+        return { rawForm: null, formFields: {}, submissions: [] };
+    }
 }

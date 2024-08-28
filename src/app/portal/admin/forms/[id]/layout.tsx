@@ -1,8 +1,6 @@
 import React from "react";
-import { redirect } from "next/navigation";
-import TabView, { Tab } from "@/components/layouts/tabView";
-import { createClient } from "@/lib/utils/supabase/server";
-import { headers } from "next/headers";
+import FormTabView, { Tab } from "@/components/layouts/formTabView";
+import {getAllFormDetails} from "@/app/portal/admin/actions";
 
 export default async function Layout({
   params,
@@ -11,15 +9,11 @@ export default async function Layout({
   params: { id: string };
   children: React.ReactNode;
 }) {
-  const headerList = headers();
-  const pathname = headerList.get("x-current-path")!;
-  const subPath = null; // pathname.split("/").pop()?.split("?")[0];
-  const supabase = createClient();
+  const formId = BigInt(params.id);
+  const formDetails = await getAllFormDetails(formId);
+
   const tabs: Tab[] = [
-    {
-      label: "Questions",
-      route: `/portal/admin/forms/${params.id}/questions`,
-    },
+
     {
       label: "Submissions",
       route: `/portal/admin/forms/${params.id}/submissions`,
@@ -28,13 +22,17 @@ export default async function Layout({
       label: "Settings",
       route: `/portal/admin/forms/${params.id}/settings`,
     },
+    {
+      label: "Questions",
+      route: `/portal/admin/forms/${params.id}/questions`,
+    },
+    {
+        label: "Analytics",
+        route: `/portal/admin/forms/${params.id}/analytics`,
+    }
   ];
 
-  const { data, error } = await supabase.auth.getUser();
 
-  if (!data.user || error) {
-    redirect("/portal/auth");
-  }
-
-  return <TabView tabs={tabs}>{children}</TabView>;
+  return <FormTabView tabs={tabs} form={formDetails}
+  >{children}</FormTabView>;
 }

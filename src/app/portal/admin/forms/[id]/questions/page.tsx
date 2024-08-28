@@ -1,16 +1,16 @@
+"use client";
+
 import CodeTextArea from "@/components/primitives/codeTextArea";
-import { getForm } from "@/app/portal/admin/actions";
+import {useContext} from "react";
+import {formContext} from "@/components/layouts/formTabView";
 
-export default async function page({ params }: { params: { id: string } }) {
-  const form = await getForm(Number(params.id));
-  if (!form) {
-    return <div>Form not found</div>;
-  }
+export default function FormQuestionsEditorPage() {
+  const { rawForm } = useContext(formContext);
+  const questions = rawForm.questions;
 
-  const questions = form.questions;
   return (
     <CodeTextArea
-      formId={Number(form.id)}
+      formId={Number(rawForm.id)}
       initialValue={JSON.stringify(questions)}
     />
   );
