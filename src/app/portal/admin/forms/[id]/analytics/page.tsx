@@ -51,7 +51,7 @@ export default function AnalyticsPage() {
             <h2 className={"text-2xl font-semibold"}>Form Analytics</h2>
           </span>
         </div>
-        {data && data.stats.lastUpdated && (
+        {data && data.stats && (
           <div className={"flex flex-col items-end gap-2"}>
             <span>
               <h4>
