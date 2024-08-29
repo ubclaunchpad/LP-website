@@ -1,59 +1,11 @@
 import Link from "next/link";
-import { getForm } from "@/app/portal/admin/actions";
+import {redirect} from "next/navigation";
 
-const navItems = [
-  {
-    label: "Questions",
-    rel: "questions",
-  },
-  {
-    label: "Submissions",
-    rel: "submissions",
-  },
-  {
-    label: "Settings",
-    rel: "settings",
-  },
-  {
-    label: "Preview",
-    rel: "preview",
-  },
-];
-
-export default async function page({ params }: { params: { id: string } }) {
+export default function page({ params }: { params: { id: string } }) {
   if (!params.id) {
     return <ErrorDiv />;
   }
-  const form = await getForm(Number(params.id));
-  if (!form) {
-    return <ErrorDiv />;
-  }
-
-  return (
-    <div className="flex flex-col gap-4 flex-1 w-full overflow-hidden">
-      <div
-        className={
-          "flex flex-col  justify-center items-center w-full gap-2 p-2"
-        }
-      >
-        <section className=" gap-4 flex-1 w-full overflow-hidden grid-cols-2 grid max-w-3xl">
-          {navItems.map((item, index) => (
-            <Link
-              key={index}
-              className="flex flex-col
-                    items-center
-                    justify-center
-                    text-3xl
-                     gap-2 border rounded h-60 bg-background-800 flex-1 p-2"
-              href={`/portal/admin/forms/${form.id}/${item.rel}`}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </section>
-      </div>
-    </div>
-  );
+  redirect(`/portal/admin/forms/${params.id}/submissions`);
 }
 
 function ErrorDiv() {

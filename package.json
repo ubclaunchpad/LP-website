@@ -44,6 +44,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.52.2",
     "react-json-editor-ajrm": "^2.5.14",
+    "recharts": "^2.12.7",
     "swiper": "^11.1.9",
     "tailwind-merge": "^2.4.0",
     "zod": "^3.23.8"
