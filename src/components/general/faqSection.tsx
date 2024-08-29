@@ -44,7 +44,7 @@ export default function FaqSection({ faqs }: FaqSectionProps) {
         className="text-3xl text-heading font-[600] text-[48px] text-white "
         id={"faq"}
       >
-        FAQs
+        Frequently Asked Questions
       </h2>
       <div className="max-w-7xl mx-auto py-20 px-4 sm:py-24 sm:px-6 lg:px-8">
         <dl className="grid grid-cols-1 gap-y-6 lg:grid-cols-2 sm:gap-x-8 sm:gap-y-8">

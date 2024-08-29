@@ -1,9 +1,17 @@
 import { ColumnDef } from "@tanstack/react-table";
-import {useState} from "react";
+import { useState } from "react";
 
 export type FormFields = {
   [key: string]: {
-    type:  "number" | "select" | "email" | "text" | "date" | "textarea" | "checkbox" | "url"
+    type:
+      | "number"
+      | "select"
+      | "email"
+      | "text"
+      | "date"
+      | "textarea"
+      | "checkbox"
+      | "url";
     label: string;
     options?: { label: string; value: string }[];
     cell?: (row: any) => string;
@@ -31,41 +39,54 @@ export function createColumns<TData>(
           }
           if (field.type === "email") {
             return (
-                <a
-                    href={`mailto:${value.toString()}`}
-                    className={"text-lp-200 underline"}
-                >
-                  {value.toString()}
-                </a>
+              <a
+                href={`mailto:${value.toString()}`}
+                className={"text-lp-200 underline"}
+              >
+                {value.toString()}
+              </a>
             );
           }
           if (field.type === "url") {
-            const isSafe = value.toString().startsWith("https://") || value.toString().startsWith("www.linkedin.com/in/")
-            || value.toString().startsWith("linkedin.com/in/") || value.toString().startsWith("github.com/")
+            const isSafe =
+              value.toString().startsWith("https://") ||
+              value.toString().startsWith("www.linkedin.com/in/") ||
+              value.toString().startsWith("linkedin.com/in/") ||
+              value.toString().startsWith("github.com/");
             return (
-                <span className={"flex flex-col"}>
-                   <span className={`${isSafe ? "" : "text-red-300"}`}
-                   >
+              <span className={"flex flex-col"}>
+                <span className={`${isSafe ? "" : "text-red-300"}`}>
                   {isSafe ? " " : " (Caution) "}
                 </span>
-              <a
+                <a
                   href={value.toString()}
                   target="_blank"
                   rel="noreferrer"
                   className={`text-lp-200 underline`}
-              >
-
-                {value.toString()}
-              </a>
-                </span>
+                >
+                  {value.toString()}
+                </a>
+              </span>
             );
           }
           if (field.type === "select") {
-            return <span className={"flex flex-wrap gap-2"}>
-              {value.toString().split(",").map((option) => (
-                  <span key={option} className={"border rounded-full border-background-500  bg-background-600 shadow-md p-1 px-2"}>{option}</span>
-              ))}
-            </span>;
+            return (
+              <span className={"flex flex-wrap gap-2"}>
+                {value
+                  .toString()
+                  .split(",")
+                  .map((option) => (
+                    <span
+                      key={option}
+                      className={
+                        "border rounded-full border-background-500  bg-background-600 shadow-md p-1 px-2"
+                      }
+                    >
+                      {option}
+                    </span>
+                  ))}
+              </span>
+            );
           }
 
           return row.getValue(key);
@@ -75,15 +96,22 @@ export function createColumns<TData>(
   });
 }
 
-
-function FieldPopover({  value }: { value: string, field: FormFields[keyof FormFields] }) {
+function FieldPopover({
+  value,
+}: {
+  value: string;
+  field: FormFields[keyof FormFields];
+}) {
   const [isOpen, setIsOpen] = useState(false);
-    return (
-        <div className={"flex relative flex-col gap-2"}>
-        <button className={`text-left  ${isOpen? "": "line-clamp-2"}  text-xs cursor-ns-resize
+  return (
+    <div className={"flex relative flex-col gap-2"}>
+      <button
+        className={`text-left  ${isOpen ? "" : "line-clamp-2"}  text-xs cursor-ns-resize
          `}
-                onClick={() => setIsOpen(prev => !prev)}
-        >{value} </button>
-        </div>
-    );
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
+        {value}{" "}
+      </button>
+    </div>
+  );
 }
