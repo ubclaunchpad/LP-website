@@ -194,14 +194,14 @@ function createChartConfig(data: any[], columns: string[]) {
 }
 
 export async function getFormAnalytics(formId: number, config: temp) {
-  const cachedData = inMemoryCache.get("forms");
-  if (cachedData[formId]) {
-    const formAnalytics = cachedData[formId].analyticsData;
-    const expiryDate = cachedData[formId].expiryDate;
-    if (expiryDate > Date.now()) {
-      return { analyticsData: formAnalytics, stats: cachedData[formId].stats };
-    }
-  }
+  // const cachedData = inMemoryCache.get("forms");
+  // if (cachedData[formId]) {
+  //   const formAnalytics = cachedData[formId].analyticsData;
+  //   const expiryDate = cachedData[formId].expiryDate;
+  //   if (expiryDate > Date.now()) {
+  //     return { analyticsData: formAnalytics, stats: cachedData[formId].stats };
+  //   }
+  // }
 
   const [submissions, form] = await Promise.all([
     getSubmissions(formId),
