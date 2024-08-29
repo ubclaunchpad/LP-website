@@ -3,7 +3,8 @@
 import { DataTable } from "./data-table";
 import { ColumnDef } from "@tanstack/react-table";
 import {
-  createColumns, FormFields,
+  createColumns,
+  FormFields,
 } from "@/app/portal/admin/forms/[id]/submissions/columns";
 
 export type DataTableProps<TData, TValue> = {
@@ -16,10 +17,9 @@ type DataTableWrapperProps<TData> = {
   formFields: FormFields;
 };
 
-
 export default function DataTableWrapper<TData>({
   data,
- formFields
+  formFields,
 }: DataTableWrapperProps<TData>) {
   const fieldData = data as unknown as (string | number)[];
   const columns = createColumns(formFields);

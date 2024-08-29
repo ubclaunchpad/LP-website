@@ -32,7 +32,7 @@ import {
   TableRow,
 } from "@/components/primitives/table";
 import React, { useState } from "react";
-import { Columns3, } from "lucide-react";
+import { Columns3 } from "lucide-react";
 import { DataTableProps } from "@/app/portal/admin/forms/[id]/submissions/dataTableWrapper";
 
 export function DataTable<TData, TValue>({
@@ -66,9 +66,7 @@ export function DataTable<TData, TValue>({
     <div className={"overflow-hidden flex flex-col px-10  py-1"}>
       <div className="flex items-center w-full gap-2 py-4  flex-wrap">
         <div className="flex items-center flex-1 gap-2">
-          <span className="text-lg font-bold">{data.length} Submissions
-
-          </span>
+          <span className="text-lg font-bold">{data.length} Submissions</span>
         </div>
 
         {/*{table.getHeaderGroups()[0].headers.map((header) => (*/}
@@ -128,7 +126,10 @@ export function DataTable<TData, TValue>({
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className={"border-background-500"}>
+              <TableRow
+                key={headerGroup.id}
+                className={"border-background-500"}
+              >
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
@@ -153,7 +154,9 @@ export function DataTable<TData, TValue>({
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
-                    className={"border-background-500  bg-background-600 odd:bg-background-700"}
+                  className={
+                    "border-background-500  bg-background-600 odd:bg-background-700"
+                  }
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
@@ -186,18 +189,17 @@ export function DataTable<TData, TValue>({
         </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
-        <div
-            className="text-sm flex-1 px-2  text-zinc-200"
-        >
-           <span>
-             Showing {table.getState().pagination.pageIndex + 1} out of{" "} {table.getPageCount()} pages
+        <div className="text-sm flex-1 px-2  text-zinc-200">
+          <span>
+            Showing {table.getState().pagination.pageIndex + 1} out of{" "}
+            {table.getPageCount()} pages
           </span>
         </div>
         <Button
-            variant="outline"
-            size="sm"
-            className={"bg-lp-400"}
-            onClick={() => table.previousPage()}
+          variant="outline"
+          size="sm"
+          className={"bg-lp-400"}
+          onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
           Previous
