@@ -36,6 +36,7 @@
     "lucide-react": "^0.428.0",
     "mailgun.js": "^10.2.3",
     "next": "14.2.5",
+    "next-themes": "^0.3.0",
     "path": "^0.12.7",
     "pocketbase": "^0.21.4",
     "postgres": "^3.4.4",
@@ -45,6 +46,7 @@
     "react-hook-form": "^7.52.2",
     "react-json-editor-ajrm": "^2.5.14",
     "recharts": "^2.12.7",
+    "sonner": "^1.5.0",
     "swiper": "^11.1.9",
     "tailwind-merge": "^2.4.0",
     "zod": "^3.23.8"

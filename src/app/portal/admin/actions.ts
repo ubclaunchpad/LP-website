@@ -66,8 +66,9 @@ export async function getSubmissions(formId: number, onlySubmitted = true) {
     return {
       ...submission,
       ...details,
-      appStatus: submission.applications?.status,
-      appReviewer: submission.applications?.reviewer_id,
+      status: submission.applications?.status,
+      reviewer: submission.applications?.reviewer_id,
+      notes: submission.applications?.notes,
       email: submission.users?.email,
       userid: submission.users?.id,
     };
@@ -103,6 +104,14 @@ export async function getAllFormDetails(
     const formFields = formatFormFields(
       form.questions as unknown as FormStep[],
     );
+    const formType = form.type ? form.type.toString().toLowerCase() : "other";
+    console.log(formType);
+    if (formType === "recruitment") {
+      formFields["status"] = { label: "Status", type: "select" };
+      formFields["reviewer"] = { label: "Reviewer", type: "text" };
+      formFields["notes"] = { label: "Notes", type: "text" };
+    }
+    console.log(formFields);
     const submissions = await getSubmissions(formId as unknown as number);
 
     return { rawForm: form, formFields, submissions };

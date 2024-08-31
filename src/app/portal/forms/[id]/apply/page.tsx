@@ -5,6 +5,7 @@ import { Application } from "@/lib/types/questions";
 import { getForm } from "@/app/portal/admin/actions";
 import { Form } from "@/lib/types/application";
 import { isFormOpen } from "@/lib/utils/forms/helpers";
+import { toast } from "sonner";
 
 export default async function page({
   params,
@@ -22,15 +23,20 @@ export default async function page({
     return redirect(`/portal/forms/`);
   }
 
-  const app = await getUserApplication({ formId: BigInt(params.id) });
-  if (!app || app.status !== "pending") {
+  try {
+    const app = await getUserApplication({ formId: BigInt(params.id) });
+    if (!app || app.status !== "pending") {
+      return redirect(`/portal/forms/${params.id}`);
+    }
+
+    return (
+      <ApplicationForm
+        application={app as unknown as Application}
+        applicationForm={form as unknown as Form}
+      />
+    );
+  } catch (e) {
+    toast.error("Error loading application");
     return redirect(`/portal/forms/${params.id}`);
   }
-
-  return (
-    <ApplicationForm
-      application={app as unknown as Application}
-      applicationForm={form as unknown as Form}
-    />
-  );
 }

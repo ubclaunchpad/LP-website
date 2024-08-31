@@ -16,6 +16,9 @@ export default function MultiSelect({
   allowMultiple: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const selectedOptions = options.filter((option) =>
+    value.includes(option.value),
+  );
 
   return (
     <div className="relative flex flex-col w-full">
@@ -25,13 +28,14 @@ export default function MultiSelect({
         type="button"
       >
         <span className="text-white justify-center flex items-center gap-2 ">
-          {options
-            .filter((option) => value?.includes(option.value))
-            .map((option) => (
-              <span key={option.label} className="p-0.5 px-2 rounded bg-lp-500">
-                {option.label}
-              </span>
-            ))}
+          {selectedOptions.map((option) => (
+            <span key={option.label} className="p-0.5 px-2 rounded bg-lp-500">
+              {option.label}
+            </span>
+          ))}
+          <span className={"text-background-600 text-sm"}>
+            {selectedOptions.length === 0 && "Choose"}
+          </span>
         </span>
       </button>
       {isOpen && (

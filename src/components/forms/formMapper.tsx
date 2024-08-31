@@ -57,10 +57,11 @@ export default function FormQuestionMapper({
         />
       );
     case "select":
+      const values = Array.isArray(value) && value.length ? value : [];
       return (
         <MultiSelect
           options={question.options}
-          value={value}
+          value={values}
           {...props}
           onChange={(e) => OnChange(e)}
           allowMultiple={question.config.multiple}

@@ -164,7 +164,7 @@ export function DataTable<TData, TValue>({
                     <TableCell
                       key={cell.id}
                       className={
-                        "w-60  h-fit text-xs min-h-0 left-0 overflow-hidden line-clamp-3"
+                        "w-60  h-fit text-xs min-h-0 left-0 overflow-hidden "
                       }
                     >
                       {flexRender(

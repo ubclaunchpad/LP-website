@@ -6,6 +6,7 @@ import {
   createColumns,
   FormFields,
 } from "@/app/portal/admin/forms/[id]/submissions/columns";
+import useApplicantPopover from "@/components/forms/applications/applicantPopover";
 
 export type DataTableProps<TData, TValue> = {
   columns: ColumnDef<TData, TValue>[];
@@ -22,6 +23,14 @@ export default function DataTableWrapper<TData>({
   formFields,
 }: DataTableWrapperProps<TData>) {
   const fieldData = data as unknown as (string | number)[];
-  const columns = createColumns(formFields);
-  return <DataTable columns={columns} data={fieldData} />;
+  const { setAndOpen, applicantPopover } = useApplicantPopover({
+    fields: formFields,
+  });
+  const columns = createColumns(formFields, setAndOpen);
+  return (
+    <div>
+      {applicantPopover}
+      <DataTable columns={columns} data={fieldData} />
+    </div>
+  );
 }

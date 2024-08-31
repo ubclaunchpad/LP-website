@@ -1,5 +1,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { useState } from "react";
+import { ExpandIcon } from "lucide-react";
+import MultiSelect from "@/components/general/multiSelect";
 
 export type FormFields = {
   [key: string]: {
@@ -20,12 +22,13 @@ export type FormFields = {
 
 export function createColumns<TData>(
   fields: FormFields,
+  setAndOpen: any,
 ): ColumnDef<keyof FormFields>[] {
-  return Object.entries(fields).map(([key, field]) => {
+  const general = Object.entries(fields).map(([key, field]) => {
     return {
       accessorKey: key as keyof TData,
       header: field.label,
-      cell: ({ row }) => {
+      cell: ({ row }: { row: any }) => {
         if (Object.hasOwn(field, "cell")) {
           const cellResolver = field.cell as (row: any) => string;
           return cellResolver({ row });
@@ -48,18 +51,16 @@ export function createColumns<TData>(
             );
           }
           if (field.type === "url") {
-            const isSafe =
-              value.toString().startsWith("https://") ||
-              value.toString().startsWith("www.linkedin.com/in/") ||
-              value.toString().startsWith("linkedin.com/in/") ||
-              value.toString().startsWith("github.com/");
+            const isSafe = value.toString().startsWith("https://");
             return (
               <span className={"flex flex-col"}>
                 <span className={`${isSafe ? "" : "text-red-300"}`}>
                   {isSafe ? " " : " (Caution) "}
                 </span>
                 <a
-                  href={value.toString()}
+                  href={
+                    isSafe ? value.toString() : `https://${value.toString()}`
+                  }
                   target="_blank"
                   rel="noreferrer"
                   className={`text-lp-200 underline`}
@@ -70,12 +71,16 @@ export function createColumns<TData>(
             );
           }
           if (field.type === "select") {
+            console.log(value);
+            if (field.label === "Status") {
+              return <ApplicationStatus status={value.toString()} />;
+            }
             return (
               <span className={"flex flex-wrap gap-2"}>
                 {value
                   .toString()
                   .split(",")
-                  .map((option) => (
+                  .map((option: any) => (
                     <span
                       key={option}
                       className={
@@ -94,6 +99,28 @@ export function createColumns<TData>(
       },
     };
   });
+  return [
+    {
+      accessorKey: "popover",
+      header: "Applicant",
+      cell: ({ row }) => {
+        return (
+          <button
+            onClick={() => {
+              setAndOpen({ applicant: row });
+            }}
+            className={
+              "text-lp-200  rounded-xl w-full justify-start flex items-center gap-2  py-1"
+            }
+          >
+            <ExpandIcon size={12} />
+            View
+          </button>
+        );
+      },
+    },
+    ...general,
+  ];
 }
 
 function FieldPopover({
@@ -113,5 +140,70 @@ function FieldPopover({
         {value}{" "}
       </button>
     </div>
+  );
+}
+
+function ApplicationStatus({ status }: { status: string }) {
+  const [option, setOption] = useState(status);
+  const options = [
+    {
+      id: "to review",
+      label: "To Review",
+      description:
+        "The initial status for all applications, indicating that the application has been received and is awaiting review.",
+    },
+    {
+      id: "reviewed",
+      label: "Reviewed",
+      description:
+        "The application has been reviewed by the admissions team, but a decision has not yet been made on whether to proceed to the interview stage.",
+    },
+    {
+      id: "to_interview",
+      label: "To Interview",
+      description:
+        "The application has passed the initial review. The candidate meets the required criteria and falls within the interview quota, making them eligible for the interview stage.",
+    },
+    {
+      id: "interviewed",
+      label: "Interviewed",
+      description:
+        "The candidate has completed a 30-minute interview. The admissions team is now deliberating on whether to extend an offer based on both the application and interview performance.",
+    },
+    {
+      id: "offered",
+      label: "Offered",
+      description:
+        "The candidate has successfully met all application and interview criteria. An offer has been extended to join the program or cohort.",
+    },
+    {
+      id: "declined",
+      label: "Declined",
+      description:
+        "The candidate has chosen to reject the offer extended to them and will not be joining the program.",
+    },
+    {
+      id: "rejected",
+      label: "Rejected",
+      description:
+        "The candidate did not meet the necessary criteria at one or more stages of the process and has been informed that their application will not proceed further.",
+    },
+    {
+      id: "accepted",
+      label: "Accepted",
+      description:
+        "The candidate has accepted the offer to join the program and has completed any necessary formalities, such as paying the membership fee.",
+    },
+  ];
+  return (
+    <MultiSelect
+      options={options.map((op) => ({
+        label: op.label,
+        value: op.id,
+      }))}
+      value={[option]}
+      onChange={(e) => setOption(e[0])}
+      allowMultiple={false}
+    />
   );
 }

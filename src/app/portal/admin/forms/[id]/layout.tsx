@@ -11,20 +11,21 @@ export default async function Layout({
 }) {
   const formId = BigInt(params.id);
   const formDetails = await getAllFormDetails(formId);
+  console.log("fetched");
 
   const tabs: Tab[] = [
     {
       label: "Submissions",
       route: `/portal/admin/forms/${params.id}/submissions`,
     },
-    {
-      label: "Settings",
-      route: `/portal/admin/forms/${params.id}/settings`,
-    },
-    {
-      label: "Questions",
-      route: `/portal/admin/forms/${params.id}/questions`,
-    },
+    // {
+    //   label: "Settings",
+    //   route: `/portal/admin/forms/${params.id}/settings`,
+    // },
+    // {
+    //   label: "Questions",
+    //   route: `/portal/admin/forms/${params.id}/questions`,
+    // },
     {
       label: "Analytics",
       route: `/portal/admin/forms/${params.id}/analytics`,

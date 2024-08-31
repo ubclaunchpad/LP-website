@@ -34,6 +34,7 @@ export default function FormTabView({ tabs, children, form }: TabViewProps) {
         <div className="flex justify-between items-center gap-2 border-background-500 border-b">
           <div className="flex flex-row p-2 items-center px-4 gap-2">
             <Link
+              shallow={true}
               href={"/portal/admin/forms"}
               className={
                 "  p-0.5 hover:border-lp-500 hover:text-lp-500 border  rounded-full border-transparent font-heading"
@@ -45,10 +46,11 @@ export default function FormTabView({ tabs, children, form }: TabViewProps) {
               {form.rawForm.title}
             </h1>
           </div>
-          <div className="flex flex-row  gap-1  px-2 pt-2">
+          <div className="md:flex hidden flex-row  gap-1  px-2 pt-2">
             {tabs.map((tab, index) => {
               return (
                 <Link
+                  shallow={true}
                   href={tab.route}
                   key={index}
                   className={` border-t border-x p-4 py-2 border-background-500 rounded-t-xl ${
