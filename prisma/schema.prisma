@@ -379,6 +379,9 @@ model applications {
   status      String?     @default("to review")
   reviewer_id String?     @db.Uuid
   notes       String?
+  created_at  DateTime?   @default(now()) @db.Timestamptz(6)
+  meta        Json?
+  level       String?     @default("unassigned")
   submissions submissions @relation(fields: [id], references: [id], onDelete: Cascade)
   users       users?      @relation(fields: [reviewer_id], references: [id], onUpdate: Restrict)
 

@@ -1,7 +1,10 @@
-import { ColumnDef } from "@tanstack/react-table";
+import { ColumnDef, Row } from "@tanstack/react-table";
 import { useState } from "react";
 import { ExpandIcon } from "lucide-react";
 import MultiSelect from "@/components/general/multiSelect";
+import { updateSubmissionField } from "@/app/portal/admin/actions";
+import { toast } from "sonner";
+import FloatingTextArea from "@/components/primitives/floatingTextArea";
 
 export type FormFields = {
   [key: string]: {
@@ -15,8 +18,19 @@ export type FormFields = {
       | "checkbox"
       | "url";
     label: string;
-    options?: { label: string; value: string }[];
+    options?: { label: string; id: string }[];
     cell?: (row: any) => string;
+    config?: {
+      tableName: string;
+      allowUpdate: boolean;
+    };
+    enableColumnFilter?: boolean;
+    filterFn?: (
+      row: Row<any>,
+      columnId: string,
+      filterValue: any,
+      addMeta: (meta: any) => void,
+    ) => boolean;
   };
 };
 
@@ -28,17 +42,59 @@ export function createColumns<TData>(
     return {
       accessorKey: key as keyof TData,
       header: field.label,
+      enableColumnFilter: field.type !== "textarea" && field.type !== "url",
+      filterFn: (
+        row: Row<any>,
+        columnId: string,
+        filterValue: any,
+        addMeta: (meta: any) => void,
+      ) => {
+        if (!filterValue) {
+          return true;
+        }
+        if (field.type === "select") {
+          if (!field.options) {
+            return row.original[key]
+              .toString()
+              .toLowerCase()
+              .includes(filterValue.toLowerCase());
+          }
+          const matchCriteria = field.options?.filter(
+            (op) =>
+              filterValue.includes(op.label) || filterValue.includes(op.id),
+          );
+          return (
+            matchCriteria?.filter((op) =>
+              row.original[key]
+                .toString()
+                .toLowerCase()
+                .includes(op.label.toLowerCase()),
+            ).length > 0
+          );
+        }
+        return row.original[key]
+          .toString()
+          .toLowerCase()
+          .includes(filterValue.toLowerCase());
+      },
       cell: ({ row }: { row: any }) => {
         if (Object.hasOwn(field, "cell")) {
           const cellResolver = field.cell as (row: any) => string;
           return cellResolver({ row });
         } else {
           const value = row.getValue(key);
+          if (field.type === "textarea") {
+            return (
+              <TextareaField
+                field={field}
+                value={value?.toString()}
+                submissionId={row.original.id}
+                id={key}
+              />
+            );
+          }
           if (!value) {
             return <span className={"text-gray-400"}>N/A</span>;
-          }
-          if (field.type === "textarea" && value.toString().length > 10) {
-            return <FieldPopover field={field} value={value.toString()} />;
           }
           if (field.type === "email") {
             return (
@@ -71,29 +127,16 @@ export function createColumns<TData>(
             );
           }
           if (field.type === "select") {
-            console.log(value);
-            if (field.label === "Status") {
-              return <ApplicationStatus status={value.toString()} />;
-            }
+            const submissionId = row.original.id;
             return (
-              <span className={"flex flex-wrap gap-2"}>
-                {value
-                  .toString()
-                  .split(",")
-                  .map((option: any) => (
-                    <span
-                      key={option}
-                      className={
-                        "border rounded-full border-background-500  bg-background-600 shadow-md p-1 px-2"
-                      }
-                    >
-                      {option}
-                    </span>
-                  ))}
-              </span>
+              <SelectField
+                field={field}
+                value={value.toString()}
+                submissionId={submissionId}
+                id={key}
+              />
             );
           }
-
           return row.getValue(key);
         }
       },
@@ -103,6 +146,7 @@ export function createColumns<TData>(
     {
       accessorKey: "popover",
       header: "Applicant",
+      enableColumnFilter: false,
       cell: ({ row }) => {
         return (
           <button
@@ -143,67 +187,108 @@ function FieldPopover({
   );
 }
 
-function ApplicationStatus({ status }: { status: string }) {
-  const [option, setOption] = useState(status);
-  const options = [
-    {
-      id: "to review",
-      label: "To Review",
-      description:
-        "The initial status for all applications, indicating that the application has been received and is awaiting review.",
-    },
-    {
-      id: "reviewed",
-      label: "Reviewed",
-      description:
-        "The application has been reviewed by the admissions team, but a decision has not yet been made on whether to proceed to the interview stage.",
-    },
-    {
-      id: "to_interview",
-      label: "To Interview",
-      description:
-        "The application has passed the initial review. The candidate meets the required criteria and falls within the interview quota, making them eligible for the interview stage.",
-    },
-    {
-      id: "interviewed",
-      label: "Interviewed",
-      description:
-        "The candidate has completed a 30-minute interview. The admissions team is now deliberating on whether to extend an offer based on both the application and interview performance.",
-    },
-    {
-      id: "offered",
-      label: "Offered",
-      description:
-        "The candidate has successfully met all application and interview criteria. An offer has been extended to join the program or cohort.",
-    },
-    {
-      id: "declined",
-      label: "Declined",
-      description:
-        "The candidate has chosen to reject the offer extended to them and will not be joining the program.",
-    },
-    {
-      id: "rejected",
-      label: "Rejected",
-      description:
-        "The candidate did not meet the necessary criteria at one or more stages of the process and has been informed that their application will not proceed further.",
-    },
-    {
-      id: "accepted",
-      label: "Accepted",
-      description:
-        "The candidate has accepted the offer to join the program and has completed any necessary formalities, such as paying the membership fee.",
-    },
-  ];
+function SelectField({
+  submissionId,
+  value,
+  field,
+  id,
+}: {
+  submissionId: string;
+  value: string;
+  id: string;
+  field: FormFields[keyof FormFields];
+}) {
+  const [selected, setSelected] = useState(value);
+  const canUpdate = field.config?.allowUpdate;
+  if (!canUpdate) {
+    return (
+      <span className={"flex flex-wrap gap-2"}>
+        {value
+          .toString()
+          .split(",")
+          .map((option: any) => (
+            <span
+              key={option}
+              className={
+                "border rounded-full border-background-500  bg-background-600 shadow-md p-1 px-2"
+              }
+            >
+              {option}
+            </span>
+          ))}
+      </span>
+    );
+  }
+
+  const updateField = async (val: any) => {
+    const prev = selected;
+    setSelected(val);
+    updateSubmissionField(submissionId, id, field.config?.tableName, val)
+      .then(() => {
+        toast.success("Field updated successfully");
+      })
+      .catch(() => {
+        setSelected(prev);
+        toast.error("Error updating field");
+      });
+  };
+
   return (
     <MultiSelect
-      options={options.map((op) => ({
-        label: op.label,
-        value: op.id,
-      }))}
-      value={[option]}
-      onChange={(e) => setOption(e[0])}
+      className={
+        "w-full bg-transparent border-none hover:bg-lp-500 duration-300"
+      }
+      onChange={(e) => updateField(e[0])}
       allowMultiple={false}
+      value={Array.isArray(selected) ? selected : [selected]}
+      options={
+        field.options?.map((op) => ({
+          label: op.label,
+          value: op.id,
+        })) || []
+      }
+    ></MultiSelect>
+  );
+}
+
+function TextareaField({
+  submissionId,
+  value,
+  field,
+  id,
+}: {
+  submissionId: string;
+  value: string;
+  id: string;
+  field: FormFields[keyof FormFields];
+}) {
+  const [text, setText] = useState(value);
+  const canUpdate = field.config?.allowUpdate;
+  if (!canUpdate) {
+    if (value?.toString().length > 10) {
+      return <FieldPopover field={field} value={value.toString()} />;
+    }
+    return <span>{value}</span>;
+  }
+  const updateField = async (val: string) => {
+    const prev = text;
+    setText(val);
+    updateSubmissionField(submissionId, id, field.config?.tableName, val)
+      .then(() => {
+        toast.success("Field updated successfully");
+      })
+      .catch(() => {
+        setText(prev);
+        toast.error("Error updating field");
+      });
+  };
+  return (
+    <FloatingTextArea
+      className={
+        "w-full bg-transparent border-none  hover:bg-lp-500 duration-300"
+      }
+      value={text}
+      onChange={(e) => updateField(e)}
     />
   );
 }

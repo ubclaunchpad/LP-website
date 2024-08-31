@@ -61,16 +61,15 @@ export async function getSubmissions(formId: number, onlySubmitted = true) {
       }),
     },
   });
+
   return app.map((submission: any) => {
     const details = submission.details ? (submission.details as any) : {};
     return {
       ...submission,
       ...details,
-      status: submission.applications?.status,
-      reviewer: submission.applications?.reviewer_id,
-      notes: submission.applications?.notes,
       email: submission.users?.email,
       userid: submission.users?.id,
+      ...submission.applications,
     };
   });
 }
@@ -82,6 +81,7 @@ function formatFormFields(questionSteps: FormStep[]): FormFields {
       questionMap[question.id] = {
         label: question.label,
         // id: question.id,
+
         type: question.type,
       };
     });
@@ -105,13 +105,21 @@ export async function getAllFormDetails(
       form.questions as unknown as FormStep[],
     );
     const formType = form.type ? form.type.toString().toLowerCase() : "other";
-    console.log(formType);
+    const formConfig = form.config as unknown as Record<string, any>;
+
     if (formType === "recruitment") {
-      formFields["status"] = { label: "Status", type: "select" };
-      formFields["reviewer"] = { label: "Reviewer", type: "text" };
-      formFields["notes"] = { label: "Notes", type: "text" };
+      if (formConfig["application"]) {
+        const subFields = formConfig["application"]["subfields"] || [];
+        subFields.forEach((field: any) => {
+          formFields[field.id] = {
+            ...field,
+            label: field.label,
+            type: field.type,
+            options: field.options,
+          };
+        });
+      }
     }
-    console.log(formFields);
     const submissions = await getSubmissions(formId as unknown as number);
 
     return { rawForm: form, formFields, submissions };
@@ -203,15 +211,6 @@ function createChartConfig(data: any[], columns: string[]) {
 }
 
 export async function getFormAnalytics(formId: number, config: temp) {
-  // const cachedData = inMemoryCache.get("forms");
-  // if (cachedData[formId]) {
-  //   const formAnalytics = cachedData[formId].analyticsData;
-  //   const expiryDate = cachedData[formId].expiryDate;
-  //   if (expiryDate > Date.now()) {
-  //     return { analyticsData: formAnalytics, stats: cachedData[formId].stats };
-  //   }
-  // }
-
   const [submissions, form] = await Promise.all([
     getSubmissions(formId),
     getForm(formId),
@@ -241,4 +240,20 @@ export async function getFormAnalytics(formId: number, config: temp) {
       lastUpdated: lastUpdated,
     },
   };
+}
+
+export async function updateSubmissionField(
+  submissionId: string,
+  field: string,
+  tableName: string | undefined,
+  value: any,
+) {
+  if (tableName === "applications") {
+    return db["applications"].update({
+      where: { id: submissionId },
+      data: {
+        [field]: value,
+      },
+    });
+  }
 }
