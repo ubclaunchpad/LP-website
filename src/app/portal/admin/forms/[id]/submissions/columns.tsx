@@ -5,6 +5,7 @@ import MultiSelect from "@/components/general/multiSelect";
 import { updateSubmissionField } from "@/app/portal/admin/actions";
 import { toast } from "sonner";
 import FloatingTextArea from "@/components/primitives/floatingTextArea";
+import { Button } from "@/components/primitives/button";
 
 export type FormFields = {
   [key: string]: {
@@ -16,7 +17,8 @@ export type FormFields = {
       | "date"
       | "textarea"
       | "checkbox"
-      | "url";
+      | "url"
+      | "person";
     label: string;
     options?: { label: string; id: string }[];
     cell?: (row: any) => string;
@@ -36,12 +38,24 @@ export type FormFields = {
 
 export function createColumns<TData>(
   fields: FormFields,
+  members: { id: string; email: string }[],
   setAndOpen: any,
 ): ColumnDef<keyof FormFields>[] {
-  const general = Object.entries(fields).map(([key, field]) => {
+  const general: any[] = Object.entries(fields).map(([key, field]) => {
     return {
       accessorKey: key as keyof TData,
-      header: field.label,
+      header: ({ column }: { column: any }) => {
+        return (
+          <Button
+            className={
+              " hover:bg-transparent flex text-left justify-start items-start min-h-none h-fit p-0 w-full bg-transparent "
+            }
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          >
+            {field.label}
+          </Button>
+        );
+      },
       enableColumnFilter: field.type !== "textarea" && field.type !== "url",
       filterFn: (
         row: Row<any>,
@@ -52,6 +66,7 @@ export function createColumns<TData>(
         if (!filterValue) {
           return true;
         }
+
         if (field.type === "select") {
           if (!field.options) {
             return row.original[key]
@@ -93,8 +108,29 @@ export function createColumns<TData>(
               />
             );
           }
+
+          if (field.type === "person") {
+            const submissionId = row.original.id;
+            const memberOptions = members.map((member) => ({
+              ...member,
+              label: member.email,
+            }));
+            return (
+              <SelectField
+                options={memberOptions}
+                field={field}
+                value={value?.toString()}
+                submissionId={submissionId}
+                id={key}
+              />
+            );
+          }
           if (!value) {
             return <span className={"text-gray-400"}>N/A</span>;
+          }
+          if (field.type === "date") {
+            const date = new Date(row.original[key]);
+            return date.toDateString();
           }
           if (field.type === "email") {
             return (
@@ -126,10 +162,12 @@ export function createColumns<TData>(
               </span>
             );
           }
+
           if (field.type === "select") {
             const submissionId = row.original.id;
             return (
               <SelectField
+                options={field.options}
                 field={field}
                 value={value.toString()}
                 submissionId={submissionId}
@@ -145,7 +183,7 @@ export function createColumns<TData>(
   return [
     {
       accessorKey: "popover",
-      header: "Applicant",
+      header: "",
       enableColumnFilter: false,
       cell: ({ row }) => {
         return (
@@ -157,7 +195,7 @@ export function createColumns<TData>(
               "text-lp-200  rounded-xl w-full justify-start flex items-center gap-2  py-1"
             }
           >
-            <ExpandIcon size={12} />
+            <ExpandIcon size={14} />
             View
           </button>
         );
@@ -192,12 +230,34 @@ function SelectField({
   value,
   field,
   id,
+  options,
 }: {
   submissionId: string;
   value: string;
   id: string;
+  options: { label: string; id: string }[] | undefined;
   field: FormFields[keyof FormFields];
 }) {
+  const nullLabel = field.options?.find((op) => op.id === null)?.label;
+  const fOptions = field.options || [];
+  const overrideOptions = options || [];
+  const optionsMap = new Map();
+
+  fOptions.forEach((option) => {
+    if (option.id === null) {
+      return;
+    }
+    optionsMap.set(option.id, option);
+  });
+
+  overrideOptions.forEach((option) => {
+    if (option.id === null) {
+      return;
+    }
+    optionsMap.set(option.id, option);
+  });
+
+  const selectOptions = Array.from(optionsMap.values());
   const [selected, setSelected] = useState(value);
   const canUpdate = field.config?.allowUpdate;
   if (!canUpdate) {
@@ -240,9 +300,10 @@ function SelectField({
       }
       onChange={(e) => updateField(e[0])}
       allowMultiple={false}
+      emptyText={nullLabel?.toString() || "None"}
       value={Array.isArray(selected) ? selected : [selected]}
       options={
-        field.options?.map((op) => ({
+        selectOptions?.map((op) => ({
           label: op.label,
           value: op.id,
         })) || []

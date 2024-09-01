@@ -257,3 +257,24 @@ export async function updateSubmissionField(
     });
   }
 }
+
+export async function getAdminMembers() {
+  const res = await db.roles.findMany({
+    where: {
+      roles: {
+        contains: "admin",
+      },
+    },
+    include: {
+      users: true,
+    },
+  });
+
+  return res.map((p) => {
+    return {
+      ...p.users,
+      id: p.users.id,
+      email: p.users.email,
+    };
+  });
+}

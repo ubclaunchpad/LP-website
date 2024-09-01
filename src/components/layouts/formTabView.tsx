@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 import { FormFields } from "@/app/portal/admin/forms/[id]/submissions/columns";
 import { usePathname } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
+import { createClient } from "@/lib/utils/supabase/client";
+import { SupabaseClient } from "@supabase/supabase-js";
 
 export type Tab = {
   label: string;
@@ -13,6 +15,7 @@ export type Tab = {
 export type TabViewProps = {
   tabs: Tab[];
   children: ReactNode;
+  members: { id: string; email: string }[];
   form: { rawForm: any; formFields: FormFields; submissions: any[] };
 };
 
@@ -21,15 +24,37 @@ function isActive(id: string, selectedTab?: string) {
 }
 
 export const formContext = createContext(
-  {} as { rawForm: any; formFields: FormFields; submissions: any[] },
+  {} as {
+    rawForm: any;
+    formFields: FormFields;
+    submissions: any[];
+    members: any[];
+  },
 );
 
-export default function FormTabView({ tabs, children, form }: TabViewProps) {
+export default function FormTabView({
+  tabs,
+  children,
+  form,
+  members,
+}: TabViewProps) {
   const pathname = usePathname();
-  const [formState] = useState(form);
+  const supabase = createClient();
+  const submissions = useRealtimeUpdate({
+    supabase,
+    formId: form.rawForm.id,
+    data: form.submissions,
+  });
 
   return (
-    <formContext.Provider value={formState}>
+    <formContext.Provider
+      value={{
+        rawForm: form.rawForm,
+        formFields: form.formFields,
+        submissions,
+        members,
+      }}
+    >
       <div className={"flex flex-col gap-4 flex-1 w-full min-h-screen  "}>
         <div className="flex justify-between items-center gap-2 border-background-500 border-b">
           <div className="flex flex-row p-2 items-center px-4 gap-2">
@@ -71,4 +96,51 @@ export default function FormTabView({ tabs, children, form }: TabViewProps) {
       </div>
     </formContext.Provider>
   );
+}
+
+function useRealtimeUpdate({
+  formId,
+  data,
+  supabase,
+}: {
+  supabase: SupabaseClient<any, "public", any>;
+  formId: bigint;
+  data: any[];
+}) {
+  const [submissions, setSubmissions] = useState(data);
+
+  function mergeNewData(
+    newData: { [p: string]: any },
+    oldData: any[],
+    keyName: string,
+    key: string,
+  ) {
+    const newDataUpdate = oldData.map((item) => {
+      if (item[keyName] === key) {
+        return { ...item, ...newData };
+      }
+      return item;
+    });
+    setSubmissions(newDataUpdate);
+  }
+
+  useEffect(() => {
+    const channel = supabase
+      .channel("realtime")
+      .on(
+        `postgres_changes`,
+        { event: "UPDATE", schema: "public", table: "applications" },
+        (payload) => {
+          const data = payload.new;
+          mergeNewData(data, submissions, "id", data.id);
+        },
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [formId, supabase]);
+
+  return submissions;
 }

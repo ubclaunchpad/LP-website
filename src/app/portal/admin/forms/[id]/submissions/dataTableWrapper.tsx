@@ -7,6 +7,8 @@ import {
   FormFields,
 } from "@/app/portal/admin/forms/[id]/submissions/columns";
 import useApplicantPopover from "@/components/forms/applications/applicantPopover";
+import { useContext } from "react";
+import { formContext } from "@/components/layouts/formTabView";
 
 export type DataTableProps<TData, TValue> = {
   columns: ColumnDef<TData, TValue>[];
@@ -26,7 +28,8 @@ export default function DataTableWrapper<TData>({
   const { setAndOpen, applicantPopover } = useApplicantPopover({
     fields: formFields,
   });
-  const columns = createColumns(formFields, setAndOpen);
+  const { members } = useContext(formContext);
+  const columns = createColumns(formFields, members, setAndOpen);
   return (
     <div>
       {applicantPopover}

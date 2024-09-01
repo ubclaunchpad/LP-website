@@ -10,6 +10,7 @@ export default function MultiSelect({
   value,
   onChange,
   allowMultiple = false,
+  emptyText = "Choose",
   className,
 }: {
   value: (string | number)[];
@@ -17,6 +18,7 @@ export default function MultiSelect({
   onChange: (value: string[]) => void;
   allowMultiple: boolean;
   className?: string;
+  emptyText?: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const selectedOptions = options.filter((option) =>
@@ -36,13 +38,14 @@ export default function MultiSelect({
         type="button"
       >
         <span className="text-white justify-center flex items-center gap-2 ">
-          {selectedOptions.map((option) => (
-            <span key={option.label} className="p-0.5 px-2 rounded bg-lp-500">
-              {option.label}
-            </span>
-          ))}
+          {selectedOptions !== [null] &&
+            selectedOptions.map((option) => (
+              <span key={option.label} className="p-0.5 px-2 rounded bg-lp-500">
+                {option.label}
+              </span>
+            ))}
           <span className={"text-background-600 text-sm"}>
-            {selectedOptions.length === 0 && "Choose"}
+            {selectedOptions.length === 0 && emptyText}
           </span>
         </span>
       </button>

@@ -1,6 +1,6 @@
 import React from "react";
 import FormTabView, { Tab } from "@/components/layouts/formTabView";
-import { getAllFormDetails } from "@/app/portal/admin/actions";
+import { getAdminMembers, getAllFormDetails } from "@/app/portal/admin/actions";
 
 export default async function Layout({
   params,
@@ -11,6 +11,7 @@ export default async function Layout({
 }) {
   const formId = BigInt(params.id);
   const formDetails = await getAllFormDetails(formId);
+  const members = (await getAdminMembers()) || [];
   const tabs: Tab[] = [
     {
       label: "Submissions",
@@ -23,7 +24,7 @@ export default async function Layout({
   ];
 
   return (
-    <FormTabView tabs={tabs} form={formDetails}>
+    <FormTabView tabs={tabs} form={formDetails} members={members}>
       {children}
     </FormTabView>
   );

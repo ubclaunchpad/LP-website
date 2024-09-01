@@ -14,6 +14,7 @@ import {
   getFacetedMinMaxValues,
   Column,
   RowData,
+  SortingState,
 } from "@tanstack/react-table";
 
 import { Button } from "@/components/primitives/button";
@@ -46,17 +47,19 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
-  const [tableData, setData] = useState(data);
-  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [sorting, setSorting] = React.useState<SortingState>([]);
+
+  // const [isRefreshing, setIsRefreshing] = useState(false);
 
   const table = useReactTable({
-    data: tableData,
+    data: data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
+    onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
     getFacetedRowModel: getFacetedRowModel(), // client-side faceting
     getFacetedUniqueValues: getFacetedUniqueValues(), // generate unique values for select filter/autocomplete
@@ -68,22 +71,23 @@ export function DataTable<TData, TValue>({
     state: {
       columnFilters,
       columnVisibility,
+      sorting,
     },
   });
 
-  const formDetails = useContext(formContext);
-  async function refresh() {
-    try {
-      setIsRefreshing(true);
-      const res = await getAllFormDetails(formDetails.rawForm.id);
-      setData(res.submissions);
-      toast.success("Data refreshed");
-    } catch (e) {
-      toast.error("Failed to refresh data");
-    } finally {
-      setIsRefreshing(false);
-    }
-  }
+  // const formDetails = useContext(formContext);
+  // async function refresh() {
+  //   try {
+  //     setIsRefreshing(true);
+  //     const res = await getAllFormDetails(formDetails.rawForm.id);
+  //     setData(res.submissions);
+  //     toast.success("Data refreshed");
+  //   } catch (e) {
+  //     toast.error("Failed to refresh data");
+  //   } finally {
+  //     setIsRefreshing(false);
+  //   }
+  // }
 
   return (
     <div className={"overflow-hidden flex flex-col px-10  py-1"}>
@@ -100,16 +104,16 @@ export function DataTable<TData, TValue>({
           columnFilters={columnFilters}
           setColumnFilters={setColumnFilters}
         />
-        <Button
-          disabled={isRefreshing}
-          className=" gap-4 bg-background-600 border border-background-500"
-          onClick={refresh}
-        >
-          <RefreshCcwIcon
-            className={`h-4 w-4 ${isRefreshing ? "animate-spin" : ""}`}
-          />
-          {isRefreshing ? "Refreshing" : "Refresh"}
-        </Button>
+        {/*<Button*/}
+        {/*  disabled={isRefreshing}*/}
+        {/*  className=" gap-4 bg-background-600 border border-background-500"*/}
+        {/*  onClick={refresh}*/}
+        {/*>*/}
+        {/*  <RefreshCcwIcon*/}
+        {/*    className={`h-4 w-4 ${isRefreshing ? "animate-spin" : ""}`}*/}
+        {/*  />*/}
+        {/*  {isRefreshing ? "Refreshing" : "Refresh"}*/}
+        {/*</Button>*/}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className=" gap-4 bg-background-600 border border-background-500">

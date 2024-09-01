@@ -10,6 +10,7 @@ export default function FormSubmissionsPage() {
       <div
         className={"flex p-2 px-10 justify-between items-center gap-2"}
       ></div>
+
       <DataTableWrapper data={submissions} formFields={formFields} />
     </div>
   );
