@@ -68,9 +68,6 @@ importers:
       fs:
         specifier: 0.0.1-security
         version: 0.0.1-security
-      lp-website:
-        specifier: 'link:'
-        version: 'link:'
       lucide-react:
         specifier: ^0.428.0
         version: 0.428.0(react@18.3.1)
