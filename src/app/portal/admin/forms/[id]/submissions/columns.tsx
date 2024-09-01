@@ -45,8 +45,8 @@ export function createColumns<TData>(
     return {
       accessorKey: key as keyof TData,
       header: (body: any) => {
-        if (!body ) {
-            return <span>{field.label}</span>;
+        if (!body) {
+          return <span>{field.label}</span>;
         }
         const column = body.column;
         return (

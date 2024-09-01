@@ -126,7 +126,9 @@ export function DataTable<TData, TValue>({
                       column.toggleVisibility(!!value)
                     }
                   >
-                         {typeof column.columnDef.header === "function" ? column.columnDef.header() : column.columnDef.header}
+                    {typeof column.columnDef.header === "function"
+                      ? column.columnDef.header()
+                      : column.columnDef.header}
                   </DropdownMenuCheckboxItem>
                 );
               })}
