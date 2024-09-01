@@ -273,6 +273,7 @@ export async function getAdminMembers() {
   return res.map((p) => {
     return {
       ...p.users,
+      ...p,
       id: p.users.id,
       email: p.users.email,
     };

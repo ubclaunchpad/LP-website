@@ -377,7 +377,7 @@ model submissions {
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model applications {
   id                                       String      @id @db.Uuid
-  status                                   String?     @default("to review")
+  status                                   String?
   reviewer_id                              String?     @db.Uuid
   notes                                    String?
   created_at                               DateTime?   @default(now()) @db.Timestamptz(6)
@@ -393,10 +393,11 @@ model applications {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model roles {
-  id         String   @id @db.Uuid
-  roles      String?
-  created_at DateTime @default(now()) @db.Timestamptz(6)
-  users      users    @relation(fields: [id], references: [id], onDelete: Cascade)
+  id           String   @id @db.Uuid
+  roles        String?
+  created_at   DateTime @default(now()) @db.Timestamptz(6)
+  display_name String?
+  users        users    @relation(fields: [id], references: [id], onDelete: Cascade)
 
   @@schema("public")
 }

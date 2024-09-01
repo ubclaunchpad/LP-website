@@ -113,7 +113,7 @@ export function createColumns<TData>(
             const submissionId = row.original.id;
             const memberOptions = members.map((member) => ({
               ...member,
-              label: member.email,
+              label: member.display_name || member.email,
             }));
             return (
               <SelectField
@@ -125,6 +125,20 @@ export function createColumns<TData>(
               />
             );
           }
+
+          if (field.type === "select") {
+            const submissionId = row.original.id;
+            return (
+              <SelectField
+                options={field.options}
+                field={field}
+                value={value?.toString()}
+                submissionId={submissionId}
+                id={key}
+              />
+            );
+          }
+
           if (!value) {
             return <span className={"text-gray-400"}>N/A</span>;
           }
@@ -160,19 +174,6 @@ export function createColumns<TData>(
                   {value.toString()}
                 </a>
               </span>
-            );
-          }
-
-          if (field.type === "select") {
-            const submissionId = row.original.id;
-            return (
-              <SelectField
-                options={field.options}
-                field={field}
-                value={value.toString()}
-                submissionId={submissionId}
-                id={key}
-              />
             );
           }
           return row.getValue(key);
