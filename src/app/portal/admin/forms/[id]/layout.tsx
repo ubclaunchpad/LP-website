@@ -12,7 +12,6 @@ export default async function Layout({
   const formId = BigInt(params.id);
   const formDetails = await getAllFormDetails(formId);
   const members = (await getAdminMembers()) || [];
-  console.log("members", members);
   const tabs: Tab[] = [
     {
       label: "Submissions",

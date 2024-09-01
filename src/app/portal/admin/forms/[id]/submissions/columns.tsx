@@ -44,7 +44,11 @@ export function createColumns<TData>(
   const general: any[] = Object.entries(fields).map(([key, field]) => {
     return {
       accessorKey: key as keyof TData,
-      header: ({ column }: { column: any }) => {
+      header: (body: any) => {
+        if (!body ) {
+            return <span>{field.label}</span>;
+        }
+        const column = body.column;
         return (
           <Button
             className={

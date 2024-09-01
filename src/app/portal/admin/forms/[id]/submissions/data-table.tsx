@@ -104,16 +104,7 @@ export function DataTable<TData, TValue>({
           columnFilters={columnFilters}
           setColumnFilters={setColumnFilters}
         />
-        {/*<Button*/}
-        {/*  disabled={isRefreshing}*/}
-        {/*  className=" gap-4 bg-background-600 border border-background-500"*/}
-        {/*  onClick={refresh}*/}
-        {/*>*/}
-        {/*  <RefreshCcwIcon*/}
-        {/*    className={`h-4 w-4 ${isRefreshing ? "animate-spin" : ""}`}*/}
-        {/*  />*/}
-        {/*  {isRefreshing ? "Refreshing" : "Refresh"}*/}
-        {/*</Button>*/}
+
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className=" gap-4 bg-background-600 border border-background-500">
@@ -135,7 +126,7 @@ export function DataTable<TData, TValue>({
                       column.toggleVisibility(!!value)
                     }
                   >
-                    {column.columnDef.header?.toString().slice(0, 30)}
+                         {typeof column.columnDef.header === "function" ? column.columnDef.header() : column.columnDef.header}
                   </DropdownMenuCheckboxItem>
                 );
               })}
@@ -300,7 +291,7 @@ function TableFilter({
                 className="flex items-center w-full  flex-shrink-0 gap-2 rounded pl-2 border border-background-500    bg-background-600"
               >
                 <span className="text-white text-sm w-44 truncate">
-                  {column.columnDef.header}
+                  {column.columnDef.header()}
                 </span>
                 <ColumnFilterInput
                   column={column}
