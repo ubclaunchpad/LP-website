@@ -60,7 +60,7 @@ export async function submitApplication({ formId }: { formId: bigint }) {
   const createApplication = db.applications.create({
     data: {
       id: res.id!,
-      status: "to review",
+      status: null,
       reviewer_id: null,
     },
   });
