@@ -188,7 +188,7 @@ export function createColumns<TData>(
   return [
     {
       accessorKey: "popover",
-      header: "",
+      header: "Applicant",
       enableColumnFilter: false,
       cell: ({ row }) => {
         return (
@@ -197,10 +197,9 @@ export function createColumns<TData>(
               setAndOpen({ applicant: row });
             }}
             className={
-              "text-lp-200  rounded-xl w-full justify-start flex items-center gap-2  py-1"
+              "text-lp-300 font-bold  rounded-lg p-4 py-7 w-full  flex flex-1 border border-transparent hover:border-background-500 items-center justify-center gap-2  "
             }
           >
-            <ExpandIcon size={14} />
             View
           </button>
         );
