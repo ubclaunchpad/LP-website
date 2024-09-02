@@ -12,6 +12,7 @@ import { Button } from "@/components/primitives/button";
 import HeroSection from "@/components/general/heroSection";
 import MemberRoles from "@/components/general/memberRoles";
 import ProjectSection from "@/components/general/projectSection";
+import PartnerSection from "@/components/general/partnerSection";
 
 // const refreshProjects = async () => {
 //     const res = await fetch(
@@ -34,6 +35,10 @@ const text = {
   joinUsText:
     "We are looking for students passionate about tech with varying levels of experience to join our teams! ",
   joinUsButton: "Join our team",
+
+  partnerWithUsTitle: "Partner with us 🤝",
+  partnerWithUsSubtitle: "Reach out to us through email or social media! You can also connect with us through launchpad@email.com",
+  partnerWithUsButton: "Contact us",
 };
 
 const lpImageProps = {
@@ -106,6 +111,24 @@ export default async function Home() {
         id={"projects"}
       >
         <ProjectSection projects={projects ?? []} />
+      </section>
+      <section className="flex flex-col md:flex-row items-start justify-between max-w-[1340px] px-8 w-full">
+        <div className="flex flex-col text-center items-center lg:items-start py-10 pl-0 lg:pl-10 md:pr-10 w-full">
+          <h1
+            className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}
+          >
+            {text.partnerWithUsTitle}
+          </h1>
+          <p className="text-white text-center lg:text-left py-10">
+            {text.partnerWithUsSubtitle}
+          </p>
+          <Link href="/contact-us">
+            <Button className="p-4" size={"xl"} icon>
+              <span className="text-lg">{text.partnerWithUsButton}</span>
+            </Button>
+          </Link>
+        </div>
+        <PartnerSection />
       </section>
       <FaqSection faqs={faqs} />
       <MailingList />

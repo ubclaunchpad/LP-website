@@ -59,10 +59,10 @@ export const navItems: NavBarItem[] = [
     name: "Projects",
     url: "#projects",
   },
-  // {
-  //     name: "Be a Partner",
-  //     url: "#partner",
-  // },
+  {
+      name: "Be a Partner",
+      url: "#partner",
+  },
   // {
   //     name: "Our Team",
   //     url: "#team",
