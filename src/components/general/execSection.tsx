@@ -16,17 +16,21 @@ const execs = [
     image: "/images/execs/adrienne_leung.svg",
     title: "Co-President",
   },
-  { name: "Xavier Lam", 
+  {
+    name: "Xavier Lam",
     image: "/images/execs/xavier_lam.svg",
-    title: "Tech Lead" },
-  { 
-    name: "Kevin Zhang", 
-    image: "/images/execs/kevin_zhang.svg", 
-    title: "Tech Lead" },
-  { 
-    name: "Tony Liu", 
+    title: "Tech Lead",
+  },
+  {
+    name: "Kevin Zhang",
+    image: "/images/execs/kevin_zhang.svg",
+    title: "Tech Lead",
+  },
+  {
+    name: "Tony Liu",
     image: "/images/execs/tony_liu.svg",
-    title: "Tech Lead" },
+    title: "Tech Lead",
+  },
   {
     name: "Jessie Shang",
     image: "/images/execs/jessie_shang.svg",
@@ -90,8 +94,8 @@ export default function ExecSection() {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const startIndex = currentPage * execsPerPage;
@@ -117,15 +121,15 @@ export default function ExecSection() {
     <div className="w-full min-h-96 relative flex-shrink-0">
       <div className="flex flex-col items-center">
         <div className="flex justify-between items-center w-full">
-          <h2
-            className="md:text-left text-center text-3xl mx-8 md:mx-36 sm:font-semibold whitespace-nowrap ml-8 md:ml-36 mt-12 mb-4"
-          >
+          <h2 className="md:text-left text-center text-3xl mx-8 md:mx-36 sm:font-semibold whitespace-nowrap ml-8 md:ml-36 mt-12 mb-4">
             Meet our <span className="text-lp-400">2024/2025</span> execs
           </h2>
           <div className="flex space-x-6 mt-16 mr-16">
             <Button
               onClick={handlePrev}
-              className={"p-2 hidden sm:flex items-center ${isPrevDisabled ? 'bg-[#545454]' : 'bg-lightPurple text-white'} w-24"}
+              className={
+                "p-2 hidden sm:flex items-center ${isPrevDisabled ? 'bg-[#545454]' : 'bg-lightPurple text-white'} w-24"
+              }
               size="xl"
               icon
               reverse
@@ -135,7 +139,9 @@ export default function ExecSection() {
             </Button>
             <Button
               onClick={handleNext}
-              className={"p-2 hidden sm:flex items-center ${isNextDisabled ? 'bg-[#545454]' : 'bg-lightPurple text-white'} w-24"}
+              className={
+                "p-2 hidden sm:flex items-center ${isNextDisabled ? 'bg-[#545454]' : 'bg-lightPurple text-white'} w-24"
+              }
               size="xl"
               icon
               disabled={isNextDisabled}

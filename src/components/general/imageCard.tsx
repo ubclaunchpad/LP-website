@@ -42,7 +42,7 @@ const ImageCard = ({
           src={imageSrc}
           alt={alt}
           fill={true}
-          style={{objectFit:"cover"}}
+          style={{ objectFit: "cover" }}
           unoptimized
           className={`rounded overflow-hidden relative `}
         />

@@ -36,7 +36,7 @@ export default function InaccessiblePageWrapper({
             src={"/images/assets/planet1.svg"}
             alt={"planet"}
             layout={"fill"}
-            style={{objectFit:"contain"}}
+            style={{ objectFit: "contain" }}
           />
         </div>
         <div className={"w-[267px] h-[200px] absolute  left-40 bottom-10"}>
@@ -44,14 +44,14 @@ export default function InaccessiblePageWrapper({
             src={"/images/assets/planet2.svg"}
             alt={"planet"}
             layout={"fill"}
-            style={{objectFit:"contain"}}  
+            style={{ objectFit: "contain" }}
           />
         </div>
         <Image
           src={"/images/assets/starsBg.svg"}
           alt={"planet"}
           layout={"fill"}
-          style={{objectFit:"cover"}}
+          style={{ objectFit: "cover" }}
         />
       </div>
       <div className="text-4xl flex-col flex gap-6 justify-center items-center">
