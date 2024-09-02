@@ -17,7 +17,7 @@ export default function Statistics() {
         src="/images/eclipse.svg"
         alt="eclipse"
         fill={true}
-        objectFit={"cover"}
+        style={{objectFit:"cover"}}
         className="absolute   max-w-none  pt-8 overflow-visible top-1/2 left-0 transform  z-10 translate-y"
       />
 
