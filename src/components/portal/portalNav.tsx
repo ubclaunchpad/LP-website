@@ -5,7 +5,7 @@ import Image from "next/image";
 const PortalNavbar = () => {
   return (
     <nav className="flex items-center justify-between p-4 py-2   border-neutral-800  z-50">
-      <Link className="flex items-center gap-4" href="/public">
+      <Link className="flex items-center gap-4" href="/">
         <Image
           src="/images/logo_circle.png"
           width={24}

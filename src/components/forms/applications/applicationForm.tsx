@@ -11,6 +11,8 @@ import {
   saveApplication,
 } from "@/lib/utils/forms/helpers";
 import { Form } from "@/lib/types/application";
+import { toast } from "sonner";
+import { ZodIssue } from "zod";
 
 type FormContext = {
   formData: FormDetails;
@@ -47,7 +49,7 @@ export default function ApplicationForm({
           question,
           initialValues && initialValues[question.id]
             ? (initialValues[question.id] as string)
-            : "",
+            : undefined,
           updateForm,
         );
       });
@@ -60,11 +62,17 @@ export default function ApplicationForm({
     value: string | string[] | null | number | number[],
   ) {
     setFormAnswers((prev) => {
+      const errors: ZodIssue[] = [];
+      const result = prev[id].validation.safeParse(value);
+      if (!result.success) {
+        errors.push(...result.error.errors);
+      }
       return {
         ...prev,
         [id]: {
           ...prev[id],
           value: value,
+          errors: errors,
         },
       };
     });
@@ -90,22 +98,39 @@ export default function ApplicationForm({
   }
 
   function goToNextTab() {
-    const {
-      isValid,
-      errors,
-      formAnswers: newFormAnswers,
-    } = validateTab(formQ[currentStep], formAnswers);
-    setFormAnswers(Object.assign({}, newFormAnswers));
-    if (!isValid) {
-      // TODO: Include a toast message UI
-      return;
+    try {
+      const { isValid, formAnswers: newFormAnswers } = validateTab(
+        formQ[currentStep],
+        formAnswers,
+      );
+      setFormAnswers(Object.assign({}, newFormAnswers));
+      if (!isValid) {
+        toast.error("Please fix the errors before proceeding");
+        return;
+      }
+      if (currentStep > formQ.length + 1) {
+        return;
+      }
+      const formIdAsBigInt = BigInt(applicationForm.id);
+      saveApplication(formAnswers, formIdAsBigInt).then(() => {
+        setCurrentStep((prev) => prev + 1);
+        toast.success(
+          "Application progress until now has been saved; you can continue now or later",
+        );
+      });
+    } catch (e) {
+      toast.error(
+        "An error occurred; refresh and try again. If the problem persists, email us.",
+        {
+          action: {
+            label: "Email Us",
+            onClick: () => {
+              window.open("mailto:strategy@ubclaunchpad.com");
+            },
+          },
+        },
+      );
     }
-    if (currentStep > formQ.length + 1) {
-      return;
-    }
-    saveApplication(formAnswers, Number(applicationForm.id)).then(() =>
-      setCurrentStep((prev) => prev + 1),
-    );
   }
 
   function goToPreviousTab() {

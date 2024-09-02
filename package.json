@@ -13,7 +13,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@prisma/client": "^5.18.0",
+    "@prisma/client": "^5.19.0",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
     "@radix-ui/react-label": "^2.1.0",
@@ -31,18 +31,22 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
-    "fs": "0.0.1-security",
     "form-data": "^4.0.0",
+    "fs": "0.0.1-security",
     "lucide-react": "^0.428.0",
     "mailgun.js": "^10.2.3",
     "next": "14.2.5",
+    "next-themes": "^0.3.0",
     "path": "^0.12.7",
     "pocketbase": "^0.21.4",
     "postgres": "^3.4.4",
     "react": "^18",
+    "react-countup": "^6.5.3",
     "react-dom": "^18",
     "react-hook-form": "^7.52.2",
     "react-json-editor-ajrm": "^2.5.14",
+    "recharts": "^2.12.7",
+    "sonner": "^1.5.0",
     "swiper": "^11.1.9",
     "tailwind-merge": "^2.4.0",
     "zod": "^3.23.8"
@@ -60,7 +64,7 @@
     "eslint-config-prettier": "^9.1.0",
     "postcss": "^8",
     "prettier": "3.3.3",
-    "prisma": "^5.18.0",
+    "prisma": "^5.19.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

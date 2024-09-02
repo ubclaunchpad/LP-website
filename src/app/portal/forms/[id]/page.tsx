@@ -9,6 +9,7 @@ import {
 import { getForm } from "@/app/portal/admin/actions";
 import { getUserApplication } from "@/app/portal/forms/actions";
 import { Form } from "@/lib/types/application";
+import GenericGreeter from "@/components/layouts/genericGreeter";
 
 const text = {
   closed: "This form is now closed.",
@@ -39,15 +40,19 @@ export default async function page({
   const status = app?.status;
   const formStatus = isFormOpen(form);
 
+  let subpage = null;
+
   switch (status) {
     case "submitted":
     case "rejected":
     case "accepted":
-      return renderTerminalPage(status, form);
+      subpage = renderTerminalPage(status, form);
+      break;
     case "pending":
     default:
-      return renderConditionalPage(status, form, formStatus);
+      subpage = renderConditionalPage(status, form, formStatus);
   }
+  return <GenericGreeter>{subpage}</GenericGreeter>;
 }
 
 function renderTerminalPage(status: string, form: any) {

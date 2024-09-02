@@ -118,13 +118,13 @@ table {
 tbody {
   display: flex;
   flex-direction: column;
-  @apply bg-background-700;
+  /*@apply bg-background-700;*/
 
   > :nth-child(odd) {
-    @apply bg-background-700;
+    /*@apply bg-background-700;*/
   }
   > :nth-child(even) {
-    @apply bg-background-800;
+    /*@apply bg-background-800;*/
   }
 
   overflow: hidden;
@@ -132,7 +132,7 @@ tbody {
   tr {
     width: 100%;
     display: flex;
-    min-height: 3rem;
+    /*min-height: 3rem;*/
   }
 }
 

@@ -76,8 +76,8 @@ export type Application = {
 export type FormItem = {
   errors: ZodIssue[];
   type: QuestionFormat;
-  initialValue: string | string[] | null | number | number[];
-  value: string | string[] | null | number | number[];
+  initialValue: string | string[] | null | number | number[] | undefined;
+  value: string | string[] | null | number | number[] | undefined;
   validation: ZodType<any>;
   state: {
     isValid: "VALID" | "INVALID" | "NOT_VALIDATED";

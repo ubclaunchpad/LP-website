@@ -1,9 +1,14 @@
 import React, { Suspense } from "react";
+import GenericGreeter from "@/components/layouts/genericGreeter";
 
 export default async function Layout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <Suspense>{children}</Suspense>;
+  return (
+    <GenericGreeter includeStyle={false}>
+      <Suspense>{children}</Suspense>
+    </GenericGreeter>
+  );
 }

@@ -12,18 +12,17 @@ import { Form } from "@/lib/types/application";
 
 export async function saveApplication(
   formAnswers: FormDetails,
-  formId: number,
+  formId: bigint,
 ) {
   const fields: Obj = {};
-  const files: Obj = {};
   Object.keys(formAnswers).forEach((key) => {
     if (formAnswers[key].initialValue !== formAnswers[key].value) {
-      fields[key] = formAnswers[key].value;
+      fields[key] = formAnswers[key].value ? formAnswers[key].value : null;
       return;
     }
   });
 
-  if (Object.keys(fields).length === 0 && Object.keys(files).length === 0) {
+  if (Object.keys(fields).length === 0) {
     return "No changes";
   }
 
@@ -53,6 +52,8 @@ export function validateTab(
       isValid = false;
       errors.push(result.error.message);
       formAnswers[question.id].errors = result.error.errors;
+    } else {
+      formAnswers[question.id].errors = [];
     }
   });
   return { isValid, errors, formAnswers };
@@ -60,10 +61,10 @@ export function validateTab(
 
 export function questionToFormItem(
   question: FormQuestion,
-  initialValue: string,
+  initialValue: string | undefined,
   updateForm: (
     id: string,
-    value: string | string[] | null | number | number[],
+    value: string | string[] | number | number[] | null,
   ) => void,
 ): FormItem {
   return {

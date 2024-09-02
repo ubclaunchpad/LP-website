@@ -2,11 +2,11 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function updateSession(request: NextRequest) {
-  const headers = new Headers(request.headers);
-  headers.set("x-current-path", request.nextUrl.pathname);
+  // const headers = new Headers(request.headers);
+  // headers.set("x-current-path", request.nextUrl.pathname);
   let supabaseResponse = NextResponse.next({
     request,
-    headers,
+    // headers,
   });
 
   const supabase = createServerClient(

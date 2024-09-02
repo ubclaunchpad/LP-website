@@ -2,36 +2,51 @@
 //@ts-nocheck
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { cn } from "@/lib/utils/helpers";
 
 export default function MultiSelect({
   options,
   value,
   onChange,
   allowMultiple = false,
+  emptyText = "Choose",
+  className,
 }: {
   value: (string | number)[];
   options: Record<string, string>[];
   onChange: (value: string[]) => void;
   allowMultiple: boolean;
+  className?: string;
+  emptyText?: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const selectedOptions = options.filter((option) =>
+    value.includes(option.value),
+  );
+
+  const ref = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="relative flex flex-col w-full">
+    <div className="relative flex flex-col w-full" ref={ref}>
       <button
-        className="flex border border-background-600 bg-background-700  items-center min-h-11 rounded p-2 gap-2"
+        className={cn(
+          "flex border border-background-600 bg-background-700  items-center min-h-11 rounded p-2 gap-2",
+          className,
+        )}
         onClick={() => setIsOpen(!isOpen)}
         type="button"
       >
         <span className="text-white justify-center flex items-center gap-2 ">
-          {options
-            .filter((option) => value?.includes(option.value))
-            .map((option) => (
+          {selectedOptions !== [null] &&
+            selectedOptions.map((option) => (
               <span key={option.label} className="p-0.5 px-2 rounded bg-lp-500">
                 {option.label}
               </span>
             ))}
+          <span className={"text-background-600 text-sm"}>
+            {selectedOptions.length === 0 && emptyText}
+          </span>
         </span>
       </button>
       {isOpen && (
@@ -41,7 +56,14 @@ export default function MultiSelect({
         ></div>
       )}
       {isOpen && (
-        <div className="absolute max-h-80 overflow-y-scroll bg-background-700 gap-1 flex flex-col rounded border border-background-600 top-0  shadow-lg left-0 w-full transform z-40 overflow-hidden p-2 ">
+        <div
+          className="fixed max-h-80 overflow-y-scroll bg-background-700 gap-1 flex flex-col rounded border border-background-600  shadow-lg  w-full transform z-40 overflow-hidden p-2 "
+          style={{
+            top: ref.current?.getBoundingClientRect().top,
+            left: ref.current?.getBoundingClientRect().left,
+            width: ref.current?.getBoundingClientRect().width,
+          }}
+        >
           {options.map((option, index) => (
             <div
               key={index}

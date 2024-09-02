@@ -3,6 +3,7 @@ import { UserContextProvider } from "@/lib/context/usercontext";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/utils/supabase/server";
 import { db } from "@/db";
+import { Toaster } from "@/components/primitives/sonner";
 
 async function getUserMetadata(id: string) {
   return db.roles.findUnique({
@@ -29,6 +30,7 @@ export default async function Layout({
   return (
     <Suspense>
       <UserContextProvider user={data.user} userMetadata={userMetadata}>
+        <Toaster position={"bottom-center"} richColors />
         {children}
       </UserContextProvider>
     </Suspense>
