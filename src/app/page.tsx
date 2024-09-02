@@ -30,10 +30,10 @@ const text = {
    
   In Launch Pad form into teams to work on an 8 month development project based on their interests and skill sets. Each team consists of a tech-lead, developers and designers, where they collaboratively go through the design thinking process to design and build a product.`,
   joinUsTitle: "Want to grow your skill?",
-  joinUsSubtitle: "Join our team!",
+  joinUsSubtitle: "Join Our Team!",
   joinUsText:
     "We are looking for students passionate about tech with varying levels of experience to join our teams! ",
-  joinUsButton: "Join our team",
+  joinUsButton: "Join Our Team",
 };
 
 const lpImageProps = {
