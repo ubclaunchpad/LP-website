@@ -48,7 +48,7 @@ export default function FaqSection({ faqs }: FaqSectionProps) {
       </h2>
       <div className="max-w-7xl mx-auto py-20 px-4 sm:py-24 sm:px-6 lg:px-8">
         <dl className="grid grid-cols-1 gap-y-6 lg:grid-cols-2 sm:gap-x-8 sm:gap-y-8">
-          <div className="sm:col-span-1 gap-y-6 flex flex-col ">
+          <div className="sm:col-span-1 gap-y-6 flex flex-col">
             {makeFAQColumn(faqs, 0, Math.ceil(faqs.length / 2))}
           </div>
           <div className="sm:col-span-1 gap-y-6 flex flex-col">
@@ -67,7 +67,7 @@ function QuestionAccordion({
   setOpenIndex,
 }: QuestionAccordionProps) {
   return (
-    <div className="bg-[#3A3543] py-[20px] px-[20px] h-fit rounded-lg ">
+    <div className="bg-[#3A3543] py-[20px] px-[20px] h-fit rounded-lg border border-purple-300">
       <dt className="text-lg">
         <button
           className="text-left w-full px-2.5 flex justify-between items-start text-white"

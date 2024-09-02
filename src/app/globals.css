@@ -136,6 +136,11 @@ tbody {
   }
 }
 
+#faq {
+  /* control how much to scroll when faq is clicked from the nav */
+  scroll-margin-top: 70px;
+}
+
 .white-glow {
   -webkit-box-shadow: 0px 0px 177px 27px rgba(120, 110, 138, 0.44);
   -moz-box-shadow: 0px 0px 177px 27px rgba(120, 110, 138, 0.44);

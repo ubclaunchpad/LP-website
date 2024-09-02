@@ -57,7 +57,7 @@ const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
     opacity: isPinned ? 0.95 : 1,
     position: isPinned ? 'sticky' : 'relative',
     width: column.getSize() ? column.getSize() : '300px',
-    zIndex: isPinned ? 1 : 0,
+    // zIndex: isPinned ? 1 : 0,
   };
 }
 
@@ -92,9 +92,10 @@ export function DataTable<TData, TValue>({
       columnFilters,
       columnVisibility,
       sorting,
-      columnPinning: {
-        left: ['status','level', 'reviewer_id', 'interviewer_id','notes','popover'],
-      }
+      columnOrder: ['status','level', 'reviewer_id', 'interviewer_id','notes','popover'],
+      // columnPinning: {
+      //   left: ['status','level', 'reviewer_id', 'interviewer_id','notes','popover'],
+      // }
     },
   });
 
