@@ -34,32 +34,35 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/primitives/table";
-import React, {CSSProperties, useContext, useState} from "react";
+import React, { CSSProperties, useContext, useState } from "react";
 import { Columns3, ListFilterIcon, RefreshCcwIcon, XIcon } from "lucide-react";
 import { DataTableProps } from "@/app/portal/admin/forms/[id]/submissions/dataTableWrapper";
 import { formContext } from "@/components/layouts/formTabView";
 import { getAllFormDetails } from "@/app/portal/admin/actions";
 import { toast } from "sonner";
 
-
 const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
-  const isPinned = column.getIsPinned()
+  const isPinned = column.getIsPinned();
   const isLastLeftPinnedColumn =
-      isPinned === 'left' && column.getIsLastColumn('left')
+    isPinned === "left" && column.getIsLastColumn("left");
   const isFirstRightPinnedColumn =
-      isPinned === 'right' && column.getIsFirstColumn('right')
+    isPinned === "right" && column.getIsFirstColumn("right");
 
   return {
-    ...(isLastLeftPinnedColumn ? { borderRight: `1px solid var(--background-500)` } : {}),
-    ...(isFirstRightPinnedColumn ? { borderLeft: `1px solid var(--background-500)` } : {}),
-    left: isPinned === 'left' ? `${column.getStart('left')}px` : undefined,
-    right: isPinned === 'right' ? `${column.getAfter('right')}px` : undefined,
+    ...(isLastLeftPinnedColumn
+      ? { borderRight: `1px solid var(--background-500)` }
+      : {}),
+    ...(isFirstRightPinnedColumn
+      ? { borderLeft: `1px solid var(--background-500)` }
+      : {}),
+    left: isPinned === "left" ? `${column.getStart("left")}px` : undefined,
+    right: isPinned === "right" ? `${column.getAfter("right")}px` : undefined,
     opacity: isPinned ? 0.95 : 1,
-    position: isPinned ? 'sticky' : 'relative',
-    width: column.getSize() ? column.getSize() : '300px',
+    position: isPinned ? "sticky" : "relative",
+    width: column.getSize() ? column.getSize() : "300px",
     // zIndex: isPinned ? 1 : 0,
   };
-}
+};
 
 export function DataTable<TData, TValue>({
   columns,
@@ -92,7 +95,14 @@ export function DataTable<TData, TValue>({
       columnFilters,
       columnVisibility,
       sorting,
-      columnOrder: ['status','level', 'reviewer_id', 'interviewer_id','notes','popover'],
+      columnOrder: [
+        "status",
+        "level",
+        "reviewer_id",
+        "interviewer_id",
+        "notes",
+        "popover",
+      ],
       // columnPinning: {
       //   left: ['status','level', 'reviewer_id', 'interviewer_id','notes','popover'],
       // }
@@ -150,7 +160,9 @@ export function DataTable<TData, TValue>({
                       column.toggleVisibility(!!value)
                     }
                   >
-                         {typeof column.columnDef.header === "function" ? column.columnDef.header() : column.columnDef.header}
+                    {typeof column.columnDef.header === "function"
+                      ? column.columnDef.header()
+                      : column.columnDef.header}
                   </DropdownMenuCheckboxItem>
                 );
               })}
@@ -161,10 +173,7 @@ export function DataTable<TData, TValue>({
         <Table>
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
-              <tr
-                key={headerGroup.id}
-                className={"border-background-500"}
-              >
+              <tr key={headerGroup.id} className={"border-background-500"}>
                 {headerGroup.headers.map((header) => {
                   return (
                     <td
@@ -172,7 +181,7 @@ export function DataTable<TData, TValue>({
                       className={
                         " flex bg-background-600 text-xs flex-col   border-background-500  font-semibold  justify-center  overflow-hidden line-clamp-2  text-ellipsis"
                       }
-                        style={{...getCommonPinningStyles(header.column)}}
+                      style={{ ...getCommonPinningStyles(header.column) }}
                     >
                       {header.isPlaceholder
                         ? null
@@ -199,10 +208,8 @@ export function DataTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <td
                       key={cell.id}
-                      className={
-                        "  h-full text-xs min-h-24   overflow-hidden "
-                      }
-                        style={{...getCommonPinningStyles(cell.column)}}
+                      className={"  h-full text-xs min-h-24   overflow-hidden "}
+                      style={{ ...getCommonPinningStyles(cell.column) }}
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
