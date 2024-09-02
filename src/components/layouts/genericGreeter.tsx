@@ -27,7 +27,7 @@ export default function GenericGreeter({
             src={"/images/assets/planet2.svg"}
             alt={"planet"}
             layout={"fill"}
-            style={{objectFit:"cover"}}
+            style={{objectFit:"contain"}}
           />
         </div>
         <Image
