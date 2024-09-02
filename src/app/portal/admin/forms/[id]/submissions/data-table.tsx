@@ -34,12 +34,32 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/primitives/table";
-import React, { useContext, useState } from "react";
+import React, {CSSProperties, useContext, useState} from "react";
 import { Columns3, ListFilterIcon, RefreshCcwIcon, XIcon } from "lucide-react";
 import { DataTableProps } from "@/app/portal/admin/forms/[id]/submissions/dataTableWrapper";
 import { formContext } from "@/components/layouts/formTabView";
 import { getAllFormDetails } from "@/app/portal/admin/actions";
 import { toast } from "sonner";
+
+
+const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
+  const isPinned = column.getIsPinned()
+  const isLastLeftPinnedColumn =
+      isPinned === 'left' && column.getIsLastColumn('left')
+  const isFirstRightPinnedColumn =
+      isPinned === 'right' && column.getIsFirstColumn('right')
+
+  return {
+    ...(isLastLeftPinnedColumn ? { borderRight: `1px solid var(--background-500)` } : {}),
+    ...(isFirstRightPinnedColumn ? { borderLeft: `1px solid var(--background-500)` } : {}),
+    left: isPinned === 'left' ? `${column.getStart('left')}px` : undefined,
+    right: isPinned === 'right' ? `${column.getAfter('right')}px` : undefined,
+    opacity: isPinned ? 0.95 : 1,
+    position: isPinned ? 'sticky' : 'relative',
+    width: column.getSize() ? column.getSize() : '300px',
+    zIndex: isPinned ? 1 : 0,
+  };
+}
 
 export function DataTable<TData, TValue>({
   columns,
@@ -55,7 +75,7 @@ export function DataTable<TData, TValue>({
     data: data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
+    // getPaginationRowModel: getPaginationRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
@@ -72,6 +92,9 @@ export function DataTable<TData, TValue>({
       columnFilters,
       columnVisibility,
       sorting,
+      columnPinning: {
+        left: ['status','level', 'reviewer_id', 'interviewer_id','notes','popover'],
+      }
     },
   });
 
@@ -137,19 +160,20 @@ export function DataTable<TData, TValue>({
       </div>
       <div className="rounded-md border shadow-sm  border-background-500 overflow-hidden  ">
         <Table>
-          <TableHeader>
+          <thead>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow
+              <tr
                 key={headerGroup.id}
                 className={"border-background-500"}
               >
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead
+                    <td
                       key={header.id}
                       className={
-                        "w-60 flex bg-background-600 text-xs flex-col  font-semibold  justify-center  overflow-hidden line-clamp-2  text-ellipsis"
+                        " flex bg-background-600 text-xs flex-col   border-background-500  font-semibold  justify-center  overflow-hidden line-clamp-2  text-ellipsis"
                       }
+                        style={{...getCommonPinningStyles(header.column)}}
                     >
                       {header.isPlaceholder
                         ? null
@@ -157,36 +181,37 @@ export function DataTable<TData, TValue>({
                             header.column.columnDef.header,
                             header.getContext(),
                           )}
-                    </TableHead>
+                    </td>
                   );
                 })}
-              </TableRow>
+              </tr>
             ))}
-          </TableHeader>
-          <TableBody className={""}>
+          </thead>
+          <tbody className={"relative"}>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow
+                <tr
                   className={
-                    "border-background-500  bg-background-600 odd:bg-background-700"
+                    "border-background-500 p-0   bg-background-600 odd:bg-background-700"
                   }
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell
+                    <td
                       key={cell.id}
                       className={
-                        "w-60  h-fit text-xs min-h-0 left-0 overflow-hidden "
+                        "  h-full text-xs min-h-24   overflow-hidden "
                       }
+                        style={{...getCommonPinningStyles(cell.column)}}
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext(),
                       )}
-                    </TableCell>
+                    </td>
                   ))}
-                </TableRow>
+                </tr>
               ))
             ) : (
               <TableRow>
@@ -198,34 +223,34 @@ export function DataTable<TData, TValue>({
                 </TableCell>
               </TableRow>
             )}
-          </TableBody>
+          </tbody>
         </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="text-sm flex-1 px-2  text-zinc-200">
-          <span>
-            Showing {table.getState().pagination.pageIndex + 1} out of{" "}
-            {table.getPageCount()} pages
-          </span>
-        </div>
-        <Button
-          variant="outline"
-          size="sm"
-          className={"bg-lp-400"}
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          className={"bg-lp-400"}
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
+        {/*<div className="text-sm flex-1 px-2  text-zinc-200">*/}
+        {/*  <span>*/}
+        {/*    Showing {table.getState().pagination.pageIndex + 1} out of{" "}*/}
+        {/*    {table.getPageCount()} pages*/}
+        {/*  </span>*/}
+        {/*</div>*/}
+        {/*<Button*/}
+        {/*  variant="outline"*/}
+        {/*  size="sm"*/}
+        {/*  className={"bg-lp-400"}*/}
+        {/*  onClick={() => table.previousPage()}*/}
+        {/*  disabled={!table.getCanPreviousPage()}*/}
+        {/*>*/}
+        {/*  Previous*/}
+        {/*</Button>*/}
+        {/*<Button*/}
+        {/*  variant="outline"*/}
+        {/*  size="sm"*/}
+        {/*  className={"bg-lp-400"}*/}
+        {/*  onClick={() => table.nextPage()}*/}
+        {/*  disabled={!table.getCanNextPage()}*/}
+        {/*>*/}
+        {/*  Next*/}
+        {/*</Button>*/}
       </div>
     </div>
   );
