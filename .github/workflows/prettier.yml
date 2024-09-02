@@ -14,13 +14,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
     
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.x'
-
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4.0.0
     
       - name: Install dependencies
         run: pnpm install
