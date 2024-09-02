@@ -127,9 +127,10 @@ export default function ExecSection() {
           <div className="flex space-x-6 mt-16 mr-16">
             <Button
               onClick={handlePrev}
-              className={
-                "p-2 hidden sm:flex items-center ${isPrevDisabled ? 'bg-[#545454]' : 'bg-lightPurple text-white'} w-24"
-              }
+              variant={"dark"}
+              className={`p-2 hidden md:flex items-center ${
+                isPrevDisabled ? "bg-[#545454]" : "bg-lightPurple text-white"
+              } w-24`}
               size="xl"
               icon
               reverse
@@ -139,9 +140,10 @@ export default function ExecSection() {
             </Button>
             <Button
               onClick={handleNext}
-              className={
-                "p-2 hidden sm:flex items-center ${isNextDisabled ? 'bg-[#545454]' : 'bg-lightPurple text-white'} w-24"
-              }
+              variant={"dark"}
+              className={`p-2 hidden md:flex items-center ${
+                isNextDisabled ? "bg-[#545454]" : "bg-lightPurple text-white"
+              } w-24`}
               size="xl"
               icon
               disabled={isNextDisabled}
@@ -161,8 +163,8 @@ export default function ExecSection() {
                   height={110}
                   className="rounded-2xl"
                 />
-                <p className="mt-2 font-bold text-center">{exec.name}</p>
-                <p className="text-white">{exec.title}</p>
+                <p className="mt-2 font-bold text-center text-lg">{exec.name}</p>
+                <p className="text-white text-sm">{exec.title}</p>
               </div>
             ))}
           </div>
