@@ -40,7 +40,10 @@ export default function MultiSelect({
         <span className="text-white justify-center flex z-1 items-center gap-2 ">
           {selectedOptions !== [null] &&
             selectedOptions.map((option) => (
-              <span key={option.label} className="p-0.5 px-2 z-1! rounded bg-lp-500">
+              <span
+                key={option.label}
+                className="p-0.5 px-2 z-1! rounded bg-lp-500"
+              >
                 {option.label}
               </span>
             ))}
