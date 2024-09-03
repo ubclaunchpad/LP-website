@@ -111,6 +111,12 @@ export async function getAllFormDetails(
     const formConfig = form.config as unknown as Record<string, any>;
 
     if (formType === "recruitment") {
+      formFields["email"] = {
+        label: "Email",
+        id: "email",
+        type: "email",
+      };
+
       if (formConfig["application"]) {
         const subFields = formConfig["application"]["subfields"] || [];
         subFields.forEach((field: any) => {

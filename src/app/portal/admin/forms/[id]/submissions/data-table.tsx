@@ -51,6 +51,7 @@ const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
     position: isPinned ? "sticky" : "relative",
     width: column.getSize() ? column.getSize() : "300px",
     // zIndex: isPinned ? 1 : 0,
+    maxWidth: column.getSize() ? column.getSize() : "300px",
   };
 };
 
@@ -85,12 +86,15 @@ export function DataTable<TData, TValue>({
       columnVisibility,
       sorting,
       columnOrder: [
+        "popover",
         "status",
         "level",
         "reviewer_id",
         "interviewer_id",
-        "notes",
-        "popover",
+        // "notes",
+        "email",
+        "student email",
+        "role",
       ],
     },
   });
@@ -185,9 +189,7 @@ export function DataTable<TData, TValue>({
                     {row.getVisibleCells().map((cell) => (
                       <td
                         key={cell.id}
-                        className={
-                          "  h-full text-xs min-h-24   overflow-hidden "
-                        }
+                        className={"  h-full text-xs    overflow-hidden "}
                         style={{ ...getCommonPinningStyles(cell.column) }}
                       >
                         {flexRender(

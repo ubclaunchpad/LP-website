@@ -242,8 +242,10 @@ export function createColumns<TData>(
   return [
     {
       accessorKey: "popover",
-      header: "Applicant",
+      header: "",
       enableColumnFilter: false,
+      size: 100,
+      maxSize: 100,
       cell: ({ row }) => {
         return (
           <button
@@ -251,7 +253,7 @@ export function createColumns<TData>(
               setAndOpen({ applicant: row });
             }}
             className={
-              "text-lp-300 font-bold  rounded-lg p-4 py-7 w-full  flex flex-1 border border-transparent hover:border-background-500 items-center justify-center gap-2  "
+              "text-lp-300 font-bold  rounded-lg p-4 py-7 w-fit  flex flex-1 border border-transparent hover:border-background-500 items-center justify-center gap-2  "
             }
           >
             View
