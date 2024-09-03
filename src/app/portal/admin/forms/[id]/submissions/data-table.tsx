@@ -272,7 +272,7 @@ function TableFilter({
             left-0 top-0
             "
         >
-          <div className="flex flex-col items-center p-4 w-full justify-between gap-2  pb-2 px-4 max-w-2xl rounded border border-background-600 bg-background-700 pointer-events-auto  shadow-lg">
+          <div className="flex flex-col max-h-screen overflow-y-scroll items-center p-4 w-full justify-between gap-2  pb-2 px-4 max-w-2xl rounded border border-background-600 bg-background-700 pointer-events-auto  shadow-lg">
             <h3 className="text-lg w-full text-left pb-4 font-semibold">
               Filters
             </h3>
@@ -365,8 +365,10 @@ function ColumnFilterInput<TData>({
         <MultiSelect
           allowMultiple={false}
           options={options}
-          value={value}
-          onChange={(e) => setValue(e ? e[0] : "")}
+          value={[value]}
+          onChange={(e) => {
+            setValue(e ? e[0] : "");
+          }}
           onBlur={() => {
             updateColumnFilter([{ id: column.id, value }]);
           }}

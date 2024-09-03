@@ -46,10 +46,12 @@ export default function MultiSelect({
         type="button"
       >
         <span className="text-white justify-center flex z-1 items-center gap-2 ">
+          {/*{JSON.stringify(selectedOptions)}*/}
+          {/*{JSON.stringify(value)}*/}
           {selectedOptions !== [null] &&
             selectedOptions.map((option) => (
               <span
-                key={option.label}
+                key={option.value}
                 className="p-0.5 px-2 z-1! rounded bg-lp-500"
               >
                 {option.label}

@@ -114,6 +114,7 @@ export function createColumns<TData>(
         }
 
         if (field.type === "select") {
+          console.log(filterValue);
           if (!field.options) {
             return row.original[key]
               .toString()
@@ -121,17 +122,22 @@ export function createColumns<TData>(
               .includes(filterValue.toLowerCase());
           }
 
-          const matchCriteria = field.options?.filter(
-            (op) =>
-              filterValue.includes(op.label) || filterValue.includes(op.id),
+          const matchCriteria = field.options?.filter((op) =>
+            filterValue.includes(op.id),
           );
           return (
-            matchCriteria?.filter((op) =>
-              row.original[key]
+            matchCriteria?.filter((op) => {
+              if (
+                row.original[key] === null ||
+                row.original[key] === undefined
+              ) {
+                return false;
+              }
+              return row.original[key]
                 .toString()
                 .toLowerCase()
-                .includes(op.label.toLowerCase()),
-            ).length > 0
+                .includes(op.id.toLowerCase());
+            }).length > 0
           );
         }
 
