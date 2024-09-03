@@ -15,7 +15,7 @@ export type Tab = {
 export type TabViewProps = {
   tabs: Tab[];
   children: ReactNode;
-  members: { id: string; email: string }[];
+  members: { id: string; email: string; display_name: string | undefined }[];
   form: { rawForm: any; formFields: FormFields; submissions: any[] };
 };
 
@@ -29,6 +29,11 @@ export const formContext = createContext(
     formFields: FormFields;
     submissions: any[];
     members: any[];
+    mergeNewData: (
+      newData: { [p: string]: any },
+      keyName: string,
+      key: string,
+    ) => void;
   },
 );
 
@@ -40,7 +45,7 @@ export default function FormTabView({
 }: TabViewProps) {
   const pathname = usePathname();
   const supabase = createClient();
-  const submissions = useRealtimeUpdate({
+  const { submissions, mergeNewData } = useRealtimeUpdate({
     supabase,
     formId: form.rawForm.id,
     data: form.submissions,
@@ -53,6 +58,7 @@ export default function FormTabView({
         formFields: form.formFields,
         submissions,
         members,
+        mergeNewData,
       }}
     >
       <div className={"flex flex-col gap-4 flex-1 w-full min-h-screen  "}>
@@ -111,11 +117,10 @@ function useRealtimeUpdate({
 
   function mergeNewData(
     newData: { [p: string]: any },
-    oldData: any[],
     keyName: string,
     key: string,
   ) {
-    const newDataUpdate = oldData.map((item) => {
+    const newDataUpdate = submissions.map((item) => {
       if (item[keyName] === key) {
         return { ...item, ...newData };
       }
@@ -132,7 +137,7 @@ function useRealtimeUpdate({
         { event: "UPDATE", schema: "public", table: "applications" },
         (payload) => {
           const data = payload.new;
-          mergeNewData(data, submissions, "id", data.id);
+          mergeNewData(data, "id", data.id);
         },
       )
       .subscribe();
@@ -142,5 +147,5 @@ function useRealtimeUpdate({
     };
   }, [formId, supabase]);
 
-  return submissions;
+  return { submissions, setSubmissions, mergeNewData };
 }

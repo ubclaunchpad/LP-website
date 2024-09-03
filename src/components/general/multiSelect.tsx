@@ -2,7 +2,7 @@
 //@ts-nocheck
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils/helpers";
 
 export default function MultiSelect({
@@ -12,6 +12,7 @@ export default function MultiSelect({
   allowMultiple = false,
   emptyText = "Choose",
   className,
+  onBlur,
 }: {
   value: (string | number)[];
   options: Record<string, string>[];
@@ -19,13 +20,20 @@ export default function MultiSelect({
   allowMultiple: boolean;
   className?: string;
   emptyText?: string;
+  onBlur?: () => void;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const selectedOptions = options.filter((option) =>
-    value.includes(option.value),
+    value?.includes(option.value),
   );
 
   const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen && onBlur) {
+      onBlur();
+    }
+  }, [isOpen]);
 
   return (
     <div className="relative flex flex-col w-full" ref={ref}>
@@ -77,6 +85,11 @@ export default function MultiSelect({
               }`}
               onClick={() => {
                 if (!allowMultiple) {
+                  if (value?.includes(option.value)) {
+                    onChange([]);
+                    setIsOpen(false);
+                    return;
+                  }
                   onChange([option.value]);
                   setIsOpen(false);
                   return;
