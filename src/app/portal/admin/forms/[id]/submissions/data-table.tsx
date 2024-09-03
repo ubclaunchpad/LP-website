@@ -24,6 +24,12 @@ import React, { CSSProperties, useState } from "react";
 import { ChartArea, ListFilterIcon, TableIcon } from "lucide-react";
 import { DataTableProps } from "@/app/portal/admin/forms/[id]/submissions/dataTableWrapper";
 import AnalyticsPage from "@/app/portal/admin/forms/[id]/submissions/AnalyticsPage";
+import {
+  FormFields,
+  ReferenceItem,
+  ReferenceMap,
+} from "@/app/portal/admin/forms/[id]/submissions/columns";
+import MultiSelect from "@/components/general/multiSelect";
 
 const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
   const isPinned = column.getIsPinned();
@@ -51,6 +57,7 @@ const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
 export function DataTable<TData, TValue>({
   columns,
   data,
+  refMap,
 }: DataTableProps<TData, TValue>) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
@@ -69,8 +76,8 @@ export function DataTable<TData, TValue>({
     getFacetedRowModel: getFacetedRowModel(), // client-side faceting
     getFacetedUniqueValues: getFacetedUniqueValues(), // generate unique values for select filter/autocomplete
     getFacetedMinMaxValues: getFacetedMinMaxValues(), // generate min/max values for range filter
-    debugTable: true,
-    debugHeaders: true,
+    // debugTable: true,
+    // debugHeaders: true,
     debugColumns: false,
     enableColumnFilters: true,
     state: {
@@ -97,6 +104,7 @@ export function DataTable<TData, TValue>({
           </span>
         </div>
         <TableFilter
+          refMap={refMap}
           columns={
             table.getAllColumns() as unknown as Column<unknown, unknown>[]
           }
@@ -212,10 +220,12 @@ function TableFilter({
   columns,
   columnFilters,
   setColumnFilters,
+  refMap,
 }: {
   columns: Column<RowData, unknown>[];
   columnFilters: ColumnFiltersState;
   setColumnFilters: (value: ColumnFiltersState) => void;
+  refMap: ReferenceMap;
 }) {
   const [showFilters, setShowFilters] = useState(false);
 
@@ -248,7 +258,7 @@ function TableFilter({
       </Button>
       <div
         className={
-          "fixed h-screen  w-screen bg-black bg-opacity-30 z-20 top-0 left-0"
+          "fixed h-screen flex justify-center items-center  w-screen bg-black bg-opacity-30 z-20 top-0 left-0"
         }
       >
         <button
@@ -258,42 +268,66 @@ function TableFilter({
           onClick={() => setShowFilters(false)}
         ></button>
         <div
-          className="fixed min-h-[50vh] gap-2 overflow-y-scroll bg-background-700  flex flex-col rounded border border-background-600  shadow-lg  w-full transform z-40 overflow-hidden p-2
-            left-1/2 top-1/2 max-w-2xl -translate-x-1/2 -translate-y-1/2
+          className=" min-h-screen gap-3  items-center justify-center static overflow-y-scroll  w-screen flex flex-col pointer-events-none  transform z-40 overflow-hidden p-2
+            left-0 top-0
             "
         >
-          {columns
-            .filter((c) => c.getCanFilter())
-            .map((column: any, index: number) => (
-              <div
-                key={index}
-                className="flex items-center w-full  flex-shrink-0 gap-2 rounded pl-2 border border-background-500    bg-background-600"
+          <div className="flex flex-col items-center p-4 w-full justify-between gap-2  pb-2 px-4 max-w-2xl rounded border border-background-600 bg-background-700 pointer-events-auto  shadow-lg">
+            <h3 className="text-lg w-full text-left pb-4 font-semibold">
+              Filters
+            </h3>
+            {columns
+              .filter((c) => c.getCanFilter())
+              .map((column: any, index: number) => (
+                <div
+                  key={index}
+                  className="flex items-center w-full  flex-shrink-0 gap-2 rounded pl-2 border border-background-500    bg-background-600"
+                >
+                  <span className="text-white text-sm w-44 truncate">
+                    {column.columnDef.header()}
+                  </span>
+                  <ColumnFilterInput
+                    id={column.columnDef.meta.id}
+                    field={column.columnDef.meta.field}
+                    refItem={
+                      (typeof refMap[column.columnDef.meta.id] === "string"
+                        ? refMap[refMap[column.columnDef.meta.id] as string]
+                        : refMap[column.columnDef.meta.id]) as
+                        | ReferenceItem
+                        | undefined
+                    }
+                    column={column}
+                    columnFilter={columnFilters.find((c) => c.id === column.id)}
+                    updateColumnFilter={(value) =>
+                      setColumnFilters([
+                        ...columnFilters.filter((c) => c.id !== column.id),
+                        ...value,
+                      ])
+                    }
+                  />
+                </div>
+              ))}
+            <div className="flex items-end justify-between w-full flex-1 gap-2 pt-4">
+              <Button
+                disabled={columnFilters.length === 0}
+                className={"bg-lp-400 max-w-md w-full"}
+                onClick={() => {
+                  setColumnFilters([]);
+                  setShowFilters(false);
+                }}
               >
-                <span className="text-white text-sm w-44 truncate">
-                  {column.columnDef.header()}
-                </span>
-                <ColumnFilterInput
-                  column={column}
-                  columnFilter={columnFilters.find((c) => c.id === column.id)}
-                  updateColumnFilter={(value) =>
-                    setColumnFilters([
-                      ...columnFilters.filter((c) => c.id !== column.id),
-                      ...value,
-                    ])
-                  }
-                />
-              </div>
-            ))}
-          <Button
-            disabled={columnFilters.length === 0}
-            className={"bg-lp-400"}
-            onClick={() => {
-              setColumnFilters([]);
-              setShowFilters(false);
-            }}
-          >
-            {columnFilters.length === 0 ? "No filters" : "Clear filters"}
-          </Button>
+                {columnFilters.length === 0 ? "No filters" : "Clear filters"}
+              </Button>
+              <Button
+                className={"bg-background-500 max-w-md w-full"}
+                onClick={() => {
+                  setShowFilters(false);
+                }}
+              >
+                Close
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </>
@@ -304,14 +338,42 @@ interface ColumnFilterInputProps<TData> {
   column: Column<TData, unknown>;
   columnFilter: any;
   updateColumnFilter: (value: ColumnFiltersState) => void;
+  refItem: ReferenceItem | undefined;
+  field: FormFields[keyof FormFields];
+  id: string;
 }
 
 function ColumnFilterInput<TData>({
   column,
+  field,
   columnFilter,
+  refItem,
   updateColumnFilter,
 }: ColumnFilterInputProps<TData>) {
   const [value, setValue] = useState(columnFilter?.value ?? "");
+
+  if ((field.type === "person" || field.type === "select") && refItem) {
+    const options: { label: string; value: string }[] = refItem
+      ? Object.values(refItem).map((item: any) => ({
+          label: item.label,
+          value: item.id,
+        }))
+      : [];
+
+    return (
+      <>
+        <MultiSelect
+          allowMultiple={false}
+          options={options}
+          value={value}
+          onChange={(e) => setValue(e ? e[0] : "")}
+          onBlur={() => {
+            updateColumnFilter([{ id: column.id, value }]);
+          }}
+        />
+      </>
+    );
+  }
 
   return (
     <Input

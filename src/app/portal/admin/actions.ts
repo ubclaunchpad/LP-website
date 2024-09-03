@@ -71,10 +71,20 @@ function formatFormFields(questionSteps: FormStep[]): FormFields {
   const questionMap: FormFields = {};
   questionSteps.forEach((step) => {
     step.questions.forEach((question) => {
+      let options: any[] = [];
+      if (question.type === "select") {
+        options = question.options?.map((option) => {
+          return {
+            id: option.value,
+            label: option.label,
+            value: option.value,
+          };
+        });
+      }
       questionMap[question.id] = {
         label: question.label,
-        // id: question.id,
-
+        id: question.id,
+        options: options,
         type: question.type,
       };
     });

@@ -7,14 +7,15 @@ import { useContext, useEffect, useState } from "react";
 export default function AnalyticsPage({ submissions }: { submissions: any[] }) {
   const columns = [
     "role",
+    "level",
+    "status",
     "year",
     "faculty",
     "specialization",
     "graduationYear",
     "lp-team",
-    "level",
-    "status",
-    "reviewer_id",
+
+    // "reviewer_id",
   ];
   const { data, isLoading, error } = useChartData({
     columns: columns,

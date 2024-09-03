@@ -1,14 +1,15 @@
 import { ColumnDef, Row } from "@tanstack/react-table";
-import { useState } from "react";
-import { ExpandIcon } from "lucide-react";
+import { useContext, useState } from "react";
 import MultiSelect from "@/components/general/multiSelect";
 import { updateSubmissionField } from "@/app/portal/admin/actions";
 import { toast } from "sonner";
 import FloatingTextArea from "@/components/primitives/floatingTextArea";
 import { Button } from "@/components/primitives/button";
+import { formContext } from "@/components/layouts/formTabView";
 
 export type FormFields = {
   [key: string]: {
+    id: string | undefined;
     type:
       | "number"
       | "select"
@@ -19,6 +20,7 @@ export type FormFields = {
       | "checkbox"
       | "url"
       | "person";
+    meta?: any;
     label: string;
     options?: { label: string; id: string }[];
     cell?: (row: any) => string;
@@ -36,13 +38,53 @@ export type FormFields = {
   };
 };
 
+export type ReferenceItem = {
+  id: string;
+  label: string;
+};
+export type ReferenceMap = {
+  [key: string]: ReferenceItem | ReferenceMap | string;
+};
+
+export function populateReferenceMap(
+  fields: FormFields,
+  others: { id: string; label: string; options: any[] }[],
+) {
+  const referenceMap: ReferenceMap = {};
+  Object.entries(fields).forEach(([key, field]) => {
+    if (field.type === "person") {
+      referenceMap[key] = "members";
+    }
+    if (field.type === "select") {
+      if (!field.options) {
+        return;
+      }
+
+      referenceMap[key] = field.options?.reduce((acc: ReferenceMap, option) => {
+        acc[option.id] = option;
+        return acc;
+      }, {});
+    }
+  });
+  others.forEach((other) => {
+    const ref: ReferenceMap = {};
+    other.options.forEach((option) => {
+      ref[option.id] = option;
+    });
+    referenceMap[other.id] = ref;
+  });
+
+  return referenceMap;
+}
+
 export function createColumns<TData>(
   fields: FormFields,
-  members: { id: string; email: string }[],
+  members: { id: string; email: string; display_name: string | undefined }[],
   setAndOpen: any,
 ): ColumnDef<keyof FormFields>[] {
   const general: any[] = Object.entries(fields).map(([key, field]) => {
     return {
+      meta: { field: field, id: key },
       accessorKey: key as keyof TData,
       header: (body: any) => {
         if (!body) {
@@ -78,6 +120,7 @@ export function createColumns<TData>(
               .toLowerCase()
               .includes(filterValue.toLowerCase());
           }
+
           const matchCriteria = field.options?.filter(
             (op) =>
               filterValue.includes(op.label) || filterValue.includes(op.id),
@@ -91,6 +134,11 @@ export function createColumns<TData>(
             ).length > 0
           );
         }
+
+        if (!row.original[key]) {
+          return false;
+        }
+
         return row.original[key]
           .toString()
           .toLowerCase()
@@ -229,7 +277,7 @@ function FieldPopover({
   );
 }
 
-function SelectField({
+export function SelectField({
   submissionId,
   value,
   field,
@@ -264,6 +312,7 @@ function SelectField({
   const selectOptions = Array.from(optionsMap.values());
   const [selected, setSelected] = useState(value);
   const canUpdate = field.config?.allowUpdate;
+  const { mergeNewData } = useContext(formContext);
   if (!canUpdate) {
     return (
       <span className={"flex flex-wrap gap-2"}>
@@ -289,6 +338,7 @@ function SelectField({
     setSelected(val);
     updateSubmissionField(submissionId, id, field.config?.tableName, val)
       .then(() => {
+        mergeNewData({ [id]: val }, "id", submissionId);
         toast.success("Field updated successfully");
       })
       .catch(() => {
@@ -328,6 +378,7 @@ function TextareaField({
   field: FormFields[keyof FormFields];
 }) {
   const [text, setText] = useState(value);
+  const { mergeNewData } = useContext(formContext);
   const canUpdate = field.config?.allowUpdate;
   if (!canUpdate) {
     if (value?.toString().length > 10) {
@@ -340,6 +391,7 @@ function TextareaField({
     setText(val);
     updateSubmissionField(submissionId, id, field.config?.tableName, val)
       .then(() => {
+        mergeNewData({ [id]: val }, "id", submissionId);
         toast.success("Field updated successfully");
       })
       .catch(() => {
