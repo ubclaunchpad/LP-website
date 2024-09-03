@@ -6,7 +6,6 @@ import {
   useReactTable,
   getFilteredRowModel,
   ColumnFiltersState,
-  getPaginationRowModel,
   VisibilityState,
   getFacetedRowModel,
   getSortedRowModel,
@@ -19,27 +18,12 @@ import {
 
 import { Button } from "@/components/primitives/button";
 import { Input } from "@/components/primitives/input";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/primitives/dropdown-menu";
 
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/primitives/table";
-import React, { CSSProperties, useContext, useState } from "react";
-import { Columns3, ListFilterIcon, RefreshCcwIcon, XIcon } from "lucide-react";
+import { Table, TableCell, TableRow } from "@/components/primitives/table";
+import React, { CSSProperties, useState } from "react";
+import { ChartArea, ListFilterIcon, TableIcon } from "lucide-react";
 import { DataTableProps } from "@/app/portal/admin/forms/[id]/submissions/dataTableWrapper";
-import { formContext } from "@/components/layouts/formTabView";
-import { getAllFormDetails } from "@/app/portal/admin/actions";
-import { toast } from "sonner";
+import AnalyticsPage from "@/app/portal/admin/forms/[id]/submissions/AnalyticsPage";
 
 const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
   const isPinned = column.getIsPinned();
@@ -71,14 +55,12 @@ export function DataTable<TData, TValue>({
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [sorting, setSorting] = React.useState<SortingState>([]);
-
-  // const [isRefreshing, setIsRefreshing] = useState(false);
+  const [tabView, setTabView] = useState<"table" | "chart">("table");
 
   const table = useReactTable({
     data: data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    // getPaginationRowModel: getPaginationRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
@@ -103,25 +85,8 @@ export function DataTable<TData, TValue>({
         "notes",
         "popover",
       ],
-      // columnPinning: {
-      //   left: ['status','level', 'reviewer_id', 'interviewer_id','notes','popover'],
-      // }
     },
   });
-
-  // const formDetails = useContext(formContext);
-  // async function refresh() {
-  //   try {
-  //     setIsRefreshing(true);
-  //     const res = await getAllFormDetails(formDetails.rawForm.id);
-  //     setData(res.submissions);
-  //     toast.success("Data refreshed");
-  //   } catch (e) {
-  //     toast.error("Failed to refresh data");
-  //   } finally {
-  //     setIsRefreshing(false);
-  //   }
-  // }
 
   return (
     <div className={"overflow-hidden flex flex-col px-10  py-1"}>
@@ -139,125 +104,106 @@ export function DataTable<TData, TValue>({
           setColumnFilters={setColumnFilters}
         />
 
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button className=" gap-4 bg-background-600 border border-background-500">
-              <Columns3 className="h-4 w-4" />
-              Columns
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="max-w-[300px] truncate"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {typeof column.columnDef.header === "function"
-                      ? column.columnDef.header()
-                      : column.columnDef.header}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <div
+          className={
+            "flex relative items-center bg-background-600 rounded-lg border-background-500 border gap-2"
+          }
+        >
+          <Button
+            onClick={() => {
+              setTabView("table");
+            }}
+            className={`bg-background-600 w-24  gap-2 border-background-500 ${tabView === "table" ? "bg-lp-400" : ""}`}
+          >
+            <TableIcon className={"h-4 w-4"} />
+            Table
+          </Button>
+          <Button
+            onClick={() => {
+              setTabView("chart");
+            }}
+            className={`bg-background-600  w-24 border-background-500 gap-2 ${tabView === "chart" ? "bg-lp-400" : ""}`}
+          >
+            <ChartArea className={"h-4 w-4"} />
+            Chart
+          </Button>
+        </div>
       </div>
-      <div className="rounded-md border shadow-sm  border-background-500 overflow-hidden  ">
-        <Table>
-          <thead>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <tr key={headerGroup.id} className={"border-background-500"}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <td
-                      key={header.id}
-                      className={
-                        " flex bg-background-600 text-xs flex-col   border-background-500  font-semibold  justify-center  overflow-hidden line-clamp-2  text-ellipsis"
-                      }
-                      style={{ ...getCommonPinningStyles(header.column) }}
-                    >
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext(),
-                          )}
-                    </td>
-                  );
-                })}
-              </tr>
-            ))}
-          </thead>
-          <tbody className={"relative"}>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <tr
-                  className={
-                    "border-background-500 p-0   bg-background-600 odd:bg-background-700"
-                  }
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <td
-                      key={cell.id}
-                      className={"  h-full text-xs min-h-24   overflow-hidden "}
-                      style={{ ...getCommonPinningStyles(cell.column) }}
-                    >
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext(),
-                      )}
-                    </td>
-                  ))}
+      {table.getFilteredRowModel().rows.length > 0 && tabView === "chart" && (
+        <AnalyticsPage
+          submissions={table
+            .getFilteredRowModel()
+            .rows.map((row) => row.original)}
+        />
+      )}
+
+      {tabView === "table" && (
+        <div className="rounded-md border shadow-sm  border-background-500 overflow-hidden  ">
+          <Table>
+            <thead>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <tr key={headerGroup.id} className={"border-background-500"}>
+                  {headerGroup.headers.map((header) => {
+                    return (
+                      <td
+                        key={header.id}
+                        className={
+                          " flex bg-background-600 text-xs flex-col   border-background-500  font-semibold  justify-center  overflow-hidden line-clamp-2  text-ellipsis"
+                        }
+                        style={{ ...getCommonPinningStyles(header.column) }}
+                      >
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext(),
+                            )}
+                      </td>
+                    );
+                  })}
                 </tr>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 flex-shrink-0 w-fit text-center"
-                >
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
-          </tbody>
-        </Table>
-      </div>
-      <div className="flex items-center justify-end space-x-2 py-4">
-        {/*<div className="text-sm flex-1 px-2  text-zinc-200">*/}
-        {/*  <span>*/}
-        {/*    Showing {table.getState().pagination.pageIndex + 1} out of{" "}*/}
-        {/*    {table.getPageCount()} pages*/}
-        {/*  </span>*/}
-        {/*</div>*/}
-        {/*<Button*/}
-        {/*  variant="outline"*/}
-        {/*  size="sm"*/}
-        {/*  className={"bg-lp-400"}*/}
-        {/*  onClick={() => table.previousPage()}*/}
-        {/*  disabled={!table.getCanPreviousPage()}*/}
-        {/*>*/}
-        {/*  Previous*/}
-        {/*</Button>*/}
-        {/*<Button*/}
-        {/*  variant="outline"*/}
-        {/*  size="sm"*/}
-        {/*  className={"bg-lp-400"}*/}
-        {/*  onClick={() => table.nextPage()}*/}
-        {/*  disabled={!table.getCanNextPage()}*/}
-        {/*>*/}
-        {/*  Next*/}
-        {/*</Button>*/}
-      </div>
+              ))}
+            </thead>
+            <tbody className={"relative"}>
+              {table.getRowModel().rows?.length ? (
+                table.getRowModel().rows.map((row) => (
+                  <tr
+                    className={
+                      "border-background-500 p-0   bg-background-600 odd:bg-background-700"
+                    }
+                    key={row.id}
+                    data-state={row.getIsSelected() && "selected"}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <td
+                        key={cell.id}
+                        className={
+                          "  h-full text-xs min-h-24   overflow-hidden "
+                        }
+                        style={{ ...getCommonPinningStyles(cell.column) }}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell
+                    colSpan={columns.length}
+                    className="h-24 flex-shrink-0 w-fit text-center"
+                  >
+                    No results.
+                  </TableCell>
+                </TableRow>
+              )}
+            </tbody>
+          </Table>
+        </div>
+      )}
     </div>
   );
 }
@@ -312,7 +258,7 @@ function TableFilter({
           onClick={() => setShowFilters(false)}
         ></button>
         <div
-          className="fixed min-h-[50vh] gap-2 overflow-y-scroll bg-background-700 gap-1 flex flex-col rounded border border-background-600  shadow-lg  w-full transform z-40 overflow-hidden p-2
+          className="fixed min-h-[50vh] gap-2 overflow-y-scroll bg-background-700  flex flex-col rounded border border-background-600  shadow-lg  w-full transform z-40 overflow-hidden p-2
             left-1/2 top-1/2 max-w-2xl -translate-x-1/2 -translate-y-1/2
             "
         >
