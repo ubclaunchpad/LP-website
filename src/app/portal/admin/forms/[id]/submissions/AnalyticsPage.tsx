@@ -3,54 +3,44 @@ import { FormChart } from "@/app/portal/admin/forms/[id]/submissions/formDataCha
 import { formContext } from "@/components/layouts/formTabView";
 import { getFormAnalytics } from "@/lib/utils/forms/analytics";
 import { useContext, useEffect, useState } from "react";
+import { ReferenceMap } from "./columns";
 
-export default function AnalyticsPage({ submissions }: { submissions: any[] }) {
+export default function AnalyticsPage({
+  submissions,
+  refMap,
+}: {
+  submissions: any[];
+  refMap: ReferenceMap;
+}) {
   const columns = [
-    "role",
-    "level",
     "status",
+    "level",
+    "role",
+    "reviewer_id",
+    "interviewer_id",
     "year",
     "faculty",
     "specialization",
     "graduationYear",
     "lp-team",
-
-    // "reviewer_id",
   ];
-  const { data, isLoading, error } = useChartData({
+  const { data } = useChartData({
     columns: columns,
     submissions: submissions,
+    refMap: refMap,
   });
-
-  const dataGrid = () => {
-    if (isLoading) {
-      return (
-        <div>
-          <h4>Loading...</h4>
-        </div>
-      );
-    } else if (error) {
-      return (
-        <div>
-          <h4>Error loading data</h4>
-        </div>
-      );
-    } else {
-      return data.analyticsData.map((chartData, index) => (
-        <FormChart
-          key={index}
-          chartInfo={chartData.charInfo}
-          chartConfig={chartData.chartConfig}
-          chartData={chartData.chartData}
-        />
-      ));
-    }
-  };
 
   return (
     <div className="overflow-hidden flex flex-col max-w-screen pb-32 ">
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
-        {dataGrid()}
+      <section className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2  gap-4 ">
+        {data.analyticsData.map((chartData, index) => (
+          <FormChart
+            key={index}
+            chartInfo={chartData.charInfo}
+            chartConfig={chartData.chartConfig}
+            chartData={chartData.chartData}
+          />
+        ))}
       </section>
     </div>
   );
@@ -59,16 +49,17 @@ export default function AnalyticsPage({ submissions }: { submissions: any[] }) {
 function useChartData({
   columns,
   submissions,
+  refMap,
 }: {
   columns: string[];
   submissions: any;
+  refMap: ReferenceMap;
 }) {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
   const data: { analyticsData: any[]; stats?: any } = getFormAnalytics(
     { columns },
     submissions ? submissions : [],
+    refMap,
   );
 
-  return { data, isLoading, error };
+  return { data };
 }

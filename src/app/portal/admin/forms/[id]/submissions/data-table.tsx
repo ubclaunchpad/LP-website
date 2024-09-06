@@ -143,6 +143,7 @@ export function DataTable<TData, TValue>({
       </div>
       {table.getFilteredRowModel().rows.length > 0 && tabView === "chart" && (
         <AnalyticsPage
+          refMap={refMap}
           submissions={table
             .getFilteredRowModel()
             .rows.map((row) => row.original)}
