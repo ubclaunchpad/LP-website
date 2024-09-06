@@ -23,9 +23,15 @@ export default function MultiSelect({
   onBlur?: () => void;
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const selectedOptions = options.filter((option) =>
-    value?.includes(option.value),
-  );
+  const selectedOptions = options.filter((option) => {
+    if (value === null) {
+      return false;
+    }
+    if (Array.isArray(value)) {
+      return value.includes(option.value);
+    }
+    return value === option.value;
+  });
 
   const ref = useRef<HTMLDivElement>(null);
 
