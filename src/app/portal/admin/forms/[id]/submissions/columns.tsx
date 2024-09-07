@@ -175,13 +175,16 @@ export function createColumns<TData>(
               label: member.display_name || member.email,
             }));
             return (
-              <SelectField
-                options={memberOptions}
-                field={field}
-                value={value?.toString()}
-                submissionId={submissionId}
-                id={key}
-              />
+              <div>
+                {value?.toString()}
+                <SelectField
+                  options={memberOptions}
+                  field={field}
+                  value={value?.toString()}
+                  submissionId={submissionId}
+                  id={key}
+                />
+              </div>
             );
           }
 
@@ -344,10 +347,11 @@ export function SelectField({
 
   const updateField = async (val: any) => {
     const prev = selected;
-    setSelected(val);
-    updateSubmissionField(submissionId, id, field.config?.tableName, val)
+    const setVal = val === undefined || val === null || val === "" ? null : val;
+    setSelected(setVal);
+    updateSubmissionField(submissionId, id, field.config?.tableName, setVal)
       .then(() => {
-        mergeNewData({ [id]: val }, "id", submissionId);
+        // mergeNewData({ [id]: val }, "id", submissionId);
         toast.success("Field updated successfully");
       })
       .catch(() => {
@@ -397,10 +401,11 @@ function TextareaField({
   }
   const updateField = async (val: string) => {
     const prev = text;
-    setText(val);
-    updateSubmissionField(submissionId, id, field.config?.tableName, val)
+    const setVal = val === undefined || val === null || val === "" ? null : val;
+    setText(setVal);
+    updateSubmissionField(submissionId, id, field.config?.tableName, setVal)
       .then(() => {
-        mergeNewData({ [id]: val }, "id", submissionId);
+        mergeNewData({ [id]: setVal }, "id", submissionId);
         toast.success("Field updated successfully");
       })
       .catch(() => {

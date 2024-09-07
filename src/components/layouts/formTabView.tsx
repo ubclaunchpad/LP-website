@@ -120,13 +120,16 @@ function useRealtimeUpdate({
     keyName: string,
     key: string,
   ) {
-    const newDataUpdate = submissions.map((item) => {
-      if (item[keyName] === key) {
-        return { ...item, ...newData };
-      }
-      return item;
+    setSubmissions((prev) => {
+      return prev.map((item) => {
+        if (item[keyName] === key) {
+          // console.log("newData", newData);
+          // console.log("keyName", keyName);
+          return { ...item, ...newData };
+        }
+        return item;
+      });
     });
-    setSubmissions(newDataUpdate);
   }
 
   useEffect(() => {
