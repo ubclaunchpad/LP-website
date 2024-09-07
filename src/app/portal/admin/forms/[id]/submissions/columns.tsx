@@ -176,7 +176,6 @@ export function createColumns<TData>(
             }));
             return (
               <div>
-                {value?.toString()}
                 <SelectField
                   options={memberOptions}
                   field={field}
