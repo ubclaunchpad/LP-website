@@ -1,10 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useMemo } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Button } from "@/components/primitives/button";
-const lpFooterEllipse = "/icons/custom/footerEllipse.svg";
+import useIsMobile from "@/app/lib/hooks/useIsMobile";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Navigation } from "swiper/modules";
+import Image from "next/image";
+import "swiper/css";
 
+const lpFooterEllipse = "/icons/custom/footerEllipse.svg";
 const execs = [
   {
     name: "Armin Talaie",
@@ -51,6 +56,11 @@ const execs = [
     image: "/images/execs/jena_arianto.svg",
     title: "Design Lead",
   },
+  // {
+  //   name: "Daphne Tian",
+  //   image: "/images/execs/daphne_tian.svg",
+  //   title: "Design Lead",
+  // },
   {
     name: "Patty Tancharoen",
     image: "/images/execs/patty_tancharoen.svg",
@@ -79,97 +89,70 @@ const execs = [
 ];
 
 export default function ExecSection() {
-  const text = {
-    prev: "Prev",
-    next: "Next",
-  };
+  const LARGE_SIZE = 1600;
+  const TABLET_SIZE = 900;
+  const MOBILE_SIZE = 768;
+  const isLargeScreen = !useIsMobile(LARGE_SIZE);
+  const isTablet = useIsMobile(TABLET_SIZE);
+  const isMobile = useIsMobile(MOBILE_SIZE);
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [execsPerPage, setExecsPerPage] = useState(7);
-
-  useEffect(() => {
-    const handleResize = () => {
-      // Number of profiles per page based on screen size
-      setExecsPerPage(window.innerWidth < 768 ? 3 : 7);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const startIndex = currentPage * execsPerPage;
-  const endIndex = startIndex + execsPerPage;
-  const currentExecs = execs.slice(startIndex, endIndex);
-
-  const handlePrev = () => {
-    if (currentPage > 0) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (endIndex < execs.length) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const isPrevDisabled = currentPage === 0;
-  const isNextDisabled = endIndex >= execs.length;
+  const carouselSize = useMemo(() => {
+    if (isLargeScreen) return 6;
+    if (isTablet) return 4;
+    if (isMobile) return 3;
+    return 8;
+  }, [isLargeScreen, isTablet, isMobile]);
 
   return (
     <div className="w-full min-h-96 relative flex-shrink-0">
-      <div className="flex flex-col items-center">
-        <div className="flex justify-between items-center w-full">
-          <h2 className="md:text-left text-center text-3xl mx-8 md:mx-36 sm:font-semibold whitespace-nowrap ml-8 md:ml-36 mt-12 mb-4">
-            Meet our <span className="text-lp-400">2024/2025</span> execs
-          </h2>
-          <div className="flex space-x-6 mt-16 mr-16">
-            <Button
-              onClick={handlePrev}
-              variant={"dark"}
-              className={`p-2 hidden md:flex items-center ${
-                isPrevDisabled ? "bg-[#545454]" : "bg-lightPurple text-white"
-              } w-24`}
-              size="xl"
-              icon
-              reverse
-              disabled={isPrevDisabled}
-            >
-              <span className="text-lg pl-2">{text.prev}</span>
-            </Button>
-            <Button
-              onClick={handleNext}
-              variant={"dark"}
-              className={`p-2 hidden md:flex items-center ${
-                isNextDisabled ? "bg-[#545454]" : "bg-lightPurple text-white"
-              } w-24`}
-              size="xl"
-              icon
-              disabled={isNextDisabled}
-            >
-              <span className="text-lg pl-4">{text.next}</span>
-            </Button>
+      <div className="flex flex-col items-center justify-center md:justify-between py-10 w-full">
+        <div className="flex flex-col md:flex-row text-center items-center justify-between w-full md:px-10 py-10">
+          <div className="flex flex-col-reverse md:flex-row items-center">
+            <h2 className="text-3xl font-semibold py-2 md:py-0 md:pr-4">
+              Meet our <span className="text-lp-400">2024/2025</span> execs
+            </h2>
           </div>
+          <span className="hidden md:flex md:flex-row md:space-x-2">
+            <Button variant={"dark"} className="swiper-button-prev gap-2">
+              <ArrowLeft size={20} />
+            </Button>
+            <Button variant={"dark"} className="swiper-button-next gap-2">
+              <ArrowRight size={20} />
+            </Button>
+          </span>
         </div>
-        <div className="flex overflow-x-auto no-scrollbar mt-4 z-10">
-          <div className="flex flex-nowrap">
-            {currentExecs.map((exec, index) => (
-              <div key={index} className="flex flex-col items-center m-8">
-                <Image
-                  src={exec.image}
-                  alt={exec.name}
-                  width={110}
-                  height={110}
-                  className="rounded-2xl"
-                />
-                <p className="mt-2 font-bold text-center text-lg">
-                  {exec.name}
-                </p>
-                <p className="text-white text-sm">{exec.title}</p>
-              </div>
+        <div className="flex overflow-x-auto no-scrollbar mt-4 z-10 w-full">
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={carouselSize}
+            loop={true}
+            modules={[Navigation]}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+          >
+            {execs.map((exec, index) => (
+              <SwiperSlide
+                key={index}
+                className="flex justify-center items-center min-h-[250px] p-4"
+              >
+                <div className="flex flex-col items-center">
+                  <Image
+                    src={exec.image}
+                    alt={exec.name}
+                    width={110}
+                    height={110}
+                    className="rounded-2xl"
+                  />
+                  <p className="mt-2 font-bold text-center text-lg">
+                    {exec.name}
+                  </p>
+                  <p className="text-white text-sm">{exec.title}</p>
+                </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </div>
       <Image
