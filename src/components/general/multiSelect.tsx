@@ -2,7 +2,7 @@
 //@ts-nocheck
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils/helpers";
 
 export default function MultiSelect({
@@ -12,6 +12,7 @@ export default function MultiSelect({
   allowMultiple = false,
   emptyText = "Choose",
   className,
+  onBlur,
 }: {
   value: (string | number)[];
   options: Record<string, string>[];
@@ -19,13 +20,26 @@ export default function MultiSelect({
   allowMultiple: boolean;
   className?: string;
   emptyText?: string;
+  onBlur?: () => void;
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const selectedOptions = options.filter((option) =>
-    value.includes(option.value),
-  );
+  const selectedOptions = options.filter((option) => {
+    if (value === null) {
+      return false;
+    }
+    if (Array.isArray(value)) {
+      return value.includes(option.value);
+    }
+    return value === option.value;
+  });
 
   const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen && onBlur) {
+      onBlur();
+    }
+  }, [isOpen]);
 
   return (
     <div className="relative flex flex-col w-full" ref={ref}>
@@ -38,10 +52,12 @@ export default function MultiSelect({
         type="button"
       >
         <span className="text-white justify-center flex z-1 items-center gap-2 ">
+          {/*{JSON.stringify(selectedOptions)}*/}
+          {/*{JSON.stringify(value)}*/}
           {selectedOptions !== [null] &&
             selectedOptions.map((option) => (
               <span
-                key={option.label}
+                key={option.value}
                 className="p-0.5 px-2 z-1! rounded bg-lp-500"
               >
                 {option.label}
@@ -77,6 +93,11 @@ export default function MultiSelect({
               }`}
               onClick={() => {
                 if (!allowMultiple) {
+                  if (value?.includes(option.value)) {
+                    onChange([]);
+                    setIsOpen(false);
+                    return;
+                  }
                   onChange([option.value]);
                   setIsOpen(false);
                   return;

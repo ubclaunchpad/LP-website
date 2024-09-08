@@ -1,14 +1,15 @@
 import { ColumnDef, Row } from "@tanstack/react-table";
-import { useState } from "react";
-import { ExpandIcon } from "lucide-react";
+import { useContext, useState } from "react";
 import MultiSelect from "@/components/general/multiSelect";
 import { updateSubmissionField } from "@/app/portal/admin/actions";
 import { toast } from "sonner";
 import FloatingTextArea from "@/components/primitives/floatingTextArea";
 import { Button } from "@/components/primitives/button";
+import { formContext } from "@/components/layouts/formTabView";
 
 export type FormFields = {
   [key: string]: {
+    id: string | undefined;
     type:
       | "number"
       | "select"
@@ -19,6 +20,7 @@ export type FormFields = {
       | "checkbox"
       | "url"
       | "person";
+    meta?: any;
     label: string;
     options?: { label: string; id: string }[];
     cell?: (row: any) => string;
@@ -36,13 +38,54 @@ export type FormFields = {
   };
 };
 
+export type ReferenceItem = {
+  id: string;
+  label: string;
+};
+
+export type ReferenceMap = {
+  [key: string]: ReferenceItem | ReferenceMap | string;
+};
+
+export function populateReferenceMap(
+  fields: FormFields,
+  others: { id: string; label: string; options: any[] }[],
+) {
+  const referenceMap: ReferenceMap = {};
+  Object.entries(fields).forEach(([key, field]) => {
+    if (field.type === "person") {
+      referenceMap[key] = "members";
+    }
+    if (field.type === "select") {
+      if (!field.options) {
+        return;
+      }
+
+      referenceMap[key] = field.options?.reduce((acc: ReferenceMap, option) => {
+        acc[option.id] = option;
+        return acc;
+      }, {});
+    }
+  });
+  others.forEach((other) => {
+    const ref: ReferenceMap = {};
+    other.options.forEach((option) => {
+      ref[option.id] = option;
+    });
+    referenceMap[other.id] = ref;
+  });
+
+  return referenceMap;
+}
+
 export function createColumns<TData>(
   fields: FormFields,
-  members: { id: string; email: string }[],
+  members: { id: string; email: string; display_name: string | undefined }[],
   setAndOpen: any,
 ): ColumnDef<keyof FormFields>[] {
   const general: any[] = Object.entries(fields).map(([key, field]) => {
     return {
+      meta: { field: field, id: key },
       accessorKey: key as keyof TData,
       header: (body: any) => {
         if (!body) {
@@ -72,25 +115,37 @@ export function createColumns<TData>(
         }
 
         if (field.type === "select") {
+          console.log(filterValue);
           if (!field.options) {
             return row.original[key]
               .toString()
               .toLowerCase()
               .includes(filterValue.toLowerCase());
           }
-          const matchCriteria = field.options?.filter(
-            (op) =>
-              filterValue.includes(op.label) || filterValue.includes(op.id),
+
+          const matchCriteria = field.options?.filter((op) =>
+            filterValue.includes(op.id),
           );
           return (
-            matchCriteria?.filter((op) =>
-              row.original[key]
+            matchCriteria?.filter((op) => {
+              if (
+                row.original[key] === null ||
+                row.original[key] === undefined
+              ) {
+                return false;
+              }
+              return row.original[key]
                 .toString()
                 .toLowerCase()
-                .includes(op.label.toLowerCase()),
-            ).length > 0
+                .includes(op.id.toLowerCase());
+            }).length > 0
           );
         }
+
+        if (!row.original[key]) {
+          return false;
+        }
+
         return row.original[key]
           .toString()
           .toLowerCase()
@@ -120,13 +175,15 @@ export function createColumns<TData>(
               label: member.display_name || member.email,
             }));
             return (
-              <SelectField
-                options={memberOptions}
-                field={field}
-                value={value?.toString()}
-                submissionId={submissionId}
-                id={key}
-              />
+              <div>
+                <SelectField
+                  options={memberOptions}
+                  field={field}
+                  value={value?.toString()}
+                  submissionId={submissionId}
+                  id={key}
+                />
+              </div>
             );
           }
 
@@ -188,8 +245,10 @@ export function createColumns<TData>(
   return [
     {
       accessorKey: "popover",
-      header: "Applicant",
+      header: "",
       enableColumnFilter: false,
+      size: 100,
+      maxSize: 100,
       cell: ({ row }) => {
         return (
           <button
@@ -197,7 +256,7 @@ export function createColumns<TData>(
               setAndOpen({ applicant: row });
             }}
             className={
-              "text-lp-300 font-bold  rounded-lg p-4 py-7 w-full  flex flex-1 border border-transparent hover:border-background-500 items-center justify-center gap-2  "
+              "text-lp-300 font-bold  rounded-lg p-4 py-7 w-fit  flex flex-1 border border-transparent hover:border-background-500 items-center justify-center gap-2  "
             }
           >
             View
@@ -229,7 +288,7 @@ function FieldPopover({
   );
 }
 
-function SelectField({
+export function SelectField({
   submissionId,
   value,
   field,
@@ -264,6 +323,7 @@ function SelectField({
   const selectOptions = Array.from(optionsMap.values());
   const [selected, setSelected] = useState(value);
   const canUpdate = field.config?.allowUpdate;
+  const { mergeNewData } = useContext(formContext);
   if (!canUpdate) {
     return (
       <span className={"flex flex-wrap gap-2"}>
@@ -286,9 +346,11 @@ function SelectField({
 
   const updateField = async (val: any) => {
     const prev = selected;
-    setSelected(val);
-    updateSubmissionField(submissionId, id, field.config?.tableName, val)
+    const setVal = val === undefined || val === null || val === "" ? null : val;
+    setSelected(setVal);
+    updateSubmissionField(submissionId, id, field.config?.tableName, setVal)
       .then(() => {
+        // mergeNewData({ [id]: val }, "id", submissionId);
         toast.success("Field updated successfully");
       })
       .catch(() => {
@@ -328,6 +390,7 @@ function TextareaField({
   field: FormFields[keyof FormFields];
 }) {
   const [text, setText] = useState(value);
+  const { mergeNewData } = useContext(formContext);
   const canUpdate = field.config?.allowUpdate;
   if (!canUpdate) {
     if (value?.toString().length > 10) {
@@ -337,9 +400,11 @@ function TextareaField({
   }
   const updateField = async (val: string) => {
     const prev = text;
-    setText(val);
-    updateSubmissionField(submissionId, id, field.config?.tableName, val)
+    const setVal = val === undefined || val === null || val === "" ? null : val;
+    setText(setVal);
+    updateSubmissionField(submissionId, id, field.config?.tableName, setVal)
       .then(() => {
+        mergeNewData({ [id]: setVal }, "id", submissionId);
         toast.success("Field updated successfully");
       })
       .catch(() => {

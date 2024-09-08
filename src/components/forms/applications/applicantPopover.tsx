@@ -18,8 +18,6 @@ export default function useApplicantPopover({
 
   const applicantPopover = useMemo(() => {
     if (!applicant || !open) return null;
-    console.log(applicant.getVisibleCells());
-    console.log(fields);
     return (
       <div
         className={
@@ -32,7 +30,7 @@ export default function useApplicantPopover({
         ></button>
         <div className="flex z-40 flex-col flex-shrink-0 gap-2 bg-background-800  overflow-y-scroll border border-background-700 shadow p-4 max-w-xl min-w-[400px]  flex-1 rounded-lg">
           {applicant.getVisibleCells().map((cell, index) => (
-            <TableCell
+            <div
               key={cell.id}
               className={
                 "w-full border-b border-b-background-500 flex-shrink-0  flex  flex-col gap-2  pb-4 pl-0  text-xs  left-0  "
@@ -50,7 +48,7 @@ export default function useApplicantPopover({
               <div className={"flex gap-2 "}>
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
               </div>
-            </TableCell>
+            </div>
           ))}
         </div>
         {/*<button onClick={() => setOpen(false)}>Close</button>*/}
