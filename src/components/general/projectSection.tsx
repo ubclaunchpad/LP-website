@@ -28,25 +28,25 @@ const text = {
 };
 
 const ProjectSection = ({ projects }: ProjectSectionProps) => {
-  const MOBILESIZE = 768,
-    TABLETSIZE = 900,
-    LARGESIZE = 1600;
-  const isMobile = useIsMobile(MOBILESIZE);
-  const isLargeScreen = !useIsMobile(LARGESIZE);
-  const isTablet = useIsMobile(TABLETSIZE);
+  const LARGE_SIZE = 1600;
+  const TABLET_SIZE = 900;
+  const MOBILE_SIZE = 768;
+  const isLargeScreen = !useIsMobile(LARGE_SIZE);
+  const isTablet = useIsMobile(TABLET_SIZE);
+  const isMobile = useIsMobile(MOBILE_SIZE);
   const carouselSize = useMemo(() => {
     if (isLargeScreen) {
       return 5;
-    } else if (isMobile) {
-      return 1;
     } else if (isTablet) {
       return 2;
+    } else if (isMobile) {
+      return 1;
     } else {
       return 3;
     }
-  }, [isMobile, isLargeScreen]);
+  }, [isLargeScreen, isTablet, isMobile]);
   return (
-    <div className="flex flex-col text-center items-center justify-center md: justify-between py-10 w-full">
+    <div className="flex flex-col text-center items-center justify-center md:justify-between py-10 w-full">
       <span className="flex flex-col md:flex-row text-center items-center justify-between md:px-10 py-10 w-full">
         <span className="flex flex-col-reverse md:flex-row items-center">
           <h1 className={`text-4xl font-bold font-sans py-2 md:py-0 md:pr-4`}>
