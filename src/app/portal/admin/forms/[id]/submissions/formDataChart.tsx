@@ -35,7 +35,6 @@ export function FormChart({
     <Card className={"max-w-2xl flex-1 w-full "}>
       <CardHeader>
         <CardTitle>{chartInfo.title}</CardTitle>
-        <CardDescription>{chartInfo.description}</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
@@ -48,7 +47,7 @@ export function FormChart({
             }}
           >
             <YAxis
-              className={"min-w-80 *:text-white! max-w-none "}
+              className={"min-w-96 *:text-white! max-w-none "}
               dataKey="label"
               type="category"
               tickLine={false}

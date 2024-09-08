@@ -1,3 +1,7 @@
+import {
+  ReferenceMap,
+  ReferenceItem,
+} from "@/app/portal/admin/forms/[id]/submissions/columns";
 import { ChartConfig } from "@/components/primitives/chart";
 
 type temp = {
@@ -22,6 +26,7 @@ interface AggregationResult {
 function aggregateColumn(
   data: Record<string, any>[],
   column: string,
+  ref: ReferenceMap | null,
 ): AggregationResult {
   const aggData = data.reduce(
     (acc: Record<string, AggregatedValue>, row: Record<string, any>) => {
@@ -40,7 +45,7 @@ function aggregateColumn(
             acc[val] = {
               id: val,
               count: 1,
-              label: val,
+              label: ref ? ref[val].label : val,
             };
           }
         });
@@ -55,7 +60,7 @@ function aggregateColumn(
         acc[value] = {
           id: value,
           count: 1,
-          label: value,
+          label: ref ? ref[value].label : value,
         };
       }
       return acc;
@@ -81,16 +86,22 @@ function createChartConfig(data: any[], columns: string[]) {
   return chartConfig;
 }
 
-export function getFormAnalytics(config: temp, submissions: any) {
-  const chartData = config.columns.map((column) =>
-    aggregateColumn(submissions, column),
-  );
-  const lastUpdated = Date.now();
+export function getFormAnalytics(
+  config: temp,
+  submissions: any,
+  refMap: ReferenceMap,
+) {
+  const chartData = config.columns.map((column) => {
+    let ref = refMap[column];
+    if (typeof ref === "string") {
+      ref = refMap[ref];
+    }
+    return aggregateColumn(submissions, column, ref ? ref : null);
+  });
   return {
     analyticsData: chartData,
     stats: {
       submissions: submissions.length,
-      lastUpdated: lastUpdated,
     },
   };
 }
