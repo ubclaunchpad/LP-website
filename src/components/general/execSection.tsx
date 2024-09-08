@@ -163,7 +163,9 @@ export default function ExecSection() {
                   height={110}
                   className="rounded-2xl"
                 />
-                <p className="mt-2 font-bold text-center text-lg">{exec.name}</p>
+                <p className="mt-2 font-bold text-center text-lg">
+                  {exec.name}
+                </p>
                 <p className="text-white text-sm">{exec.title}</p>
               </div>
             ))}
