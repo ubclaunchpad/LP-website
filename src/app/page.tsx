@@ -71,7 +71,7 @@ export default async function Home() {
           >
             {text.aboutUsSubtitle}
           </h1>
-          <p className="text-white text-center lg:text-right py-10 whitespace-pre-wrap text-balance max-w-lg">
+          <p className="gradient-subtitle text-center lg:text-right py-10 whitespace-pre-wrap text-balance max-w-lg">
             {text.aboutUsText}
           </p>
         </div>
@@ -89,7 +89,7 @@ export default async function Home() {
           >
             {text.joinUsSubtitle}
           </h1>
-          <p className="text-stone-400 text-center lg:text-left py-10">
+          <p className="gradient-subtitle text-center lg:text-left py-10">
             {text.joinUsText}
           </p>
           <Link href="/portal/forms/241">

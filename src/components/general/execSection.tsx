@@ -159,7 +159,7 @@ export default function ExecSection() {
                       alt={exec.name}
                       width={110}
                       height={110}
-                      className="rounded-2xl"
+                      className="rounded-2xl drop-shadow-xl"
                     />
                   </a>
                   <p className="mt-2 font-bold text-center text-lg">
