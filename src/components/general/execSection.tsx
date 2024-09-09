@@ -74,7 +74,7 @@ const execs = [
   {
     name: "Patty Tancharoen",
     image: "/images/execs/patty_tancharoen.png",
-    title: "Tech Lead",
+    title: "Design Lead",
     linkedIn: "https://www.linkedin.com/in/pattytanch/",
   },
   {
