@@ -15,76 +15,91 @@ const execs = [
     name: "Armin Talaie",
     image: "/images/execs/armin_talaie.png",
     title: "Co-President",
+    linkedIn: "https://www.linkedin.com/in/armin-talaie/",
   },
   {
     name: "Adrienne Leung",
     image: "/images/execs/adrienne_leung.png",
     title: "Co-President",
+    linkedIn: "https://www.linkedin.com/in/adrienne-leung/",
   },
   {
     name: "Xavier Lam",
     image: "/images/execs/xavier_lam.png",
     title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/xavier-lam/",
   },
   {
     name: "Kevin Zhang",
     image: "/images/execs/kevin_zhang.png",
     title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/-kevin-zhang-/",
   },
   {
     name: "Tony Liu",
     image: "/images/execs/tony_liu.png",
     title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/yunxiaotonyliu/",
   },
   {
     name: "Jessie Shang",
     image: "/images/execs/jessie_shang.png",
     title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/shangjessie/",
   },
   {
     name: "Arman Moztarzadeh",
     image: "/images/execs/arman_moztarzadeh.png",
     title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/arman-moztarzadeh/",
   },
   {
     name: "Hriday Buddhdev",
     image: "/images/execs/hriday_buddhdev.png",
     title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/hriday-buddhdev-127a74202/",
   },
   {
     name: "Jena Arianto",
     image: "/images/execs/jena_arianto.png",
     title: "Design Lead",
+    linkedIn: "https://www.linkedin.com/in/jena-arianto/",
   },
   {
     name: "Daphne Tian",
     image: "/images/execs/daphne_tian.png",
     title: "Design Lead",
+    linkedIn: "https://www.linkedin.com/in/daphne-tian/",
   },
   {
     name: "Patty Tancharoen",
     image: "/images/execs/patty_tancharoen.png",
     title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/pattytanch/",
   },
   {
     name: "Martin Tang",
     image: "/images/execs/martin_tang.png",
     title: "Operations Lead",
+    linkedIn: "https://www.linkedin.com/in/martin-txng/",
   },
   {
     name: "Allen Nguyen",
     image: "/images/execs/allen_nguyen.png",
     title: "Sponsorship Coordinator",
+    linkedIn: "https://www.linkedin.com/in/allendnguyen/",
   },
   {
     name: "Iris Liu",
     image: "/images/execs/iris_liu.png",
     title: "Marketing Coordinator",
+    linkedIn: "https://www.linkedin.com/in/irisdan/",
   },
   {
     name: "Ura Hwang",
     image: "/images/execs/ura_hwang.png",
     title: "Marketing Coordinator",
+    linkedIn: "https://www.linkedin.com/in/ura-hwang-748336282/",
   },
 ];
 
@@ -138,13 +153,15 @@ export default function ExecSection() {
                 className="flex justify-center items-center min-h-[250px] p-4"
               >
                 <div className="flex flex-col items-center">
-                  <Image
-                    src={exec.image}
-                    alt={exec.name}
-                    width={110}
-                    height={110}
-                    className="rounded-2xl drop-shadow-xl"
-                  />
+                  <a href={exec.linkedIn}>
+                    <Image
+                      src={exec.image}
+                      alt={exec.name}
+                      width={110}
+                      height={110}
+                      className="rounded-2xl drop-shadow-xl"
+                    />
+                  </a>
                   <p className="mt-2 font-bold text-center text-lg">
                     {exec.name}
                   </p>
