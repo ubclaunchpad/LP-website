@@ -12,11 +12,11 @@ export default function FooterSection() {
   return (
     <section
       id={"contact"}
-      className="flex flex-col items-center py-10 relative gap-10 text-center bg-[#3A3543] min-h-[200px] z-20 px-20 w-full "
+      className="flex flex-col items-center py-16 relative gap-10 text-center bg-[#3A3543] min-h-[200px] z-20 px-20 w-full "
     >
       <div
         className={
-          "flex md:flex-row flex-col justify-between w-full text-left gap-4 text-[#F5F6FF]  z-40"
+          "flex md:flex-row flex-col justify-between w-full text-left gap-4 text-[#F5F6FF] z-40"
         }
       >
         <div

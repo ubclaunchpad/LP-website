@@ -39,6 +39,6 @@ jobs:
               repo: context.repo.repo,
               body: "Some files aren't properly formatted. Would you like me to lint them for you?"
             })
-            
+
       - name: Run Prettier
         run: pnpm exec prettier --check "**/*.{js,jsx,ts,tsx,json,css,md}"
