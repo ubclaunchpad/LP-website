@@ -28,8 +28,7 @@ export default function Navbar({ navItems }: NavbarProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
       if (scrollTop > lastScrollTop) {
         setIsScrollingUp(false);
       } else {
@@ -38,9 +37,18 @@ export default function Navbar({ navItems }: NavbarProps) {
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
     };
 
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsMenuOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -62,8 +70,7 @@ export default function Navbar({ navItems }: NavbarProps) {
         )}
       </button>
       <ul
-        className={`hidden lg:flex justify-between gap-12 items-center 
-          ${isMenuOpen ? "transform -translate-x-10" : "transform translate-x-0"}`}
+        className={`hidden lg:flex justify-between gap-12 items-center ${isMenuOpen ? "transform -translate-x-10" : "transform translate-x-0"}`}
       >
         {navItems.map((item, index) => (
           <li key={index}>
@@ -74,7 +81,8 @@ export default function Navbar({ navItems }: NavbarProps) {
         ))}
       </ul>
       <ul
-        className={`lg:hidden flex flex-col gap-4 items-left p-6 absolute top-24 left-0 w-full ${isMenuOpen ? "transform translate-x-0" : "transform -translate-x-full"} ${isMenuOpen ? "bg-[#27232E]" : ""}`}
+        className={`lg:hidden flex flex-col gap-4 items-left p-6 absolute top-24 left-0 w-full transition-colors duration-300 
+          ${isMenuOpen ? "transform translate-x-0" : "transform -translate-x-full"} ${isMenuOpen ? "bg-[#27232E]" : ""}`}
       >
         {navItems.map((item, index) => (
           <li key={index}>

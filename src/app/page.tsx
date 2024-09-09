@@ -1,4 +1,4 @@
-import Navbar from "@/components/general/navbar";
+import Navbar from "@/components/layouts/navbar";
 import { nunitoSans } from "./fonts";
 import ImageArea from "@/components/general/imageArea";
 import Link from "next/link";
