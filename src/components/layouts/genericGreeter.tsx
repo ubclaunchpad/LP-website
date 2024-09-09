@@ -19,7 +19,7 @@ export default function GenericGreeter({
             src={"/images/assets/planet1.svg"}
             alt={"planet"}
             layout={"fill"}
-            objectFit={"contain"}
+            style={{ objectFit: "contain" }}
           />
         </div>
         <div className={"w-[267px] h-[200px] absolute  left-40 bottom-10"}>
@@ -27,14 +27,14 @@ export default function GenericGreeter({
             src={"/images/assets/planet2.svg"}
             alt={"planet"}
             layout={"fill"}
-            objectFit={"contain"}
+            style={{ objectFit: "contain" }}
           />
         </div>
         <Image
           src={"/images/assets/starsBg.svg"}
           alt={"planet"}
           layout={"fill"}
-          objectFit={"cover"}
+          style={{ objectFit: "cover" }}
         />
       </div>
       {includeStyle ? (

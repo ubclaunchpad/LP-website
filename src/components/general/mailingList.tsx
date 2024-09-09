@@ -17,19 +17,19 @@ export default function MailingList() {
     return null;
   }
   return (
-    <section className="flex flex-col items-center py-10 relative gap-10 text-center bg-[#809CFF] px-20 w-full ">
+    <section className="flex flex-col items-center md:py-10 py-20 relative gap-10 text-center bg-[#809CFF] px-20 w-full">
       <Image
         src={lpNewsletterImage}
         alt="Newsletter Image"
         fill={true}
-        className={"absolute top-0 -left-20  w-fit max-w-[592px] "}
+        className={"absolute top-0 w-fit max-w-[592px]"}
       />
       <div className={"flex flex-col items-center gap-4 max-w-3xl z-40"}>
-        <h2 className="text-4xl text-heading font-bold">{text.heading}</h2>
-        <p className="text-lg">{text.description}</p>
+        <h2 className="text-3xl text-heading font-bold">{text.heading}</h2>
+        <p className="md:text-lg text-md mb-4">{text.description}</p>
       </div>
       <form
-        className="flex h-[49px] justify-center w-full gap-4 items-center z-40 "
+        className="flex flex-col md:flex-row h-[49px] justify-center w-full gap-4 items-center z-40 "
         method={"post"}
         action={NEWSLETTER_URI}
       >
@@ -38,9 +38,9 @@ export default function MailingList() {
           type="email"
           id="bd-email"
           placeholder={text.inputPlaceholder}
-          className="p-3 h-full bg-white border-none w-96 text-[#313131] rounded-xl"
+          className="p-3 h-full bg-white border-none md:w-96 w-full text-[#313131] rounded-xl"
         />
-        <Button className="p-3 w-[129px] h-full  font-semibold text-lg rounded-xl bg-primary text-white">
+        <Button className="p-3 w-full md:w-[129px] h-full font-semibold text-lg rounded-xl bg-primary text-white">
           {text.buttonText}
         </Button>
       </form>
