@@ -148,7 +148,7 @@ export default function ExecSection() {
                   <p className="mt-2 font-bold text-center text-lg">
                     {exec.name}
                   </p>
-                  <p className="text-white text-sm">{exec.title}</p>
+                  <p className="text-white text-sm text-center">{exec.title}</p>
                 </div>
               </SwiperSlide>
             ))}
