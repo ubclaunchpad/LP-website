@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+
 jobs:
   prettier:
     name: Prettier
@@ -12,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4.0.0
@@ -25,10 +26,20 @@ jobs:
       - name: Check for formatting issues
         id: prettier-check
         run: |
-          pnpm exec prettier --check "**/*.{js,jsx,ts,tsx,json,css,md}" || echo "formatting-required"
+          pnpm exec prettier --check "**/*.{js,jsx,ts,tsx,json,css,md}"
+        continue-on-error: true
+
+      - name: Set formatting result
+        id: set-formatting-result
+        run: |
+          if grep -q "Code style issues found" <<<"${{ steps.prettier-check.outputs.stdout }}"; then
+            echo "formatting-required=true" >> $GITHUB_ENV
+          else
+            echo "formatting-required=false" >> $GITHUB_ENV
+          fi
 
       - name: Comment on the PR if formatting is required
-        if: steps.prettier-check.outputs.formatting-required
+        if: env.formatting-required == 'true'
         uses: actions/github-script@v7
         with:
           script: |
@@ -41,4 +52,5 @@ jobs:
             })
 
       - name: Run Prettier
-        run: pnpm exec prettier --check "**/*.{js,jsx,ts,tsx,json,css,md}"
+        if: env.formatting-required == 'true'
+        run: pnpm exec prettier --write "**/*.{js,jsx,ts,tsx,json,css,md}"
