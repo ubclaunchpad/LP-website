@@ -87,6 +87,7 @@ export function createColumns<TData>(
     return {
       meta: { field: field, id: key },
       accessorKey: key as keyof TData,
+      size: 250,
       header: (body: any) => {
         if (!body) {
           return <span>{field.label}</span>;
@@ -245,22 +246,35 @@ export function createColumns<TData>(
   return [
     {
       accessorKey: "popover",
-      header: "",
+      header: "Actions",
       enableColumnFilter: false,
-      size: 100,
-      maxSize: 100,
+      size: 300,
+      maxSize: 300,
       cell: ({ row }) => {
         return (
-          <button
-            onClick={() => {
-              setAndOpen({ applicant: row });
-            }}
-            className={
-              "text-lp-300 font-bold  rounded-lg p-4 py-7 w-fit  flex flex-1 border border-transparent hover:border-background-500 items-center justify-center gap-2  "
-            }
-          >
-            View
-          </button>
+          <div className="flex gap-2 flex-1  justify-start items-center  rounded-lg  ">
+            <button
+              onClick={() => {
+                setAndOpen({ applicant: row });
+              }}
+              className={
+                "  h-fit bg-background-500 rounded-md p-2  w-fit  flex  border border-transparent hover:border-background-500 items-center justify-center gap-2  "
+              }
+            >
+              View
+            </button>
+            <button
+              disabled={true}
+              onClick={() => {
+                setAndOpen({ applicant: row });
+              }}
+              className={
+                "opacity-55  rounded-md p-2 bg-background-500 h-fit w-fit  flex  border border-transparent hover:border-background-500 items-center justify-center gap-2  "
+              }
+            >
+              Offer Role
+            </button>
+          </div>
         );
       },
     },
@@ -360,21 +374,23 @@ export function SelectField({
   };
 
   return (
-    <MultiSelect
-      className={
-        "w-full bg-transparent border-none hover:bg-lp-500 duration-300"
-      }
-      onChange={(e) => updateField(e[0])}
-      allowMultiple={false}
-      emptyText={nullLabel?.toString() || "None"}
-      value={Array.isArray(selected) ? selected : [selected]}
-      options={
-        selectOptions?.map((op) => ({
-          label: op.label,
-          value: op.id,
-        })) || []
-      }
-    ></MultiSelect>
+    <>
+      <MultiSelect
+        className={
+          "w-full bg-transparent border-none hover:bg-lp-500 duration-300"
+        }
+        onChange={(e) => updateField(e[0])}
+        allowMultiple={false}
+        emptyText={nullLabel?.toString() || "None"}
+        value={Array.isArray(selected) ? selected : [selected]}
+        options={
+          selectOptions?.map((op) => ({
+            label: op.label,
+            value: op.id,
+          })) || []
+        }
+      ></MultiSelect>
+    </>
   );
 }
 

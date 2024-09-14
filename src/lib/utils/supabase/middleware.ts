@@ -4,6 +4,7 @@ import { NextResponse, type NextRequest } from "next/server";
 export async function updateSession(request: NextRequest) {
   // const headers = new Headers(request.headers);
   // headers.set("x-current-path", request.nextUrl.pathname);
+
   let supabaseResponse = NextResponse.next({
     request,
     // headers,
@@ -31,6 +32,11 @@ export async function updateSession(request: NextRequest) {
       },
     },
   );
+
+  // check origin URL, if the same base URL, allow the request
+  if (request.nextUrl.origin.startsWith(process.env.NEXT_PUBLIC_BASE_URL!)) {
+    return supabaseResponse;
+  }
 
   // IMPORTANT: Avoid writing any logic between createServerClient and
   // supabase.auth.getUser(). A simple mistake could make it very hard to debug
