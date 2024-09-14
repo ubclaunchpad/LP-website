@@ -30,6 +30,7 @@ export default function MultiSelect({
     if (Array.isArray(value)) {
       return value.includes(option.value);
     }
+    console.log(value, option.value);
     return value === option.value;
   });
 
@@ -53,7 +54,6 @@ export default function MultiSelect({
       >
         <span className="text-white justify-center flex z-1 items-center gap-2 ">
           {/*{JSON.stringify(selectedOptions)}*/}
-          {/*{JSON.stringify(value)}*/}
           {selectedOptions !== [null] &&
             selectedOptions.map((option) => (
               <span
