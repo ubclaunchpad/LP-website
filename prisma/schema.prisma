@@ -118,12 +118,12 @@ model mfa_factors {
   created_at         DateTime         @db.Timestamptz(6)
   updated_at         DateTime         @db.Timestamptz(6)
   secret             String?
-  phone              String?          @unique
+  phone              String?
   last_challenged_at DateTime?        @unique @db.Timestamptz(6)
   mfa_challenges     mfa_challenges[]
   users              users            @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
-  @@unique([user_id, phone], map: "unique_verified_phone_factor")
+  @@unique([user_id, phone], map: "unique_phone_factor_per_user")
   @@index([user_id, created_at], map: "factor_id_created_at_idx")
   @@index([user_id])
   @@schema("auth")
@@ -319,7 +319,8 @@ model users {
   one_time_tokens                                 one_time_tokens[]
   sessions                                        sessions[]
   applications_applications_interviewer_idTousers applications[]    @relation("applications_interviewer_idTousers")
-  applications                                    applications[]
+  applications_applications_reviewer_idTousers    applications[]    @relation("applications_reviewer_idTousers")
+  members                                         members?
   roles                                           roles?
   submissions                                     submissions[]
 
@@ -328,14 +329,23 @@ model users {
   @@schema("auth")
 }
 
-/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
-model form_status {
-  label   String
-  form_id BigInt
-  forms   forms  @relation(fields: [form_id], references: [id], onDelete: Cascade)
+model applications {
+  id                                       String            @id @db.Uuid
+  status                                   String?
+  reviewer_id                              String?           @db.Uuid
+  notes                                    String?
+  created_at                               DateTime?         @default(now()) @db.Timestamptz(6)
+  meta                                     Json?
+  level                                    String?           @default("unassigned")
+  interviewer_id                           String?           @db.Uuid
+  team_id                                  BigInt?
+  submissions                              submissions       @relation(fields: [id], references: [id], onDelete: Cascade)
+  users_applications_interviewer_idTousers users?            @relation("applications_interviewer_idTousers", fields: [interviewer_id], references: [id])
+  users_applications_reviewer_idTousers    users?            @relation("applications_reviewer_idTousers", fields: [reviewer_id], references: [id], onUpdate: Restrict)
+  teams                                    teams?            @relation(fields: [team_id], references: [id])
+  pending_members                          pending_members[]
 
-  @@id([label, form_id])
   @@schema("public")
 }
 
@@ -350,8 +360,47 @@ model forms {
   close_at    DateTime?     @db.Timestamptz(6)
   created_at  DateTime      @default(now()) @db.Timestamptz(6)
   type        form_type?    @default(survey)
-  form_status form_status[]
   submissions submissions[]
+
+  @@schema("public")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model members {
+  id             String         @id @db.Uuid
+  first_name     String
+  last_name      String
+  grad_year      Int            @db.SmallInt
+  faculty        String?
+  specialization String?
+  year_level     Int?           @db.SmallInt
+  users          users          @relation(fields: [id], references: [id])
+  team_members   team_members[]
+
+  @@schema("public")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model pending_members {
+  user_id      String       @db.Uuid
+  status       String?
+  meta         Json?
+  created_at   DateTime?    @default(now()) @db.Timestamptz(6)
+  team_id      BigInt
+  id           String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  applications applications @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "pending_member_id_fkey")
+  teams        teams        @relation(fields: [team_id], references: [id], onDelete: Cascade, map: "pending_member_team_id_fkey")
+
+  @@schema("public")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model roles {
+  id           String   @id @db.Uuid
+  roles        String?
+  created_at   DateTime @default(now()) @db.Timestamptz(6)
+  display_name String?
+  users        users    @relation(fields: [id], references: [id], onDelete: Cascade)
 
   @@schema("public")
 }
@@ -375,29 +424,37 @@ model submissions {
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
-model applications {
-  id                                       String      @id @db.Uuid
-  status                                   String?
-  reviewer_id                              String?     @db.Uuid
-  notes                                    String?
-  created_at                               DateTime?   @default(now()) @db.Timestamptz(6)
-  meta                                     Json?
-  level                                    String?     @default("unassigned")
-  interviewer_id                           String?     @db.Uuid
-  submissions                              submissions @relation(fields: [id], references: [id], onDelete: Cascade)
-  users_applications_interviewer_idTousers users?      @relation("applications_interviewer_idTousers", fields: [interviewer_id], references: [id])
-  users                                    users?      @relation(fields: [reviewer_id], references: [id], onUpdate: Restrict)
+model team_members {
+  member_id String     @db.Uuid
+  team_id   BigInt
+  joined_on DateTime?  @default(now()) @db.Timestamptz(6)
+  role      String?
+  members   members    @relation(fields: [member_id], references: [id], onDelete: Cascade)
+  team_role team_role? @relation(fields: [role], references: [name])
+  teams     teams      @relation(fields: [team_id], references: [id], onDelete: Cascade)
+
+  @@id([member_id, team_id])
+  @@schema("public")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model team_role {
+  id           BigInt         @id @default(autoincrement())
+  name         String         @unique
+  team_members team_members[]
 
   @@schema("public")
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
-model roles {
-  id           String   @id @db.Uuid
-  roles        String?
-  created_at   DateTime @default(now()) @db.Timestamptz(6)
-  display_name String?
-  users        users    @relation(fields: [id], references: [id], onDelete: Cascade)
+model teams {
+  id              BigInt            @id @default(autoincrement())
+  name            String            @unique
+  started_at      DateTime?         @default(now()) @db.Timestamptz(6)
+  ended_at        DateTime?         @db.Timestamptz(6)
+  applications    applications[]
+  pending_members pending_members[]
+  team_members    team_members[]
 
   @@schema("public")
 }

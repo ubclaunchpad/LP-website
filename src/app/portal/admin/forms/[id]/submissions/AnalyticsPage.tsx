@@ -14,6 +14,7 @@ export default function AnalyticsPage({
 }) {
   const columns = [
     "status",
+    "team_id",
     "level",
     "role",
     "reviewer_id",

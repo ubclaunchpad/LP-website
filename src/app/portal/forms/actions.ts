@@ -2,6 +2,7 @@
 import { render } from "@react-email/components";
 import { db } from "@/db";
 import { FormStep, Obj } from "@/lib/types/questions";
+import { Trigger } from "@/lib/types/forms";
 import { createClient } from "@/lib/utils/supabase/server";
 import { JSONValidationToZod } from "@/lib/utils/forms/helpers";
 import { sendEmail } from "@/lib/utils/forms/email";
@@ -29,7 +30,6 @@ export async function submitApplication({ formId }: { formId: bigint }) {
   });
 
   const [res, form] = await Promise.all([resPromise, formPromise]);
-  // console.log(res, form);
 
   if (!res || !form) {
     return null;
@@ -40,43 +40,96 @@ export async function submitApplication({ formId }: { formId: bigint }) {
     formAnswers: res.details as Obj,
   });
 
-  console.log(isValid, errors);
-  // if (!isValid) {
-  //   return errors;
-  // }
+  const steps = form?.questions as unknown as FormStep[];
+  const triggers = steps.flatMap((step) =>
+    step.config?.triggers ? step.config.triggers : [],
+  ) as unknown as Trigger[];
 
-  const updateSubmission = db.submissions.update({
-    where: {
-      user_id_form_id: {
-        form_id: formId,
-        user_id: data.user.id,
-      },
-    },
-    data: {
-      status: "submitted",
-    },
+  triggers.forEach((trigger) => {
+    let shouldTrigger = false;
+    const eventValues = trigger.event.values;
+    const event = trigger.event.id as string;
+    if (
+      res.details &&
+      res.details[event] &&
+      (Array.isArray(res.details[event])
+        ? eventValues.includes(res.details[event][0])
+        : eventValues.includes(res.details[event]))
+    ) {
+      shouldTrigger = true;
+    }
+    if (!shouldTrigger) {
+      return;
+    }
+    const promises = trigger.actions.map(async (action) => {
+      if (action.type === "api") {
+        const body = replaceTemplateValues(action.body, res.details);
+        console.log(`${process.env.NEXT_PUBLIC_BASE_URL}${action.url}`);
+        console.log(body);
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}${action.url}`,
+          {
+            method: "POST",
+            // headers: action.headers,
+            body: JSON.stringify(body),
+          },
+        );
+        const data = await response.json();
+        console.log(data);
+        // action.responseHandlers.forEach((handler) => {
+        //   if (handler.type === "success") {
+        //     console.log(handler.message, data);
+        //   } else {
+        //     console.error(handler.message, data);
+        //   }
+        // });
+      }
+    });
+    Promise.all(promises);
   });
 
-  const createApplication = db.applications.create({
-    data: {
-      id: res.id!,
-      status: null,
-      reviewer_id: null,
-    },
-  });
+  function replaceTemplateValues(obj: Obj, values: Obj) {
+    const newObj = { ...obj };
+    Object.keys(newObj).forEach((key) => {
+      if (typeof newObj[key] === "string") {
+        newObj[key] = obj[key].replace(/{{(.*?)}}/g, (_, key) => values[key]);
+      }
+    });
+    return newObj;
+  }
 
-  await Promise.all([updateSubmission, createApplication]);
-  const appEmail = res.details ? (res.details as Obj) : {};
-  const template = await render(SubmissionTemplate({ formTitle: form.title }));
-  await sendEmail({
-    from: "no-reply@ubclaunchpad.com",
-    fromName: "No-reply UBC Launch Pad",
-    to: data.user.email!.toString(),
-    subject: `${form.title} - Form Submitted`,
-    html: template,
-    cc: appEmail?.email as string,
-  });
-  return true;
+  // const updateSubmission = db.submissions.update({
+  //   where: {
+  //     user_id_form_id: {
+  //       form_id: formId,
+  //       user_id: data.user.id,
+  //     },
+  //   },
+  //   data: {
+  //     status: "submitted",
+  //   },
+  // });
+
+  // const createApplication = db.applications.create({
+  //   data: {
+  //     id: res.id!,
+  //     status: null,
+  //     reviewer_id: null,
+  //   },
+  // });
+
+  // await Promise.all([updateSubmission, createApplication]);
+  // const appEmail = res.details ? (res.details as Obj) : {};
+  // const template = await render(SubmissionTemplate({ formTitle: form.title }));
+  // await sendEmail({
+  //   from: "no-reply@ubclaunchpad.com",
+  //   fromName: "No-reply UBC Launch Pad",
+  //   to: data.user.email!.toString(),
+  //   subject: `${form.title} - Form Submitted`,
+  //   html: template,
+  //   cc: appEmail?.email as string,
+  // });
+  // return true;
 }
 
 export async function updateApplication({
@@ -99,6 +152,7 @@ export async function updateApplication({
       },
     },
   });
+
   const details = res?.details as unknown as any;
   await db.submissions.update({
     where: {

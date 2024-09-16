@@ -49,9 +49,9 @@ const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
     right: isPinned === "right" ? `${column.getAfter("right")}px` : undefined,
     opacity: isPinned ? 0.95 : 1,
     position: isPinned ? "sticky" : "relative",
-    width: column.getSize() ? column.getSize() : "300px",
+    width: column.getSize() ? column.getSize() : "500px",
     // zIndex: isPinned ? 1 : 0,
-    maxWidth: column.getSize() ? column.getSize() : "300px",
+    maxWidth: column.getSize() ? column.getSize() : "500px",
   };
 };
 
@@ -88,6 +88,7 @@ export function DataTable<TData, TValue>({
       columnOrder: [
         "popover",
         "status",
+        "team_id",
         "level",
         "reviewer_id",
         "interviewer_id",
