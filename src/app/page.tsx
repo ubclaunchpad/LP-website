@@ -36,7 +36,8 @@ const text = {
     "We are looking for students passionate about tech with varying levels of experience to join our teams! ",
   joinUsButton: "Join Our Team",
   partnerWithUsTitle: "Partner with us 🤝",
-  partnerWithUsSubtitle: "Reach out to us through email or social media! You can also connect with us through launchpad@email.com",
+  partnerWithUsSubtitle:
+    "Reach out to us through email or social media! You can also connect with us through launchpad@email.com",
   partnerWithUsButton: "Contact us",
 };
 
@@ -111,7 +112,7 @@ export default async function Home() {
       >
         <ProjectSection projects={projects ?? []} />
       </section>
-      <section className="flex flex-col md:flex-row items-start justify-between max-w-[1340px] px-8 w-full">
+      <section className="flex pb-8 flex-col md:flex-row items-start justify-between max-w-[1740px] px-8 w-full">
         <div className="flex flex-col text-center items-center lg:items-start py-10 pl-0 lg:pl-10 md:pr-10 w-full">
           <h1
             className={`text-4xl font-bold ${nunitoSans.variable} font-sans pt-5`}
@@ -122,8 +123,8 @@ export default async function Home() {
             {text.partnerWithUsSubtitle}
           </p>
           <Link href="/contact-us">
-            <Button className="p-4" size={"xl"} icon>
-              <span className="text-lg">{text.partnerWithUsButton}</span>
+            <Button className="p-3" size={"xl"} icon>
+              <span className="text-lg px-4">{text.partnerWithUsButton}</span>
             </Button>
           </Link>
         </div>

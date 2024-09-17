@@ -2,7 +2,7 @@
 import Developer from "./../../../public/icons/developer.svg";
 import Designer from "./../../../public/icons/designer.svg";
 import Strategist from "./../../../public/icons/strategist.svg";
-import InfoCard from "./infoCard";
+import InfoCard from "./memberRoleCard";
 import useIsMobile from "@/app/lib/hooks/useIsMobile";
 import { useMemo } from "react";
 
