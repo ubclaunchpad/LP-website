@@ -1,7 +1,10 @@
 import { ColumnDef, Row } from "@tanstack/react-table";
 import { useContext, useEffect, useState } from "react";
 import MultiSelect from "@/components/general/multiSelect";
-import { updateSubmissionField } from "@/app/portal/admin/actions";
+import {
+  sendStatusEmailToUser,
+  updateSubmissionField,
+} from "@/app/portal/admin/actions";
 import { toast } from "sonner";
 import FloatingTextArea from "@/components/primitives/floatingTextArea";
 import { Button } from "@/components/primitives/button";
@@ -300,13 +303,7 @@ function NotifyButtonForEmail({ row }: { row: any }) {
     <button
       onClick={async () => {
         setEmailState("loading");
-        await updateSubmissionField(
-          row.original.id,
-          "status",
-          "applications",
-          row.original.status,
-          true,
-        );
+        await sendStatusEmailToUser(row.original.id, row.original.status);
         setEmailState("sent");
       }}
       className={
@@ -328,7 +325,7 @@ function NotifyButtonForEmail({ row }: { row: any }) {
       {emailState === "idle" && (
         <span className={"text-xs flex items-center gap-2"}>
           <MailIcon className={"w-3 h-3"} />
-          Notify via Email
+          {row.original.notified_on ? "Resend Email" : "Notify via Email"}
         </span>
       )}
     </button>
