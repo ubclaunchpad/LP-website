@@ -6,6 +6,9 @@ import { Button } from "@/components/primitives/button";
 import { useState } from "react";
 
 export default function OfferPage({ form, app }: { form: Form; app: any }) {
+  const [reqStatus, setReqStatus] = useState<"idle" | "loading" | "error">(
+    "idle",
+  );
   const [status, setStatus] = useState<
     "offered" | "accepted" | "declined" | "error"
   >(app.applications.status);
@@ -15,14 +18,17 @@ export default function OfferPage({ form, app }: { form: Form; app: any }) {
   const cleanedText = replaceTemplateValues(text, app.details);
 
   async function handleDecision(decision: "accepted" | "declined") {
+    setReqStatus("loading");
     const res = await fetch(`/portal/api/v1/offers/${app.applications.id}`, {
       method: "POST",
       body: JSON.stringify({ status: decision }),
     });
     if (res.ok) {
       setStatus(decision);
+      setReqStatus("idle");
     } else {
       setStatus("error");
+      setReqStatus("error");
     }
   }
 
@@ -59,16 +65,29 @@ export default function OfferPage({ form, app }: { form: Form; app: any }) {
                     </span>
                   </div>
                 ) : (
-                  <div className="flex pt-10 flex-col lg:flex-row gap-2 w-full [&>*]:flex-1">
-                    <Button
-                      onClick={() => handleDecision("declined")}
-                      variant={"secondary"}
-                    >
-                      I Decline
-                    </Button>
-                    <Button onClick={() => handleDecision("accepted")}>
-                      I Accept
-                    </Button>
+                  <div className="flex flex-col gap-2">
+                    {reqStatus === "loading" && (
+                      <div className="text-red-200  bg-lp-500  rounded px-4 p-1 text-lg">
+                        <span className="text-white  ">
+                          Sending the right signal to the server...
+                        </span>
+                      </div>
+                    )}
+                    <div className="flex pt-10 flex-col lg:flex-row gap-2 w-full [&>*]:flex-1">
+                      <Button
+                        disabled={reqStatus === "loading"}
+                        onClick={() => handleDecision("declined")}
+                        variant={"secondary"}
+                      >
+                        I Decline
+                      </Button>
+                      <Button
+                        onClick={() => handleDecision("accepted")}
+                        disabled={reqStatus === "loading"}
+                      >
+                        I Accept
+                      </Button>
+                    </div>
                   </div>
                 )}
               </GenericResult>
