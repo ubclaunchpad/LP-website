@@ -2,6 +2,9 @@
 import { db } from "@/db";
 import { FormStep } from "@/lib/types/questions";
 import { FormFields } from "@/app/portal/admin/forms/[id]/submissions/columns";
+import { sendEmail } from "@/lib/utils/forms/email";
+import { MarkdownTemplate } from "@/components/forms/emailTemplates/markdownTemplate";
+import { render } from "@react-email/components";
 
 export async function getForms() {
   return db.forms.findMany();
@@ -11,7 +14,7 @@ export async function createForm(data: { title: string; description: string }) {
   return db.forms.create({ data: { ...data, config: {}, questions: [] } });
 }
 
-export async function getForm(id: number) {
+export async function getForm(id: number | bigint) {
   try {
     return db.forms.findFirst({
       where: {
@@ -162,14 +165,32 @@ export async function updateSubmissionField(
   field: string,
   tableName: string | undefined,
   value: any,
+  cta: boolean = false,
 ) {
   if (tableName === "applications") {
-    return db["applications"].update({
+    await db["applications"].update({
       where: { id: submissionId },
       data: {
         [field]: value,
       },
     });
+    if (field === "status" && cta) {
+      const submission = await db.submissions.findFirst({
+        where: {
+          id: submissionId,
+        },
+      });
+
+      if (!submission) {
+        console.log("Submission not found");
+        return;
+      }
+      await sendStatusEmail({
+        status: value,
+        formId: submission.form_id,
+        userId: submission.user_id,
+      });
+    }
   }
 }
 
@@ -192,5 +213,67 @@ export async function getAdminMembers() {
       id: p.users.id,
       email: p.users.email,
     };
+  });
+}
+
+async function sendStatusEmail({
+  status,
+  formId,
+  userId,
+}: {
+  status: string;
+  formId: bigint;
+  userId: string;
+}) {
+  const form = await getForm(formId);
+
+  if (!form) {
+    console.log("Form not found");
+    return;
+  }
+  const app = await db.submissions.findFirst({
+    where: {
+      form_id: formId,
+      user_id: userId,
+    },
+    include: {
+      applications: true,
+      users: true,
+    },
+  });
+
+  if (!app) {
+    console.log("Application not found");
+    return;
+  }
+
+  const formConfig = form.config as any;
+  const config = formConfig.application as any;
+
+  if (
+    !config ||
+    !config.emails ||
+    !config.emails.status ||
+    !config.emails.status[status]
+  ) {
+    console.log("Email template not found");
+    return;
+  }
+
+  const emailTemplate = config.emails.status[status];
+  const title = emailTemplate.title;
+  const content = emailTemplate.content;
+  const details = app.details ? (app.details as any) : {};
+  const template = await render(
+    MarkdownTemplate({ markdown: content, replacements: details }),
+  );
+
+  await sendEmail({
+    from: "no-reply@ubclaunchpad.com",
+    fromName: "no-reply UBC Launch Pad",
+    to: app.users.email!.toString(),
+    subject: title,
+    html: template,
+    cc: details?.email as string,
   });
 }
