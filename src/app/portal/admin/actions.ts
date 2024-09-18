@@ -194,6 +194,28 @@ export async function updateSubmissionField(
   }
 }
 
+export async function sendStatusEmailToUser(
+  submissionId: string,
+  value: string,
+) {
+  const submission = await db.submissions.findFirst({
+    where: {
+      id: submissionId,
+    },
+  });
+
+  if (!submission) {
+    console.log("Submission not found");
+    return;
+  }
+
+  await sendStatusEmail({
+    status: value,
+    formId: submission.form_id,
+    userId: submission.user_id,
+  });
+}
+
 export async function getAdminMembers() {
   const res = await db.roles.findMany({
     where: {
@@ -275,5 +297,17 @@ async function sendStatusEmail({
     subject: title,
     html: template,
     cc: details?.email as string,
+  });
+  if (!app.applications) {
+    console.log("Application not found");
+    return;
+  }
+  await db.applications.update({
+    where: {
+      id: app.applications.id,
+    },
+    data: {
+      notified_on: new Date(),
+    },
   });
 }

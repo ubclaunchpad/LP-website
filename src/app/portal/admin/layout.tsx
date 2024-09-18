@@ -7,7 +7,7 @@ import { Unauthorized } from "@/components/layouts/inaccessiblePageWrapper";
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { user, userMetadata } = useContext(userContext);
   if (!user) {
-    redirect("/portal/auth");
+    redirect("/auth");
   }
   if (
     !userMetadata ||

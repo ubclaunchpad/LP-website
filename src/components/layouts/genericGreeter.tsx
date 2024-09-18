@@ -41,10 +41,10 @@ export default function GenericGreeter({
         />
       </div>
       {includeStyle ? (
-        <div className="text-4xl flex-col flex flex-1 gap-6 w-full overflow-hidden lg:pt-32 justify-center items-center">
+        <div className="text-4xl flex-col flex flex-1 gap-6 w-full overflow-hidden lg:pt-10 justify-center items-center">
           <div
             className={
-              "  z-40 border-background-600 h-full  overflow-y-scroll max-h-[80svh] p-4 xl:p-10 rounded-xl flex-col w-full  flex gap-10 justify-center items-center"
+              "  z-40 border-background-600 h-full  overflow-y-scroll max-h-[90svh] p-4 xl:p-10 rounded-xl flex-col w-full  flex gap-10 justify-center items-center"
             }
           >
             {children}

@@ -89,6 +89,7 @@ export function DataTable<TData, TValue>({
         "popover",
         "status",
         "team_id",
+        "notified_on",
         "level",
         "reviewer_id",
         "interviewer_id",
