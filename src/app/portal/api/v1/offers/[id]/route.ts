@@ -3,7 +3,7 @@ import { z } from "zod";
 import { db } from "@/db";
 
 const newOfferSchema = z.object({
-  status: z.enum(["accepted", "declined"]),
+  status: z.enum(["accepted", "declined", "offered", "expired"]),
 });
 
 export async function POST(
@@ -55,6 +55,16 @@ export async function POST(
       // If the offer is declined, return early
       if (offerDetails.data.status === "declined") {
         const body = { message: `Offer to join has been declined` };
+        return NextResponse.json(JSON.stringify(body), { status: 200 });
+      }
+
+      if (offerDetails.data.status === "expired") {
+        const body = { message: `Offer to join has expired` };
+        return NextResponse.json(JSON.stringify(body), { status: 200 });
+      }
+
+      if (offerDetails.data.status === "offered") {
+        const body = { message: `Offer to join has been offered` };
         return NextResponse.json(JSON.stringify(body), { status: 200 });
       }
 

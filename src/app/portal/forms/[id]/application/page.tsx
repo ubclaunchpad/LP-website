@@ -43,7 +43,7 @@ export default async function page({
   switch (status) {
     case "submitted":
     case "rejected":
-      subpage = renderTerminalPage(status, null);
+      subpage = renderTerminalPage(status, form);
       break;
     case "accepted":
     case "declined":
