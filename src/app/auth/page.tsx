@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { login } from "./actions";
 import { Button } from "@/components/primitives/button";
 
@@ -7,7 +6,7 @@ const text = {
   login: "Log in With Google",
 };
 
-export default function Authpage() {
+export default function authPage() {
   return (
     <div className="flex flex-col relative shadow justify-center items-center  w-full  p-10 rounded-xl max-h-full max-w-lg h-[600px]    gap-10">
       <div className="flex flex-col items-center gap-4 w-full"></div>

@@ -1,10 +1,14 @@
-interface InfoCardProps {
+interface memberRoleCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
 }
 
-export default function InfoCard({ icon, title, description }: InfoCardProps) {
+export default function memberRoleCard({
+  icon,
+  title,
+  description,
+}: memberRoleCardProps) {
   return (
     <div className="flex items-center bg-secondary text-white mb-4 p-2 rounded-lg w-full">
       <div className="flex-shrink-0 font-size-20 p-2 w-fit rounded-lg">
