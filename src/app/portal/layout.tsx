@@ -22,7 +22,7 @@ export default async function Layout({
   const { data, error } = await supabase.auth.getUser();
 
   if (!data.user || error) {
-    redirect("/portal/auth");
+    redirect("/auth");
   }
 
   const userMetadata = await getUserMetadata(data.user.id);

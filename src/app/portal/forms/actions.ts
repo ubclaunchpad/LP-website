@@ -64,8 +64,6 @@ export async function submitApplication({ formId }: { formId: bigint }) {
     const promises = trigger.actions.map(async (action) => {
       if (action.type === "api") {
         const body = replaceTemplateValues(action.body, res.details);
-        console.log(`${process.env.NEXT_PUBLIC_BASE_URL}${action.url}`);
-        console.log(body);
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_BASE_URL}${action.url}`,
           {
@@ -75,14 +73,6 @@ export async function submitApplication({ formId }: { formId: bigint }) {
           },
         );
         const data = await response.json();
-        console.log(data);
-        // action.responseHandlers.forEach((handler) => {
-        //   if (handler.type === "success") {
-        //     console.log(handler.message, data);
-        //   } else {
-        //     console.error(handler.message, data);
-        //   }
-        // });
       }
     });
     Promise.all(promises);
@@ -168,7 +158,13 @@ export async function updateApplication({
   return res;
 }
 
-export async function getUserApplication({ formId }: { formId: bigint }) {
+export async function getUserApplication({
+  formId,
+  includeApp,
+}: {
+  formId: bigint;
+  includeApp?: boolean;
+}) {
   const supabase = createClient();
   const { data, error } = await supabase.auth.getUser();
   if (!data.user || error) {
@@ -180,6 +176,9 @@ export async function getUserApplication({ formId }: { formId: bigint }) {
         form_id: formId,
         user_id: data.user.id,
       },
+    },
+    include: {
+      applications: includeApp,
     },
   });
 }

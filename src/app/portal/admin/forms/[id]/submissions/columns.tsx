@@ -1,11 +1,20 @@
 import { ColumnDef, Row } from "@tanstack/react-table";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import MultiSelect from "@/components/general/multiSelect";
-import { updateSubmissionField } from "@/app/portal/admin/actions";
+import {
+  sendStatusEmailToUser,
+  updateSubmissionField,
+} from "@/app/portal/admin/actions";
 import { toast } from "sonner";
 import FloatingTextArea from "@/components/primitives/floatingTextArea";
 import { Button } from "@/components/primitives/button";
 import { formContext } from "@/components/layouts/formTabView";
+import {
+  CircleCheckIcon,
+  LoaderCircleIcon,
+  MailIcon,
+  Maximize2Icon,
+} from "lucide-react";
 
 export type FormFields = {
   [key: string]: {
@@ -258,28 +267,69 @@ export function createColumns<TData>(
                 setAndOpen({ applicant: row });
               }}
               className={
-                "  h-fit bg-background-500 rounded-md p-2  w-fit  flex  border border-transparent hover:border-background-500 items-center justify-center gap-2  "
+                "  h-fit bg-background-500 rounded-md p-2   w-fit  flex  border border-transparent hover:border-background-500 items-center justify-center gap-2  "
               }
             >
+              <Maximize2Icon className=" h-3 w-3" />
               View
             </button>
-            <button
-              disabled={true}
-              onClick={() => {
-                setAndOpen({ applicant: row });
-              }}
-              className={
-                "opacity-55  rounded-md p-2 bg-background-500 h-fit w-fit  flex  border border-transparent hover:border-background-500 items-center justify-center gap-2  "
-              }
-            >
-              Offer Role
-            </button>
+            <NotifyButtonForEmail row={row} />
           </div>
         );
       },
     },
     ...general,
   ];
+}
+
+function NotifyButtonForEmail({ row }: { row: any }) {
+  const [emailState, setEmailState] = useState<"idle" | "loading" | "sent">(
+    "idle",
+  );
+
+  useEffect(() => {
+    if (emailState === "sent") {
+      const timer = setTimeout(() => {
+        setEmailState("idle");
+      }, 5000);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [emailState]);
+
+  return (
+    <button
+      onClick={async () => {
+        setEmailState("loading");
+        await sendStatusEmailToUser(row.original.id, row.original.status);
+        setEmailState("sent");
+      }}
+      className={
+        "disabled:opacity-55 text-neutral-200 rounded-md p-2 bg-background-500 h-fit w-fit  flex  border border-transparent hover:border-background-500 items-center justify-center gap-2  "
+      }
+    >
+      {emailState === "loading" && (
+        <span className={"text-xs flex items-center gap-2"}>
+          <LoaderCircleIcon className={"w-3 h-3 animate-spin"} />
+          Sending Email...
+        </span>
+      )}
+      {emailState === "sent" && (
+        <span className={"text-xs flex items-center gap-2"}>
+          <CircleCheckIcon className={"w-3 h-3"} />
+          Email Sent
+        </span>
+      )}
+      {emailState === "idle" && (
+        <span className={"text-xs flex items-center gap-2"}>
+          <MailIcon className={"w-3 h-3"} />
+          {row.original.notified_on ? "Resend Email" : "Notify via Email"}
+        </span>
+      )}
+    </button>
+  );
 }
 
 function FieldPopover({

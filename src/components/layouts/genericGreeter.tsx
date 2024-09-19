@@ -19,14 +19,16 @@ export default function GenericGreeter({
             src={"/images/assets/planet1.svg"}
             alt={"planet"}
             layout={"fill"}
+            className="hidden xl:block"
             style={{ objectFit: "contain" }}
           />
         </div>
-        <div className={"w-[267px] h-[200px] absolute  left-40 bottom-10"}>
+        <div className={"w-[267px] h-[200px] absolute  left-30 bottom-10"}>
           <Image
             src={"/images/assets/planet2.svg"}
             alt={"planet"}
             layout={"fill"}
+            className="hidden xl:block"
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -34,14 +36,15 @@ export default function GenericGreeter({
           src={"/images/assets/starsBg.svg"}
           alt={"planet"}
           layout={"fill"}
+          className={"sm:opacity-0 md:opacity-15 xl:opacity-35"}
           style={{ objectFit: "cover" }}
         />
       </div>
       {includeStyle ? (
-        <div className="text-4xl flex-col flex gap-6 justify-center items-center">
+        <div className="text-4xl flex-col flex flex-1 gap-6 w-full overflow-hidden lg:pt-10 justify-center items-center">
           <div
             className={
-              "  z-40 border-background-600  p-10 rounded-xl flex-col w-full max-w-4xl flex gap-10 justify-center items-center"
+              "  z-40 border-background-600 h-full  overflow-y-scroll max-h-[90svh] p-4 xl:p-10 rounded-xl flex-col w-full  flex gap-10 justify-center items-center"
             }
           >
             {children}
