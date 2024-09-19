@@ -7,7 +7,7 @@ import { Button } from "@/components/primitives/button";
 import "../app/globals.css";
 
 const DOMAIN = process.env.MAILGUN_DOMAIN || "mg.ubclaunchpad.com";
-const API_KEY = process.env.MAILGUN_API_KEY_CONTACT || "";
+const API_KEY = process.env.MAILGUN_API_KEY || "";
 
 const mailgun = new Mailgun(formData);
 const mg = mailgun.client({
