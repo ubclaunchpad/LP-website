@@ -15,15 +15,15 @@ type MailConfig = {
 const DOMAIN = process.env.MAILGUN_DOMAIN || "mg.ubclaunchpad.com";
 const API_KEY = process.env.MAILGUN_API_KEY || "";
 
-const mg = new Mailgun(formData);
-const mailgun = mg.client({
+const mailgun = new Mailgun(formData);
+const mg = mailgun.client({
   username: "api",
   key: API_KEY,
 });
 
 export async function sendEmail(config: MailConfig) {
   try {
-    const res = await mailgun.messages.create(DOMAIN, {
+    const res = await mg.messages.create(DOMAIN, {
       from: `${config.fromName} <${config.from}>`,
       to: [config.to],
       subject: config.subject,
