@@ -8,20 +8,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Link
         href={"/"}
         className={
-          "rounded-full absolute  top-0 left-4 transform  border-4 border-primary  z-40"
+          "rounded-full absolute top-0 left-4 transform border-4 border-primary z-40"
         }
       >
         <Image
           src="/images/logo_circle.png"
           width={80}
           height={80}
-          className=""
           alt="UBC Launch Pad logo"
         />
       </Link>
       <div className="w-screen h-screen bg-primary flex justify-center items-center">
         <div className={"fixed space-flow top-0 left-0 w-screen h-screen"}>
-          <div className={"w-[300px]  h-[300px] absolute  right-10 top-0"}>
+          <div className={"w-[300px] h-[300px] absolute right-10 top-0"}>
             <Image
               src={"/images/assets/planet1.svg"}
               alt={"planet"}
@@ -29,7 +28,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               style={{ objectFit: "contain" }}
             />
           </div>
-          <div className={"w-[267px] h-[200px] absolute  left-40 bottom-10"}>
+          <div className={"w-[267px] h-[200px] absolute left-40 bottom-10"}>
             <Image
               src={"/images/assets/planet2.svg"}
               alt={"planet"}
@@ -47,7 +46,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="text-4xl flex-col flex gap-6 justify-center items-center">
           <div
             className={
-              "  z-40 border-background-600  p-10 rounded-xl flex-col w-full max-w-4xl flex gap-10 justify-center items-center"
+              "z-40 border-background-600 p-10 rounded-xl flex-col w-full max-w-4xl flex gap-10 justify-center items-center"
             }
           >
             {children}
