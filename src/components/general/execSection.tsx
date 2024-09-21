@@ -68,7 +68,7 @@ const execs = [
   {
     name: "Daphne Tian",
     image: "/images/execs/daphne_tian.png",
-    title: "Design Lead",
+    title: "Outreach Coordinator",
     linkedIn: "https://www.linkedin.com/in/daphne-tian/",
   },
   {
@@ -98,7 +98,7 @@ const execs = [
   {
     name: "Ura Hwang",
     image: "/images/execs/ura_hwang.png",
-    title: "Marketing Coordinator",
+    title: "Outreach Coordinator",
     linkedIn: "https://www.linkedin.com/in/ura-hwang-748336282/",
   },
 ];
