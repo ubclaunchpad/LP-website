@@ -16,6 +16,7 @@ export type DataTableProps<TData, TValue> = {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   refMap: ReferenceMap;
+  config: any;
 };
 
 type DataTableWrapperProps<TData> = {
@@ -40,11 +41,49 @@ export default function DataTableWrapper<TData>({
     { id: "members", options: membersWithLabel, label: "members" },
   ]);
   const columns = createColumns(formFields, members, setAndOpen);
+  const config = {
+    view: {
+      showFilter: true,
+      showChart: true,
+    },
+    analytics: {
+      columns: [
+        "status",
+        "team_id",
+        "level",
+        "role",
+        "reviewer_id",
+        "interviewer_id",
+        "year",
+        "faculty",
+        "specialization",
+        "graduationYear",
+        "lp-team",
+      ],
+    },
+    columnOrder: [
+      "popover",
+      "status",
+      "team_id",
+      "notified_on",
+      "level",
+      "reviewer_id",
+      "interviewer_id",
+      "email",
+      "student email",
+      "role",
+    ],
+  };
 
   return (
     <div>
       {applicantPopover}
-      <DataTable columns={columns} data={fieldData} refMap={refMap} />
+      <DataTable
+        columns={columns}
+        data={fieldData}
+        refMap={refMap}
+        config={config}
+      />
     </div>
   );
 }
