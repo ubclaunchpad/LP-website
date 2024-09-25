@@ -18,7 +18,7 @@ export default function GenericGreeter({
           <Image
             src={"/images/assets/planet1.svg"}
             alt={"planet"}
-            layout={"fill"}
+            fill={true}
             className="hidden xl:block"
             style={{ objectFit: "contain" }}
           />
@@ -27,7 +27,7 @@ export default function GenericGreeter({
           <Image
             src={"/images/assets/planet2.svg"}
             alt={"planet"}
-            layout={"fill"}
+            fill={true}
             className="hidden xl:block"
             style={{ objectFit: "contain" }}
           />
@@ -35,7 +35,7 @@ export default function GenericGreeter({
         <Image
           src={"/images/assets/starsBg.svg"}
           alt={"planet"}
-          layout={"fill"}
+          fill={true}
           className={"sm:opacity-0 md:opacity-15 xl:opacity-35"}
           style={{ objectFit: "cover" }}
         />
