@@ -15,7 +15,7 @@ import {
   RowData,
   SortingState,
 } from "@tanstack/react-table";
-
+import { json2csv } from "json-2-csv";
 import { Button } from "@/components/primitives/button";
 import { Input } from "@/components/primitives/input";
 
@@ -59,6 +59,7 @@ export function DataTable<TData, TValue>({
   columns,
   data,
   refMap,
+  config,
 }: DataTableProps<TData, TValue>) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
@@ -77,27 +78,13 @@ export function DataTable<TData, TValue>({
     getFacetedRowModel: getFacetedRowModel(), // client-side faceting
     getFacetedUniqueValues: getFacetedUniqueValues(), // generate unique values for select filter/autocomplete
     getFacetedMinMaxValues: getFacetedMinMaxValues(), // generate min/max values for range filter
-    // debugTable: true,
-    // debugHeaders: true,
     debugColumns: false,
     enableColumnFilters: true,
     state: {
       columnFilters,
       columnVisibility,
       sorting,
-      columnOrder: [
-        "popover",
-        "status",
-        "team_id",
-        "notified_on",
-        "level",
-        "reviewer_id",
-        "interviewer_id",
-        // "notes",
-        "email",
-        "student email",
-        "role",
-      ],
+      ...(config?.columnOrder ? { columnOrder: config.columnOrder } : {}),
     },
   });
 
@@ -109,14 +96,16 @@ export function DataTable<TData, TValue>({
             {table.getFilteredRowModel().rows.length} {"Results"}
           </span>
         </div>
-        <TableFilter
-          refMap={refMap}
-          columns={
-            table.getAllColumns() as unknown as Column<unknown, unknown>[]
-          }
-          columnFilters={columnFilters}
-          setColumnFilters={setColumnFilters}
-        />
+        {config.view?.showFilter && (
+          <TableFilter
+            refMap={refMap}
+            columns={
+              table.getAllColumns() as unknown as Column<unknown, unknown>[]
+            }
+            columnFilters={columnFilters}
+            setColumnFilters={setColumnFilters}
+          />
+        )}
 
         <div
           className={
@@ -132,19 +121,23 @@ export function DataTable<TData, TValue>({
             <TableIcon className={"h-4 w-4"} />
             Table
           </Button>
-          <Button
-            onClick={() => {
-              setTabView("chart");
-            }}
-            className={`bg-background-600  w-24 border-background-500 gap-2 ${tabView === "chart" ? "bg-lp-400" : ""}`}
-          >
-            <ChartArea className={"h-4 w-4"} />
-            Chart
-          </Button>
+          {config.view?.showChart && (
+            <Button
+              onClick={() => {
+                setTabView("chart");
+              }}
+              className={`bg-background-600  w-24 border-background-500 gap-2 ${tabView === "chart" ? "bg-lp-400" : ""}`}
+            >
+              <ChartArea className={"h-4 w-4"} />
+              Chart
+            </Button>
+          )}
         </div>
+        <DownloadCSV data={data} fileName="data" />
       </div>
       {table.getFilteredRowModel().rows.length > 0 && tabView === "chart" && (
         <AnalyticsPage
+          columns={config.analytics.columns}
           refMap={refMap}
           submissions={table
             .getFilteredRowModel()
@@ -394,3 +387,19 @@ function ColumnFilterInput<TData>({
     />
   );
 }
+
+const DownloadCSV = ({ data, fileName }) => {
+  const downloadCSV = () => {
+    const csvData = json2csv(data, { expandArrayObjects: true });
+    const blob = new Blob([csvData], { type: "text/csv" });
+    const csvURL = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = csvURL;
+    link.download = `${fileName}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return <Button onClick={downloadCSV}>Download CSV</Button>;
+};
