@@ -1,8 +1,6 @@
 "use client";
 import { FormChart } from "@/app/portal/admin/forms/[id]/submissions/formDataChart";
-import { formContext } from "@/components/layouts/formTabView";
 import { getFormAnalytics } from "@/lib/utils/forms/analytics";
-import { useContext, useEffect, useState } from "react";
 import { ReferenceMap } from "./columns";
 
 export default function AnalyticsPage({
