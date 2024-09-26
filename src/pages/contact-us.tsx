@@ -72,7 +72,7 @@ const ContactUs = () => {
             <Image
               src={"../images/assets/planet1.svg"}
               alt={"planet"}
-              layout={"fill"}
+              fill={true}
               style={{ objectFit: "contain" }}
             />
           </div>
@@ -80,14 +80,14 @@ const ContactUs = () => {
             <Image
               src={"../images/assets/planet2.svg"}
               alt={"planet"}
-              layout={"fill"}
+              fill={true}
               style={{ objectFit: "contain" }}
             />
           </div>
           <Image
             src={"../images/assets/starsBg.svg"}
             alt={"planet"}
-            layout={"fill"}
+            fill={true}
             style={{ objectFit: "contain" }}
           />
         </div>
