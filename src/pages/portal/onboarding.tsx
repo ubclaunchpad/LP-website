@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "../../app/globals.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { faFigma } from "@fortawesome/free-brands-svg-icons";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
@@ -10,19 +11,22 @@ import { SiNotion } from "react-icons/si";
 import { Button } from "@/components/primitives/button";
 import { useRouter } from "next/router";
 
-const DiscordUrl = "https://discord.gg/AgQbWykt";
-const NotionUrl =
-  "https://www.notion.so/team/ad259dbf-777e-4e03-b71e-cff48817296f/join";
-const FigmaUrl =
-  "https://www.figma.com/team_invite/redeem/LEa6Ds0anjxIFqZx37WF1X";
-const iCalUrl = "/2024-2025-calendar.ics";
+const URLs = {
+  GitHub: "https://github.com/ubclaunchpad",
+  Discord: "https://discord.gg/AgQbWykt",
+  Notion: "https://www.notion.so/team/ad259dbf-777e-4e03-b71e-cff48817296f/join",
+  Figma: "https://www.figma.com/team_invite/redeem/LEa6Ds0anjxIFqZx37WF1X",
+  iCal: "/2024-2025-calendar.ics", // Use this link to modify:  https://ical.marudot.com/
+};
 
 const Onboarding = () => {
   const router = useRouter();
   const [step, setStep] = useState(0);
+  const [isNextClickable, setIsNextClickable] = useState(false);
 
   const handleStartClick = () => {
     setStep(1);
+    setIsNextClickable(false);
     setTimeout(() => {
       router.push({
         pathname: "/portal/onboarding",
@@ -33,6 +37,7 @@ const Onboarding = () => {
 
   const handleNextStepClick = (nextStep: number, state: string) => {
     setStep(nextStep);
+    setIsNextClickable(false);
     setTimeout(() => {
       router.push({
         pathname: "/portal/onboarding",
@@ -43,12 +48,21 @@ const Onboarding = () => {
 
   const handlePrevStepClick = (prevStep: number, state: string) => {
     setStep(prevStep);
+    setIsNextClickable(false);
     setTimeout(() => {
       router.push({
         pathname: "/portal/onboarding",
         query: { step: prevStep.toString(), state },
       });
     }, 1000);
+  };
+
+  const handleActionClick = () => {
+    setIsNextClickable(true);
+  };
+
+  const handleDownloadClick = () => {
+    setIsNextClickable(true);
   };
 
   const handleEndClick = () => {
@@ -118,15 +132,20 @@ const Onboarding = () => {
                     Step 1: Connect to GitHub
                   </div>
                   <Button
-                    onClick={() => window.open(DiscordUrl, "_blank")}
+                    onClick={() => {window.open(URLs.GitHub, "_blank");
+                      handleActionClick()
+                    }}
                     className="p-6 mt-4 bg-slate-800 w-full md:w-[w29px] font-semibold text-lg rounded-xl"
                   >
-                    <FontAwesomeIcon icon={faDiscord} className="mr-2" />
-                    {"Join discord server"}
+                    <FontAwesomeIcon icon={faGithub} className="mr-2" />
+                    {"Join GitHub server"}
                   </Button>
                   <Button
                     onClick={() => handleNextStepClick(2, "connect_github")}
-                    className="p-4 mt-12 w-full md:w-[129px] font-semibold text-lg rounded-xl bg-primary"
+                    disabled={!isNextClickable}
+                    className={`p-4 mt-12 w-full md:w-[129px] font-semibold text-lg rounded-xl ${
+                      isNextClickable ? "bg-primary" : "bg-gray-500 cursor-not-allowed"
+                    }`}
                   >
                     {"Next"}
                   </Button>
@@ -143,7 +162,9 @@ const Onboarding = () => {
                     Step 2: Connect to Discord
                   </div>
                   <Button
-                    onClick={() => window.open(DiscordUrl, "_blank")}
+                    onClick={() => {window.open(URLs.Discord, "_blank");
+                    handleActionClick()
+                    }}
                     className="p-6 mt-4 bg-slate-800 w-full md:w-[w29px] font-semibold text-lg rounded-xl"
                   >
                     <FontAwesomeIcon icon={faDiscord} className="mr-2" />
@@ -151,7 +172,10 @@ const Onboarding = () => {
                   </Button>
                   <Button
                     onClick={() => handleNextStepClick(3, "connect_discord")}
-                    className="p-4 mt-12 w-full md:w-[129px] font-semibold text-lg rounded-xl bg-primary"
+                    disabled={!isNextClickable}
+                    className={`p-4 mt-12 w-full md:w-[129px] font-semibold text-lg rounded-xl ${
+                      isNextClickable ? "bg-primary" : "bg-gray-500 cursor-not-allowed"
+                    }`}
                   >
                     {"Next"}
                   </Button>
@@ -168,7 +192,9 @@ const Onboarding = () => {
                     Step 3: Connect to Notion
                   </div>
                   <Button
-                    onClick={() => window.open(NotionUrl, "_blank")}
+                    onClick={() => {window.open(URLs.Notion, "_blank");
+                    handleActionClick()
+                    }}
                     className="p-6 mt-4 bg-[#F7F7F7] w-full md:w-[w29px] font-semibold text-lg text-black rounded-xl"
                   >
                     <SiNotion className="mr-2" />
@@ -176,7 +202,10 @@ const Onboarding = () => {
                   </Button>
                   <Button
                     onClick={() => handleNextStepClick(4, "connect_notion")}
-                    className="p-4 mt-12 w-full md:w-[129px] font-semibold text-lg rounded-xl bg-primary"
+                    disabled={!isNextClickable} 
+                    className={`p-4 mt-12 w-full md:w-[129px] font-semibold text-lg rounded-xl ${
+                      isNextClickable ? "bg-primary" : "bg-gray-500 cursor-not-allowed"
+                    }`}
                   >
                     {"Next"}
                   </Button>
@@ -193,7 +222,9 @@ const Onboarding = () => {
                     Step 4: Connect to Figma
                   </div>
                   <Button
-                    onClick={() => window.open(FigmaUrl, "_blank")}
+                    onClick={() => {window.open(URLs.Figma, "_blank");
+                    handleActionClick()
+                    }}
                     className="p-6 mt-4 bg-[#03011B] w-full md:w-[w29px] font-semibold text-lg rounded-xl"
                   >
                     <FontAwesomeIcon icon={faFigma} className="mr-2" />
@@ -201,7 +232,10 @@ const Onboarding = () => {
                   </Button>
                   <Button
                     onClick={() => handleNextStepClick(5, "connect_figma")}
-                    className="p-4 mt-12 w-full md:w-[129px] font-semibold text-lg rounded-xl bg-primary"
+                    disabled={!isNextClickable} 
+                    className={`p-4 mt-12 w-full md:w-[129px] font-semibold text-lg rounded-xl ${
+                      isNextClickable ? "bg-primary" : "bg-gray-500 cursor-not-allowed"
+                    }`}
                   >
                     {"Next"}
                   </Button>
@@ -217,17 +251,19 @@ const Onboarding = () => {
                   <div className="text-4xl font-semibold text-center font-heading mb-8">
                     Step 5: Connect to Calendar
                   </div>
-                  <a href={iCalUrl} download>
-                    <Button
-                      onClick={() => handleNextStepClick(6, "connect_calendar")}
-                      className="p-4 mt-12 w-full md:w-[w29px] font-semibold text-lg rounded-xl bg-primary"
-                    >
-                      <FontAwesomeIcon icon={faCalendar} className="mr-2" />
-                      {"Download .ical"}
-                    </Button>
-                  </a>
+                  <Button
+                    onClick={() => {
+                      window.open(URLs.iCal, "_blank");
+                      handleDownloadClick();
+                    }}
+                    className="p-6 mt-4 bg-slate-800 w-full md:w-[w29px] font-semibold text-lg rounded-xl"
+                  >
+                    <FontAwesomeIcon icon={faCalendar} className="mr-2" />
+                    {"Download iCal"}
+                  </Button>
                   <Button
                     onClick={() => handleNextStepClick(6, "connect_calendar")}
+                    disabled={!isNextClickable} 
                     className="p-4 mt-12 w-full md:w-[129px] font-semibold text-lg rounded-xl bg-primary"
                   >
                     {"Next"}
@@ -242,7 +278,8 @@ const Onboarding = () => {
               ) : (
                 <>
                   <div className="text-4xl font-semibold text-center font-heading mb-8">
-                    Onboarding Complete!
+                    Onboarding Complete! 
+                    <div className="text-xl mt-4">You can repeat these steps in future terms when needed</div>
                   </div>
                   <Button
                     onClick={handleEndClick}
