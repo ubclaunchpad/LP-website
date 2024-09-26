@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "../../app/globals.css";
@@ -271,7 +271,7 @@ const Onboarding = () => {
                       window.open(URLs.Calendar, "_blank");
                       handleActionClick();
                     }}
-                    className="p-6 mt-4 bg-slate-800 w-full md:w-[350px] font-semibold text-lg rounded-xl"
+                    className="p-6 mt-4 bg-blue-500 w-full md:w-[350px] font-semibold text-lg rounded-xl"
                   >
                     <FontAwesomeIcon icon={faCalendar} className="mr-2" />
                     {"Add Google Calendar"}
