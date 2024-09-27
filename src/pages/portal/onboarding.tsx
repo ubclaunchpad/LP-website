@@ -10,6 +10,7 @@ import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { SiNotion } from "react-icons/si";
 import { Button } from "@/components/primitives/button";
 import { useRouter } from "next/router";
+import { z } from "zod";
 // import { db } from "@/db";
 
 const URLs = {
@@ -21,6 +22,25 @@ const URLs = {
     "https://calendar.google.com/calendar/u/0?cid=Y19rMHJqc3JlZzJjbXQzZWtiYWNuNjBvMGprNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",
 };
 
+const DiscordIntegrationSchema = z.object({
+  discordUsername: z.string(),
+  actions: z.object({
+    roles: z.array(z.string()),
+  }),
+});
+
+const GitHubIntegrationSchema = z.object({
+  githubUsername: z.string(),
+  actions: z.object({
+    teams: z.array(
+      z.object({
+        name: z.string(),
+        role: z.enum(["maintainer", "member"]),
+      }),
+    ),
+  }),
+});
+
 const Onboarding = () => {
   const router = useRouter();
   const [step, setStep] = useState(0);
@@ -31,6 +51,19 @@ const Onboarding = () => {
 
   const handleGithubSubmit = async () => {
     try {
+      // Validate GitHub input with schema
+      const parsedGithubData = GitHubIntegrationSchema.parse({
+        githubUsername: githubUsername,
+        actions: {
+          teams: [
+            {
+              name: "execs",
+              role: "maintainer",
+            },
+          ],
+        },
+      });
+
       const response = await fetch(
         "https://colony-production.up.railway.app/colony/integrations/github",
         {
@@ -38,30 +71,20 @@ const Onboarding = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            githubUsername: "ubclaunchpad-dev",
-            actions: {
-              teams: [
-                {
-                  name: "execs",
-                  role: "maintainer",
-                },
-              ],
-            },
-          }),
+          body: JSON.stringify(parsedGithubData),
         },
       );
 
-      const responseBody = await response.text(); // Get the response body for logging
+      const responseBody = await response.text();
       if (!response.ok) {
         console.error(`Error: ${response.status} - ${responseBody}`);
         throw new Error("Failed to add GitHub user");
       }
 
-      // Handle success (if needed)
+      setIsNextClickable(true);
     } catch (error) {
-      setErrorMessage("Failed to add GitHub user. Please try again.");
-      console.error("Detailed Error:", error);
+      setErrorMessage("GitHub validation failed. Please try again.");
+      console.error("GitHub Submission Error:", error);
     }
   };
 
@@ -175,7 +198,7 @@ const Onboarding = () => {
         </div>
         <div className="relative w-full h-full">
           <div className="flex justify-center items-center w-full h-full absolute top-0 left-0">
-            <div className="bg-secondary font-mono text-white p-16 shadow-2xl w-1/2 h-2/3 flex flex-col justify-center items-center rounded-lg border border-purple-300">
+            <div className="bg-secondary font-mono text-white p-16 shadow-2xl sm:w-1/2 md:w-3/4 lg:w-2/3 xl:w-1/2 h-2/3 flex flex-col justify-center items-center rounded-lg border border-purple-300">
               {step === 0 ? (
                 <>
                   <div className="text-4xl font-semibold text-center font-heading mb-8">
@@ -210,7 +233,9 @@ const Onboarding = () => {
                     {"Join GitHub Organization"}
                   </Button>
                   {errorMessage && (
-                    <div className="text-red-500 mt-4">{errorMessage}</div>
+                    <div className="text-red-500 mt-4 text-center">
+                      {errorMessage}
+                    </div>
                   )}
                   <Button
                     onClick={() => handleNextStepClick(2, "connect_github")}
@@ -251,7 +276,9 @@ const Onboarding = () => {
                     {"Join discord server"}
                   </Button>
                   {errorMessage && (
-                    <div className="text-red-500 mt-4">{errorMessage}</div>
+                    <div className="text-red-500 mt-4 text-center">
+                      {errorMessage}
+                    </div>
                   )}
                   <Button
                     onClick={() => handleNextStepClick(3, "connect_discord")}
