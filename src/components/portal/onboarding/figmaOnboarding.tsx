@@ -8,7 +8,7 @@ import Link from "next/link";
 const TEXT = {
   title: "Figma",
   description:
-    "Join the Figma workspace to access the design files and resources.",
+    "Join the Figma workspace to access the design files and resources. You must have a Figma account and have the student status verified!",
   figmaInvite:
     "https://www.figma.com/team_invite/redeem/LEa6Ds0anjxIFqZx37WF1X",
   loadingButton: "Loading...",

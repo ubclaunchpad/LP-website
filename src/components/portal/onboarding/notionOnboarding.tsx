@@ -8,9 +8,9 @@ import Link from "next/link";
 const TEXT = {
   title: "Notion",
   description:
-    "Join the Notion workspace to access the documentation and resources.",
+    "Join the Notion workspace to access the documentation and resources. You must have a Notion account with your UBC email!",
   notionInvite:
-    "https://www.notion.so/team/ad259dbf-777e-4e03-b71e-cff48817296f/join",
+    "https://www.notion.so/launchpadubc/invite/ea827545c2e8a29d5bc5f0913527920a3dbec80d",
   loadingButton: "Loading...",
   successButton: "You're all set!",
   checkJoin: "Have you joined the Notion workspace?",
