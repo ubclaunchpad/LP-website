@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "../../app/globals.css";
@@ -10,9 +10,9 @@ import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { SiNotion } from "react-icons/si";
 import { Button } from "@/components/primitives/button";
 import { useRouter } from "next/router";
+// import { db } from "@/db";
 
 const URLs = {
-  GitHub: "https://github.com/ubclaunchpad",
   Discord: "https://discord.gg/AgQbWykt",
   Notion:
     "https://www.notion.so/team/ad259dbf-777e-4e03-b71e-cff48817296f/join",
@@ -25,6 +25,71 @@ const Onboarding = () => {
   const router = useRouter();
   const [step, setStep] = useState(0);
   const [isNextClickable, setIsNextClickable] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [githubUsername, setGithubUsername] = useState("");
+  const [discordUsername, setDiscordUsername] = useState("");
+
+  const handleGithubSubmit = async () => {
+    try {
+      const response = await fetch(
+        "https://colony-production.up.railway.app/colony/integrations/github",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            githubUsername: "ubclaunchpad-dev",
+            actions: {
+              teams: [
+                {
+                  name: "execs",
+                  role: "maintainer",
+                },
+              ],
+            },
+          }),
+        },
+      );
+
+      const responseBody = await response.text(); // Get the response body for logging
+      if (!response.ok) {
+        console.error(`Error: ${response.status} - ${responseBody}`);
+        throw new Error("Failed to add GitHub user");
+      }
+
+      // Handle success (if needed)
+    } catch (error) {
+      setErrorMessage("Failed to add GitHub user. Please try again.");
+      console.error("Detailed Error:", error);
+    }
+  };
+
+  const handleDiscordSubmit = async () => {
+    try {
+      const response = await fetch(
+        "https://colony-production.up.railway.app/colony/integrations/discord",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_DISCORD_API_KEY}`,
+          },
+          body: JSON.stringify({
+            discordUsername,
+            actions: {
+              roles: ["member", "2024-member", "developer", "designer"],
+            },
+          }),
+        },
+      );
+
+      if (!response.ok) throw new Error("Failed to add Discord user");
+    } catch (error) {
+      console.error(error);
+      setErrorMessage("Failed to add Discord user. Please try again.");
+    }
+  };
 
   const handleStartClick = () => {
     setStep(1);
@@ -130,16 +195,23 @@ const Onboarding = () => {
                   <div className="text-4xl font-semibold text-center font-heading mb-8">
                     Step 1: Connect to GitHub
                   </div>
+                  <input
+                    type="text"
+                    placeholder="Enter GitHub Username"
+                    className="p-2 border border-gray-300 rounded text-black w-full md:w-[350px] font-semibold text-lg"
+                    value={githubUsername}
+                    onChange={(e) => setGithubUsername(e.target.value)}
+                  />
                   <Button
-                    onClick={() => {
-                      window.open(URLs.GitHub, "_blank");
-                      handleActionClick();
-                    }}
+                    onClick={handleGithubSubmit}
                     className="p-6 mt-4 bg-slate-800 w-full md:w-[350px] font-semibold text-lg rounded-xl"
                   >
                     <FontAwesomeIcon icon={faGithub} className="mr-2" />
-                    {"Join GitHub server"}
+                    {"Join GitHub Organization"}
                   </Button>
+                  {errorMessage && (
+                    <div className="text-red-500 mt-4">{errorMessage}</div>
+                  )}
                   <Button
                     onClick={() => handleNextStepClick(2, "connect_github")}
                     disabled={!isNextClickable}
@@ -164,16 +236,23 @@ const Onboarding = () => {
                   <div className="text-4xl font-semibold text-center font-heading mb-8">
                     Step 2: Connect to Discord
                   </div>
+                  <input
+                    type="text"
+                    placeholder="Enter your Discord username"
+                    value={discordUsername}
+                    onChange={(e) => setDiscordUsername(e.target.value)}
+                    className="p-2 border border-gray-400 rounded mb-4"
+                  />
                   <Button
-                    onClick={() => {
-                      window.open(URLs.Discord, "_blank");
-                      handleActionClick();
-                    }}
+                    onClick={handleDiscordSubmit}
                     className="p-6 mt-4 bg-[#5662EB] w-full md:w-[350px] font-semibold text-lg rounded-xl"
                   >
                     <FontAwesomeIcon icon={faDiscord} className="mr-2" />
                     {"Join discord server"}
                   </Button>
+                  {errorMessage && (
+                    <div className="text-red-500 mt-4">{errorMessage}</div>
+                  )}
                   <Button
                     onClick={() => handleNextStepClick(3, "connect_discord")}
                     disabled={!isNextClickable}
