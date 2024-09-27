@@ -6,11 +6,28 @@ import { db } from "@/db";
 import { Toaster } from "@/components/primitives/sonner";
 
 async function getUserMetadata(id: string) {
-  return db.roles.findUnique({
+  const rolesP = db.roles.findUnique({
     where: {
       id: id,
     },
   });
+  const memberP = db.members.findUnique({
+    where: {
+      id: id,
+    },
+    include: {
+      team_members: {
+        include: {
+          teams: true,
+        },
+      },
+    },
+  });
+  const [roles, member] = await Promise.all([rolesP, memberP]);
+  return {
+    roles: roles,
+    member: member,
+  };
 }
 
 export default async function Layout({
@@ -30,7 +47,7 @@ export default async function Layout({
   return (
     <Suspense>
       <UserContextProvider user={data.user} userMetadata={userMetadata}>
-        <Toaster position={"bottom-center"} richColors />
+        <Toaster position={"bottom-center"} />
         {children}
       </UserContextProvider>
     </Suspense>

@@ -14,6 +14,7 @@ const config: Config = {
         lightPurple: "#3A3543",
         lightPurple2: "#CDC2E6",
         lightPurple3: "#6A3AD9",
+        lightPurple4: "#5e566d",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
