@@ -17,7 +17,7 @@ const firstStep = 0;
 const lastStep = 6;
 
 export default function OnboardingPage() {
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(0);
 
   const handleNextStepClick = () =>
     setStep((prev) => (prev === 6 ? prev : prev + 1));
