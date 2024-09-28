@@ -25,7 +25,7 @@ async function getUserMetadata(id: string) {
   });
   const [roles, member] = await Promise.all([rolesP, memberP]);
   return {
-    roles: roles,
+    roles: roles?.roles,
     member: member,
   };
 }

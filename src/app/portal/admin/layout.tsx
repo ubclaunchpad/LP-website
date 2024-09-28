@@ -9,6 +9,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   if (!user) {
     redirect("/auth");
   }
+
+
   if (
     !userMetadata ||
     !userMetadata.roles ||
