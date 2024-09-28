@@ -13,7 +13,7 @@ const TEXT = {
     "https://www.figma.com/team_invite/redeem/LEa6Ds0anjxIFqZx37WF1X",
   loadingButton: "Loading...",
   successButton: "You're all set!",
-  checkJoin: "Have you joined the Notion workspace?",
+  checkJoin: "Have you joined the Figma workspace?",
   yesJoin: "Yes, I've joined!",
   noJoin: "No, I haven't joined yet.",
   button: "Join Figma Workspace",
