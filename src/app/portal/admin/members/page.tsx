@@ -52,7 +52,14 @@ function createColumns<TData>(fields: any[]): ColumnDef<keyof FormFields>[] {
 export default function MembersDatabase() {
   const { members, error, isLoading } = useMembers({ filters: {} });
   const config = {
-    columnOrder: ["firstName", "lastName", "email", "teams"],
+    columnOrder: [
+      "firstName",
+      "lastName",
+      "email",
+      "teams",
+      "discordId",
+      "githubUsername",
+    ],
   };
   if (isLoading) {
     return <Loading />;
