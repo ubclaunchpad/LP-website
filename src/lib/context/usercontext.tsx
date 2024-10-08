@@ -6,10 +6,22 @@ import { User } from "@supabase/auth-js";
 
 type UserContext = {
   user: User;
-  userMetadata: { [key: string]: any } | null;
+  userMetadata: UserMetadata;
 };
 
 export const userContext = React.createContext({} as UserContext);
+
+type UserMetadata = {
+  [key: string]: any;
+  member?: {
+    team_members: {
+      member_id: string;
+      team_id: bigint;
+      joined_on: Date | null;
+      role: string | null;
+    }[];
+  };
+};
 
 export function UserContextProvider({
   children,
@@ -18,13 +30,13 @@ export function UserContextProvider({
 }: {
   children: React.ReactNode;
   user: User;
-  userMetadata: { [key: string]: any } | null;
+  userMetadata: UserMetadata;
 }) {
   return (
     <userContext.Provider
       value={{
         user: user,
-        userMetadata: userMetadata,
+        userMetadata: userMetadata ? userMetadata : {},
       }}
     >
       {children}

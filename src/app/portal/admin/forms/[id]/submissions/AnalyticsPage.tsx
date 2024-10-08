@@ -6,23 +6,12 @@ import { ReferenceMap } from "./columns";
 export default function AnalyticsPage({
   submissions,
   refMap,
+  columns,
 }: {
   submissions: any[];
   refMap: ReferenceMap;
+  columns: string[];
 }) {
-  const columns = [
-    "status",
-    "team_id",
-    "level",
-    "role",
-    "reviewer_id",
-    "interviewer_id",
-    "year",
-    "faculty",
-    "specialization",
-    "graduationYear",
-    "lp-team",
-  ];
   const { data } = useChartData({
     columns: columns,
     submissions: submissions,

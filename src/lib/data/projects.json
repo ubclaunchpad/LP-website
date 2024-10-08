@@ -57,7 +57,7 @@
     },
     {
       "title": "Labby ",
-      "description": "Labby was a ticket management system platform developed in collaboration with   the non-profit organization BC Cancer, to meet their needs.",
+      "description": "Labby was a ticket management system platform developed in collaboration with the non-profit organization BC Cancer, to meet their needs.",
       "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/7a55ea12-ce50-49f0-bf4b-b0f71c823b23/labby.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T232438Z&X-Amz-Expires=3600&X-Amz-Signature=e887fdf4b9e30e0296842f2034456615a2d88439a384048425cbd4a254023a7f&X-Amz-SignedHeaders=host&x-id=GetObject",
       "alt": "Mock",
       "width": 372,

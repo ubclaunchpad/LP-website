@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   content: [
@@ -13,6 +14,7 @@ const config: Config = {
         lightPurple: "#3A3543",
         lightPurple2: "#CDC2E6",
         lightPurple3: "#6A3AD9",
+        lightPurple4: "#5e566d",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -92,6 +94,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [typography],
 };
 export default config;

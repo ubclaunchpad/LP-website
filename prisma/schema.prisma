@@ -367,15 +367,17 @@ model forms {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model members {
-  id             String         @id @db.Uuid
-  first_name     String
-  last_name      String
-  grad_year      Int            @db.SmallInt
-  faculty        String?
-  specialization String?
-  year_level     Int?           @db.SmallInt
-  users          users          @relation(fields: [id], references: [id])
-  team_members   team_members[]
+  id              String         @id @db.Uuid
+  first_name      String
+  last_name       String
+  grad_year       Int            @db.SmallInt
+  faculty         String?
+  specialization  String?
+  year_level      Int?           @db.SmallInt
+  discord_id      String?
+  github_username String?
+  users           users          @relation(fields: [id], references: [id])
+  team_members    team_members[]
 
   @@schema("public")
 }
@@ -436,10 +438,19 @@ model team_role {
 model teams {
   id           BigInt         @id @default(autoincrement())
   name         String         @unique
-  started_at   DateTime?      @default(now()) @db.Timestamptz(6)
-  ended_at     DateTime?      @db.Timestamptz(6)
+  start_year   Int?           @db.SmallInt
+  end_year     Int?           @db.SmallInt
+  meta         Json?
   applications applications[]
   team_members team_members[]
+
+  @@schema("public")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model onboarding {
+  id         BigInt   @id @default(autoincrement())
+  created_at DateTime @default(now()) @db.Timestamptz(6)
 
   @@schema("public")
 }
