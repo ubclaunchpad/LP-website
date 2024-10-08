@@ -37,7 +37,7 @@ const text = {
   joinUsButton: "Join Our Team",
   partnerWithUsTitle: "Partner with us 🤝",
   partnerWithUsSubtitle:
-    "Reach out to us through email or social media! You can also connect with us through launchpad@email.com",
+    "Reach out to us through email or social media! You can also connect with us through strategy@ubclaunchpad.com",
   partnerWithUsButton: "Contact us",
 };
 

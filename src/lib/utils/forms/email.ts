@@ -12,8 +12,8 @@ type MailConfig = {
   html?: string;
 };
 
-const DOMAIN = process.env.MAILGUN_DOMAIN || "mg.ubclaunchpad.com";
-const API_KEY = process.env.MAILGUN_API_KEY || "";
+const DOMAIN = process.env.NEXT_PUBLIC_MAILGUN_DOMAIN || "mg.ubclaunchpad.com";
+const API_KEY = process.env.NEXT_PUBLIC_MAILGUN_API_KEY || "";
 
 const mailgun = new Mailgun(formData);
 const mg = mailgun.client({

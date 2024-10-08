@@ -6,8 +6,8 @@ import formData from "form-data";
 import { Button } from "@/components/primitives/button";
 import "../app/globals.css";
 
-const DOMAIN = process.env.MAILGUN_DOMAIN || "mg.ubclaunchpad.com";
-const API_KEY = process.env.MAILGUN_API_KEY || "";
+const DOMAIN = process.env.NEXT_PUBLIC_MAILGUN_DOMAIN || "mg.ubclaunchpad.com";
+const API_KEY = process.env.NEXT_PUBLIC_MAILGUN_API_KEY || "";
 
 const mailgun = new Mailgun(formData);
 const mg = mailgun.client({
@@ -72,7 +72,7 @@ const ContactUs = () => {
             <Image
               src={"../images/assets/planet1.svg"}
               alt={"planet"}
-              layout={"fill"}
+              fill={true}
               style={{ objectFit: "contain" }}
             />
           </div>
@@ -80,14 +80,14 @@ const ContactUs = () => {
             <Image
               src={"../images/assets/planet2.svg"}
               alt={"planet"}
-              layout={"fill"}
+              fill={true}
               style={{ objectFit: "contain" }}
             />
           </div>
           <Image
             src={"../images/assets/starsBg.svg"}
             alt={"planet"}
-            layout={"fill"}
+            fill={true}
             style={{ objectFit: "contain" }}
           />
         </div>
