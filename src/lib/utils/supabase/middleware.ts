@@ -53,7 +53,9 @@ export async function updateSession(request: NextRequest) {
       // no user, potentially respond by redirecting the user to the login page
       const url = request.nextUrl.clone();
       url.pathname = "/auth";
-      return NextResponse.redirect(url);
+      const resp = NextResponse.redirect(url);
+      resp.cookies.set("x-path", request.nextUrl.pathname);
+      return resp;
     }
   } catch (error) {
     console.error("Error fetching user", error);

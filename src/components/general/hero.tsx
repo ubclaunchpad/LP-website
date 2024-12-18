@@ -26,7 +26,7 @@ export default function LandingPage() {
           <p className="text-lg w-full text-center md:text-left gradient-subtitle">
             {text.description}
           </p>
-          <Link href="/portal/forms/241">
+          <Link href="/portal/forms/8">
             <Button className="p-3 px-6" size={"xl"} icon>
               <span className="text-lg">{text.joinUs}</span>
             </Button>

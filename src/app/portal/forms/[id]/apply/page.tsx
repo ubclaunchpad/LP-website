@@ -36,7 +36,6 @@ export default async function page({
       />
     );
   } catch (e) {
-    toast.error("Error loading application");
     return redirect(`/portal/forms/${params.id}`);
   }
 }

@@ -14,16 +14,6 @@ import MemberRoles from "@/components/general/memberRoles";
 import ProjectSection from "@/components/general/projectSection";
 import PartnerSection from "@/components/general/partnerSection";
 
-// const refreshProjects = async () => {
-//     const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/refresh`
-// );
-//
-//     const data = await res.json();
-//     console.log(data.data);
-//     return data.data;
-// };
-
 const text = {
   aboutUsTitle: "What we do at",
   aboutUsSubtitle: "Launch Pad",
@@ -97,7 +87,7 @@ export default async function Home() {
           <p className="gradient-subtitle text-center lg:text-left py-10">
             {text.joinUsText}
           </p>
-          <Link href="/portal/forms/241">
+          <Link href="/portal/forms/8">
             <Button className="p-4" size={"xl"} icon>
               <span className="text-lg">{text.joinUsButton}</span>
             </Button>

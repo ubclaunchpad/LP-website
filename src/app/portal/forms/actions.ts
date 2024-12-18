@@ -88,38 +88,38 @@ export async function submitApplication({ formId }: { formId: bigint }) {
     return newObj;
   }
 
-  // const updateSubmission = db.submissions.update({
-  //   where: {
-  //     user_id_form_id: {
-  //       form_id: formId,
-  //       user_id: data.user.id,
-  //     },
-  //   },
-  //   data: {
-  //     status: "submitted",
-  //   },
-  // });
+  const updateSubmission = db.submissions.update({
+    where: {
+      user_id_form_id: {
+        form_id: formId,
+        user_id: data.user.id,
+      },
+    },
+    data: {
+      status: "submitted",
+    },
+  });
 
-  // const createApplication = db.applications.create({
-  //   data: {
-  //     id: res.id!,
-  //     status: null,
-  //     reviewer_id: null,
-  //   },
-  // });
+  const createApplication = db.applications.create({
+    data: {
+      id: res.id!,
+      status: null,
+      reviewer_id: null,
+    },
+  });
 
-  // await Promise.all([updateSubmission, createApplication]);
-  // const appEmail = res.details ? (res.details as Obj) : {};
-  // const template = await render(SubmissionTemplate({ formTitle: form.title }));
-  // await sendEmail({
-  //   from: "no-reply@ubclaunchpad.com",
-  //   fromName: "No-reply UBC Launch Pad",
-  //   to: data.user.email!.toString(),
-  //   subject: `${form.title} - Form Submitted`,
-  //   html: template,
-  //   cc: appEmail?.email as string,
-  // });
-  // return true;
+  await Promise.all([updateSubmission, createApplication]);
+  const appEmail = res.details ? (res.details as Obj) : {};
+  const template = await render(SubmissionTemplate({ formTitle: form.title }));
+  await sendEmail({
+    from: "no-reply@ubclaunchpad.com",
+    fromName: "No-reply UBC Launch Pad",
+    to: data.user.email!.toString(),
+    subject: `${form.title} - Form Submitted`,
+    html: template,
+    cc: appEmail?.email as string,
+  });
+  return true;
 }
 
 export async function updateApplication({
