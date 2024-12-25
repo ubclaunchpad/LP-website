@@ -391,7 +391,7 @@ export function SelectField({
   if (!canUpdate) {
     return (
       <span className={"flex flex-wrap gap-2"}>
-        {value
+        {value && value
           .toString()
           .split(",")
           .map((option: any) => (

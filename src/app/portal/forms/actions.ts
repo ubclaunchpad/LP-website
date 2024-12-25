@@ -8,8 +8,9 @@ import { JSONValidationToZod } from "@/lib/utils/forms/helpers";
 import { sendEmail } from "@/lib/utils/forms/email";
 import { SubmissionTemplate } from "@/components/forms/emailTemplates/submissionTemplate";
 
-export async function submitApplication({ formId }: { formId: bigint }) {
+export async function submitApplication({ formId, otherUser }: { formId: bigint, otherUser?: string }) {
   const supabase = createClient();
+  const userId = otherUser || (await supabase.auth.getUser()).data?.user?.id;
   const { data, error } = await supabase.auth.getUser();
   if (!data.user || error) {
     return null;
@@ -18,7 +19,7 @@ export async function submitApplication({ formId }: { formId: bigint }) {
     where: {
       user_id_form_id: {
         form_id: formId,
-        user_id: data.user.id,
+        user_id: userId,
       },
     },
   });
@@ -92,7 +93,7 @@ export async function submitApplication({ formId }: { formId: bigint }) {
     where: {
       user_id_form_id: {
         form_id: formId,
-        user_id: data.user.id,
+        user_id: userId,
       },
     },
     data: {
