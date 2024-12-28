@@ -52,7 +52,7 @@ export default async function page({
     default:
       subpage = renderConditionalPage(status, form, formStatus);
   }
-  return <GenericGreeter>{subpage}</GenericGreeter>;
+  return <GenericGreeter useBg>{subpage}</GenericGreeter>;
 }
 
 function renderTerminalPage(status: string, form: any) {

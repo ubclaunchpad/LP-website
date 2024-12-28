@@ -7,7 +7,7 @@ export default async function Layout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-screen min-h-screen max-w-screen  bg-background-900 relative flex flex-col overflow-x-hidden ">
+    <div className="w-dvw h-dvh  bg-background-900 relative flex flex-col overflow-x-hidden overscroll-none ">
       <PortalNavbar />
       <Suspense>{children}</Suspense>
     </div>

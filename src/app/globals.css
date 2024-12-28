@@ -52,6 +52,10 @@ html {
   }
 }
 
+* {
+  overscroll-behavior: none;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

@@ -15,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${nunitoSans.variable} ${epilogue.variable} font-sans`}>
+      <body
+        className={`${nunitoSans.variable} ${epilogue.variable} font-sans overscroll-none`}
+      >
         {children}
       </body>
     </html>

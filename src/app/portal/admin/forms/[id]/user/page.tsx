@@ -1,9 +1,7 @@
 "use client";
 import { Input } from "@/components/primitives/input";
 import { getForm, getSubmissions } from "../../../actions";
-import {
-  submitApplication,
-} from "@/app/portal/forms/actions";
+import { submitApplication } from "@/app/portal/forms/actions";
 import { Form } from "@/lib/types/application";
 import { useParams, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";

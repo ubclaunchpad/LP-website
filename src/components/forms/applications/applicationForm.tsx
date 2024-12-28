@@ -90,6 +90,7 @@ export default function ApplicationForm({
     }
     return (
       <FormTab
+        currentStep={tab}
         step={formQ[tab]}
         totalSteps={formQ.length}
         formData={formAnswers}
@@ -146,7 +147,7 @@ export default function ApplicationForm({
 
   return (
     <formContext.Provider value={{ formData: formAnswers, updateForm }}>
-      <main className="flex flex-col items-center justify-start  flex-1 gap-0 w-full">
+      <main className="flex flex-col items-center justify-start overflow-scroll  flex-1 gap-0 w-full">
         <form className="flex flex-col flex-1 max-w-4xl  rounded border-neutral-800 items-center justify-center flex-shrink-0  w-full h-full gap-4 relative lg:p-2">
           {getFormTabToRender(currentStep)}
           <FormTabBottomBar

@@ -47,7 +47,7 @@ export default async function Layout({
   return (
     <Suspense>
       <UserContextProvider user={data.user} userMetadata={userMetadata}>
-        <Toaster position={"bottom-right"} />
+        <Toaster position={"top-right"} />
         {children}
       </UserContextProvider>
     </Suspense>

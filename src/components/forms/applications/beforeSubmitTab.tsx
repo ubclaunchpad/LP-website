@@ -30,7 +30,7 @@ export default function BeforeSubmitTab({
     );
   } else {
     subpage = (
-      <div className="flex flex-col text-lg justify-center p-10 flex-1 gap-4 w-full">
+      <div className="flex flex-col text-lg justify-center p-10 flex-1  bg-background-900 gap-4 w-full">
         <h2 className="text-2xl font-heading font-bold">
           {"You're one step away from submitting your application!"}
         </h2>
@@ -50,7 +50,7 @@ export default function BeforeSubmitTab({
           <Button
             disabled={submitted === "submitting"}
             type="button"
-            className="bg-indigo-400 text-xl font-bold text-white p-3 w-fit px-6 hover:scale-105 transform transition-all duration-200 ease-in-out rounded"
+            className="bg-lp-400 text-xl font-bold text-white p-3 w-fit px-6 hover:scale-105 transform transition-all duration-200 ease-in-out rounded"
             onClick={() =>
               submitApplication({
                 formId: BigInt(formId),
@@ -83,5 +83,9 @@ export default function BeforeSubmitTab({
       </div>
     );
   }
-  return <GenericGreeter>{subpage}</GenericGreeter>;
+  return (
+    <GenericGreeter includeStyle={false} useBg={false}>
+      {subpage}
+    </GenericGreeter>
+  );
 }

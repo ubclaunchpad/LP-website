@@ -391,19 +391,20 @@ export function SelectField({
   if (!canUpdate) {
     return (
       <span className={"flex flex-wrap gap-2"}>
-        {value && value
-          .toString()
-          .split(",")
-          .map((option: any) => (
-            <span
-              key={option}
-              className={
-                "border rounded-full border-background-500  bg-background-600 shadow-md p-1 px-2"
-              }
-            >
-              {option}
-            </span>
-          ))}
+        {value &&
+          value
+            .toString()
+            .split(",")
+            .map((option: any) => (
+              <span
+                key={option}
+                className={
+                  "border rounded-full border-background-500  bg-background-600 shadow-md p-1 px-2"
+                }
+              >
+                {option}
+              </span>
+            ))}
       </span>
     );
   }

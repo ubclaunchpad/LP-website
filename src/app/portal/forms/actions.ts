@@ -8,7 +8,13 @@ import { JSONValidationToZod } from "@/lib/utils/forms/helpers";
 import { sendEmail } from "@/lib/utils/forms/email";
 import { SubmissionTemplate } from "@/components/forms/emailTemplates/submissionTemplate";
 
-export async function submitApplication({ formId, otherUser }: { formId: bigint, otherUser?: string }) {
+export async function submitApplication({
+  formId,
+  otherUser,
+}: {
+  formId: bigint;
+  otherUser?: string;
+}) {
   const supabase = createClient();
   const userId = otherUser || (await supabase.auth.getUser()).data?.user?.id;
   const { data, error } = await supabase.auth.getUser();
