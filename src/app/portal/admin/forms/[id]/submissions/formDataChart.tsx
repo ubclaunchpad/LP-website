@@ -32,7 +32,7 @@ export function FormChart({
   });
 
   return (
-    <Card className={"max-w-2xl flex-1 w-full "}>
+    <Card className={" flex-1 w-full "}>
       <CardHeader>
         <CardTitle>{chartInfo.title}</CardTitle>
       </CardHeader>

@@ -255,13 +255,13 @@ export function createColumns<TData>(
   return [
     {
       accessorKey: "popover",
-      header: "Actions",
+      header: "",
       enableColumnFilter: false,
       size: 300,
       maxSize: 300,
       cell: ({ row }) => {
         return (
-          <div className="flex gap-2 flex-1  justify-start items-center  rounded-lg  ">
+          <div className="flex gap-2 flex-1  justify-center h-full items-center  rounded-lg  ">
             <button
               onClick={() => {
                 setAndOpen({ applicant: row });
@@ -271,7 +271,6 @@ export function createColumns<TData>(
               }
             >
               <Maximize2Icon className=" h-3 w-3" />
-              View
             </button>
             <NotifyButtonForEmail row={row} />
           </div>

@@ -17,6 +17,10 @@ export default async function Layout({
       label: "Submissions",
       route: `/portal/admin/forms/${params.id}/submissions`,
     },
+    {
+      label: "Support",
+      route: `/portal/admin/forms/${params.id}/support`,
+    },
   ];
 
   return (

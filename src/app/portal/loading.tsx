@@ -14,7 +14,7 @@ export default function Loading({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen bg-background-900">
       <div
         className={`${sizeClasses[size]} border-t-transparent border-${color} rounded-full animate-spin`}
       ></div>

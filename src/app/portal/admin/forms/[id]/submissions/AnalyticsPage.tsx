@@ -21,7 +21,7 @@ export default function AnalyticsPage({
   });
 
   return (
-    <div className="overflow-hidden flex flex-col max-w-screen pb-32 ">
+    <div className="overflow-scroll flex flex-col max-w-screen pb-32 ">
       <section className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2  gap-4 ">
         {data.analyticsData.map((chartData, index) => (
           <FormChart

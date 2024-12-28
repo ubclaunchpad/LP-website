@@ -9,7 +9,7 @@ import {
   ReferenceMap,
 } from "@/app/portal/admin/forms/[id]/submissions/columns";
 import useApplicantPopover from "@/components/forms/applications/applicantPopover";
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 import { formContext } from "@/components/layouts/formTabView";
 
 export type DataTableProps<TData, TValue> = {
@@ -76,7 +76,7 @@ export default function DataTableWrapper<TData>({
   };
 
   return (
-    <div>
+    <Fragment>
       {applicantPopover}
       <DataTable
         columns={columns}
@@ -84,6 +84,6 @@ export default function DataTableWrapper<TData>({
         refMap={refMap}
         config={config}
       />
-    </div>
+    </Fragment>
   );
 }

@@ -31,7 +31,31 @@ import {
 } from "@/app/portal/admin/forms/[id]/submissions/columns";
 import MultiSelect from "@/components/general/multiSelect";
 
-const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
+// const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
+//   const isPinned = column.getIsPinned();
+//   const isLastLeftPinnedColumn =
+//     isPinned === "left" && column.getIsLastColumn("left");
+//   const isFirstRightPinnedColumn =
+//     isPinned === "right" && column.getIsFirstColumn("right");
+
+//   return {
+//     ...(isLastLeftPinnedColumn
+//       ? { borderRight: `1px solid var(--background-500)` }
+//       : {}),
+//     ...(isFirstRightPinnedColumn
+//       ? { borderLeft: `1px solid var(--background-500)` }
+//       : {}),
+//     left: isPinned === "left" ? `${column.getStart("left")}px` : undefined,
+//     right: isPinned === "right" ? `${column.getAfter("right")}px` : undefined,
+//     opacity: isPinned ? 0.95 : 1,
+//     position: isPinned ? "sticky" : "relative",
+//     width: column.getSize() ? column.getSize() : "500px",
+//     zIndex: isPinned ? 1 : 0,
+//     maxWidth: column.getSize() ? column.getSize() : "500px",
+//   };
+// };
+
+const getCommonPinningStyles = (column: Column<Person>): CSSProperties => {
   const isPinned = column.getIsPinned();
   const isLastLeftPinnedColumn =
     isPinned === "left" && column.getIsLastColumn("left");
@@ -39,19 +63,13 @@ const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
     isPinned === "right" && column.getIsFirstColumn("right");
 
   return {
-    ...(isLastLeftPinnedColumn
-      ? { borderRight: `1px solid var(--background-500)` }
-      : {}),
-    ...(isFirstRightPinnedColumn
-      ? { borderLeft: `1px solid var(--background-500)` }
-      : {}),
+    boxShadow: undefined,
     left: isPinned === "left" ? `${column.getStart("left")}px` : undefined,
     right: isPinned === "right" ? `${column.getAfter("right")}px` : undefined,
     opacity: isPinned ? 0.95 : 1,
     position: isPinned ? "sticky" : "relative",
-    width: column.getSize() ? column.getSize() : "500px",
-    // zIndex: isPinned ? 1 : 0,
-    maxWidth: column.getSize() ? column.getSize() : "500px",
+    width: column.getSize(),
+    zIndex: isPinned ? 1 : 0,
   };
 };
 
@@ -81,6 +99,9 @@ export function DataTable<TData, TValue>({
     debugColumns: false,
     enableColumnFilters: true,
     state: {
+      // columnPinning: {
+      //   left: ["popover"],
+      // },
       columnFilters,
       columnVisibility,
       sorting,
@@ -89,12 +110,41 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className={"overflow-hidden flex flex-col px-10  py-1"}>
+    <div className={"flex flex-col px-10 overflow-hidden  pb-4"}>
       <div className="flex items-center w-full gap-2 py-4  flex-wrap">
         <div className="flex items-center flex-1 p-2 gap-2">
           <span className="text-lg font-bold">
             {table.getFilteredRowModel().rows.length} {"Results"}
           </span>
+        </div>
+
+        <div
+          className={
+            "flex relative items-center bg-background-600 rounded-lg border-background-500 border-none h-10 p-1  gap-2"
+          }
+        >
+          <Button
+            onClick={() => {
+              setTabView("table");
+            }}
+            size={"fit"}
+            className={`bg-background-600 w-24 h-full min-h-none gap-2 border-none ${tabView === "table" ? "bg-background-500" : ""}`}
+          >
+            <TableIcon className={"h-4 w-4"} />
+            Table
+          </Button>
+          {config.view?.showChart && (
+            <Button
+              onClick={() => {
+                setTabView("chart");
+              }}
+              size={"fit"}
+              className={`bg-background-600  w-24 h-full   border-none border-background-500 gap-2 ${tabView === "chart" ? "bg-background-500" : ""}`}
+            >
+              <ChartArea className={"h-4 w-4"} />
+              Chart
+            </Button>
+          )}
         </div>
         {config.view?.showFilter && (
           <TableFilter
@@ -106,33 +156,6 @@ export function DataTable<TData, TValue>({
             setColumnFilters={setColumnFilters}
           />
         )}
-
-        <div
-          className={
-            "flex relative items-center bg-background-600 rounded-lg border-background-500 border gap-2"
-          }
-        >
-          <Button
-            onClick={() => {
-              setTabView("table");
-            }}
-            className={`bg-background-600 w-24  gap-2 border-background-500 ${tabView === "table" ? "bg-lp-400" : ""}`}
-          >
-            <TableIcon className={"h-4 w-4"} />
-            Table
-          </Button>
-          {config.view?.showChart && (
-            <Button
-              onClick={() => {
-                setTabView("chart");
-              }}
-              className={`bg-background-600  w-24 border-background-500 gap-2 ${tabView === "chart" ? "bg-lp-400" : ""}`}
-            >
-              <ChartArea className={"h-4 w-4"} />
-              Chart
-            </Button>
-          )}
-        </div>
         <DownloadCSV data={data} fileName="data" />
       </div>
       {table.getFilteredRowModel().rows.length > 0 && tabView === "chart" && (
@@ -144,19 +167,21 @@ export function DataTable<TData, TValue>({
             .rows.map((row) => row.original)}
         />
       )}
-
       {tabView === "table" && (
-        <div className="rounded-md border shadow-sm  border-background-500 overflow-hidden  ">
-          <Table>
-            <thead>
+        <div className="rounded-md border shadow-sm overflow-auto min-h-0 border-background-500">
+          <Table className="w-full h-[1px] relative ">
+            <thead className={" left-0 top-0 z-20 sticky"}>
               {table.getHeaderGroups().map((headerGroup) => (
-                <tr key={headerGroup.id} className={"border-background-500"}>
+                <tr
+                  key={headerGroup.id}
+                  className={"border-background-500 w-full flex-shrink-0"}
+                >
                   {headerGroup.headers.map((header) => {
                     return (
                       <td
                         key={header.id}
                         className={
-                          " flex bg-background-600 text-xs flex-col   border-background-500  font-semibold  justify-center  overflow-hidden line-clamp-2  text-ellipsis"
+                          " flex bg-background-600 text-xs flex-col   w-fit flex-shrink-0  border-background-500  font-semibold  justify-center  overflow-hidden line-clamp-2  text-ellipsis"
                         }
                         style={{ ...getCommonPinningStyles(header.column) }}
                       >
@@ -172,12 +197,12 @@ export function DataTable<TData, TValue>({
                 </tr>
               ))}
             </thead>
-            <tbody className={"relative"}>
+            <tbody className={"relative overflow-auto "}>
               {table.getRowModel().rows?.length ? (
                 table.getRowModel().rows.map((row) => (
                   <tr
                     className={
-                      "border-background-500 p-0   bg-background-600 odd:bg-background-700"
+                      "border-background-500 p-0 flex-shrink-0 w-full  bg-background-600 odd:bg-background-700"
                     }
                     key={row.id}
                     data-state={row.getIsSelected() && "selected"}
@@ -185,7 +210,7 @@ export function DataTable<TData, TValue>({
                     {row.getVisibleCells().map((cell) => (
                       <td
                         key={cell.id}
-                        className={"  h-full text-xs    overflow-hidden "}
+                        className={"  h-full text-xs  flex-shrink-0   w-fit  "}
                         style={{ ...getCommonPinningStyles(cell.column) }}
                       >
                         {flexRender(
@@ -232,7 +257,8 @@ function TableFilter({
       <Button
         onClick={() => setShowFilters(true)}
         variant="outline"
-        className="bg-background-600 border border-background-500 gap-2"
+        size={"fit"}
+        className="bg-background-600 w-24 h-10 min-h-none gap-2 border-none"
       >
         <ListFilterIcon size={16} />
         {columnFilters.length === 0
@@ -401,5 +427,13 @@ const DownloadCSV = ({ data, fileName }) => {
     document.body.removeChild(link);
   };
 
-  return <Button onClick={downloadCSV}>Download CSV</Button>;
+  return (
+    <Button
+      variant={"dark"}
+      className="bg-background-600"
+      onClick={downloadCSV}
+    >
+      Download CSV
+    </Button>
+  );
 };

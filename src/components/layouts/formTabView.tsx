@@ -61,7 +61,11 @@ export default function FormTabView({
         mergeNewData,
       }}
     >
-      <div className={"flex flex-col gap-4 flex-1 w-full min-h-screen  "}>
+      <div
+        className={
+          "flex flex-col gap-4 flex-1 w-full max-h-dvh h-dvh overflow-hidden "
+        }
+      >
         <div className="flex justify-between items-center gap-2 border-background-500 border-b">
           <div className="flex flex-row p-2 items-center px-4 gap-2">
             <Link
@@ -84,7 +88,7 @@ export default function FormTabView({
                   shallow={true}
                   href={tab.route}
                   key={index}
-                  className={` border-t border-x p-4 py-2 border-background-500 rounded-t-xl ${
+                  className={` border-t border-x p-4 py-2 border-background-500 rounded-t-md ${
                     isActive(tab.route, pathname)
                       ? "bg-lp-400"
                       : "bg-background-500 hover:bg-background-400"
@@ -96,7 +100,7 @@ export default function FormTabView({
             })}
           </div>
         </div>
-        <section className={"flex flex-col gap-4 flex-1  py-1"}>
+        <section className="flex flex-col gap-4 flex-1 py-1 min-h-0 overflow-auto">
           {children}
         </section>
       </div>
