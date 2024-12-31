@@ -112,6 +112,7 @@ export default function SubmissionAsUser() {
           </div>
           <div className="flex border border-background-600 flex-col p-2 px-4 w-full">
             <ApplicationForm
+              userOverride={submissions.find((s) => s.email === search).user_id}
               application={app as unknown as Application}
               applicationForm={form as unknown as Form}
             />

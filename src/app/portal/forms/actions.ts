@@ -132,20 +132,24 @@ export async function submitApplication({
 export async function updateApplication({
   application,
   formId,
+  otherUser,
 }: {
   application: Obj;
   formId: bigint;
+  otherUser?: string;
 }) {
   const supabase = createClient();
+  const userId = otherUser || (await supabase.auth.getUser()).data?.user?.id;
   const { data, error } = await supabase.auth.getUser();
   if (!data.user || error) {
     return null;
   }
+
   const res = await db.submissions.findUnique({
     where: {
       user_id_form_id: {
         form_id: formId,
-        user_id: data.user.id,
+        user_id: userId,
       },
     },
   });
@@ -155,7 +159,7 @@ export async function updateApplication({
     where: {
       user_id_form_id: {
         form_id: formId,
-        user_id: data.user.id,
+        user_id: userId,
       },
     },
     data: {

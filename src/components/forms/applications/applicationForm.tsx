@@ -25,9 +25,11 @@ type FormContext = {
 const formContext = createContext<FormContext>({} as FormContext);
 
 export default function ApplicationForm({
+  userOverride,
   application,
   applicationForm,
 }: {
+  userOverride?: string;
   application: Application;
   applicationForm: Form;
 }) {
@@ -85,6 +87,7 @@ export default function ApplicationForm({
         <BeforeSubmitTab
           goToPreviousTab={goToPreviousTab}
           formId={applicationForm.id}
+          otherUser={userOverride}
         />
       );
     }
@@ -113,11 +116,9 @@ export default function ApplicationForm({
         return;
       }
       const formIdAsBigInt = BigInt(applicationForm.id);
-      saveApplication(formAnswers, formIdAsBigInt).then(() => {
+      saveApplication(formAnswers, formIdAsBigInt, userOverride).then(() => {
         setCurrentStep((prev) => prev + 1);
-        toast.success(
-          "Application progress until now has been saved; you can continue now or later",
-        );
+        toast.success("All changes saved.");
       });
     } catch (e) {
       toast.error(

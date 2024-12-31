@@ -6,9 +6,11 @@ import { Button } from "@/components/primitives/button";
 export default function BeforeSubmitTab({
   goToPreviousTab,
   formId,
+  otherUser,
 }: {
   goToPreviousTab: () => void;
   formId: number | bigint;
+  otherUser?: string;
 }) {
   const [submitted, setSubmitted] = useState<
     "not submitted" | "submitting" | "submitted"
@@ -54,6 +56,7 @@ export default function BeforeSubmitTab({
             onClick={() =>
               submitApplication({
                 formId: BigInt(formId),
+                otherUser: otherUser,
               }).then(
                 () => {
                   toast.success("Your application has been submitted!");

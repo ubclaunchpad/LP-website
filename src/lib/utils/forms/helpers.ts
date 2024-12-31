@@ -13,6 +13,7 @@ import { Form } from "@/lib/types/application";
 export async function saveApplication(
   formAnswers: FormDetails,
   formId: bigint,
+  otherUser?: string,
 ) {
   const fields: Obj = {};
   Object.keys(formAnswers).forEach((key) => {
@@ -28,7 +29,7 @@ export async function saveApplication(
 
   if (Object.keys(fields).length !== 0) {
     const formIdNumber = BigInt(formId);
-    updateApplication({ application: fields, formId: formIdNumber })
+    updateApplication({ application: fields, formId: formIdNumber, otherUser })
       .then((res) => {
         // console.log(res);
       })
