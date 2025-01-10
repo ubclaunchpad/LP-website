@@ -3,7 +3,9 @@
 import { GenericResult } from "@/components/forms/resultPages";
 import { Form } from "@/lib/types/application";
 import { Button } from "@/components/primitives/button";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { lpContext } from "@/lib/context/LPContext";
+import Link from "next/link";
 
 export default function OfferPage({ form, app }: { form: Form; app: any }) {
   const [reqStatus, setReqStatus] = useState<"idle" | "loading" | "error">(
@@ -15,7 +17,12 @@ export default function OfferPage({ form, app }: { form: Form; app: any }) {
   const applicationConfig = form.config.application;
   const page = applicationConfig.pages["offerPage"];
   const text = page.content;
-  const cleanedText = replaceTemplateValues(text, app.details);
+  const { details, ...rest } = app;
+  const lpData = useContext(lpContext);
+  const cleanedText = replaceTemplateValues(text, {
+    general: lpData,
+    app: { ...rest, ...details },
+  });
 
   async function handleDecision(decision: "accepted" | "declined") {
     setReqStatus("loading");
@@ -47,7 +54,7 @@ export default function OfferPage({ form, app }: { form: Form; app: any }) {
             return (
               <div className="text-red-200  white-glow  rounded-full px-4 p-1 text-lg">
                 <span className="text-white animate-pulse">
-                  You have declined the offer :(
+                  {"You have declined the offer :("}
                 </span>
               </div>
             );
@@ -59,10 +66,18 @@ export default function OfferPage({ form, app }: { form: Form; app: any }) {
                 asMarkdown
               >
                 {status === "accepted" ? (
-                  <div className="text-red-200  bg-lp-500  rounded px-4 p-1 text-lg">
+                  <div className=" flex flex-col gap-4 items-center rounded px-4 p-1 text-lg bg-transparent">
                     <span className="text-white  ">
-                      You have accepted the offer! 🎉
+                      You have accepted the offer! 🎉{" "}
                     </span>
+                    <Link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-lp-500 p-2 px-4 rounded-full"
+                      href={"/portal/onboarding"}
+                    >
+                      Click here to continue to the onboarding process
+                    </Link>
                   </div>
                 ) : (
                   <div className="flex flex-col gap-2">
@@ -98,7 +113,10 @@ export default function OfferPage({ form, app }: { form: Form; app: any }) {
   );
 }
 
-function replaceTemplateValues(text: string, values: any) {
+function replaceTemplateValues(
+  text: string,
+  { general, app }: { general: any; app: any },
+) {
   const regex = /{{(.*?)}}/g;
   const matches = text.match(regex);
   if (!matches) {
@@ -107,10 +125,31 @@ function replaceTemplateValues(text: string, values: any) {
   let newText = text;
   matches.forEach((match) => {
     const key = match.replace("{{", "").replace("}}", "");
-    if (!values[key]) {
-      newText = newText.replace(match, "");
+    const multiKey = key.split(":");
+
+    if (multiKey.length > 1) {
+      const [firstKey, secondKey] = multiKey;
+      if (Object.keys(app).includes(secondKey)) {
+        if (app[secondKey] === undefined) {
+          newText = "";
+        } else {
+          if (multiKey.length > 2) {
+            const thirdKey = multiKey[2];
+            newText = newText.replace(
+              match,
+              general[firstKey][app[secondKey]][thirdKey],
+            );
+          } else {
+            newText = newText.replace(match, general[firstKey][app[secondKey]]);
+          }
+        }
+      }
     } else {
-      newText = newText.replace(match, values[key]);
+      if (Object.keys(app).includes(key)) {
+        newText = newText.replace(match, app[key]);
+      } else if (Object.keys(general).includes(key)) {
+        newText = "";
+      }
     }
   });
   return newText;

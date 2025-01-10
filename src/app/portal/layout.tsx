@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/utils/supabase/server";
 import { db } from "@/db";
 import { Toaster } from "@/components/primitives/sonner";
+import { LPContextProvider } from "@/lib/context/LPContext";
 
 async function getUserMetadata(id: string) {
   const rolesP = db.roles.findUnique({
@@ -30,6 +31,16 @@ async function getUserMetadata(id: string) {
   };
 }
 
+async function getLPData() {
+  const teams = await db.teams.findMany({});
+  return {
+    teams: teams.reduce((acc, team) => {
+      acc[team.id] = team;
+      return acc;
+    }, {}),
+  };
+}
+
 export default async function Layout({
   children,
 }: {
@@ -43,13 +54,16 @@ export default async function Layout({
   }
 
   const userMetadata = await getUserMetadata(data.user.id);
+  const lpData = await getLPData();
 
   return (
     <Suspense>
-      <UserContextProvider user={data.user} userMetadata={userMetadata}>
-        <Toaster position={"top-right"} />
-        {children}
-      </UserContextProvider>
+      <LPContextProvider data={lpData}>
+        <UserContextProvider user={data.user} userMetadata={userMetadata}>
+          <Toaster position={"top-right"} />
+          {children}
+        </UserContextProvider>
+      </LPContextProvider>
     </Suspense>
   );
 }
