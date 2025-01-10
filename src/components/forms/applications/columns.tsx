@@ -113,7 +113,11 @@ export function createColumns<TData>(
           </Button>
         );
       },
-      enableColumnFilter: field.type !== "textarea" && field.type !== "url",
+      enableColumnFilter:
+        field.type !== "textarea" &&
+        field.type !== "url" &&
+        field.type !== "text" &&
+        field.type !== "date",
       filterFn: (
         row: Row<any>,
         columnId: string,

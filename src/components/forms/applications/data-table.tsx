@@ -20,7 +20,7 @@ import { Button } from "@/components/primitives/button";
 import { Input } from "@/components/primitives/input";
 
 import { Table, TableCell, TableRow } from "@/components/primitives/table";
-import React, { CSSProperties, useState } from "react";
+import React, { CSSProperties, useMemo, useState } from "react";
 import { ChartArea, ListFilterIcon, TableIcon } from "lucide-react";
 import { DataTableProps } from "@/components/forms/applications/dataTableWrapper";
 import AnalyticsPage from "@/components/forms/applications/AnalyticsPage";
@@ -228,6 +228,30 @@ function TableFilter({
 }) {
   const [showFilters, setShowFilters] = useState(false);
 
+  const groupColumnsByType = useMemo(() => {
+    return columns.reduce(
+      (acc, column) => {
+        if (
+          !column.columnDef ||
+          !column.columnDef.meta ||
+          !column.columnDef.meta.field ||
+          !column.columnDef.meta.field.type
+        ) {
+          return acc;
+        }
+        const type = column.columnDef.meta.field.type;
+        if (!acc[type]) {
+          acc[type] = [];
+        }
+
+        acc[type].push(column);
+
+        return acc;
+      },
+      {} as Record<string, Column<RowData, unknown>[]>,
+    );
+  }, [columns]);
+
   if (!showFilters) {
     return (
       <Button
@@ -258,55 +282,56 @@ function TableFilter({
       </Button>
       <div
         className={
-          "fixed h-screen flex justify-center items-center  w-screen bg-black bg-opacity-30 z-20 top-0 left-0"
+          "fixed h-dvh flex justify-center items-center  w-dvw bg-black bg-opacity-30 z-40 top-0 left-0"
         }
       >
-        <button
-          className={
-            "fixed h-screen   w-screen bg-black bg-opacity-30 z-20 top-0 left-0"
-          }
-          onClick={() => setShowFilters(false)}
-        ></button>
         <div
           className=" min-h-screen gap-3  items-center justify-center static overflow-y-scroll  w-screen flex flex-col pointer-events-none  transform  overflow-hidden p-2
             left-0 top-0
             "
         >
-          <div className="flex flex-col max-h-screen overflow-y-scroll items-center p-4 w-full justify-between gap-2  pb-2 px-4 max-w-2xl rounded border border-background-600 bg-background-700 pointer-events-auto  shadow-lg">
+          <div className="flex z-50  flex-col max-h-screen overflow-y-scroll items-center p-4 w-full justify-between gap-2  pb-2 px-4 max-w-2xl rounded border border-background-600 bg-background-700 pointer-events-auto  shadow-lg">
             <h3 className="text-lg w-full text-left pb-4 font-semibold">
               Filters
             </h3>
-            {columns
-              .filter((c) => c.getCanFilter())
-              .map((column: any, index: number) => (
-                <div
-                  key={index}
-                  className="flex items-center w-full  flex-shrink-0 gap-2 rounded pl-2 border border-background-500    bg-background-600"
-                >
-                  <span className="text-white text-sm w-44 truncate">
-                    {column.columnDef.header()}
-                  </span>
-                  <ColumnFilterInput
-                    id={column.columnDef.meta.id}
-                    field={column.columnDef.meta.field}
-                    refItem={
-                      (typeof refMap[column.columnDef.meta.id] === "string"
-                        ? refMap[refMap[column.columnDef.meta.id] as string]
-                        : refMap[column.columnDef.meta.id]) as
-                        | ReferenceItem
-                        | undefined
-                    }
-                    column={column}
-                    columnFilter={columnFilters.find((c) => c.id === column.id)}
-                    updateColumnFilter={(value) =>
-                      setColumnFilters([
-                        ...columnFilters.filter((c) => c.id !== column.id),
-                        ...value,
-                      ])
-                    }
-                  />
-                </div>
-              ))}
+            {Object.values(groupColumnsByType).map((columns, groupIndex) => (
+              <div className="py-2 w-full" key={groupIndex}>
+                {columns
+                  .filter((c) => c.getCanFilter())
+                  .map((column, columnIndex) => (
+                    <div
+                      key={column.id}
+                      className="flex items-center w-full flex-shrink-0 gap-2 rounded pl-2 border border-background-500 bg-background-600"
+                    >
+                      <span className="text-white text-sm w-44 truncate">
+                        {column.columnDef.header()}
+                      </span>
+                      <ColumnFilterInput
+                        id={column.columnDef.meta.id}
+                        field={column.columnDef.meta.field}
+                        refItem={
+                          (typeof refMap[column.columnDef.meta.id] === "string"
+                            ? refMap[refMap[column.columnDef.meta.id] as string]
+                            : refMap[column.columnDef.meta.id]) as
+                            | ReferenceItem
+                            | undefined
+                        }
+                        column={column}
+                        columnFilter={columnFilters.find(
+                          (c) => c.id === column.id,
+                        )}
+                        updateColumnFilter={(value) =>
+                          setColumnFilters([
+                            ...columnFilters.filter((c) => c.id !== column.id),
+                            ...value,
+                          ])
+                        }
+                      />
+                    </div>
+                  ))}
+              </div>
+            ))}
+
             <div className="flex items-end justify-between w-full flex-1 gap-2 pt-4">
               <Button
                 disabled={columnFilters.length === 0}
