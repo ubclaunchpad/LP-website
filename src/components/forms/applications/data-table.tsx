@@ -31,30 +31,6 @@ import {
 } from "@/components/forms/applications/columns";
 import MultiSelect from "@/components/general/multiSelect";
 
-// const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
-//   const isPinned = column.getIsPinned();
-//   const isLastLeftPinnedColumn =
-//     isPinned === "left" && column.getIsLastColumn("left");
-//   const isFirstRightPinnedColumn =
-//     isPinned === "right" && column.getIsFirstColumn("right");
-
-//   return {
-//     ...(isLastLeftPinnedColumn
-//       ? { borderRight: `1px solid var(--background-500)` }
-//       : {}),
-//     ...(isFirstRightPinnedColumn
-//       ? { borderLeft: `1px solid var(--background-500)` }
-//       : {}),
-//     left: isPinned === "left" ? `${column.getStart("left")}px` : undefined,
-//     right: isPinned === "right" ? `${column.getAfter("right")}px` : undefined,
-//     opacity: isPinned ? 0.95 : 1,
-//     position: isPinned ? "sticky" : "relative",
-//     width: column.getSize() ? column.getSize() : "500px",
-//     zIndex: isPinned ? 1 : 0,
-//     maxWidth: column.getSize() ? column.getSize() : "500px",
-//   };
-// };
-
 const getCommonPinningStyles = (column: Column<Person>): CSSProperties => {
   const isPinned = column.getIsPinned();
   const isLastLeftPinnedColumn =
@@ -67,9 +43,9 @@ const getCommonPinningStyles = (column: Column<Person>): CSSProperties => {
     left: isPinned === "left" ? `${column.getStart("left")}px` : undefined,
     right: isPinned === "right" ? `${column.getAfter("right")}px` : undefined,
     opacity: isPinned ? 0.95 : 1,
-    position: isPinned ? "sticky" : "relative",
+    // position: isPinned ? "sticky" : "relative",
     width: column.getSize(),
-    zIndex: isPinned ? 1 : 0,
+    // zIndex: isPinned ? 1 : 0,
   };
 };
 
@@ -168,9 +144,9 @@ export function DataTable<TData, TValue>({
         />
       )}
       {tabView === "table" && (
-        <div className="rounded-md border shadow-sm overflow-auto min-h-0 border-background-500">
-          <Table className="w-full h-[1px] relative ">
-            <thead className={" left-0 top-0 z-20 sticky"}>
+        <div className="rounded-md border shadow-sm overflow-auto min-h-0 border-background-500 ">
+          <Table className="w-full h-[1px]   ">
+            <thead className={" left-0 top-0  "}>
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr
                   key={headerGroup.id}
@@ -197,7 +173,7 @@ export function DataTable<TData, TValue>({
                 </tr>
               ))}
             </thead>
-            <tbody className={"relative overflow-auto "}>
+            <tbody className={" overflow-auto "}>
               {table.getRowModel().rows?.length ? (
                 table.getRowModel().rows.map((row) => (
                   <tr
@@ -292,7 +268,7 @@ function TableFilter({
           onClick={() => setShowFilters(false)}
         ></button>
         <div
-          className=" min-h-screen gap-3  items-center justify-center static overflow-y-scroll  w-screen flex flex-col pointer-events-none  transform z-40 overflow-hidden p-2
+          className=" min-h-screen gap-3  items-center justify-center static overflow-y-scroll  w-screen flex flex-col pointer-events-none  transform  overflow-hidden p-2
             left-0 top-0
             "
         >
