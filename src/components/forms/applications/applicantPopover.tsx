@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { FormFields } from "@/app/portal/admin/forms/[id]/submissions/columns";
+import { FormFields } from "@/components/forms/applications/columns";
 import { ColumnDef, flexRender, Row } from "@tanstack/react-table";
 import { TableCell } from "@/components/primitives/table";
 

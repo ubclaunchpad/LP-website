@@ -226,3 +226,25 @@ tbody {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* For Chrome, Safari, and newer versions of Edge */
+.scrollbar {
+  scrollbar-width: thin; /* For Firefox */
+  @apply overflow-x-auto;
+}
+
+.scrollbar::-webkit-scrollbar {
+  @apply h-1.5; /* height for horizontal scrollbar */
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  @apply bg-background-800 rounded-full;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-background-600 rounded-full;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-background-500;
+}

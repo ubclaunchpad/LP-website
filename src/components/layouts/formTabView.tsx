@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { FormFields } from "@/app/portal/admin/forms/[id]/submissions/columns";
+import { FormFields } from "@/components/forms/applications/columns";
 import { usePathname } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { createClient } from "@/lib/utils/supabase/client";
@@ -69,7 +69,6 @@ export default function FormTabView({
         <div className="flex justify-between items-center gap-2 border-background-500 border-b">
           <div className="flex flex-row p-2 items-center px-4 gap-2">
             <Link
-              shallow={true}
               href={"/portal/admin/forms"}
               className={
                 "  p-0.5 hover:border-lp-500 hover:text-lp-500 border  rounded-full border-transparent font-heading"
@@ -85,7 +84,6 @@ export default function FormTabView({
             {tabs.map((tab, index) => {
               return (
                 <Link
-                  shallow={true}
                   href={tab.route}
                   key={index}
                   className={` border-t border-x p-4 py-2 border-background-500 rounded-t-md ${

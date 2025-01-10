@@ -22,13 +22,13 @@ import { Input } from "@/components/primitives/input";
 import { Table, TableCell, TableRow } from "@/components/primitives/table";
 import React, { CSSProperties, useState } from "react";
 import { ChartArea, ListFilterIcon, TableIcon } from "lucide-react";
-import { DataTableProps } from "@/app/portal/admin/forms/[id]/submissions/dataTableWrapper";
-import AnalyticsPage from "@/app/portal/admin/forms/[id]/submissions/AnalyticsPage";
+import { DataTableProps } from "@/components/forms/applications/dataTableWrapper";
+import AnalyticsPage from "@/components/forms/applications/AnalyticsPage";
 import {
   FormFields,
   ReferenceItem,
   ReferenceMap,
-} from "@/app/portal/admin/forms/[id]/submissions/columns";
+} from "@/components/forms/applications/columns";
 import MultiSelect from "@/components/general/multiSelect";
 
 // const getCommonPinningStyles = (column: Column<any>): CSSProperties => {

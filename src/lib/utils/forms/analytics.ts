@@ -1,7 +1,7 @@
 import {
   ReferenceMap,
   ReferenceItem,
-} from "@/app/portal/admin/forms/[id]/submissions/columns";
+} from "@/components/forms/applications/columns";
 import { ChartConfig } from "@/components/primitives/chart";
 
 type temp = {

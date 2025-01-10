@@ -1,5 +1,5 @@
 "use client";
-import DataTableWrapper from "@/app/portal/admin/forms/[id]/submissions/dataTableWrapper";
+import DataTableWrapper from "@/components/forms/applications/dataTableWrapper";
 import { useContext } from "react";
 import { formContext } from "@/components/layouts/formTabView";
 

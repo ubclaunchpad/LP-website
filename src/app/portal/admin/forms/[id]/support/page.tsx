@@ -1,40 +1,22 @@
 "use client";
 import { Input } from "@/components/primitives/input";
-import { getForm, getSubmissions } from "../../../actions";
 import { submitApplication } from "@/app/portal/forms/actions";
 import { Form } from "@/lib/types/application";
-import { useParams, usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Application } from "@/lib/types/questions";
 import ApplicationForm from "@/components/forms/applications/applicationForm";
 import { Button } from "@/components/primitives/button";
 import { XIcon } from "lucide-react";
+import { formContext } from "@/components/layouts/formTabView";
 
 export default function SubmissionAsUser() {
-  const [form, setForm] = useState<Form | null>(null);
+  const { rawForm: form, submissions } = useContext(formContext);
   const [app, setApp] = useState<Application | null>(null);
-  const [submissions, setSubmissions] = useState<any[]>([]);
-  const params = useParams<{ id: string }>();
   const [search, setSearch] = useState<string>("");
-
-  useEffect(() => {
-    init();
-  }, []);
-
-  if (!params || !params.id) {
-    return null;
-  }
-
-  async function init() {
-    const form = await getForm(Number(params.id));
-    const submissions = await getSubmissions(Number(params.id), false);
-    setForm(form);
-    setSubmissions(submissions);
-  }
 
   async function submitforUser() {
     await submitApplication({
-      formId: BigInt(params.id),
+      formId: BigInt(form.id),
       otherUser: submissions.find((s) => s.email === search).user_id,
     });
   }

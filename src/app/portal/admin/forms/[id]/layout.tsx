@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import FormTabView, { Tab } from "@/components/layouts/formTabView";
 import { getAdminMembers, getAllFormDetails } from "@/app/portal/admin/actions";
 
@@ -21,11 +21,15 @@ export default async function Layout({
       label: "Support",
       route: `/portal/admin/forms/${params.id}/support`,
     },
+    {
+      label: "Settings",
+      route: `/portal/admin/forms/${params.id}/settings`,
+    },
   ];
 
   return (
     <FormTabView tabs={tabs} form={formDetails} members={members}>
-      {children}
+      <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
     </FormTabView>
   );
 }

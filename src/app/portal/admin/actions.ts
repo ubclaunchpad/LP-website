@@ -1,10 +1,11 @@
 "use server";
 import { db } from "@/db";
 import { FormStep } from "@/lib/types/questions";
-import { FormFields } from "@/app/portal/admin/forms/[id]/submissions/columns";
+import { FormFields } from "@/components/forms/applications/columns";
 import { sendEmail } from "@/lib/utils/forms/email";
 import { MarkdownTemplate } from "@/components/forms/emailTemplates/markdownTemplate";
 import { render } from "@react-email/components";
+import { object } from "zod";
 
 export async function getForms() {
   return db.forms.findMany();
@@ -99,6 +100,7 @@ export async function getAllFormDetails(
   formId: bigint,
 ): Promise<{ rawForm: any; formFields: FormFields; submissions: any[] }> {
   try {
+    console.log("retrieving form details");
     const form = await db.forms.findFirst({
       where: { id: formId },
     });

@@ -7,7 +7,7 @@ import {
   FormFields,
   populateReferenceMap,
   ReferenceMap,
-} from "@/app/portal/admin/forms/[id]/submissions/columns";
+} from "@/components/forms/applications/columns";
 import useApplicantPopover from "@/components/forms/applications/applicantPopover";
 import { Fragment, useContext } from "react";
 import { formContext } from "@/components/layouts/formTabView";

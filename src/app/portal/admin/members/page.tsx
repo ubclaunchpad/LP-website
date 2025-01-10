@@ -2,8 +2,8 @@
 import { objectToQueryString } from "@/lib/utils/helpers";
 import useSWRF from "@/lib/context/useSWRF";
 import { Button } from "@/components/primitives/button";
-import { DataTable } from "../forms/[id]/submissions/data-table";
-import { FormFields } from "../forms/[id]/submissions/columns";
+import { DataTable } from "../../../../components/forms/applications/data-table";
+import { FormFields } from "../../../../components/forms/applications/columns";
 import { ColumnDef } from "@tanstack/react-table";
 import Loading from "../../loading";
 

@@ -71,6 +71,7 @@ export type Application = {
     reviewer: string | null;
     level: "beginner" | "junior" | "intermediate" | "senior" | "not determined";
   };
+  id: string;
 };
 
 export type FormItem = {

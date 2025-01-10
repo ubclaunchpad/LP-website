@@ -63,7 +63,7 @@ export default function MultiSelect({
                 {option.label}
               </span>
             ))}
-          <span className={"text-background-600 text-sm"}>
+          <span className={"text-background-200 text-sm"}>
             {selectedOptions.length === 0 && emptyText}
           </span>
         </span>
