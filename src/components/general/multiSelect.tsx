@@ -44,30 +44,31 @@ export default function MultiSelect({
 
   return (
     <div className="relative flex flex-col w-full" ref={ref}>
-      <button
-        className={cn(
-          "flex border border-background-600 bg-background-700 z-10  items-center min-h-11 rounded p-2 gap-2",
-          className,
-        )}
-        onClick={() => setIsOpen(!isOpen)}
-        type="button"
-      >
-        <span className="text-white justify-center flex z-1 items-center gap-2 ">
-          {/*{JSON.stringify(selectedOptions)}*/}
-          {selectedOptions !== [null] &&
-            selectedOptions.map((option) => (
-              <span
-                key={option.value}
-                className="p-0.5 px-2 z-1! rounded bg-lp-500"
-              >
-                {option.label}
-              </span>
-            ))}
-          <span className={"text-background-200 text-sm"}>
-            {selectedOptions.length === 0 && emptyText}
+      <div className={cn("relative", isOpen ? "z-10" : "")}>
+        <button
+          className={cn(
+            "flex border border-background-600 bg-background-700 items-center min-h-11 rounded p-2 gap-2 w-full",
+            className,
+          )}
+          onClick={() => setIsOpen(!isOpen)}
+          type="button"
+        >
+          <span className="text-white justify-center flex items-center gap-2">
+            {selectedOptions !== [null] &&
+              selectedOptions.map((option) => (
+                <span
+                  key={option.value}
+                  className="p-0.5 px-2 rounded bg-lp-500"
+                >
+                  {option.label}
+                </span>
+              ))}
+            <span className="text-background-200 text-sm">
+              {selectedOptions.length === 0 && emptyText}
+            </span>
           </span>
-        </span>
-      </button>
+        </button>
+      </div>
       {isOpen && (
         <div
           className="fixed h-screen w-screen bg-black bg-opacity-30 z-20 top-0 left-0"
