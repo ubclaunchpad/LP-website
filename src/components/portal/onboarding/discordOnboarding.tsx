@@ -13,7 +13,7 @@ const TEXT = {
   title: "Discord",
   description:
     "Join the Discord server to access the community and how teams communicate.",
-  discordInvite: "https://discord.gg/AgQbWykt",
+  discordInvite: "https://discord.gg/xESFmWyRPs",
   joinDiscord: `First, please join our Discord server. You can join by clicking the link below:`,
   inputPlaceholder: "Enter Discord Username",
   button: "Join Discord Server",
