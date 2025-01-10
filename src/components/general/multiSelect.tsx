@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-nocheck
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils/helpers";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/primitives/popover";
 
 export default function MultiSelect({
   options,
@@ -23,65 +22,84 @@ export default function MultiSelect({
   emptyText?: string;
   onBlur?: () => void;
 }) {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const selectedOptions = options.filter((option) => {
-    if (value === null) return false;
-    if (Array.isArray(value)) return value.includes(option.value);
+    if (value === null) {
+      return false;
+    }
+    if (Array.isArray(value)) {
+      return value.includes(option.value);
+    }
+    console.log(value, option.value);
     return value === option.value;
   });
 
+  const ref = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (!open && onBlur) {
+    if (!isOpen && onBlur) {
       onBlur();
     }
-  }, [open, onBlur]);
+  }, [isOpen]);
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <button
-          className={cn(
-            "flex w-full border border-background-600 bg-background-700 items-center min-h-11 rounded p-2 gap-2",
-            className,
-          )}
-          type="button"
-        >
-          <span className="text-white justify-center flex items-center gap-2">
-            {selectedOptions !== [null] &&
-              selectedOptions.map((option) => (
-                <span
-                  key={option.value}
-                  className="p-0.5 px-2 rounded bg-lp-500"
-                >
-                  {option.label}
-                </span>
-              ))}
-            <span className="text-background-200 text-sm">
-              {selectedOptions.length === 0 && emptyText}
-            </span>
+    <div className="relative flex flex-col w-full" ref={ref}>
+      <button
+        className={cn(
+          "flex border border-background-600 bg-background-700 z-10  items-center min-h-11 rounded p-2 gap-2",
+          className,
+        )}
+        onClick={() => setIsOpen(!isOpen)}
+        type="button"
+      >
+        <span className="text-white justify-center flex z-1 items-center gap-2 ">
+          {/*{JSON.stringify(selectedOptions)}*/}
+          {selectedOptions !== [null] &&
+            selectedOptions.map((option) => (
+              <span
+                key={option.value}
+                className="p-0.5 px-2 z-1! rounded bg-lp-500"
+              >
+                {option.label}
+              </span>
+            ))}
+          <span className={"text-background-200 text-sm"}>
+            {selectedOptions.length === 0 && emptyText}
           </span>
-        </button>
-      </PopoverTrigger>
-      <PopoverContent className="w-full p-0 bg-background-700 border-background-600">
-        <div className="max-h-80 overflow-y-auto">
+        </span>
+      </button>
+      {isOpen && (
+        <div
+          className="fixed h-screen w-screen bg-black bg-opacity-30 z-20 top-0 left-0"
+          onClick={() => setIsOpen(false)}
+        ></div>
+      )}
+      {isOpen && (
+        <div
+          className="fixed max-h-80 overflow-y-scroll bg-background-700 gap-1 flex flex-col rounded border border-background-600  shadow-lg  w-full transform z-40 overflow-hidden p-2 "
+          style={{
+            top: ref.current?.getBoundingClientRect().top,
+            left: ref.current?.getBoundingClientRect().left,
+            width: ref.current?.getBoundingClientRect().width,
+          }}
+        >
           {options.map((option, index) => (
             <div
               key={index}
-              className={cn(
-                "flex items-center h-10 flex-shrink-0 gap-2 p-2",
+              className={`flex items-center h-10  z-40 flex-shrink-0 gap-2 rounded p-2 ${
                 value?.includes(option.value)
                   ? "bg-lp-500"
-                  : "hover:bg-background-800 bg-opacity-45",
-              )}
+                  : "hover:bg-background-800 bg-opacity-45"
+              }`}
               onClick={() => {
                 if (!allowMultiple) {
                   if (value?.includes(option.value)) {
                     onChange([]);
-                    setOpen(false);
+                    setIsOpen(false);
                     return;
                   }
                   onChange([option.value]);
-                  setOpen(false);
+                  setIsOpen(false);
                   return;
                 }
                 if (value?.includes(option.value)) {
@@ -98,7 +116,7 @@ export default function MultiSelect({
             </div>
           ))}
         </div>
-      </PopoverContent>
-    </Popover>
+      )}
+    </div>
   );
 }
