@@ -21,7 +21,7 @@ export default function OfferPage({ form, app }: { form: Form; app: any }) {
   const lpData = useContext(lpContext);
   const cleanedText = replaceTemplateValues(text, {
     general: lpData,
-    app: { ...rest, ...details },
+    app: { ...rest.applications, ...details },
   });
 
   async function handleDecision(decision: "accepted" | "declined") {
@@ -126,13 +126,10 @@ function replaceTemplateValues(
   matches.forEach((match) => {
     const key = match.replace("{{", "").replace("}}", "");
     const multiKey = key.split(":");
-
     if (multiKey.length > 1) {
       const [firstKey, secondKey] = multiKey;
       if (Object.keys(app).includes(secondKey)) {
-        if (app[secondKey] === undefined) {
-          newText = "";
-        } else {
+        if (app[secondKey] !== undefined) {
           if (multiKey.length > 2) {
             const thirdKey = multiKey[2];
             newText = newText.replace(

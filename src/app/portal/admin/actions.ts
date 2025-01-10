@@ -100,7 +100,6 @@ export async function getAllFormDetails(
   formId: bigint,
 ): Promise<{ rawForm: any; formFields: FormFields; submissions: any[] }> {
   try {
-    console.log("retrieving form details");
     const form = await db.forms.findFirst({
       where: { id: formId },
     });
