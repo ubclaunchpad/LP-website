@@ -14,12 +14,15 @@ const TEXT = {
   githubUsername:
     "First, let's confirm your GitHub username. Only one GitHub account can be linked to you. If it's correct, click on looks good to see what roles you can add",
   inputPlaceholder: "Enter GitHub Username",
-  button: "Join GitHub Organization",
+  button: "Join teams",
   errorMessage: "GitHub validation failed. Please try again.",
   teams: "You are a member of the following teams:",
   loadingButton: "Loading...",
   successButton: "You're all set!",
   successUpdate: "Your GitHub username has been updated.",
+  pendingInvite:
+    "We have invite you to the organization please check your email to accept before we can add you to",
+  pendingInviteBtn: "I accepted the invite",
   firstTime:
     "If you're joining the organization for the first time, Github will invite you to join the organization.",
 };
@@ -41,15 +44,39 @@ export default function GithubOnboarding() {
   const [githubSetupState, setGithubSetupState] = useState<
     "initial" | "loading" | "success" | "error"
   >("initial");
+  const [isInRepo, setIsInRepo] = useState(false);
   const [verifiedGithubUsername, setVerifiedGithubUsername] = useState(false);
+
   const [githubUsername, setGithubUsername] = useState(
     userMetadata.member?.github_username || "",
   );
 
-  function handleUpdateGithubUsername() {
+  async function handleUpdateGithubUsername() {
     if (userMetadata.member?.github_username === githubUsername) {
       setVerifiedGithubUsername(true);
     } else {
+      const getMemberCheckRes = await fetch(
+        `${process.env.NEXT_PUBLIC_COLONY_URL}/colony/github/${githubUsername}/status`,
+        {
+          method: "GET",
+        },
+      );
+      const { isMember } = await getMemberCheckRes.json();
+      if (isMember) {
+        setIsInRepo(true);
+        return;
+      }
+      await fetch(
+        `${process.env.NEXT_PUBLIC_COLONY_URL}/colony/github/${githubUsername}/invite`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+      setIsInRepo(true);
+
       updateGithubUsername(githubUsername, user.id)
         .then(() => {
           setVerifiedGithubUsername(true);
@@ -75,13 +102,13 @@ export default function GithubOnboarding() {
       });
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_COLONY_URL}/colony/integrations/github`,
+        `${process.env.NEXT_PUBLIC_COLONY_URL}/colony/github/${githubUsername}/roles`,
         {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(parsedGithubData),
+          body: JSON.stringify({ teams: parsedGithubData.actions.teams }),
         },
       );
 
@@ -110,7 +137,7 @@ export default function GithubOnboarding() {
 
       <section className="flex flex-col items-start gap-4 w-full">
         <p>{TEXT.githubUsername}</p>
-        <div className="flex items-center w-full gap-2 gap-4">
+        <div className="flex items-center w-full  gap-4">
           <Input
             disabled={verifiedGithubUsername}
             type="text"
@@ -134,7 +161,23 @@ export default function GithubOnboarding() {
         </div>
       </section>
 
-      {verifiedGithubUsername && (
+      {verifiedGithubUsername && !isInRepo && (
+        <section className="flex flex-col flex-1 items-start gap-4 w-full">
+          <p>{TEXT.pendingInvite}</p>
+          <div className="flex flex-col w-full flex-1  gap-4">
+            <div className="flex flex-1  pt-4 flex-col items-center w-full gap-4">
+              <Button
+                onClick={() => setIsInRepo(true)}
+                className="p-6 gap-4  w-fit md:min-w-[350px] f text-lg rounded-full"
+              >
+                {TEXT.pendingInviteBtn}
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {verifiedGithubUsername && isInRepo && (
         <section className="flex flex-col flex-1 items-start gap-4 w-full">
           <p>{TEXT.teams}</p>
           <div className="flex flex-col w-full flex-1  gap-4">
