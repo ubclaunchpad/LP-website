@@ -12,7 +12,7 @@ const TEXT = {
   title: "Github",
   description: "Join the GitHub organization to access the codebase.",
   githubUsername:
-    "First, let's confirm your GitHub username. Only one GitHub account can be linked to you.",
+    "First, let's confirm your GitHub username. Only one GitHub account can be linked to you. If it's correct, click on looks good to see what roles you can add",
   inputPlaceholder: "Enter GitHub Username",
   button: "Join GitHub Organization",
   errorMessage: "GitHub validation failed. Please try again.",
@@ -102,7 +102,7 @@ export default function GithubOnboarding() {
   return (
     <div className="flex flex-col items-center gap-10 h-full">
       <section className="flex flex-col items-start gap-4 w-full">
-        <h1 className="text-4xl font-semibold text-left w-full font-heading ">
+        <h1 className="text-2xl font-semibold text-left w-full font-heading ">
           {TEXT.title}
         </h1>
         <p className="text-lg text-left w-full ">{TEXT.description}</p>

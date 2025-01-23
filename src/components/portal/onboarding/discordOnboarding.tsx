@@ -14,7 +14,7 @@ const TEXT = {
   description:
     "Join the Discord server to access the community and how teams communicate.",
   discordInvite: "https://discord.gg/xESFmWyRPs",
-  joinDiscord: `First, please join our Discord server. You can join by clicking the link below:`,
+  joinDiscord: `First, please join our Discord server. Click to join and come back to see what roles you can add; even if you are in the server or not. You can join by clicking the link below:`,
   inputPlaceholder: "Enter Discord Username",
   button: "Join Discord Server",
   roles: "The following roles will be assigned to you:",
@@ -67,29 +67,36 @@ export default function DiscordOnboarding() {
       for (const member of userMetadata.member?.team_members) {
         roles.push(...member.teams.meta.discord.roles);
       }
-      const parsed = DiscordIntegrationSchema.parse({
+
+      const parsed = DiscordIntegrationSchema.safeParse({
         discordUsername: discordUsername,
         actions: {
           roles: roles,
         },
       });
 
+      if (!parsed.success) {
+        return;
+      }
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_COLONY_URL}/colony/integrations/discord`,
+        `${process.env.NEXT_PUBLIC_COLONY_URL}/colony/discord/${discordUsername}/roles`,
         {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(parsed),
+          body: JSON.stringify({
+            roles: parsed.data.actions.roles,
+          }),
         },
       );
 
-      const responseBody = await response.text();
       if (!response.ok) {
+        const responseBody = await response.text();
         toast.error(responseBody);
         setState("error");
       } else {
+        const responseBody = await response.text();
         toast.success(responseBody);
       }
     } catch (error) {
@@ -101,7 +108,7 @@ export default function DiscordOnboarding() {
   return (
     <div className="flex flex-col items-center gap-10 h-full">
       <section className="flex flex-col items-start gap-4 w-full">
-        <h1 className="text-4xl font-semibold text-left w-full font-heading ">
+        <h1 className="text-2xl font-semibold text-left w-full font-heading ">
           {TEXT.title}
         </h1>
         <p className="text-lg text-left w-full ">{TEXT.description}</p>
