@@ -104,7 +104,7 @@ export const footerLinks = [
       },
       {
         name: "Sponsorship Inquiries",
-        url: "mailto:team@ubclaunchpad.com",
+        url: "mailto:strategy@ubclaunchpad.com",
       },
     ],
   },
