@@ -10,7 +10,7 @@ const nextConfig = {
     ],
   },
   experimental: {
-    runtime: 'nodejs',
+    runtime: 'egde',
   },
   eslint: {
     ignoreDuringBuilds: true,
