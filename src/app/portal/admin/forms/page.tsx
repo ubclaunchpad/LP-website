@@ -3,6 +3,8 @@ import { getForms } from "@/app/portal/admin/actions";
 import Link from "next/link";
 import { Form } from "@/lib/types/application";
 
+export const runtime = 'edge';
+
 export default async function Page() {
   const forms = (await getForms()) as unknown as Form[];
   return (

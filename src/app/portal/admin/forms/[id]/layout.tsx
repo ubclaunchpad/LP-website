@@ -2,6 +2,8 @@ import React, { Suspense } from "react";
 import FormTabView, { Tab } from "@/components/layouts/formTabView";
 import { getAdminMembers, getAllFormDetails } from "@/app/portal/admin/actions";
 
+export const runtime = 'edge';
+
 export default async function Layout({
   params,
   children,

@@ -9,8 +9,6 @@ import { Button } from "@/components/primitives/button";
 import { XIcon } from "lucide-react";
 import { formContext } from "@/components/layouts/formTabView";
 
-export const runtime = 'edge';
-
 export default function SubmissionAsUser() {
   const { rawForm: form, submissions } = useContext(formContext);
   const [app, setApp] = useState<Application | null>(null);

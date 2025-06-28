@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
+export const runtime = 'edge';
+
 export default function page({ params }: { params: { id: string } }) {
   if (!params.id) {
     return <ErrorDiv />;
