@@ -13,6 +13,8 @@ import CalendarOnboarding from "@/components/portal/onboarding/calendarOnboardin
 import OnboardingGreeter from "@/components/portal/onboarding/onboardingGreeter";
 import OnboardingEnd from "@/components/portal/onboarding/onboardingEnd";
 
+export const runtime = 'edge';
+
 const firstStep = 0;
 const lastStep = 6;
 
