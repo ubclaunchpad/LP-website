@@ -2,6 +2,8 @@
 
 import { db } from "@/db";
 
+export const runtime = 'edge';
+
 export async function updateGithubUsername(username: string, id: string) {
   try {
     await db.members.update({

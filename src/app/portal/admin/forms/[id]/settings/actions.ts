@@ -6,6 +6,8 @@ type EmailTemplate = {
   content: string;
 };
 
+
+
 export async function updateOrCreateEmailTemplate(
   formId: number,
   status: string,

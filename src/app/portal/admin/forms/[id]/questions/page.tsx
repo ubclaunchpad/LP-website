@@ -4,6 +4,8 @@
 // import { useContext } from "react";
 // import { formContext } from "@/components/layouts/formTabView";
 
+export const runtime = 'edge';
+
 export default function FormQuestionsEditorPage() {
   // const { rawForm } = useContext(formContext);
   // const questions = rawForm.questions;

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { db } from "@/db";
 
+export const runtime = 'edge';
+
 const newOfferSchema = z.object({
   userId: z.string().uuid(),
   teamId: z.number(),
