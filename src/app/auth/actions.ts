@@ -28,5 +28,4 @@ export async function login() {
     redirect("/error");
   }
 
-  return data;
 }
