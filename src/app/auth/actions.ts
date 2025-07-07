@@ -10,7 +10,9 @@ export async function login() {
   const c = cookies();
   const redirectPath = `redirect=${c.get("x-path")?.value || ""}`;
   c.delete("x-path");
-  const callbackUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/auth/callback?${redirectPath}`;
+  const callbackUrl = `https://www.ubclaunchpad.com/auth/callback?${redirectPath}`;
+
+  console.log(callbackUrl);
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
@@ -25,6 +27,7 @@ export async function login() {
   }
 
   if (error) {
+    console.error(error);
     redirect("/error");
   }
 
