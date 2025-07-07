@@ -1,6 +1,8 @@
 import { login } from "./actions";
 import { Button } from "@/components/primitives/button";
 
+export const runtime = 'edge';
+
 const text = {
   title: "Launch Pad Portal",
   login: "Log in With Google",
