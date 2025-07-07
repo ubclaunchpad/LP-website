@@ -1,31 +1,48 @@
 import { NextResponse } from "next/server";
-// The client you created from the Server-Side Auth instructions
 import { createClient } from "@/lib/utils/supabase/server";
-export const runtime = 'edge';
+import { db } from "@/db";
+
+export const runtime = "edge";
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get("code");
-  // if "next" is in param, use it as the redirect URL
-  const next = searchParams.get("redirect") ?? "/";
+  const next = searchParams.get("redirect") ?? "/portal";
 
   if (code) {
     const supabase = createClient();
-    const { error } = await supabase.auth.exchangeCodeForSession(code);
-    if (!error) {
-      const forwardedHost = request.headers.get("x-forwarded-host"); // original origin before load balancer
-      const isLocalEnv = process.env.NODE_ENV === "development";
-      if (isLocalEnv) {
-        // we can be sure that there is no load balancer in between, so no need to watch for X-Forwarded-Host
-        return NextResponse.redirect(`${origin}${next}`);
-      } else if (forwardedHost) {
-        return NextResponse.redirect(`https://${forwardedHost}${next}`);
-      } else {
-        return NextResponse.redirect(`${origin}${next}`);
+    const {
+      error,
+      data: { user },
+    } = await supabase.auth.exchangeCodeForSession(code);
+
+    if (!error && user) {
+      const {
+        data: { user: user_details },
+      } = await supabase.auth.getUser();
+      if (user_details?.user_metadata && user_details.email) {
+        const [firstName, ...lastNameParts] =
+          user_details.user_metadata.full_name.split(" ");
+        const lastName = lastNameParts.join(" ");
+
+        await db.members.upsert({
+          where: { id: user.id },
+          create: {
+            id: user.id,
+            first_name: firstName,
+            last_name: lastName,
+            faculty: "N/A",
+            grad_year: 0,
+            specialization: "N/A",
+            year_level: 0,
+          },
+          update: {},
+        });
       }
+      return NextResponse.redirect(`${origin}${next}`);
     }
   }
 
   // return the user to an error page with instructions
-  return NextResponse.redirect(`${origin}/auth`);
+  return NextResponse.redirect(`${origin}/auth/error`);
 }
