@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "npx prisma generate && next build",
+    "build": "npx prisma generate && next build && npx @cloudflare/next-on-pages",
     "start": "next start",
     "next:lint": "next lint",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
