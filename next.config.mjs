@@ -43,7 +43,23 @@ const nextConfig = {
     // Modify the file loader rule to ignore *.svg, since we have it handled now.
     fileLoaderRule.exclude = /\.svg$/i;
 
-    config.externals.push("pg-native", "pgpass");
+    // Prevent bundling of Node.js-specific modules for the Edge runtime
+    if (!config.resolve.fallback) {
+      config.resolve.fallback = {};
+    }
+    config.resolve.fallback.fs = false;
+    config.resolve.fallback.stream = false;
+    config.resolve.fallback.dgram = false;
+    config.resolve.fallback.net = false;
+    config.resolve.fallback.tls = false;
+    config.resolve.fallback.child_process = false;
+    config.resolve.fallback.crypto = false;
+    config.resolve.fallback.os = false;
+    config.resolve.fallback.path = false;
+    config.resolve.fallback.util = false;
+    config.resolve.fallback.dns = false;
+    config.resolve.fallback.zlib = false;
+    config.resolve.fallback.perf_hooks = false;
 
     return config;
   },
