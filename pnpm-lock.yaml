@@ -21,7 +21,7 @@ importers:
         specifier: ^0.2.2
         version: 0.2.2(@fortawesome/fontawesome-svg-core@6.7.2)(react@18.3.1)
       '@prisma/adapter-pg':
-        specifier: ^5.22.0
+        specifier: 5.22.0
         version: 5.22.0(pg@8.16.3)
       '@prisma/client':
         specifier: ^5.22.0
@@ -105,7 +105,7 @@ importers:
         specifier: ^0.12.7
         version: 0.12.7
       pg:
-        specifier: 8.16.3
+        specifier: ^8.16.3
         version: 8.16.3
       pocketbase:
         specifier: ^0.21.5

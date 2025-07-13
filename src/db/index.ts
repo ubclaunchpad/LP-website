@@ -12,8 +12,8 @@ let db: PrismaClient;
 // Ensure process.env.DATABASE_URL is defined for production
 if (process.env.NODE_ENV === "production" && process.env.DATABASE_URL) {
   const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-  const adapter = new PrismaPg(pool as any);
-  db = new PrismaClient({ adapter: adapter as any });
+  const adapter = new PrismaPg(pool);
+  db = new PrismaClient({ adapter });
 } else {
   if (!global.prisma) {
     global.prisma = new PrismaClient();
