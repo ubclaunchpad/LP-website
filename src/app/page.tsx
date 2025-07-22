@@ -41,7 +41,7 @@ const lpImageProps = {
 export default async function Home() {
   // const projects = await refreshProjects();
   return (
-    <main className="flex min-h-screen flex-col items-center  max-w-screen overflow-x-hidden">
+    <main className="flex min-h-screen flex-col items-center max-w-screen overflow-x-hidden pt-0 md:pt-24 lg:pt-28">
       <div className="w-full flex justify-end">
         <Navbar navItems={navItems} />
       </div>
