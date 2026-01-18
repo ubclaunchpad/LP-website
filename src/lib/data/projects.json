@@ -1,6 +1,42 @@
 {
-  "timestamp": 1724628277544,
+  "timestamp": 1756526316000,
   "projects": [
+    {
+      "title": "Flowleaflets",
+      "description": "An application implementing LLM-powered transcription for handwritten notes in clinical logbooks for digital record keeping, developed in partnership with Flowleaflets, a non-profit",
+      "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/0b0f728a-4c4c-4b00-bcd3-96a00bfaf444/epilog.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T232438Z&X-Amz-Expires=3600&X-Amz-Signature=d31d871d386ac36b632b331494ebb3c4a7da1c9bc353c64a6c70835caf7d4659&X-Amz-SignedHeaders=host&x-id=GetObject",
+      "alt": "Mock",
+      "width": 372,
+      "height": 213,
+      "url": "https://www.notion.so/launchpadubc/Clinical-Logging-Softwate-1d91e489d92080778e8dc1569298d1be"
+    },
+    {
+      "title": "i18nilize",
+      "description": "Small but mighty dev project empowering developers to seamlessly integrate internationalization and localization into microservice architectures. Featuring a central API for managing persistent data, it enables software to adapt effortlessly to multiple languages and cultural norms—making global development more accessible.",
+      "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/0b0f728a-4c4c-4b00-bcd3-96a00bfaf444/epilog.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T232438Z&X-Amz-Expires=3600&X-Amz-Signature=d31d871d386ac36b632b331494ebb3c4a7da1c9bc353c64a6c70835caf7d4659&X-Amz-SignedHeaders=host&x-id=GetObject",
+      "alt": "Mock",
+      "width": 372,
+      "height": 213,
+      "url": "https://www.notion.so/launchpadubc/i18nilize-1d91e489d92080ea8703eb6668589c64"
+    },
+    {
+      "title": "Neuron",
+      "description": "A volunteer management system for BC Brain Wellness Program.",
+      "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/0b0f728a-4c4c-4b00-bcd3-96a00bfaf444/epilog.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T232438Z&X-Amz-Expires=3600&X-Amz-Signature=d31d871d386ac36b632b331494ebb3c4a7da1c9bc353c64a6c70835caf7d4659&X-Amz-SignedHeaders=host&x-id=GetObject",
+      "alt": "Mock",
+      "width": 372,
+      "height": 213,
+      "url": "https://www.notion.so/launchpadubc/Neuron-83d2c2b45c9848a7a4b66f2329373431"
+    },
+    {
+      "title": "ForumAI",
+      "description": "ForumAI combines AI capabilities with structured academic forums, enabling students and faculty to collaborate in a controlled environment where AI assists learning while maintaining academic integrity.",
+      "imageSrc": "https://prod-files-secure.s3.us-west-2.amazonaws.com/bb63397e-5c0d-4017-97b5-2abcd76d406b/0b0f728a-4c4c-4b00-bcd3-96a00bfaf444/epilog.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T232438Z&X-Amz-Expires=3600&X-Amz-Signature=d31d871d386ac36b632b331494ebb3c4a7da1c9bc353c64a6c70835caf7d4659&X-Amz-SignedHeaders=host&x-id=GetObject",
+      "alt": "Mock",
+      "width": 372,
+      "height": 213,
+      "url": "https://www.notion.so/launchpadubc/Forum-32f0c1184540442589417ff156a4f331"
+    },
     {
       "title": "Microvan",
       "description": "Microvan seeks to streamline their internal processes and keep up with competitors by switching to online auctions. As a result, we designed an online auction website and admin management system for the company.",

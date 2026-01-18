@@ -55,7 +55,7 @@ export default function Navbar({ navItems }: NavbarProps) {
   return (
     <nav
       className={`flex justify-between items-center w-full p-6 fixed top-0 left-0 right-0 z-50 transition-opacity duration-300 
-        ${isScrollingUp || isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"} ${isMenuOpen ? "bg-[#27232E]" : ""}`}
+        ${isScrollingUp || isMenuOpen ? "opacity-100" : "opacity-0"} ${isMenuOpen ? "bg-[#27232E]" : ""}`}
     >
       <Image src={logo} alt="Logo" width={141} height={49} unoptimized />
       <button

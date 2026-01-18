@@ -5,6 +5,7 @@ import { Button } from "@/components/primitives/button";
 import { DataTable } from "../../../../components/forms/applications/data-table";
 import { FormFields } from "../../../../components/forms/applications/columns";
 import { ColumnDef } from "@tanstack/react-table";
+import { isNil } from "lodash";
 import Loading from "../../loading";
 
 function createColumns<TData>(fields: any[]): ColumnDef<keyof FormFields>[] {
@@ -61,6 +62,7 @@ export default function MembersDatabase() {
       "githubUsername",
     ],
   };
+
   if (isLoading) {
     return <Loading />;
   }
@@ -69,13 +71,23 @@ export default function MembersDatabase() {
     return <div className="flex-1 min-h-screen">error</div>;
   }
 
-  const columns = createColumns(Object.keys(members[0]));
   return (
-    <div className="w-full flex-1 flex flex-col">
+    <div className="w-full min-h-screen flex-1 flex flex-col">
       <div className="flex px-10 py-4">
         <h1 className="text-2xl font-normal">Members</h1>
       </div>
-      <DataTable data={members} columns={columns} config={config} />
+      {!isNil(members) && members.length > 0 ? (
+        <DataTable
+          data={members}
+          columns={createColumns(Object.keys(members[0]))}
+          config={config}
+          refMap={{}}
+        />
+      ) : (
+        <div className="flex items-center justify-center">
+          <span>No Members</span>
+        </div>
+      )}
     </div>
   );
 }
@@ -88,13 +100,22 @@ type MemberQuery = {
   };
 };
 
+type MemberResult = {
+  members: string[];
+  error: string | undefined;
+  isLoading: boolean;
+};
+
 function useMembers({ filters }: MemberQuery) {
   const { data, error, isLoading } = useSWRF({
     url: `/portal/api/v1/members?${objectToQueryString(filters)}`,
   });
-  return {
+
+  const result: MemberResult = {
     members: data,
     error,
     isLoading,
   };
+
+  return result;
 }

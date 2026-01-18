@@ -88,6 +88,8 @@ export default function ApplicationForm({
           goToPreviousTab={goToPreviousTab}
           formId={applicationForm.id}
           otherUser={userOverride}
+          formData={formAnswers}
+          formQuestions={applicationForm.questions}
         />
       );
     }

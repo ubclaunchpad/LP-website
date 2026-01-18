@@ -133,73 +133,102 @@ export const statsData: Stat[] = [
 
 export const projects = [
   {
-    title: "Microvan",
-    description:
-      "Microvan seeks to streamline their internal processes and keep up with competitors by switching to online auctions. As a result, we designed an online auction website and admin management system for the company.",
-    imageSrc: "/images/projects/microvan.png",
-    alt: "Microvan",
-    width: 372,
-    height: 213,
-    url: "https://launchpadubc.notion.site/Microvan-5ae6a5d55e7141ad952e99f2e62d396a",
+    "title": "Flowleaflets",
+    "description": "An application implementing LLM-powered transcription for handwritten notes in clinical logbooks for digital record keeping, developed in partnership with Flowleaflets, a non-profit",
+    "imageSrc": "images/projects/flowleaflets.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213,
+    "url": "https://www.notion.so/launchpadubc/Clinical-Logging-Softwate-1d91e489d92080778e8dc1569298d1be"
   },
   {
-    title: "Cosmic Gateway",
-    description:
-      "Cosmic Gateway is Launch Pad's internal club tools, including the website, project management and deployment platforms ",
-    imageSrc: "/images/projects/cosmic.png",
-    alt: "Cosmic Gateway",
-    width: 372,
-    height: 213,
-    url: "https://launchpadubc.notion.site/Cosmic-Gateway-6be0d37b607542afa355f405b8d1fd36",
+    "title": "i18nilize",
+    "description": "Small but mighty dev project empowering developers to seamlessly integrate internationalization and localization into microservice architectures. Featuring a central API for managing persistent data, it enables software to adapt effortlessly to multiple languages and cultural norms—making global development more accessible.",
+    "imageSrc": "images/projects/i18nilize.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213,
+    "url": "https://www.notion.so/launchpadubc/i18nilize-1d91e489d92080ea8703eb6668589c64"
   },
   {
-    title: "Nom Appetit",
-    description:
-      "Nom Appetit is a social restaurant tracking and recommendation app, designed to finally answer the question of “So… where do you want to eat?”",
-    imageSrc: "/images/projects/nom.png",
-    alt: "Nom Appetit",
-    width: 372,
-    height: 213,
-    url: "https://launchpadubc.notion.site/Nom-Appetit-fa196383c8654badaeb43bfc085c7a36",
+    "title": "Neuron",
+    "description": "A volunteer management system for BC Brain Wellness Program.",
+    "imageSrc": "images/projects/neuron.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213,
+    "url": "https://www.notion.so/launchpadubc/Neuron-83d2c2b45c9848a7a4b66f2329373431"
   },
   {
-    title: "EpiLog",
-    description:
-      "Epilog is a mobile app that was designed to help epilepsy patients with tracking medications, appointments and monitoring seizures",
-    imageSrc: "/images/projects/epilog.png",
-    alt: "EpiLog",
-    width: 372,
-    height: 213,
-    url: "https://launchpadubc.notion.site/EpiLog-51a750b63ca749169b5f859c3a6560b3",
+    "title": "ForumAI",
+    "description": "ForumAI combines AI capabilities with structured academic forums, enabling students and faculty to collaborate in a controlled environment where AI assists learning while maintaining academic integrity.",
+    "imageSrc": "images/projects/forumai.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213,
+    "url": "https://www.notion.so/launchpadubc/Forum-32f0c1184540442589417ff156a4f331"
   },
   {
-    title: "BlueNav",
-    description:
-      "BlueNav was an interactive degree planner for UBC students, that provided an easy-to-understand summary of pending degree requirements for undergrad students",
-    imageSrc: "/images/projects/bluenav.png",
-    alt: "BlueNav",
-    width: 372,
-    height: 213,
-    url: "https://launchpadubc.notion.site/BlueNav-a5f9bf80bd504c6685ce0bfc921f9586",
+    "title": "Microvan",
+    "description": "Microvan seeks to streamline their internal processes and keep up with competitors by switching to online auctions. As a result, we designed an online auction website and admin management system for the company.",
+    "imageSrc": "images/projects/microvan.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213,
+    "url": "https://launchpadubc.notion.site/Microvan-5ae6a5d55e7141ad952e99f2e62d396a"
   },
   {
-    title: "ClassSync",
-    description:
-      "ClassSync is a centralized ed-tech platform in collaboration with The C.O.D.E Initiative, creating a seamless experience for both students and volunteers.",
-    imageSrc: "/images/projects/classsync.png",
-    alt: "ClassSync",
-    width: 372,
-    height: 213,
-    url: "https://launchpadubc.notion.site/ClassSync-0dc8c3e8e54941869976e9b54585ef00",
+    "title": "Cosmic Gateway",
+    "description": "Cosmic Gateway is Launch Pad's internal club tools, including the website, project management and deployment platforms ",
+    "imageSrc": "images/projects/cosmic.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213,
+    "url": "https://launchpadubc.notion.site/Cosmic-Gateway-6be0d37b607542afa355f405b8d1fd36"
   },
   {
-    title: "Labby ",
-    description:
-      "Labby was a ticket management system platform developed in collaboration with   the non-profit organization BC Cancer, to meet their needs.",
-    imageSrc: "/images/projects/labby.png",
-    alt: "Labby",
-    width: 372,
-    height: 213,
-    url: "https://launchpadubc.notion.site/Labby-b00fa2bdf707461687a898563dd5c833",
+    "title": "Nom Appetit",
+    "description": "Nom Appetit is a social restaurant tracking and recommendation app, designed to finally answer the question of “So… where do you want to eat?”",
+    "imageSrc": "images/projects/nom.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213,
+    "url": "https://launchpadubc.notion.site/Nom-Appetit-fa196383c8654badaeb43bfc085c7a36"
   },
+  {
+    "title": "EpiLog",
+    "description": "Epilog is a mobile app that was designed to help epilepsy patients with tracking medications, appointments and monitoring seizures",
+    "imageSrc": "images/projects/epilog.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213,
+    "url": "https://launchpadubc.notion.site/EpiLog-51a750b63ca749169b5f859c3a6560b3"
+  },
+  {
+    "title": "BlueNav",
+    "description": "BlueNav was an interactive degree planner for UBC students, that provided an easy-to-understand summary of pending degree requirements for undergrad students",
+    "imageSrc": "images/projects/bluenav.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213,
+    "url": "https://launchpadubc.notion.site/BlueNav-a5f9bf80bd504c6685ce0bfc921f9586"
+  },
+  {
+    "title": "ClassSync",
+    "description": "ClassSync is a centralized ed-tech platform in collaboration with The C.O.D.E Initiative, creating a seamless experience for both students and volunteers.",
+    "imageSrc": "images/projects/classsync.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213,
+    "url": "https://launchpadubc.notion.site/ClassSync-0dc8c3e8e54941869976e9b54585ef00"
+  },
+  {
+    "title": "Labby ",
+    "description": "Labby was a ticket management system platform developed in collaboration with the non-profit organization BC Cancer, to meet their needs.",
+    "imageSrc": "images/projects/labby.png",
+    "alt": "Mock",
+    "width": 372,
+    "height": 213,
+    "url": "https://launchpadubc.notion.site/Labby-b00fa2bdf707461687a898563dd5c833"
+  }
 ];

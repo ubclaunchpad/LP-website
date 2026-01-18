@@ -3,19 +3,77 @@ import { submitApplication } from "@/app/portal/forms/actions";
 import GenericGreeter from "@/components/layouts/genericGreeter";
 import { toast } from "sonner";
 import { Button } from "@/components/primitives/button";
+import { FormDetails, FormStep } from "@/lib/types/questions";
+
 export default function BeforeSubmitTab({
   goToPreviousTab,
   formId,
   otherUser,
+  formData,
+  formQuestions,
 }: {
   goToPreviousTab: () => void;
   formId: number | bigint;
   otherUser?: string;
+  formData?: FormDetails;
+  formQuestions?: FormStep[];
 }) {
   const [submitted, setSubmitted] = useState<
     "not submitted" | "submitting" | "submitted"
   >("not submitted");
   let subpage = null;
+
+  // Function to render form data
+  const renderFormData = () => {
+    if (!formData || !formQuestions) return null;
+
+    return (
+      <div className="w-full max-w-4xl bg-background-800 p-6 rounded-lg border border-neutral-700 mt-6">
+        <h3 className="text-xl font-heading font-bold mb-4">
+          Your Submitted Answers
+        </h3>
+        <div className="space-y-6">
+          {formQuestions.map((step, stepIndex) => (
+            <div key={stepIndex} className="space-y-4">
+              <h4 className="text-lg font-semibold text-lp-400 border-b border-neutral-600 pb-2">
+                {step.title}
+              </h4>
+              {step.questions.map((question) => {
+                const formItem = formData[question.id];
+                if (
+                  !formItem ||
+                  formItem.value === null ||
+                  formItem.value === undefined ||
+                  formItem.value === ""
+                ) {
+                  return null;
+                }
+
+                let displayValue = formItem.value;
+                if (Array.isArray(displayValue)) {
+                  displayValue = displayValue.join(", ");
+                }
+
+                return (
+                  <div
+                    key={question.id}
+                    className="bg-background-900 p-4 rounded border border-neutral-700"
+                  >
+                    <div className="font-medium text-neutral-200 mb-2">
+                      {question.label}
+                    </div>
+                    <div className="text-neutral-300 whitespace-pre-wrap">
+                      {String(displayValue)}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   if (submitted === "submitted") {
     subpage = (
@@ -40,6 +98,8 @@ export default function BeforeSubmitTab({
           Before you submit, please review your answers and make sure all the
           information is correct.
         </p>
+
+        {renderFormData()}
 
         <div className="flex items-center justify-center w-full gap-10 ">
           <Button

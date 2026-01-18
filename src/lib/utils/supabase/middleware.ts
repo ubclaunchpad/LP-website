@@ -21,7 +21,7 @@ export async function updateSession(request: NextRequest) {
   try {
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
       {
         cookies: {
           getAll() {
@@ -35,7 +35,12 @@ export async function updateSession(request: NextRequest) {
               request,
             });
             cookiesToSet.forEach(({ name, value, options }) =>
-              supabaseResponse.cookies.set(name, value, options),
+              supabaseResponse.cookies.set(name, value, {
+                ...options,
+                domain: ".ubclaunchpad.com", // Set your root domain
+                secure: true,
+                sameSite: "lax",
+              }),
             );
           },
         },

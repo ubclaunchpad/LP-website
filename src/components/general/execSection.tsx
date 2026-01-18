@@ -42,6 +42,12 @@ const execs = [
     linkedIn: "https://www.linkedin.com/in/hamin06/",
   },
   {
+    name: "Daniel Yoo",
+    image: "/images/execs/daniel_yoo.jpg",
+    title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/yood2/",
+  },
+  {
     name: "Jessie Megan",
     image: "/images/execs/jessie_megan.jpg",
     title: "Design Lead",
@@ -141,13 +147,13 @@ export default function ExecSection() {
                     rel="noopener noreferrer"
                     aria-label={`${exec.name} LinkedIn`}
                   >
-                    <div className="relative w-[110px] h-[110px] overflow-hidden rounded-2xl drop-shadow-xl">
+                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 overflow-hidden rounded-2xl drop-shadow-xl">
                       <Image
                         src={exec.image}
                         alt={exec.name}
                         fill
                         className="object-cover"
-                        sizes="110px"
+                        sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, (max-width: 1024px) 112px, 128px"
                       />
                     </div>
                   </a>
