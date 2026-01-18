@@ -7,7 +7,6 @@ import { Form } from "@/lib/types/application";
 import { isFormOpen } from "@/lib/utils/forms/helpers";
 import { toast } from "sonner";
 
-export const runtime = 'edge';
 
 export default async function page({
   params,

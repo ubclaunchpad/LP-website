@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { db } from "@/db";
 
-export const runtime = 'edge';
-
 const newOfferSchema = z.object({
   status: z.enum(["accepted", "declined", "offered", "expired"]),
 });

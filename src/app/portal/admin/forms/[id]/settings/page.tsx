@@ -8,9 +8,6 @@ import { Input } from "@/components/primitives/input";
 import { Button } from "@/components/primitives/button";
 import { Application } from "@/lib/types/questions";
 
-export const runtime = 'edge';
-
-
 function ResultPagePreviews({ form }) {
   const { submissions } = useContext(formContext);
   const [search, setSearch] = useState("");

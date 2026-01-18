@@ -7,8 +7,6 @@ import { Form } from "@/lib/types/application";
 import GenericGreeter from "@/components/layouts/genericGreeter";
 import { MainResultPage } from "@/components/forms/resultPages/MainResultPage";
 
-export const runtime = 'edge';
-
 async function getPageData(id: string) {
   const formP = getForm(Number(id)) as unknown as Promise<Form>;
   const appP = getUserApplication({

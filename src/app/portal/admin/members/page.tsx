@@ -7,8 +7,6 @@ import { FormFields } from "../../../../components/forms/applications/columns";
 import { ColumnDef } from "@tanstack/react-table";
 import Loading from "../../loading";
 
-export const runtime = 'edge';
-
 function createColumns<TData>(fields: any[]): ColumnDef<keyof FormFields>[] {
   const general: any[] = fields.map((field) => {
     return {

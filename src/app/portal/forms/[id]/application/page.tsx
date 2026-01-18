@@ -6,8 +6,6 @@ import { Form } from "@/lib/types/application";
 import GenericGreeter from "@/components/layouts/genericGreeter";
 import OfferPage from "@/components/forms/applications/offerPage";
 
-export const runtime = 'edge';
-
 const text = {
   closed: "This form is now closed.",
   submitted: "Your application has been submitted.",
