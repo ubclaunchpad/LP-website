@@ -40,7 +40,7 @@
     "dgram": "^1.0.1",
     "dns": "^0.2.2",
     "dotenv": "^16.4.7",
-    "form-data": "^4.0.1",
+    "form-data": "^4.0.4",
     "fs": "0.0.1-security",
     "json-2-csv": "^5.5.7",
     "lucide-react": "^0.428.0",
