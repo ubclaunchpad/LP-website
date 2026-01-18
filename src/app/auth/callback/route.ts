@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/lib/utils/supabase/server";
 import { db } from "@/db";
 
-export const runtime = "edge";
-
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get("code");
@@ -22,9 +20,12 @@ export async function GET(request: Request) {
           const {
             data: { user: user_details },
           } = await supabase.auth.getUser();
-          
+
           if (user_details?.user_metadata && user_details.email) {
-            const fullName = user_details.user_metadata.full_name || user_details.user_metadata.name || user_details.email;
+            const fullName =
+              user_details.user_metadata.full_name ||
+              user_details.user_metadata.name ||
+              user_details.email;
             const nameParts = fullName.split(" ");
             const firstName = nameParts[0] || "Unknown";
             const lastName = nameParts.slice(1).join(" ") || "User";
@@ -43,7 +44,7 @@ export async function GET(request: Request) {
               update: {},
             });
           }
-          
+
           return NextResponse.redirect(`${origin}${next}`);
         } catch (dbError) {
           console.error("Database error:", dbError);
