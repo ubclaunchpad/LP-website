@@ -12,82 +12,52 @@ import "swiper/css";
 const lpFooterEllipse = "/icons/custom/footerEllipse.svg";
 const execs = [
   {
-    name: "Armin Talaie",
-    image: "/images/execs/armin_talaie.png",
-    title: "Co-President",
-    linkedIn: "https://www.linkedin.com/in/armin-talaie/",
-  },
-  {
-    name: "Adrienne Leung",
-    image: "/images/execs/adrienne_leung.png",
-    title: "Co-President",
-    linkedIn: "https://www.linkedin.com/in/adrienne-leung/",
-  },
-  {
     name: "Xavier Lam",
     image: "/images/execs/xavier_lam.png",
-    title: "Tech Lead",
+    title: "Co-President",
     linkedIn: "https://www.linkedin.com/in/xavier-lam/",
   },
   {
-    name: "Kevin Zhang",
-    image: "/images/execs/kevin_zhang.png",
-    title: "Tech Lead",
-    linkedIn: "https://www.linkedin.com/in/-kevin-zhang-/",
-  },
-  {
     name: "Tony Liu",
-    image: "/images/execs/tony_liu.png",
-    title: "Tech Lead",
+    image: "/images/execs/tony_liu.jpg",
+    title: "Co-President",
     linkedIn: "https://www.linkedin.com/in/yunxiaotonyliu/",
   },
   {
-    name: "Jessie Shang",
-    image: "/images/execs/jessie_shang.png",
+    name: "Alex Luo",
+    image: "/images/execs/alex_luo.jpg",
     title: "Tech Lead",
-    linkedIn: "https://www.linkedin.com/in/shangjessie/",
+    linkedIn: "https://www.linkedin.com/in/alexluo602/",
   },
   {
-    name: "Arman Moztarzadeh",
-    image: "/images/execs/arman_moztarzadeh.png",
+    name: "Theo Siemens-Rhodes",
+    image: "/images/execs/theo_siemens_rhodes.jpeg",
     title: "Tech Lead",
-    linkedIn: "https://www.linkedin.com/in/arman-moztarzadeh/",
+    linkedIn: "https://www.linkedin.com/in/theo-siemens-rhodes/",
   },
   {
-    name: "Hriday Buddhdev",
-    image: "/images/execs/hriday_buddhdev.png",
+    name: "Harsh Amin",
+    image: "/images/execs/harsh_amin.jpeg",
     title: "Tech Lead",
-    linkedIn: "https://www.linkedin.com/in/hriday-buddhdev-127a74202/",
+    linkedIn: "https://www.linkedin.com/in/hamin06/",
   },
   {
-    name: "Jena Arianto",
-    image: "/images/execs/jena_arianto.png",
+    name: "Jessie Megan",
+    image: "/images/execs/jessie_megan.jpg",
     title: "Design Lead",
-    linkedIn: "https://www.linkedin.com/in/jena-arianto/",
+    linkedIn: "https://www.linkedin.com/in/jessiemegan/",
   },
   {
-    name: "Daphne Tian",
-    image: "/images/execs/daphne_tian.png",
-    title: "Outreach Coordinator",
-    linkedIn: "https://www.linkedin.com/in/daphne-tian/",
-  },
-  {
-    name: "Patty Tancharoen",
-    image: "/images/execs/patty_tancharoen.png",
+    name: "Jackie Crowley",
+    image: "/images/execs/jackie_crowley.jpeg",
     title: "Design Lead",
-    linkedIn: "https://www.linkedin.com/in/pattytanch/",
+    linkedIn: "https://www.linkedin.com/in/jackiehcrowley/",
   },
   {
-    name: "Martin Tang",
-    image: "/images/execs/martin_tang.png",
+    name: "Ura Hwang",
+    image: "/images/execs/ura_hwang.jpeg",
     title: "Operations Lead",
-    linkedIn: "https://www.linkedin.com/in/martin-txng/",
-  },
-  {
-    name: "Allen Nguyen",
-    image: "/images/execs/allen_nguyen.png",
-    title: "Sponsorship Coordinator",
-    linkedIn: "https://www.linkedin.com/in/allendnguyen/",
+    linkedIn: "https://www.linkedin.com/in/ura-hwang-748336282/",
   },
   {
     name: "Iris Liu",
@@ -96,10 +66,22 @@ const execs = [
     linkedIn: "https://www.linkedin.com/in/irisdan/",
   },
   {
-    name: "Ura Hwang",
-    image: "/images/execs/ura_hwang.png",
-    title: "Outreach Coordinator",
-    linkedIn: "https://www.linkedin.com/in/ura-hwang-748336282/",
+    name: "Boris Wang",
+    image: "/images/execs/boris_wang.jpg",
+    title: "Strategy Coordinator",
+    linkedIn: "https://www.linkedin.com/in/boriswangcs/",
+  },
+  {
+    name: "Pearl Dhingra",
+    image: "/images/execs/pearl_dhingra.png",
+    title: "Sponsorship Coordinator",
+    linkedIn: "https://www.linkedin.com/in/pearl-dhingra/",
+  },
+  {
+    name: "Vanshika Dixit",
+    image: "/images/execs/vanshika_dixit.jpeg",
+    title: "Events Coordinator",
+    linkedIn: "https://www.linkedin.com/in/vdixit20/",
   },
 ];
 
@@ -124,7 +106,7 @@ export default function ExecSection() {
         <div className="flex flex-col md:flex-row text-center items-center justify-between w-full md:px-10 py-10">
           <div className="flex flex-col-reverse md:flex-row items-center">
             <h2 className="text-3xl font-semibold py-2 md:py-0 md:pr-4">
-              Meet our <span className="text-lp-400">2024/2025</span> execs
+              Meet our <span className="text-lp-400">2025/2026</span> execs
             </h2>
           </div>
           <span className="hidden md:flex md:flex-row md:space-x-2">
@@ -153,14 +135,21 @@ export default function ExecSection() {
                 className="flex justify-center items-center min-h-[250px] p-4"
               >
                 <div className="flex flex-col items-center">
-                  <a href={exec.linkedIn}>
-                    <Image
-                      src={exec.image}
-                      alt={exec.name}
-                      width={110}
-                      height={110}
-                      className="rounded-2xl drop-shadow-xl"
-                    />
+                  <a
+                    href={exec.linkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${exec.name} LinkedIn`}
+                  >
+                    <div className="relative w-[110px] h-[110px] overflow-hidden rounded-2xl drop-shadow-xl">
+                      <Image
+                        src={exec.image}
+                        alt={exec.name}
+                        fill
+                        className="object-cover"
+                        sizes="110px"
+                      />
+                    </div>
                   </a>
                   <p className="mt-2 font-bold text-center text-lg">
                     {exec.name}
