@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   if (
     !userMetadata ||
     !userMetadata.roles ||
-    userMetadata.roles.split(",")[0] !== "Admin"
+    userMetadata.roles.split(",")[0] !== "admin"
   ) {
     return <Unauthorized />;
   }
