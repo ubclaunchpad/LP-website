@@ -1,24 +1,15 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Mailgun from "mailgun.js";
-import formData from "form-data";
 import { Button } from "@/components/primitives/button";
+import type { ContactFormData, ContactFormResult } from "./api/contact";
 import "../app/globals.css";
 
-const DOMAIN = process.env.MAILGUN_DOMAIN || "mg.ubclaunchpad.com";
-const API_KEY = process.env.MAILGUN_API_KEY || "";
-
-const mailgun = new Mailgun(formData);
-const mg = mailgun.client({
-  username: "api",
-  key: API_KEY,
-});
-
 const ContactUs = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [hasError, setHasError] = useState(false);
-  const [formData, setFormData] = useState({
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     message: "",
@@ -33,21 +24,31 @@ const ContactUs = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
     try {
-      const res = await mg.messages.create(DOMAIN, {
-        from: `${formData.name} <${formData.email}>`,
-        to: "strategy@ubclaunchpad.com",
-        subject: "Contact Us Form Submission",
-        text: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      setIsSubmitted(true);
-      setHasError(false);
-      return res.status === 200;
+
+      const result: ContactFormResult = await response.json();
+      
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", message: "" }); // Clear form
+      } else {
+        setErrorMessage(result.error || "An unknown error occurred");
+      }
     } catch (error) {
-      setIsSubmitted(false);
-      setHasError(true);
-      return false;
+      console.error("Error submitting form:", error);
+      setErrorMessage("There was an error sending your message. Please try again later or contact strategy@ubclaunchpad.com directly.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -110,7 +111,8 @@ const ContactUs = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-              ></input>
+                disabled={isSubmitting}
+              />
             </div>
             <div className="md:items-center mb-6">
               <label className="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4">
@@ -124,7 +126,8 @@ const ContactUs = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-              ></input>
+                disabled={isSubmitting}
+              />
             </div>
             <div className="md:items-center mb-6">
               <label className="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4">
@@ -138,22 +141,27 @@ const ContactUs = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-              ></textarea>
+                disabled={isSubmitting}
+              />
             </div>
             <div className="md:items-center mb-6">
-              <Button className="p-3 w-full" size={"xl"} type="submit">
-                <span className="text-lg text-center px-8">Send Message</span>
+              <Button 
+                className="p-3 w-full" 
+                size={"xl"} 
+                type="submit"
+                disabled={isSubmitting}
+              >
+                <span className="text-lg text-center px-8">
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </span>
               </Button>
             </div>
           </form>
           <div className="text-purple-400">
             {isSubmitted ? (
-              <p> Your message has been sent</p>
-            ) : hasError ? (
-              <p>
-                There was an error sending your message. Please try again later
-                or contact strategy@ubclaunchpad.com.
-              </p>
+              <p>Your message has been sent successfully!</p>
+            ) : errorMessage ? (
+              <p className="text-red-400">{errorMessage}</p>
             ) : null}
           </div>
         </div>

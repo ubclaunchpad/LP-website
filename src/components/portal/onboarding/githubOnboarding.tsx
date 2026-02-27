@@ -2,7 +2,6 @@
 
 import React, { useContext, useState } from "react";
 import { Button } from "@/components/primitives/button";
-import { z } from "zod";
 import { userContext } from "@/lib/context/usercontext";
 import { Input } from "@/components/primitives/input";
 import { toast } from "sonner";
@@ -12,39 +11,25 @@ const TEXT = {
   title: "Github",
   description: "Join the GitHub organization to access the codebase.",
   githubUsername:
-    "First, let's confirm your GitHub username. Only one GitHub account can be linked to you. If it's correct, click on looks good to see what roles you can add",
+    "First, let's confirm your GitHub username. Only one GitHub account can be linked to you.",
   inputPlaceholder: "Enter GitHub Username",
-  button: "Join teams",
+  button: "Join Organization",
   errorMessage: "GitHub validation failed. Please try again.",
-  teams: "You are a member of the following teams:",
   loadingButton: "Loading...",
   successButton: "You're all set!",
   successUpdate: "Your GitHub username has been updated.",
   pendingInvite:
-    "We have invite you to the organization please check your email to accept before we can add you to",
+    "We have invited you to the organization. Please check your email to accept the invitation.",
   pendingInviteBtn: "I accepted the invite",
-  firstTime:
-    "If you're joining the organization for the first time, Github will invite you to join the organization.",
+  inviteSuccess: "Successfully sent organization invite!",
 };
-
-const GitHubIntegrationSchema = z.object({
-  githubUsername: z.string(),
-  actions: z.object({
-    teams: z.array(
-      z.object({
-        name: z.string(),
-        role: z.enum(["maintainer", "member"]),
-      }),
-    ),
-  }),
-});
 
 export default function GithubOnboarding() {
   const { user, userMetadata } = useContext(userContext);
   const [githubSetupState, setGithubSetupState] = useState<
     "initial" | "loading" | "success" | "error"
   >("initial");
-  const [isInRepo, setIsInRepo] = useState(false);
+  const [isInOrg, setIsInOrg] = useState(false);
   const [verifiedGithubUsername, setVerifiedGithubUsername] = useState(false);
 
   const [githubUsername, setGithubUsername] = useState(
@@ -55,19 +40,35 @@ export default function GithubOnboarding() {
     if (userMetadata.member?.github_username === githubUsername) {
       setVerifiedGithubUsername(true);
     } else {
-      const getMemberCheckRes = await fetch(
-        `${process.env.NEXT_PUBLIC_COLONY_URL}/colony/github/${githubUsername}/status`,
-        {
-          method: "GET",
-        },
-      );
-      const { isMember } = await getMemberCheckRes.json();
-      if (isMember) {
-        setIsInRepo(true);
-        return;
-      }
-      await fetch(
-        `${process.env.NEXT_PUBLIC_COLONY_URL}/colony/github/${githubUsername}/invite`,
+      // Update the username in the database
+      updateGithubUsername(githubUsername, user.id)
+        .then((result) => {
+          if (result.success) {
+            setVerifiedGithubUsername(true);
+            toast.success(TEXT.successUpdate);
+          } else {
+            // Handle specific error types
+            if (result.errorType === "USERNAME_TAKEN") {
+              toast.error(`${result.error}. Please use a different username.`);
+            } else {
+              toast.error(result.error || TEXT.errorMessage);
+            }
+          }
+        })
+        .catch((error) => {
+          console.error("Unexpected error:", error);
+          toast.error(TEXT.errorMessage);
+        });
+    }
+  }
+
+  const handleJoinOrganization = async () => {
+    try {
+      setGithubSetupState("loading");
+
+      // Send organization invite directly
+      const inviteRes = await fetch(
+        `/api/colony/github/${githubUsername}/invite`,
         {
           method: "POST",
           headers: {
@@ -75,54 +76,59 @@ export default function GithubOnboarding() {
           },
         },
       );
-      setIsInRepo(true);
 
-      updateGithubUsername(githubUsername, user.id)
-        .then(() => {
-          setVerifiedGithubUsername(true);
-          // update github username
-          toast.success(TEXT.successUpdate);
-        })
-        .catch(() => {
-          toast.error(TEXT.errorMessage);
-        });
-    }
-  }
-  const handleGithubSubmit = async () => {
-    try {
-      const teams = userMetadata.member?.team_members.map((member) => ({
-        name: member.teams.meta.github.team.name,
-        role: "maintainer",
-      }));
-      const parsedGithubData = GitHubIntegrationSchema.parse({
-        githubUsername: githubUsername,
-        actions: {
-          teams: teams,
-        },
-      });
+      const inviteData = await inviteRes.json();
 
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_COLONY_URL}/colony/github/${githubUsername}/roles`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ teams: parsedGithubData.actions.teams }),
-        },
-      );
-
-      const responseBody = await response.text();
-      if (!response.ok) {
-        toast.error(responseBody);
-        setGithubSetupState("error");
+      if (inviteRes.ok) {
+        toast.success(inviteData.message || TEXT.inviteSuccess);
+        setIsInOrg(true);
+        setGithubSetupState("success");
       } else {
-        toast.success(responseBody);
-        toast.success(TEXT.firstTime);
+        // Check if user is already in the organization
+        if (
+          inviteData.error &&
+          inviteData.error.includes("already a part of this organization")
+        ) {
+          toast.success("You&apos;re already in the organization!");
+          setIsInOrg(true);
+          setGithubSetupState("success");
+          return;
+        }
+
+        // Handle specific GitHub error codes
+        let errorMessage = inviteData.error || "Failed to send invite";
+
+        switch (inviteData.error_code) {
+          case "user_not_found":
+            errorMessage = "GitHub user not found. Please check your username.";
+            break;
+          case "github_permission_error":
+            errorMessage =
+              "Bot doesn't have permission to send invites. Please contact an administrator.";
+            break;
+          case "github_rate_limit":
+            errorMessage =
+              "GitHub rate limit exceeded. Please try again later.";
+            break;
+          case "github_validation_error":
+            errorMessage = "Invalid request. Please contact an administrator.";
+            break;
+          case "connection_error":
+            errorMessage =
+              "Unable to connect to GitHub service. Please try again later.";
+            break;
+          default:
+            errorMessage =
+              inviteData.error || "Failed to send organization invite";
+        }
+
+        toast.error(errorMessage);
+        setGithubSetupState("error");
       }
     } catch (error) {
       console.error(error);
       toast.error(TEXT.errorMessage);
+      setGithubSetupState("error");
     }
   };
 
@@ -141,7 +147,7 @@ export default function GithubOnboarding() {
           <Input
             disabled={verifiedGithubUsername}
             type="text"
-            placeholder="Enter GitHub Username"
+            placeholder={TEXT.inputPlaceholder}
             className={`p-2 flex-1 flex-shrink-0 border  border-background-500 rounded   w-full ${verifiedGithubUsername ? " border-lp-400 text-lp-400 " : "bg-background-600"}`}
             value={githubUsername}
             onChange={(e) => setGithubUsername(e.target.value)}
@@ -161,54 +167,38 @@ export default function GithubOnboarding() {
         </div>
       </section>
 
-      {verifiedGithubUsername && !isInRepo && (
+      {verifiedGithubUsername && (
         <section className="flex flex-col flex-1 items-start gap-4 w-full">
-          <p>{TEXT.pendingInvite}</p>
-          <div className="flex flex-col w-full flex-1  gap-4">
-            <div className="flex flex-1  pt-4 flex-col items-center w-full gap-4">
-              <Button
-                onClick={() => setIsInRepo(true)}
-                className="p-6 gap-4  w-fit md:min-w-[350px] f text-lg rounded-full"
-              >
-                {TEXT.pendingInviteBtn}
-              </Button>
+          {isInOrg && githubSetupState === "success" ? (
+            <div className="flex flex-col items-center w-full gap-4">
+              <p className="text-center text-lp-400 font-semibold">
+                ✓ You're all set! You should now have access to the Launch Pad
+                GitHub organization.
+              </p>
             </div>
-          </div>
-        </section>
-      )}
-
-      {verifiedGithubUsername && isInRepo && (
-        <section className="flex flex-col flex-1 items-start gap-4 w-full">
-          <p>{TEXT.teams}</p>
-          <div className="flex flex-col w-full flex-1  gap-4">
-            <ul className="flex flex-wrap gap-2">
-              {userMetadata.member?.team_members &&
-                userMetadata.member.team_members.map((member) => (
-                  <li
-                    key={member.member_id}
-                    className="border border-lp-300 bg-background-600 p-1 text-sm rounded-full w-fit px-4"
+          ) : (
+            <>
+              <p>Click below to join the Launch Pad GitHub organization:</p>
+              <div className="flex flex-col w-full flex-1 gap-4">
+                <div className="flex flex-1 pt-4 flex-col items-center w-full gap-4">
+                  <Button
+                    disabled={githubSetupState === "loading"}
+                    onClick={handleJoinOrganization}
+                    className="p-6 gap-4 w-fit md:min-w-[350px] text-lg rounded-full"
                   >
-                    {member.teams.name}
-                  </li>
-                ))}
-            </ul>
-            <div className="flex flex-1  pt-4 flex-col items-center w-full gap-4">
-              <Button
-                disabled={
-                  githubSetupState === "loading" ||
-                  githubSetupState === "success"
-                }
-                onClick={handleGithubSubmit}
-                className="p-6 gap-4  w-fit md:min-w-[350px] f text-lg rounded-full"
-              >
-                {githubSetupState === "loading"
-                  ? TEXT.loadingButton
-                  : githubSetupState === "success"
-                    ? TEXT.successButton
-                    : TEXT.button}
-              </Button>
-            </div>
-          </div>
+                    {githubSetupState === "loading"
+                      ? TEXT.loadingButton
+                      : TEXT.button}
+                  </Button>
+                  {isInOrg && githubSetupState !== "success" && (
+                    <p className="text-center text-neutral-400 text-sm">
+                      {TEXT.pendingInvite}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
         </section>
       )}
     </div>

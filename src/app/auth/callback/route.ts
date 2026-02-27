@@ -1,59 +1,27 @@
 import { NextResponse } from "next/server";
+// The client you created from the Server-Side Auth instructions
 import { createClient } from "@/lib/utils/supabase/server";
-import { db } from "@/db";
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get("code");
-  const next = searchParams.get("redirect") ?? "/portal";
+  // if "next" is in param, use it as the redirect URL
+  const next = searchParams.get("redirect") ?? "/";
 
   if (code) {
-    try {
-      const supabase = createClient();
-      const {
-        error,
-        data: { user },
-      } = await supabase.auth.exchangeCodeForSession(code);
-
-      if (!error && user) {
-        try {
-          const {
-            data: { user: user_details },
-          } = await supabase.auth.getUser();
-
-          if (user_details?.user_metadata && user_details.email) {
-            const fullName =
-              user_details.user_metadata.full_name ||
-              user_details.user_metadata.name ||
-              user_details.email;
-            const nameParts = fullName.split(" ");
-            const firstName = nameParts[0] || "Unknown";
-            const lastName = nameParts.slice(1).join(" ") || "User";
-
-            await db.members.upsert({
-              where: { id: user.id },
-              create: {
-                id: user.id,
-                first_name: firstName,
-                last_name: lastName,
-                faculty: "N/A",
-                grad_year: 2025,
-                specialization: "N/A",
-                year_level: 1,
-              },
-              update: {},
-            });
-          }
-
-          return NextResponse.redirect(`${origin}${next}`);
-        } catch (dbError) {
-          console.error("Database error:", dbError);
-          // Continue with redirect even if database operation fails
-          return NextResponse.redirect(`${origin}${next}`);
-        }
+    const supabase = createClient();
+    const { error } = await supabase.auth.exchangeCodeForSession(code);
+    if (!error) {
+      const forwardedHost = request.headers.get("x-forwarded-host"); // original origin before load balancer
+      const isLocalEnv = process.env.NODE_ENV === "development";
+      if (isLocalEnv) {
+        // we can be sure that there is no load balancer in between, so no need to watch for X-Forwarded-Host
+        return NextResponse.redirect(`${origin}${next}`);
+      } else if (forwardedHost) {
+        return NextResponse.redirect(`https://${forwardedHost}${next}`);
+      } else {
+        return NextResponse.redirect(`${origin}${next}`);
       }
-    } catch (authError) {
-      console.error("Auth error:", authError);
     }
   }
 

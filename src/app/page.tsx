@@ -32,7 +32,7 @@ const text = {
 };
 
 const lpImageProps = {
-  src: "/images/launchpadTeam.png",
+  src: "/images/launchpadTeam.jpg",
   alt: "Launchpad team posing for a photo",
   width: 998 * 2,
   height: 580 * 2,

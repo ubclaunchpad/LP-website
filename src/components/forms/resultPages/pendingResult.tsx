@@ -1,3 +1,4 @@
+"use client";
 import { Form } from "@/lib/types/application";
 import Link from "next/link";
 

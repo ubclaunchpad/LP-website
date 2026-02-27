@@ -2,8 +2,35 @@
 
 import { db } from "@/db";
 
-export async function updateGithubUsername(username: string, id: string) {
+type UpdateResult = {
+  success: boolean;
+  error?: string;
+  errorType?: string;
+};
+
+export async function updateGithubUsername(
+  username: string,
+  id: string,
+): Promise<UpdateResult> {
   try {
+    // First, check if the GitHub username is already taken by another user
+    const existingUser = await db.members.findFirst({
+      where: {
+        github_username: username,
+        NOT: {
+          id: id, // Exclude the current user
+        },
+      },
+    });
+
+    if (existingUser) {
+      return {
+        success: false,
+        error: "This GitHub username is already linked to another account",
+        errorType: "USERNAME_TAKEN",
+      };
+    }
+
     await db.members.update({
       where: {
         id: id,
@@ -12,14 +39,54 @@ export async function updateGithubUsername(username: string, id: string) {
         github_username: username,
       },
     });
-  } catch (error) {
+
+    return { success: true };
+  } catch (error: any) {
     console.error("Error updating github username", error);
-    throw new Error("Error updating github username");
+
+    // Handle Prisma unique constraint errors
+    if (
+      error.code === "P2002" &&
+      error.meta?.target?.includes("github_username")
+    ) {
+      return {
+        success: false,
+        error: "This GitHub username is already linked to another account",
+        errorType: "USERNAME_TAKEN",
+      };
+    }
+
+    return {
+      success: false,
+      error: "Error updating GitHub username. Please try again.",
+      errorType: "GENERAL_ERROR",
+    };
   }
 }
 
-export async function updateDiscordUsername(username: string, id: string) {
+export async function updateDiscordUsername(
+  username: string,
+  id: string,
+): Promise<UpdateResult> {
   try {
+    // First, check if the Discord username is already taken by another user
+    const existingUser = await db.members.findFirst({
+      where: {
+        discord_id: username,
+        NOT: {
+          id: id, // Exclude the current user
+        },
+      },
+    });
+
+    if (existingUser) {
+      return {
+        success: false,
+        error: "This Discord username is already linked to another account",
+        errorType: "USERNAME_TAKEN",
+      };
+    }
+
     await db.members.update({
       where: {
         id: id,
@@ -28,8 +95,24 @@ export async function updateDiscordUsername(username: string, id: string) {
         discord_id: username,
       },
     });
-  } catch (error) {
+
+    return { success: true };
+  } catch (error: any) {
     console.error("Error updating discord username", error);
-    throw new Error("Error updating discord username");
+
+    // Handle Prisma unique constraint errors
+    if (error.code === "P2002" && error.meta?.target?.includes("discord_id")) {
+      return {
+        success: false,
+        error: "This Discord username is already linked to another account",
+        errorType: "USERNAME_TAKEN",
+      };
+    }
+
+    return {
+      success: false,
+      error: "Error updating Discord username. Please try again.",
+      errorType: "GENERAL_ERROR",
+    };
   }
 }

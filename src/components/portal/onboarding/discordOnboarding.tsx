@@ -41,31 +41,43 @@ export default function DiscordOnboarding() {
   >("initial");
   const [verifiedDiscordUsername, setVerifiedDiscordUsername] = useState(false);
   const [discordUsername, setDiscordUsername] = useState(
-    userMetadata.member?.discord_id || "",
+    (userMetadata.member as any)?.discord_id || "",
   );
 
   function handleUpdateDiscordUsername() {
-    if (userMetadata.member?.discord_id === discordUsername) {
+    if ((userMetadata.member as any)?.discord_id === discordUsername) {
       setVerifiedDiscordUsername(true);
     } else {
       updateDiscordUsername(discordUsername, user.id)
-        .then(() => {
-          setVerifiedDiscordUsername(true);
-          toast.success(TEXT.successUpdate);
+        .then((result) => {
+          if (result.success) {
+            setVerifiedDiscordUsername(true);
+            toast.success(TEXT.successUpdate);
+          } else {
+            // Handle specific error types
+            if (result.errorType === "USERNAME_TAKEN") {
+              toast.error(`${result.error}. Please use a different username.`);
+            } else {
+              toast.error(result.error || TEXT.errorMessage);
+            }
+          }
         })
-        .catch(() => {
+        .catch((error) => {
+          console.error("Unexpected error:", error);
           toast.error(TEXT.errorMessage);
         });
     }
   }
   const handleGithubSubmit = async () => {
     try {
-      const roles: string[] = [];
+      const roles: string[] = ['2025-member', 'Member'];
       if (!userMetadata.member?.team_members) {
+        console.error("No team members found");
         return;
       }
+      console.log(userMetadata.member?.team_members);
       for (const member of userMetadata.member?.team_members) {
-        roles.push(...member.teams.meta.discord.roles);
+        roles.push(...(member as any).teams.meta.discord.roles);
       }
 
       const parsed = DiscordIntegrationSchema.safeParse({
@@ -79,7 +91,7 @@ export default function DiscordOnboarding() {
         return;
       }
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_COLONY_URL}/colony/discord/${discordUsername}/roles`,
+        `/api/colony/discord/${discordUsername}/roles`,
         {
           method: "PUT",
           headers: {
@@ -91,13 +103,51 @@ export default function DiscordOnboarding() {
         },
       );
 
+      const responseData = await response.json();
       if (!response.ok) {
-        const responseBody = await response.text();
-        toast.error(responseBody);
+        // Handle specific error codes with better user messages
+        let errorMessage = responseData.error || "An error occurred";
+
+        switch (responseData.error_code) {
+          case "user_not_found":
+            errorMessage =
+              "Discord user not found. Please make sure you've joined the Discord server first.";
+            break;
+          case "bot_not_ready":
+            errorMessage =
+              "Discord bot is not ready. Please try again in a few moments.";
+            break;
+          case "validation_error":
+            errorMessage =
+              "Invalid roles configuration. Please contact an administrator.";
+            break;
+          case "discord_permission_error":
+            errorMessage =
+              "Bot doesn't have permission to assign roles. Please contact an administrator.";
+            break;
+          case "not_implemented":
+            errorMessage = "This feature is not yet available.";
+            break;
+          case "connection_error":
+            errorMessage =
+              "Unable to connect to Discord service. Please try again later.";
+            break;
+          default:
+            errorMessage =
+              responseData.error || "Failed to update Discord roles";
+        }
+
+        toast.error(errorMessage);
         setState("error");
       } else {
-        const responseBody = await response.text();
-        toast.success(responseBody);
+        const successMessage =
+          responseData.message || "Discord roles updated successfully!";
+        toast.success(successMessage);
+
+        // Show additional info if available
+        if (responseData.roles_added && responseData.roles_added.length > 0) {
+          toast.success(`Added roles: ${responseData.roles_added.join(", ")}`);
+        }
       }
     } catch (error) {
       console.error(error);

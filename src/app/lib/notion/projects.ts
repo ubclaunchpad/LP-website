@@ -16,9 +16,10 @@ async function getProjects() {
   const cacheValidFor = 30 * 24 * 60 * 60 * 1000; // 1 month
   const now = Date.now();
 
-  if (projectsData.timestamp && now - projectsData.timestamp < cacheValidFor) {
-    return projectsData.projects;
-  }
+  // if (projectsData.timestamp && now - projectsData.timestamp < cacheValidFor) {
+  //   return projectsData.projects;
+  // }
+  return projectsData.projects;
 
   // Fetch starred projects from Notion
   const filter = {
@@ -56,7 +57,7 @@ async function getProjects() {
       `This was one of Launch Pad's previous projects. This description is just to fill space for testing`,
     imageSrc:
       item.properties["Files & media"]?.files?.[0]?.file?.url ??
-      "/images/launchpadTeam.png",
+      "/images/launchpadTeam.jpg",
     alt: "Mock",
     width: 372,
     height: 213,

@@ -18,26 +18,14 @@ export async function GET(request: NextRequest) {
       users: true,
     },
   });
-
   const members = res.map((r) => {
-    const teams = r.team_members.map((tm) => {
-      return {
-        // id: Number(tm.team_id),
-        role: tm.role,
-        name: tm.teams.name,
-        startYear: tm.teams.start_year,
-        endYear: tm.teams.end_year,
-      };
-    });
-
     return {
-      // id: r.id,
       firstName: r.first_name,
       lastName: r.last_name,
       email: r.users.email,
       specialization: r.specialization,
       faculty: r.faculty,
-      team: r.team_members[0].teams.name,
+      team: r.team_members[0] ? r.team_members[0].teams.name : "N/A",
       discordId: r.discord_id,
       githubUsername: r.github_username,
     };

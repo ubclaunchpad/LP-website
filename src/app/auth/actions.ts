@@ -8,11 +8,10 @@ import { headers, cookies } from "next/headers";
 export async function login() {
   const supabase = createClient();
   const c = cookies();
+  const h = headers();
   const redirectPath = `redirect=${c.get("x-path")?.value || ""}`;
   c.delete("x-path");
-  const callbackUrl = `https://www.ubclaunchpad.com/auth/callback?${redirectPath}`;
-
-  console.log(callbackUrl);
+  const callbackUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/auth/callback?${redirectPath}`;
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
@@ -27,7 +26,6 @@ export async function login() {
   }
 
   if (error) {
-    console.error(error);
     redirect("/error");
   }
 
