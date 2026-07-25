@@ -9,21 +9,22 @@ declare global {
 
 let db: PrismaClient;
 
-// Ensure process.env.DATABASE_URL is defined for production
-if (process.env.NODE_ENV === "production" && process.env.DATABASE_URL) {
+// The prisma-client generator requires a driver adapter for the connection;
+// the `datasources` option is no longer accepted by the client constructor.
+function createClient() {
   const adapter = new PrismaPg({
     connectionString: process.env.DATABASE_URL,
   });
-  db = new PrismaClient({ adapter });
+  return new PrismaClient({ adapter });
+}
+
+if (process.env.NODE_ENV === "production") {
+  db = createClient();
 } else {
+  // Reuse a single client across hot reloads in development to avoid
+  // exhausting database connections.
   if (!global.prisma) {
-    global.prisma = new PrismaClient({
-      datasources: {
-        db: {
-          url: process.env.DATABASE_URL,
-        },
-      },
-    });
+    global.prisma = createClient();
   }
   db = global.prisma;
 }
