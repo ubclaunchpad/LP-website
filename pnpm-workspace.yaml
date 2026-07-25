@@ -1,2 +1,5 @@
 onlyBuiltDependencies:
   - supabase
+  - prisma
+  - "@prisma/engines"
+  - "@prisma/client"
