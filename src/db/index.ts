@@ -1,6 +1,5 @@
-import { PrismaClient } from "@prisma/client";
-import { PrismaNeon } from "@prisma/adapter-neon";
-import { Pool } from "@neondatabase/serverless";
+import { PrismaClient } from "../../prisma/generated/client";
+import { PrismaPg } from "@prisma/adapter-pg";
 
 // Extend the NodeJS.Global interface to include prisma
 declare global {
@@ -12,8 +11,9 @@ let db: PrismaClient;
 
 // Ensure process.env.DATABASE_URL is defined for production
 if (process.env.NODE_ENV === "production" && process.env.DATABASE_URL) {
-  const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-  const adapter = new PrismaNeon(pool);
+  const adapter = new PrismaPg({
+    connectionString: process.env.DATABASE_URL,
+  });
   db = new PrismaClient({ adapter });
 } else {
   if (!global.prisma) {
