@@ -70,7 +70,7 @@ export default function DiscordOnboarding() {
   }
   const handleGithubSubmit = async () => {
     try {
-      const roles: string[] = ['2025-member', 'Member'];
+      const roles: string[] = ["2025-member", "Member"];
       if (!userMetadata.member?.team_members) {
         console.error("No team members found");
         return;

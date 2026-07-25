@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from "next";
 import Mailgun from "mailgun.js";
 import formData from "form-data";
 
@@ -25,12 +25,12 @@ export type ContactFormResult = {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ContactFormResult>
+  res: NextApiResponse<ContactFormResult>,
 ) {
-  if (req.method !== 'POST') {
+  if (req.method !== "POST") {
     return res.status(405).json({
       success: false,
-      error: 'Method not allowed'
+      error: "Method not allowed",
     });
   }
 
@@ -73,19 +73,20 @@ export default async function handler(
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${message.replace(/\n/g, "<br>")}</p>
       `,
     });
-    
+
     return res.status(200).json({
       success: true,
     });
   } catch (error) {
     console.error("Error sending email:", error);
-    
+
     return res.status(500).json({
       success: false,
-      error: "There was an error sending your message. Please try again later or contact strategy@ubclaunchpad.com directly.",
+      error:
+        "There was an error sending your message. Please try again later or contact strategy@ubclaunchpad.com directly.",
     });
   }
-} 
+}

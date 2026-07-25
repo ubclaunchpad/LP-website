@@ -140,11 +140,7 @@ export default function NewFormDialog() {
               ))}
             </div>
           </div>
-          <Button
-            size={"sm"}
-            type="submit"
-            disabled={isSubmitting}
-          >
+          <Button size={"sm"} type="submit" disabled={isSubmitting}>
             Create Form
           </Button>
         </form>
