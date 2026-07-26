@@ -1,2 +1,6 @@
+allowBuilds:
+  '@prisma/engines': set this to true or false
+  prisma: set this to true or false
+  supabase: set this to true or false
 onlyBuiltDependencies:
   - supabase
