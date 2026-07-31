@@ -52,7 +52,7 @@ html {
   }
 }
 
-* {
+html {
   overscroll-behavior: none;
 }
 

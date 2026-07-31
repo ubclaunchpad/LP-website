@@ -4,13 +4,21 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpx prisma generate && next dev",
-    "build": "pnpx prisma generate && next build",
+    "dev": "prisma generate && next dev",
+    "build": "prisma generate && next build",
     "start": "next start",
     "next:lint": "next lint",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
     "format": "prettier --write ."
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "supabase",
+      "prisma",
+      "@prisma/engines",
+      "@prisma/client"
+    ]
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",

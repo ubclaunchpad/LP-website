@@ -217,7 +217,7 @@ export async function sendStatusEmailToUser(
   });
 }
 
-export async function getAdminMembers() { 
+export async function getAdminMembers() {
   const res = await db.roles.findMany({
     where: {
       roles: {

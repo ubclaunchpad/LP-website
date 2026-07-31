@@ -28,16 +28,16 @@ const ContactUs = () => {
     setErrorMessage(null);
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       const result: ContactFormResult = await response.json();
-      
+
       if (result.success) {
         setIsSubmitted(true);
         setFormData({ name: "", email: "", message: "" }); // Clear form
@@ -46,7 +46,9 @@ const ContactUs = () => {
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      setErrorMessage("There was an error sending your message. Please try again later or contact strategy@ubclaunchpad.com directly.");
+      setErrorMessage(
+        "There was an error sending your message. Please try again later or contact strategy@ubclaunchpad.com directly.",
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -145,9 +147,9 @@ const ContactUs = () => {
               />
             </div>
             <div className="md:items-center mb-6">
-              <Button 
-                className="p-3 w-full" 
-                size={"xl"} 
+              <Button
+                className="p-3 w-full"
+                size={"xl"}
                 type="submit"
                 disabled={isSubmitting}
               >
