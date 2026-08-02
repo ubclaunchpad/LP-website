@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   build:
-    name: Next.js build
+    name: Website build
     runs-on: ubuntu-latest
 
     # Placeholder values only. `next build` needs these to be present and
