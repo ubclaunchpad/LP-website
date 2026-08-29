@@ -97,7 +97,7 @@ export function DataTable<TData, TValue>({
         <input
           type="checkbox"
           checked={table.getIsAllPageRowsSelected()}
-          onChange={table.toggleAllPageRowsSelected}
+          onChange={() => table.toggleAllPageRowsSelected()}
           onClick={(e) => e.stopPropagation()}
           className="accent-lp-500 w-3.5 h-3.5 cursor-pointer"
           title="Select page"
@@ -107,7 +107,7 @@ export function DataTable<TData, TValue>({
         <input
           type="checkbox"
           checked={row.getIsSelected()}
-          onChange={row.toggleSelected()}
+          onChange={() => row.toggleSelected()}
           onClick={(e) => e.stopPropagation()}
           className="accent-lp-500 w-3.5 h-3.5 cursor-pointer"
         />
