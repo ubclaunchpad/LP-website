@@ -180,32 +180,154 @@ export async function updateSubmissionField(
   value: any,
   cta: boolean = false,
 ) {
-  await requireAdmin();
+  const admin = await requireAdmin();
   if (tableName === "applications") {
-    await db["applications"].update({
+    const previous = await db.applications.findUnique({
+      where: { id: submissionId },
+      select: { status: true },
+    });
+    await db.applications.update({
       where: { id: submissionId },
       data: {
         [field]: value,
       },
     });
-    if (field === "status" && cta) {
-      const submission = await db.submissions.findFirst({
-        where: {
-          id: submissionId,
+    if (field === "status") {
+      await db.application_status_history.create({
+        data: {
+          application_id: submissionId,
+          old_status: previous?.status ?? null,
+          new_status: value ?? null,
+          changed_by: admin.id,
         },
       });
+      if (cta) {
+        const submission = await db.submissions.findFirst({
+          where: {
+            id: submissionId,
+          },
+        });
 
-      if (!submission) {
-        console.log("Submission not found");
-        return;
+        if (!submission) {
+          console.log("Submission not found");
+          return;
+        }
+        await sendStatusEmail({
+          status: value,
+          formId: submission.form_id,
+          userId: submission.user_id,
+        });
       }
-      await sendStatusEmail({
-        status: value,
-        formId: submission.form_id,
-        userId: submission.user_id,
-      });
     }
   }
+}
+
+export async function getStatusHistory(applicationId: string) {
+  await requireAdmin();
+  return db.application_status_history.findMany({
+    where: { application_id: applicationId },
+    orderBy: { created_at: "desc" },
+    take: 20,
+    include: {
+      users: { select: { email: true } },
+    },
+  });
+}
+
+const BULK_ASSIGNABLE_FIELDS = ["reviewer_id", "interviewer_id", "level"] as const;
+
+export async function bulkUpdateSubmissionField(
+  ids: string[],
+  field: string,
+  value: any,
+) {
+  const admin = await requireAdmin();
+  if (!BULK_ASSIGNABLE_FIELDS.includes(field as any)) {
+    throw new Error("Bulk updates are restricted to reviewer/interviewer/level");
+  }
+  if (!ids.length) {
+    return 0;
+  }
+  await db.$transaction(
+    ids.map((id) =>
+      db.applications.update({ where: { id }, data: { [field]: value } }),
+    ),
+  );
+  return ids.length;
+}
+
+// Renders the status-email template for an applicant without sending.
+async function renderStatusEmail({
+  status,
+  formId,
+  userId,
+}: {
+  status: string;
+  formId: bigint;
+  userId: string;
+}): Promise<{ subject: string; html: string } | null> {
+  const form = await getFormById(formId);
+
+  if (!form) {
+    console.log("Form not found");
+    return null;
+  }
+  const app = await db.submissions.findFirst({
+    where: {
+      form_id: formId,
+      user_id: userId,
+    },
+    include: {
+      applications: true,
+      users: true,
+    },
+  });
+
+  if (!app) {
+    console.log("Application not found");
+    return null;
+  }
+
+  const formConfig = form.config as any;
+  const config = formConfig.application as any;
+
+  if (
+    !config ||
+    !config.emails ||
+    !config.emails.status ||
+    !config.emails.status[status]
+  ) {
+    console.log("Email template not found");
+    return null;
+  }
+
+  const emailTemplate = config.emails.status[status];
+  const title = emailTemplate.title;
+  const content = emailTemplate.content;
+  const details = app.details ? (app.details as any) : {};
+  const template = await render(
+    MarkdownTemplate({ markdown: content, replacements: details }),
+  );
+
+  return { subject: title, html: template };
+}
+
+export async function previewStatusEmail(
+  submissionId: string,
+  status: string,
+) {
+  await requireAdmin();
+  const submission = await db.submissions.findFirst({
+    where: { id: submissionId },
+  });
+  if (!submission) {
+    return null;
+  }
+  return renderStatusEmail({
+    status,
+    formId: submission.form_id,
+    userId: submission.user_id,
+  });
 }
 
 export async function sendStatusEmailToUser(
@@ -300,10 +422,9 @@ async function sendStatusEmail({
   formId: bigint;
   userId: string;
 }) {
-  const form = await getFormById(formId);
+  const rendered = await renderStatusEmail({ status, formId, userId });
 
-  if (!form) {
-    console.log("Form not found");
+  if (!rendered) {
     return;
   }
   const app = await db.submissions.findFirst({
@@ -321,34 +442,14 @@ async function sendStatusEmail({
     console.log("Application not found");
     return;
   }
-
-  const formConfig = form.config as any;
-  const config = formConfig.application as any;
-
-  if (
-    !config ||
-    !config.emails ||
-    !config.emails.status ||
-    !config.emails.status[status]
-  ) {
-    console.log("Email template not found");
-    return;
-  }
-
-  const emailTemplate = config.emails.status[status];
-  const title = emailTemplate.title;
-  const content = emailTemplate.content;
   const details = app.details ? (app.details as any) : {};
-  const template = await render(
-    MarkdownTemplate({ markdown: content, replacements: details }),
-  );
 
   await sendEmail({
     from: "no-reply@ubclaunchpad.com",
     fromName: "no-reply UBC Launch Pad",
     to: app.users.email!.toString(),
-    subject: title,
-    html: template,
+    subject: rendered.subject,
+    html: rendered.html,
     cc: details?.email as string,
   });
   if (!app.applications) {

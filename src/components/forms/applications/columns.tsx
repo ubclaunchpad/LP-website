@@ -14,7 +14,10 @@ import {
   LoaderCircleIcon,
   MailIcon,
   Maximize2Icon,
+  SendIcon,
+  XIcon,
 } from "lucide-react";
+import { previewStatusEmail } from "@/app/portal/admin/actions";
 
 export type FormFields = {
   [key: string]: {
@@ -138,6 +141,11 @@ export function createColumns<TData>(
       ) => {
         if (!filterValue) {
           return true;
+        }
+
+        if (filterValue === "__unassigned__") {
+          const v = row.original[key];
+          return !v || v === "unassigned" || v === "";
         }
 
         if (field.type === "select") {
@@ -298,52 +306,135 @@ export function createColumns<TData>(
 }
 
 function NotifyButtonForEmail({ row }: { row: any }) {
-  const [emailState, setEmailState] = useState<"idle" | "loading" | "sent">(
-    "idle",
-  );
+  const [state, setState] = useState<
+    "idle" | "preview" | "loading" | "sending" | "sent" | "error" | "notemplate"
+  >("idle");
+  const [preview, setPreview] = useState<{
+    subject: string;
+    html: string;
+  } | null>(null);
 
   useEffect(() => {
-    if (emailState === "sent") {
+    if (state === "sent") {
       const timer = setTimeout(() => {
-        setEmailState("idle");
+        setState("idle");
       }, 5000);
 
       return () => {
         clearTimeout(timer);
       };
     }
-  }, [emailState]);
+  }, [state]);
+
+  function openPreview() {
+    setState("loading");
+    previewStatusEmail(row.original.id, row.original.status)
+      .then((p) => {
+        if (p) {
+          setPreview(p);
+          setState("preview");
+        } else {
+          setState("notemplate");
+        }
+      })
+      .catch(() => setState("error"));
+  }
+
+  function send() {
+    setState("sending");
+    sendStatusEmailToUser(row.original.id, row.original.status)
+      .then(() => setState("sent"))
+      .catch(() => setState("error"));
+  }
 
   return (
-    <button
-      onClick={async () => {
-        setEmailState("loading");
-        await sendStatusEmailToUser(row.original.id, row.original.status);
-        setEmailState("sent");
-      }}
-      className={
-        "disabled:opacity-55 text-neutral-200 rounded-md p-2 bg-background-500 h-fit w-fit  flex  border border-transparent hover:border-background-500 items-center justify-center gap-2  "
-      }
-    >
-      {emailState === "loading" && (
-        <span className={"text-xs flex items-center gap-2"}>
-          <LoaderCircleIcon className={"w-3 h-3 animate-spin"} />
-          Sending Email...
-        </span>
+    <>
+      <button
+        onClick={openPreview}
+        className={
+          "disabled:opacity-55 text-neutral-200 rounded-md p-2 bg-background-500 h-fit w-fit  flex  border border-transparent hover:border-background-500 items-center justify-center gap-2  "
+        }
+      >
+        {state === "loading" && (
+          <span className={"text-xs flex items-center gap-2"}>
+            <LoaderCircleIcon className={"w-3 h-3 animate-spin"} />
+            Loading preview…
+          </span>
+        )}
+        {state !== "loading" && (
+          <span className={"text-xs flex items-center gap-2"}>
+            <MailIcon className={"w-3 h-3"} />
+            {row.original.notified_on ? "Resend Email" : "Notify via Email"}
+          </span>
+        )}
+      </button>
+      {(state === "preview" || state === "sending") && preview && (
+        <div
+          className={
+            "fixed inset-0 bg-black bg-opacity-60 z-40 flex items-center justify-center p-4"
+          }
+          onClick={() => setState("idle")}
+        >
+          <div
+            className={
+              "bg-background-800 border border-background-600 rounded-lg p-4 max-w-3xl w-full max-h-[90dvh] overflow-auto flex flex-col gap-3"
+            }
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center">
+              <h3 className="font-semibold">
+                Email preview —{" "}
+                <span className="text-lp-300">{preview.subject}</span>
+              </h3>
+              <button
+                onClick={() => setState("idle")}
+                className="rounded p-1 hover:bg-background-600"
+              >
+                <XIcon className="h-4 w-4" />
+              </button>
+            </div>
+            <iframe
+              srcDoc={preview.html}
+              sandbox=""
+              title="Email preview"
+              className="w-full h-[55dvh] bg-white rounded border border-background-500"
+            />
+            <div className="flex justify-end gap-2">
+              <Button
+                variant="secondary"
+                className="bg-background-600"
+                onClick={() => setState("idle")}
+              >
+                Cancel
+              </Button>
+              <Button
+                onClick={send}
+                disabled={state === "sending"}
+                className="gap-2"
+              >
+                {state === "sending" ? (
+                  <LoaderCircleIcon className="w-4 h-4 animate-spin" />
+                ) : (
+                  <SendIcon className="w-4 h-4" />
+                )}
+                Send to {row.original.email}
+              </Button>
+            </div>
+          </div>
+        </div>
       )}
-      {emailState === "sent" && (
-        <span className={"text-xs flex items-center gap-2"}>
-          <CircleCheckIcon className={"w-3 h-3"} />
-          Email Sent
-        </span>
+      {state === "notemplate" && (
+        <div className="fixed bottom-4 right-4 z-40 bg-background-700 border border-yellow-600 rounded-lg p-3 text-sm max-w-xs">
+          No email template is configured for the current status
+          {row.original.status ? ` ("${row.original.status}")` : ""}.
+        </div>
       )}
-      {emailState === "idle" && (
-        <span className={"text-xs flex items-center gap-2"}>
-          <MailIcon className={"w-3 h-3"} />
-          {row.original.notified_on ? "Resend Email" : "Notify via Email"}
-        </span>
+      {state === "error" && (
+        <div className="fixed bottom-4 right-4 z-40 bg-background-700 border border-red-600 rounded-lg p-3 text-sm">
+          Failed to load/send the email — try again.
+        </div>
       )}
-    </button>
+    </>
   );
 }
 

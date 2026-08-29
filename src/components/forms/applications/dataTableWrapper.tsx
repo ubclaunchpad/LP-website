@@ -9,8 +9,10 @@ import {
   ReferenceMap,
 } from "@/components/forms/applications/columns";
 import useApplicantPopover from "@/components/forms/applications/applicantPopover";
-import { Fragment, useContext } from "react";
+import { Fragment, useCallback, useContext, useMemo, useState } from "react";
 import { formContext } from "@/components/layouts/formTabView";
+import { bulkUpdateSubmissionField } from "@/app/portal/admin/actions";
+import { toast } from "sonner";
 
 export type DataTableProps<TData, TValue> = {
   columns: ColumnDef<TData, TValue>[];
@@ -18,6 +20,8 @@ export type DataTableProps<TData, TValue> = {
   refMap: ReferenceMap;
   config: any;
   onRowClick?: (row: any) => void;
+  onVisibleRowsChange?: (rows: any[]) => void;
+  onBulkUpdate?: (ids: string[], field: string, value: any) => Promise<any>;
 };
 
 type DataTableWrapperProps<TData> = {
@@ -29,18 +33,70 @@ export default function DataTableWrapper<TData>({
   data,
   formFields,
 }: DataTableWrapperProps<TData>) {
-  const fieldData = data as unknown as (string | number)[];
+  const [visibleRows, setVisibleRows] = useState<any[]>([]);
   const { setAndOpen, applicantPopover } = useApplicantPopover({
     fields: formFields,
+    rows: visibleRows,
   });
   const { members, rawForm } = useContext(formContext);
-  const membersWithLabel = members.map((member) => ({
-    ...member,
-    label: member.display_name || member.email,
-  }));
+  const membersWithLabel = useMemo(
+    () =>
+      members.map((member) => ({
+        ...member,
+        label: member.display_name || member.email,
+      })),
+    [members],
+  );
   const refMap = populateReferenceMap(formFields, [
     { id: "members", options: membersWithLabel, label: "members" },
   ]);
+  const handleVisibleRows = useCallback((rows: any[]) => {
+    setVisibleRows(rows);
+  }, []);
+
+  const handleBulkUpdate = useCallback(
+    (ids: string[], field: string, value: any) => {
+      return bulkUpdateSubmissionField(ids, field, value)
+        .then((count) => {
+          toast.success(
+            `Updated ${count} applicant${count === 1 ? "" : "s"}`,
+          );
+        })
+        .catch(() => {
+          toast.error("Bulk update failed");
+          throw new Error("bulk update failed");
+        });
+    },
+    [],
+  );
+
+  // Flag duplicate applications (same email or GitHub username)
+  const markedData = useMemo(() => {
+    const emailCounts: Record<string, number> = {};
+    const githubCounts: Record<string, number> = {};
+    (data as any[]).forEach((row) => {
+      if (row.email) {
+        const key = row.email.toString().toLowerCase();
+        emailCounts[key] = (emailCounts[key] || 0) + 1;
+      }
+      if (row.github_username) {
+        const key = row.github_username.toString().toLowerCase();
+        githubCounts[key] = (githubCounts[key] || 0) + 1;
+      }
+    });
+    return (data as any[]).map((row) => {
+      const dupEmail =
+        row.email && emailCounts[row.email.toString().toLowerCase()] > 1;
+      const dupGithub =
+        row.github_username &&
+        githubCounts[row.github_username.toString().toLowerCase()] > 1;
+      return {
+        ...row,
+        __duplicate: !!(dupEmail || dupGithub),
+      };
+    });
+  }, [data]);
+
   const columns = createColumns(formFields, members, setAndOpen);
   const config = {
     title: rawForm?.title,
@@ -49,6 +105,25 @@ export default function DataTableWrapper<TData>({
       showChart: true,
     },
     statusOptions: formFields["status"]?.options,
+    reviewerOptions: membersWithLabel,
+    bulkFields: [
+      {
+        id: "reviewer_id",
+        label: "Reviewer",
+        options: membersWithLabel,
+      },
+      {
+        id: "interviewer_id",
+        label: "Interviewer",
+        options: membersWithLabel,
+      },
+      {
+        id: "level",
+        label: "Level",
+        options: formFields["level"]?.options || [],
+      },
+    ],
+    compareFields: formFields,
     analytics: {
       columns: [
         "status",
@@ -65,6 +140,8 @@ export default function DataTableWrapper<TData>({
       ],
     },
     columnOrder: [
+      "select",
+      "__duplicate",
       "popover",
       "status",
       "team_id",
@@ -82,11 +159,13 @@ export default function DataTableWrapper<TData>({
     <Fragment>
       {applicantPopover}
       <DataTable
-        columns={columns}
-        data={fieldData}
+        columns={columns as ColumnDef<any, any>[]}
+        data={markedData as unknown as (string | number)[]}
         refMap={refMap}
         config={config}
         onRowClick={(row) => setAndOpen({ applicant: row })}
+        onVisibleRowsChange={handleVisibleRows}
+        onBulkUpdate={handleBulkUpdate}
       />
     </Fragment>
   );

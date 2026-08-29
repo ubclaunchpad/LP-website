@@ -18,6 +18,10 @@ export default async function Layout({
       route: `/portal/admin/forms/${params.id}/submissions`,
     },
     {
+      label: "Board",
+      route: `/portal/admin/forms/${params.id}/board`,
+    },
+    {
       label: "Support",
       route: `/portal/admin/forms/${params.id}/support`,
     },

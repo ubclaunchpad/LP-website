@@ -1,23 +1,85 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { FormFields } from "@/components/forms/applications/columns";
 import { ColumnDef, flexRender, Row } from "@tanstack/react-table";
 import { TableCell } from "@/components/primitives/table";
+import { getStatusHistory } from "@/app/portal/admin/actions";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  HistoryIcon,
+  XIcon,
+} from "lucide-react";
 
 export default function useApplicantPopover({
   fields,
+  rows,
 }: {
   fields: FormFields;
+  rows: Row<string | number>[];
 }) {
   const [open, setOpen] = useState(false);
-  const [applicant, setApplicant] = useState<Row<string | number> | null>(null);
+  const [applicantId, setApplicantId] = useState<string | null>(null);
+  const [history, setHistory] = useState<any[] | null>(null);
+
+  const index = useMemo(
+    () =>
+      applicantId ? rows.findIndex((r) => (r.original as any)?.id === applicantId) : -1,
+    [applicantId, rows],
+  );
+  const applicant = index >= 0 ? rows[index] : null;
 
   function setAndOpen({ applicant }: { applicant: Row<string | number> }) {
-    setApplicant(applicant);
+    setApplicantId((applicant.original as any)?.id ?? null);
+    setHistory(null);
     setOpen(true);
   }
 
+  function move(delta: number) {
+    if (index < 0) return;
+    const next = rows[index + delta];
+    if (next) {
+      setApplicantId((next.original as any)?.id ?? null);
+      setHistory(null);
+    }
+  }
+
+  useEffect(() => {
+    if (!open) return;
+    function onKey(e: KeyboardEvent) {
+      const target = e.target as HTMLElement;
+      if (["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName)) return;
+      if (e.key === "Escape") {
+        setOpen(false);
+      }
+      if (e.key === "j" || e.key === "ArrowDown") {
+        e.preventDefault();
+        move(1);
+      }
+      if (e.key === "k" || e.key === "ArrowUp") {
+        e.preventDefault();
+        move(-1);
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
+
+  useEffect(() => {
+    if (!open || !applicantId) {
+      setHistory(null);
+      return;
+    }
+    let cancelled = false;
+    getStatusHistory(applicantId)
+      .then((h) => !cancelled && setHistory(h as any[]))
+      .catch(() => !cancelled && setHistory([]));
+    return () => {
+      cancelled = true;
+    };
+  }, [open, applicantId]);
+
   const applicantPopover = useMemo(() => {
-    if (!applicant || !open) return null;
+    if (!open || !applicant) return null;
     return (
       <div
         className={
@@ -29,7 +91,37 @@ export default function useApplicantPopover({
           onClick={() => setOpen(false)}
         ></button>
         <div className="flex z-40 flex-col flex-shrink-0 gap-2 bg-background-800  overflow-y-scroll border border-background-700 shadow p-4 max-w-xl min-w-[400px]  flex-1 rounded-lg">
-          {applicant.getVisibleCells().map((cell, index) => (
+          <div className="flex items-center justify-between pb-1">
+            <span className="text-xs text-gray-400">
+              {index + 1} of {rows.length}
+            </span>
+            <div className="flex gap-1">
+              <button
+                onClick={() => move(-1)}
+                disabled={index <= 0}
+                className="rounded p-1 hover:bg-background-600 disabled:opacity-30"
+                title="Previous applicant (k)"
+              >
+                <ChevronLeftIcon className="h-4 w-4" />
+              </button>
+              <button
+                onClick={() => move(1)}
+                disabled={index >= rows.length - 1}
+                className="rounded p-1 hover:bg-background-600 disabled:opacity-30"
+                title="Next applicant (j)"
+              >
+                <ChevronRightIcon className="h-4 w-4" />
+              </button>
+              <button
+                onClick={() => setOpen(false)}
+                className="rounded p-1 hover:bg-background-600"
+                title="Close (esc)"
+              >
+                <XIcon className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+          {applicant.getVisibleCells().map((cell) => (
             <div
               key={cell.id}
               className={
@@ -41,8 +133,6 @@ export default function useApplicantPopover({
                   <span className={"font-semibold"}>
                     {fields[cell.column.id].label}
                   </span>
-                  {/*<span>{cell.value}</span>*/}
-                  {/*<span>{cell.value}</span>*/}
                 </div>
               )}
               <div className={"flex gap-2 "}>
@@ -50,16 +140,46 @@ export default function useApplicantPopover({
               </div>
             </div>
           ))}
+          <div className="flex flex-col gap-2 pt-2">
+            <span
+              className={"font-semibold text-xs flex items-center gap-2"}
+            >
+              <HistoryIcon className="h-3 w-3" />
+              Status history
+            </span>
+            {history === null && (
+              <span className="text-gray-400 text-xs">Loading…</span>
+            )}
+            {history?.length === 0 && (
+              <span className="text-gray-400 text-xs">
+                No status changes recorded
+              </span>
+            )}
+            {history?.map((h) => (
+              <div
+                key={h.id}
+                className="text-xs flex justify-between gap-2 border-b border-background-500 pb-1"
+              >
+                <span>
+                  {h.old_status ? h.old_status : "—"} →{" "}
+                  <b>{h.new_status ?? "—"}</b>
+                </span>
+                <span className="text-gray-400 text-right">
+                  {h.users?.email || "system"}
+                  <br />
+                  {new Date(h.created_at).toLocaleString()}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-        {/*<button onClick={() => setOpen(false)}>Close</button>*/}
       </div>
     );
-  }, [applicant, open]);
+  }, [applicant, open, rows, index, history, fields]);
 
   return {
     open,
     setOpen,
-    setApplicant,
     applicant,
     applicantPopover: applicantPopover,
     setAndOpen,

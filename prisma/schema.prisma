@@ -410,6 +410,7 @@ model users {
   members                                         members?
   roles                                           roles?
   submissions                                     submissions[]
+  application_status_history                      application_status_history[]
 
   @@index([instance_id])
   @@index([is_anonymous])
@@ -432,7 +433,24 @@ model applications {
   users_applications_interviewer_idTousers users?      @relation("applications_interviewer_idTousers", fields: [interviewer_id], references: [id])
   users_applications_reviewer_idTousers    users?      @relation("applications_reviewer_idTousers", fields: [reviewer_id], references: [id], onUpdate: Restrict)
   teams                                    teams?      @relation(fields: [team_id], references: [id])
+  application_status_history               application_status_history[]
 
+  @@schema("public")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model application_status_history {
+  id             String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  application_id String       @db.Uuid
+  old_status     String?
+  new_status     String?
+  changed_by     String?      @db.Uuid
+  created_at     DateTime     @default(now()) @db.Timestamptz(6)
+  applications   applications @relation(fields: [application_id], references: [id], onDelete: Cascade)
+  users          users?       @relation(fields: [changed_by], references: [id], onUpdate: Restrict, onDelete: SetNull)
+
+  @@index([application_id])
+  @@index([created_at])
   @@schema("public")
 }
 

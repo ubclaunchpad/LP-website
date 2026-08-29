@@ -70,11 +70,21 @@ export async function POST(
   }
 
   try {
+    const sessionUser = await getSessionUser();
     await db.$transaction(async (transaction) => {
       // Update application status
       await transaction.applications.update({
         where: { id: appId },
         data: { status: offerDetails.data.status },
+      });
+
+      await transaction.application_status_history.create({
+        data: {
+          application_id: appId,
+          old_status: application.status ?? null,
+          new_status: offerDetails.data.status,
+          changed_by: sessionUser?.id ?? null,
+        },
       });
 
       const userId = application.submissions.user_id;

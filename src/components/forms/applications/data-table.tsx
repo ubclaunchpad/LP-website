@@ -7,6 +7,7 @@ import {
   getFilteredRowModel,
   ColumnFiltersState,
   VisibilityState,
+  RowSelectionState,
   getFacetedRowModel,
   getSortedRowModel,
   getFacetedUniqueValues,
@@ -21,14 +22,23 @@ import { Button } from "@/components/primitives/button";
 import { Input } from "@/components/primitives/input";
 
 import { Table, TableCell, TableRow } from "@/components/primitives/table";
-import React, { CSSProperties, Fragment, useMemo, useState } from "react";
+import React, {
+  CSSProperties,
+  Fragment,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import {
+  AlertTriangleIcon,
   ChartArea,
   ChevronLeftIcon,
   ChevronRightIcon,
   ListFilterIcon,
+  LoaderCircleIcon,
   SearchIcon,
   TableIcon,
+  XIcon,
 } from "lucide-react";
 import { DataTableProps } from "@/components/forms/applications/dataTableWrapper";
 import AnalyticsPage from "@/components/forms/applications/AnalyticsPage";
@@ -64,6 +74,8 @@ export function DataTable<TData, TValue>({
   refMap,
   config,
   onRowClick,
+  onVisibleRowsChange,
+  onBulkUpdate,
 }: DataTableProps<TData, TValue>) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
@@ -73,11 +85,58 @@ export function DataTable<TData, TValue>({
     pageIndex: 0,
     pageSize: 50,
   });
+  const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [tabView, setTabView] = useState<"table" | "chart">("table");
+  const [bulkLoading, setBulkLoading] = useState(false);
+  const [compareOpen, setCompareOpen] = useState(false);
+
+  const columnsWithSelection = [
+    {
+      id: "select",
+      header: ({ table }: any) => (
+        <input
+          type="checkbox"
+          checked={table.getIsAllPageRowsSelected()}
+          onChange={table.toggleAllPageRowsSelected}
+          onClick={(e) => e.stopPropagation()}
+          className="accent-lp-500 w-3.5 h-3.5 cursor-pointer"
+          title="Select page"
+        />
+      ),
+      cell: ({ row }: any) => (
+        <input
+          type="checkbox"
+          checked={row.getIsSelected()}
+          onChange={row.toggleSelected()}
+          onClick={(e) => e.stopPropagation()}
+          className="accent-lp-500 w-3.5 h-3.5 cursor-pointer"
+        />
+      ),
+      enableColumnFilter: false,
+      enableSorting: false,
+      size: 40,
+    },
+    {
+      id: "__duplicate",
+      header: "Dup",
+      enableColumnFilter: true,
+      enableSorting: false,
+      filterFn: (row: any, _id: string, value: any) =>
+        !value || (row.original as any).__duplicate === true,
+      cell: ({ row }: any) =>
+        (row.original as any).__duplicate ? (
+          <span title="Possible duplicate application (same email or GitHub username)">
+            <AlertTriangleIcon className="h-3.5 w-3.5 text-yellow-500" />
+          </span>
+        ) : null,
+      size: 44,
+    },
+    ...columns,
+  ];
 
   const table = useReactTable({
     data: data,
-    columns,
+    columns: columnsWithSelection,
     getCoreRowModel: getCoreRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
@@ -91,6 +150,8 @@ export function DataTable<TData, TValue>({
     getFacetedRowModel: getFacetedRowModel(), // client-side faceting
     getFacetedUniqueValues: getFacetedUniqueValues(), // generate unique values for select filter/autocomplete
     getFacetedMinMaxValues: getFacetedMinMaxValues(), // generate min/max values for range filter
+    enableRowSelection: true,
+    onRowSelectionChange: setRowSelection,
     debugColumns: false,
     enableColumnFilters: true,
     state: {
@@ -102,9 +163,36 @@ export function DataTable<TData, TValue>({
       sorting,
       globalFilter,
       pagination,
+      rowSelection,
       ...(config?.columnOrder ? { columnOrder: config.columnOrder } : {}),
     },
   });
+
+  const visibleRows = table.getFilteredRowModel().rows;
+  useEffect(() => {
+    onVisibleRowsChange?.(visibleRows as any);
+  }, [visibleRows, onVisibleRowsChange]);
+
+  const selectedRows = table.getSelectedRowModel().rows;
+  const selectedIds = selectedRows.map((r) => (r.original as any)?.id);
+
+  function handleBulk(field: string, value: string) {
+    if (!onBulkUpdate || !value) return;
+    setBulkLoading(true);
+    Promise.resolve(onBulkUpdate(selectedIds, field, value))
+      .then(() => setRowSelection({}))
+      .finally(() => setBulkLoading(false));
+  }
+
+  function toggleColumnFilter(columnId: string, value: string) {
+    const isActive = columnFilters.find((c) => c.id === columnId)?.value === value;
+    setColumnFilters([
+      ...columnFilters.filter((c) => c.id !== columnId),
+      ...(isActive ? [] : [{ id: columnId, value }]),
+    ]);
+  }
+
+
 
   const statusCounts = useMemo(() => {
     const counts: Record<string, number> = {};
@@ -127,13 +215,33 @@ export function DataTable<TData, TValue>({
   const activeStatusFilter = columnFilters.find((c) => c.id === "status")
     ?.value as string | undefined;
 
-  function toggleStatusFilter(statusId: string) {
-    const isActive = activeStatusFilter === statusId;
-    setColumnFilters([
-      ...columnFilters.filter((c) => c.id !== "status"),
-      ...(isActive ? [] : [{ id: "status", value: statusId }]),
-    ]);
-  }
+  const reviewerCounts = useMemo(() => {
+    const counts: Record<string, number> = { __unassigned__: 0 };
+    table
+      .getCoreRowModel()
+      .rows.forEach((row) => {
+        const rid = (row.original as any)?.reviewer_id;
+        if (!rid) {
+          counts.__unassigned__ += 1;
+        } else {
+          counts[rid] = (counts[rid] || 0) + 1;
+        }
+      });
+    return counts;
+  }, [table]);
+
+  const duplicateCount = useMemo(
+    () => data.filter((d: any) => d.__duplicate).length,
+    [data],
+  );
+
+  const activeReviewerFilter = columnFilters.find(
+    (c) => c.id === "reviewer_id",
+  )?.value as string | undefined;
+
+  const activeDuplicateFilter = columnFilters.find(
+    (c) => c.id === "__duplicate",
+  )?.value as boolean | undefined;
 
   function handleRowClick(e: React.MouseEvent, row: any) {
     if (!onRowClick) return;
@@ -168,7 +276,7 @@ export function DataTable<TData, TValue>({
               return (
                 <button
                   key={option.id}
-                  onClick={() => toggleStatusFilter(option.id)}
+                  onClick={() => toggleColumnFilter("status", option.id)}
                   className={`rounded-full px-3 py-1 text-xs border transition-colors ${
                     active
                       ? "border-lp-400 bg-lp-500 text-white"
@@ -181,6 +289,42 @@ export function DataTable<TData, TValue>({
               );
             })}
           </div>
+        )}
+
+        {config?.reviewerOptions?.length > 0 && (
+          <div className="flex items-center gap-1 flex-wrap">
+            <span className="text-xs text-gray-400">Reviewers:</span>
+            {reviewerCounts.__unassigned__ > 0 && (
+              <ReviewerChip
+                label="Unassigned"
+                count={reviewerCounts.__unassigned__}
+                active={activeReviewerFilter === "__unassigned__"}
+                onClick={() =>
+                  toggleColumnFilter("reviewer_id", "__unassigned__")
+                }
+              />
+            )}
+            {(config.reviewerOptions as any[])
+              .filter((o) => (reviewerCounts[o.id] || 0) > 0)
+              .map((o) => (
+                <ReviewerChip
+                  key={o.id}
+                  label={o.label}
+                  count={reviewerCounts[o.id] || 0}
+                  active={activeReviewerFilter === o.id}
+                  onClick={() => toggleColumnFilter("reviewer_id", o.id)}
+                />
+              ))}
+          </div>
+        )}
+
+        {duplicateCount > 0 && (
+          <ReviewerChip
+            label="⚠ Duplicates"
+            count={duplicateCount}
+            active={!!activeDuplicateFilter}
+            onClick={() => toggleColumnFilter("__duplicate", "true")}
+          />
         )}
 
         <div
@@ -226,6 +370,51 @@ export function DataTable<TData, TValue>({
           fileName={config?.title || "submissions"}
         />
       </div>
+
+      {selectedRows.length > 0 && (
+        <div className="flex items-center gap-2 flex-wrap bg-background-700 border border-lp-500/60 rounded-lg p-2 mb-2 text-sm">
+          <span className="font-semibold">{selectedRows.length} selected</span>
+          {(config?.bulkFields || []).map((bf: any) => (
+            <select
+              key={bf.id}
+              value=""
+              onChange={(e) => {
+                if (e.target.value) handleBulk(bf.id, e.target.value);
+              }}
+              className="bg-background-600 border border-background-500 rounded p-1.5 h-8"
+              disabled={bulkLoading}
+            >
+              <option value="">Set {bf.label}…</option>
+              {(bf.options || []).map((o: any) => (
+                <option key={o.id} value={o.id}>
+                  {o.label}
+                </option>
+              ))}
+            </select>
+          ))}
+          {selectedRows.length >= 2 &&
+            selectedRows.length <= 4 &&
+            onBulkUpdate && (
+              <Button
+                size="fit"
+                className="bg-background-600 min-h-none h-8"
+                onClick={() => setCompareOpen(true)}
+              >
+                Compare
+              </Button>
+            )}
+          <Button
+            size="fit"
+            className="bg-background-600 min-h-none h-8"
+            onClick={() => setRowSelection({})}
+          >
+            Clear
+          </Button>
+          {bulkLoading && (
+            <LoaderCircleIcon className="w-4 h-4 animate-spin text-lp-400" />
+          )}
+        </div>
+      )}
       {table.getFilteredRowModel().rows.length > 0 && tabView === "chart" && (
         <AnalyticsPage
           columns={config.analytics.columns}
@@ -350,8 +539,135 @@ export function DataTable<TData, TValue>({
           </div>
         </Fragment>
       )}
+
+      {compareOpen && selectedRows.length >= 2 && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-60 z-40 flex items-center justify-center p-4"
+          onClick={() => setCompareOpen(false)}
+        >
+          <div
+            className="bg-background-800 border border-background-600 rounded-lg p-4 max-w-7xl w-full max-h-[90dvh] overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center pb-3">
+              <h3 className="font-semibold text-lg">
+                Comparing {selectedRows.length} applicants
+              </h3>
+              <button
+                onClick={() => setCompareOpen(false)}
+                className="rounded p-1 hover:bg-background-600"
+              >
+                <XIcon className="h-4 w-4" />
+              </button>
+            </div>
+            <div
+              className="grid gap-3"
+              style={{
+                gridTemplateColumns: `repeat(${selectedRows.length}, minmax(260px, 1fr))`,
+              }}
+            >
+              {selectedRows.map((row) => (
+                <ApplicantCompareCard
+                  key={row.id}
+                  applicant={row.original as any}
+                  fields={config?.compareFields || {}}
+                  refMap={refMap}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
+}
+
+function ReviewerChip({
+  label,
+  count,
+  active,
+  onClick,
+}: {
+  label: string;
+  count: number;
+  active: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`rounded-full px-3 py-1 text-xs border transition-colors ${
+        active
+          ? "border-lp-400 bg-lp-500 text-white"
+          : "border-background-500 bg-background-600 text-neutral-200 hover:border-background-400"
+      }`}
+    >
+      {label}
+      <span className="ml-1 opacity-70">{count}</span>
+    </button>
+  );
+}
+
+function ApplicantCompareCard({
+  applicant,
+  fields,
+  refMap,
+}: {
+  applicant: any;
+  fields: FormFields;
+  refMap: ReferenceMap;
+}) {
+  return (
+    <div className="bg-background-700 border border-background-600 rounded-lg p-3 flex flex-col gap-2 text-xs">
+      <p className="font-semibold text-sm truncate">
+        {applicant.firstName || ""} {applicant.lastName || ""}{" "}
+        {(!applicant.firstName && !applicant.lastName && applicant.email) || ""}
+      </p>
+      {applicant.email && (
+        <p className="text-gray-400 truncate">{applicant.email}</p>
+      )}
+      {Object.entries(fields).map(([key, field]) => {
+        const value = applicant[key];
+        if (key === "email") return null;
+        const display = resolveCompareValue(value, field, refMap);
+        return (
+          <div key={key} className="border-t border-background-500 pt-1">
+            <p className="text-gray-400">{field.label}</p>
+            <p
+              className={
+                key === "status" && value
+                  ? `inline-block rounded px-2 py-0.5 ${STATUS_COLORS[value.toString().toLowerCase()] ?? ""}`
+                  : ""
+              }
+            >
+              {display}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function resolveCompareValue(value: any, field: any, refMap: ReferenceMap) {
+  if (value === null || value === undefined || value === "") {
+    return "—";
+  }
+  const resolveOne = (v: any): string => {
+    if (field.type === "person") {
+      const membersMap = (refMap as any)?.members;
+      return membersMap?.[v]?.label ?? String(v);
+    }
+    if (field.type === "select") {
+      const opt = field.options?.find((o: any) => o.id === v);
+      if (opt) return opt.label;
+    }
+    return String(v);
+  };
+  if (Array.isArray(value)) {
+    return value.map(resolveOne).join(", ");
+  }
+  return resolveOne(value);
 }
 
 function TableFilter({
