@@ -41,7 +41,7 @@ export default function GithubOnboarding() {
       setVerifiedGithubUsername(true);
     } else {
       // Update the username in the database
-      updateGithubUsername(githubUsername, user.id)
+      updateGithubUsername(githubUsername)
         .then((result) => {
           if (result.success) {
             setVerifiedGithubUsername(true);

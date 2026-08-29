@@ -48,7 +48,7 @@ export default function DiscordOnboarding() {
     if ((userMetadata.member as any)?.discord_id === discordUsername) {
       setVerifiedDiscordUsername(true);
     } else {
-      updateDiscordUsername(discordUsername, user.id)
+      updateDiscordUsername(discordUsername)
         .then((result) => {
           if (result.success) {
             setVerifiedDiscordUsername(true);

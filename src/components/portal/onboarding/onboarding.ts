@@ -1,6 +1,7 @@
 "use server";
 
 import { db } from "@/db";
+import { requireUser } from "@/lib/utils/auth";
 
 type UpdateResult = {
   success: boolean;
@@ -10,8 +11,9 @@ type UpdateResult = {
 
 export async function updateGithubUsername(
   username: string,
-  id: string,
 ): Promise<UpdateResult> {
+  const user = await requireUser();
+  const id = user.id;
   try {
     // First, check if the GitHub username is already taken by another user
     const existingUser = await db.members.findFirst({
@@ -66,8 +68,9 @@ export async function updateGithubUsername(
 
 export async function updateDiscordUsername(
   username: string,
-  id: string,
 ): Promise<UpdateResult> {
+  const user = await requireUser();
+  const id = user.id;
   try {
     // First, check if the Discord username is already taken by another user
     const existingUser = await db.members.findFirst({
