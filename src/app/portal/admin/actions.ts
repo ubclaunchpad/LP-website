@@ -1,5 +1,6 @@
 "use server";
 import { db } from "@/db";
+import { createClient } from "@/lib/utils/supabase/server";
 import { FormStep } from "@/lib/types/questions";
 import { FormFields } from "@/components/forms/applications/columns";
 import { sendEmail } from "@/lib/utils/forms/email";
@@ -11,7 +12,22 @@ export async function getForms() {
   return db.forms.findMany();
 }
 
+async function requireAdmin() {
+  const supabase = createClient();
+  const { data, error } = await supabase.auth.getUser();
+  if (error || !data.user) {
+    throw new Error("Unauthorized");
+  }
+  const role = await db.roles.findUnique({
+    where: { id: data.user.id },
+  });
+  if (!role || role.roles?.split(",")[0] !== "admin") {
+    throw new Error("Unauthorized");
+  }
+}
+
 export async function createForm(data: { title: string; description: string }) {
+  await requireAdmin();
   return db.forms.create({ data: { ...data, config: {}, questions: [] } });
 }
 
@@ -37,6 +53,7 @@ export async function updateForm(
     questions: object[];
   },
 ) {
+  await requireAdmin();
   return db.forms.update({ where: { id }, data });
 }
 
@@ -168,6 +185,7 @@ export async function updateSubmissionField(
   value: any,
   cta: boolean = false,
 ) {
+  await requireAdmin();
   if (tableName === "applications") {
     await db["applications"].update({
       where: { id: submissionId },
@@ -199,6 +217,7 @@ export async function sendStatusEmailToUser(
   submissionId: string,
   value: string,
 ) {
+  await requireAdmin();
   const submission = await db.submissions.findFirst({
     where: {
       id: submissionId,
@@ -218,6 +237,7 @@ export async function sendStatusEmailToUser(
 }
 
 export async function getAdminMembers() {
+  await requireAdmin();
   const res = await db.roles.findMany({
     where: {
       roles: {
