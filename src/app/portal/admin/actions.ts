@@ -19,6 +19,24 @@ export async function createForm(data: { title: string; description: string }) {
   return db.forms.create({ data: { ...data, config: {}, questions: [] } });
 }
 
+export async function cloneForm(id: number) {
+  await requireAdmin();
+  const source = await db.forms.findUnique({ where: { id: BigInt(id) } });
+  if (!source) {
+    throw new Error("Form not found");
+  }
+  // Copy structure (questions, config incl. email templates + offer page)
+  // but never dates or submissions — the new form starts unopened.
+  return db.forms.create({
+    data: {
+      title: `${source.title} (Copy)`,
+      questions: source.questions as any,
+      config: source.config as any,
+      type: source.type,
+    },
+  });
+}
+
 export async function updateForm(
   id: number,
   data: {

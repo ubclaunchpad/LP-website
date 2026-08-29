@@ -1,5 +1,5 @@
 import { ColumnDef, Row } from "@tanstack/react-table";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import MultiSelect from "@/components/general/multiSelect";
 import {
   sendStatusEmailToUser,
@@ -480,6 +480,7 @@ function TextareaField({
   field: FormFields[keyof FormFields];
 }) {
   const [text, setText] = useState(value);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { mergeNewData } = useContext(formContext);
   const canUpdate = field.config?.allowUpdate;
   if (!canUpdate) {
@@ -488,19 +489,22 @@ function TextareaField({
     }
     return <span>{value}</span>;
   }
-  const updateField = async (val: string) => {
-    const prev = text;
+  const updateField = (val: string) => {
     const setVal = val === undefined || val === null || val === "" ? null : val;
     setText(setVal);
-    updateSubmissionField(submissionId, id, field.config?.tableName, setVal)
-      .then(() => {
-        mergeNewData({ [id]: setVal }, "id", submissionId);
-        toast.success("Field updated successfully");
-      })
-      .catch(() => {
-        setText(prev);
-        toast.error("Error updating field");
-      });
+    // Debounce: one server call per typing pause instead of per keystroke
+    if (debounceRef.current) {
+      clearTimeout(debounceRef.current);
+    }
+    debounceRef.current = setTimeout(() => {
+      updateSubmissionField(submissionId, id, field.config?.tableName, setVal)
+        .then(() => {
+          mergeNewData({ [id]: setVal }, "id", submissionId);
+        })
+        .catch(() => {
+          toast.error("Error saving changes — retry after editing again");
+        });
+    }, 800);
   };
   return (
     <FloatingTextArea

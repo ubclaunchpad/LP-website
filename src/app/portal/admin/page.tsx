@@ -1,8 +1,36 @@
 import React from "react";
 import Link from "next/link";
-import { Users, FileText, Settings, BarChart3, UserCheck } from "lucide-react";
+import { Users, FileText, BarChart3, UserCheck } from "lucide-react";
+import { db } from "@/db";
+import { getSessionUser, isAdmin } from "@/lib/utils/auth";
+import { redirect } from "next/navigation";
 
-export default function AdminDashboard() {
+export default async function AdminDashboard() {
+  const user = await getSessionUser();
+  if (!user || !(await isAdmin(user.id))) {
+    redirect("/portal");
+  }
+
+  const now = new Date();
+  const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+
+  const [
+    totalForms,
+    activeMembers,
+    pendingApplications,
+    submissionsThisMonth,
+    latestForm,
+  ] = await Promise.all([
+    db.forms.count(),
+    db.members.count(),
+    db.applications.count({ where: { status: null } }),
+    db.submissions.count({ where: { created_at: { gte: startOfMonth } } }),
+    db.forms.findFirst({
+      where: { type: "recruitment" },
+      orderBy: { created_at: "desc" },
+    }),
+  ]);
+
   const adminRoutes = [
     {
       title: "Forms Management",
@@ -34,6 +62,13 @@ export default function AdminDashboard() {
     },
   ];
 
+  const stats = [
+    { label: "Total Forms", value: totalForms, icon: FileText, color: "text-blue-500" },
+    { label: "Active Members", value: activeMembers, icon: Users, color: "text-green-500" },
+    { label: "Pending Applications", value: pendingApplications, icon: UserCheck, color: "text-yellow-500" },
+    { label: "Submissions This Month", value: submissionsThisMonth, icon: BarChart3, color: "text-orange-500" },
+  ];
+
   return (
     <div className="min-h-screen bg-background-800 text-white p-6">
       <div className="max-w-6xl mx-auto">
@@ -47,47 +82,46 @@ export default function AdminDashboard() {
           </p>
         </div>
 
+        {latestForm?.title && (
+          <div className="mb-8 border border-background-600 bg-background-700 rounded-lg p-4 flex items-center justify-between">
+            <div>
+              <p className="text-gray-400 text-sm">Latest recruitment form</p>
+              <p className="text-lg font-semibold">{latestForm.title}</p>
+            </div>
+            <div className="text-sm text-gray-400 text-right">
+              {latestForm.open_at ? (
+                <p>
+                  {latestForm.open_at.toLocaleDateString()} —{" "}
+                  {latestForm.close_at?.toLocaleDateString() || "open-ended"}
+                </p>
+              ) : (
+                <p className="text-yellow-500">Not scheduled yet</p>
+              )}
+            </div>
+          </div>
+        )}
+
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-background-700 border border-background-600 rounded-lg p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-400 text-sm">Total Forms</p>
-                <p className="text-2xl font-semibold text-white">-</p>
+          {stats.map((stat) => {
+            const Icon = stat.icon;
+            return (
+              <div
+                key={stat.label}
+                className="bg-background-700 border border-background-600 rounded-lg p-6"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-gray-400 text-sm">{stat.label}</p>
+                    <p className="text-2xl font-semibold text-white">
+                      {stat.value}
+                    </p>
+                  </div>
+                  <Icon className={`w-8 h-8 ${stat.color}`} />
+                </div>
               </div>
-              <FileText className="w-8 h-8 text-blue-500" />
-            </div>
-          </div>
-
-          <div className="bg-background-700 border border-background-600 rounded-lg p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-400 text-sm">Active Members</p>
-                <p className="text-2xl font-semibold text-white">-</p>
-              </div>
-              <Users className="w-8 h-8 text-green-500" />
-            </div>
-          </div>
-
-          <div className="bg-background-700 border border-background-600 rounded-lg p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-400 text-sm">Pending Applications</p>
-                <p className="text-2xl font-semibold text-white">-</p>
-              </div>
-              <UserCheck className="w-8 h-8 text-yellow-500" />
-            </div>
-          </div>
-
-          <div className="bg-background-700 border border-background-600 rounded-lg p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-400 text-sm">This Month</p>
-                <p className="text-2xl font-semibold text-white">-</p>
-              </div>
-              <BarChart3 className="w-8 h-8 text-orange-500" />
-            </div>
-          </div>
+            );
+          })}
         </div>
 
         {/* Admin Routes Grid */}
