@@ -1,26 +1,45 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { db } from "@/db";
-import { requireAdmin } from "@/lib/utils/auth";
+import { getSessionUser, isAdmin } from "@/lib/utils/auth";
 
 const newOfferSchema = z.object({
   status: z.enum(["accepted", "declined", "offered", "expired"]),
 });
 
-async function guard() {
-  try {
-    await requireAdmin();
-    return null;
-  } catch {
+// The applicant may accept/decline their own offer; admins may manage any.
+async function ownerOrAdminGuard(applicationId: string) {
+  const user = await getSessionUser();
+  if (!user) {
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
   }
+  if (await isAdmin(user.id)) {
+    return null;
+  }
+  const application = await db.applications.findUnique({
+    where: { id: applicationId },
+    include: { submissions: true },
+  });
+  if (application?.submissions.user_id !== user.id) {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 403 });
+  }
+  return null;
+}
+
+// Admin-only guard for dormant pending_members routes
+async function adminGuard() {
+  const user = await getSessionUser();
+  if (!user || !(await isAdmin(user.id))) {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+  return null;
 }
 
 export async function POST(
   request: NextRequest,
   { params }: { params: { id: string } },
 ) {
-  const unauthorized = await guard();
+  const unauthorized = await ownerOrAdminGuard(params.id);
   if (unauthorized) return unauthorized;
   const reqBody = await request.json();
   const offerDetails = newOfferSchema.safeParse(reqBody);
@@ -130,7 +149,7 @@ export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } },
 ) {
-  const unauthorized = await guard();
+  const unauthorized = await adminGuard();
   if (unauthorized) return unauthorized;
   const pendingOffer = await db.pending_members.findUnique({
     where: {
@@ -153,7 +172,7 @@ export async function PATCH(
   request: NextRequest,
   { params }: { params: { id: string } },
 ) {
-  const unauthorized = await guard();
+  const unauthorized = await adminGuard();
   if (unauthorized) return unauthorized;
   const pendingOffer = await db.pending_members.findUnique({
     where: {
