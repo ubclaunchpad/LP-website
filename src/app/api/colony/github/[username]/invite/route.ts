@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { colonyHeaders } from "@/lib/utils/colony/headers";
 
 export async function POST(
   request: NextRequest,
@@ -11,9 +12,7 @@ export async function POST(
       `${process.env.NEXT_PUBLIC_COLONY_URL}/colony/github/${username}/invite`,
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: colonyHeaders(),
       },
     );
 

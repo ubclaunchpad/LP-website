@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { colonyHeaders } from "@/lib/utils/colony/headers";
 
 export async function PUT(
   request: NextRequest,
@@ -13,9 +14,7 @@ export async function PUT(
       `${process.env.NEXT_PUBLIC_COLONY_URL}/colony/discord/${username}/roles`,
       {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: colonyHeaders(),
         body: JSON.stringify(body),
       },
     );
