@@ -1,15 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { db } from "@/db";
+import { requireAdmin } from "@/lib/utils/auth";
 
 const newOfferSchema = z.object({
   status: z.enum(["accepted", "declined", "offered", "expired"]),
 });
 
+async function guard() {
+  try {
+    await requireAdmin();
+    return null;
+  } catch {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+}
+
 export async function POST(
   request: NextRequest,
   { params }: { params: { id: string } },
 ) {
+  const unauthorized = await guard();
+  if (unauthorized) return unauthorized;
   const reqBody = await request.json();
   const offerDetails = newOfferSchema.safeParse(reqBody);
   if (!offerDetails.success) {
@@ -118,6 +130,8 @@ export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } },
 ) {
+  const unauthorized = await guard();
+  if (unauthorized) return unauthorized;
   const pendingOffer = await db.pending_members.findUnique({
     where: {
       id: params.id,
@@ -139,6 +153,8 @@ export async function PATCH(
   request: NextRequest,
   { params }: { params: { id: string } },
 ) {
+  const unauthorized = await guard();
+  if (unauthorized) return unauthorized;
   const pendingOffer = await db.pending_members.findUnique({
     where: {
       id: params.id,

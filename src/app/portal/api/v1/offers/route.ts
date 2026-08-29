@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { db } from "@/db";
+import { requireAdmin } from "@/lib/utils/auth";
 
 const newOfferSchema = z.object({
   userId: z.string().uuid(),
@@ -10,6 +11,11 @@ const newOfferSchema = z.object({
 });
 
 export async function POST(request: NextRequest) {
+  try {
+    await requireAdmin();
+  } catch {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
   const body = await request.json();
   const offerDetails = newOfferSchema.safeParse(body);
   if (!offerDetails.success) {

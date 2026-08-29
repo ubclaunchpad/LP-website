@@ -1,7 +1,12 @@
 import { db } from "@/db";
 import { NextRequest, NextResponse } from "next/server";
+import { getSessionUser, isAdmin } from "@/lib/utils/auth";
 
 export async function GET(request: NextRequest) {
+  const user = await getSessionUser();
+  if (!user || !(await isAdmin(user.id))) {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
   const search = request.nextUrl.searchParams;
   const searchParams = new URLSearchParams(search);
   const paramObj: any = {};

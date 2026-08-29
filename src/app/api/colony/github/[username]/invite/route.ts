@@ -1,10 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { colonyHeaders } from "@/lib/utils/colony/headers";
+import { getSessionUser } from "@/lib/utils/auth";
 
 export async function POST(
   request: NextRequest,
   { params }: { params: { username: string } },
 ) {
+  const user = await getSessionUser();
+  if (!user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
   const { username } = params;
 
   try {
