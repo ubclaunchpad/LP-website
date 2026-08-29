@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { GenericResult, AcceptedResult } from "@/components/forms/resultPages";
-import { getForm } from "@/app/portal/admin/actions";
+import { getFormById } from "@/lib/utils/forms/server";
 import { getUserApplication } from "@/app/portal/forms/actions";
 import { Form } from "@/lib/types/application";
 import GenericGreeter from "@/components/layouts/genericGreeter";
@@ -22,7 +22,7 @@ export default async function page({
   if (!params.id) {
     redirect("/portal/forms");
   }
-  const formP = getForm(Number(params.id)) as unknown as Promise<Form>;
+  const formP = getFormById(Number(params.id)) as unknown as Promise<Form>;
   const appP = getUserApplication({
     formId: Number(params.id) as unknown as bigint,
     includeApp: true,

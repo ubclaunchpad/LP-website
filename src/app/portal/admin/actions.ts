@@ -1,6 +1,7 @@
 "use server";
 import { db } from "@/db";
-import { createClient } from "@/lib/utils/supabase/server";
+import { requireAdmin } from "@/lib/utils/auth";
+import { getFormById } from "@/lib/utils/forms/server";
 import { FormStep } from "@/lib/types/questions";
 import { FormFields } from "@/components/forms/applications/columns";
 import { sendEmail } from "@/lib/utils/forms/email";
@@ -9,39 +10,13 @@ import { render } from "@react-email/components";
 import { object } from "zod";
 
 export async function getForms() {
+  await requireAdmin();
   return db.forms.findMany();
-}
-
-async function requireAdmin() {
-  const supabase = createClient();
-  const { data, error } = await supabase.auth.getUser();
-  if (error || !data.user) {
-    throw new Error("Unauthorized");
-  }
-  const role = await db.roles.findUnique({
-    where: { id: data.user.id },
-  });
-  if (!role || role.roles?.split(",")[0] !== "admin") {
-    throw new Error("Unauthorized");
-  }
 }
 
 export async function createForm(data: { title: string; description: string }) {
   await requireAdmin();
   return db.forms.create({ data: { ...data, config: {}, questions: [] } });
-}
-
-export async function getForm(id: number | bigint) {
-  try {
-    return db.forms.findFirst({
-      where: {
-        id: BigInt(id),
-      },
-    });
-  } catch (e) {
-    console.log(e);
-    return null;
-  }
 }
 
 export async function updateForm(
@@ -62,6 +37,7 @@ export async function getSubmissions(
   onlySubmitted: boolean = true,
   filters: any | undefined = {},
 ) {
+  await requireAdmin();
   const app = await db.submissions.findMany({
     include: {
       users: true,
@@ -116,6 +92,7 @@ function formatFormFields(questionSteps: FormStep[]): FormFields {
 export async function getAllFormDetails(
   formId: bigint,
 ): Promise<{ rawForm: any; formFields: FormFields; submissions: any[] }> {
+  await requireAdmin();
   try {
     const form = await db.forms.findFirst({
       where: { id: formId },
@@ -268,7 +245,7 @@ async function sendStatusEmail({
   formId: bigint;
   userId: string;
 }) {
-  const form = await getForm(formId);
+  const form = await getFormById(formId);
 
   if (!form) {
     console.log("Form not found");

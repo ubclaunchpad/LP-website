@@ -1,5 +1,6 @@
 "use server";
 import { db } from "@/db";
+import { requireAdmin } from "@/lib/utils/auth";
 
 type EmailTemplate = {
   title: string;
@@ -11,6 +12,7 @@ export async function updateOrCreateEmailTemplate(
   status: string,
   template: EmailTemplate,
 ) {
+  await requireAdmin();
   try {
     // First get the current form to access existing config
     const form = await db.forms.findFirst({

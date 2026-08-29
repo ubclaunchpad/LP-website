@@ -1,14 +1,13 @@
-// page.tsx
 import { redirect } from "next/navigation";
 import { isFormOpen } from "@/lib/utils/forms/helpers";
-import { getForm } from "@/app/portal/admin/actions";
+import { getFormById } from "@/lib/utils/forms/server";
 import { getUserApplication } from "@/app/portal/forms/actions";
 import { Form } from "@/lib/types/application";
 import GenericGreeter from "@/components/layouts/genericGreeter";
 import { MainResultPage } from "@/components/forms/resultPages/MainResultPage";
 
 async function getPageData(id: string) {
-  const formP = getForm(Number(id)) as unknown as Promise<Form>;
+  const formP = getFormById(Number(id)) as unknown as Promise<Form>;
   const appP = getUserApplication({
     formId: Number(id) as unknown as bigint,
   });

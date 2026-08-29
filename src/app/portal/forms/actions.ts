@@ -3,7 +3,7 @@ import { render } from "@react-email/components";
 import { db } from "@/db";
 import { FormStep, Obj } from "@/lib/types/questions";
 import { Trigger } from "@/lib/types/forms";
-import { createClient } from "@/lib/utils/supabase/server";
+import { getSessionUser, requireUser, isAdmin } from "@/lib/utils/auth";
 import { JSONValidationToZod } from "@/lib/utils/forms/helpers";
 import { sendEmail } from "@/lib/utils/forms/email";
 import { SubmissionTemplate } from "@/components/forms/emailTemplates/submissionTemplate";
@@ -15,12 +15,13 @@ export async function submitApplication({
   formId: bigint;
   otherUser?: string;
 }) {
-  const supabase = createClient();
-  const userId = otherUser || (await supabase.auth.getUser()).data?.user?.id;
-  const { data, error } = await supabase.auth.getUser();
-  if (!data.user || error) {
-    return null;
+  const user = await requireUser();
+  // otherUser lets admins submit on behalf of an applicant (support flow);
+  // regular users may only ever act as themselves.
+  if (otherUser && !(await isAdmin(user.id))) {
+    throw new Error("Unauthorized");
   }
+  const userId = otherUser ? otherUser : user.id;
   const resPromise = db.submissions.findUnique({
     where: {
       user_id_form_id: {
@@ -121,7 +122,7 @@ export async function submitApplication({
   await sendEmail({
     from: "no-reply@ubclaunchpad.com",
     fromName: "No-reply UBC Launch Pad",
-    to: data.user.email!.toString(),
+    to: user.email!.toString(),
     subject: `${form.title} - Form Submitted`,
     html: template,
     cc: appEmail?.email as string,
@@ -138,12 +139,11 @@ export async function updateApplication({
   formId: bigint;
   otherUser?: string;
 }) {
-  const supabase = createClient();
-  const userId = otherUser || (await supabase.auth.getUser()).data?.user?.id;
-  const { data, error } = await supabase.auth.getUser();
-  if (!data.user || error) {
-    return null;
+  const user = await requireUser();
+  if (otherUser && !(await isAdmin(user.id))) {
+    throw new Error("Unauthorized");
   }
+  const userId = otherUser ? otherUser : user.id;
 
   const res = await db.submissions.findUnique({
     where: {
@@ -176,16 +176,15 @@ export async function getUserApplication({
   formId: bigint;
   includeApp?: boolean;
 }) {
-  const supabase = createClient();
-  const { data, error } = await supabase.auth.getUser();
-  if (!data.user || error) {
+  const user = await getSessionUser();
+  if (!user) {
     return null;
   }
   return db.submissions.findUnique({
     where: {
       user_id_form_id: {
         form_id: formId,
-        user_id: data.user.id,
+        user_id: user.id,
       },
     },
     include: {
@@ -219,16 +218,12 @@ function validateFormAnswers({
 }
 
 export async function startApplication({ formId }: { formId: bigint }) {
-  const supabase = createClient();
-  const { data, error } = await supabase.auth.getUser();
-  if (!data.user || error) {
-    return null;
-  }
+  const user = await requireUser();
   const res = await db.submissions.findUnique({
     where: {
       user_id_form_id: {
         form_id: formId,
-        user_id: data.user.id,
+        user_id: user.id,
       },
     },
   });
@@ -240,7 +235,7 @@ export async function startApplication({ formId }: { formId: bigint }) {
       where: {
         user_id_form_id: {
           form_id: formId,
-          user_id: data.user.id,
+          user_id: user.id,
         },
       },
       data: {
@@ -250,7 +245,7 @@ export async function startApplication({ formId }: { formId: bigint }) {
   }
   return db.submissions.create({
     data: {
-      user_id: data.user.id,
+      user_id: user.id,
       form_id: formId,
       status: "pending",
     },

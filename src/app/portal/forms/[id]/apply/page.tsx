@@ -2,7 +2,7 @@ import { getUserApplication } from "../../actions";
 import { redirect } from "next/navigation";
 import ApplicationForm from "@/components/forms/applications/applicationForm";
 import { Application } from "@/lib/types/questions";
-import { getForm } from "@/app/portal/admin/actions";
+import { getFormById } from "@/lib/utils/forms/server";
 import { Form } from "@/lib/types/application";
 import { isFormOpen } from "@/lib/utils/forms/helpers";
 import { toast } from "sonner";
@@ -13,7 +13,7 @@ export default async function page({
   params: { id: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const form = (await getForm(Number(params.id))) as unknown as Form;
+  const form = (await getFormById(Number(params.id))) as unknown as Form;
 
   if (!form) {
     return redirect(`/portal`);
