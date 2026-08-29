@@ -45,7 +45,7 @@ function aggregateColumn(
             acc[val] = {
               id: val,
               count: 1,
-              label: ref ? ref[val].label : val,
+              label: ref ? (ref[val]?.label ?? val) : val,
             };
           }
         });
@@ -60,7 +60,7 @@ function aggregateColumn(
         acc[value] = {
           id: value,
           count: 1,
-          label: ref ? ref[value].label : value,
+          label: ref ? (ref[value]?.label ?? value) : value,
         };
       }
       return acc;
