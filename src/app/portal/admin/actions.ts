@@ -254,6 +254,43 @@ export async function getAdminMembers() {
   });
 }
 
+export async function addAdminByEmail(email: string) {
+  await requireAdmin();
+  const user = await db.users.findFirst({
+    where: {
+      email: {
+        equals: email,
+        mode: "insensitive",
+      },
+    },
+  });
+  if (!user) {
+    throw new Error(
+      "No Launch Pad account found for that email — they must sign in with Google once before they can be promoted.",
+    );
+  }
+  await db.roles.upsert({
+    where: { id: user.id },
+    create: { id: user.id, roles: "admin" },
+    update: { roles: "admin" },
+  });
+  return { email: user.email, id: user.id };
+}
+
+export async function removeAdmin(userId: string) {
+  const user = await requireAdmin();
+  if (userId === user.id) {
+    throw new Error("You cannot remove your own admin access.");
+  }
+  const adminCount = await db.roles.count({
+    where: { roles: { contains: "admin" } },
+  });
+  if (adminCount <= 1) {
+    throw new Error("Cannot remove the last remaining admin.");
+  }
+  await db.roles.delete({ where: { id: userId } });
+}
+
 async function sendStatusEmail({
   status,
   formId,
