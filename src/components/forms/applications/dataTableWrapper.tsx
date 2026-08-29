@@ -17,6 +17,7 @@ export type DataTableProps<TData, TValue> = {
   data: TData[];
   refMap: ReferenceMap;
   config: any;
+  onRowClick?: (row: any) => void;
 };
 
 type DataTableWrapperProps<TData> = {
@@ -32,7 +33,7 @@ export default function DataTableWrapper<TData>({
   const { setAndOpen, applicantPopover } = useApplicantPopover({
     fields: formFields,
   });
-  const { members } = useContext(formContext);
+  const { members, rawForm } = useContext(formContext);
   const membersWithLabel = members.map((member) => ({
     ...member,
     label: member.display_name || member.email,
@@ -42,10 +43,12 @@ export default function DataTableWrapper<TData>({
   ]);
   const columns = createColumns(formFields, members, setAndOpen);
   const config = {
+    title: rawForm?.title,
     view: {
       showFilter: true,
       showChart: true,
     },
+    statusOptions: formFields["status"]?.options,
     analytics: {
       columns: [
         "status",
@@ -83,6 +86,7 @@ export default function DataTableWrapper<TData>({
         data={fieldData}
         refMap={refMap}
         config={config}
+        onRowClick={(row) => setAndOpen({ applicant: row })}
       />
     </Fragment>
   );

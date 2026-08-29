@@ -56,6 +56,18 @@ export type ReferenceMap = {
   [key: string]: ReferenceItem | ReferenceMap | string;
 };
 
+export const STATUS_COLORS: Record<string, string> = {
+  accepted: "bg-green-600/50",
+  rejected: "bg-red-600/50",
+  declined: "bg-neutral-600/60",
+  pending: "bg-yellow-600/50",
+  submitted: "bg-blue-600/50",
+  offered: "bg-purple-600/50",
+  waitlisted: "bg-orange-600/50",
+  interviewed: "bg-cyan-600/50",
+  paid: "bg-teal-600/50",
+};
+
 export function populateReferenceMap(
   fields: FormFields,
   others: { id: string; label: string; options: any[] }[],
@@ -429,21 +441,29 @@ export function SelectField({
 
   return (
     <>
-      <MultiSelect
-        className={
-          "w-full bg-transparent border-none hover:bg-lp-500 duration-300"
-        }
-        onChange={(e) => updateField(e[0])}
-        allowMultiple={false}
-        emptyText={nullLabel?.toString() || "None"}
-        value={Array.isArray(selected) ? selected : [selected]}
-        options={
-          selectOptions?.map((op) => ({
-            label: op.label,
-            value: op.id,
-          })) || []
-        }
-      ></MultiSelect>
+      <div
+        className={`rounded-md ${
+          id === "status" && selected
+            ? STATUS_COLORS[selected.toString().toLowerCase()] ?? ""
+            : ""
+        }`}
+      >
+        <MultiSelect
+          className={
+            "w-full bg-transparent border-none hover:bg-lp-500 duration-300"
+          }
+          onChange={(e) => updateField(e[0])}
+          allowMultiple={false}
+          emptyText={nullLabel?.toString() || "None"}
+          value={Array.isArray(selected) ? selected : [selected]}
+          options={
+            selectOptions?.map((op) => ({
+              label: op.label,
+              value: op.id,
+            })) || []
+          }
+        ></MultiSelect>
+      </div>
     </>
   );
 }

@@ -11,6 +11,7 @@ import {
   getSortedRowModel,
   getFacetedUniqueValues,
   getFacetedMinMaxValues,
+  getPaginationRowModel,
   Column,
   RowData,
   SortingState,
@@ -20,14 +21,22 @@ import { Button } from "@/components/primitives/button";
 import { Input } from "@/components/primitives/input";
 
 import { Table, TableCell, TableRow } from "@/components/primitives/table";
-import React, { CSSProperties, useMemo, useState } from "react";
-import { ChartArea, ListFilterIcon, TableIcon } from "lucide-react";
+import React, { CSSProperties, Fragment, useMemo, useState } from "react";
+import {
+  ChartArea,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ListFilterIcon,
+  SearchIcon,
+  TableIcon,
+} from "lucide-react";
 import { DataTableProps } from "@/components/forms/applications/dataTableWrapper";
 import AnalyticsPage from "@/components/forms/applications/AnalyticsPage";
 import {
   FormFields,
   ReferenceItem,
   ReferenceMap,
+  STATUS_COLORS,
 } from "@/components/forms/applications/columns";
 import MultiSelect from "@/components/general/multiSelect";
 
@@ -54,10 +63,16 @@ export function DataTable<TData, TValue>({
   data,
   refMap,
   config,
+  onRowClick,
 }: DataTableProps<TData, TValue>) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [sorting, setSorting] = React.useState<SortingState>([]);
+  const [globalFilter, setGlobalFilter] = useState("");
+  const [pagination, setPagination] = React.useState({
+    pageIndex: 0,
+    pageSize: 50,
+  });
   const [tabView, setTabView] = useState<"table" | "chart">("table");
 
   const table = useReactTable({
@@ -66,6 +81,10 @@ export function DataTable<TData, TValue>({
     getCoreRowModel: getCoreRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
+    onGlobalFilterChange: setGlobalFilter,
+    globalFilterFn: "includesString",
+    onPaginationChange: setPagination,
+    getPaginationRowModel: getPaginationRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
@@ -81,9 +100,49 @@ export function DataTable<TData, TValue>({
       columnFilters,
       columnVisibility,
       sorting,
+      globalFilter,
+      pagination,
       ...(config?.columnOrder ? { columnOrder: config.columnOrder } : {}),
     },
   });
+
+  const statusCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    (config?.statusOptions || []).forEach((option: any) => {
+      counts[option.id] = 0;
+    });
+    table
+      .getCoreRowModel()
+      .rows.forEach((row) => {
+        const status = (row.original as any)?.status;
+        if (status && status in counts) {
+          counts[status] += 1;
+        } else if (status) {
+          counts[status] = (counts[status] || 0) + 1;
+        }
+      });
+    return counts;
+  }, [config?.statusOptions, table]);
+
+  const activeStatusFilter = columnFilters.find((c) => c.id === "status")
+    ?.value as string | undefined;
+
+  function toggleStatusFilter(statusId: string) {
+    const isActive = activeStatusFilter === statusId;
+    setColumnFilters([
+      ...columnFilters.filter((c) => c.id !== "status"),
+      ...(isActive ? [] : [{ id: "status", value: statusId }]),
+    ]);
+  }
+
+  function handleRowClick(e: React.MouseEvent, row: any) {
+    if (!onRowClick) return;
+    const target = e.target as HTMLElement;
+    if (target.closest("button, input, textarea, select, a, [role=combobox]")) {
+      return;
+    }
+    onRowClick(row);
+  }
 
   return (
     <div className={"flex flex-col px-10 overflow-hidden  pb-4"}>
@@ -93,6 +152,36 @@ export function DataTable<TData, TValue>({
             {table.getFilteredRowModel().rows.length} {"Results"}
           </span>
         </div>
+
+        <Input
+          placeholder="Search applicants..."
+          value={globalFilter}
+          onChange={(e) => setGlobalFilter(e.target.value)}
+          className="w-64 h-10 bg-background-600 border-background-500"
+        />
+
+        {config?.statusOptions?.length > 0 && (
+          <div className="flex items-center gap-1 flex-wrap">
+            {(config.statusOptions as any[]).map((option) => {
+              const count = statusCounts[option.id] || 0;
+              const active = activeStatusFilter === option.id;
+              return (
+                <button
+                  key={option.id}
+                  onClick={() => toggleStatusFilter(option.id)}
+                  className={`rounded-full px-3 py-1 text-xs border transition-colors ${
+                    active
+                      ? "border-lp-400 bg-lp-500 text-white"
+                      : "border-background-500 bg-background-600 text-neutral-200 hover:border-background-400"
+                  }`}
+                >
+                  {option.label}
+                  <span className="ml-1 opacity-70">{count}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         <div
           className={
@@ -115,7 +204,7 @@ export function DataTable<TData, TValue>({
                 setTabView("chart");
               }}
               size={"fit"}
-              className={`bg-background-600  w-24 h-full   border-none border-background-500 gap-2 ${tabView === "chart" ? "bg-background-500" : ""}`}
+              className={`bg-background-600 w-24 h-full   border-none border-background-500 gap-2 ${tabView === "chart" ? "bg-background-500" : ""}`}
             >
               <ChartArea className={"h-4 w-4"} />
               Chart
@@ -132,7 +221,10 @@ export function DataTable<TData, TValue>({
             setColumnFilters={setColumnFilters}
           />
         )}
-        <DownloadCSV data={data} fileName="data" />
+        <DownloadCSV
+          data={table.getFilteredRowModel().rows.map((row) => row.original)}
+          fileName={config?.title || "submissions"}
+        />
       </div>
       {table.getFilteredRowModel().rows.length > 0 && tabView === "chart" && (
         <AnalyticsPage
@@ -178,10 +270,11 @@ export function DataTable<TData, TValue>({
                 table.getRowModel().rows.map((row) => (
                   <tr
                     className={
-                      "border-background-500 p-0 flex-shrink-0 w-full  bg-background-600 odd:bg-background-700"
+                      "border-background-500 p-0 flex-shrink-0 w-full  bg-background-600 odd:bg-background-700 hover:bg-background-500 cursor-pointer transition-colors"
                     }
                     key={row.id}
                     data-state={row.getIsSelected() && "selected"}
+                    onClick={(e) => handleRowClick(e, row)}
                   >
                     {row.getVisibleCells().map((cell) => (
                       <td
@@ -210,6 +303,52 @@ export function DataTable<TData, TValue>({
             </tbody>
           </Table>
         </div>
+      )}
+      {tabView === "table" && (
+        <Fragment>
+          <div className="flex items-center gap-3 py-2 text-sm text-neutral-300">
+            <Button
+              size={"fit"}
+              className="bg-background-600 min-h-none h-8 gap-1"
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+            >
+              <ChevronLeftIcon className="h-4 w-4" />
+              Prev
+            </Button>
+            <span>
+              Page {table.getState().pagination.pageIndex + 1} of{" "}
+              {table.getPageCount() || 1}
+            </span>
+            <Button
+              size={"fit"}
+              className="bg-background-600 min-h-none h-8 gap-1"
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+            >
+              Next
+              <ChevronRightIcon className="h-4 w-4" />
+            </Button>
+            <select
+              className="bg-background-600 border border-background-500 rounded p-1 h-8"
+              value={table.getState().pagination.pageSize}
+              onChange={(e) => {
+                const size =
+                  e.target.value === "all"
+                    ? table.getFilteredRowModel().rows.length || 1
+                    : Number(e.target.value);
+                table.setPageSize(size);
+              }}
+            >
+              {[25, 50, 100].map((size) => (
+                <option key={size} value={size}>
+                  {size} / page
+                </option>
+              ))}
+              <option value="all">All</option>
+            </select>
+          </div>
+        </Fragment>
       )}
     </div>
   );
