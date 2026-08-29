@@ -97,6 +97,26 @@ export default function DataTableWrapper<TData>({
     });
   }, [data]);
 
+  // Status chips = configured options + "submitted" + any status in the data
+  const statusOptions = useMemo(() => {
+    const configured = formFields["status"]?.options?.filter((o) => o.id) || [];
+    const labelMap: Record<string, string> = {};
+    configured.forEach((o) => {
+      labelMap[o.id] = o.label;
+    });
+    const ids = new Set<string>(["submitted"]);
+    configured.forEach((o) => ids.add(o.id));
+    (data as any[]).forEach((row) => {
+      if (row.status) ids.add(row.status);
+    });
+    return [...ids].map((id) => ({
+      id,
+      label:
+        labelMap[id] ||
+        id.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+    }));
+  }, [formFields, data]);
+
   const columns = createColumns(formFields, members, setAndOpen);
   const config = {
     title: rawForm?.title,
@@ -104,7 +124,7 @@ export default function DataTableWrapper<TData>({
       showFilter: true,
       showChart: true,
     },
-    statusOptions: formFields["status"]?.options,
+    statusOptions,
     reviewerOptions: membersWithLabel,
     bulkFields: [
       {

@@ -12,6 +12,8 @@ const FALLBACK_PIPELINE = [
   "interviewed",
   "offered",
   "accepted",
+  "paid",
+  "waitlisted",
   "declined",
   "rejected",
 ];
@@ -23,37 +25,45 @@ export default function ApplicationBoardPage() {
   const [dropTarget, setDropTarget] = useState<string | null>(null);
   const [movingId, setMovingId] = useState<string | null>(null);
 
-  const statusOptions: { id: string; label: string }[] =
-    formFields["status"]?.options?.filter((o) => o.id) ||
-    FALLBACK_PIPELINE.map((s) => ({ id: s, label: s }));
+  const configuredOptions = formFields["status"]?.options?.filter(
+    (o) => o.id,
+  ) || [];
+
+  // Columns = pipeline order, then configured statuses, then any status
+  // present in the data — so every application always has a visible column.
+  const columns = useMemo(() => {
+    const labels: Record<string, string> = {};
+    configuredOptions.forEach((o) => {
+      labels[o.id] = o.label;
+    });
+    const grouped: Record<string, any[]> = {};
+    submissions.forEach((s) => {
+      const status = s.status || "submitted";
+      if (!grouped[status]) {
+        grouped[status] = [];
+      }
+      grouped[status].push(s);
+    });
+    const ids = [
+      ...new Set([
+        ...FALLBACK_PIPELINE,
+        ...configuredOptions.map((o) => o.id),
+        ...Object.keys(grouped),
+      ]),
+    ];
+    return {
+      ids,
+      grouped,
+      label: (id: string) =>
+        labels[id] || id.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+    };
+  }, [submissions, configuredOptions]);
 
   const reviewerLabel = (id: any) => {
     if (!id) return null;
     const member = members.find((m) => m.id === id);
     return member ? member.display_name || member.email : null;
   };
-
-  const columns = useMemo(() => {
-    const grouped: Record<string, any[]> = {};
-    statusOptions.forEach((o) => {
-      grouped[o.id] = [];
-    });
-    const fallbackBucket: any[] = [];
-    submissions.forEach((s) => {
-      const status = s.status;
-      if (status && grouped[status]) {
-        grouped[status].push(s);
-      } else if (!status) {
-        (grouped["submitted"] || fallbackBucket).push(s);
-      } else {
-        fallbackBucket.push(s);
-      }
-    });
-    if (fallbackBucket.length && !grouped["__other__"]) {
-      grouped["__other__"] = fallbackBucket;
-    }
-    return grouped;
-  }, [submissions, statusOptions]);
 
   function handleDrop(newStatus: string) {
     setDropTarget(null);
@@ -85,24 +95,26 @@ export default function ApplicationBoardPage() {
 
   return (
     <div className="flex gap-3 overflow-x-auto p-4 h-full">
-      {statusOptions.map((option) => {
-        const cards = columns[option.id] || [];
-        const isTarget = dropTarget === option.id;
+      {columns.ids.map((statusId) => {
+        const cards = columns.grouped[statusId] || [];
+        const isTarget = dropTarget === statusId;
         return (
           <div
-            key={option.id}
+            key={statusId}
             className={`flex flex-col flex-shrink-0 w-72 bg-background-700 rounded-lg border ${
               isTarget ? "border-lp-400" : "border-background-600"
             }`}
             onDragOver={(e) => {
               e.preventDefault();
-              setDropTarget(option.id);
+              setDropTarget(statusId);
             }}
             onDragLeave={() => setDropTarget(null)}
-            onDrop={() => handleDrop(option.id)}
+            onDrop={() => handleDrop(statusId)}
           >
             <div className="flex items-center justify-between p-3 border-b border-background-600">
-              <span className="font-semibold text-sm">{option.label}</span>
+              <span className="font-semibold text-sm capitalize">
+                {columns.label(statusId)}
+              </span>
               <span className="text-xs text-gray-400 bg-background-600 rounded-full px-2 py-0.5">
                 {cards.length}
               </span>
