@@ -12,82 +12,118 @@ import "swiper/css";
 const lpFooterEllipse = "/icons/custom/footerEllipse.svg";
 const execs = [
   {
-    name: "Xavier Lam",
-    image: "/images/execs/xavier_lam.png",
-    title: "Co-President",
-    linkedIn: "https://www.linkedin.com/in/xavier-lam/",
-  },
-  {
-    name: "Tony Liu",
-    image: "/images/execs/tony_liu.jpg",
-    title: "Co-President",
-    linkedIn: "https://www.linkedin.com/in/yunxiaotonyliu/",
-  },
-  {
-    name: "Alex Luo",
-    image: "/images/execs/alex_luo.jpg",
-    title: "Tech Lead",
-    linkedIn: "https://www.linkedin.com/in/alexluo602/",
-  },
-  {
-    name: "Theo Siemens-Rhodes",
-    image: "/images/execs/theo_siemens_rhodes.jpeg",
-    title: "Tech Lead",
-    linkedIn: "https://www.linkedin.com/in/theo-siemens-rhodes/",
-  },
-  {
-    name: "Harsh Amin",
-    image: "/images/execs/harsh_amin.jpeg",
-    title: "Tech Lead",
-    linkedIn: "https://www.linkedin.com/in/hamin06/",
-  },
-  {
-    name: "Daniel Yoo",
-    image: "/images/execs/daniel_yoo.jpg",
-    title: "Tech Lead",
-    linkedIn: "https://www.linkedin.com/in/yood2/",
-  },
-  {
-    name: "Jessie Megan",
-    image: "/images/execs/jessie_megan.jpg",
-    title: "Design Lead",
-    linkedIn: "https://www.linkedin.com/in/jessiemegan/",
-  },
-  {
-    name: "Jackie Crowley",
-    image: "/images/execs/jackie_crowley.jpeg",
-    title: "Design Lead",
-    linkedIn: "https://www.linkedin.com/in/jackiehcrowley/",
-  },
-  {
     name: "Ura Hwang",
     image: "/images/execs/ura_hwang.jpeg",
-    title: "Operations Lead",
+    title: "Co-President",
     linkedIn: "https://www.linkedin.com/in/ura-hwang-748336282/",
-  },
-  {
-    name: "Iris Liu",
-    image: "/images/execs/iris_liu.png",
-    title: "Marketing Coordinator",
-    linkedIn: "https://www.linkedin.com/in/irisdan/",
   },
   {
     name: "Boris Wang",
     image: "/images/execs/boris_wang.jpg",
-    title: "Strategy Coordinator",
+    title: "Co-President",
     linkedIn: "https://www.linkedin.com/in/boriswangcs/",
   },
   {
-    name: "Pearl Dhingra",
-    image: "/images/execs/pearl_dhingra.png",
-    title: "Sponsorship Coordinator",
-    linkedIn: "https://www.linkedin.com/in/pearl-dhingra/",
+    name: "Harsh Amin",
+    image: "/images/execs/harsh_amin.jpeg",
+    title: "Co-President",
+    linkedIn: "https://www.linkedin.com/in/hamin06/",
   },
   {
-    name: "Vanshika Dixit",
-    image: "/images/execs/vanshika_dixit.jpeg",
+    name: "Owen Hochwald",
+    // TODO: photo not yet uploaded to public/images/execs/
+    image: "/images/execs/owen_hochwald.jpg",
+    title: "Tech Lead",
+    // TODO: awaiting LinkedIn URL
+    linkedIn: "#",
+  },
+  {
+    name: "Bradley Eugene Sakran",
+    // TODO: photo not yet uploaded to public/images/execs/
+    image: "/images/execs/bradley_eugene_sakran.jpg",
+    title: "Tech Lead",
+    // TODO: awaiting LinkedIn URL
+    linkedIn: "#",
+  },
+  {
+    name: "June Wang",
+    // TODO: photo not yet uploaded to public/images/execs/
+    image: "/images/execs/june_wang.jpg",
+    title: "Tech Lead",
+    // TODO: awaiting LinkedIn URL
+    linkedIn: "#",
+  },
+  {
+    name: "Edward Jung",
+    // TODO: photo not yet uploaded to public/images/execs/
+    image: "/images/execs/edward_jung.jpg",
+    title: "Tech Lead",
+    // TODO: awaiting LinkedIn URL
+    linkedIn: "#",
+  },
+  {
+    name: "Zayan Sheikh",
+    // TODO: photo not yet uploaded to public/images/execs/
+    image: "/images/execs/zayan_sheikh.jpg",
+    title: "Tech Lead",
+    // TODO: awaiting LinkedIn URL
+    linkedIn: "#",
+  },
+  {
+    name: "Talia Feng",
+    // TODO: photo not yet uploaded to public/images/execs/
+    image: "/images/execs/talia_feng.jpg",
+    title: "Tech Lead",
+    // TODO: awaiting LinkedIn URL
+    linkedIn: "#",
+  },
+  {
+    name: "Dora Hu",
+    // TODO: photo not yet uploaded to public/images/execs/
+    image: "/images/execs/dora_hu.jpg",
+    title: "Design Lead",
+    // TODO: awaiting LinkedIn URL
+    linkedIn: "#",
+  },
+  {
+    name: "Kelly Wei Jin",
+    // TODO: photo not yet uploaded to public/images/execs/
+    image: "/images/execs/kelly_wei_jin.jpg",
+    title: "Design Lead",
+    // TODO: awaiting LinkedIn URL
+    linkedIn: "#",
+  },
+  {
+    name: "Nicole Chu",
+    // TODO: photo not yet uploaded to public/images/execs/
+    image: "/images/execs/nicole_chu.jpg",
+    title: "Sponsorship Coordinator",
+    // TODO: awaiting LinkedIn URL
+    linkedIn: "#",
+  },
+  {
+    name: "Alvin Tsui",
+    // TODO: photo not yet uploaded to public/images/execs/
+    image: "/images/execs/alvin_tsui.jpg",
+    title: "Sponsorship Coordinator",
+    // TODO: awaiting LinkedIn URL
+    linkedIn: "#",
+  },
+  {
+    name: "Jinah Pak",
+    // TODO: photo not yet uploaded to public/images/execs/
+    image: "/images/execs/jinah_pak.jpg",
     title: "Events Coordinator",
-    linkedIn: "https://www.linkedin.com/in/vdixit20/",
+    // TODO: awaiting LinkedIn URL
+    linkedIn: "#",
+  },
+  {
+    name: "Stella Duo",
+    // TODO: photo not yet uploaded to public/images/execs/
+    image: "/images/execs/stella_duo.jpg",
+    title: "Marketing Coordinator",
+    // TODO: awaiting LinkedIn URL
+    linkedIn: "#",
   },
 ];
 
