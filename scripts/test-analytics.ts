@@ -7,7 +7,6 @@ const db = new PrismaClient({
 });
 
 async function main() {
-  // Form 10 = Fall 2025 Recruitment (real reviewer activity from last season)
   const rows = await db.submissions.findMany({
     where: { form_id: BigInt(10) },
     include: { applications: true, users: true },

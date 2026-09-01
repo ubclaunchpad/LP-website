@@ -31,7 +31,6 @@ const execs = [
   },
   {
     name: "Owen Hochwald",
-    // TODO: photo not yet uploaded to public/images/execs/
     image: "/images/execs/owen_hochwald.jpg",
     title: "Tech Lead",
     // TODO: awaiting LinkedIn URL
@@ -39,7 +38,6 @@ const execs = [
   },
   {
     name: "Bradley Eugene Sakran",
-    // TODO: photo not yet uploaded to public/images/execs/
     image: "/images/execs/bradley_eugene_sakran.jpg",
     title: "Tech Lead",
     // TODO: awaiting LinkedIn URL
@@ -47,7 +45,6 @@ const execs = [
   },
   {
     name: "June Wang",
-    // TODO: photo not yet uploaded to public/images/execs/
     image: "/images/execs/june_wang.jpg",
     title: "Tech Lead",
     // TODO: awaiting LinkedIn URL
@@ -55,7 +52,6 @@ const execs = [
   },
   {
     name: "Edward Jung",
-    // TODO: photo not yet uploaded to public/images/execs/
     image: "/images/execs/edward_jung.jpg",
     title: "Tech Lead",
     // TODO: awaiting LinkedIn URL
@@ -63,7 +59,6 @@ const execs = [
   },
   {
     name: "Zayan Sheikh",
-    // TODO: photo not yet uploaded to public/images/execs/
     image: "/images/execs/zayan_sheikh.jpg",
     title: "Tech Lead",
     // TODO: awaiting LinkedIn URL
@@ -71,7 +66,6 @@ const execs = [
   },
   {
     name: "Talia Feng",
-    // TODO: photo not yet uploaded to public/images/execs/
     image: "/images/execs/talia_feng.jpg",
     title: "Tech Lead",
     // TODO: awaiting LinkedIn URL
@@ -79,7 +73,6 @@ const execs = [
   },
   {
     name: "Dora Hu",
-    // TODO: photo not yet uploaded to public/images/execs/
     image: "/images/execs/dora_hu.jpg",
     title: "Design Lead",
     // TODO: awaiting LinkedIn URL
@@ -87,7 +80,6 @@ const execs = [
   },
   {
     name: "Kelly Wei Jin",
-    // TODO: photo not yet uploaded to public/images/execs/
     image: "/images/execs/kelly_wei_jin.jpg",
     title: "Design Lead",
     // TODO: awaiting LinkedIn URL
@@ -95,7 +87,6 @@ const execs = [
   },
   {
     name: "Nicole Chu",
-    // TODO: photo not yet uploaded to public/images/execs/
     image: "/images/execs/nicole_chu.jpg",
     title: "Sponsorship Coordinator",
     // TODO: awaiting LinkedIn URL
@@ -103,7 +94,6 @@ const execs = [
   },
   {
     name: "Alvin Tsui",
-    // TODO: photo not yet uploaded to public/images/execs/
     image: "/images/execs/alvin_tsui.jpg",
     title: "Sponsorship Coordinator",
     // TODO: awaiting LinkedIn URL
@@ -111,7 +101,6 @@ const execs = [
   },
   {
     name: "Jinah Pak",
-    // TODO: photo not yet uploaded to public/images/execs/
     image: "/images/execs/jinah_pak.jpg",
     title: "Events Coordinator",
     // TODO: awaiting LinkedIn URL
@@ -119,7 +108,6 @@ const execs = [
   },
   {
     name: "Stella Duo",
-    // TODO: photo not yet uploaded to public/images/execs/
     image: "/images/execs/stella_duo.jpg",
     title: "Marketing Coordinator",
     // TODO: awaiting LinkedIn URL
@@ -148,7 +136,7 @@ export default function ExecSection() {
         <div className="flex flex-col md:flex-row text-center items-center justify-between w-full md:px-10 py-10">
           <div className="flex flex-col-reverse md:flex-row items-center">
             <h2 className="text-3xl font-semibold py-2 md:py-0 md:pr-4">
-              Meet our <span className="text-lp-400">2025/2026</span> execs
+              Meet our <span className="text-lp-400">2026/2027</span> execs
             </h2>
           </div>
           <span className="hidden md:flex md:flex-row md:space-x-2">
