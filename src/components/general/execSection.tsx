@@ -33,85 +33,73 @@ const execs = [
     name: "Owen Hochwald",
     image: "/images/execs/owen_hochwald.jpg",
     title: "Tech Lead",
-    // TODO: awaiting LinkedIn URL
-    linkedIn: "#",
+    linkedIn: "https://www.linkedin.com/in/ohoch/",
   },
   {
     name: "Bradley Eugene Sakran",
     image: "/images/execs/bradley_eugene_sakran.jpg",
     title: "Tech Lead",
-    // TODO: awaiting LinkedIn URL
-    linkedIn: "#",
+    linkedIn: "https://www.linkedin.com/in/besakran/",
   },
   {
     name: "June Wang",
     image: "/images/execs/june_wang.jpg",
     title: "Tech Lead",
-    // TODO: awaiting LinkedIn URL
-    linkedIn: "#",
+    linkedIn: "https://www.linkedin.com/in/june-wang-756065355/",
   },
   {
     name: "Edward Jung",
     image: "/images/execs/edward_jung.jpg",
     title: "Tech Lead",
-    // TODO: awaiting LinkedIn URL
-    linkedIn: "#",
+    linkedIn: "https://www.linkedin.com/in/edward-h-jung/",
   },
   {
     name: "Zayan Sheikh",
     image: "/images/execs/zayan_sheikh.jpg",
     title: "Tech Lead",
-    // TODO: awaiting LinkedIn URL
-    linkedIn: "#",
+    linkedIn: "https://www.linkedin.com/in/zayans/",
   },
   {
     name: "Talia Feng",
     image: "/images/execs/talia_feng.jpg",
     title: "Tech Lead",
-    // TODO: awaiting LinkedIn URL
-    linkedIn: "#",
+    linkedIn: "https://www.linkedin.com/in/talfe/",
   },
   {
     name: "Dora Hu",
     image: "/images/execs/dora_hu.jpg",
     title: "Design Lead",
-    // TODO: awaiting LinkedIn URL
-    linkedIn: "#",
+    linkedIn: "https://www.linkedin.com/in/dora-y-hu/",
   },
   {
     name: "Kelly Wei Jin",
     image: "/images/execs/kelly_wei_jin.jpg",
     title: "Design Lead",
-    // TODO: awaiting LinkedIn URL
-    linkedIn: "#",
+    linkedIn: "https://www.linkedin.com/in/kellyw13/",
   },
   {
     name: "Nicole Chu",
     image: "/images/execs/nicole_chu.jpg",
     title: "Sponsorship Coordinator",
-    // TODO: awaiting LinkedIn URL
-    linkedIn: "#",
+    linkedIn: "https://www.linkedin.com/in/nicole-chu-402b0b2ab/",
   },
   {
     name: "Alvin Tsui",
     image: "/images/execs/alvin_tsui.jpg",
     title: "Sponsorship Coordinator",
-    // TODO: awaiting LinkedIn URL
-    linkedIn: "#",
+    linkedIn: "https://www.linkedin.com/in/alvintsui/",
   },
   {
     name: "Jinah Pak",
     image: "/images/execs/jinah_pak.jpg",
     title: "Events Coordinator",
-    // TODO: awaiting LinkedIn URL
-    linkedIn: "#",
+    linkedIn: "https://www.linkedin.com/in/jinah-pak/",
   },
   {
     name: "Stella Duo",
     image: "/images/execs/stella_duo.jpg",
     title: "Marketing Coordinator",
-    // TODO: awaiting LinkedIn URL
-    linkedIn: "#",
+    linkedIn: "https://www.linkedin.com/in/stelladuo/",
   },
 ];
 
