@@ -12,82 +12,94 @@ import "swiper/css";
 const lpFooterEllipse = "/icons/custom/footerEllipse.svg";
 const execs = [
   {
-    name: "Xavier Lam",
-    image: "/images/execs/xavier_lam.png",
-    title: "Co-President",
-    linkedIn: "https://www.linkedin.com/in/xavier-lam/",
-  },
-  {
-    name: "Tony Liu",
-    image: "/images/execs/tony_liu.jpg",
-    title: "Co-President",
-    linkedIn: "https://www.linkedin.com/in/yunxiaotonyliu/",
-  },
-  {
-    name: "Alex Luo",
-    image: "/images/execs/alex_luo.jpg",
-    title: "Tech Lead",
-    linkedIn: "https://www.linkedin.com/in/alexluo602/",
-  },
-  {
-    name: "Theo Siemens-Rhodes",
-    image: "/images/execs/theo_siemens_rhodes.jpeg",
-    title: "Tech Lead",
-    linkedIn: "https://www.linkedin.com/in/theo-siemens-rhodes/",
-  },
-  {
-    name: "Harsh Amin",
-    image: "/images/execs/harsh_amin.jpeg",
-    title: "Tech Lead",
-    linkedIn: "https://www.linkedin.com/in/hamin06/",
-  },
-  {
-    name: "Daniel Yoo",
-    image: "/images/execs/daniel_yoo.jpg",
-    title: "Tech Lead",
-    linkedIn: "https://www.linkedin.com/in/yood2/",
-  },
-  {
-    name: "Jessie Megan",
-    image: "/images/execs/jessie_megan.jpg",
-    title: "Design Lead",
-    linkedIn: "https://www.linkedin.com/in/jessiemegan/",
-  },
-  {
-    name: "Jackie Crowley",
-    image: "/images/execs/jackie_crowley.jpeg",
-    title: "Design Lead",
-    linkedIn: "https://www.linkedin.com/in/jackiehcrowley/",
-  },
-  {
     name: "Ura Hwang",
     image: "/images/execs/ura_hwang.jpeg",
-    title: "Operations Lead",
+    title: "Co-President",
     linkedIn: "https://www.linkedin.com/in/ura-hwang-748336282/",
-  },
-  {
-    name: "Iris Liu",
-    image: "/images/execs/iris_liu.png",
-    title: "Marketing Coordinator",
-    linkedIn: "https://www.linkedin.com/in/irisdan/",
   },
   {
     name: "Boris Wang",
     image: "/images/execs/boris_wang.jpg",
-    title: "Strategy Coordinator",
+    title: "Co-President",
     linkedIn: "https://www.linkedin.com/in/boriswangcs/",
   },
   {
-    name: "Pearl Dhingra",
-    image: "/images/execs/pearl_dhingra.png",
-    title: "Sponsorship Coordinator",
-    linkedIn: "https://www.linkedin.com/in/pearl-dhingra/",
+    name: "Harsh Amin",
+    image: "/images/execs/harsh_amin.jpeg",
+    title: "Co-President",
+    linkedIn: "https://www.linkedin.com/in/hamin06/",
   },
   {
-    name: "Vanshika Dixit",
-    image: "/images/execs/vanshika_dixit.jpeg",
+    name: "Owen Hochwald",
+    image: "/images/execs/owen_hochwald.jpg",
+    title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/ohoch/",
+  },
+  {
+    name: "Bradley Eugene Sakran",
+    image: "/images/execs/bradley_eugene_sakran.jpg",
+    title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/besakran/",
+  },
+  {
+    name: "June Wang",
+    image: "/images/execs/june_wang.jpg",
+    title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/june-wang-756065355/",
+  },
+  {
+    name: "Edward Jung",
+    image: "/images/execs/edward_jung.jpg",
+    title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/edward-h-jung/",
+  },
+  {
+    name: "Zayan Sheikh",
+    image: "/images/execs/zayan_sheikh.jpg",
+    title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/zayans/",
+  },
+  {
+    name: "Talia Feng",
+    image: "/images/execs/talia_feng.jpg",
+    title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/talfe/",
+  },
+  {
+    name: "Dora Hu",
+    image: "/images/execs/dora_hu.jpg",
+    title: "Design Lead",
+    linkedIn: "https://www.linkedin.com/in/dora-y-hu/",
+  },
+  {
+    name: "Kelly Wei Jin",
+    image: "/images/execs/kelly_wei_jin.jpg",
+    title: "Design Lead",
+    linkedIn: "https://www.linkedin.com/in/kellyw13/",
+  },
+  {
+    name: "Nicole Chu",
+    image: "/images/execs/nicole_chu.jpg",
+    title: "Sponsorship Coordinator",
+    linkedIn: "https://www.linkedin.com/in/nicole-chu-402b0b2ab/",
+  },
+  {
+    name: "Alvin Tsui",
+    image: "/images/execs/alvin_tsui.jpg",
+    title: "Sponsorship Coordinator",
+    linkedIn: "https://www.linkedin.com/in/alvintsui/",
+  },
+  {
+    name: "Jinah Pak",
+    image: "/images/execs/jinah_pak.jpg",
     title: "Events Coordinator",
-    linkedIn: "https://www.linkedin.com/in/vdixit20/",
+    linkedIn: "https://www.linkedin.com/in/jinah-pak/",
+  },
+  {
+    name: "Stella Duo",
+    image: "/images/execs/stella_duo.jpg",
+    title: "Marketing Coordinator",
+    linkedIn: "https://www.linkedin.com/in/stelladuo/",
   },
 ];
 
@@ -112,7 +124,7 @@ export default function ExecSection() {
         <div className="flex flex-col md:flex-row text-center items-center justify-between w-full md:px-10 py-10">
           <div className="flex flex-col-reverse md:flex-row items-center">
             <h2 className="text-3xl font-semibold py-2 md:py-0 md:pr-4">
-              Meet our <span className="text-lp-400">2025/2026</span> execs
+              Meet our <span className="text-lp-400">2026/2027</span> execs
             </h2>
           </div>
           <span className="hidden md:flex md:flex-row md:space-x-2">

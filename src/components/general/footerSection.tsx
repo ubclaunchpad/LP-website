@@ -4,7 +4,7 @@ import { bottomFooterLinks, footerLinks } from "@/lib/data/generalData";
 
 const logo = "/icons/logoVariants/logoPrimaryWithText.svg";
 const text = {
-  copyright: "Launch Pad © 2025",
+  copyright: "Launch Pad © 2026",
   subheading: "Leading Software Engineering Club",
 };
 

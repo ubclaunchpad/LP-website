@@ -16,19 +16,13 @@ const ImageCard = ({
   description,
   imageSrc,
   alt,
-  width,
-  height,
   url,
 }: ImageCardProps) => {
-  const imageProps = {
-    src: imageSrc,
-    alt,
-    width,
-    height,
-  };
   return (
     <Link
       className="flex flex-col flex-1 max-h-[400px] p-2 min-h-[400px] h-full justify-between bg-secondary hover:bg-lp-500 duration-200 hover:scale-105 rounded-2xl py-1 text-white items-center text-center "
+      target="_blank"
+      rel="noopener noreferrer"
       href={url}
     >
       <div className="py-8 w-full h-full">

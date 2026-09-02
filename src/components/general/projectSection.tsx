@@ -24,7 +24,7 @@ type Project = {
 };
 
 const text = {
-  projectsTitle: "Projects Highlights",
+  projectsTitle: "Project Highlights",
 };
 
 const ProjectSection = ({ projects }: ProjectSectionProps) => {
@@ -52,9 +52,6 @@ const ProjectSection = ({ projects }: ProjectSectionProps) => {
           <h1 className={`text-4xl font-bold font-sans py-2 md:py-0 md:pr-4`}>
             {text.projectsTitle}
           </h1>
-          <span className="p-2">
-            <InfoButton text={"2024/2025"} />
-          </span>
         </span>
         <span className="hidden md:flex md:flex-row md:space-x-2">
           <Button variant={"dark"} className="swiper-button-prev gap-2">
