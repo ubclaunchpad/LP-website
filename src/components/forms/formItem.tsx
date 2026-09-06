@@ -2,6 +2,45 @@
 
 import { FormItem, FormQuestion } from "@/lib/types/questions";
 import formQuestionMapper from "./formMapper";
+import React from "react";
+
+// Renders markdown-style links ([text](url)) and bare URLs in a question
+// label as real clickable anchors.
+export function InfoText({ text }: { text: string }) {
+  const pattern =
+    /\[([^\]]+)\]\((\S+?)\)|((?:https?:\/\/)[^\s()<>]+[^\s.,;:!?()<>])/g;
+  const parts: React.ReactNode[] = [];
+  let last = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > last) {
+      parts.push(text.slice(last, match.index));
+    }
+    const href = match[2] || match[3];
+    const label = match[1] || match[3];
+    parts.push(
+      <a
+        key={key++}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-lp-400 underline underline-offset-2 hover:opacity-80"
+      >
+        {label}
+      </a>,
+    );
+    last = match.index + match[0].length;
+  }
+  if (last < text.length) {
+    parts.push(text.slice(last));
+  }
+  return (
+    <p className="text-sm text-neutral-300 whitespace-pre-line leading-relaxed">
+      {parts}
+    </p>
+  );
+}
 
 export default function FormItemInput({
   expanded = false,
@@ -12,6 +51,18 @@ export default function FormItemInput({
   questionData: FormItem;
   question: FormQuestion;
 }) {
+  if (question.type === "info") {
+    return (
+      <div className="flex flex-col gap-2 w-full">
+        <div className="flex gap-2 flex-col w-full">
+          <div className="w-full rounded-md border border-background-600 bg-background-700 px-4 py-3">
+            <InfoText text={question.label} />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col gap-2 w-full">
       <div

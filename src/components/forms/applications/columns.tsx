@@ -107,7 +107,9 @@ export function createColumns<TData>(
   members: { id: string; email: string; display_name: string | undefined }[],
   setAndOpen: any,
 ): ColumnDef<keyof FormFields>[] {
-  const general: any[] = Object.entries(fields).map(([key, field]) => {
+  const general: any[] = Object.entries(fields)
+    .filter(([, field]) => field.type !== "info")
+    .map(([key, field]) => {
     return {
       meta: { field: field, id: key },
       accessorKey: key as keyof TData,

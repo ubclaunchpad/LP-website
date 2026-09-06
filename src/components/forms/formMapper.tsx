@@ -67,6 +67,8 @@ export default function FormQuestionMapper({
           allowMultiple={question.config.multiple}
         />
       );
+    case "info":
+      return null;
     default:
       return <div />;
   }

@@ -9,7 +9,8 @@ export type QuestionFormat =
   | "textarea"
   | "select"
   | "checkbox"
-  | "url";
+  | "url"
+  | "info";
 
 export type BaseFormQuestion = {
   type: QuestionFormat;
