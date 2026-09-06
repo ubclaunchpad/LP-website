@@ -118,13 +118,21 @@ export default function DataTableWrapper<TData>({
   }, [formFields, data]);
 
   const columns = createColumns(formFields, members, setAndOpen);
+  // Ranking filter defs live in form config:
+  // application.projectRanking = { fields: [question ids], projects: [{value, label}] }
   const ranking = useMemo(() => {
     const configured = (rawForm?.config as any)?.application?.projectRanking;
-    return Array.isArray(configured)
-      ? configured.filter(
-          (r: any) => r?.id && typeof r.id === "string" && formFields[r.id],
-        )
-      : [];
+    if (!configured || typeof configured !== "object" || Array.isArray(configured)) {
+      return null;
+    }
+    const fields = (Array.isArray(configured.fields) ? configured.fields : [])
+      .filter((f: any) => typeof f === "string" && formFields[f]);
+    const projects = (Array.isArray(configured.projects) ? configured.projects : [])
+      .filter((p: any) => p && p.value && p.label);
+    if (!fields.length || !projects.length) {
+      return null;
+    }
+    return { fields, projects };
   }, [rawForm, formFields]);
   const config = {
     title: rawForm?.title,

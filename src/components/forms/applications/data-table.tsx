@@ -134,47 +134,69 @@ export function DataTable<TData, TValue>({
     ...columns,
   ];
 
-  const rankingDefs: { id: string; label: string }[] = config?.ranking || [];
+  // Config-driven project preference filters. Ranking defs look like
+  // { fields: ["firstChoice", ...], projects: [{ value, label }] } and live in
+  // the form config so any form can opt in without code changes.
+  const rankingCfg = config?.ranking;
+  const rankProjects: { value: string; label: string }[] =
+    rankingCfg?.projects || [];
+  const rankFields: string[] = rankingCfg?.fields || [];
+  const rankMax = rankFields.length;
   const [rankingFilters, setRankingFilters] = useState<Record<string, number>>(
     {},
   );
 
-  // Pre-filter rows to applicants who ranked a project within their top N.
+  const rankValues = (row: any, field: string): string[] => {
+    const v = row?.[field];
+    if (v == null) {
+      return [];
+    }
+    return Array.isArray(v) ? v : [String(v)];
+  };
+
+  // Pre-filter rows to applicants who listed a project within their top N.
   const rankingFilteredData = useMemo(() => {
-    const active = Object.entries(rankingFilters).filter(([, top]) => top > 0);
-    if (!active.length) {
+    const active = Object.entries(rankingFilters).filter(([, t]) => t > 0);
+    if (!active.length || !rankProjects.length || !rankFields.length) {
       return data;
     }
     return (data as any[]).filter((row) =>
-      active.every(([id, top]) => {
-        const v = Number(row[id]);
-        return Number.isFinite(v) && v >= 1 && v <= top;
-      }),
+      active.every(([value, top]) =>
+        rankFields
+          .slice(0, top)
+          .some((f) => rankValues(row, f).includes(value)),
+      ),
     );
-  }, [data, rankingFilters]);
+  }, [data, rankingFilters, rankFields, rankProjects]);
 
-  // Per-project counts: total who ranked it, plus how many rank it in top 1..5.
+  // Per-project counts: total who listed it, plus how many have it in top 1..N.
   const rankingCounts = useMemo(() => {
     const out: Record<string, { total: number; byTop: Record<number, number> }> =
       {};
-    rankingDefs.forEach((d) => {
-      out[d.id] = { total: 0, byTop: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 } };
+    rankProjects.forEach((p) => {
+      const byTop: Record<number, number> = {};
+      for (let n = 1; n <= rankMax; n++) {
+        byTop[n] = 0;
+      }
+      out[p.value] = { total: 0, byTop };
     });
     (data as any[]).forEach((row) => {
-      rankingDefs.forEach((d) => {
-        const v = Number(row[d.id]);
-        if (!Number.isFinite(v) || v < 1 || v > 5) {
+      rankProjects.forEach((p) => {
+        const idx = rankFields.findIndex((f) =>
+          rankValues(row, f).includes(p.value),
+        );
+        if (idx < 0) {
           return;
         }
-        const c = out[d.id];
+        const c = out[p.value];
         c.total += 1;
-        for (let n = v; n <= 5; n++) {
+        for (let n = idx + 1; n <= rankMax; n++) {
           c.byTop[n] += 1;
         }
       });
     });
     return out;
-  }, [data, rankingDefs]);
+  }, [data, rankFields, rankProjects, rankMax]);
 
   const table = useReactTable({
     data: rankingFilteredData,
@@ -360,27 +382,28 @@ export function DataTable<TData, TValue>({
           </div>
         )}
 
-        {rankingDefs.length > 0 && (
+        {rankProjects.length > 0 && rankMax > 0 && (
           <div className="flex items-center gap-1 flex-wrap">
             <span className="text-xs text-gray-400">Prefs:</span>
-            {rankingDefs.map((def) => {
-              const selected = rankingFilters[def.id] || 0;
-              const counts = rankingCounts[def.id] || {
+            {rankProjects.map((p) => {
+              const selected = rankingFilters[p.value] || 0;
+              const counts = rankingCounts[p.value] || {
                 total: 0,
-                byTop: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+                byTop: {} as Record<number, number>,
               };
-              const shown = selected > 0 ? counts.byTop[selected] : counts.total;
+              const shown =
+                selected > 0 ? counts.byTop[selected] : counts.total;
               return (
                 <div
-                  key={def.id}
+                  key={p.value}
                   className={`flex items-center gap-1 pl-3 pr-1 py-1 rounded-full text-xs border transition-colors ${
                     selected > 0
                       ? "border-lp-400 bg-lp-500 text-white"
                       : "border-background-500 bg-background-600 text-neutral-200 hover:border-background-400"
                   }`}
-                  title="Filter applicants who ranked this project within the chosen threshold"
+                  title="Filter applicants who listed this project within the chosen top-N"
                 >
-                  <span>{def.label}</span>
+                  <span>{p.label}</span>
                   <span className="opacity-70">{shown}</span>
                   <select
                     value={selected}
@@ -389,9 +412,9 @@ export function DataTable<TData, TValue>({
                       setRankingFilters((prev) => {
                         const next = { ...prev };
                         if (m > 0) {
-                          next[def.id] = m;
+                          next[p.value] = m;
                         } else {
-                          delete next[def.id];
+                          delete next[p.value];
                         }
                         return next;
                       });
@@ -403,11 +426,13 @@ export function DataTable<TData, TValue>({
                     <option value={0} className="text-black">
                       Any
                     </option>
-                    {[1, 2, 3, 4, 5].map((n) => (
-                      <option key={n} value={n} className="text-black">
-                        Top {n}
-                      </option>
-                    ))}
+                    {Array.from({ length: rankMax }, (_, i) => i + 1).map(
+                      (n) => (
+                        <option key={n} value={n} className="text-black">
+                          Top {n}
+                        </option>
+                      ),
+                    )}
                   </select>
                 </div>
               );
