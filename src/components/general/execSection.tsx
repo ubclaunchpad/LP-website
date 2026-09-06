@@ -66,6 +66,12 @@ const execs = [
     linkedIn: "https://www.linkedin.com/in/talfe/",
   },
   {
+    name: "Alan Zhou",
+    image: "/images/execs/alan_zhou.jpg",
+    title: "Tech Lead",
+    linkedIn: "https://www.linkedin.com/in/therealalan/",
+  },
+  {
     name: "Dora Hu",
     image: "/images/execs/dora_hu.jpg",
     title: "Design Lead",
