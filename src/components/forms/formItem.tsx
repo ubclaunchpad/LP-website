@@ -46,16 +46,18 @@ export default function FormItemInput({
   expanded = false,
   questionData,
   question,
+  launch = false,
 }: {
   expanded?: boolean;
   questionData: FormItem;
   question: FormQuestion;
+  launch?: boolean;
 }) {
   if (question.type === "info") {
     return (
       <div className="flex flex-col gap-2 w-full">
         <div className="flex gap-2 flex-col w-full">
-          <div className="w-full rounded-md border border-background-600 bg-background-700 px-4 py-3">
+          <div className="w-full rounded-md border border-white/10 bg-white/[0.03] px-4 py-3">
             <InfoText text={question.label} />
           </div>
         </div>
@@ -69,11 +71,15 @@ export default function FormItemInput({
         className={`flex  gap-2 ${question.label.length > 40 || expanded ? "flex-col" : "lg:flex-row flex-col"}`}
       >
         <label
-          className={`flex   flex-shrink-0  pt-2 gap-0.5 ${question.label.length > 40 || expanded ? "w-full" : "w-60 min-w-60 "}`}
+          className={`flex   flex-shrink-0  pt-2 gap-0.5 ${
+            question.label.length > 40 || expanded
+              ? "w-full"
+              : "w-60 min-w-60 "
+          } ${launch ? "font-heading font-semibold text-[15px] text-neutral-200" : ""}`}
         >
           <span className="">{question.label}</span>
           {question.config.validation.isRequired && (
-            <span className="text-lp-600">*</span>
+            <span className={launch ? "text-lp-400" : "text-lp-600"}>*</span>
           )}
         </label>
         <div className="flex flex-col items-center  w-full gap-2 relative *:w-full">

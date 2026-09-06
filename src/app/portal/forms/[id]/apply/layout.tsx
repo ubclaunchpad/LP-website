@@ -7,7 +7,7 @@ export default async function Layout({
   children: React.ReactNode;
 }) {
   return (
-    <GenericGreeter includeStyle={false}>
+    <GenericGreeter includeStyle={false} spaceBg="dim">
       <Suspense>{children}</Suspense>
     </GenericGreeter>
   );

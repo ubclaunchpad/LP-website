@@ -31,13 +31,13 @@ export function FormTabBottomBar({
     currentTab === 0 ? "first" : currentTab === numberOfTabs ? "last" : "other";
 
   return (
-    <div className=" flex justify-between gap-4  w-full items-end  lg:px-10 p-4 border-neutral-800">
+    <div className="flex justify-between gap-4 w-full items-end lg:px-10 p-4 border-neutral-800">
       {place !== "first" && place !== "last" ? (
         <NavLink onClick={goToPreviousTab}>Back</NavLink>
       ) : (
         <div />
       )}
-      {place !== "last" && <NavLink onClick={goToNextTab}>Next</NavLink>}
+      {place !== "last" && <NavLink onClick={goToNextTab}>Continue</NavLink>}
     </div>
   );
 }

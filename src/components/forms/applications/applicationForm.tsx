@@ -95,6 +95,7 @@ export default function ApplicationForm({
     }
     return (
       <FormTab
+        key={tab}
         currentStep={tab}
         step={formQ[tab]}
         totalSteps={formQ.length}

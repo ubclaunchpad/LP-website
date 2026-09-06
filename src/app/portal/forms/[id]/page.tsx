@@ -43,7 +43,7 @@ export default async function Page({
   const { form, status, formStatus } = pageData;
 
   return (
-    <GenericGreeter useBg>
+    <GenericGreeter spaceBg="scene">
       <MainResultPage status={status} form={form} formStatus={formStatus} />
     </GenericGreeter>
   );

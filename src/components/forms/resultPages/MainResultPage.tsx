@@ -3,6 +3,7 @@ import { Form } from "@/lib/types/application";
 import {
   GenericResult,
   AcceptedResult,
+  SubmittedResult,
   PendingResult,
   OpenResult,
 } from "@/components/forms/resultPages";
@@ -12,7 +13,6 @@ import OfferPage from "../applications/offerPage";
 
 const text = {
   closed: "This form is now closed.",
-  submitted: "Your application has been submitted.",
   rejected:
     "Unfortunately, it looks like your application was not successful this time. However, we encourage you to apply again in the future.",
   default: "No longer available",
@@ -32,7 +32,7 @@ function renderTerminalPage(status: string, form: Form, app?: Application) {
     case "rejected":
       return <GenericResult application={form} message={text.rejected} />;
     case "submitted":
-      return <GenericResult application={form} message={text.submitted} />;
+      return <SubmittedResult application={form} />;
     case "offered":
       return app && app.applications.status ? (
         <GenericGreeter>

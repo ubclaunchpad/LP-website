@@ -16,9 +16,9 @@ export default function GenericResult({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col  flex-1 items-center justify-center h-full p-10 gap-10 w-full z-10 *:z-20">
-      <div className="flex flex-col  w-full  max-w-4xl gap-4  flex-1 border-neutral-900   rounded-md p-10">
-        <h1 className="text-5xl text-left w-full pb-10 font-heading text-white">
+    <div className="flex flex-col flex-1 items-center justify-center h-full p-4 lg:p-10 gap-10 w-full z-10 *:z-20">
+      <div className="glass-panel flex flex-col w-full max-w-3xl gap-4 p-6 lg:p-10 animate-fade-up">
+        <h1 className="text-4xl lg:text-5xl w-full pb-6 font-heading text-white">
           {application.title}
         </h1>
 

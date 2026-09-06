@@ -1,5 +1,9 @@
 import { redirect } from "next/navigation";
-import { GenericResult, AcceptedResult } from "@/components/forms/resultPages";
+import {
+  GenericResult,
+  AcceptedResult,
+  SubmittedResult,
+} from "@/components/forms/resultPages";
 import { getFormById } from "@/lib/utils/forms/server";
 import { getUserApplication } from "@/app/portal/forms/actions";
 import { Form } from "@/lib/types/application";
@@ -7,11 +11,8 @@ import GenericGreeter from "@/components/layouts/genericGreeter";
 import OfferPage from "@/components/forms/applications/offerPage";
 
 const text = {
-  closed: "This form is now closed.",
-  submitted: "Your application has been submitted.",
   rejected:
     "Unfortunately, it looks like your application was not successful this time. However, we encourage you to apply again in the future.",
-  default: "No longer available",
 };
 
 export default async function page({
@@ -54,17 +55,17 @@ export default async function page({
     default:
       subpage = null;
   }
-  return <GenericGreeter>{subpage}</GenericGreeter>;
+  return <GenericGreeter spaceBg="scene">{subpage}</GenericGreeter>;
 }
 
 function renderTerminalPage(status: string, form: any) {
   const terminalStatus = ["rejected", "submitted"];
   if (terminalStatus.includes(status)) {
     switch (status) {
+      case "submitted":
+        return <SubmittedResult application={form} />;
       case "rejected":
         return <GenericResult application={form} message={text.rejected} />;
-      case "submitted":
-        return <GenericResult application={form} message={text.submitted} />;
     }
   }
 }
