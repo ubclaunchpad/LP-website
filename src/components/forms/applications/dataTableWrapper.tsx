@@ -118,6 +118,14 @@ export default function DataTableWrapper<TData>({
   }, [formFields, data]);
 
   const columns = createColumns(formFields, members, setAndOpen);
+  const ranking = useMemo(() => {
+    const configured = (rawForm?.config as any)?.application?.projectRanking;
+    return Array.isArray(configured)
+      ? configured.filter(
+          (r: any) => r?.id && typeof r.id === "string" && formFields[r.id],
+        )
+      : [];
+  }, [rawForm, formFields]);
   const config = {
     title: rawForm?.title,
     view: {
@@ -126,6 +134,7 @@ export default function DataTableWrapper<TData>({
     },
     statusOptions,
     reviewerOptions: membersWithLabel,
+    ranking,
     bulkFields: [
       {
         id: "reviewer_id",

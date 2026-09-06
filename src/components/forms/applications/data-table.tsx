@@ -134,8 +134,50 @@ export function DataTable<TData, TValue>({
     ...columns,
   ];
 
+  const rankingDefs: { id: string; label: string }[] = config?.ranking || [];
+  const [rankingFilters, setRankingFilters] = useState<Record<string, number>>(
+    {},
+  );
+
+  // Pre-filter rows to applicants who ranked a project within their top N.
+  const rankingFilteredData = useMemo(() => {
+    const active = Object.entries(rankingFilters).filter(([, top]) => top > 0);
+    if (!active.length) {
+      return data;
+    }
+    return (data as any[]).filter((row) =>
+      active.every(([id, top]) => {
+        const v = Number(row[id]);
+        return Number.isFinite(v) && v >= 1 && v <= top;
+      }),
+    );
+  }, [data, rankingFilters]);
+
+  // Per-project counts: total who ranked it, plus how many rank it in top 1..5.
+  const rankingCounts = useMemo(() => {
+    const out: Record<string, { total: number; byTop: Record<number, number> }> =
+      {};
+    rankingDefs.forEach((d) => {
+      out[d.id] = { total: 0, byTop: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 } };
+    });
+    (data as any[]).forEach((row) => {
+      rankingDefs.forEach((d) => {
+        const v = Number(row[d.id]);
+        if (!Number.isFinite(v) || v < 1 || v > 5) {
+          return;
+        }
+        const c = out[d.id];
+        c.total += 1;
+        for (let n = v; n <= 5; n++) {
+          c.byTop[n] += 1;
+        }
+      });
+    });
+    return out;
+  }, [data, rankingDefs]);
+
   const table = useReactTable({
-    data: data,
+    data: rankingFilteredData,
     columns: columnsWithSelection,
     getCoreRowModel: getCoreRowModel(),
     onColumnFiltersChange: setColumnFilters,
@@ -315,6 +357,61 @@ export function DataTable<TData, TValue>({
                   onClick={() => toggleColumnFilter("reviewer_id", o.id)}
                 />
               ))}
+          </div>
+        )}
+
+        {rankingDefs.length > 0 && (
+          <div className="flex items-center gap-1 flex-wrap">
+            <span className="text-xs text-gray-400">Prefs:</span>
+            {rankingDefs.map((def) => {
+              const selected = rankingFilters[def.id] || 0;
+              const counts = rankingCounts[def.id] || {
+                total: 0,
+                byTop: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+              };
+              const shown = selected > 0 ? counts.byTop[selected] : counts.total;
+              return (
+                <div
+                  key={def.id}
+                  className={`flex items-center gap-1 pl-3 pr-1 py-1 rounded-full text-xs border transition-colors ${
+                    selected > 0
+                      ? "border-lp-400 bg-lp-500 text-white"
+                      : "border-background-500 bg-background-600 text-neutral-200 hover:border-background-400"
+                  }`}
+                  title="Filter applicants who ranked this project within the chosen threshold"
+                >
+                  <span>{def.label}</span>
+                  <span className="opacity-70">{shown}</span>
+                  <select
+                    value={selected}
+                    onChange={(e) => {
+                      const m = Number(e.target.value);
+                      setRankingFilters((prev) => {
+                        const next = { ...prev };
+                        if (m > 0) {
+                          next[def.id] = m;
+                        } else {
+                          delete next[def.id];
+                        }
+                        return next;
+                      });
+                    }}
+                    className={`bg-transparent outline-none text-xs rounded-full cursor-pointer ${
+                      selected > 0 ? "text-white" : "text-neutral-300"
+                    }`}
+                  >
+                    <option value={0} className="text-black">
+                      Any
+                    </option>
+                    {[1, 2, 3, 4, 5].map((n) => (
+                      <option key={n} value={n} className="text-black">
+                        Top {n}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              );
+            })}
           </div>
         )}
 
