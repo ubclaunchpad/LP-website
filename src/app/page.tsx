@@ -87,7 +87,7 @@ export default async function Home() {
           <p className="gradient-subtitle text-center lg:text-left py-10">
             {text.joinUsText}
           </p>
-          <Link href="/portal/forms/8">
+          <Link href="/portal/forms/19">
             <Button className="p-4" size={"xl"} icon>
               <span className="text-lg">{text.joinUsButton}</span>
             </Button>
