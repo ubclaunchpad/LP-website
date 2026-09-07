@@ -317,7 +317,7 @@ export function DataTable<TData, TValue>({
   }
 
   return (
-    <div className={"flex flex-col px-10 overflow-hidden  pb-4"}>
+    <div className={"flex flex-col px-4 sm:px-10 overflow-hidden pb-4"}>
       <div className="flex items-center w-full gap-2 py-4  flex-wrap">
         <div className="flex items-center flex-1 p-2 gap-2">
           <span className="text-lg font-bold">
@@ -329,7 +329,7 @@ export function DataTable<TData, TValue>({
           placeholder="Search applicants..."
           value={globalFilter}
           onChange={(e) => setGlobalFilter(e.target.value)}
-          className="w-64 h-10 bg-background-600 border-background-500"
+          className="w-full sm:w-64 max-w-xs h-10 bg-background-600 border-background-500"
         />
 
         {config?.statusOptions?.length > 0 && (
@@ -548,8 +548,8 @@ export function DataTable<TData, TValue>({
       )}
       {tabView === "table" && (
         <div className="rounded-md border shadow-sm overflow-auto min-h-0 border-background-500 ">
-          <Table className="w-full h-[1px]   ">
-            <thead className={" left-0 top-0  "}>
+          <Table className="w-full h-[1px]">
+            <thead className={"sticky top-0 z-20 left-0"}>
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr
                   key={headerGroup.id}
@@ -617,7 +617,7 @@ export function DataTable<TData, TValue>({
       )}
       {tabView === "table" && (
         <Fragment>
-          <div className="flex items-center gap-3 py-2 text-sm text-neutral-300">
+          <div className="flex flex-wrap items-center gap-3 py-2 text-sm text-neutral-300">
             <Button
               size={"fit"}
               className="bg-background-600 min-h-none h-8 gap-1"
@@ -878,9 +878,9 @@ function TableFilter({
                   .map((column, columnIndex) => (
                     <div
                       key={column.id}
-                      className="flex items-center w-full flex-shrink-0 gap-2 rounded pl-2 border border-background-500 bg-background-600"
+                      className="flex flex-col sm:flex-row items-stretch sm:items-center w-full flex-shrink-0 gap-2 rounded pl-2 border border-background-500 bg-background-600 py-2 sm:py-0"
                     >
-                      <span className="text-white text-sm w-44 truncate">
+                      <span className="text-white text-sm w-full sm:w-44 truncate">
                         {column.columnDef.header()}
                       </span>
                       <ColumnFilterInput

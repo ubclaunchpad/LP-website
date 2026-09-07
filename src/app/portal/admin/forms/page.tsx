@@ -7,7 +7,7 @@ import { Form } from "@/lib/types/application";
 export default async function Page() {
   const forms = (await getForms()) as unknown as Form[];
   return (
-    <div className="flex flex-col gap-4 flex-1 w-full h-screen p-4">
+    <div className="flex flex-col gap-4 flex-1 w-full min-h-dvh p-4">
       <div className="flex justify-between items-center gap-2">
         <div></div>
         <NewFormDialog />
@@ -15,17 +15,17 @@ export default async function Page() {
       <ul className="flex flex-col gap-2 py-2 w-full">
         {forms.map((form) => (
           <li key={form.id} className="flex flex-col gap-2">
-            <div className="border flex items-center justify-between border-background-800 w-full bg-zinc-900 text-lg px-4 hover:bg-lp-500 p-2 rounded duration-300">
+            <div className="border flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-background-800 w-full bg-zinc-900 text-lg px-4 hover:bg-lp-500 p-2 rounded duration-300">
               <Link
                 href={`/portal/admin/forms/${form.id}`}
-                className="flex flex-row gap-2 flex-1"
+                className="flex flex-row gap-2 flex-1 min-w-0"
               >
-                <span>{form.title}</span>
+                <span className="truncate">{form.title}</span>
               </Link>
               <div className="flex text-sm flex-row gap-2 items-center">
-                <span>{form.open_at?.toLocaleDateString()}</span>
-                {form.close_at && <span> - </span>}
-                <span>{form.close_at?.toLocaleDateString()}</span>
+                <span className="hidden sm:inline">{form.open_at?.toLocaleDateString()}</span>
+                {form.close_at && <span className="hidden sm:inline"> - </span>}
+                <span className="hidden sm:inline">{form.close_at?.toLocaleDateString()}</span>
                 <CloneFormButton formId={Number(form.id)} formTitle={form.title} />
               </div>
             </div>

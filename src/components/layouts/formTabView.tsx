@@ -66,27 +66,27 @@ export default function FormTabView({
           "flex flex-col gap-4 flex-1 w-full max-h-dvh h-dvh overflow-hidden "
         }
       >
-        <div className="flex justify-between items-center gap-2 border-background-500 border-b">
-          <div className="flex flex-row p-2 items-center px-4 gap-2">
+        <div className="flex flex-wrap justify-between items-center gap-x-2 gap-y-0 border-background-500 border-b">
+          <div className="flex flex-row p-2 items-center px-4 gap-2 min-w-0 flex-1">
             <Link
               href={"/portal/admin/forms"}
               className={
-                "  p-0.5 hover:border-lp-500 hover:text-lp-500 border  rounded-full border-transparent font-heading"
+                "p-0.5 hover:border-lp-500 hover:text-lp-500 border rounded-full border-transparent font-heading shrink-0"
               }
             >
               <ArrowLeft size={18} />
             </Link>
-            <h1 className="text-lg flex-1 flex-shrink-0 font-medium font-heading">
+            <h1 className="text-lg flex-1 flex-shrink min-w-0 truncate font-medium font-heading">
               {form.rawForm.title}
             </h1>
           </div>
-          <div className="md:flex hidden flex-row  gap-1  px-2 pt-2">
+          <div className="flex flex-row gap-1 px-2 pt-2 pb-1 md:pb-0 overflow-x-auto flex-nowrap shrink-0 max-w-full">
             {tabs.map((tab, index) => {
               return (
                 <Link
                   href={tab.route}
                   key={index}
-                  className={` border-t border-x p-4 py-2 border-background-500 rounded-t-md ${
+                  className={`border-t border-x p-4 py-2 border-background-500 rounded-t-md whitespace-nowrap shrink-0 ${
                     isActive(tab.route, pathname)
                       ? "bg-lp-400"
                       : "bg-background-500 hover:bg-background-400"

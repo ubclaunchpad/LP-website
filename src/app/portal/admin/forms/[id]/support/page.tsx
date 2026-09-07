@@ -25,11 +25,11 @@ export default function SubmissionAsUser() {
     <div className="flex flex-col">
       {!app && (
         <nav className="flex flex-row gap-10 border-b py-2 px-4 border-b-background-500">
-          <section className="flex flex-shrink-0 flex-1 gap-2 flex-col">
-            <div className="flex gap-2">
+          <section className="flex flex-shrink-0 flex-1 gap-2 flex-col min-w-0">
+            <div className="flex flex-col sm:flex-row gap-2">
               <Input
                 disabled={!submissions || submissions.length === 0}
-                className="p-2"
+                className="p-2 w-full sm:flex-1 sm:min-w-0"
                 list="emails"
                 placeholder={
                   submissions?.length === 0
@@ -53,7 +53,7 @@ export default function SubmissionAsUser() {
                     ) as unknown as Application,
                   );
                 }}
-                className="p-2 flex-shrink-0 min-w-[200px]"
+                className="p-2 flex-shrink-0 sm:min-w-[200px] w-full sm:w-auto"
               >
                 Open application
               </Button>
@@ -63,12 +63,12 @@ export default function SubmissionAsUser() {
       )}
 
       {app && form && (
-        <div className="flex  gap-4 flex-col">
-          <div className="flex p-2 px-4 w-full items-center flex-row gap-2">
+        <div className="flex gap-4 flex-col">
+          <div className="flex flex-wrap p-2 px-4 w-full items-center gap-2">
             <Button
               variant={"outline"}
               size={"icon"}
-              className="bg-background-700 border-none"
+              className="bg-background-700 border-none shrink-0"
               onClick={() => {
                 setApp(null);
                 setSearch("");
@@ -76,17 +76,13 @@ export default function SubmissionAsUser() {
             >
               <XIcon />
             </Button>
-            <h2 className="text-xl  font-heading font-bold">
+            <h2 className="text-lg sm:text-xl font-heading font-bold min-w-0 flex-1 truncate">
               {`${app.details.firstName || "User"}'s application`}
             </h2>
-            <span className="text-sm bg-background-700 rounded-full w-fit px-4 p-2 flex items-center justify-center font-bold">
+            <span className="hidden sm:inline-flex text-sm bg-background-700 rounded-full w-fit px-4 p-2 flex items-center justify-center font-bold">
               {app.id}
             </span>
-            <div className="flex-1" />
-            <Button
-              disabled={!app || app.status !== "pending"}
-              onClick={submitforUser}
-            >
+            <Button className="ml-auto sm:ml-0" disabled={!app || app.status !== "pending"} onClick={submitforUser}>
               {app && app.status === "pending"
                 ? "Submit for user"
                 : "User has already submitted"}

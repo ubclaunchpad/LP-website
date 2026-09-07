@@ -105,7 +105,7 @@ export default function FormSettingsPage() {
 
   return (
     <div className="flex flex-col dark gap-4  items-center w-full px-4">
-      <div className="flex w-full sticky top-0 justify-between items-center">
+      <div className="flex w-full sticky top-0 justify-between items-center gap-2 flex-wrap">
         <h2 className="font-semibold text-xl sticky top-0">Email Settings</h2>
         {availableStatuses.length > 0 && (
           <Button onClick={() => setShowNewTemplate(true)}>
@@ -255,7 +255,7 @@ export default function FormSettingsPage() {
                 return (
                   <div
                     key={status}
-                    className="border rounded-lg bg-background-700 min-w-[600px]  flex-1 border-background-600 p-4 "
+                    className="border rounded-lg bg-background-700 min-w-0 w-full flex-1 border-background-600 p-4 "
                   >
                     <div className="flex items-center justify-between w-full gap-2 pb-4">
                       <span className="border text-base border-background-500 rounded-full font-semibold px-2 py-1 text-center w-24 bg-background-500 capitalize">

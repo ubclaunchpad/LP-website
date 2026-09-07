@@ -90,7 +90,7 @@ export default function useApplicantPopover({
           className={"absolute w-screen h-screen bg-transparent"}
           onClick={() => setOpen(false)}
         ></button>
-        <div className="flex z-40 flex-col flex-shrink-0 gap-2 bg-background-800  overflow-y-scroll border border-background-700 shadow p-4 max-w-xl min-w-[400px]  flex-1 rounded-lg">
+        <div className="flex z-40 flex-col flex-shrink-0 gap-2 bg-background-800  overflow-y-scroll border border-background-700 shadow p-4 w-full min-w-0 sm:min-w-[400px] max-w-xl  flex-1 rounded-lg">
           <div className="flex items-center justify-between pb-1">
             <span className="text-xs text-gray-400">
               {index + 1} of {rows.length}

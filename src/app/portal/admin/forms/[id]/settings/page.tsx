@@ -108,7 +108,7 @@ export default function SettingsPage() {
   const { rawForm: form } = useContext(formContext);
 
   return (
-    <div className="flex flex-col dark gap-4 overflow-scroll pb-20 flex-1 items-center w-full px-4">
+    <div className="flex flex-col dark gap-4 pb-20 flex-1 items-center w-full px-4">
       <FormSettingsPage />
       <ResultPagePreviews form={form} />
     </div>
