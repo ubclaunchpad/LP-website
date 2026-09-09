@@ -7,7 +7,12 @@ import { formContext } from "@/components/layouts/formTabView";
 import { updateForm } from "@/app/portal/admin/actions";
 import { Button } from "@/components/primitives/button";
 import { Input } from "@/components/primitives/input";
-import { LoaderCircleIcon, LockIcon } from "lucide-react";
+import {
+  LoaderCircleIcon,
+  LockIcon,
+  PlusIcon,
+  Trash2Icon,
+} from "lucide-react";
 
 type EditorOption = { value: string; label: string };
 type EditorQuestion = {
@@ -58,10 +63,17 @@ export default function FormQuestionsEditorPage() {
         if (!question.label.trim()) {
           errors.push(`${question.id}: label is empty`);
         }
+        const seenValues = new Set<string>();
         (question.options ?? []).forEach((option) => {
           if (!option.label.trim()) {
-            errors.push(`${question.id}: option "${option.value}" has no label`);
+            errors.push(`${question.id}: option "${option.value || "?"}" has no label`);
           }
+          if (!option.value.trim()) {
+            errors.push(`${question.id}: a new option needs a value id`);
+          } else if (seenValues.has(option.value.trim())) {
+            errors.push(`${question.id}: duplicate option value "${option.value}"`);
+          }
+          seenValues.add(option.value.trim());
         });
       });
     });
@@ -102,6 +114,45 @@ export default function FormQuestionsEditorPage() {
     });
   }
 
+  function setOptionValue(
+    stepIndex: number,
+    questionIndex: number,
+    optionIndex: number,
+    value: string,
+  ) {
+    setSteps((prev) => {
+      const next = structuredClone(prev);
+      const options = next[stepIndex].questions[questionIndex].options ?? [];
+      options[optionIndex] = { ...options[optionIndex], value };
+      next[stepIndex].questions[questionIndex].options = options;
+      return next;
+    });
+  }
+
+  function addOption(stepIndex: number, questionIndex: number) {
+    setSteps((prev) => {
+      const next = structuredClone(prev);
+      const options = next[stepIndex].questions[questionIndex].options ?? [];
+      options.push({ value: "", label: "" });
+      next[stepIndex].questions[questionIndex].options = options;
+      return next;
+    });
+  }
+
+  function removeOption(
+    stepIndex: number,
+    questionIndex: number,
+    optionIndex: number,
+  ) {
+    setSteps((prev) => {
+      const next = structuredClone(prev);
+      const options = next[stepIndex].questions[questionIndex].options ?? [];
+      options.splice(optionIndex, 1);
+      next[stepIndex].questions[questionIndex].options = options;
+      return next;
+    });
+  }
+
   async function handleSave() {
     if (validationErrors.length > 0) {
       toast.error(
@@ -132,8 +183,9 @@ export default function FormQuestionsEditorPage() {
           <h2 className="font-semibold text-xl">Form Questions</h2>
           <p className="flex items-center gap-1.5 text-xs text-neutral-400">
             <LockIcon size={12} />
-            Structure is locked — you can edit the wording of questions and
-            options, but not add, remove, or reorder them.
+            Question structure is locked — no adding, removing, or reordering
+            questions. You can reword questions and add, remove, or relabel
+            dropdown options.
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -218,18 +270,33 @@ export default function FormQuestionsEditorPage() {
 
                 {(question.options?.length ?? 0) > 0 && (
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-xs text-neutral-400">
-                      Options
-                    </span>
+                    <span className="text-xs text-neutral-400">Options</span>
                     <div className="flex flex-col gap-1.5">
                       {(question.options ?? []).map((option, optionIndex) => (
                         <div
-                          key={option.value}
+                          key={`${question.id}-${optionIndex}`}
                           className="flex items-center gap-2"
                         >
-                          <code className="text-xs text-neutral-500 font-mono w-28 sm:w-36 shrink-0 truncate">
-                            {option.value}
-                          </code>
+                          {option.value ? (
+                            <code className="text-xs text-neutral-500 font-mono w-28 sm:w-36 shrink-0 truncate">
+                              {option.value}
+                            </code>
+                          ) : (
+                            <Input
+                              value={option.value}
+                              onChange={(e) =>
+                                setOptionValue(
+                                  stepIndex,
+                                  questionIndex,
+                                  optionIndex,
+                                  e.target.value,
+                                )
+                              }
+                              placeholder="value id"
+                              aria-label={`Value id for new option ${optionIndex + 1}`}
+                              className="p-2 w-28 sm:w-36 shrink-0 bg-background-800 border-lp-400/60 font-mono text-xs"
+                            />
+                          )}
                           <Input
                             value={option.label}
                             onChange={(e) =>
@@ -240,12 +307,35 @@ export default function FormQuestionsEditorPage() {
                                 e.target.value,
                               )
                             }
-                            aria-label={`Label for ${option.value}`}
+                            aria-label={`Label for ${option.value || "new option"}`}
                             className="p-2 flex-1 min-w-0 bg-background-800 border-background-500"
                           />
+                          <button
+                            type="button"
+                            onClick={() =>
+                              removeOption(
+                                stepIndex,
+                                questionIndex,
+                                optionIndex,
+                              )
+                            }
+                            className="shrink-0 rounded p-1.5 text-neutral-400 hover:text-red-400 hover:bg-red-400/10 transition-colors"
+                            aria-label={`Remove option ${option.label || option.value}`}
+                            title="Remove option"
+                          >
+                            <Trash2Icon size={15} />
+                          </button>
                         </div>
                       ))}
                     </div>
+                    <button
+                      type="button"
+                      onClick={() => addOption(stepIndex, questionIndex)}
+                      className="flex items-center gap-1.5 w-fit text-xs font-medium text-lp-300 hover:text-lp-200 px-1 py-1"
+                    >
+                      <PlusIcon size={14} />
+                      Add option
+                    </button>
                   </div>
                 )}
               </div>
