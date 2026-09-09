@@ -14,9 +14,23 @@ export async function getForms() {
   return db.forms.findMany();
 }
 
-export async function createForm(data: { title: string; description: string }) {
+export async function createForm(data: { title: string }) {
   await requireAdmin();
-  return db.forms.create({ data: { ...data, config: {}, questions: [] } });
+  const form = await db.forms.create({
+    data: {
+      title: data.title,
+      config: { application: { draft: true } },
+      questions: [
+        {
+          id: "step1",
+          title: "Application",
+          target: "everyone",
+          questions: [],
+        },
+      ],
+    },
+  });
+  return Number(form.id);
 }
 
 export async function cloneForm(id: number) {
@@ -26,13 +40,48 @@ export async function cloneForm(id: number) {
     throw new Error("Form not found");
   }
   // Copy structure (questions, config incl. email templates + offer page)
-  // but never dates or submissions — the new form starts unopened.
+  // but never dates or submissions — the new form starts unopened. A clone
+  // is a draft: it can be restructured in the builder before launching.
+  const clonedConfig = structuredClone((source.config as any) ?? {});
+  clonedConfig.application = {
+    ...(clonedConfig.application ?? {}),
+    draft: true,
+  };
   return db.forms.create({
     data: {
       title: `${source.title} (Copy)`,
       questions: source.questions as any,
-      config: source.config as any,
+      config: clonedConfig,
       type: source.type,
+    },
+  });
+}
+
+export async function setFormDraft(id: number, draft: boolean) {
+  await requireAdmin();
+  const form = await db.forms.findUnique({ where: { id: BigInt(id) } });
+  if (!form) {
+    throw new Error("Form not found");
+  }
+  const config = structuredClone((form.config as any) ?? {});
+  config.application = { ...(config.application ?? {}), draft };
+  return db.forms.update({
+    where: { id: BigInt(id) },
+    data: { config },
+  });
+}
+
+export async function setFormDates(
+  id: number,
+  openAt: string | null,
+  closeAt: string | null,
+) {
+  await requireAdmin();
+  return db.forms.update({
+    where: { id: BigInt(id) },
+    data: {
+      open_at: openAt ? new Date(openAt) : null,
+      close_at: closeAt ? new Date(closeAt) : null,
     },
   });
 }
