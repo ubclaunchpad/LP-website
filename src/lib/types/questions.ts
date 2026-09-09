@@ -23,7 +23,7 @@ export type BaseFormQuestion = {
 };
 
 export type ListFormQuestion = BaseFormQuestion & {
-  type: "select";
+  type: "select" | "checkbox";
   options: Record<string, string>[];
   config: {
     validation: FormItemValidation;
@@ -33,7 +33,9 @@ export type ListFormQuestion = BaseFormQuestion & {
 };
 
 export type FormQuestion =
-  | (BaseFormQuestion & { type: Exclude<QuestionFormat, "select"> })
+  | (BaseFormQuestion & {
+      type: Exclude<QuestionFormat, "select" | "checkbox">;
+    })
   | ListFormQuestion;
 
 export const STEP_TARGETS = {

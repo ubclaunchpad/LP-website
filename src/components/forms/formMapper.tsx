@@ -67,6 +67,18 @@ export default function FormQuestionMapper({
           allowMultiple={question.config.multiple}
         />
       );
+    case "checkbox":
+      const checkboxValues =
+        Array.isArray(value) && value.length ? value : [];
+      return (
+        <MultiSelect
+          options={question.options}
+          value={checkboxValues}
+          {...props}
+          onChange={(e) => OnChange(e)}
+          allowMultiple={question.config.multiple ?? true}
+        />
+      );
     case "info":
       return null;
     default:

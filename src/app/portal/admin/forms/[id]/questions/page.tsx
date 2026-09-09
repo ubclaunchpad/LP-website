@@ -40,6 +40,8 @@ const TYPE_LABELS: Record<string, string> = {
   info: "Info box",
 };
 
+const isListType = (type: string) => type === "select" || type === "checkbox";
+
 export default function FormQuestionsEditorPage() {
   const { rawForm } = useContext(formContext);
   const router = useRouter();
@@ -268,9 +270,14 @@ export default function FormQuestionsEditorPage() {
                   )}
                 </div>
 
-                {(question.options?.length ?? 0) > 0 && (
+                {isListType(question.type) && (
                   <div className="flex flex-col gap-1.5">
                     <span className="text-xs text-neutral-400">Options</span>
+                    {(question.options?.length ?? 0) === 0 && (
+                      <p className="text-xs text-neutral-500">
+                        No options yet — add the first one below.
+                      </p>
+                    )}
                     <div className="flex flex-col gap-1.5">
                       {(question.options ?? []).map((option, optionIndex) => (
                         <div

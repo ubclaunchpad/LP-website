@@ -108,6 +108,7 @@ function typeToZodType(type: string) {
     case "date":
       return z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
     case "select":
+    case "checkbox":
       return z.string({ message: "Please select an option" });
     default:
       return z.string({ message: "Invalid type" });

@@ -134,7 +134,8 @@ export function createColumns<TData>(
         field.type !== "textarea" &&
         field.type !== "url" &&
         field.type !== "text" &&
-        field.type !== "date",
+        field.type !== "date" &&
+        field.type !== "checkbox",
       filterFn: (
         row: Row<any>,
         columnId: string,
