@@ -64,6 +64,8 @@ const getCommonPinningStyles = (column: Column<Person>): CSSProperties => {
     opacity: isPinned ? 0.95 : 1,
     // position: isPinned ? "sticky" : "relative",
     width: column.getSize(),
+    minWidth: column.columnDef.minSize,
+    maxWidth: column.columnDef.maxSize,
     // zIndex: isPinned ? 1 : 0,
   };
 };
@@ -125,11 +127,16 @@ export function DataTable<TData, TValue>({
         !value || (row.original as any).__duplicate === true,
       cell: ({ row }: any) =>
         (row.original as any).__duplicate ? (
-          <span title="Possible duplicate application (same email or GitHub username)">
+          <span
+            title="Possible duplicate application (same email or GitHub username)"
+            className="flex items-center justify-center w-full"
+          >
             <AlertTriangleIcon className="h-3.5 w-3.5 text-yellow-500" />
           </span>
         ) : null,
-      size: 44,
+      size: 28,
+      minSize: 28,
+      maxSize: 28,
     },
     ...columns,
   ];
