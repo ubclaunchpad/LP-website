@@ -524,7 +524,7 @@ export function SelectField({
     setSelected(setVal);
     updateSubmissionField(submissionId, id, field.config?.tableName, setVal)
       .then(() => {
-        // mergeNewData({ [id]: val }, "id", submissionId);
+        mergeNewData({ [id]: setVal }, "id", submissionId);
         toast.success("Field updated successfully");
       })
       .catch(() => {
