@@ -120,6 +120,8 @@ export default function MultiSelect({
   allowMultiple = false,
   emptyText = "Choose",
   className,
+  chipClassName,
+  compact = false,
   onBlur,
 }: {
   value: (string | number)[];
@@ -127,6 +129,9 @@ export default function MultiSelect({
   onChange: (value: string[]) => void;
   allowMultiple: boolean;
   className?: string;
+  chipClassName?: string;
+  // Denser trigger for use inside table cells
+  compact?: boolean;
   emptyText?: string;
   onBlur?: () => void;
 }) {
@@ -161,6 +166,7 @@ export default function MultiSelect({
         aria-controls={listboxId}
         className={cn(
           "flex border border-background-600 bg-background-700 items-center min-h-11 rounded p-2 gap-2 w-full",
+          compact && "min-h-8 px-1.5 py-1 text-xs",
           className,
           isOpen && "border border-background-500 border-solid",
         )}
@@ -170,11 +176,16 @@ export default function MultiSelect({
         <span className="text-white justify-center flex items-center gap-2">
           {selectedOptions !== [null] &&
             selectedOptions.map((option) => (
-              <span key={option.value} className="p-0.5 px-2 rounded bg-lp-500">
+              <span
+                key={option.value}
+                className={cn("p-0.5 px-2 rounded bg-lp-500", chipClassName)}
+              >
                 {option.label}
               </span>
             ))}
-          <span className="text-background-200 text-sm">
+          <span
+            className={cn("text-background-200", compact ? "text-xs" : "text-sm")}
+          >
             {selectedOptions.length === 0 && emptyText}
           </span>
         </span>

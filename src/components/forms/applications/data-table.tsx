@@ -21,23 +21,29 @@ import { json2csv } from "json-2-csv";
 import { Button } from "@/components/primitives/button";
 import { Input } from "@/components/primitives/input";
 
-import { Table, TableCell, TableRow } from "@/components/primitives/table";
+import { Table } from "@/components/primitives/table";
 import React, {
   CSSProperties,
-  Fragment,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import {
   AlertTriangleIcon,
   ChartArea,
+  CheckIcon,
+  ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  DownloadIcon,
   ListFilterIcon,
+  ListOrderedIcon,
   LoaderCircleIcon,
+  MinusIcon,
   SearchIcon,
   TableIcon,
+  UserRoundIcon,
   XIcon,
 } from "lucide-react";
 import { DataTableProps } from "@/components/forms/applications/dataTableWrapper";
@@ -49,26 +55,39 @@ import {
   STATUS_COLORS,
 } from "@/components/forms/applications/columns";
 import MultiSelect from "@/components/general/multiSelect";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/primitives/dropdown-menu";
+import { cn } from "@/lib/utils/helpers";
 
-const getCommonPinningStyles = (column: Column<Person>): CSSProperties => {
-  const isPinned = column.getIsPinned();
-  const isLastLeftPinnedColumn =
-    isPinned === "left" && column.getIsLastColumn("left");
-  const isFirstRightPinnedColumn =
-    isPinned === "right" && column.getIsFirstColumn("right");
+// The table uses a fixed layout, so header widths define every column.
+const columnWidthStyle = (column: Column<any, unknown>): CSSProperties => ({
+  width: column.getSize(),
+});
 
-  return {
-    boxShadow: undefined,
-    left: isPinned === "left" ? `${column.getStart("left")}px` : undefined,
-    right: isPinned === "right" ? `${column.getAfter("right")}px` : undefined,
-    opacity: isPinned ? 0.95 : 1,
-    // position: isPinned ? "sticky" : "relative",
-    width: column.getSize(),
-    minWidth: column.columnDef.minSize,
-    maxWidth: column.columnDef.maxSize,
-    // zIndex: isPinned ? 1 : 0,
-  };
-};
+const TOOLBAR_BUTTON =
+  "inline-flex h-8 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border px-2.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lp-400 disabled:pointer-events-none disabled:opacity-50";
+const TOOLBAR_IDLE =
+  "border-background-500 bg-background-600 text-neutral-200 hover:border-background-400 hover:text-white";
+const TOOLBAR_ACTIVE =
+  "border-lp-400 bg-[color-mix(in_srgb,var(--lp-500)_18%,transparent)] text-lp-100";
+const MENU_ITEM =
+  "gap-3 text-xs focus:bg-background-500 data-[state=open]:bg-background-500";
+const ALL_VALUE = "__all__";
+
+// Column filters that have their own toolbar control, so the Filters badge
+// only counts the ones set through the filter dialog.
+const QUICK_FILTER_IDS = ["status", "reviewer_id"];
 
 export function DataTable<TData, TValue>({
   columns,
@@ -96,47 +115,24 @@ export function DataTable<TData, TValue>({
     {
       id: "select",
       header: ({ table }: any) => (
-        <input
-          type="checkbox"
+        <Checkbox
           checked={table.getIsAllPageRowsSelected()}
+          indeterminate={table.getIsSomePageRowsSelected()}
           onChange={() => table.toggleAllPageRowsSelected()}
-          onClick={(e) => e.stopPropagation()}
-          className="accent-lp-500 w-3.5 h-3.5 cursor-pointer"
-          title="Select page"
+          label="Select all rows on this page"
         />
       ),
       cell: ({ row }: any) => (
-        <input
-          type="checkbox"
+        <Checkbox
           checked={row.getIsSelected()}
           onChange={() => row.toggleSelected()}
-          onClick={(e) => e.stopPropagation()}
-          className="accent-lp-500 w-3.5 h-3.5 cursor-pointer"
+          label="Select row"
         />
       ),
       enableColumnFilter: false,
       enableSorting: false,
-      size: 40,
-    },
-    {
-      id: "__duplicate",
-      header: "Dup",
-      enableColumnFilter: true,
-      enableSorting: false,
-      filterFn: (row: any, _id: string, value: any) =>
-        !value || (row.original as any).__duplicate === true,
-      cell: ({ row }: any) =>
-        (row.original as any).__duplicate ? (
-          <span
-            title="Possible duplicate application (same email or GitHub username)"
-            className="flex items-center justify-center w-full"
-          >
-            <AlertTriangleIcon className="h-3.5 w-3.5 text-yellow-500" />
-          </span>
-        ) : null,
-      size: 28,
-      minSize: 28,
-      maxSize: 28,
+      meta: { scrollOverflow: false },
+      size: 44,
     },
     ...columns,
   ];
@@ -145,9 +141,14 @@ export function DataTable<TData, TValue>({
   // { fields: ["firstChoice", ...], projects: [{ value, label }] } and live in
   // the form config so any form can opt in without code changes.
   const rankingCfg = config?.ranking;
-  const rankProjects: { value: string; label: string }[] =
-    rankingCfg?.projects || [];
-  const rankFields: string[] = rankingCfg?.fields || [];
+  const rankProjects: { value: string; label: string }[] = useMemo(
+    () => rankingCfg?.projects || [],
+    [rankingCfg],
+  );
+  const rankFields: string[] = useMemo(
+    () => rankingCfg?.fields || [],
+    [rankingCfg],
+  );
   const rankMax = rankFields.length;
   const [rankingFilters, setRankingFilters] = useState<Record<string, number>>(
     {},
@@ -161,20 +162,43 @@ export function DataTable<TData, TValue>({
     return Array.isArray(v) ? v : [String(v)];
   };
 
-  // Pre-filter rows to applicants who listed a project within their top N.
-  const rankingFilteredData = useMemo(() => {
+  function setRankingFilter(project: string, top: number) {
+    setRankingFilters((prev) => {
+      const next = { ...prev };
+      if (top > 0) {
+        next[project] = top;
+      } else {
+        delete next[project];
+      }
+      return next;
+    });
+  }
+
+  const [duplicatesOnly, setDuplicatesOnly] = useState(false);
+  const duplicateCount = useMemo(
+    () => (data as any[]).filter((row) => row.__duplicate).length,
+    [data],
+  );
+
+  // Pre-filter rows to applicants who listed a project within their top N,
+  // and to flagged duplicates when that toggle is on.
+  const prefilteredData = useMemo(() => {
     const active = Object.entries(rankingFilters).filter(([, t]) => t > 0);
-    if (!active.length || !rankProjects.length || !rankFields.length) {
+    const useRanking = active.length > 0 && rankFields.length > 0;
+    if (!useRanking && !duplicatesOnly) {
       return data;
     }
-    return (data as any[]).filter((row) =>
-      active.every(([value, top]) =>
-        rankFields
-          .slice(0, top)
-          .some((f) => rankValues(row, f).includes(value)),
-      ),
+    return (data as any[]).filter(
+      (row) =>
+        (!duplicatesOnly || row.__duplicate) &&
+        (!useRanking ||
+          active.every(([value, top]) =>
+            rankFields
+              .slice(0, top)
+              .some((f) => rankValues(row, f).includes(value)),
+          )),
     );
-  }, [data, rankingFilters, rankFields, rankProjects]);
+  }, [data, rankingFilters, rankFields, duplicatesOnly]);
 
   // Per-project counts: total who listed it, plus how many have it in top 1..N.
   const rankingCounts = useMemo(() => {
@@ -206,7 +230,7 @@ export function DataTable<TData, TValue>({
   }, [data, rankFields, rankProjects, rankMax]);
 
   const table = useReactTable({
-    data: rankingFilteredData,
+    data: prefilteredData,
     columns: columnsWithSelection,
     getCoreRowModel: getCoreRowModel(),
     onColumnFiltersChange: setColumnFilters,
@@ -255,235 +279,155 @@ export function DataTable<TData, TValue>({
       .finally(() => setBulkLoading(false));
   }
 
-  function toggleColumnFilter(columnId: string, value: string) {
-    const isActive = columnFilters.find((c) => c.id === columnId)?.value === value;
-    setColumnFilters([
-      ...columnFilters.filter((c) => c.id !== columnId),
-      ...(isActive ? [] : [{ id: columnId, value }]),
+  function setColumnFilter(columnId: string, value: string | undefined) {
+    setColumnFilters((prev) => [
+      ...prev.filter((c) => c.id !== columnId),
+      ...(value ? [{ id: columnId, value }] : []),
     ]);
   }
 
-
-
+  // Counts come from the pre-filtered rows so they track data updates and the
+  // preference/duplicate filters, but not the column filters they drive.
   const statusCounts = useMemo(() => {
     const counts: Record<string, number> = {};
     (config?.statusOptions || []).forEach((option: any) => {
       counts[option.id] = 0;
     });
-    table
-      .getCoreRowModel()
-      .rows.forEach((row) => {
-        const status = (row.original as any)?.status;
-        if (status && status in counts) {
-          counts[status] += 1;
-        } else if (status) {
-          counts[status] = (counts[status] || 0) + 1;
-        }
-      });
+    (prefilteredData as any[]).forEach((row) => {
+      if (row?.status) {
+        counts[row.status] = (counts[row.status] || 0) + 1;
+      }
+    });
     return counts;
-  }, [config?.statusOptions, table]);
-
-  const activeStatusFilter = columnFilters.find((c) => c.id === "status")
-    ?.value as string | undefined;
+  }, [config?.statusOptions, prefilteredData]);
 
   const reviewerCounts = useMemo(() => {
     const counts: Record<string, number> = { __unassigned__: 0 };
-    table
-      .getCoreRowModel()
-      .rows.forEach((row) => {
-        const rid = (row.original as any)?.reviewer_id;
-        if (!rid) {
-          counts.__unassigned__ += 1;
-        } else {
-          counts[rid] = (counts[rid] || 0) + 1;
-        }
-      });
+    (prefilteredData as any[]).forEach((row) => {
+      const rid = row?.reviewer_id;
+      if (!rid) {
+        counts.__unassigned__ += 1;
+      } else {
+        counts[rid] = (counts[rid] || 0) + 1;
+      }
+    });
     return counts;
-  }, [table]);
+  }, [prefilteredData]);
 
-  const duplicateCount = useMemo(
-    () => data.filter((d: any) => d.__duplicate).length,
-    [data],
-  );
+  const activeStatusFilter = columnFilters.find((c) => c.id === "status")
+    ?.value as string | undefined;
 
   const activeReviewerFilter = columnFilters.find(
     (c) => c.id === "reviewer_id",
   )?.value as string | undefined;
 
-  const activeDuplicateFilter = columnFilters.find(
-    (c) => c.id === "__duplicate",
-  )?.value as boolean | undefined;
+  const advancedFilterCount = columnFilters.filter(
+    (c) => !QUICK_FILTER_IDS.includes(c.id),
+  ).length;
+
+  const hasActiveFilters =
+    columnFilters.length > 0 ||
+    globalFilter !== "" ||
+    duplicatesOnly ||
+    Object.keys(rankingFilters).length > 0;
+
+  function clearAllFilters() {
+    setColumnFilters([]);
+    setGlobalFilter("");
+    setRankingFilters({});
+    setDuplicatesOnly(false);
+  }
+
+  const totalCount = data.length;
+  const filteredCount = visibleRows.length;
 
   function handleRowClick(e: React.MouseEvent, row: any) {
     if (!onRowClick) return;
     const target = e.target as HTMLElement;
-    if (target.closest("button, input, textarea, select, a, [role=combobox]")) {
+    if (
+      target.closest(
+        "button, input, label, textarea, select, a, [role=combobox]",
+      )
+    ) {
       return;
     }
     onRowClick(row);
   }
 
   return (
-    <div className={"flex flex-col px-4 sm:px-10 overflow-hidden pb-4"}>
-      <div className="flex items-center w-full gap-2 py-4  flex-wrap">
-        <div className="flex items-center flex-1 p-2 gap-2">
-          <span className="text-lg font-bold">
-            {table.getFilteredRowModel().rows.length} {"Results"}
-          </span>
+    <div className={"flex flex-col gap-3 px-4 sm:px-10 overflow-hidden pt-4 pb-4"}>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="text-base font-semibold" aria-live="polite">
+          {filteredCount === totalCount ? (
+            `${totalCount} ${totalCount === 1 ? "result" : "results"}`
+          ) : (
+            <>
+              {filteredCount}{" "}
+              <span className="font-normal text-neutral-400">
+                of {totalCount} results
+              </span>
+            </>
+          )}
+        </p>
+        <div className="relative w-full sm:w-72">
+          <SearchIcon className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-neutral-400" />
+          <Input
+            placeholder="Search applicants..."
+            aria-label="Search applicants"
+            value={globalFilter}
+            onChange={(e) => setGlobalFilter(e.target.value)}
+            className="h-9 border-background-500 bg-background-600 pl-8"
+          />
         </div>
+      </div>
 
-        <Input
-          placeholder="Search applicants..."
-          value={globalFilter}
-          onChange={(e) => setGlobalFilter(e.target.value)}
-          className="w-full sm:w-64 max-w-xs h-10 bg-background-600 border-background-500"
+      {config?.statusOptions?.length > 0 && (
+        <StatusTabs
+          options={config.statusOptions}
+          counts={statusCounts}
+          total={prefilteredData.length}
+          active={activeStatusFilter}
+          onChange={(id) => setColumnFilter("status", id)}
         />
+      )}
 
-        {config?.statusOptions?.length > 0 && (
-          <div className="flex items-center gap-1 flex-wrap">
-            {(config.statusOptions as any[]).map((option) => {
-              const count = statusCounts[option.id] || 0;
-              const active = activeStatusFilter === option.id;
-              return (
-                <button
-                  key={option.id}
-                  onClick={() => toggleColumnFilter("status", option.id)}
-                  className={`rounded-full px-3 py-1 text-xs border transition-colors ${
-                    active
-                      ? "border-lp-400 bg-lp-500 text-white"
-                      : "border-background-500 bg-background-600 text-neutral-200 hover:border-background-400"
-                  }`}
-                >
-                  {option.label}
-                  <span className="ml-1 opacity-70">{count}</span>
-                </button>
-              );
-            })}
-          </div>
-        )}
-
+      <div className="flex flex-wrap items-center gap-2">
         {config?.reviewerOptions?.length > 0 && (
-          <div className="flex items-center gap-1 flex-wrap">
-            <span className="text-xs text-gray-400">Reviewers:</span>
-            {reviewerCounts.__unassigned__ > 0 && (
-              <ReviewerChip
-                label="Unassigned"
-                count={reviewerCounts.__unassigned__}
-                active={activeReviewerFilter === "__unassigned__"}
-                onClick={() =>
-                  toggleColumnFilter("reviewer_id", "__unassigned__")
-                }
-              />
-            )}
-            {(config.reviewerOptions as any[])
-              .filter((o) => (reviewerCounts[o.id] || 0) > 0)
-              .map((o) => (
-                <ReviewerChip
-                  key={o.id}
-                  label={o.label}
-                  count={reviewerCounts[o.id] || 0}
-                  active={activeReviewerFilter === o.id}
-                  onClick={() => toggleColumnFilter("reviewer_id", o.id)}
-                />
-              ))}
-          </div>
-        )}
-
-        {rankProjects.length > 0 && rankMax > 0 && (
-          <div className="flex items-center gap-1 flex-wrap">
-            <span className="text-xs text-gray-400">Prefs:</span>
-            {rankProjects.map((p) => {
-              const selected = rankingFilters[p.value] || 0;
-              const counts = rankingCounts[p.value] || {
-                total: 0,
-                byTop: {} as Record<number, number>,
-              };
-              const shown =
-                selected > 0 ? counts.byTop[selected] : counts.total;
-              return (
-                <div
-                  key={p.value}
-                  className={`flex items-center gap-1 pl-3 pr-1 py-1 rounded-full text-xs border transition-colors ${
-                    selected > 0
-                      ? "border-lp-400 bg-lp-500 text-white"
-                      : "border-background-500 bg-background-600 text-neutral-200 hover:border-background-400"
-                  }`}
-                  title="Filter applicants who listed this project within the chosen top-N"
-                >
-                  <span>{p.label}</span>
-                  <span className="opacity-70">{shown}</span>
-                  <select
-                    value={selected}
-                    onChange={(e) => {
-                      const m = Number(e.target.value);
-                      setRankingFilters((prev) => {
-                        const next = { ...prev };
-                        if (m > 0) {
-                          next[p.value] = m;
-                        } else {
-                          delete next[p.value];
-                        }
-                        return next;
-                      });
-                    }}
-                    className={`bg-transparent outline-none text-xs rounded-full cursor-pointer ${
-                      selected > 0 ? "text-white" : "text-neutral-300"
-                    }`}
-                  >
-                    <option value={0} className="text-black">
-                      Any
-                    </option>
-                    {Array.from({ length: rankMax }, (_, i) => i + 1).map(
-                      (n) => (
-                        <option key={n} value={n} className="text-black">
-                          Top {n}
-                        </option>
-                      ),
-                    )}
-                  </select>
-                </div>
-              );
-            })}
-          </div>
-        )}
-
-        {duplicateCount > 0 && (
-          <ReviewerChip
-            label="⚠ Duplicates"
-            count={duplicateCount}
-            active={!!activeDuplicateFilter}
-            onClick={() => toggleColumnFilter("__duplicate", "true")}
+          <ReviewerMenu
+            options={config.reviewerOptions}
+            counts={reviewerCounts}
+            total={prefilteredData.length}
+            active={activeReviewerFilter}
+            onChange={(id) => setColumnFilter("reviewer_id", id)}
           />
         )}
-
-        <div
-          className={
-            "flex relative items-center bg-background-600 rounded-lg border-background-500 border-none h-10 p-1  gap-2"
-          }
-        >
-          <Button
-            onClick={() => {
-              setTabView("table");
-            }}
-            size={"fit"}
-            className={`bg-background-600 w-24 h-full min-h-none gap-2 border-none ${tabView === "table" ? "bg-background-500" : ""}`}
+        {rankProjects.length > 0 && rankMax > 0 && (
+          <PreferencesMenu
+            projects={rankProjects}
+            counts={rankingCounts}
+            rankMax={rankMax}
+            selected={rankingFilters}
+            onChange={setRankingFilter}
+          />
+        )}
+        {duplicateCount > 0 && (
+          <button
+            type="button"
+            aria-pressed={duplicatesOnly}
+            onClick={() => setDuplicatesOnly((v) => !v)}
+            title="Applications that share an email or GitHub username with another application"
+            className={cn(
+              TOOLBAR_BUTTON,
+              duplicatesOnly
+                ? "border-amber-400/60 bg-amber-400/15 text-amber-100"
+                : TOOLBAR_IDLE,
+            )}
           >
-            <TableIcon className={"h-4 w-4"} />
-            Table
-          </Button>
-          {config.view?.showChart && (
-            <Button
-              onClick={() => {
-                setTabView("chart");
-              }}
-              size={"fit"}
-              className={`bg-background-600 w-24 h-full   border-none border-background-500 gap-2 ${tabView === "chart" ? "bg-background-500" : ""}`}
-            >
-              <ChartArea className={"h-4 w-4"} />
-              Chart
-            </Button>
-          )}
-        </div>
+            <AlertTriangleIcon className="h-3.5 w-3.5 text-amber-400" />
+            Duplicates
+            <span className="tabular-nums opacity-70">{duplicateCount}</span>
+          </button>
+        )}
         {config.view?.showFilter && (
           <TableFilter
             refMap={refMap}
@@ -492,16 +436,52 @@ export function DataTable<TData, TValue>({
             }
             columnFilters={columnFilters}
             setColumnFilters={setColumnFilters}
+            activeCount={advancedFilterCount}
           />
         )}
-        <DownloadCSV
-          data={table.getFilteredRowModel().rows.map((row) => row.original)}
-          fileName={config?.title || "submissions"}
-        />
+        {hasActiveFilters && (
+          <button
+            type="button"
+            onClick={clearAllFilters}
+            className="inline-flex h-8 items-center gap-1 rounded-md px-2 text-xs text-neutral-400 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lp-400"
+          >
+            <XIcon className="h-3.5 w-3.5" />
+            Clear all
+          </button>
+        )}
+
+        <div className="ml-auto flex items-center gap-2">
+          {config.view?.showChart && (
+            <div
+              role="group"
+              aria-label="View"
+              className="flex h-8 items-center rounded-md border border-background-500 bg-background-700 p-0.5"
+            >
+              <ViewToggleButton
+                active={tabView === "table"}
+                onClick={() => setTabView("table")}
+              >
+                <TableIcon className="h-3.5 w-3.5" />
+                Table
+              </ViewToggleButton>
+              <ViewToggleButton
+                active={tabView === "chart"}
+                onClick={() => setTabView("chart")}
+              >
+                <ChartArea className="h-3.5 w-3.5" />
+                Chart
+              </ViewToggleButton>
+            </div>
+          )}
+          <DownloadCSV
+            data={table.getFilteredRowModel().rows.map((row) => row.original)}
+            fileName={config?.title || "submissions"}
+          />
+        </div>
       </div>
 
       {selectedRows.length > 0 && (
-        <div className="flex items-center gap-2 flex-wrap bg-background-700 border border-lp-500/60 rounded-lg p-2 mb-2 text-sm">
+        <div className="flex items-center gap-2 flex-wrap bg-background-700 border border-lp-700 rounded-lg p-2 text-sm">
           <span className="font-semibold">{selectedRows.length} selected</span>
           {(config?.bulkFields || []).map((bf: any) => (
             <select
@@ -554,119 +534,124 @@ export function DataTable<TData, TValue>({
         />
       )}
       {tabView === "table" && (
-        <div className="rounded-md border shadow-sm overflow-auto min-h-0 border-background-500 ">
-          <Table className="w-full h-[1px]">
-            <thead className={"sticky top-0 z-20 left-0"}>
+        <div className="min-h-0 overflow-auto rounded-lg border border-background-500">
+          <Table
+            className="table-fixed border-separate border-spacing-0 text-xs"
+            style={{ width: table.getTotalSize(), minWidth: "100%" }}
+          >
+            <thead>
               {table.getHeaderGroups().map((headerGroup) => (
-                <tr
-                  key={headerGroup.id}
-                  className={"border-background-500 w-full flex-shrink-0"}
-                >
-                  {headerGroup.headers.map((header) => {
-                    return (
-                      <td
-                        key={header.id}
-                        className={
-                          " flex bg-background-600 text-xs flex-col   w-fit flex-shrink-0  border-background-500  font-semibold  justify-center  overflow-hidden line-clamp-2  text-ellipsis"
-                        }
-                        style={{ ...getCommonPinningStyles(header.column) }}
-                      >
-                        {header.isPlaceholder
-                          ? null
-                          : flexRender(
-                              header.column.columnDef.header,
-                              header.getContext(),
-                            )}
-                      </td>
-                    );
-                  })}
+                <tr key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => (
+                    <th
+                      key={header.id}
+                      scope="col"
+                      className="sticky top-0 z-20 h-10 overflow-hidden border-b border-background-500 bg-background-600 px-3 text-left align-middle text-xs font-medium text-neutral-300"
+                      style={columnWidthStyle(header.column)}
+                    >
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext(),
+                          )}
+                    </th>
+                  ))}
                 </tr>
               ))}
             </thead>
-            <tbody className={" overflow-auto "}>
-              {table.getRowModel().rows?.length ? (
+            <tbody>
+              {table.getRowModel().rows.length ? (
                 table.getRowModel().rows.map((row) => (
                   <tr
-                    className={
-                      "border-background-500 p-0 flex-shrink-0 w-full  bg-background-600 odd:bg-background-700 hover:bg-background-500 cursor-pointer transition-colors"
-                    }
                     key={row.id}
-                    data-state={row.getIsSelected() && "selected"}
+                    data-state={row.getIsSelected() ? "selected" : undefined}
                     onClick={(e) => handleRowClick(e, row)}
+                    className="cursor-pointer bg-background-600 transition-colors odd:bg-background-700 hover:bg-background-500 data-[state=selected]:bg-[color-mix(in_srgb,var(--lp-500)_16%,var(--background-700))]"
                   >
-                    {row.getVisibleCells().map((cell) => (
-                      <td
-                        key={cell.id}
-                        className={"  h-full text-xs  flex-shrink-0   w-fit  "}
-                        style={{ ...getCommonPinningStyles(cell.column) }}
-                      >
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </td>
-                    ))}
+                    {row.getVisibleCells().map((cell) => {
+                      const content = flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext(),
+                      );
+                      // Overflowing values scroll inside their column, except
+                      // in cells whose popups or focus rings the scroller
+                      // would clip.
+                      const scrollOverflow =
+                        (cell.column.columnDef.meta as any)?.scrollOverflow !==
+                        false;
+                      return (
+                        <td key={cell.id} className="px-3 py-1.5 align-middle">
+                          {scrollOverflow ? (
+                            <div className="max-h-16 overflow-auto [scrollbar-width:thin]">
+                              {content}
+                            </div>
+                          ) : (
+                            content
+                          )}
+                        </td>
+                      );
+                    })}
                   </tr>
                 ))
               ) : (
-                <TableRow>
-                  <TableCell
-                    colSpan={columns.length}
-                    className="h-24 flex-shrink-0 w-fit text-center"
+                <tr>
+                  <td
+                    colSpan={table.getVisibleLeafColumns().length}
+                    className="px-3 py-12 text-left text-sm text-neutral-400"
                   >
-                    No results.
-                  </TableCell>
-                </TableRow>
+                    No results match the current search or filters.
+                  </td>
+                </tr>
               )}
             </tbody>
           </Table>
         </div>
       )}
       {tabView === "table" && (
-        <Fragment>
-          <div className="flex flex-wrap items-center gap-3 py-2 text-sm text-neutral-300">
-            <Button
-              size={"fit"}
-              className="bg-background-600 min-h-none h-8 gap-1"
-              onClick={() => table.previousPage()}
-              disabled={!table.getCanPreviousPage()}
-            >
-              <ChevronLeftIcon className="h-4 w-4" />
-              Prev
-            </Button>
-            <span>
-              Page {table.getState().pagination.pageIndex + 1} of{" "}
-              {table.getPageCount() || 1}
-            </span>
-            <Button
-              size={"fit"}
-              className="bg-background-600 min-h-none h-8 gap-1"
-              onClick={() => table.nextPage()}
-              disabled={!table.getCanNextPage()}
-            >
-              Next
-              <ChevronRightIcon className="h-4 w-4" />
-            </Button>
-            <select
-              className="bg-background-600 border border-background-500 rounded p-1 h-8"
-              value={table.getState().pagination.pageSize}
-              onChange={(e) => {
-                const size =
-                  e.target.value === "all"
-                    ? table.getFilteredRowModel().rows.length || 1
-                    : Number(e.target.value);
-                table.setPageSize(size);
-              }}
-            >
-              {[25, 50, 100].map((size) => (
-                <option key={size} value={size}>
-                  {size} / page
-                </option>
-              ))}
-              <option value="all">All</option>
-            </select>
-          </div>
-        </Fragment>
+        <div className="flex flex-wrap items-center gap-2 text-xs text-neutral-300">
+          <button
+            type="button"
+            className={cn(TOOLBAR_BUTTON, TOOLBAR_IDLE)}
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+          >
+            <ChevronLeftIcon className="h-3.5 w-3.5" />
+            Prev
+          </button>
+          <span className="px-1 tabular-nums">
+            Page {table.getState().pagination.pageIndex + 1} of{" "}
+            {table.getPageCount() || 1}
+          </span>
+          <button
+            type="button"
+            className={cn(TOOLBAR_BUTTON, TOOLBAR_IDLE)}
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+          >
+            Next
+            <ChevronRightIcon className="h-3.5 w-3.5" />
+          </button>
+          <select
+            aria-label="Rows per page"
+            className="h-8 rounded-md border border-background-500 bg-background-600 px-2 text-xs"
+            value={table.getState().pagination.pageSize}
+            onChange={(e) => {
+              const size =
+                e.target.value === "all"
+                  ? table.getFilteredRowModel().rows.length || 1
+                  : Number(e.target.value);
+              table.setPageSize(size);
+            }}
+          >
+            {[25, 50, 100].map((size) => (
+              <option key={size} value={size}>
+                {size} / page
+              </option>
+            ))}
+            <option value="all">All</option>
+          </select>
+        </div>
       )}
 
       {compareOpen && selectedRows.length >= 2 && (
@@ -711,29 +696,303 @@ export function DataTable<TData, TValue>({
   );
 }
 
-function ReviewerChip({
+function Checkbox({
+  checked,
+  indeterminate = false,
+  onChange,
   label,
-  count,
+}: {
+  checked: boolean;
+  indeterminate?: boolean;
+  onChange: () => void;
+  label: string;
+}) {
+  const ref = useRef<HTMLInputElement>(null);
+  const isMixed = indeterminate && !checked;
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.indeterminate = isMixed;
+    }
+  }, [isMixed]);
+
+  // The label widens the hit area so a near miss doesn't open the row
+  return (
+    <label className="-m-2 inline-flex h-8 w-8 cursor-pointer items-center justify-center">
+      <span className="relative inline-flex h-4 w-4">
+        <input
+          ref={ref}
+          type="checkbox"
+          checked={checked}
+          onChange={onChange}
+          onClick={(e) => e.stopPropagation()}
+          aria-label={label}
+          className="peer h-4 w-4 cursor-pointer appearance-none rounded border border-background-300 bg-background-800 transition-colors hover:border-background-200 checked:border-lp-500 checked:bg-lp-500 indeterminate:border-lp-500 indeterminate:bg-lp-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lp-400 focus-visible:ring-offset-1 focus-visible:ring-offset-background-700"
+        />
+        <CheckIcon
+          strokeWidth={3}
+          className="pointer-events-none absolute inset-0 m-auto h-3 w-3 text-white opacity-0 peer-checked:opacity-100"
+        />
+        <MinusIcon
+          strokeWidth={3}
+          className="pointer-events-none absolute inset-0 m-auto h-3 w-3 text-white opacity-0 peer-indeterminate:opacity-100"
+        />
+      </span>
+    </label>
+  );
+}
+
+function StatusTabs({
+  options,
+  counts,
+  total,
+  active,
+  onChange,
+}: {
+  options: { id: string; label: string }[];
+  counts: Record<string, number>;
+  total: number;
+  active: string | undefined;
+  onChange: (id: string | undefined) => void;
+}) {
+  // An empty status would only lead to an empty table, so it stays hidden
+  // unless it is the active filter.
+  const tabs = [
+    { id: undefined as string | undefined, label: "All", count: total },
+    ...options
+      .filter((o) => (counts[o.id] || 0) > 0 || o.id === active)
+      .map((o) => ({ id: o.id, label: o.label, count: counts[o.id] || 0 })),
+  ];
+
+  return (
+    <div
+      role="group"
+      aria-label="Filter by status"
+      className="flex gap-5 overflow-x-auto shadow-[inset_0_-1px_0_var(--background-500)]"
+    >
+      {tabs.map((tab) => {
+        const isActive = tab.id === active;
+        return (
+          <button
+            key={tab.id ?? ALL_VALUE}
+            type="button"
+            aria-pressed={isActive}
+            onClick={() => onChange(tab.id)}
+            className={cn(
+              "flex shrink-0 items-baseline gap-1.5 whitespace-nowrap rounded-t-sm border-b-2 px-0.5 pb-2 pt-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-lp-400",
+              isActive
+                ? "border-lp-400 text-white"
+                : "border-transparent text-neutral-400 hover:text-neutral-100",
+            )}
+          >
+            {tab.label}
+            <span
+              className={cn(
+                "text-xs tabular-nums",
+                isActive ? "text-lp-200" : "text-neutral-500",
+              )}
+            >
+              {tab.count}
+            </span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function ReviewerMenu({
+  options,
+  counts,
+  total,
+  active,
+  onChange,
+}: {
+  options: { id: string; label: string }[];
+  counts: Record<string, number>;
+  total: number;
+  active: string | undefined;
+  onChange: (id: string | undefined) => void;
+}) {
+  const activeLabel = !active
+    ? undefined
+    : active === "__unassigned__"
+      ? "Unassigned"
+      : options.find((o) => o.id === active)?.label ?? "Unknown";
+  const withApplicants = options.filter((o) => (counts[o.id] || 0) > 0);
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button
+          type="button"
+          className={cn(TOOLBAR_BUTTON, activeLabel ? TOOLBAR_ACTIVE : TOOLBAR_IDLE)}
+        >
+          <UserRoundIcon className="h-3.5 w-3.5" />
+          {activeLabel ? `Reviewer: ${activeLabel}` : "Reviewer"}
+          <ChevronDownIcon className="h-3.5 w-3.5 opacity-60" />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        align="start"
+        className="max-h-80 w-56 overflow-y-auto"
+      >
+        <DropdownMenuRadioGroup
+          value={active ?? ALL_VALUE}
+          onValueChange={(v) => onChange(v === ALL_VALUE ? undefined : v)}
+        >
+          <DropdownMenuRadioItem value={ALL_VALUE} className={MENU_ITEM}>
+            <span className="flex-1">Anyone</span>
+            <MenuCount value={total} />
+          </DropdownMenuRadioItem>
+          {counts.__unassigned__ > 0 && (
+            <DropdownMenuRadioItem value="__unassigned__" className={MENU_ITEM}>
+              <span className="flex-1">Unassigned</span>
+              <MenuCount value={counts.__unassigned__} />
+            </DropdownMenuRadioItem>
+          )}
+          {withApplicants.length > 0 && (
+            <DropdownMenuSeparator className="bg-background-500" />
+          )}
+          {withApplicants.map((o) => (
+            <DropdownMenuRadioItem key={o.id} value={o.id} className={MENU_ITEM}>
+              <span className="min-w-0 flex-1 truncate">{o.label}</span>
+              <MenuCount value={counts[o.id]} />
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
+function PreferencesMenu({
+  projects,
+  counts,
+  rankMax,
+  selected,
+  onChange,
+}: {
+  projects: { value: string; label: string }[];
+  counts: Record<string, { total: number; byTop: Record<number, number> }>;
+  rankMax: number;
+  selected: Record<string, number>;
+  onChange: (project: string, top: number) => void;
+}) {
+  const activeCount = Object.keys(selected).length;
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button
+          type="button"
+          className={cn(
+            TOOLBAR_BUTTON,
+            activeCount > 0 ? TOOLBAR_ACTIVE : TOOLBAR_IDLE,
+          )}
+        >
+          <ListOrderedIcon className="h-3.5 w-3.5" />
+          Preferences
+          {activeCount > 0 && <CountBadge value={activeCount} />}
+          <ChevronDownIcon className="h-3.5 w-3.5 opacity-60" />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        align="start"
+        className="w-80 max-w-[calc(100vw-2rem)]"
+      >
+        <DropdownMenuLabel className="pb-1 text-xs font-normal text-neutral-400">
+          Applicants who ranked each project
+        </DropdownMenuLabel>
+        {projects.map((p) => {
+          const top = selected[p.value] || 0;
+          const c = counts[p.value] || { total: 0, byTop: {} };
+          return (
+            <DropdownMenuSub key={p.value}>
+              <DropdownMenuSubTrigger
+                className={cn(MENU_ITEM, top > 0 && "text-lp-100")}
+              >
+                <span
+                  className="line-clamp-2 min-w-0 flex-1 leading-snug"
+                  title={p.label}
+                >
+                  {p.label}
+                </span>
+                {top > 0 && (
+                  <span className="shrink-0 rounded bg-lp-900 px-1.5 text-[10px] leading-4 text-lp-100">
+                    Top {top}
+                  </span>
+                )}
+                <MenuCount value={top > 0 ? c.byTop[top] : c.total} />
+              </DropdownMenuSubTrigger>
+              <DropdownMenuPortal>
+                <DropdownMenuSubContent className="w-40 border-background-500 bg-background-600">
+                  <DropdownMenuRadioGroup
+                    value={String(top)}
+                    onValueChange={(v) => onChange(p.value, Number(v))}
+                  >
+                    {Array.from({ length: rankMax + 1 }, (_, n) => (
+                      <DropdownMenuRadioItem
+                        key={n}
+                        value={String(n)}
+                        className={MENU_ITEM}
+                        // Keep the menu open so several projects can be set
+                        onSelect={(e) => e.preventDefault()}
+                      >
+                        <span className="flex-1">
+                          {n === 0 ? "Any rank" : `Top ${n}`}
+                        </span>
+                        <MenuCount value={n === 0 ? c.total : c.byTop[n]} />
+                      </DropdownMenuRadioItem>
+                    ))}
+                  </DropdownMenuRadioGroup>
+                </DropdownMenuSubContent>
+              </DropdownMenuPortal>
+            </DropdownMenuSub>
+          );
+        })}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
+function ViewToggleButton({
   active,
   onClick,
+  children,
 }: {
-  label: string;
-  count: number;
   active: boolean;
   onClick: () => void;
+  children: React.ReactNode;
 }) {
   return (
     <button
+      type="button"
+      aria-pressed={active}
       onClick={onClick}
-      className={`rounded-full px-3 py-1 text-xs border transition-colors ${
+      className={cn(
+        "inline-flex h-full items-center gap-1.5 rounded px-2.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lp-400",
         active
-          ? "border-lp-400 bg-lp-500 text-white"
-          : "border-background-500 bg-background-600 text-neutral-200 hover:border-background-400"
-      }`}
+          ? "bg-background-500 text-white"
+          : "text-neutral-400 hover:text-neutral-100",
+      )}
     >
-      {label}
-      <span className="ml-1 opacity-70">{count}</span>
+      {children}
     </button>
+  );
+}
+
+function MenuCount({ value }: { value: number | undefined }) {
+  return (
+    <span className="shrink-0 tabular-nums text-neutral-400">{value ?? 0}</span>
+  );
+}
+
+function CountBadge({ value }: { value: number }) {
+  return (
+    <span className="rounded bg-lp-500 px-1.5 text-[10px] leading-4 text-white tabular-nums">
+      {value}
+    </span>
   );
 }
 
@@ -804,11 +1063,13 @@ function TableFilter({
   columnFilters,
   setColumnFilters,
   refMap,
+  activeCount,
 }: {
   columns: Column<RowData, unknown>[];
   columnFilters: ColumnFiltersState;
   setColumnFilters: (value: ColumnFiltersState) => void;
   refMap: ReferenceMap;
+  activeCount: number;
 }) {
   const [showFilters, setShowFilters] = useState(false);
 
@@ -836,34 +1097,28 @@ function TableFilter({
     );
   }, [columns]);
 
+  const trigger = (
+    <button
+      type="button"
+      onClick={() => setShowFilters(true)}
+      className={cn(
+        TOOLBAR_BUTTON,
+        activeCount > 0 ? TOOLBAR_ACTIVE : TOOLBAR_IDLE,
+      )}
+    >
+      <ListFilterIcon className="h-3.5 w-3.5" />
+      Filters
+      {activeCount > 0 && <CountBadge value={activeCount} />}
+    </button>
+  );
+
   if (!showFilters) {
-    return (
-      <Button
-        onClick={() => setShowFilters(true)}
-        variant="outline"
-        size={"fit"}
-        className="bg-background-600 w-24 h-10 min-h-none gap-2 border-none"
-      >
-        <ListFilterIcon size={16} />
-        {columnFilters.length === 0
-          ? "Filter"
-          : `${columnFilters.length} filter(s)`}
-      </Button>
-    );
+    return trigger;
   }
 
   return (
     <>
-      <Button
-        onClick={() => setShowFilters(true)}
-        variant="outline"
-        className="bg-background-600 border border-background-500 gap-2"
-      >
-        <ListFilterIcon size={16} />
-        {columnFilters.length === 0
-          ? "Filter"
-          : `${columnFilters.length} filter(s)`}
-      </Button>
+      {trigger}
       <div
         className={
           "fixed h-dvh flex justify-center items-center  w-dvw bg-black bg-opacity-30 z-40 top-0 left-0"
@@ -999,7 +1254,7 @@ function ColumnFilterInput<TData>({
   );
 }
 
-const DownloadCSV = ({ data, fileName }) => {
+const DownloadCSV = ({ data, fileName }: { data: any[]; fileName: string }) => {
   const downloadCSV = () => {
     const csvData = json2csv(data, { expandArrayObjects: true });
     const blob = new Blob([csvData], { type: "text/csv" });
@@ -1013,12 +1268,13 @@ const DownloadCSV = ({ data, fileName }) => {
   };
 
   return (
-    <Button
-      variant={"dark"}
-      className="bg-background-600"
+    <button
+      type="button"
       onClick={downloadCSV}
+      className={cn(TOOLBAR_BUTTON, TOOLBAR_IDLE)}
     >
+      <DownloadIcon className="h-3.5 w-3.5" />
       Download CSV
-    </Button>
+    </button>
   );
 };

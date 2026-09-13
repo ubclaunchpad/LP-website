@@ -10,6 +10,9 @@ import FloatingTextArea from "@/components/primitives/floatingTextArea";
 import { Button } from "@/components/primitives/button";
 import { formContext } from "@/components/layouts/formTabView";
 import {
+  AlertTriangleIcon,
+  ArrowDownIcon,
+  ArrowUpIcon,
   CircleCheckIcon,
   LoaderCircleIcon,
   MailIcon,
@@ -71,6 +74,19 @@ export const STATUS_COLORS: Record<string, string> = {
   paid: "bg-teal-600/50",
 };
 
+// Column widths by field type, sized for the compact table cells
+const COLUMN_WIDTHS: Partial<Record<FormFields[string]["type"], number>> = {
+  checkbox: 110,
+  number: 110,
+  date: 150,
+  person: 170,
+  select: 180,
+  text: 200,
+  email: 240,
+  url: 240,
+  textarea: 300,
+};
+
 export function populateReferenceMap(
   fields: FormFields,
   others: { id: string; label: string; options: any[] }[],
@@ -111,22 +127,32 @@ export function createColumns<TData>(
     .filter(([, field]) => field.type !== "info")
     .map(([key, field]) => {
     return {
-      meta: { field: field, id: key },
+      meta: {
+        field: field,
+        id: key,
+        // Dropdown cells anchor their menu inside the cell, so the table must
+        // not clip them with a scroll container
+        scrollOverflow: field.type !== "select" && field.type !== "person",
+      },
       accessorKey: key as keyof TData,
-      size: 250,
+      size: COLUMN_WIDTHS[field.type] ?? 220,
       header: (body: any) => {
         if (!body) {
           return <span>{field.label}</span>;
         }
         const column = body.column;
+        const sorted = column.getIsSorted();
         return (
           <Button
+            title={field.label}
             className={
-              " hover:bg-transparent flex text-left justify-start items-start min-h-none h-fit p-0 w-full bg-transparent "
+              "flex h-fit min-h-none w-full items-center justify-start gap-1 bg-transparent p-0 text-left text-xs font-medium text-inherit hover:bg-transparent hover:text-white"
             }
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            onClick={() => column.toggleSorting(sorted === "asc")}
           >
-            {field.label}
+            <span className="truncate">{field.label}</span>
+            {sorted === "asc" && <ArrowUpIcon className="h-3 w-3 shrink-0" />}
+            {sorted === "desc" && <ArrowDownIcon className="h-3 w-3 shrink-0" />}
           </Button>
         );
       },
@@ -257,10 +283,8 @@ export function createColumns<TData>(
           if (field.type === "url") {
             const isSafe = value.toString().startsWith("https://");
             return (
-              <span className={"flex flex-col"}>
-                <span className={`${isSafe ? "" : "text-red-300"}`}>
-                  {isSafe ? " " : " (Caution) "}
-                </span>
+              <span>
+                {!isSafe && <span className={"text-red-300"}>(Caution) </span>}
                 <a
                   href={
                     isSafe ? value.toString() : `https://${value.toString()}`
@@ -282,24 +306,40 @@ export function createColumns<TData>(
   return [
     {
       accessorKey: "popover",
-      header: "",
+      header: () => <span className="sr-only">Actions</span>,
       enableColumnFilter: false,
-      size: 300,
-      maxSize: 300,
+      meta: { scrollOverflow: false },
+      // Fits the button group plus the duplicate flag slot
+      size: 168,
       cell: ({ row }) => {
         return (
-          <div className="flex gap-2 flex-1  justify-center h-full items-center  rounded-lg  ">
-            <button
-              onClick={() => {
-                setAndOpen({ applicant: row });
-              }}
-              className={
-                "  h-fit bg-background-500 rounded-md p-2   w-fit  flex  border border-transparent hover:border-background-500 items-center justify-center gap-2  "
-              }
-            >
-              <Maximize2Icon className=" h-3 w-3" />
-            </button>
-            <NotifyButtonForEmail row={row} />
+          <div className="flex items-center gap-2">
+            <div className="inline-flex h-7 shrink-0 overflow-hidden rounded-md border border-background-400">
+              <button
+                type="button"
+                onClick={() => {
+                  setAndOpen({ applicant: row });
+                }}
+                aria-label="Open application"
+                title="Open application"
+                className={
+                  "inline-flex w-7 items-center justify-center text-neutral-300 transition-colors hover:bg-background-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-lp-400"
+                }
+              >
+                <Maximize2Icon className="h-3 w-3" />
+              </button>
+              <NotifyButtonForEmail row={row} />
+            </div>
+            {(row.original as any).__duplicate && (
+              <span
+                role="img"
+                aria-label="Possible duplicate"
+                title="Possible duplicate: shares an email or GitHub username with another application"
+                className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-amber-400/40 bg-amber-400/10 text-amber-300"
+              >
+                <AlertTriangleIcon className="h-3.5 w-3.5" />
+              </span>
+            )}
           </div>
         );
       },
@@ -353,23 +393,20 @@ function NotifyButtonForEmail({ row }: { row: any }) {
   return (
     <>
       <button
+        type="button"
         onClick={openPreview}
+        aria-busy={state === "loading"}
+        title="Email the applicant about their current status"
         className={
-          "disabled:opacity-55 text-neutral-200 rounded-md p-2 bg-background-500 h-fit w-fit  flex  border border-transparent hover:border-background-500 items-center justify-center gap-2  "
+          "inline-flex items-center gap-1.5 whitespace-nowrap border-l border-background-400 px-2.5 text-xs text-neutral-300 transition-colors hover:bg-background-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-lp-400 disabled:opacity-55"
         }
       >
-        {state === "loading" && (
-          <span className={"text-xs flex items-center gap-2"}>
-            <LoaderCircleIcon className={"w-3 h-3 animate-spin"} />
-            Loading preview…
-          </span>
+        {state === "loading" ? (
+          <LoaderCircleIcon className={"h-3 w-3 animate-spin"} />
+        ) : (
+          <MailIcon className={"h-3 w-3"} />
         )}
-        {state !== "loading" && (
-          <span className={"text-xs flex items-center gap-2"}>
-            <MailIcon className={"w-3 h-3"} />
-            {row.original.notified_on ? "Resend Email" : "Notify via Email"}
-          </span>
-        )}
+        {row.original.notified_on ? "Resend" : "Notify"}
       </button>
       {(state === "preview" || state === "sending") && preview && (
         <div
@@ -499,7 +536,7 @@ export function SelectField({
   const { mergeNewData } = useContext(formContext);
   if (!canUpdate) {
     return (
-      <span className={"flex flex-wrap gap-2"}>
+      <span className={"flex flex-wrap gap-1"}>
         {value &&
           value
             .toString()
@@ -507,9 +544,7 @@ export function SelectField({
             .map((option: any) => (
               <span
                 key={option}
-                className={
-                  "border rounded-full border-background-500  bg-background-600 shadow-md p-1 px-2"
-                }
+                className={"rounded bg-background-500 px-2 py-0.5"}
               >
                 {option}
               </span>
@@ -533,32 +568,35 @@ export function SelectField({
       });
   };
 
+  // Status keeps its color as a tinted chip; "unassigned" reads as empty text
+  // so the assigned values stand out in the column.
+  const selectedKey = selected?.toString().toLowerCase();
+  const chipClassName =
+    id === "status" && selectedKey
+      ? STATUS_COLORS[selectedKey] ??
+        "bg-[color-mix(in_srgb,var(--lp-500)_45%,transparent)]"
+      : selectedKey === "unassigned"
+        ? "bg-transparent px-0 text-neutral-400"
+        : "bg-background-500 text-neutral-100";
+
   return (
-    <>
-      <div
-        className={`rounded-md ${
-          id === "status" && selected
-            ? STATUS_COLORS[selected.toString().toLowerCase()] ?? ""
-            : ""
-        }`}
-      >
-        <MultiSelect
-          className={
-            "w-full bg-transparent border-none hover:bg-lp-500 duration-300"
-          }
-          onChange={(e) => updateField(e[0])}
-          allowMultiple={false}
-          emptyText={nullLabel?.toString() || "None"}
-          value={Array.isArray(selected) ? selected : [selected]}
-          options={
-            selectOptions?.map((op) => ({
-              label: op.label,
-              value: op.id,
-            })) || []
-          }
-        ></MultiSelect>
-      </div>
-    </>
+    <MultiSelect
+      compact
+      className={
+        "w-full border-none bg-transparent transition-shadow hover:ring-1 hover:ring-inset hover:ring-background-400"
+      }
+      chipClassName={chipClassName}
+      onChange={(e) => updateField(e[0])}
+      allowMultiple={false}
+      emptyText={nullLabel?.toString() || "None"}
+      value={Array.isArray(selected) ? selected : [selected]}
+      options={
+        selectOptions?.map((op) => ({
+          label: op.label,
+          value: op.id,
+        })) || []
+      }
+    ></MultiSelect>
   );
 }
 
