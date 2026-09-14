@@ -98,48 +98,6 @@ body {
   }
 }
 
-th {
-  width: 100%;
-  display: flex;
-  padding: 10px;
-  top: 0;
-}
-
-td {
-  flex: 1;
-  padding: 0.65rem;
-}
-
-tr {
-  width: 100%;
-  display: flex;
-  padding: 0;
-}
-table {
-  border-radius: 0.5rem;
-}
-
-tbody {
-  display: flex;
-  flex-direction: column;
-  /*@apply bg-background-700;*/
-
-  > :nth-child(odd) {
-    /*@apply bg-background-700;*/
-  }
-  > :nth-child(even) {
-    /*@apply bg-background-800;*/
-  }
-
-  overflow: hidden;
-
-  tr {
-    width: 100%;
-    display: flex;
-    /*min-height: 3rem;*/
-  }
-}
-
 #faq {
   /* control how much to scroll when faq is clicked from the nav */
   scroll-margin-top: 70px;

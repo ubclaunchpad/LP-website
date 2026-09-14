@@ -178,7 +178,6 @@ export default function DataTableWrapper<TData>({
     },
     columnOrder: [
       "select",
-      "__duplicate",
       "popover",
       "status",
       "team_id",
