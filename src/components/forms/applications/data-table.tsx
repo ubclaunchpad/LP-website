@@ -231,6 +231,9 @@ export function DataTable<TData, TValue>({
 
   const table = useReactTable({
     data: prefilteredData,
+    // Selection is keyed by row id, so ids must follow the applicant rather
+    // than its position in the prefiltered rows.
+    getRowId: (row: any) => String(row.id),
     columns: columnsWithSelection,
     getCoreRowModel: getCoreRowModel(),
     onColumnFiltersChange: setColumnFilters,
@@ -279,6 +282,8 @@ export function DataTable<TData, TValue>({
       .finally(() => setBulkLoading(false));
   }
 
+  // Empty values remove the filter instead of being stored, so filter counts
+  // and active-state checks only see applied filters.
   function setColumnFilter(columnId: string, value: string | undefined) {
     setColumnFilters((prev) => [
       ...prev.filter((c) => c.id !== columnId),
@@ -358,15 +363,15 @@ export function DataTable<TData, TValue>({
     <div className={"flex flex-col gap-3 px-4 sm:px-10 overflow-hidden pt-4 pb-4"}>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-base font-semibold" aria-live="polite">
-          {filteredCount === totalCount ? (
-            `${totalCount} ${totalCount === 1 ? "result" : "results"}`
-          ) : (
+          {hasActiveFilters ? (
             <>
               {filteredCount}{" "}
               <span className="font-normal text-neutral-400">
-                of {totalCount} results
+                of {totalCount} {totalCount === 1 ? "result" : "results"}
               </span>
             </>
+          ) : (
+            `${totalCount} ${totalCount === 1 ? "result" : "results"}`
           )}
         </p>
         <div className="relative w-full sm:w-72">
@@ -435,7 +440,8 @@ export function DataTable<TData, TValue>({
               table.getAllColumns() as unknown as Column<unknown, unknown>[]
             }
             columnFilters={columnFilters}
-            setColumnFilters={setColumnFilters}
+            setColumnFilter={setColumnFilter}
+            clearColumnFilters={() => setColumnFilters([])}
             activeCount={advancedFilterCount}
           />
         )}
@@ -600,7 +606,9 @@ export function DataTable<TData, TValue>({
                     colSpan={table.getVisibleLeafColumns().length}
                     className="px-3 py-12 text-left text-sm text-neutral-400"
                   >
-                    No results match the current search or filters.
+                    {totalCount === 0
+                      ? "No applications yet."
+                      : "No results match the current search or filters."}
                   </td>
                 </tr>
               )}
@@ -1061,13 +1069,15 @@ function resolveCompareValue(value: any, field: any, refMap: ReferenceMap) {
 function TableFilter({
   columns,
   columnFilters,
-  setColumnFilters,
+  setColumnFilter,
+  clearColumnFilters,
   refMap,
   activeCount,
 }: {
   columns: Column<RowData, unknown>[];
   columnFilters: ColumnFiltersState;
-  setColumnFilters: (value: ColumnFiltersState) => void;
+  setColumnFilter: (columnId: string, value: string | undefined) => void;
+  clearColumnFilters: () => void;
   refMap: ReferenceMap;
   activeCount: number;
 }) {
@@ -1160,10 +1170,7 @@ function TableFilter({
                           (c) => c.id === column.id,
                         )}
                         updateColumnFilter={(value) =>
-                          setColumnFilters([
-                            ...columnFilters.filter((c) => c.id !== column.id),
-                            ...value,
-                          ])
+                          setColumnFilter(column.id, value)
                         }
                       />
                     </div>
@@ -1176,7 +1183,7 @@ function TableFilter({
                 disabled={columnFilters.length === 0}
                 className={"bg-lp-400 max-w-md w-full"}
                 onClick={() => {
-                  setColumnFilters([]);
+                  clearColumnFilters();
                   setShowFilters(false);
                 }}
               >
@@ -1201,7 +1208,7 @@ function TableFilter({
 interface ColumnFilterInputProps<TData> {
   column: Column<TData, unknown>;
   columnFilter: any;
-  updateColumnFilter: (value: ColumnFiltersState) => void;
+  updateColumnFilter: (value: string | undefined) => void;
   refItem: ReferenceItem | undefined;
   field: FormFields[keyof FormFields];
   id: string;
@@ -1234,7 +1241,7 @@ function ColumnFilterInput<TData>({
             setValue(e ? e[0] : "");
           }}
           onBlur={() => {
-            updateColumnFilter([{ id: column.id, value }]);
+            updateColumnFilter(value);
           }}
         />
       </>

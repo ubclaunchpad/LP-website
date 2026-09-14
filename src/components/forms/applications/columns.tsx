@@ -579,24 +579,28 @@ export function SelectField({
         ? "bg-transparent px-0 text-neutral-400"
         : "bg-background-500 text-neutral-100";
 
+  // The dropdown's options and backdrop render inside the row, so their clicks
+  // must not reach the row handler that opens the applicant popover.
   return (
-    <MultiSelect
-      compact
-      className={
-        "w-full border-none bg-transparent transition-shadow hover:ring-1 hover:ring-inset hover:ring-background-400"
-      }
-      chipClassName={chipClassName}
-      onChange={(e) => updateField(e[0])}
-      allowMultiple={false}
-      emptyText={nullLabel?.toString() || "None"}
-      value={Array.isArray(selected) ? selected : [selected]}
-      options={
-        selectOptions?.map((op) => ({
-          label: op.label,
-          value: op.id,
-        })) || []
-      }
-    ></MultiSelect>
+    <div onClick={(e) => e.stopPropagation()}>
+      <MultiSelect
+        compact
+        className={
+          "w-full border-none bg-transparent transition-shadow hover:ring-1 hover:ring-inset hover:ring-background-400"
+        }
+        chipClassName={chipClassName}
+        onChange={(e) => updateField(e[0])}
+        allowMultiple={false}
+        emptyText={nullLabel?.toString() || "None"}
+        value={Array.isArray(selected) ? selected : [selected]}
+        options={
+          selectOptions?.map((op) => ({
+            label: op.label,
+            value: op.id,
+          })) || []
+        }
+      ></MultiSelect>
+    </div>
   );
 }
 
