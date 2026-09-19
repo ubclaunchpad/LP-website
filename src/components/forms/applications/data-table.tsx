@@ -291,33 +291,51 @@ export function DataTable<TData, TValue>({
     ]);
   }
 
-  // Counts come from the pre-filtered rows so they track data updates and the
-  // preference/duplicate filters, but not the column filters they drive.
-  const statusCounts = useMemo(() => {
-    const counts: Record<string, number> = {};
-    (config?.statusOptions || []).forEach((option: any) => {
-      counts[option.id] = 0;
-    });
-    (prefilteredData as any[]).forEach((row) => {
-      if (row?.status) {
-        counts[row.status] = (counts[row.status] || 0) + 1;
-      }
-    });
-    return counts;
-  }, [config?.statusOptions, prefilteredData]);
+  // Rows matching every column filter except `excludeId`, so each quick-filter
+  // count reflects the other active filters (e.g. status tabs follow the
+  // selected reviewer) without being narrowed by its own selection.
+  function rowsExcludingFilter(excludeId: string): any[] {
+    const others = columnFilters.filter((c) => c.id !== excludeId);
+    if (others.length === 0) {
+      return prefilteredData as any[];
+    }
+    return table
+      .getPreFilteredRowModel()
+      .rows.filter((row) =>
+        others.every((f) => {
+          const fn = table.getColumn(f.id)?.columnDef.filterFn;
+          return typeof fn === "function"
+            ? (fn as any)(row, f.id, f.value, () => {})
+            : String(row.getValue(f.id) ?? "")
+                .toLowerCase()
+                .includes(String(f.value).toLowerCase());
+        }),
+      )
+      .map((row) => row.original);
+  }
 
-  const reviewerCounts = useMemo(() => {
-    const counts: Record<string, number> = { __unassigned__: 0 };
-    (prefilteredData as any[]).forEach((row) => {
-      const rid = row?.reviewer_id;
-      if (!rid) {
-        counts.__unassigned__ += 1;
-      } else {
-        counts[rid] = (counts[rid] || 0) + 1;
-      }
-    });
-    return counts;
-  }, [prefilteredData]);
+  const statusRows = rowsExcludingFilter("status");
+  const reviewerRows = rowsExcludingFilter("reviewer_id");
+
+  const statusCounts: Record<string, number> = {};
+  (config?.statusOptions || []).forEach((option: any) => {
+    statusCounts[option.id] = 0;
+  });
+  statusRows.forEach((row) => {
+    if (row?.status) {
+      statusCounts[row.status] = (statusCounts[row.status] || 0) + 1;
+    }
+  });
+
+  const reviewerCounts: Record<string, number> = { __unassigned__: 0 };
+  reviewerRows.forEach((row) => {
+    const rid = row?.reviewer_id;
+    if (!rid) {
+      reviewerCounts.__unassigned__ += 1;
+    } else {
+      reviewerCounts[rid] = (reviewerCounts[rid] || 0) + 1;
+    }
+  });
 
   const activeStatusFilter = columnFilters.find((c) => c.id === "status")
     ?.value as string | undefined;
@@ -360,7 +378,11 @@ export function DataTable<TData, TValue>({
   }
 
   return (
-    <div className={"flex flex-col gap-3 px-4 sm:px-10 overflow-hidden pt-4 pb-4"}>
+    <div
+      className={
+        "flex min-h-0 flex-1 flex-col gap-3 px-4 sm:px-10 overflow-hidden pt-4 pb-4 [&>*:not([data-scroll])]:shrink-0"
+      }
+    >
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-base font-semibold" aria-live="polite">
           {hasActiveFilters ? (
@@ -390,7 +412,7 @@ export function DataTable<TData, TValue>({
         <StatusTabs
           options={config.statusOptions}
           counts={statusCounts}
-          total={prefilteredData.length}
+          total={statusRows.length}
           active={activeStatusFilter}
           onChange={(id) => setColumnFilter("status", id)}
         />
@@ -401,7 +423,7 @@ export function DataTable<TData, TValue>({
           <ReviewerMenu
             options={config.reviewerOptions}
             counts={reviewerCounts}
-            total={prefilteredData.length}
+            total={reviewerRows.length}
             active={activeReviewerFilter}
             onChange={(id) => setColumnFilter("reviewer_id", id)}
           />
@@ -540,7 +562,10 @@ export function DataTable<TData, TValue>({
         />
       )}
       {tabView === "table" && (
-        <div className="min-h-0 overflow-auto rounded-lg border border-background-500">
+        <div
+          data-scroll
+          className="min-h-0 flex-1 overflow-auto rounded-lg border border-background-500"
+        >
           <Table
             className="table-fixed border-separate border-spacing-0 text-xs"
             style={{ width: table.getTotalSize(), minWidth: "100%" }}
@@ -843,7 +868,7 @@ function ReviewerMenu({
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="start"
-        className="max-h-80 w-56 overflow-y-auto"
+        className="max-h-[var(--radix-dropdown-menu-content-available-height)] w-56 max-w-[var(--radix-dropdown-menu-content-available-width)] overflow-y-auto"
       >
         <DropdownMenuRadioGroup
           value={active ?? ALL_VALUE}
@@ -1130,29 +1155,25 @@ function TableFilter({
     <>
       {trigger}
       <div
-        className={
-          "fixed h-dvh flex justify-center items-center  w-dvw bg-black bg-opacity-30 z-40 top-0 left-0"
-        }
+        className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-30 p-4"
+        onClick={() => setShowFilters(false)}
       >
         <div
-          className=" min-h-screen gap-3  items-center justify-center static overflow-y-scroll  w-screen flex flex-col pointer-events-none  transform  overflow-hidden p-2
-            left-0 top-0
-            "
+          className="flex max-h-[85dvh] w-full max-w-2xl flex-col rounded border border-background-600 bg-background-700 shadow-lg"
+          onClick={(e) => e.stopPropagation()}
         >
-          <div className="flex z-50  flex-col max-h-screen overflow-y-scroll items-center p-4 w-full justify-between gap-2  pb-2 px-4 max-w-2xl rounded border border-background-600 bg-background-700 pointer-events-auto  shadow-lg">
-            <h3 className="text-lg w-full text-left pb-4 font-semibold">
-              Filters
-            </h3>
+          <h3 className="px-4 pb-3 pt-4 text-lg font-semibold">Filters</h3>
+          <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-4 py-1">
             {Object.values(groupColumnsByType).map((columns, groupIndex) => (
-              <div className="py-2 w-full" key={groupIndex}>
+              <div className="w-full py-2" key={groupIndex}>
                 {columns
                   .filter((c) => c.getCanFilter())
-                  .map((column, columnIndex) => (
+                  .map((column) => (
                     <div
                       key={column.id}
-                      className="flex flex-col sm:flex-row items-stretch sm:items-center w-full flex-shrink-0 gap-2 rounded pl-2 border border-background-500 bg-background-600 py-2 sm:py-0"
+                      className="flex w-full flex-shrink-0 flex-col items-stretch gap-2 rounded border border-background-500 bg-background-600 py-2 pl-2 sm:flex-row sm:items-center sm:py-0"
                     >
-                      <span className="text-white text-sm w-full sm:w-44 truncate">
+                      <span className="w-full truncate text-sm text-white sm:w-44">
                         {column.columnDef.header()}
                       </span>
                       <ColumnFilterInput
@@ -1177,27 +1198,24 @@ function TableFilter({
                   ))}
               </div>
             ))}
-
-            <div className="flex items-end justify-between w-full flex-1 gap-2 pt-4">
-              <Button
-                disabled={columnFilters.length === 0}
-                className={"bg-lp-400 max-w-md w-full"}
-                onClick={() => {
-                  clearColumnFilters();
-                  setShowFilters(false);
-                }}
-              >
-                {columnFilters.length === 0 ? "No filters" : "Clear filters"}
-              </Button>
-              <Button
-                className={"bg-background-500 max-w-md w-full"}
-                onClick={() => {
-                  setShowFilters(false);
-                }}
-              >
-                Close
-              </Button>
-            </div>
+          </div>
+          <div className="flex w-full items-center justify-between gap-2 border-t border-background-600 p-4">
+            <Button
+              disabled={columnFilters.length === 0}
+              className="w-full max-w-md bg-lp-400"
+              onClick={() => {
+                clearColumnFilters();
+                setShowFilters(false);
+              }}
+            >
+              {columnFilters.length === 0 ? "No filters" : "Clear filters"}
+            </Button>
+            <Button
+              className="w-full max-w-md bg-background-500"
+              onClick={() => setShowFilters(false)}
+            >
+              Close
+            </Button>
           </div>
         </div>
       </div>

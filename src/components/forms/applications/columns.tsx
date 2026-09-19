@@ -178,31 +178,19 @@ export function createColumns<TData>(
         }
 
         if (field.type === "select") {
-          console.log(filterValue);
+          const cellValue = row.original[key];
+          if (cellValue === null || cellValue === undefined) {
+            return false;
+          }
+          const wanted = filterValue.toString().toLowerCase();
           if (!field.options) {
-            return row.original[key]
-              .toString()
-              .toLowerCase()
-              .includes(filterValue.toLowerCase());
+            return cellValue.toString().toLowerCase().includes(wanted);
           }
 
-          const matchCriteria = field.options?.filter((op) =>
-            filterValue.includes(op.id),
-          );
-          return (
-            matchCriteria?.filter((op) => {
-              if (
-                row.original[key] === null ||
-                row.original[key] === undefined
-              ) {
-                return false;
-              }
-              return row.original[key]
-                .toString()
-                .toLowerCase()
-                .includes(op.id.toLowerCase());
-            }).length > 0
-          );
+          // Exact match: substring matching made "review" also match "reviewed".
+          const cellValues = (Array.isArray(cellValue) ? cellValue : [cellValue])
+            .map((v: any) => v?.toString().toLowerCase());
+          return cellValues.includes(wanted);
         }
 
         if (!row.original[key]) {
