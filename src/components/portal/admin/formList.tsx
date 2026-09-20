@@ -23,7 +23,11 @@ const STATUS_META: Record<
   { label: string; dot: string; text: string }
 > = {
   live: { label: "Live", dot: "bg-emerald-400", text: "text-emerald-300" },
-  scheduled: { label: "Scheduled", dot: "bg-amber-400", text: "text-amber-300" },
+  scheduled: {
+    label: "Scheduled",
+    dot: "bg-amber-400",
+    text: "text-amber-300",
+  },
   draft: { label: "Draft", dot: "bg-neutral-500", text: "text-neutral-400" },
   closed: { label: "Closed", dot: "bg-neutral-600", text: "text-neutral-500" },
 };
@@ -90,7 +94,9 @@ function FormRow({ form }: { form: FormListItem }) {
         {form.hint && <span className="text-neutral-200">{form.hint}</span>}
         {form.window && <span className="text-neutral-500">{form.window}</span>}
       </div>
-      <div className="relative z-10 shrink-0 opacity-100 transition-opacity md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
+      {/* Hidden until hover only where hovering exists: a tablet in landscape is
+          wider than md but has no hover, and would never reveal the button. */}
+      <div className="relative z-10 shrink-0 opacity-100 transition-opacity [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-focus-within:opacity-100 [@media(hover:hover)]:group-hover:opacity-100">
         <CloneFormButton formId={form.id} formTitle={form.title} />
       </div>
       <ChevronRight
@@ -213,7 +219,10 @@ export default function FormList({ forms }: { forms: FormListItem[] }) {
         </div>
       ) : (
         groups.map((group) => (
-          <section key={group.title ?? "results"} className="flex flex-col gap-2">
+          <section
+            key={group.title ?? "results"}
+            className="flex flex-col gap-2"
+          >
             {group.title && (
               <h2 className="px-4 font-heading text-sm font-medium text-neutral-400">
                 {group.title}

@@ -126,171 +126,180 @@ export function createColumns<TData>(
   const general: any[] = Object.entries(fields)
     .filter(([, field]) => field.type !== "info")
     .map(([key, field]) => {
-    return {
-      meta: {
-        field: field,
-        id: key,
-        // Dropdown cells anchor their menu inside the cell, so the table must
-        // not clip them with a scroll container
-        scrollOverflow: field.type !== "select" && field.type !== "person",
-      },
-      accessorKey: key as keyof TData,
-      size: COLUMN_WIDTHS[field.type] ?? 220,
-      header: (body: any) => {
-        if (!body) {
-          return <span>{field.label}</span>;
-        }
-        const column = body.column;
-        const sorted = column.getIsSorted();
-        return (
-          <Button
-            title={field.label}
-            className={
-              "flex h-fit min-h-none w-full items-center justify-start gap-1 bg-transparent p-0 text-left text-xs font-medium text-inherit hover:bg-transparent hover:text-white"
+      return {
+        meta: {
+          field: field,
+          id: key,
+          // Dropdown cells anchor their menu inside the cell, so the table must
+          // not clip them with a scroll container
+          scrollOverflow: field.type !== "select" && field.type !== "person",
+        },
+        accessorKey: key as keyof TData,
+        size: COLUMN_WIDTHS[field.type] ?? 220,
+        header: (body: any) => {
+          if (!body) {
+            return <span>{field.label}</span>;
+          }
+          const column = body.column;
+          const sorted = column.getIsSorted();
+          return (
+            <Button
+              title={field.label}
+              className={
+                "flex h-fit min-h-none w-full items-center justify-start gap-1 bg-transparent p-0 text-left text-xs font-medium text-inherit hover:bg-transparent hover:text-white"
+              }
+              onClick={() => column.toggleSorting(sorted === "asc")}
+            >
+              <span className="truncate">{field.label}</span>
+              {sorted === "asc" && <ArrowUpIcon className="h-3 w-3 shrink-0" />}
+              {sorted === "desc" && (
+                <ArrowDownIcon className="h-3 w-3 shrink-0" />
+              )}
+            </Button>
+          );
+        },
+        enableColumnFilter:
+          field.type !== "textarea" &&
+          field.type !== "url" &&
+          field.type !== "text" &&
+          field.type !== "date" &&
+          field.type !== "checkbox",
+        filterFn: (
+          row: Row<any>,
+          columnId: string,
+          filterValue: any,
+          addMeta: (meta: any) => void,
+        ) => {
+          if (!filterValue) {
+            return true;
+          }
+
+          if (filterValue === "__unassigned__") {
+            const v = row.original[key];
+            return !v || v === "unassigned" || v === "";
+          }
+
+          if (field.type === "select") {
+            const cellValue = row.original[key];
+            if (cellValue === null || cellValue === undefined) {
+              return false;
             }
-            onClick={() => column.toggleSorting(sorted === "asc")}
-          >
-            <span className="truncate">{field.label}</span>
-            {sorted === "asc" && <ArrowUpIcon className="h-3 w-3 shrink-0" />}
-            {sorted === "desc" && <ArrowDownIcon className="h-3 w-3 shrink-0" />}
-          </Button>
-        );
-      },
-      enableColumnFilter:
-        field.type !== "textarea" &&
-        field.type !== "url" &&
-        field.type !== "text" &&
-        field.type !== "date" &&
-        field.type !== "checkbox",
-      filterFn: (
-        row: Row<any>,
-        columnId: string,
-        filterValue: any,
-        addMeta: (meta: any) => void,
-      ) => {
-        if (!filterValue) {
-          return true;
-        }
+            const wanted = filterValue.toString().toLowerCase();
+            // No options means no dropdown: populateReferenceMap skips this field,
+            // so ColumnFilterInput renders a free-text box and partial input has to
+            // match. Option-backed selects come from the dropdown and match
+            // exactly, so "review" does not also match "reviewed".
+            if (!field.options) {
+              return cellValue.toString().toLowerCase().includes(wanted);
+            }
 
-        if (filterValue === "__unassigned__") {
-          const v = row.original[key];
-          return !v || v === "unassigned" || v === "";
-        }
+            // Exact match: substring matching made "review" also match "reviewed".
+            const cellValues = (
+              Array.isArray(cellValue) ? cellValue : [cellValue]
+            ).map((v: any) => v?.toString().toLowerCase());
+            return cellValues.includes(wanted);
+          }
 
-        if (field.type === "select") {
-          const cellValue = row.original[key];
-          if (cellValue === null || cellValue === undefined) {
+          if (!row.original[key]) {
             return false;
           }
-          const wanted = filterValue.toString().toLowerCase();
-          if (!field.options) {
-            return cellValue.toString().toLowerCase().includes(wanted);
-          }
 
-          // Exact match: substring matching made "review" also match "reviewed".
-          const cellValues = (Array.isArray(cellValue) ? cellValue : [cellValue])
-            .map((v: any) => v?.toString().toLowerCase());
-          return cellValues.includes(wanted);
-        }
+          return row.original[key]
+            .toString()
+            .toLowerCase()
+            .includes(filterValue.toLowerCase());
+        },
+        cell: ({ row }: { row: any }) => {
+          if (Object.hasOwn(field, "cell")) {
+            const cellResolver = field.cell as (row: any) => string;
+            return cellResolver({ row });
+          } else {
+            const value = row.getValue(key);
+            if (field.type === "textarea") {
+              return (
+                <TextareaField
+                  field={field}
+                  value={value?.toString()}
+                  submissionId={row.original.id}
+                  id={key}
+                />
+              );
+            }
 
-        if (!row.original[key]) {
-          return false;
-        }
+            if (field.type === "person") {
+              const submissionId = row.original.id;
+              const memberOptions = members.map((member) => ({
+                ...member,
+                label: member.display_name || member.email,
+              }));
+              return (
+                <div>
+                  <SelectField
+                    options={memberOptions}
+                    field={field}
+                    value={value?.toString()}
+                    submissionId={submissionId}
+                    id={key}
+                  />
+                </div>
+              );
+            }
 
-        return row.original[key]
-          .toString()
-          .toLowerCase()
-          .includes(filterValue.toLowerCase());
-      },
-      cell: ({ row }: { row: any }) => {
-        if (Object.hasOwn(field, "cell")) {
-          const cellResolver = field.cell as (row: any) => string;
-          return cellResolver({ row });
-        } else {
-          const value = row.getValue(key);
-          if (field.type === "textarea") {
-            return (
-              <TextareaField
-                field={field}
-                value={value?.toString()}
-                submissionId={row.original.id}
-                id={key}
-              />
-            );
-          }
-
-          if (field.type === "person") {
-            const submissionId = row.original.id;
-            const memberOptions = members.map((member) => ({
-              ...member,
-              label: member.display_name || member.email,
-            }));
-            return (
-              <div>
+            if (field.type === "select") {
+              const submissionId = row.original.id;
+              return (
                 <SelectField
-                  options={memberOptions}
+                  options={field.options}
                   field={field}
                   value={value?.toString()}
                   submissionId={submissionId}
                   id={key}
                 />
-              </div>
-            );
-          }
+              );
+            }
 
-          if (field.type === "select") {
-            const submissionId = row.original.id;
-            return (
-              <SelectField
-                options={field.options}
-                field={field}
-                value={value?.toString()}
-                submissionId={submissionId}
-                id={key}
-              />
-            );
-          }
-
-          if (!value) {
-            return <span className={"text-gray-400"}>N/A</span>;
-          }
-          if (field.type === "date") {
-            const date = new Date(row.original[key]);
-            return date.toDateString();
-          }
-          if (field.type === "email") {
-            return (
-              <a
-                href={`mailto:${value.toString()}`}
-                className={"text-lp-200 underline"}
-              >
-                {value.toString()}
-              </a>
-            );
-          }
-          if (field.type === "url") {
-            const isSafe = value.toString().startsWith("https://");
-            return (
-              <span>
-                {!isSafe && <span className={"text-red-300"}>(Caution) </span>}
+            if (!value) {
+              return <span className={"text-gray-400"}>N/A</span>;
+            }
+            if (field.type === "date") {
+              const date = new Date(row.original[key]);
+              return date.toDateString();
+            }
+            if (field.type === "email") {
+              return (
                 <a
-                  href={
-                    isSafe ? value.toString() : `https://${value.toString()}`
-                  }
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`text-lp-200 underline`}
+                  href={`mailto:${value.toString()}`}
+                  className={"text-lp-200 underline"}
                 >
                   {value.toString()}
                 </a>
-              </span>
-            );
+              );
+            }
+            if (field.type === "url") {
+              const isSafe = value.toString().startsWith("https://");
+              return (
+                <span>
+                  {!isSafe && (
+                    <span className={"text-red-300"}>(Caution) </span>
+                  )}
+                  <a
+                    href={
+                      isSafe ? value.toString() : `https://${value.toString()}`
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`text-lp-200 underline`}
+                  >
+                    {value.toString()}
+                  </a>
+                </span>
+              );
+            }
+            return row.getValue(key);
           }
-          return row.getValue(key);
-        }
-      },
-    };
-  });
+        },
+      };
+    });
   return [
     {
       accessorKey: "popover",
@@ -561,8 +570,8 @@ export function SelectField({
   const selectedKey = selected?.toString().toLowerCase();
   const chipClassName =
     id === "status" && selectedKey
-      ? STATUS_COLORS[selectedKey] ??
-        "bg-[color-mix(in_srgb,var(--lp-500)_45%,transparent)]"
+      ? (STATUS_COLORS[selectedKey] ??
+        "bg-[color-mix(in_srgb,var(--lp-500)_45%,transparent)]")
       : selectedKey === "unassigned"
         ? "bg-transparent px-0 text-neutral-400"
         : "bg-background-500 text-neutral-100";

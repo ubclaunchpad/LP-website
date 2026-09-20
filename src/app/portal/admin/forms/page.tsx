@@ -5,25 +5,9 @@ import FormList, {
 } from "@/components/portal/admin/formList";
 import { getForms } from "@/app/portal/admin/actions";
 import { Form } from "@/lib/types/application";
+import { formatDate, relativeDays } from "@/lib/utils/dates";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-
-const DAY_MS = 24 * 60 * 60 * 1000;
-
-const formatDate = (d: Date) =>
-  d.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    timeZone: "UTC",
-  });
-
-function relativeDays(target: Date, now: Date) {
-  const days = Math.ceil((target.getTime() - now.getTime()) / DAY_MS);
-  if (days <= 0) return "today";
-  if (days === 1) return "tomorrow";
-  return `in ${days} days`;
-}
 
 function toListItem(form: Form, now: Date): FormListItem {
   const open = form.open_at ? new Date(form.open_at) : null;
@@ -49,8 +33,7 @@ function toListItem(form: Form, now: Date): FormListItem {
   const steps = Array.isArray(form.questions) ? form.questions : [];
   const questionCount = steps.reduce(
     (n, step) =>
-      n +
-      (step.questions ?? []).filter((q) => q.type !== "info").length,
+      n + (step.questions ?? []).filter((q) => q.type !== "info").length,
     0,
   );
 

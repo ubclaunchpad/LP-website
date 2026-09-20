@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { db } from "@/db";
 import { getSessionUser, isAdmin } from "@/lib/utils/auth";
+import { formatDate } from "@/lib/utils/dates";
 import { redirect } from "next/navigation";
 
 export default async function AdminDashboard() {
@@ -37,14 +38,6 @@ export default async function AdminDashboard() {
       orderBy: { created_at: "desc" },
     }),
   ]);
-
-  const formatDate = (d: Date) =>
-    d.toLocaleDateString("en-US", {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-      timeZone: "UTC",
-    });
 
   const sections = [
     {
@@ -76,8 +69,16 @@ export default async function AdminDashboard() {
   const stats = [
     { label: "Forms", value: totalForms, icon: FileText },
     { label: "Members", value: activeMembers, icon: Users },
-    { label: "Pending applications", value: pendingApplications, icon: UserCheck },
-    { label: "Submissions this month", value: submissionsThisMonth, icon: BarChart3 },
+    {
+      label: "Pending applications",
+      value: pendingApplications,
+      icon: UserCheck,
+    },
+    {
+      label: "Submissions this month",
+      value: submissionsThisMonth,
+      icon: BarChart3,
+    },
   ];
 
   return (

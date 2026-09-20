@@ -68,6 +68,12 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/primitives/dropdown-menu";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/primitives/dialog";
 import { cn } from "@/lib/utils/helpers";
 
 // The table uses a fixed layout, so header widths define every column.
@@ -202,8 +208,10 @@ export function DataTable<TData, TValue>({
 
   // Per-project counts: total who listed it, plus how many have it in top 1..N.
   const rankingCounts = useMemo(() => {
-    const out: Record<string, { total: number; byTop: Record<number, number> }> =
-      {};
+    const out: Record<
+      string,
+      { total: number; byTop: Record<number, number> }
+    > = {};
     rankProjects.forEach((p) => {
       const byTop: Record<number, number> = {};
       for (let n = 1; n <= rankMax; n++) {
@@ -340,9 +348,8 @@ export function DataTable<TData, TValue>({
   const activeStatusFilter = columnFilters.find((c) => c.id === "status")
     ?.value as string | undefined;
 
-  const activeReviewerFilter = columnFilters.find(
-    (c) => c.id === "reviewer_id",
-  )?.value as string | undefined;
+  const activeReviewerFilter = columnFilters.find((c) => c.id === "reviewer_id")
+    ?.value as string | undefined;
 
   const advancedFilterCount = columnFilters.filter(
     (c) => !QUICK_FILTER_IDS.includes(c.id),
@@ -851,7 +858,7 @@ function ReviewerMenu({
     ? undefined
     : active === "__unassigned__"
       ? "Unassigned"
-      : options.find((o) => o.id === active)?.label ?? "Unknown";
+      : (options.find((o) => o.id === active)?.label ?? "Unknown");
   const withApplicants = options.filter((o) => (counts[o.id] || 0) > 0);
 
   return (
@@ -859,7 +866,10 @@ function ReviewerMenu({
       <DropdownMenuTrigger asChild>
         <button
           type="button"
-          className={cn(TOOLBAR_BUTTON, activeLabel ? TOOLBAR_ACTIVE : TOOLBAR_IDLE)}
+          className={cn(
+            TOOLBAR_BUTTON,
+            activeLabel ? TOOLBAR_ACTIVE : TOOLBAR_IDLE,
+          )}
         >
           <UserRoundIcon className="h-3.5 w-3.5" />
           {activeLabel ? `Reviewer: ${activeLabel}` : "Reviewer"}
@@ -888,7 +898,11 @@ function ReviewerMenu({
             <DropdownMenuSeparator className="bg-background-500" />
           )}
           {withApplicants.map((o) => (
-            <DropdownMenuRadioItem key={o.id} value={o.id} className={MENU_ITEM}>
+            <DropdownMenuRadioItem
+              key={o.id}
+              value={o.id}
+              className={MENU_ITEM}
+            >
               <span className="min-w-0 flex-1 truncate">{o.label}</span>
               <MenuCount value={counts[o.id]} />
             </DropdownMenuRadioItem>
@@ -1132,10 +1146,10 @@ function TableFilter({
     );
   }, [columns]);
 
+  // Opening is handled by DialogTrigger, which also restores focus here on close.
   const trigger = (
     <button
       type="button"
-      onClick={() => setShowFilters(true)}
       className={cn(
         TOOLBAR_BUTTON,
         activeCount > 0 ? TOOLBAR_ACTIVE : TOOLBAR_IDLE,
@@ -1147,79 +1161,69 @@ function TableFilter({
     </button>
   );
 
-  if (!showFilters) {
-    return trigger;
-  }
-
   return (
-    <>
-      {trigger}
-      <div
-        className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-30 p-4"
-        onClick={() => setShowFilters(false)}
-      >
-        <div
-          className="flex max-h-[85dvh] w-full max-w-2xl flex-col rounded border border-background-600 bg-background-700 shadow-lg"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <h3 className="px-4 pb-3 pt-4 text-lg font-semibold">Filters</h3>
-          <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-4 py-1">
-            {Object.values(groupColumnsByType).map((columns, groupIndex) => (
-              <div className="w-full py-2" key={groupIndex}>
-                {columns
-                  .filter((c) => c.getCanFilter())
-                  .map((column) => (
-                    <div
-                      key={column.id}
-                      className="flex w-full flex-shrink-0 flex-col items-stretch gap-2 rounded border border-background-500 bg-background-600 py-2 pl-2 sm:flex-row sm:items-center sm:py-0"
-                    >
-                      <span className="w-full truncate text-sm text-white sm:w-44">
-                        {column.columnDef.header()}
-                      </span>
-                      <ColumnFilterInput
-                        id={column.columnDef.meta.id}
-                        field={column.columnDef.meta.field}
-                        refItem={
-                          (typeof refMap[column.columnDef.meta.id] === "string"
-                            ? refMap[refMap[column.columnDef.meta.id] as string]
-                            : refMap[column.columnDef.meta.id]) as
-                            | ReferenceItem
-                            | undefined
-                        }
-                        column={column}
-                        columnFilter={columnFilters.find(
-                          (c) => c.id === column.id,
-                        )}
-                        updateColumnFilter={(value) =>
-                          setColumnFilter(column.id, value)
-                        }
-                      />
-                    </div>
-                  ))}
-              </div>
-            ))}
-          </div>
-          <div className="flex w-full items-center justify-between gap-2 border-t border-background-600 p-4">
-            <Button
-              disabled={columnFilters.length === 0}
-              className="w-full max-w-md bg-lp-400"
-              onClick={() => {
-                clearColumnFilters();
-                setShowFilters(false);
-              }}
-            >
-              {columnFilters.length === 0 ? "No filters" : "Clear filters"}
-            </Button>
-            <Button
-              className="w-full max-w-md bg-background-500"
-              onClick={() => setShowFilters(false)}
-            >
-              Close
-            </Button>
-          </div>
+    <Dialog open={showFilters} onOpenChange={setShowFilters}>
+      <DialogTrigger asChild>{trigger}</DialogTrigger>
+      <DialogContent className="flex max-h-[85dvh] w-full max-w-2xl flex-col gap-0 rounded border border-background-600 bg-background-700 p-0 shadow-lg">
+        <DialogTitle className="px-4 pb-3 pt-4 text-lg font-semibold">
+          Filters
+        </DialogTitle>
+        <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-4 py-1">
+          {Object.values(groupColumnsByType).map((columns, groupIndex) => (
+            <div className="w-full py-2" key={groupIndex}>
+              {columns
+                .filter((c) => c.getCanFilter())
+                .map((column) => (
+                  <div
+                    key={column.id}
+                    className="flex w-full flex-shrink-0 flex-col items-stretch gap-2 rounded border border-background-500 bg-background-600 py-2 pl-2 sm:flex-row sm:items-center sm:py-0"
+                  >
+                    <span className="w-full truncate text-sm text-white sm:w-44">
+                      {column.columnDef.header()}
+                    </span>
+                    <ColumnFilterInput
+                      id={column.columnDef.meta.id}
+                      field={column.columnDef.meta.field}
+                      refItem={
+                        (typeof refMap[column.columnDef.meta.id] === "string"
+                          ? refMap[refMap[column.columnDef.meta.id] as string]
+                          : refMap[column.columnDef.meta.id]) as
+                          | ReferenceItem
+                          | undefined
+                      }
+                      column={column}
+                      columnFilter={columnFilters.find(
+                        (c) => c.id === column.id,
+                      )}
+                      updateColumnFilter={(value) =>
+                        setColumnFilter(column.id, value)
+                      }
+                    />
+                  </div>
+                ))}
+            </div>
+          ))}
         </div>
-      </div>
-    </>
+        <div className="flex w-full items-center justify-between gap-2 border-t border-background-600 p-4">
+          <Button
+            disabled={columnFilters.length === 0}
+            className="w-full max-w-md bg-lp-400"
+            onClick={() => {
+              clearColumnFilters();
+              setShowFilters(false);
+            }}
+          >
+            {columnFilters.length === 0 ? "No filters" : "Clear filters"}
+          </Button>
+          <Button
+            className="w-full max-w-md bg-background-500"
+            onClick={() => setShowFilters(false)}
+          >
+            Close
+          </Button>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
