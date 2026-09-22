@@ -11,7 +11,7 @@ import { FormStep } from "@/lib/types/questions";
 import { updateOrCreateEmailTemplate } from "./actions";
 import { toast } from "sonner";
 import { Dialog } from "@/components/primitives/dialog";
-import { number } from "zod";
+import SettingsSection from "./settingsSection";
 
 // Helper function to extract template tags
 const extractTemplateTags = (content: string): string[] => {
@@ -35,7 +35,7 @@ export default function FormSettingsPage() {
   const [editingStatus, setEditingStatus] = useState<string | null>(null);
   const [showNewTemplate, setShowNewTemplate] = useState(false);
   const [selectedStatus, setSelectedStatus] = useState("");
-  const [showPreview, setShowPreview] = useState(false);
+  const [previewStatus, setPreviewStatus] = useState<string | null>(null);
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -104,284 +104,267 @@ export default function FormSettingsPage() {
     }));
 
   return (
-    <div className="flex flex-col dark gap-4  items-center w-full px-4">
-      <div className="flex w-full sticky top-0 justify-between items-center gap-2 flex-wrap">
-        <h2 className="font-semibold text-xl sticky top-0">Email Settings</h2>
-        {availableStatuses.length > 0 && (
-          <Button onClick={() => setShowNewTemplate(true)}>
-            Create New Template
+    <SettingsSection
+      title="Email templates"
+      description="Sent to applicants when their status changes. Our email provider allows up to 100 automated emails per day, so plan bulk notifications accordingly."
+      action={
+        availableStatuses.length > 0 &&
+        !showNewTemplate && (
+          <Button size="sm" onClick={() => setShowNewTemplate(true)}>
+            New template
           </Button>
-        )}
-      </div>
-      <div className="flex flex-col justify-center items-center gap-2 w-full ">
-        <section className="flex flex-col w-full rounded-md p-4 gap-4 items-center *:w-full">
-          <details className="bg-background-700 border border-background-600 max-w-4xl rounded-lg">
-            <summary className="px-4 py-2 cursor-pointer font-medium">
-              Important Information About Email Templates
-            </summary>
-            <div className="p-4 space-y-4 border-t border-background-600">
-              <div>
-                <h4 className="font-medium mb-2">Email Sending Limits</h4>
-                <p className="text-sm">
-                  Due to email service provider restrictions, we can only send
-                  up to 100 automated emails per day. Please plan your bulk
-                  notifications accordingly.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium mb-2">Available Template Tags</h4>
-                <div className="flex flex-wrap gap-2">
-                  {Object.entries(templateFields).map(([key, value]) => (
-                    <span
-                      key={key}
-                      className="px-2 py-1 bg-background-600 rounded-md text-sm flex items-center gap-1"
-                    >
-                      <span className="font-mono text-lp-500">{`{{${key}}}`}</span>
-                      <span className="text-xs opacity-75">: {value}</span>
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </details>
+        )
+      }
+    >
+      <details className="group rounded-lg border border-background-500 bg-background-700">
+        <summary className="cursor-pointer px-4 py-2.5 text-sm font-medium text-neutral-200">
+          Available template tags
+        </summary>
+        <div className="flex flex-wrap gap-2 border-t border-background-500 p-4">
+          {Object.entries(templateFields).map(([key, value]) => (
+            <span
+              key={key}
+              className="flex items-center gap-1 rounded-md bg-background-600 px-2 py-1 text-sm"
+            >
+              <span className="font-mono text-lp-500">{`{{${key}}}`}</span>
+              <span className="text-xs text-neutral-400">: {value}</span>
+            </span>
+          ))}
+        </div>
+      </details>
 
-          <div className="flex flex-col max-w-4xl gap-4 ">
-            <MultiSelect
-              options={Object.entries(emailStatuses).map(
-                ([status, emailConfig]) => ({
-                  value: status,
-                  label: (
-                    <div className="flex items-center gap-2">
-                      <span className="border text-xs border-background-500 rounded-full px-2 py-0.5 bg-lp-500 min-w-16 text-center">
-                        {status}
-                      </span>
-                      <span className="text-sm truncate opacity-75">
-                        {emailConfig.title}
-                      </span>
-                    </div>
-                  ),
-                }),
-              )}
-              value={openTemplates}
-              onChange={setOpenTemplates}
-              allowMultiple={true}
-              className="w-full"
-              emptyText="Select templates to view..."
+      {showNewTemplate && (
+        <div className="flex flex-col gap-4 rounded-lg border border-background-500 bg-background-700 p-4">
+          <h3 className="font-medium text-neutral-100">New template</h3>
+          <label className="flex flex-col gap-1.5">
+            <span className="text-sm font-medium">Status</span>
+            <select
+              value={selectedStatus}
+              onChange={(e) => setSelectedStatus(e.target.value)}
+              className="w-full rounded-md bg-background-600 p-2"
+            >
+              <option value="">Select a status...</option>
+              {availableStatuses.map((status) => (
+                <option key={status.id} value={status.id}>
+                  {status.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="flex flex-col gap-1.5">
+            <span className="text-sm font-medium">Subject line</span>
+            <Input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Enter email subject"
+              className="w-full rounded-md border bg-background-600 p-2"
             />
-            {showNewTemplate && (
-              <div className="border rounded-lg p-4 bg-background-700">
-                <h3 className="font-medium mb-4">Create New Template</h3>
-                <div className="space-y-4">
-                  <div className="space-y-2">
-                    <h4 className="font-medium">Status</h4>
-                    <select
-                      value={selectedStatus}
-                      onChange={(e) => setSelectedStatus(e.target.value)}
-                      className="w-full p-2 rounded-md bg-background-600"
-                    >
-                      <option value="">Select a status...</option>
-                      {availableStatuses.map((status) => (
-                        <option key={status.id} value={status.id}>
-                          {status.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+          </label>
+          <label className="flex flex-col gap-1.5">
+            <span className="text-sm font-medium">Email content</span>
+            <Textarea
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              placeholder="Enter email content"
+              rows={8}
+              className="w-full resize-none rounded-md border bg-background-600 p-2 font-mono text-sm"
+            />
+          </label>
+          <div className="flex justify-end gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                setShowNewTemplate(false);
+                setSelectedStatus("");
+                setTitle("");
+                setContent("");
+              }}
+            >
+              Cancel
+            </Button>
+            <Button
+              size="sm"
+              onClick={() =>
+                handleCreateNew({
+                  status: selectedStatus,
+                  title,
+                  content,
+                })
+              }
+              disabled={!title || !content}
+            >
+              Create
+            </Button>
+          </div>
+        </div>
+      )}
 
-                  <div className="space-y-2">
-                    <h4 className="font-medium">Subject Line</h4>
-                    <Input
-                      type="text"
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
-                      placeholder="Enter email subject"
-                      className="w-full p-2 border rounded-md bg-background-600"
-                    />
-                  </div>
+      {Object.keys(emailStatuses).length === 0 ? (
+        !showNewTemplate && (
+          <p className="rounded-lg border border-dashed border-background-500 px-6 py-10 text-center text-sm text-neutral-400">
+            No email templates yet.
+          </p>
+        )
+      ) : (
+        <MultiSelect
+          options={Object.entries(emailStatuses).map(
+            ([status, emailConfig]) => ({
+              value: status,
+              label: (
+                <div className="flex items-center gap-2">
+                  <span className="min-w-16 rounded-full border border-background-500 bg-lp-500 px-2 py-0.5 text-center text-xs">
+                    {status}
+                  </span>
+                  <span className="truncate text-sm opacity-75">
+                    {emailConfig.title}
+                  </span>
+                </div>
+              ),
+            }),
+          )}
+          value={openTemplates}
+          onChange={setOpenTemplates}
+          allowMultiple={true}
+          className="w-full"
+          emptyText="Select templates to view..."
+        />
+      )}
 
-                  <div className="space-y-2">
-                    <h4 className="font-medium">Email Content</h4>
-                    <Textarea
-                      value={content}
-                      onChange={(e) => setContent(e.target.value)}
-                      placeholder="Enter email content"
-                      rows={8}
-                      className="w-full resize-none p-2 border rounded-md font-mono text-sm bg-background-600"
-                    />
-                  </div>
+      {Object.entries(emailStatuses)
+        .filter(([status]) => openTemplates.includes(status))
+        .map(([status, emailConfig]) => {
+          const isEditing = editingStatus === status;
+          const currentContent = isEditing ? content : emailConfig.content;
+          const currentTitle = isEditing ? title : emailConfig.title;
+          const tags = extractTemplateTags(currentContent);
+          const invalidTags = findInvalidTags(currentContent);
 
-                  <div className="flex justify-end gap-2">
+          return (
+            <div
+              key={status}
+              className="flex min-w-0 flex-col gap-4 rounded-lg border border-background-500 bg-background-700 p-4"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="rounded-full bg-background-500 px-3 py-1 text-sm font-semibold capitalize">
+                  {status}
+                </span>
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setPreviewStatus(status)}
+                  >
+                    Preview
+                  </Button>
+                  {!isEditing && (
                     <Button
                       variant="outline"
+                      size="sm"
                       onClick={() => {
-                        setShowNewTemplate(false);
-                        setSelectedStatus("");
-                        setTitle("");
-                        setContent("");
+                        setEditingStatus(status);
+                        setContent(emailConfig.content);
+                        setTitle(emailConfig.title);
                       }}
                     >
-                      Cancel
+                      Edit
                     </Button>
-                    <Button
-                      onClick={() =>
-                        handleCreateNew({
-                          status: selectedStatus,
-                          title,
-                          content,
-                        })
-                      }
-                      disabled={!title || !content}
-                    >
-                      Create
-                    </Button>
-                  </div>
+                  )}
                 </div>
               </div>
-            )}
-          </div>
 
-          <div className="flex flex-col gap-4 max-w-4xl flex-1">
-            {Object.entries(emailStatuses)
-              .filter(([status]) => openTemplates.includes(status))
-              .map(([status, emailConfig]) => {
-                const isEditing = editingStatus === status;
-                const currentContent = isEditing
-                  ? content
-                  : emailConfig.content;
-                const currentTitle = isEditing ? title : emailConfig.title;
-                const tags = extractTemplateTags(currentContent);
-                const invalidTags = findInvalidTags(currentContent);
+              {previewStatus === status && (
+                <TemplatePreview
+                  template={{
+                    title: currentTitle,
+                    content: currentContent,
+                  }}
+                  onClose={() => setPreviewStatus(null)}
+                  submissions={submissions}
+                  templateFields={templateFields}
+                />
+              )}
 
-                return (
-                  <div
-                    key={status}
-                    className="border rounded-lg bg-background-700 min-w-0 w-full flex-1 border-background-600 p-4 "
-                  >
-                    <div className="flex items-center justify-between w-full gap-2 pb-4">
-                      <span className="border text-base border-background-500 rounded-full font-semibold px-2 py-1 text-center w-24 bg-background-500 capitalize">
-                        {status}
-                      </span>
-                      <div className="flex gap-2">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => setShowPreview(true)}
-                        >
-                          Preview
-                        </Button>
-                        {!isEditing && (
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => {
-                              setEditingStatus(status);
-                              setContent(emailConfig.content);
-                              setTitle(emailConfig.title);
-                            }}
-                          >
-                            Edit
-                          </Button>
-                        )}
-                      </div>
+              <label className="flex flex-col gap-1.5">
+                <span className="text-sm font-medium">Subject line</span>
+                <Input
+                  type="text"
+                  value={currentTitle}
+                  onChange={(e) => setTitle(e.target.value)}
+                  disabled={!isEditing}
+                  className="w-full rounded-md border bg-background-600 p-2"
+                />
+              </label>
 
-                      {showPreview && (
-                        <TemplatePreview
-                          template={{
-                            title: currentTitle,
-                            content: currentContent,
-                          }}
-                          onClose={() => setShowPreview(false)}
-                          submissions={submissions}
-                          templateFields={templateFields}
-                        />
-                      )}
-                    </div>
+              <label className="flex flex-col gap-1.5">
+                <span className="text-sm font-medium">Email content</span>
+                <Textarea
+                  value={currentContent}
+                  onChange={(e) => setContent(e.target.value)}
+                  disabled={!isEditing}
+                  className="field-sizing-content min-h-[300px] w-full rounded-md border bg-background-600 p-2 font-mono text-sm"
+                />
+              </label>
 
-                    <div className="space-y-4">
-                      <div className="space-y-2">
-                        <h4 className="font-medium">Subject Line</h4>
-                        <Input
-                          type="text"
-                          value={currentTitle}
-                          onChange={(e) => setTitle(e.target.value)}
-                          disabled={!isEditing}
-                          className="w-full p-2 border rounded-md bg-background-600"
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <h4 className="font-medium">Email Content</h4>
-                        <Textarea
-                          value={currentContent}
-                          onChange={(e) => setContent(e.target.value)}
-                          disabled={!isEditing}
-                          className="w-full 
-                         min-h-[300px]  field-sizing-content p-2 border rounded-md font-mono text-sm bg-background-600"
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <h4 className="font-medium">Template Fields Used</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2 py-1 rounded-md text-sm flex items-center gap-1 bg-background-600"
-                            >
-                              <span
-                                className={`font-mono ${
-                                  Object.keys(templateFields).includes(tag)
-                                    ? "text-lp-500"
-                                    : "text-red-500"
-                                }`}
-                              >{`{{${tag}}}`}</span>
-                            </span>
-                          ))}
-                        </div>
-                        {invalidTags.length > 0 && (
-                          <p className="text-sm text-red-500">
-                            Found unclosed template tags. Please fix them before
-                            saving.
-                          </p>
-                        )}
-                      </div>
-
-                      {isEditing && (
-                        <div className="flex justify-end gap-2">
-                          <Button
-                            variant="outline"
-                            onClick={() => {
-                              setEditingStatus(null);
-                              setContent(emailConfig.content);
-                              setTitle(emailConfig.title);
-                            }}
-                          >
-                            Cancel
-                          </Button>
-                          <Button
-                            onClick={() =>
-                              handleSave({ status, title, content })
-                            }
-                            disabled={
-                              invalidTags.length > 0 ||
-                              tags.some(
-                                (tag) =>
-                                  !Object.keys(templateFields).includes(tag),
-                              )
-                            }
-                          >
-                            Save
-                          </Button>
-                        </div>
-                      )}
-                    </div>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-sm font-medium">
+                  Template fields used
+                </span>
+                {tags.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className={`rounded-md bg-background-600 px-2 py-1 font-mono text-sm ${
+                          Object.keys(templateFields).includes(tag)
+                            ? "text-lp-500"
+                            : "text-red-500"
+                        }`}
+                      >{`{{${tag}}}`}</span>
+                    ))}
                   </div>
-                );
-              })}
-          </div>
-        </section>
-      </div>
-    </div>
+                ) : (
+                  <span className="text-sm text-neutral-400">None</span>
+                )}
+                {invalidTags.length > 0 && (
+                  <p className="text-sm text-red-500">
+                    Found unclosed template tags. Please fix them before saving.
+                  </p>
+                )}
+              </div>
+
+              {isEditing && (
+                <div className="flex justify-end gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      setEditingStatus(null);
+                      setContent(emailConfig.content);
+                      setTitle(emailConfig.title);
+                    }}
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    size="sm"
+                    onClick={() => handleSave({ status, title, content })}
+                    disabled={
+                      invalidTags.length > 0 ||
+                      tags.some(
+                        (tag) => !Object.keys(templateFields).includes(tag),
+                      )
+                    }
+                  >
+                    Save
+                  </Button>
+                </div>
+              )}
+            </div>
+          );
+        })}
+    </SettingsSection>
   );
 }
 

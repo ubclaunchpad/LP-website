@@ -156,3 +156,6 @@ export function JSONValidationToZod(
 
   return validation;
 }
+
+// Phrase an admin must type to delete a form that holds submissions
+export const DELETE_FORM_CONFIRMATION = "delete form";

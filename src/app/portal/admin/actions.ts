@@ -1,7 +1,9 @@
 "use server";
+import { revalidatePath } from "next/cache";
 import { db } from "@/db";
 import { requireAdmin } from "@/lib/utils/auth";
 import { getFormById } from "@/lib/utils/forms/server";
+import { DELETE_FORM_CONFIRMATION } from "@/lib/utils/forms/helpers";
 import { FormStep } from "@/lib/types/questions";
 import { FormFields } from "@/components/forms/applications/columns";
 import { sendEmail } from "@/lib/utils/forms/email";
@@ -55,6 +57,27 @@ export async function cloneForm(id: number) {
       type: source.type,
     },
   });
+}
+
+export async function getFormSubmissionCount(id: number) {
+  await requireAdmin();
+  return db.submissions.count({ where: { form_id: BigInt(id) } });
+}
+
+// Submissions, applications and their status history are removed by the
+// ON DELETE CASCADE foreign keys. A form holding submissions requires the
+// typed confirmation phrase, re-checked here so the client can't skip it.
+export async function deleteForm(id: number, confirmation?: string) {
+  await requireAdmin();
+  const submissionCount = await getFormSubmissionCount(id);
+  if (
+    submissionCount > 0 &&
+    confirmation?.trim() !== DELETE_FORM_CONFIRMATION
+  ) {
+    throw new Error("Form has submissions; confirmation phrase required");
+  }
+  await db.forms.delete({ where: { id: BigInt(id) } });
+  revalidatePath("/portal/admin", "layout");
 }
 
 export async function setFormDraft(id: number, draft: boolean) {
