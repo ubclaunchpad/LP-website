@@ -1,15 +1,19 @@
 import NewFormDialog from "@/components/portal/admin/newFormDialog";
-import FormList, {
-  FormListItem,
+import FormList, { FormListItem } from "@/components/portal/admin/formList";
+import {
   FormStatus,
-} from "@/components/portal/admin/formList";
+  FormType,
+  parseFormListView,
+} from "@/components/portal/admin/formListView";
 import { getForms } from "@/app/portal/admin/actions";
 import { Form } from "@/lib/types/application";
 import { formatDate, relativeDays } from "@/lib/utils/dates";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-function toListItem(form: Form, now: Date): FormListItem {
+type FormRecord = Form & { created_at: Date; type: FormType | null };
+
+function toListItem(form: FormRecord, now: Date): FormListItem {
   const open = form.open_at ? new Date(form.open_at) : null;
   const close = form.close_at ? new Date(form.close_at) : null;
   const isDraft =
@@ -50,20 +54,27 @@ function toListItem(form: Form, now: Date): FormListItem {
     id: Number(form.id),
     title: form.title,
     status,
+    type: form.type,
     questionCount,
     stepCount: steps.length,
+    openAt: open?.getTime() ?? null,
+    closeAt: close?.getTime() ?? null,
+    createdAt: new Date(form.created_at).getTime(),
     window,
     hint,
+    created: formatDate(new Date(form.created_at)),
   };
 }
 
-export default async function Page() {
-  const forms = (await getForms()) as unknown as Form[];
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Record<string, string | string[] | undefined>;
+}) {
+  const forms = (await getForms()) as unknown as FormRecord[];
   const now = new Date();
-  const items = forms
-    .map((f) => toListItem(f, now))
-    // Newest first within each status group.
-    .sort((a, b) => b.id - a.id);
+  // Sorted on the client, which owns the sort order.
+  const items = forms.map((f) => toListItem(f, now));
 
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-6xl flex-1 flex-col gap-8 px-4 py-8 md:px-8">
@@ -80,7 +91,7 @@ export default async function Page() {
         </div>
         <NewFormDialog />
       </header>
-      <FormList forms={items} />
+      <FormList forms={items} initialView={parseFormListView(searchParams)} />
     </div>
   );
 }
