@@ -1,6 +1,8 @@
 "use client";
 import { useContext, useState } from "react";
 import FormSettingsPage from "./formSettings";
+import DeleteFormSection from "./deleteFormSection";
+import SettingsSection from "./settingsSection";
 import { formContext } from "@/components/layouts/formTabView";
 import { MainResultPage } from "@/components/forms/resultPages/MainResultPage";
 import MultiSelect from "@/components/general/multiSelect";
@@ -31,76 +33,69 @@ function ResultPagePreviews({ form }) {
   );
 
   return (
-    <div className="flex flex-col gap-4 w-full items-center px-4">
-      <h2 className="text-xl w-full font-semibold sticky top-0">
-        User Portal Previews
-      </h2>
-
-      <div className="flex flex-col gap-2  w-full max-w-4xl">
-        <details className="bg-background-700 border border-background-600 max-w-4xl rounded-lg">
-          <summary className="px-4 py-2 cursor-pointer font-medium">
-            What are these previews?
-          </summary>
-          <p className="text-sm p-4">
-            These previews show you what the status portal will look like for
-            different statuses. Select a status from the dropdown to preview it.
-          </p>
-        </details>
+    <SettingsSection
+      title="Status portal preview"
+      description="See what applicants see in their portal for each status. Optionally look up an applicant by email to preview it with their data."
+    >
+      <div className="flex flex-col gap-2 md:flex-row md:items-center">
         <MultiSelect
           options={statusOptions}
           value={[selectedStatus]}
           onChange={(value) => setSelectedStatus(value[0])}
           allowMultiple={false}
-          className="w-full"
+          className="w-full md:w-64 md:shrink-0"
           emptyText="Select status to preview..."
         />
-
-        <div className="flex flex-col pt-4 gap-2">
-          <div className="flex gap-2 items-center">
-            <Input
-              className="p-2 w-full bg-background-700 rounded-md"
-              list="preview-emails"
-              placeholder="Search user by email"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-            <datalist id="preview-emails">
-              {submissions.map((submission) => (
-                <option key={submission.id}>{submission.email}</option>
-              ))}
-            </datalist>
-            <Button
-              className="flex-shrink-0 text-sm"
-              disabled={!search || search.length < 3}
-              onClick={() => {
-                if (app) {
-                  setApp(null);
-                }
-
-                setApp(
-                  submissions.find(
-                    (s) => s.email === search,
-                  ) as unknown as Application,
-                );
-              }}
-            >
-              {app ? "Clear" : "Search"}
-            </Button>
-          </div>
-
-          {selectedStatus && (
-            <div className="border rounded-lg bg-background-700 border-background-600 p-4">
-              <MainResultPage
-                application={app}
-                status={selectedStatus}
-                form={form}
-                formStatus={true}
-              />
-            </div>
-          )}
+        <div className="flex flex-1 items-center gap-2">
+          <Input
+            className="w-full"
+            list="preview-emails"
+            placeholder="Search applicant by email"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <datalist id="preview-emails">
+            {submissions.map((submission) => (
+              <option key={submission.id}>{submission.email}</option>
+            ))}
+          </datalist>
+          <Button
+            size="sm"
+            className="shrink-0"
+            disabled={!app && (!search || search.length < 3)}
+            onClick={() => {
+              if (app) {
+                setApp(null);
+                setSearch("");
+                return;
+              }
+              setApp(
+                (submissions.find(
+                  (s) => s.email === search,
+                ) as unknown as Application) ?? null,
+              );
+            }}
+          >
+            {app ? "Clear" : "Search"}
+          </Button>
         </div>
       </div>
-    </div>
+
+      {selectedStatus ? (
+        <div className="rounded-lg border border-background-500 bg-background-700 p-4">
+          <MainResultPage
+            application={app}
+            status={selectedStatus}
+            form={form}
+            formStatus={true}
+          />
+        </div>
+      ) : (
+        <p className="rounded-lg border border-dashed border-background-500 px-6 py-10 text-center text-sm text-neutral-400">
+          This form has no statuses configured yet.
+        </p>
+      )}
+    </SettingsSection>
   );
 }
 
@@ -108,9 +103,10 @@ export default function SettingsPage() {
   const { rawForm: form } = useContext(formContext);
 
   return (
-    <div className="flex flex-col dark gap-4 pb-20 flex-1 items-center w-full px-4">
+    <div className="dark mx-auto flex w-full max-w-4xl flex-col gap-10 px-4 pb-20 pt-4 md:px-8">
       <FormSettingsPage />
       <ResultPagePreviews form={form} />
+      <DeleteFormSection />
     </div>
   );
 }
