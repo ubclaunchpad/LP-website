@@ -300,8 +300,11 @@ export default function FormList({
     return c;
   }, [forms, filter]);
 
-  // The type menu only earns its place once there's more than one type.
-  const showTypeMenu = new Set(forms.map((f) => f.type)).size > 1;
+  // The type menu only earns its place once there's more than one type, but
+  // stays while a type filter is on so it can be cleared.
+  const showTypeMenu =
+    type !== "all" ||
+    new Set(forms.flatMap((f) => (f.type ? [f.type] : []))).size > 1;
 
   const visible = useMemo(
     () =>
